@@ -1,0 +1,5 @@
+# Separate Python 3.11 environment for local scene authoring and MuJoCo.
+numpy==1.26.4
+mujoco==3.3.7
+usd-core==26.11
+imageio==2.38.2

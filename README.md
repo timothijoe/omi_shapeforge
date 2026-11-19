@@ -82,6 +82,8 @@ docs/                当前状态和开发约定
 
 两条主项目 GPU 调度入口已实际跑通，初始化验证见 [验证记录](manifests/initial_validation.json)。
 
+Blender 安装、光模块资产导出、MuJoCo 与 Isaac Sim 场景原型见 [仿真说明](docs/simulation.md)。支持单模块及规则阵列排布，当前使用简化碰撞体，机器人和真实夹具尚未接入。
+
 ## 许可证
 
 本仓库采用 [MIT License](LICENSE)。FoundationStereo、BundleSDF 及相关权重分别遵循各自的许可证。

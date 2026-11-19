@@ -1,0 +1,59 @@
+{
+  "recorded_utc": "2026-11-19T16:35:10.592748+00:00",
+  "blender": {
+    "version": "4.5.16 LTS",
+    "url": "https://download.blender.org/release/Blender4.5/blender-4.5.16-linux-x64.tar.xz",
+    "checksum_url": "https://download.blender.org/release/Blender4.5/blender-4.5.16.sha256",
+    "sha256": "23432b064977908beb1ab4b7f32f024e7331105c875c187dce002aff84b10c11",
+    "archive": "/data/omi_runtime/cache/downloads/blender-4.5.16-linux-x64.tar.xz",
+    "installation_directory": "/data/omi_runtime/tools/blender-4.5.16-linux-x64",
+    "executable": "/data/omi_runtime/tools/blender-4.5.16-linux-x64/blender",
+    "command_link": "/home/linux/.local/bin/blender",
+    "desktop_entry": "/home/linux/.local/share/applications/omi-blender-4.5.desktop"
+  },
+  "saved_blender_models_report": "/data/omi_runtime/runs/blender_validation_20261120/saved_models.json",
+  "blender_background_render": "/data/omi_runtime/runs/blender_validation_20261120/reference_0001.png",
+  "asset_manifest": "/data/omi_runtime/assets/optical_module_sim_20261120/asset.json",
+  "single_scene": "/data/omi_runtime/assets/optical_scene_v2_20261120",
+  "array_scene": "/data/omi_runtime/assets/optical_array_2x2_20261120",
+  "simulations": {
+    "mujoco_optical_v3_20261120": {
+      "report": "/data/omi_runtime/runs/mujoco_optical_v3_20261120/report.json",
+      "status": "passed_mujoco_load_step_render_and_settle",
+      "steps": 240,
+      "seconds": 1.9999999999999953,
+      "renderer_executed": true,
+      "report_sha256": "716d952d181603a00a491f501ba0c82c48b37056fec1c4744651a134ea084223"
+    },
+    "mujoco_optical_array_v2_20261120": {
+      "report": "/data/omi_runtime/runs/mujoco_optical_array_v2_20261120/report.json",
+      "status": "passed_mujoco_load_step_render_and_settle",
+      "steps": 240,
+      "seconds": 1.9999999999999953,
+      "renderer_executed": true,
+      "report_sha256": "74e97bb6705b34054ddad9b27304a31bf91c69983179af689bb3def207e4dcc1"
+    },
+    "isaac_optical_v3_20261120": {
+      "report": "/data/omi_runtime/runs/isaac_optical_v3_20261120/report.json",
+      "status": "passed_isaac_physx_load_step_and_settle",
+      "steps": 240,
+      "seconds": 2.0,
+      "renderer_executed": false,
+      "report_sha256": "e495714dfe420ba05cad1d697a000288f96b7fe3ed9b3d28e1958bccf1109b72"
+    },
+    "isaac_optical_array_20261120": {
+      "report": "/data/omi_runtime/runs/isaac_optical_array_20261120/report.json",
+      "status": "passed_isaac_physx_load_step_and_settle",
+      "steps": 240,
+      "seconds": 2.0,
+      "renderer_executed": false,
+      "report_sha256": "bfa404e54f2fd8f65ac9ceca1efe3656e33a67fcc302f0ae2cccead3ecd1c516"
+    }
+  },
+  "collision_model": "Rigid box; no groove contact or handle flex simulation",
+  "mass_kg_assumed": 0.02,
+  "friction_assumed": 0.6,
+  "robot_assets_present": false,
+  "physical_accuracy_validated": false,
+  "gui_interaction_verified": false
+}

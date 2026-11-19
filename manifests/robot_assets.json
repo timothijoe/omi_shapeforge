@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "documentation_repository": "../omi_proj",
+  "source_records": [
+    "manifests/resources.yaml",
+    "tutorials/machine_transfer_checklist.md",
+    "docs/agent/simulation/evolution/model-and-task.md",
+    "docs/agent/hardware/evolution/robot-3d-replay.md"
+  ],
+  "checked_date": "2026-11-20",
+  "resources": [
+    {
+      "id": "marvin_mjcf",
+      "relative_path": "local/assets/robot_assets/mujoco/right_chopping_scene.xml",
+      "present_on_this_machine": false,
+      "purpose": "Full MuJoCo dual-arm scene; requires adjacent meshes and referenced hand assets."
+    },
+    {
+      "id": "marvin_meshes",
+      "relative_path": "local/assets/MarvinCCS",
+      "present_on_this_machine": false,
+      "purpose": "Meshes referenced by the MJCF; preserve adjacency to robot_assets."
+    },
+    {
+      "id": "stand_urdf",
+      "relative_path": "local/models/omi_marvin_stand_axis_corrected_v1",
+      "present_on_this_machine": false,
+      "purpose": "Derived visualization URDF plus meshes/source/provenance; not calibrated robot physics."
+    },
+    {
+      "id": "vendor_gripper_resources",
+      "relative_path": "local/vendor/optical_module_pu",
+      "present_on_this_machine": false,
+      "purpose": "Original vendor bundle may contain robot/gripper model resources; exact model files still require inspection."
+    }
+  ],
+  "tracked_surrogate": "src/omi_hil_rl/sim/assets/tianji_7dof_surrogate.xml",
+  "surrogate_note": "Available interface-test fixture; does not represent the real robot or gripper."
+}

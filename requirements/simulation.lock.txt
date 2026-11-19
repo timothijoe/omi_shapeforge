@@ -1,0 +1,14 @@
+absl-py==2.5.1
+etils==1.15.0
+fsspec==2026.9.0
+glfw==2.11.0
+ImageIO==2.38.2
+mujoco==3.3.7
+numpy==1.26.4
+packaging==26.3
+pillow==13.0.0
+PyOpenGL==3.1.10
+trimesh==5.2.1
+typing_extensions==4.16.0
+usd-core==26.11
+zipp==4.1.2
