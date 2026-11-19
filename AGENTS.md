@@ -1,5 +1,6 @@
 # OMI ShapeForge development
 
+- Keep `main` empty. Code lives on `dev`; create feature branches from `dev` for subsequent iterations and keep development commits off `main`.
 - This repository owns workflow orchestration, configuration, registration, evaluation and project documentation.
 - FoundationStereo and BundleSDF are sibling Git repositories. Keep algorithm-specific edits in their corresponding forks and record the revisions used by ShapeForge.
 - Keep raw data, checkpoints, environments and generated experiment outputs outside this Git repository. Current machine settings live in `configs/workspace.toml`; use ignored `configs/local.toml` for overrides.

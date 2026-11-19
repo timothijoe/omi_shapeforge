@@ -2,7 +2,7 @@
 
 初始化日期：2026-11-19。
 
-主项目骨架已建立，包括 Python 包、命令入口、同级后端配置、Git 来源记录、独立运行目录和调度测试。当前为本地 Git 仓库，GitHub 远端尚未创建或关联。
+主项目骨架已建立，包括 Python 包、命令入口、同级后端配置、Git 来源记录、独立运行目录和调度测试。已关联 GitHub 远端 `git@github.com:timothijoe/omi_shapeforge.git`；`main` 只保留空提交，代码在 `dev`，后续功能在新建开发分支中迭代。
 
 主项目入口已通过实际验证：`doctor` 检查通过，`smoke stereo` 和 `smoke bundlesdf` 均成功调用各自 GPU 环境并保存有效报告。4 项控制层测试通过，覆盖已有结果保护、失败记录、缺失结果报告及配置路径处理。验证记录见 `../manifests/initial_validation.json`。
 

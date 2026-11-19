@@ -2,6 +2,14 @@
 
 OMI 的三维重建与位姿估计主项目，Python 包名及 Git 仓库目录统一为 `omi_shapeforge`。
 
+`main` 保留为空分支，代码在 `dev`。后续功能从 `dev` 创建新的开发分支。
+
+```bash
+git clone --branch dev git@github.com:timothijoe/omi_shapeforge.git
+cd omi_shapeforge
+git switch -c feature/你的功能名
+```
+
 本仓库维护数据处理流程、算法调用接口、配准、评估、配置和文档。两个现有算法仓库继续独立维护：
 
 | 目录 | 职责 |
