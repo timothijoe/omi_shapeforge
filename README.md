@@ -22,6 +22,8 @@ omi-shapeforge smoke bundlesdf
 
 也可使用 `python -m omi_shapeforge`。`doctor` 检查配置路径、解释器及后端 Git 状态；GPU 运行能力通过对应 `smoke` 验证。
 
+`doctor` 可以理解为“环境体检”：检查算法源码目录、Python 启动器、模型权重及 CUDA 编译器是否位于配置的路径，并显示后端代码的提交与本地改动。它只做检查和报告，不安装依赖、不修改代码，也不执行模型推理。
+
 `smoke stereo` 调用 FoundationStereo 的官方双目样例，输出视差预览、深度数组和点云；`smoke bundlesdf` 检查原生绑定、CUDA 运算和真实图像 LoFTR 匹配。二者均运行于各自的 GPU 环境。完整视频在线跟踪、光模块重建和旧实验复现尚未接入本项目。
 
 每次运行默认创建 `/data/omi_runtime/runs/omi_shapeforge/<UTC时间>_<算法>/`，保存：
@@ -71,3 +73,7 @@ docs/                当前状态和开发约定
 详见 [开发约定](docs/development.md) 和 [当前状态](docs/current.md)。既有环境构建记录继续保存在 `../local_setup/README.md`；迁移交接入口为 `/data/nov_19_folder/HANDOFF.md`。
 
 两条主项目 GPU 调度入口已实际跑通，初始化验证见 [验证记录](manifests/initial_validation.json)。
+
+## 许可证
+
+本仓库采用 [MIT License](LICENSE)。FoundationStereo、BundleSDF 及相关权重分别遵循各自的许可证。
