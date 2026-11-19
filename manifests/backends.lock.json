@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-11-19T15:14:46.707201+00:00",
+  "description": "Initial backend source snapshot; local adaptations are not yet committed in the algorithm forks.",
+  "backends": {
+    "stereo": {
+      "repository": "/home/linux/omi_folder/FoundationStereo",
+      "head": "6e8806816b533e4d13ddbb95ffa907b797060a62",
+      "status": [
+        " M core/extractor.py",
+        " M depth_anything/dpt.py",
+        " M scripts/run_demo.py",
+        "?? scripts/run_local_smoke.py"
+      ],
+      "tracked_diff_sha256": "fa67179b08d08fd994e33518db511dfe530d594f6df1e585def719f893365c9d",
+      "origin": "git@github.com:timothijoe/FoundationStereo.git",
+      "entrypoint_sha256": "f3a897a45ba5ca573b5a5f8354b7b102bf77c63134059f256a267d6097a27a03"
+    },
+    "bundlesdf": {
+      "repository": "/home/linux/omi_folder/BundleSDF",
+      "head": "ffa67d425240b5b76d2e387a7dd3d3735a7cf1a1",
+      "status": [
+        " M BundleTrack/CMakeLists.txt",
+        " M BundleTrack/src/FeatureManager.cpp",
+        " M BundleTrack/src/Frame.cpp",
+        " M BundleTrack/src/Utils.cpp",
+        " M BundleTrack/src/Utils.h",
+        " M loftr_wrapper.py",
+        " M mycuda/setup.py",
+        "?? smoke_local.py"
+      ],
+      "tracked_diff_sha256": "26e579e2de416d3790451f8e98400cd7525c9365c7a8fdf0ee6e7c5511acc46d",
+      "origin": "git@github.com:timothijoe/BundleSDF.git",
+      "entrypoint_sha256": "bf914baa4ee983cb77fbe2062520276be7cbe0426bfc1c94c8c32512408c5e9a"
+    }
+  }
+}

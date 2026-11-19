@@ -1,0 +1,18 @@
+# Relative paths are resolved against this configuration file's directory.
+# Copy to local.toml for machine-specific settings; local.toml is ignored by Git.
+[storage]
+runtime_root = "/data/omi_runtime"
+run_directory = "/data/omi_runtime/runs/omi_shapeforge"
+
+[backends.stereo]
+repository = "../../FoundationStereo"
+environment = "/data/omi_runtime/envs/foundation_stereo"
+entrypoint = "scripts/run_local_smoke.py"
+checkpoint = "/data/omi_runtime/models/FoundationStereo/11-33-40/model_best_bp2.pth"
+
+[backends.bundlesdf]
+repository = "../../BundleSDF"
+environment = "/data/omi_runtime/envs/bundlesdf"
+entrypoint = "smoke_local.py"
+cuda_home = "/usr/local/cuda-12.4"
+
