@@ -7,4 +7,3 @@
 - The lightweight control environment is `.venv`. GPU workloads run in the separate environments selected by the workspace configuration.
 - Run `.venv/bin/python -m unittest discover -s tests -v` for orchestration changes. Validate changes to backend invocation with the relevant smoke workflow when the environment is available.
 - Keep `docs/current.md` aligned with actual validation. Distinguish official samples, component checks, frozen geometry replay and full reconstruction results.
-

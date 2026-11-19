@@ -89,4 +89,3 @@ cuda_home = "cuda"
 
 if __name__ == '__main__':
     unittest.main()
-

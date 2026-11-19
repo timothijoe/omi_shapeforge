@@ -15,4 +15,3 @@ repository = "../../BundleSDF"
 environment = "/data/omi_runtime/envs/bundlesdf"
 entrypoint = "smoke_local.py"
 cuda_home = "/usr/local/cuda-12.4"
-

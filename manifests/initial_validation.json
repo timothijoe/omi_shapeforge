@@ -1,0 +1,31 @@
+{
+  "recorded_utc": "2026-11-19T15:16:01.981808+00:00",
+  "control_tests": {
+    "status": "passed",
+    "count": 4,
+    "command": ".venv/bin/python -m unittest discover -s tests -v"
+  },
+  "gpu_workflows": {
+    "stereo": {
+      "status": "passed",
+      "shapeforge_commit": "39bbb6bcba85158407624b5d3bfed9a5464fe396",
+      "run_directory": "/data/omi_runtime/runs/omi_shapeforge/20261119T151446_852822Z_stereo",
+      "report_path": "/data/omi_runtime/runs/omi_shapeforge/20261119T151446_852822Z_stereo/report.json",
+      "backend_report_status": "passed_real_gpu_stereo_inference",
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "torch": "2.6.0+cu124",
+      "point_count": 470018
+    },
+    "bundlesdf": {
+      "status": "passed",
+      "shapeforge_commit": "39bbb6bcba85158407624b5d3bfed9a5464fe396",
+      "run_directory": "/data/omi_runtime/runs/omi_shapeforge/20261119T151448_014730Z_bundlesdf",
+      "report_path": "/data/omi_runtime/runs/omi_shapeforge/20261119T151448_014730Z_bundlesdf/report.json",
+      "backend_report_status": "passed_cuda_kernels_cpp_bindings_and_real_loftr_matching",
+      "gpu": "NVIDIA GeForce RTX 4090",
+      "torch": "2.6.0+cu124",
+      "loftr_matches": 2893
+    }
+  },
+  "scope": "Official stereo sample and BundleSDF component checks, not historical optical-module reconstruction."
+}

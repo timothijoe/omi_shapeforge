@@ -167,4 +167,3 @@ def run_smoke(config, name, output=None):
         manifest['finished_utc'] = timestamp()
         save()
     return manifest
-

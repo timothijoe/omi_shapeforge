@@ -70,3 +70,4 @@ docs/                当前状态和开发约定
 
 详见 [开发约定](docs/development.md) 和 [当前状态](docs/current.md)。既有环境构建记录继续保存在 `../local_setup/README.md`；迁移交接入口为 `/data/nov_19_folder/HANDOFF.md`。
 
+两条主项目 GPU 调度入口已实际跑通，初始化验证见 [验证记录](manifests/initial_validation.json)。
