@@ -4,6 +4,7 @@
 
 - [根目录交接文档](../HANDOFF.md)：接手阅读顺序、工作树、环境与数据位置、验证边界及下一步。
 - [当前总览](current.md)：全项目唯一的当前摘要，链接领域现状。
+- [源码基线](design/source-baseline.md)：本地版本、bundle 恢复步骤及对应验证。
 - [全部进展交接快照](chronicles/2026-11-20-workspace-handoff.md)：仓库、环境、数据、复现、仿真、机器人、证据位置和待办。
 - [跨领域阶段记录](chronicles/README.md)：保留全局交接历史，后续现状仍看 current。
 - [能力总表](capabilities.md)：已实现、已验证、待验证和缺少资源的区别。

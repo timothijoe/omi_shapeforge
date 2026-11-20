@@ -5,7 +5,7 @@
 | 能力 | 实现与已验证状态 | 主要限制／证据入口 |
 | --- | --- | --- |
 | 工作区诊断 | CLI 已运行，检查路径、解释器及 Git 信息 | 不验证 GPU、动态库或全部资产；[接口](agent/interfaces/cli.md) |
-| 样例进程调度 | 两种后端在各自环境实际运行，4 项控制层测试有记录 | 后端本地适配尚未完整提交；[能力](agent/perception/evolution/stereo-and-backends.md) |
+| 样例进程调度 | 两种后端在各自环境实际运行，4 项控制层测试有记录 | 后端适配已本地提交、bundle 恢复与两项新 smoke 通过，尚未推送或从零重编译；[能力](agent/perception/evolution/stereo-and-backends.md) |
 | 双目深度与点云 | 官方 960×540 样例，约 47 万点；两次独立推理数组一致 | 不是光模块原始录包或外部深度真值验收 |
 | BundleSDF 基础组件 | C++ 绑定、CUDA 编码／采样、梯度、Kaolin、Warp、LoFTR 检查通过 | 不代表完整视频跟踪和 mesh 重建通过 |
 | 光模块 CPU 配准 | 10 万点样例中已确认区域的刚体配准及独立检查通过 | 已知 ROI／方向先验；残差不是真实位姿误差；[能力](agent/perception/evolution/confirmed-registration.md) |

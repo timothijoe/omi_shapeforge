@@ -1,6 +1,6 @@
 # Agent 知识库
 
-新会话先读[交接文档](../../HANDOFF.md)，尤其注意未提交工作树和历史环境未启用的状态。
+新会话先读[交接文档](../../HANDOFF.md)，再看[源码基线](../design/source-baseline.md)；本地版本已保存但尚未推送，历史环境仍未启用。
 
 推荐阅读顺序：[当前总览](../current.md) → [能力总表](../capabilities.md) → 对应领域的 charter/current/evolution → 接口和阶段证据。开始修改前检查分支及未提交工作树。
 

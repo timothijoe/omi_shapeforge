@@ -34,7 +34,7 @@ fi
 
 ## 3. 已有 GPU 后端
 
-本机的 `envs/foundation_stereo` 与 `envs/bundlesdf` 位于 `/data/omi_runtime`，版本和来源由[环境快照说明](../manifests/README.md)记录。后端仍有未提交适配，不能仅拉 GitHub HEAD 后声称从零恢复完成。
+本机的 `envs/foundation_stereo` 与 `envs/bundlesdf` 位于 `/data/omi_runtime`，版本和来源由[环境快照说明](../manifests/README.md)记录。后端适配已保存为本地版本，具体提交和 bundle 见[源码基线](../docs/design/source-baseline.md)。远端尚未同步；现有环境 smoke 通过不等于从零安装或编译通过。
 
 主项目尚未提供完整可移植的 GPU 后端安装器。构建笔记原件仍在同级 `local_setup`；参考包清单和 freeze 保留在 `manifests/environments/`。freeze 中的 editable／本地 URL 是来源记录，不能直接在另一台机器 pip 安装。原生扩展还需对应系统库和机器编译，旧 venv 不应复制使用。
 

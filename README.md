@@ -26,9 +26,9 @@ OMI 的光模块感知、资产化与仿真开发主项目，Python 包名为 `o
 
 ## 开发与分支
 
-`main` 保持为空；开发代码在 `dev` 及其开发分支。后续任务使用新分支。当前文档分支基于本地 `feature/optical-simulation`，其中的仿真功能尚不能假定已存在于远端 `dev`。
+`main` 保持为空；本地 `dev` 已整理仿真、知识库和源码基线，后续从 `dev` 创建功能分支。远端尚未同步，版本与恢复步骤见[源码基线](docs/design/source-baseline.md)。
 
-主项目维护流程、接口、配准评估和文档；同级 `FoundationStereo`、`BundleSDF` 自有仓库维护对应算法实现。后端仍有未提交适配，仅拉取其 GitHub HEAD 不能还原当前环境，见[架构说明](docs/design/project-architecture.md)。
+主项目维护流程、接口、配准评估和文档；同级 `FoundationStereo`、`BundleSDF` 自有仓库维护对应算法实现。后端适配已分别保存为本地提交并通过 smoke；仅拉取尚未同步的 GitHub 默认分支仍不能还原当前环境，见[架构说明](docs/design/project-architecture.md)。
 
 ```bash
 .venv/bin/python -m unittest discover -s tests -v

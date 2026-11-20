@@ -21,11 +21,11 @@ flowchart LR
 
 主环境仅依赖标准库。两个 GPU 后端、MuJoCo／OpenUSD、Blender 及 Isaac 使用各自解释器。进程边界避免同名模块与二进制依赖串用，决定见[感知 ADR 001](../agent/perception/decisions/001-backend-processes.md)。
 
-`backends.lock.json` 是初始化快照，不是运行时强制锁定器。`run_manifest.json` 记录实际 Git HEAD、状态、tracked diff 哈希与入口文件哈希。哈希不是补丁副本，不能恢复未提交修改；正式共享前应把算法适配提交到各自仓库。当前仍有未提交适配，资源恢复不能假定只拉取 HEAD 即可。
+`backends.lock.json` 是初始化快照，不是运行时强制锁定器。`run_manifest.json` 记录实际 Git HEAD、状态、tracked diff 哈希与入口文件哈希。哈希不是补丁副本，不能恢复未提交修改。ENG-001 已将现有算法适配提交到各自仓库，并保存可独立恢复的 bundle；当前版本见[源码基线](source-baseline.md)。远端尚未同步，资源恢复仍需使用指定版本及外部资源。
 
 ## 分支
 
-`main` 保持为空，`dev` 为开发基线，后续任务在新分支进行。文档分支基于本地已验证的 `feature/optical-simulation`，以保留其代码作为文档依据；没有把这些变更合入 `main`，也未在本轮推送。不能假定远端 `dev` 已含本轮仿真和文档。
+`main` 保持为空，`dev` 为开发基线，后续任务从本地 `dev` 建新分支。ENG-001 将已有仿真／文档历史经 `chore/source-baseline` fast-forward 汇入本地 `dev`；保留原功能／文档分支。两个算法仓库的适配位于各自 `feature/local-runtime-baseline`，原 master 不变。尚未推送，不能假定远端 `dev` 已含这些更新。
 
 ## 资源与配置
 
