@@ -8,9 +8,10 @@ import sys
 from tempfile import TemporaryDirectory
 import time
 import unittest
+from unittest.mock import patch
 
 from omi_shapeforge.runner import (ProcessPlan, ROOT, file_record, passed, read_json,
-                                    run_task, source_record)
+                                    run_task, source_record, RunCancelled)
 from omi_shapeforge.workflows import scene_files
 
 
@@ -74,6 +75,16 @@ class WorkflowTests(unittest.TestCase):
         self.assertIsNone(result['execution']['returncode'])
         self.assertIsNotNone(result['finished_utc'])
         self.assertEqual(result, read_json(self.root / 'run/run_manifest.json'))
+
+    def test_cancel_with_clean_backend_exit_does_not_claim_acceptance(self):
+        with patch('omi_shapeforge.runner.invoke', side_effect=RunCancelled(returncode=0)):
+            with self.assertRaises(RunCancelled):
+                self.run_case()
+        record = read_json(self.root / 'run/run_manifest.json')
+        self.assertEqual(record['execution']['returncode'], 0)
+        self.assertEqual(record['execution']['state'], 'succeeded')
+        self.assertEqual(record['acceptance']['status'], 'not_evaluated')
+        self.assertFalse(passed(record))
 
     def test_symlink_escape_is_rejected(self):
         result = self.run_case('(p/"loftr_matches.jpg").unlink(); '

@@ -192,8 +192,14 @@ def run_task(workflow, output, prepare):
                       inspection['observed'], ['inspection', 'report'])]}
     except KeyboardInterrupt as exc:
         if stage in ('prepare', 'execute'):
-            record['execution'].update(state='cancelled', returncode=getattr(exc, 'returncode', None),
-                                       error='Interrupted by user')
+            code = getattr(exc, 'returncode', None)
+            if code == 0:
+                # Some backends cleanly exit 0 after SIGINT. Preserve the actual
+                # process outcome, while leaving validation/acceptance unperformed.
+                record['execution'].update(state='succeeded', returncode=0, error=None)
+                record['limitations'].append('User cancelled; backend exited 0 during cleanup; no acceptance performed.')
+            else:
+                record['execution'].update(state='cancelled', returncode=code, error='Interrupted by user')
         else:
             record['validation']['status'] = 'failed'
             record['validation']['checks'].append(check('inspection_interrupted', 'failed',
