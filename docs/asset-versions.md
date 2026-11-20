@@ -54,3 +54,5 @@ flowchart LR
 实例身份不依赖相机看到的“左上／右下”，避免旋转视角后名称反转。后续新场景若需要新增实例，从 I05 继续或使用新的场景命名空间，并显式记录模型版本。
 
 历史原图、场景截图和交互文件见[可视化目录](visual-results.md)；当前能力边界见[资产管线](agent/simulation/evolution/asset-pipeline.md)。
+
+希望使用原电脑的独立桌面窗口时，见[Open3D 原生查看器](../tutorials/native_mesh_viewer.md)。本机已经打开并核对历史 V2／V1 的实际桌面显示。

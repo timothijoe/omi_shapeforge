@@ -42,3 +42,5 @@ ENG-003 已完成，14 项控制层测试通过，两个 smoke 与 MuJoCo 2×2 �
 资产查看器另修复了桌面 Chrome 无 WebGL 时的空白问题，已加入 CPU 网格渲染并核对真实桌面画面；详见[兼容性验证](../manifests/viewer_compatibility_validation_20261120.json)，资产几何与能力精度结论不变。
 
 进展形成过程见[全局快照](chronicles/README.md)、[感知编年](agent/perception/chronicles/README.md)和[仿真编年](agent/simulation/chronicles/README.md)。
+
+原电脑的 Open3D 原生查看器也已在本机打开，实际显示历史 V2 mesh；启动方式与 V1／点云切换范围见[原生查看教程](../tutorials/native_mesh_viewer.md)。这不是当前 GROOVE-r01 的几何更新。

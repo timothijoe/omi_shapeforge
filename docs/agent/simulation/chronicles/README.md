@@ -8,3 +8,5 @@
 全项目交接及全部数据恢复状态见[跨领域快照](../../../chronicles/2026-11-20-workspace-handoff.md)。
 
 - [2026-11-20：桌面网格查看兼容性修复](2026-11-20-viewer-cpu-fallback.md)
+
+- [2026-11-20：恢复原机 Open3D 原生查看器](2026-11-20-native-mesh-viewer.md)

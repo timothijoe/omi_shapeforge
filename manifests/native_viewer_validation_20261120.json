@@ -1,0 +1,26 @@
+{
+  "recorded_utc": "2026-11-20T04:04:44.731735+00:00",
+  "viewer": "Restored Open3D native GUI",
+  "open3d_version": "0.19.0",
+  "command": [
+    "/data/omi_runtime/envs/foundation_stereo/bin/python",
+    "/data/omi_runtime/baselines/reconstruction_20261119/workspace/BundleSDF_trial/scripts/view_prior_data_refinement.py",
+    "--fit",
+    "/data/omi_runtime/baselines/reconstruction_20261119/workspace/BundleSDF_trial/assets/optical_module_v2",
+    "--title",
+    "OMI ShapeForge | 原生 Mesh 查看器 | 历史 V2 / V1"
+  ],
+  "pid_at_launch": 1102520,
+  "log": "/data/omi_runtime/runs/native_mesh_viewer_20261120T040331Z/viewer.log",
+  "source_script_sha256": "c8e4ded0ae615f1b41c494fdc5bd253a6b11f27c1c2d6267e061e0305829bc1e",
+  "primary_mesh": "/data/omi_runtime/baselines/reconstruction_20261119/workspace/BundleSDF_trial/assets/optical_module_v2/data_refined_prior.ply",
+  "primary_mesh_sha256": "c85e17e5c9f42713e814a67b5f96b388955067ce8cae48a4d739797fb877ee37",
+  "desktop_screenshot": "/data/omi_runtime/runs/native_mesh_viewer_20261120T040331Z/native-viewer-desktop.png",
+  "desktop_screenshot_sha256": "99bcfcfd3bd2d9b03767b87a653eab3a818703195e3d4492683b7d3aeeb9fec8",
+  "ready_message_observed": true,
+  "native_window_visible": true,
+  "mesh_visible_in_actual_desktop": true,
+  "initial_model": "Historical accepted V2; not the current GROOVE-r01 Blender asset",
+  "historical_launch_record": "/data/omi_runtime/baselines/reconstruction_20261119/workspace/BundleSDF_trial/runtime/active_prior_fit_viewer.json",
+  "scope": "Read-only inspection of restored geometry; no reconstruction, model editing or physical accuracy validation."
+}
