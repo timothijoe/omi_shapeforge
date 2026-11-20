@@ -23,7 +23,7 @@
 ## 3. Git 状态与可恢复基线
 
 - `main` 继续保持空树；本地 `dev` 已整合原仿真、知识库及本轮源码基线，后续从 `dev` 建功能分支。
-- ShapeForge 的已验证源码提交为 `eb8da42`；ENG-001 的后续交付只更新文档和小型元数据；ENG-002 增加合同定义；ENG-003 运行代码版本与三项实跑证据见[工作流清单](manifests/workflow_validation_20261120.json)。准确交付 HEAD 用 `git rev-parse dev` 查看，完整记录见[源码基线](docs/design/source-baseline.md)。
+- ShapeForge 的已验证源码提交为 `eb8da42`；ENG-001 的后续交付只更新文档和小型元数据；ENG-002 增加合同定义；ENG-003 运行代码版本与三项实跑证据见[最终工作流清单](manifests/workflow_final_validation_20261120.json)。准确交付 HEAD 用 `git rev-parse dev` 查看，完整记录见[源码基线](docs/design/source-baseline.md)。
 - FoundationStereo 的适配与入口保存为 `e46fa7098730674bfc9f96047b4d2ffe9a87e1b4`；BundleSDF 保存为 `b1a55878264e8c28841507bb578835c94a63d475`，均位于各自 `feature/local-runtime-baseline`。
 - omi_proj 保持 `963a7c29f8e39bff59ba4eb285693976b224961e`，没有修改其代码。
 - 原有未提交文件已保存为本地提交，包含 PROMPTS 原文；四个仓库另有 Git bundle，且已独立克隆核对。整理前补丁、原文件与 Git 历史保存在外部备份中。

@@ -1,6 +1,6 @@
 # 运行与产物合同 v1
 
-ENG-002 于 2026-11-20 定版，ENG-003 已将两个 smoke 与 MuJoCo CLI 接入此合同，三项实际运行验证见[证据清单](../../../manifests/workflow_validation_20261120.json)。Schema、流程要求和示例见 [contracts/v1](../../../contracts/v1/README.md)。已有历史报告和后端入口保持原样；旧格式转换规则仍为待实现的迁移约定。
+ENG-002 于 2026-11-20 定版，ENG-003 已将两个 smoke 与 MuJoCo CLI 接入此合同，三项实际运行验证见[最终证据清单](../../../manifests/workflow_final_validation_20261120.json)。Schema、流程要求和示例见 [contracts/v1](../../../contracts/v1/README.md)。已有历史报告和后端入口保持原样；旧格式转换规则仍为待实现的迁移约定。
 
 ## 1. 文件布局与职责
 

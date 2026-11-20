@@ -1,0 +1,68 @@
+{
+  "task": "ENG-003-final-verification",
+  "recorded_utc": "2026-11-20T02:34:43.392384+00:00",
+  "code_head": "b3aa2fbefff2eb2d94bdebcf20de8926cfcd6f8d",
+  "control_tests": {
+    "count": 14,
+    "status": "passed",
+    "log": "/data/omi_runtime/runs/eng003_final_20261120T023314Z/control_tests.log",
+    "scope": "Includes group leader exiting while a descendant ignores SIGINT."
+  },
+  "workflows": {
+    "stereo": {
+      "run_directory": "/data/omi_runtime/runs/eng003_final_20261120T023314Z/stereo",
+      "manifest_sha256": "b1e4b7066b901ed5af56cb8daeb0cf0aa64d5faec795393214a7b89ad556257c",
+      "report_sha256": "c66f49d97b88d7c76fd05182ab8d531f20c8fea981a22eac53dd78ce27d85def",
+      "inspection_sha256": "d6fe1bee8d502cef616a10e4674a4ea173baa477d3ea7d2dc7837f928eecbed0",
+      "source_revisions": [
+        "b3aa2fbefff2eb2d94bdebcf20de8926cfcd6f8d",
+        "e46fa7098730674bfc9f96047b4d2ffe9a87e1b4"
+      ],
+      "execution": "succeeded",
+      "validation": "passed",
+      "acceptance": "passed",
+      "scope": "official_stereo_sample"
+    },
+    "bundlesdf": {
+      "run_directory": "/data/omi_runtime/runs/eng003_final_20261120T023314Z/bundlesdf",
+      "manifest_sha256": "f0332665eb15e930f9ef6914f04357bf283fed8af6079a0fb53393b1644f09b0",
+      "report_sha256": "19d0501a78f395b9060375b6fca97d4803894be6e1ec7a573f18818269e460fd",
+      "inspection_sha256": "e32f469f566926ecfc24510c47d54d8e2c379797ca6343bd3857cee266aa3844",
+      "source_revisions": [
+        "b3aa2fbefff2eb2d94bdebcf20de8926cfcd6f8d",
+        "b1a55878264e8c28841507bb578835c94a63d475"
+      ],
+      "execution": "succeeded",
+      "validation": "passed",
+      "acceptance": "passed",
+      "scope": "bundlesdf_components"
+    },
+    "mujoco": {
+      "run_directory": "/data/omi_runtime/runs/eng003_final_20261120T023314Z/mujoco",
+      "manifest_sha256": "ed894bf86bc146748c96eb96acc725565a2857c80e800d1c7b4419e0509f5cc8",
+      "report_sha256": "74e97bb6705b34054ddad9b27304a31bf91c69983179af689bb3def207e4dcc1",
+      "inspection_sha256": "b186d3d4cd9e45c32c9e781f29e927f91a788b49690f9ae1971e48976dca5c78",
+      "source_revisions": [
+        "b3aa2fbefff2eb2d94bdebcf20de8926cfcd6f8d",
+        "b3aa2fbefff2eb2d94bdebcf20de8926cfcd6f8d"
+      ],
+      "execution": "succeeded",
+      "validation": "passed",
+      "acceptance": "passed",
+      "scope": "mujoco_load_step_render_settle"
+    }
+  },
+  "previous_validation": "workflow_validation_20261120.json",
+  "limitations": [
+    "Source environments reused; not a clean build.",
+    "No full reconstruction, robot integration, calibrated physics, training or hardware control."
+  ],
+  "contract_checks": {
+    "status": "passed",
+    "examples": 11,
+    "negative_cases": 27,
+    "additional_records": 3,
+    "errors": [],
+    "scope": "Schema and cross-field checks only; no runtime/file validation."
+  }
+}

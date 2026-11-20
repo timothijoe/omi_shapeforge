@@ -37,4 +37,6 @@ ENG-003 已完成，14 项控制层测试通过，两个 smoke 与 MuJoCo 2×2 �
 3. 分别推进完整重建、Blender 生成、Isaac RTX／GUI 和 OMI Actor／数据合同检查，保留每项独立证据。
 4. 历史环境是否需要启用单独决定，不作为继续使用当前环境的前置条件。
 
+运行层最新干净版本与中断回收补强后的复验见[最终验证](../manifests/workflow_final_validation_20261120.json)。
+
 进展形成过程见[全局快照](chronicles/README.md)、[感知编年](agent/perception/chronicles/README.md)和[仿真编年](agent/simulation/chronicles/README.md)。
