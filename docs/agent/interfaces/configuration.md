@@ -10,6 +10,7 @@
 | backends.stereo.checkpoint | 当前模型文件 |
 | backends.bundlesdf.repository／environment／entrypoint | 另一个后端的对应位置 |
 | backends.bundlesdf.cuda_home | CUDA 工具链根目录 |
+| simulations.mujoco.environment／entrypoint／scene | 可选 MuJoCo 环境、仓库脚本和默认 MJCF；路径相对配置文件，python 为 environment/bin/python |
 
 两种后端的字段均须在配置中给出。相对路径以配置文件所在目录为基准，并展开 `~` 和已有环境变量；源码入口须位于指定仓库内。解释器路径保留 `<environment>/bin/python`，不把符号链接解析成共享基础解释器。
 

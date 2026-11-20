@@ -1,6 +1,6 @@
 # 当前总览
 
-核对日期：2026-11-20。ENG-001 的源码保存与 smoke 复验已完成；本轮 ENG-002 完成统一合同及离线格式检查，没有新增 GPU、仿真或训练运行。
+核对日期：2026-11-20。ENG-001～003 已完成：源码基线、统一合同和共用运行层；本轮新跑两项 GPU smoke 与 MuJoCo 2×2 场景，并完成资产名称及可视化整理。没有运行训练或硬件控制。
 
 完整交接见[当前全部进展快照](chronicles/2026-11-20-workspace-handoff.md)，具体能力以领域纪传体为准。
 
@@ -22,15 +22,17 @@
 
 04 的 Python 3.11.18／Torch 2.7.1+cu128 原环境已恢复，但未执行 conda-unpack 或兼容性验收；当前 envs 中已验证的开发环境保持不变。OMI 包的完整逐样本／Actor 校验、BC／RL 重新训练也未执行。
 
-主命令只有 doctor 和两种 smoke；doctor 的 ready 只代表路径检查。便携配准和仿真仍走独立脚本，详见[能力表](capabilities.md)和[教程](../tutorials/README.md)。
+主 CLI 现有 doctor、两种 smoke 和 simulate mujoco；doctor 的 ready 只代表路径检查。便携配准、Blender 和 Isaac 仍走独立脚本，详见[能力表](capabilities.md)和[教程](../tutorials/README.md)。
 
 ## 当前工作与下一步
 
 ENG-001 已完成：仿真、知识库和基线记录纳入本地 `dev`；两个后端适配分别提交在 `feature/local-runtime-baseline`，四仓库源码 bundle 均成功恢复。原工作区与恢复副本各 4 项控制层测试通过，两项 GPU smoke 通过；见[基线说明](design/source-baseline.md)和[新阶段记录](chronicles/2026-11-20-source-baseline.md)。未推送，远端默认分支仍不含这些本地提交。
 
-ENG-002 已完成[运行与产物合同 v1](agent/interfaces/run-contract.md)：三项流程规则、11 个合成示例、27 个反例及严格 JSON 检查通过，现有 4 项控制层测试通过。只读核对旧报告，未实现转换器或接入运行层；见[阶段记录](chronicles/2026-11-20-run-contract.md)。
+ENG-002 已完成[运行与产物合同 v1](agent/interfaces/run-contract.md)：三项流程规则、11 个合成示例、27 个反例及严格 JSON 检查通过，现有 4 项控制层测试通过。该阶段只读核对旧报告；后续 ENG-003 已接入运行层，旧报告转换器仍待实现。原阶段见[记录](chronicles/2026-11-20-run-contract.md)。
 
-1. 下一项 ENG-003：实现共用运行层、迁移两个 smoke 并接入 MuJoCo，验证实际文件内容与新报告；随后推进 ENG-004 自动检查。
+ENG-003 已完成，14 项控制层测试通过，两个 smoke 与 MuJoCo 2×2 的执行／产物／验收均通过，见[验证清单](../manifests/workflow_validation_20261120.json)。资产另已建立[版本名称](asset-versions.md)及[完整图册入口](visual-results.md)，模型原文件哈希保持不变。
+
+1. 下一项 ENG-004：将 CPU 回归与合同检查纳入自动流程，并规范 GPU／仿真证据关联。
 2. 选择机器人／工具配置，核对轴、TCP、限位、惯量、夹具与精细碰撞，然后接入当前场景。
 3. 分别推进完整重建、Blender 生成、Isaac RTX／GUI 和 OMI Actor／数据合同检查，保留每项独立证据。
 4. 历史环境是否需要启用单独决定，不作为继续使用当前环境的前置条件。

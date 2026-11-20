@@ -15,13 +15,13 @@ flowchart LR
     GEN --> USD[USD 与 Isaac PhysX]
 ```
 
-主 CLI 只覆盖上图前两条调用，包内配准和仿真脚本是独立入口。当前没有双目结果自动转为完整重建／机器人任务的一键流水线。
+主 CLI 已通过共用运行层覆盖两种 smoke，并可调用已有 MJCF 的 MuJoCo 检查；配准、Blender、场景生成与 Isaac 仍保留独立入口。当前没有双目结果自动转为完整重建／机器人任务的一键流水线。
 
 ## 环境和版本
 
 主环境仅依赖标准库。两个 GPU 后端、MuJoCo／OpenUSD、Blender 及 Isaac 使用各自解释器。进程边界避免同名模块与二进制依赖串用，决定见[感知 ADR 001](../agent/perception/decisions/001-backend-processes.md)。
 
-`backends.lock.json` 是初始化快照，不是运行时强制锁定器。`run_manifest.json` 记录实际 Git HEAD、状态、tracked diff 哈希与入口文件哈希。哈希不是补丁副本，不能恢复未提交修改。ENG-001 已将现有算法适配提交到各自仓库，并保存可独立恢复的 bundle；当前版本见[源码基线](source-baseline.md)。远端尚未同步，资源恢复仍需使用指定版本及外部资源。
+`backends.lock.json` 是初始化快照，不是运行时强制锁定器。新 v1 `run_manifest.json` 记录实际 Git HEAD、dirty、入口文件哈希与输入／产物身份；旧清单和 doctor 的 Git 快照还包含 tracked diff 哈希。哈希不是补丁副本，不能恢复未提交修改。ENG-001 已将现有算法适配提交到各自仓库，并保存可独立恢复的 bundle；当前版本见[源码基线](source-baseline.md)。远端尚未同步，资源恢复仍需使用指定版本及外部资源。
 
 ## 分支
 

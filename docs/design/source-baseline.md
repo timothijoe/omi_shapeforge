@@ -63,4 +63,4 @@ bundle 不包含外部数据、模型权重、环境、生成资产、原生编�
 
 ## 下一步
 
-ENG-001 完成。ENG-002 已完成[运行合同 v1](../agent/interfaces/run-contract.md)，下一项 ENG-003 开展共用运行层实现；本页的源码与恢复证据仍对应 ENG-001 时点。具体顺序见[统一开发方案](unified-development.md)。
+ENG-001 完成。ENG-002 已完成[运行合同 v1](../agent/interfaces/run-contract.md)，ENG-003 也已接入共用运行层，后续任务以当前总览为准；本页的源码与恢复证据仍对应 ENG-001 时点。具体顺序见[统一开发方案](unified-development.md)。

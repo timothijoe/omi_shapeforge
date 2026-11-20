@@ -1,31 +1,38 @@
 # CLI 与 Python 入口
 
-源码：[cli.py](../../../src/omi_shapeforge/cli.py)、[workspace.py](../../../src/omi_shapeforge/workspace.py)。安装后命令 `omi-shapeforge` 与 `python -m omi_shapeforge` 调用同一 `main()`。
+源码：[cli.py](../../../src/omi_shapeforge/cli.py)、[workspace.py](../../../src/omi_shapeforge/workspace.py)、[runner.py](../../../src/omi_shapeforge/runner.py)、[workflows.py](../../../src/omi_shapeforge/workflows.py)。控制层仅依赖标准库。
 
 ```text
 omi-shapeforge [--config CONFIG] doctor
 omi-shapeforge [--config CONFIG] smoke {stereo,bundlesdf} [--output OUTPUT]
+omi-shapeforge [--config CONFIG] simulate mujoco [--scene SCENE] [--steps STEPS] [--output OUTPUT]
 omi-shapeforge --version
 ```
 
-`--config` 是顶层参数，放在子命令前。当前没有 `simulation`、`register`、`blender` 或硬件 CLI 子命令。
-
-ENG-002 已定版[运行合同 v1](run-contract.md)，但没有接入此 CLI；现有输出、路径和退出规则仍如下所述。
+`--config` 是顶层参数，须放在子命令前。当前没有 Isaac、配准、Blender 或硬件控制子命令。默认 MuJoCo 场景来自 `simulations.mujoco.scene`，当前模板指向已有 2×2 场景。
 
 ## doctor
 
-输出 JSON，路径检查全部为真则退出 0，否则 1。检查项为：后端目录、可执行 Python、入口脚本；stereo 另检查 checkpoint 文件，bundlesdf 另检查 nvcc 文件。Git HEAD、状态和哈希记录在 `backends`。
+只检查配置中的路径与可执行解释器。两个后端检查 repository、python、entrypoint，stereo 另查 checkpoint，bundlesdf 另查 nvcc；已配置的 MuJoCo 检查 python、entrypoint 和 scene。全部存在则 ready=true、退出 0，否则退出 1。Git 来源读取失败单独记录，不改变路径就绪结论。
 
-它不导入后端，不检查 CUDA 运算、动态库、模型内容哈希、Blender、仿真或机器人资产。Git 读取错误会进入 `backends.*.error`，不会单独改变 `ready` 的路径判定。
+不检查全部动态库、场景传递依赖、GPU 运算、模型或机器人能力。工作流执行时会进一步读取实际输入和引用文件。
 
-## smoke
+## smoke 与 simulate
 
-只要求所选后端的路径检查通过；为两个后端配置建立独立子进程，避免 shell 字符串拼接。默认使用 UTC 时间新目录，已有输出拒绝。标准输出为主项目运行清单；后端日志进入文件。
+ENG-003 已接入[运行合同 v1](run-contract.md)。保留原两个 smoke 调用形式，但新输出布局为 `run_manifest.json`、`run.log`、`inspection.log` 和 `backend/`；后端原始 report／图像／数组写在 backend 中。输入、源码和产物记录路径及哈希，MuJoCo 另写 `inputs.json` 保存场景依赖集合。
 
-`returncode != 0` 为失败；零退出码还要读取 `report.json` 并匹配状态。缺报告、坏 JSON 或状态不符也不能通过。目录和初始清单写入后，后端调用及报告检查阶段会在 finally 中补记结束状态；若创建目录或初次写清单本身失败，可能没有完整记录。CLI 捕获常见配置／文件错误退出 1；用户中断等异常可能仍显示 traceback。
+输出目录必须尚不存在；指定 `--output` 便于定位。省略时在配置的 run_directory 下创建 UTC 时间与随机后缀目录，终端清单的 `execution.command` 包含实际 backend 输出位置。
 
-## Python 边界
+新清单不再提供旧的顶层 `status/returncode/output/config`。执行状态在 `execution`，产物检查在 `validation`，任务验收在 `acceptance`；参数在 `parameters`，版本在 `sources/environment`。只有三项均通过才返回 0。
 
-`load_config(path)` 解析配置，`doctor(config)` 只读诊断，`run_smoke(config, name, output)` 有进程与文件副作用，返回运行清单；`git_snapshot()` 生成来源快照。这些是当前内部控制层函数，尚未定义稳定的第三方 Python API。
+退出码：0=通过，1=工作流执行或检查失败，2=命令参数、配置读取或输出目录等调用错误，130=用户中断。任务准备开始后发现输入缺失，会保留 failed 清单并返回 1。已有输出目录拒绝时不写入该目录。
 
-直接仿真脚本的真实参数见对应[教程](../../../tutorials/README.md)，它们不读取主 CLI 配置，也不自动生成同一套 `run_manifest.json`。
+原始进程返回 0 但缺报告、报告不符、文件越界或内容错误，execution 仍为 succeeded，validation 为 failed，acceptance 不求值。检查器在对应环境解码数组／图片／点云及 MuJoCo 状态；控制器核对必需文件、哈希与边界。结果写入 `backend/inspection.json`。
+
+Ctrl+C 会向所拥有的进程组发送中断；无响应时终止并回收，保存终态。若后端处理中断后实际退出 0，则保留该真实进程结果，但不执行验收，CLI 仍返回 130。SIGKILL／断电可能留下 running 记录，不能据此判断完成。
+
+## Python 与范围
+
+`load_config()`、`doctor()` 和 `run_smoke()` 保留；后者现在返回 v1 字典。`workflows.launch()` 为三个流程准备命令与输入，`runner.run_task()` 管理进程和记录。这些仍是项目内部 API。
+
+MuJoCo 接口只验收当前生成的自由刚体光模块原型，不是通用机器人场景验收器。Blender、Isaac、便携配准仍按独立脚本教程运行。旧报告继续原样保存，批量转换器尚未实现。

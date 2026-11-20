@@ -219,8 +219,14 @@
       "part_name_and_highlight": true,
       "narrow_viewport_no_overflow": true,
       "javascript_errors": 0,
-      "runtime_external_network_requests": false,
-      "note": "Local Chromium preview tested; host inline rendering may differ."
+      "note": "Local Chromium preview tested; host inline rendering may differ.",
+      "rotation": true,
+      "wheel_zoom": true,
+      "shift_drag_pan": true,
+      "fragment_external_dependencies": false,
+      "preview_wrapper_resource_hosts": [
+        "unpkg.com"
+      ]
     }
   }
 }

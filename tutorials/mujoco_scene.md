@@ -1,6 +1,16 @@
 # MuJoCo 离屏运行
 
-前提：独立 simulation 环境准备好，场景及相邻 `meshes/` 完整。下面是直接 Python 文件入口，不是主 CLI 子命令。
+前提：独立 simulation 环境准备好，场景及相邻 `meshes/` 完整。推荐通过统一运行层调用：
+
+```bash
+.venv/bin/omi-shapeforge simulate mujoco --steps 240
+.venv/bin/omi-shapeforge simulate mujoco \
+  --scene /data/omi_runtime/assets/optical_scene_v2_20261120/scene.xml --steps 240
+```
+
+第一条使用配置中的 2×2 场景，第二条选择单模块。可用 `--output` 指定尚不存在的目录；运行层保存 v1 清单和日志，图像、轨迹、原报告及独立检查结果位于 `backend/`。检查器从保存的末态重新计算碰撞体底部高度、落差和接触，并记录到 `backend/inspection.json`。仅适用于本项目生成的自由刚体光模块原型。
+
+以下直接 Python 入口仍可用于调试；它保持旧输出布局，不自动生成 v1 外层记录：
 
 ```bash
 RUNTIME_ROOT=/data/omi_runtime

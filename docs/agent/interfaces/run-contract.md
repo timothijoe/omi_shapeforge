@@ -1,6 +1,6 @@
 # 运行与产物合同 v1
 
-ENG-002 于 2026-11-20 定版。此页规定后续共用运行层的接口；当前 CLI 仍输出[原格式](data-formats.md)，尚未接入 v1。Schema、流程要求和示例见 [contracts/v1](../../../contracts/v1/README.md)。本轮不修改已有报告或后端入口。
+ENG-002 于 2026-11-20 定版，ENG-003 已将两个 smoke 与 MuJoCo CLI 接入此合同，三项实际运行验证见[证据清单](../../../manifests/workflow_validation_20261120.json)。Schema、流程要求和示例见 [contracts/v1](../../../contracts/v1/README.md)。已有历史报告和后端入口保持原样；旧格式转换规则仍为待实现的迁移约定。
 
 ## 1. 文件布局与职责
 
@@ -61,7 +61,7 @@ ENG-002 于 2026-11-20 定版。此页规定后续共用运行层的接口；当
 | 文件和限定任务检查均通过 | succeeded | passed | passed |
 | 旧报告仅包含 passed 字符串 | unknown，returncode=null | not_evaluated | not_evaluated |
 
-验收只有在进程成功且产物检查通过后才能求值。旧资料可以独立重验文件，但在进程事实未知时不能声明整个任务通过。未来 CLI 成功退出要求三项均通过；建议统一退出码 0=通过、1=运行／检查未通过、2=参数或配置无效、130=用户中断。这里是 ENG-003 的目标行为，当前 CLI 退出规则不变。
+验收只有在进程成功且产物检查通过后才能求值。旧资料可以独立重验文件，但在进程事实未知时不能声明整个任务通过。当前 CLI 成功退出要求三项均通过；退出码 0=通过、1=运行／检查未通过、2=参数、配置读取或输出目录调用错误、130=用户中断。若后端在收到中断后自行退出 0，保留其真实 succeeded／0，但 validation 和 acceptance 不求值，CLI 仍返回 130，原因保存在 limitations。
 
 每个 check 记录 `id/status/method/expected/observed/evidence`。expected 是事先定义的要求；observed 是观测值及单位，未执行可为 null；evidence 引用 inputs／artifacts／legacy.documents 中的文件 ID。通过项必须有观测和证据。失败项可以没有文件证据，例如报告缺失，但要说明方法和观察到的缺失。
 
@@ -86,7 +86,7 @@ ENG-002 于 2026-11-20 定版。此页规定后续共用运行层的接口；当
 | smoke.bundlesdf／bundlesdf_components | LoFTR 匹配为有限 N×5，N≥10 且与报告一致；图像缩放为 640×448；哈希编码及梯度、SO(3)、CUDA KNN 及梯度、Warp 状态通过，Kaolin 输出非空；`component_checks` 引用这些断言的报告与匹配文件 | 完整视频跟踪、融合或 textured mesh |
 | simulation.mujoco／mujoco_load_step_render_settle | 输入场景及全部依赖明确，步数和模块数一致，图像解码与状态有限；`fall_contact_settle` 检查每个模块落差>0.01 m、有末态接触、碰撞底部≥−0.001 m、max(abs(qvel))≤0.05，沿用现有原型阈值。`max(abs(qvel))` 混合线速度和角速度，必须注明此限制 | 实测质量／摩擦／惯量、真实夹持插接、校准物理精度 |
 
-当前 MuJoCo 报告未完整输出每个碰撞体的底部高度，旧报告只能说明原脚本的断言通过；独立重新验收需保留并检查源脚本／场景，或在 ENG-003 补充可直接读取的量。不能从 report.status 伪造原报告没有的测量值。场景附带的 `physical_accuracy_validated=false` 必须保留。
+当前 MuJoCo 报告未完整输出每个碰撞体的底部高度，旧报告只能说明原脚本的断言通过；ENG-003 的独立检查器会从保存的末态和原场景重新计算各碰撞体底部高度、落差和接触，并写入 backend/inspection.json；不改旧 report。不能从 report.status 伪造原报告没有的测量值。场景附带的 `physical_accuracy_validated=false` 必须保留。
 
 Isaac、Blender、场景生成与配准本轮仅制定兼容规则，不注册已支持的 v1 流程。未来添加流程必须一起提交明确 scope、输入、产物、单位、判据和成功／失败示例。
 
@@ -106,11 +106,11 @@ Isaac、Blender、场景生成与配准本轮仅制定兼容规则，不注册�
 
 字段名、语义或必需字段变化需要新 schema_version；现有 v1 拒绝未声明字段。新增流程可扩展 profiles，但不能修改已有流程的 scope 或阈值来让历史失败变成通过；此类变化需要新合同版本。
 
-## 7. ENG-003 接入检查表
+## 7. ENG-003 接入范围
 
 1. 保留目前两个 smoke 的 CLI 调用形式，公共运行层输出 v1；后端仍输出原始报告，避免同时改三个仓库。
 2. 所有新运行采用新根目录及未预建的 backend 子目录，处理失败、中断、重复输出路径和原子写入。
 3. 进程、产物和验收分别计算；文件检查包含符号链接边界、真实内容与来源，不只运行 Schema 校验。
 4. 明确解码职责：重型数组／图像检查在对应环境运行，主控制层保持标准库依赖；将检查结果与输入哈希关联。
 5. 先迁移两个 smoke，再接 MuJoCo；在各实际环境验证并保存新报告，已有历史报告原样保留。
-6. 与实现同步更新 CLI 文档、教程和能力事实；本合同的存在不代表上述运行层已经完成。
+6. 本轮上述三项新运行、14 项控制层测试及 v1 结构检查通过；CLI、教程与能力事实同步。Isaac、旧报告转换和自动 CI 仍未接入，不能据此扩大验收范围。

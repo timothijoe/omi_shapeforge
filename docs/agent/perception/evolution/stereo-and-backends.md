@@ -2,7 +2,7 @@
 
 ## 架构和入口
 
-`src/omi_shapeforge/workspace.py` 读取工作区 TOML，选定后端解释器，以参数列表启动独立 Python 进程。标准输出与错误写 `run.log`，实际版本写 `run_manifest.json`；零退出码仍须有正确状态的 `report.json` 才能通过。
+`workspace.py` 读取 TOML，`workflows.py` 准备输入与后端命令，`runner.py` 管理独立进程和 v1 记录。标准输出与错误写 `run.log`，原 report 及数组位于 backend/；零退出码还需文件、哈希、内容与限定任务指标通过。检查器在后端环境运行，控制层仍只用标准库。
 
 | 主入口 | 后端实际入口 | 结果范围 |
 | --- | --- | --- |
@@ -29,7 +29,7 @@ BundleSDF 适配了现代 PCL 指针、头文件、pybind11 与 CUDA 构建，�
 
 ## 已知限制
 
-ENG-002 已定版[运行合同 v1](../../interfaces/run-contract.md)及两个 smoke 的输入／产物要求，离线示例检查通过；目前尚未接入 `run_smoke`，原 CLI 输出与检查行为不变。公共运行层与实际内容校验由 ENG-003 实现。
+ENG-003 已接入[运行合同 v1](../../interfaces/run-contract.md)，两项新 smoke 的进程、产物和验收均通过，v1 清单也通过离线结构与关系检查；见[运行验证](../../../../manifests/workflow_validation_20261120.json)。双目仍为 470,018 点，LoFTR 仍为 2,893 组匹配；没有扩展到完整重建。旧格式批量转换器尚未实现。
 
 该阶段没有重新运行旧光模块的原始左右 IR／全部录制，没有外部深度真值比较，也没有完成官方 BundleSDF 视频在线跟踪与 textured mesh 全链路。组件成功不能推导这些能力已通过。旧机 PyTorch 2.7.1+cu128 的恢复结果属于原交接背景。
 

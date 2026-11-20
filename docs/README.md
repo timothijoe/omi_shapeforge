@@ -7,7 +7,7 @@
 - [资产与可视化目录](visual-results.md)：代表图、模型源文件及全部历史图册。
 - [光模块资产版本](asset-versions.md)：OM-001 的四份模型版本与四个场景实例命名。
 - [源码基线](design/source-baseline.md)：本地版本、bundle 恢复步骤及对应验证。
-- [统一运行合同 v1](agent/interfaces/run-contract.md)：字段、产物、验收与旧报告兼容规则；当前运行层尚未接入。
+- [统一运行合同 v1](agent/interfaces/run-contract.md)：字段、产物、验收与旧报告兼容规则；两个 smoke 与 MuJoCo 已接入；见对应运行验证。
 - [全部进展交接快照](chronicles/2026-11-20-workspace-handoff.md)：仓库、环境、数据、复现、仿真、机器人、证据位置和待办。
 - [跨领域阶段记录](chronicles/README.md)：保留全局交接历史，后续现状仍看 current。
 - [能力总表](capabilities.md)：已实现、已验证、待验证和缺少资源的区别。

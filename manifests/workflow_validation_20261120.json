@@ -1,0 +1,91 @@
+{
+  "task": "ENG-003",
+  "recorded_utc": "2026-11-20T02:27:52.333574+00:00",
+  "code_head": "a432caee2850174e66cbfcd2f7522a3d1898e4d5",
+  "control_tests": {
+    "count": 14,
+    "status": "passed",
+    "log": "/data/omi_runtime/runs/eng003_validation_20261120T022610Z/control_tests.log"
+  },
+  "contract_checks": {
+    "status": "passed",
+    "examples": 11,
+    "negative_cases": 27,
+    "additional_records": 3,
+    "errors": [],
+    "scope": "Schema and cross-field checks only; no runtime/file validation."
+  },
+  "workflows": {
+    "stereo": {
+      "workflow": "smoke.stereo",
+      "run_directory": "/data/omi_runtime/runs/eng003_validation_20261120T022610Z/stereo",
+      "manifest_sha256": "46910666d4a5fc5fdc9f36b0aff29c1c77de8c0149ea23daa26e3c5e0f5c6dfb",
+      "report_sha256": "1cfad84b15fff6ce29b626202ed186467624ac8591f37b7bf259dd34e745d7d5",
+      "inspection_sha256": "d6fe1bee8d502cef616a10e4674a4ea173baa477d3ea7d2dc7837f928eecbed0",
+      "source_revisions": [
+        "a432caee2850174e66cbfcd2f7522a3d1898e4d5",
+        "e46fa7098730674bfc9f96047b4d2ffe9a87e1b4"
+      ],
+      "execution": "succeeded",
+      "validation": "passed",
+      "acceptance": "passed",
+      "scope": "official_stereo_sample",
+      "metrics": "{\"point_count\": 470018, \"image_shape\": [540, 960, 3]}"
+    },
+    "bundlesdf": {
+      "workflow": "smoke.bundlesdf",
+      "run_directory": "/data/omi_runtime/runs/eng003_validation_20261120T022610Z/bundlesdf",
+      "manifest_sha256": "85bcb8eef7e1861e185407f1452186dba40bc03e10b60b9e6945476f25559a2d",
+      "report_sha256": "fe77e0c05d594393fd2a672325bb8a9a450ec7d66f067384790b6f3201ca9883",
+      "inspection_sha256": "e32f469f566926ecfc24510c47d54d8e2c379797ca6343bd3857cee266aa3844",
+      "source_revisions": [
+        "a432caee2850174e66cbfcd2f7522a3d1898e4d5",
+        "b1a55878264e8c28841507bb578835c94a63d475"
+      ],
+      "execution": "succeeded",
+      "validation": "passed",
+      "acceptance": "passed",
+      "scope": "bundlesdf_components",
+      "metrics": "{\"matches\": 2893, \"component_checks\": {\"hash_grid_forward_backward\": \"passed\", \"so3_roundtrip\": \"passed\", \"pytorch3d_cuda_knn_forward_backward\": \"passed\", \"warp_cuda_kernel\": \"passed\"}}"
+    },
+    "mujoco": {
+      "workflow": "simulation.mujoco",
+      "run_directory": "/data/omi_runtime/runs/eng003_validation_20261120T022610Z/mujoco",
+      "manifest_sha256": "d4424e13853e414da9245995bac6078d9bdee09716b492b9c3316e0ba0cccc0c",
+      "report_sha256": "74e97bb6705b34054ddad9b27304a31bf91c69983179af689bb3def207e4dcc1",
+      "inspection_sha256": "b186d3d4cd9e45c32c9e781f29e927f91a788b49690f9ae1971e48976dca5c78",
+      "source_revisions": [
+        "a432caee2850174e66cbfcd2f7522a3d1898e4d5",
+        "a432caee2850174e66cbfcd2f7522a3d1898e4d5"
+      ],
+      "execution": "succeeded",
+      "validation": "passed",
+      "acceptance": "passed",
+      "scope": "mujoco_load_step_render_settle",
+      "metrics": "{\"bottom_z_m\": [-0.00021551084047224337, -0.00021551084047224337, -0.00021551084047224337, -0.00021551084047224337], \"drop_m\": [0.05129638437447224, 0.05129638437447224, 0.05129638437447224, 0.05129638437447224], \"final_contact\": [true, true, true, true], \"max_abs_qvel_mixed_units\": 5.540119482848856e-13}"
+    }
+  },
+  "existing_algorithms_modified": false,
+  "legacy_reports_modified": false,
+  "legacy_conversion_implemented": false,
+  "limitations": [
+    "Existing GPU environments and native extensions, not a clean rebuild.",
+    "Simulation limited to generated free-body optical module prototype.",
+    "No Isaac RTX, robot integration, training or hardware control.",
+    "Legacy conversion remains an explicit future migration; existing reports are preserved."
+  ],
+  "negative_inspection_checks": {
+    "corrupt-depth": {
+      "valid": false,
+      "accepted": false,
+      "inspection": "/data/omi_runtime/runs/eng003_validation_20261120T022610Z/negative-inspection/corrupt-depth/backend/inspection.json",
+      "scope": "Injected artifact mutation in a separate copied run; not a new backend experiment."
+    },
+    "unsettled-state": {
+      "valid": true,
+      "accepted": false,
+      "inspection": "/data/omi_runtime/runs/eng003_validation_20261120T022610Z/negative-inspection/unsettled-state/backend/inspection.json",
+      "scope": "Injected artifact mutation in a separate copied run; not a new backend experiment."
+    }
+  }
+}

@@ -1,12 +1,12 @@
 # 数据格式、坐标与单位
 
-本页描述当前实现。后续统一记录使用[运行与产物合同 v1](run-contract.md)，已完成规范和离线示例检查，尚未改变下面的实际输出格式。
+当前 smoke 和 MuJoCo CLI 已使用[运行与产物合同 v1](run-contract.md)。下文同时说明旧文件语义，旧报告保持原样。
 
 ## 主项目实验
 
-`run_manifest.json` 保存 workflow、status、命令列表、解析后的配置、输出路径、Git 来源及起止时间。正常进程返回有 returncode；启动异常或中断可能只有 error。来源中的 tracked diff 哈希与入口脚本哈希不包含完整未跟踪文件内容，不能替代提交或备份。
+新 `run_manifest.json` 保存 schema_version=1、workflow、execution、inputs、artifacts、sources、environment、validation、acceptance 等字段。执行、产物与验收结果独立，原始后端报告与数组位于 `backend/`；记录实际版本、输入／输出哈希和起止时间。字节哈希不能替代源码备份，也不单独证明产物语义。
 
-后端 `report.json` 状态分别为 `passed_real_gpu_stereo_inference`、`passed_cuda_kernels_cpp_bindings_and_real_loftr_matching`。控制器只强制检查状态字段，没有完整 JSON Schema 验证。
+历史无版本运行清单中的顶层 status／returncode／config／output 保留原义，不用于直接解析新运行。两个后端原 report.status 字符串保持不变；新运行层同时检查文件边界、哈希并在后端环境实际解码内容，结果写入 backend/inspection.json。结构示例校验器仍是独立开发工具，不是控制层的 JSON Schema 运行依赖。
 
 双目 `disparity.npy` 是像素视差，`depth_meter.npy` 是米制深度，`cloud.ply` 是输入相机坐标下的点云；`vis.png` 是图像／视差拼图。预览工具可使用 `(x,z,-y)` 方便展示，不修改 PLY 的原坐标。
 

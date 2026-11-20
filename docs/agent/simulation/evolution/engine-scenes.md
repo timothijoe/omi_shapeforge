@@ -14,6 +14,8 @@
 
 单模块与 2×2 方阵均通过本机运行。最新方阵报告绑定脚本与 XML 哈希，见[仿真验证索引](../../../../manifests/simulation_validation.json)。测试阈值只服务原型运行检查，不是精细接触精度标准。
 
+ENG-003 新增 `omi-shapeforge simulate mujoco`，默认读取配置中的 2×2 场景，支持显式 scene／steps／output。公共运行层保存输入依赖与新清单，独立检查器重读末态并计算各碰撞体底部、落差、接触和速度。2×2 的 240 步实际运行及三层结果通过，见[工作流验证](../../../../manifests/workflow_validation_20261120.json)。仍只支持本项目生成的自由刚体光模块原型，未据此验收通用机器人场景。
+
 ## Isaac Sim
 
 当前验证使用已安装的 Isaac Sim 5.1.0 自带 Python，显式加载本地 PhysX／USD 扩展并关闭扩展注册表下载。CPU PhysX 阶段直接 attach USD stage、simulate／fetch results，并把变换回写到 USD；不依赖 RTX 渲染器或机器人框架。
