@@ -1,23 +1,36 @@
-# 当前状态
+# 当前总览
 
-初始化日期：2026-11-19。
+核对日期：2026-11-20。依据当前工作树、资源位置和已保存验证报告更新；本轮只做文档、元数据和只读检查，未重跑推理、物理批次或训练。
 
-主项目骨架已建立，包括 Python 包、命令入口、同级后端配置、Git 来源记录、独立运行目录和调度测试。已关联 GitHub 远端 `git@github.com:timothijoe/omi_shapeforge.git`；`main` 只保留空提交，代码在 `dev`，后续功能在新建开发分支中迭代。
+完整交接见[当前全部进展快照](chronicles/2026-11-20-workspace-handoff.md)，具体能力以领域纪传体为准。
 
-主项目入口已通过实际验证：`doctor` 检查通过，`smoke stereo` 和 `smoke bundlesdf` 均成功调用各自 GPU 环境并保存有效报告。4 项控制层测试通过，覆盖已有结果保护、失败记录、缺失结果报告及配置路径处理。验证记录见 `../manifests/initial_validation.json`。
+## 已完成范围
 
-此前已验证的本机基础能力：
+| 领域 | 当前已验证状态 | 详细入口 |
+| --- | --- | --- |
+| 项目基础 | 本地 Git 与公开远端建立；main 空分支；主 CLI、两种 smoke 及控制层测试有记录 | [架构](design/project-architecture.md) · [CLI](agent/interfaces/cli.md) |
+| 感知 | 官方双目与原生组件检查、已圈选目标 CPU 配准、V2 冻结几何回放通过 | [领域摘要](agent/perception/current.md) · [双目](agent/perception/evolution/stereo-and-backends.md) · [配准](agent/perception/evolution/confirmed-registration.md) |
+| 数据与恢复 | 00–05 及 OMI／portable／quick 共 9 包均已校验解压，两个 data／DATA 目录完整恢复 | [数据与回放](agent/perception/evolution/data-and-replay.md) · [解压索引](../manifests/extracted_archives.json) |
+| 仿真 | Blender 模型与导出、单模块／2×2 的 MuJoCo 渲染及 PhysX CPU 测试通过 | [领域摘要](agent/simulation/current.md) · [资产](agent/simulation/evolution/asset-pipeline.md) · [场景](agent/simulation/evolution/engine-scenes.md) |
+| 机器人资源 | 模型、网格与夹爪 URDF 已到达；MuJoCo 3.15 静态编译、预检和渲染通过 | [机器人资产](agent/simulation/evolution/robot-assets.md) |
 
-- FoundationStereo 官方 960×540 样例成功，输出约 47 万个点；两次视差和深度数组一致。
-- BundleSDF 的 C++ 绑定、CUDA 射线采样、哈希编码与梯度、PyTorch3D CUDA 最近邻、Kaolin 八叉树、Warp GPU 内核通过检查；LoFTR 得到 2,893 组匹配。
-- 项目 EGL 离屏渲染和两套 GPU 环境的依赖检查通过。
+## 当前状态边界
 
-这些结果的原始报告保存在 `/data/omi_runtime/runs/`。由主项目调度生成的新报告位于 `/data/omi_runtime/runs/omi_shapeforge/`，每次运行单独记录配置与版本。
+数据恢复完成与算法全链路复现是不同状态。光模块真实录制尚未在本机重新执行完整双目／59 帧尺寸／在线重建流程；组件检查、条件配准或冻结几何回放不能替代这些验收。
 
-2026-11-20 已收到光模块 portable/quick 两包。哈希校验通过，便携包的已圈选目标刚体配准在当前机器实际重跑并通过独立检查，检查点中位数约 0.148 mm、P90 约 0.731 mm，与旧参考一致；这些是表面残差，不是实物位姿真值误差。报告位于 `/data/omi_runtime/runs/optical_portable_20261120_001316/inspection_report.json`。
+机械臂与夹爪资源已齐，但尚未组合到光模块场景；当前碰撞是包围盒，质量／摩擦为假设。Isaac RTX、GUI 交互、实物位姿精度、夹持／插接及真机动作均未验收。
 
-Blender 4.5.16 LTS 已安装，四份模型的后台重开与内嵌资源检查通过，当前连通槽模型已完成一张后台渲染。已导出 15 个可视部件，并生成同源的单模块及 2×2 光模块场景。MuJoCo 3.3.7 的加载、240 步刚体落台及离屏渲染通过；Isaac Sim 5.1.0 的本地 USD 加载和 PhysX CPU 落台通过，未验证 Isaac RTX 渲染。入口、版本和物理简化见 [Blender 与仿真原型](simulation.md)，结果索引见 `../manifests/simulation_validation.json`。
+04 的 Python 3.11.18／Torch 2.7.1+cu128 原环境已恢复，但未执行 conda-unpack 或兼容性验收；当前 envs 中已验证的开发环境保持不变。OMI 包的完整逐样本／Actor 校验、BC／RL 重新训练也未执行。
 
-已核对同级 `omi_proj` 的文档与资源清单，但机械臂/夹爪的 Git 外 `local/` 资源尚未出现在本机相应目录，见 `../manifests/robot_assets.json`。当前仿真未接入这些真实机器人资产。
+主命令只有 doctor 和两种 smoke；doctor 的 ready 只代表路径检查。便携配准和仿真仍走独立脚本，详见[能力表](capabilities.md)和[教程](../tutorials/README.md)。
 
-尚未完成的工作：完整 59 帧尺寸重估、真实视频完整跟踪与重建、旧自定义工程的迁入，以及机器人/真实夹具接入。完整工程仍需 01 包，后续原始数据实验还需要 02、03 数据包。
+## 当前工作与下一步
+
+当前位于 `docs/project-knowledge-base`，基于已提交的仿真代码；本轮文档和资源元数据未 commit、未 push。两个算法仓库仍有本地未提交适配，不能仅靠远端 HEAD 恢复当前实现。
+
+1. 先保存后端适配的可共享代码版本，再按已恢复数据做单阶段路径适配和复验。
+2. 选择机器人／工具配置，核对轴、TCP、限位、惯量、夹具与精细碰撞，然后接入当前场景。
+3. 分别推进完整重建、Blender 生成、Isaac RTX／GUI 和 OMI Actor／数据合同检查，保留每项独立证据。
+4. 历史环境是否需要启用单独决定，不作为继续使用当前环境的前置条件。
+
+进展形成过程见[全局快照](chronicles/README.md)、[感知编年](agent/perception/chronicles/README.md)和[仿真编年](agent/simulation/chronicles/README.md)。

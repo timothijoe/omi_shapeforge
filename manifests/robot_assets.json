@@ -12,28 +12,50 @@
     {
       "id": "marvin_mjcf",
       "relative_path": "local/assets/robot_assets/mujoco/right_chopping_scene.xml",
-      "present_on_this_machine": false,
-      "purpose": "Full MuJoCo dual-arm scene; requires adjacent meshes and referenced hand assets."
+      "present_on_this_machine": true,
+      "purpose": "Full MuJoCo dual-arm scene; requires adjacent meshes and referenced hand assets.",
+      "resolved_path": "/data/omi_runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/assets/robot_assets/mujoco/right_chopping_scene.xml"
     },
     {
       "id": "marvin_meshes",
       "relative_path": "local/assets/MarvinCCS",
-      "present_on_this_machine": false,
-      "purpose": "Meshes referenced by the MJCF; preserve adjacency to robot_assets."
+      "present_on_this_machine": true,
+      "purpose": "Meshes referenced by the MJCF; preserve adjacency to robot_assets.",
+      "resolved_path": "/data/omi_runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/assets/MarvinCCS"
     },
     {
       "id": "stand_urdf",
       "relative_path": "local/models/omi_marvin_stand_axis_corrected_v1",
-      "present_on_this_machine": false,
-      "purpose": "Derived visualization URDF plus meshes/source/provenance; not calibrated robot physics."
+      "present_on_this_machine": true,
+      "purpose": "Derived visualization URDF plus meshes/source/provenance; not calibrated robot physics.",
+      "resolved_path": "/data/omi_runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/models/omi_marvin_stand_axis_corrected_v1"
     },
     {
       "id": "vendor_gripper_resources",
       "relative_path": "local/vendor/optical_module_pu",
-      "present_on_this_machine": false,
-      "purpose": "Original vendor bundle may contain robot/gripper model resources; exact model files still require inspection."
+      "present_on_this_machine": true,
+      "purpose": "Original vendor bundle may contain robot/gripper model resources; exact model files still require inspection.",
+      "resolved_path": "/data/omi_runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/vendor/optical_module_pu"
     }
   ],
   "tracked_surrogate": "src/omi_hil_rl/sim/assets/tianji_7dof_surrogate.xml",
-  "surrogate_note": "Available interface-test fixture; does not represent the real robot or gripper."
+  "surrogate_note": "Available interface-test fixture; does not represent the real robot or gripper.",
+  "restored_from": "omi_transfer_20261120_004618.tar.gz",
+  "current_validation": "transfer_validation.json",
+  "full_vendor_urdfs": [
+    {
+      "path": "/data/omi_runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/vendor/optical_module_pu/source/OpticalModule_PU/omi_ws/src/marvin_stand_viz/urdf/marvin_stand.urdf",
+      "links": 27,
+      "joints": 26,
+      "prismatic_finger_joints": 4,
+      "missing_mesh_references": 0
+    },
+    {
+      "path": "/data/omi_runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/vendor/optical_module_pu/source/OpticalModule_PU/omi_ws/Marvin_Stand_2026.2.2/urdf/Marvin_Stand_2026.2.2.urdf",
+      "links": 27,
+      "joints": 26,
+      "prismatic_finger_joints": 4,
+      "missing_mesh_references": 0
+    }
+  ]
 }

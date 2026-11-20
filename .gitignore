@@ -19,3 +19,10 @@ outputs/
 *.pth
 *.ckpt
 *.so
+
+# Large local resources; keep small source templates in explicit tracked locations.
+/local/
+/assets/
+/cache/
+/logs/
+/tools/

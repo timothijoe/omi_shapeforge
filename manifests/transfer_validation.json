@@ -1,0 +1,280 @@
+{
+  "recorded_utc": "2026-11-19T18:06:46.626726+00:00",
+  "reconstruction_archive": {
+    "status": "passed_archive_size_and_sha256",
+    "archive": "/data/nov_19_folder/01_projects_and_results.zip",
+    "bytes": 16061655389,
+    "sha256": "0dd0e14bcf53532147d4e3077ca41f8709a572b1d01b8fe99f4d3283174e1b89",
+    "seconds": 24.40207503736019
+  },
+  "reconstruction_restore": {
+    "mode": "restore",
+    "started_unix": 1795111018.8363888,
+    "archives": [
+      {
+        "name": "01_projects_and_results.zip",
+        "files": 81042,
+        "uncompressed_bytes": 24900073040,
+        "status": "passed"
+      }
+    ],
+    "files": 81042,
+    "bytes": 24900073040,
+    "status": "passed",
+    "finished_unix": 1795111169.256354
+  },
+  "omi_archive": {
+    "status": "extracted_and_gzip_crc_passed",
+    "archive": "/data/nov_19_folder/omi_transfer_20261120_004618.tar.gz",
+    "archive_bytes": 1621219931,
+    "archive_sha256": "aa2f86ae3f00c8cfaeb2b429326ae8248cfcde2decfc9c3e91c88e7f4956d765",
+    "destination": "/data/omi_runtime/baselines/omi_transfer_20261120_004618",
+    "files": 7362,
+    "uncompressed_file_bytes": 1811525581,
+    "seconds": 9.625181979499757
+  },
+  "omi_file_verification": {
+    "status": "passed_all_packaged_file_sha256_and_source_manifest",
+    "root": "/data/omi_runtime/baselines/omi_transfer_20261120_004618",
+    "checksum_files_verified": 7361,
+    "source_files_verified": 7321,
+    "verified_bytes": 1809993077,
+    "seconds": 3.0400196546688676,
+    "notes": "Compared relative packaged paths only; old absolute source strings were not read. No hardware, policy inference or training executed."
+  },
+  "v2_geometry_replay": {
+    "status": "passed",
+    "source_verified": {
+      "files_verified": 64,
+      "manifest_sha256": "b504228b150bb6da9a04bfb8afd033fc897fc78e0fd523a018880d0f80535a0b",
+      "physical_accuracy_validated": false,
+      "accepted_version": 2
+    },
+    "coarse_parameterized_replay_max_m": 1.8322815174264785e-09,
+    "detailed_housing_replay_max_m": 1.7735398614526692e-09,
+    "dense_faces_identical": true,
+    "base_vertices_identical_within_m": 1e-12,
+    "new_scan_inference_rerun": false,
+    "scope": "Replay frozen geometry and saved surface displacement, not re-estimation from raw sensor videos."
+  },
+  "robot_scene_review": {
+    "status": "passed_robot_scene_compile_forward_and_offscreen_render",
+    "mujoco": "3.15.0",
+    "scene": "/data/omi_runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/assets/robot_assets/mujoco/right_chopping_scene.xml",
+    "nq": 41,
+    "nv": 40,
+    "bodies": 42,
+    "meshes": 37,
+    "joints": {
+      "left_joint1": 1,
+      "left_joint2": 2,
+      "left_joint3": 3,
+      "left_joint4": 4,
+      "left_joint5": 5,
+      "left_joint6": 6,
+      "left_joint7": 7
+    },
+    "actuators": {
+      "act_left_joint1": 0,
+      "act_left_joint2": 1,
+      "act_left_joint3": 2,
+      "act_left_joint4": 3,
+      "act_left_joint5": 4,
+      "act_left_joint6": 5,
+      "act_left_joint7": 6
+    },
+    "left_palm_tcp_m": [
+      0.0,
+      0.9804997018904658,
+      0.5196988283816965
+    ],
+    "note": "Static compile/forward and render only; no simulation steps, policy inference, training, ROS or hardware connection. Default scene includes a dexterous hand and cleaver; it is not certified as the current tactile-gripper setup."
+  },
+  "omi_preflight": {
+    "model_kind": "cooking_marvin_dual_arm_scene_A",
+    "arm": "A",
+    "scene": "/data/omi_runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/assets/robot_assets/mujoco/right_chopping_scene.xml",
+    "joints": [
+      "left_joint1",
+      "left_joint2",
+      "left_joint3",
+      "left_joint4",
+      "left_joint5",
+      "left_joint6",
+      "left_joint7"
+    ],
+    "actuators": [
+      "act_left_joint1",
+      "act_left_joint2",
+      "act_left_joint3",
+      "act_left_joint4",
+      "act_left_joint5",
+      "act_left_joint6",
+      "act_left_joint7"
+    ],
+    "tcp_site": "left_palm_tcp_site",
+    "joint_limits_rad": [
+      [
+        -3.11,
+        3.11
+      ],
+      [
+        -2.093,
+        2.093
+      ],
+      [
+        -3.11,
+        3.11
+      ],
+      [
+        -2.531,
+        1.047
+      ],
+      [
+        -3.11,
+        3.11
+      ],
+      [
+        -1.0467,
+        1.0467
+      ],
+      [
+        -1.57,
+        1.57
+      ]
+    ],
+    "initial_tcp_m": [
+      0.0,
+      0.9804996848106384,
+      0.5196987986564636
+    ],
+    "target_tcp_m": [
+      0.32999226450920105,
+      0.9022443890571594,
+      0.5196365118026733
+    ],
+    "initial_error_m": 0.33914420008659363,
+    "success_tolerance_m": 0.035,
+    "control_period_s": 0.1,
+    "max_joint_delta_rad": 0.04,
+    "note": "MJCF limits and dynamics are simulation parameters; verify physical hardware separately"
+  },
+  "urdf_reference_review": {
+    "status": "passed_urdf_mesh_reference_checks",
+    "models": [
+      {
+        "urdf": "/data/omi_runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/vendor/optical_module_pu/source/OpticalModule_PU/omi_ws/src/marvin_stand_viz/urdf/marvin_stand.urdf",
+        "links": 27,
+        "joints": 26,
+        "mesh_references": 54,
+        "missing_mesh_references": [],
+        "prismatic_finger_joints": [
+          {
+            "name": "Arm_R10_Joint",
+            "axis": "0 0 -1",
+            "limits": {
+              "lower": "0",
+              "upper": "0.04",
+              "effort": "30",
+              "velocity": "0"
+            }
+          },
+          {
+            "name": "Arm_R11_Joint",
+            "axis": "0 0 -1",
+            "limits": {
+              "lower": "0",
+              "upper": "0.04",
+              "effort": "30",
+              "velocity": "0"
+            }
+          },
+          {
+            "name": "Arm_L10_Joint",
+            "axis": "0 0 -1",
+            "limits": {
+              "lower": "0",
+              "upper": "0.04",
+              "effort": "30",
+              "velocity": "0"
+            }
+          },
+          {
+            "name": "Arm_L11_Joint",
+            "axis": "0 0 1",
+            "limits": {
+              "lower": "0",
+              "upper": "0.04",
+              "effort": "30",
+              "velocity": "0"
+            }
+          }
+        ]
+      },
+      {
+        "urdf": "/data/omi_runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/vendor/optical_module_pu/source/OpticalModule_PU/omi_ws/Marvin_Stand_2026.2.2/urdf/Marvin_Stand_2026.2.2.urdf",
+        "links": 27,
+        "joints": 26,
+        "mesh_references": 54,
+        "missing_mesh_references": [],
+        "prismatic_finger_joints": [
+          {
+            "name": "Arm_R10_Joint",
+            "axis": "0 0 -1",
+            "limits": {
+              "lower": "0",
+              "upper": "0.04",
+              "effort": "30",
+              "velocity": "0"
+            }
+          },
+          {
+            "name": "Arm_R11_Joint",
+            "axis": "0 0 -1",
+            "limits": {
+              "lower": "0",
+              "upper": "0.04",
+              "effort": "30",
+              "velocity": "0"
+            }
+          },
+          {
+            "name": "Arm_L10_Joint",
+            "axis": "0 0 -1",
+            "limits": {
+              "lower": "0",
+              "upper": "0.04",
+              "effort": "30",
+              "velocity": "0"
+            }
+          },
+          {
+            "name": "Arm_L11_Joint",
+            "axis": "0 0 1",
+            "limits": {
+              "lower": "0",
+              "upper": "0.04",
+              "effort": "30",
+              "velocity": "0"
+            }
+          }
+        ]
+      }
+    ],
+    "scope": "File references and joint declarations only; no calibrated kinematics, dynamics or grasping validation."
+  },
+  "omi_local_link": "../omi_proj/local",
+  "bc_dataset_metadata": {
+    "original_episodes": 9,
+    "segments": 41,
+    "training_samples": 1174,
+    "validation_samples": 325,
+    "action_dimensions": 6,
+    "gripper_action_enabled": false,
+    "bc6148_validation_split_is_independent_test": false
+  },
+  "full_actor_data_verifier_executed_on_this_machine": false,
+  "training_executed": false,
+  "hardware_connected": false,
+  "robot_in_optical_scene_integrated": false
+}

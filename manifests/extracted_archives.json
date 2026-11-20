@@ -1,0 +1,104 @@
+{
+  "checked_utc": "2026-11-20T01:16:15.234377+00:00",
+  "status": "all_currently_uploaded_archives_extracted",
+  "archives": [
+    {
+      "archive": "/data/nov_19_folder/00_migration_tools_and_manifests.zip",
+      "destination": "/data/nov_19_folder",
+      "content_root": "/data/nov_19_folder",
+      "status": "already_extracted_and_rechecked",
+      "files": 87
+    },
+    {
+      "archive": "/data/nov_19_folder/05_developer_handoff.zip",
+      "destination": "/data/nov_19_folder",
+      "content_root": "/data/nov_19_folder",
+      "status": "already_extracted_and_rechecked",
+      "files": 2
+    },
+    {
+      "archive": "/data/nov_19_folder/optical_module_portable_20261119.zip",
+      "destination": "/data/omi_runtime/inputs/optical_packages_20261120_001316",
+      "content_root": "/data/omi_runtime/inputs/optical_packages_20261120_001316/optical_module_portable_20261119",
+      "status": "already_extracted_and_rechecked",
+      "files": 63
+    },
+    {
+      "archive": "/data/nov_19_folder/optical_module_quick_20261119.zip",
+      "destination": "/data/omi_runtime/inputs/optical_packages_20261120_001316",
+      "content_root": "/data/omi_runtime/inputs/optical_packages_20261120_001316/optical_module_quick",
+      "status": "already_extracted_and_rechecked",
+      "files": 7
+    },
+    {
+      "archive": "/data/nov_19_folder/01_projects_and_results.zip",
+      "destination": "/data/omi_runtime/baselines/reconstruction_20261119",
+      "content_root": "/data/omi_runtime/baselines/reconstruction_20261119/workspace",
+      "status": "already_restored_and_rechecked",
+      "files_checked": 81042
+    },
+    {
+      "archive": "/data/nov_19_folder/omi_transfer_20261120_004618.tar.gz",
+      "destination": "/data/omi_runtime/baselines/omi_transfer_20261120_004618",
+      "content_root": "/data/omi_runtime/baselines/omi_transfer_20261120_004618/omi_proj",
+      "status": "already_restored_and_rechecked",
+      "files_checked": 7321
+    },
+    {
+      "archive": "/data/nov_19_folder/02_BundleSDF_trial_data.zip",
+      "destination": "/data/omi_runtime/baselines/reconstruction_20261119",
+      "content_root": "/data/omi_runtime/baselines/reconstruction_20261119/workspace/BundleSDF_trial/data",
+      "status": "restored_with_crc_and_per_file_sha256",
+      "files": 2121,
+      "uncompressed_bytes": 42219865535,
+      "report": "/data/omi_runtime/restored_02_data.json"
+    },
+    {
+      "archive": "/data/nov_19_folder/03_FoundationStereo_DATA.zip",
+      "destination": "/data/omi_runtime/baselines/reconstruction_20261119",
+      "content_root": "/data/omi_runtime/baselines/reconstruction_20261119/workspace/FoundationStereo/DATA",
+      "status": "restored_with_crc_and_per_file_sha256",
+      "files": 397,
+      "uncompressed_bytes": 45301285117,
+      "report": "/data/omi_runtime/restored_03_04.json"
+    },
+    {
+      "archive": "/data/nov_19_folder/04_foundation_stereo_linux_environment.zip",
+      "destination": "/data/omi_runtime/baselines/reconstruction_20261119",
+      "content_root": "/data/omi_runtime/baselines/reconstruction_20261119/environment_runtime/foundation_stereo",
+      "status": "restored_with_crc_and_per_file_sha256",
+      "files": 61829,
+      "uncompressed_bytes": 8978112319,
+      "report": "/data/omi_runtime/restored_03_04.json"
+    }
+  ],
+  "02_disk_file_size_checks": {
+    "files": 2121,
+    "bytes": 42219865535,
+    "representative_frames_decoded": [
+      "optical_0015",
+      "optical_0450",
+      "optical_0885"
+    ],
+    "temporary_files_remaining": false
+  },
+  "omi_local_link": "/data/omi_runtime/baselines/omi_transfer_20261120_004618/omi_proj/local",
+  "not_yet_uploaded": [],
+  "source_archives_retained": true,
+  "existing_git_repositories_overwritten": false,
+  "all_expected_migration_archives_restored": true,
+  "old_runtime": {
+    "location": "/data/omi_runtime/baselines/reconstruction_20261119/environment_runtime/foundation_stereo",
+    "conda_unpack_executed": false,
+    "compatibility_verified": false,
+    "used_as_default": false
+  },
+  "data03_04_disk_checks": {
+    "regular_file_sizes": "passed",
+    "runtime_links": 1154,
+    "dangling_links": 0,
+    "case_aliases": 1,
+    "representative_data_files_decoded": 7
+  },
+  "data_disk_free_bytes": 58648518656
+}

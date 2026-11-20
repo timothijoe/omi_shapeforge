@@ -8,3 +8,6 @@
 - The lightweight control environment is `.venv`. GPU workloads run in the separate environments selected by the workspace configuration.
 - Run `.venv/bin/python -m unittest discover -s tests -v` for orchestration changes. Validate changes to backend invocation with the relevant smoke workflow when the environment is available.
 - Keep `docs/current.md` aligned with actual validation. Distinguish official samples, component checks, frozen geometry replay and full reconstruction results.
+- Start documentation work at `docs/README.md` and `docs/agent/README.md`; operator procedures live in `tutorials/`.
+- Maintain capability facts in domain `evolution/` pages, summarize them in `current.md`, and append validated stages to `chronicles/`. Keep historical records and mark corrections with new evidence.
+- Use `manifests/resources.json` for resource provenance and restoration metadata; it is not an automatic downloader or runtime resolver. Preserve historical validation snapshots.

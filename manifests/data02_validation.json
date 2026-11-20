@@ -1,0 +1,339 @@
+{
+  "checked_utc": "2026-11-20T00:19:07.872552+00:00",
+  "status": "passed_migration_integrity_and_data_contract",
+  "archive_verification": {
+    "status": "passed_archive_size_and_sha256",
+    "archive": "/data/nov_19_folder/02_BundleSDF_trial_data.zip",
+    "bytes": 19292977368,
+    "sha256": "9641eec7babb03856f0b06b383cdac3b498ce826eacc4ab1ab93586ad4de9156",
+    "seconds": 30.218761974945664
+  },
+  "member_verification": {
+    "mode": "verify_only",
+    "started_unix": 1795133606.636568,
+    "archives": [
+      {
+        "name": "02_BundleSDF_trial_data.zip",
+        "files": 2121,
+        "uncompressed_bytes": 42219865535,
+        "status": "passed"
+      }
+    ],
+    "files": 2121,
+    "bytes": 42219865535,
+    "status": "passed",
+    "finished_unix": 1795133847.944893
+  },
+  "data_contract": {
+    "scope": "Archive membership, metadata references and representative file decoding; not physical accuracy or full reconstruction validation.",
+    "inventory_files": 2121,
+    "top_level_groups": {
+      "MIGRATION_INFO_20261119.txt": 1,
+      "baseline_28": 145,
+      "noise_bursts_20261116_v1": 61,
+      "optical_close_fs_20261118_v1": 1074,
+      "optical_module_20261118_203353": 651,
+      "optical_module_quality_20261118_v1": 85,
+      "optical_module_quality_recordings": 32,
+      "optical_module_recordings": 15,
+      "optical_near_far_comparison_20261118_v1": 54,
+      "rf": 3
+    },
+    "close_scan": {
+      "frames": 59,
+      "matching_frame_ids_across_stages": true,
+      "frame_and_cache_hash_references_verified": 472,
+      "input_streams": [
+        "left",
+        "right",
+        "color",
+        "native_depth"
+      ],
+      "raw_stream_counts": {
+        "left": 900,
+        "right": 899,
+        "color": 895,
+        "native_depth": 900
+      },
+      "incomplete_timestamp_groups": 6,
+      "prepared_scope": "observed_metal_body_exclude_handle_and_hand",
+      "physical_accuracy_validated": false,
+      "official_online_bundlesdf": false
+    },
+    "calibration": {
+      "left_size": [
+        1280,
+        720
+      ],
+      "color_size": [
+        1920,
+        1080
+      ],
+      "baseline_m": 0.049975351411553876
+    },
+    "decoded_samples": [
+      {
+        "id": "optical_0015",
+        "images": {
+          "left.png": {
+            "size": [
+              1280,
+              720
+            ],
+            "mode": "RGB"
+          },
+          "right.png": {
+            "size": [
+              1280,
+              720
+            ],
+            "mode": "RGB"
+          },
+          "color.png": {
+            "size": [
+              1920,
+              1080
+            ],
+            "mode": "RGB"
+          }
+        },
+        "arrays": {
+          "native_depth_mm.npy": {
+            "shape": [
+              720,
+              1280
+            ],
+            "dtype": "uint16",
+            "positive_fraction": 0.39527994791666665
+          },
+          "depth_raw.npy": {
+            "shape": [
+              720,
+              1280
+            ],
+            "dtype": "float32",
+            "positive_fraction": 0.9215907118055555
+          },
+          "depth_filtered.npy": {
+            "shape": [
+              720,
+              1280
+            ],
+            "dtype": "float32",
+            "positive_fraction": 0.42878472222222225
+          },
+          "disparity.npy": {
+            "shape": [
+              720,
+              1280
+            ],
+            "dtype": "float32",
+            "positive_fraction": 1.0
+          }
+        }
+      },
+      {
+        "id": "optical_0450",
+        "images": {
+          "left.png": {
+            "size": [
+              1280,
+              720
+            ],
+            "mode": "RGB"
+          },
+          "right.png": {
+            "size": [
+              1280,
+              720
+            ],
+            "mode": "RGB"
+          },
+          "color.png": {
+            "size": [
+              1920,
+              1080
+            ],
+            "mode": "RGB"
+          }
+        },
+        "arrays": {
+          "native_depth_mm.npy": {
+            "shape": [
+              720,
+              1280
+            ],
+            "dtype": "uint16",
+            "positive_fraction": 0.40382921006944444
+          },
+          "depth_raw.npy": {
+            "shape": [
+              720,
+              1280
+            ],
+            "dtype": "float32",
+            "positive_fraction": 0.922294921875
+          },
+          "depth_filtered.npy": {
+            "shape": [
+              720,
+              1280
+            ],
+            "dtype": "float32",
+            "positive_fraction": 0.42306206597222223
+          },
+          "disparity.npy": {
+            "shape": [
+              720,
+              1280
+            ],
+            "dtype": "float32",
+            "positive_fraction": 1.0
+          }
+        }
+      },
+      {
+        "id": "optical_0885",
+        "images": {
+          "left.png": {
+            "size": [
+              1280,
+              720
+            ],
+            "mode": "RGB"
+          },
+          "right.png": {
+            "size": [
+              1280,
+              720
+            ],
+            "mode": "RGB"
+          },
+          "color.png": {
+            "size": [
+              1920,
+              1080
+            ],
+            "mode": "RGB"
+          }
+        },
+        "arrays": {
+          "native_depth_mm.npy": {
+            "shape": [
+              720,
+              1280
+            ],
+            "dtype": "uint16",
+            "positive_fraction": 0.40122178819444443
+          },
+          "depth_raw.npy": {
+            "shape": [
+              720,
+              1280
+            ],
+            "dtype": "float32",
+            "positive_fraction": 0.9212543402777778
+          },
+          "depth_filtered.npy": {
+            "shape": [
+              720,
+              1280
+            ],
+            "dtype": "float32",
+            "positive_fraction": 0.43833116319444443
+          },
+          "disparity.npy": {
+            "shape": [
+              720,
+              1280
+            ],
+            "dtype": "float32",
+            "positive_fraction": 1.0
+          }
+        }
+      }
+    ],
+    "raw_recordings": [
+      {
+        "metadata": "workspace/BundleSDF_trial/data/optical_module_quality_recordings/20261118_210350_075900_optical_quality_30/metadata.yaml",
+        "raw_files": [
+          "20261118_210350_075900_optical_quality_30_0.mcap"
+        ],
+        "message_count": 740,
+        "mcap_magic_verified": true
+      },
+      {
+        "metadata": "workspace/BundleSDF_trial/data/optical_module_quality_recordings/20261118_210401_915118_optical_quality_35/metadata.yaml",
+        "raw_files": [
+          "20261118_210401_915118_optical_quality_35_0.mcap"
+        ],
+        "message_count": 727,
+        "mcap_magic_verified": true
+      },
+      {
+        "metadata": "workspace/BundleSDF_trial/data/optical_module_quality_recordings/20261118_210412_058816_optical_quality_40/metadata.yaml",
+        "raw_files": [
+          "20261118_210412_058816_optical_quality_40_0.mcap"
+        ],
+        "message_count": 748,
+        "mcap_magic_verified": true
+      },
+      {
+        "metadata": "workspace/BundleSDF_trial/data/optical_module_quality_recordings/20261118_210503_506688_optical_quality_35/metadata.yaml",
+        "raw_files": [
+          "20261118_210503_506688_optical_quality_35_0.mcap"
+        ],
+        "message_count": 748,
+        "mcap_magic_verified": true
+      },
+      {
+        "metadata": "workspace/BundleSDF_trial/data/optical_module_quality_recordings/20261118_210513_105177_optical_quality_40/metadata.yaml",
+        "raw_files": [
+          "20261118_210513_105177_optical_quality_40_0.mcap"
+        ],
+        "message_count": 752,
+        "mcap_magic_verified": true
+      },
+      {
+        "metadata": "workspace/BundleSDF_trial/data/optical_module_quality_recordings/20261118_210527_833048_optical_quality_40/metadata.yaml",
+        "raw_files": [
+          "20261118_210527_833048_optical_quality_40_0.mcap"
+        ],
+        "message_count": 733,
+        "mcap_magic_verified": true
+      },
+      {
+        "metadata": "workspace/BundleSDF_trial/data/optical_module_recordings/20261118_203353_701912_optical_module/metadata.yaml",
+        "raw_files": [
+          "20261118_203353_701912_optical_module_0.mcap"
+        ],
+        "message_count": 7205,
+        "mcap_magic_verified": true
+      },
+      {
+        "metadata": "workspace/BundleSDF_trial/data/optical_module_recordings/20261118_211601_416877_optical_handheld_1080p/metadata.yaml",
+        "raw_files": [
+          "20261118_211601_416877_optical_handheld_1080p_0.mcap"
+        ],
+        "message_count": 21528,
+        "mcap_magic_verified": true
+      },
+      {
+        "metadata": "workspace/BundleSDF_trial/data/optical_module_recordings/20261118_212444_215717_optical_close_30s_1080p/metadata.yaml",
+        "raw_files": [
+          "20261118_212444_215717_optical_close_30s_1080p_0.mcap"
+        ],
+        "message_count": 7193,
+        "mcap_magic_verified": true
+      }
+    ],
+    "raw_recording_count": 9,
+    "status": "passed_data_manifest_and_representative_decode_checks"
+  },
+  "full_archive_extracted": false,
+  "restored_data_directory_present": false,
+  "physical_accuracy_validated": false,
+  "stereo_inference_rerun": false,
+  "rosbag_replay_executed": false,
+  "scope": "Whole archive SHA256, all 2121 members CRC/SHA256, metadata cross-references, 3 representative frame decodes and 9 MCAP headers; no full extraction or algorithm re-estimation."
+}

@@ -1,0 +1,16 @@
+{
+  "mode": "restore",
+  "started_unix": 1795134239.1347885,
+  "archives": [
+    {
+      "name": "02_BundleSDF_trial_data.zip",
+      "files": 2121,
+      "uncompressed_bytes": 42219865535,
+      "status": "passed"
+    }
+  ],
+  "files": 2121,
+  "bytes": 42219865535,
+  "status": "passed",
+  "finished_unix": 1795134523.8110554
+}

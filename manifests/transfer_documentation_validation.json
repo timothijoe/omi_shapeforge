@@ -1,0 +1,15 @@
+{
+  "checked_utc": "2026-11-19T18:08:50.271652+00:00",
+  "status": "passed_post_transfer_resource_and_documentation_audit",
+  "markdown_files": 54,
+  "local_links": 203,
+  "resources": 37,
+  "present": 34,
+  "missing": [
+    "02-migration-archive",
+    "03-migration-archive",
+    "04-migration-archive"
+  ],
+  "validation_index": "transfer_validation.json",
+  "git_push_performed": false
+}

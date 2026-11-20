@@ -1,0 +1,259 @@
+{
+  "checked_utc": "2026-11-20T01:16:15.234377+00:00",
+  "status": "passed_integrity_restoration_and_disk_checks",
+  "archives": [
+    {
+      "archive": "/data/nov_19_folder/03_FoundationStereo_DATA.zip",
+      "bytes": 18277952545,
+      "sha256": "6284db3e34438356cbed97f0ecc503ca47695624dec20aaab6840911ace8a597",
+      "status": "passed_size_and_sha256",
+      "seconds": 53.29152683913708
+    },
+    {
+      "archive": "/data/nov_19_folder/04_foundation_stereo_linux_environment.zip",
+      "bytes": 8894647864,
+      "sha256": "974759a99588b6b6ed8ae68cd81b3d1ec886172be97c6900c6b94fe33aac2fe2",
+      "status": "passed_size_and_sha256",
+      "seconds": 9.656930338591337
+    }
+  ],
+  "restore": {
+    "mode": "restore",
+    "started_unix": 1795136792.2712011,
+    "archives": [
+      {
+        "name": "03_FoundationStereo_DATA.zip",
+        "files": 397,
+        "uncompressed_bytes": 45301285117,
+        "status": "passed"
+      },
+      {
+        "name": "04_foundation_stereo_linux_environment.zip",
+        "files": 61829,
+        "uncompressed_bytes": 8978112319,
+        "status": "passed"
+      }
+    ],
+    "files": 62226,
+    "bytes": 54279397436,
+    "status": "passed",
+    "finished_unix": 1795137138.451473
+  },
+  "disk_checks": {
+    "checked_utc": "2026-11-20T01:13:35.475840+00:00",
+    "status": "passed_restored_files_links_aliases_and_samples",
+    "archives": [
+      {
+        "archive": "03_FoundationStereo_DATA.zip",
+        "regular_files": 397,
+        "symlinks": 0,
+        "manifest_entries": 397,
+        "uncompressed_bytes": 45301285117
+      },
+      {
+        "archive": "04_foundation_stereo_linux_environment.zip",
+        "regular_files": 60675,
+        "symlinks": 1154,
+        "manifest_entries": 61829,
+        "uncompressed_bytes": 8978112319
+      }
+    ],
+    "dangling_symlinks": [],
+    "case_aliases_verified": 1,
+    "decoded_samples": [
+      "workspace/FoundationStereo/DATA/foundation_cloud_bag_20261114_frame0032/color.png",
+      "workspace/FoundationStereo/DATA/foundation_cloud_bag_20261114_frame0032/infra_left.png",
+      "workspace/FoundationStereo/DATA/foundation_cloud_bag_20261114_frame0032/infra_right.png",
+      "workspace/FoundationStereo/DATA/foundation_cloud_bag_20261114_frame0032/left.png",
+      "workspace/FoundationStereo/DATA/foundation_cloud_bag_20261114_frame0032/native_depth_meter.npy",
+      "workspace/FoundationStereo/DATA/foundation_cloud_bag_20261114_frame0032/native_depth_mm.png",
+      "workspace/FoundationStereo/DATA/foundation_cloud_bag_20261114_frame0032/right.png"
+    ],
+    "conda_unpack_executed": false,
+    "old_runtime_activated": false,
+    "old_runtime_compatibility_verified": false
+  },
+  "data03_contract": {
+    "status": "passed_metadata_reference_and_representative_decode_checks",
+    "files": 397,
+    "data_groups": {
+      "MIGRATION_INFO_20261119.txt": 1,
+      "foundation_cloud_bag_20261114_frame0032": 9,
+      "marker_bags": 12,
+      "marker_reconstruction_20261114_1933": 77,
+      "mesh_720p_20261114_203053_ir": 87,
+      "mesh_matching_eval_20261115_234621": 37,
+      "multiframe_20261114_1816": 71,
+      "realsense_20261027_134409": 9,
+      "realsense_20261114_172343": 9,
+      "realsense_20261114_173952": 13,
+      "realsense_20261114_205646": 9,
+      "realsense_20261114_205803": 9,
+      "realsense_720p_validation_20261114": 9,
+      "recordings": 35,
+      "recordings_selftest": 10
+    },
+    "raw_recordings": [
+      {
+        "metadata": "workspace/FoundationStereo/DATA/marker_bags/aruco_new_20261114_191726/metadata.yaml",
+        "raw_files": [
+          "aruco_new_20261114_191726_0.mcap"
+        ],
+        "message_count": 3979
+      },
+      {
+        "metadata": "workspace/FoundationStereo/DATA/marker_bags/markers_20261114_174232/metadata.yaml",
+        "raw_files": [
+          "markers_20261114_174232_0.mcap"
+        ],
+        "message_count": 1188
+      },
+      {
+        "metadata": "workspace/FoundationStereo/DATA/marker_bags/markers_20261114_174326/metadata.yaml",
+        "raw_files": [
+          "markers_20261114_174326_0.mcap"
+        ],
+        "message_count": 2373
+      },
+      {
+        "metadata": "workspace/FoundationStereo/DATA/recordings/20261114_203004_961852_marker_scan/metadata.yaml",
+        "raw_files": [
+          "20261114_203004_961852_marker_scan_0.mcap"
+        ],
+        "message_count": 4812
+      },
+      {
+        "metadata": "workspace/FoundationStereo/DATA/recordings/20261114_203053_613923_marker_scan/metadata.yaml",
+        "raw_files": [
+          "20261114_203053_613923_marker_scan_0.mcap"
+        ],
+        "message_count": 9610
+      },
+      {
+        "metadata": "workspace/FoundationStereo/DATA/recordings/20261114_221033_017196_supplement_orbit_01/metadata.yaml",
+        "raw_files": [
+          "20261114_221033_017196_supplement_orbit_01_0.mcap"
+        ],
+        "message_count": 5895
+      },
+      {
+        "metadata": "workspace/FoundationStereo/DATA/recordings/20261114_221126_588723_supplement_orbit_01/metadata.yaml",
+        "raw_files": [
+          "20261114_221126_588723_supplement_orbit_01_0.mcap"
+        ],
+        "message_count": 9604
+      },
+      {
+        "metadata": "workspace/FoundationStereo/DATA/recordings/20261114_221302_970883_supplement_orbit_01/metadata.yaml",
+        "raw_files": [
+          "20261114_221302_970883_supplement_orbit_01_0.mcap"
+        ],
+        "message_count": 9604
+      },
+      {
+        "metadata": "workspace/FoundationStereo/DATA/recordings/20261114_221423_923880_detail_front_01/metadata.yaml",
+        "raw_files": [
+          "20261114_221423_923880_detail_front_01_0.mcap"
+        ],
+        "message_count": 7212
+      },
+      {
+        "metadata": "workspace/FoundationStereo/DATA/recordings/20261114_221542_650943_validation_fixed_01/metadata.yaml",
+        "raw_files": [
+          "20261114_221542_650943_validation_fixed_01_0.mcap"
+        ],
+        "message_count": 4807
+      },
+      {
+        "metadata": "workspace/FoundationStereo/DATA/recordings_selftest/20261114_201417_920562_ui_selftest/metadata.yaml",
+        "raw_files": [
+          "20261114_201417_920562_ui_selftest_0.mcap"
+        ],
+        "message_count": 739
+      },
+      {
+        "metadata": "workspace/FoundationStereo/DATA/recordings_selftest/20261114_201613_248683_ui_selftest/metadata.yaml",
+        "raw_files": [
+          "20261114_201613_248683_ui_selftest_0.mcap"
+        ],
+        "message_count": 736
+      }
+    ],
+    "decoded_samples": [
+      {
+        "path": "workspace/FoundationStereo/DATA/foundation_cloud_bag_20261114_frame0032/color.png",
+        "size": [
+          640,
+          480
+        ],
+        "mode": "RGB"
+      },
+      {
+        "path": "workspace/FoundationStereo/DATA/foundation_cloud_bag_20261114_frame0032/infra_left.png",
+        "size": [
+          640,
+          480
+        ],
+        "mode": "L"
+      },
+      {
+        "path": "workspace/FoundationStereo/DATA/foundation_cloud_bag_20261114_frame0032/infra_right.png",
+        "size": [
+          640,
+          480
+        ],
+        "mode": "L"
+      },
+      {
+        "path": "workspace/FoundationStereo/DATA/foundation_cloud_bag_20261114_frame0032/left.png",
+        "size": [
+          640,
+          480
+        ],
+        "mode": "RGB"
+      },
+      {
+        "path": "workspace/FoundationStereo/DATA/foundation_cloud_bag_20261114_frame0032/native_depth_meter.npy",
+        "shape": [
+          480,
+          640
+        ],
+        "dtype": "float32"
+      },
+      {
+        "path": "workspace/FoundationStereo/DATA/foundation_cloud_bag_20261114_frame0032/native_depth_mm.png",
+        "size": [
+          640,
+          480
+        ],
+        "mode": "I;16"
+      },
+      {
+        "path": "workspace/FoundationStereo/DATA/foundation_cloud_bag_20261114_frame0032/right.png",
+        "size": [
+          640,
+          480
+        ],
+        "mode": "RGB"
+      }
+    ],
+    "scope": "Representative archive contents and MCAP references; no ROSbag playback, stereo inference or physical accuracy validation."
+  },
+  "environment04_static_metadata": {
+    "scope": "Static archive metadata only; interpreter and libraries were not executed.",
+    "python": "3.11.18",
+    "torch": "2.7.1+cu128",
+    "python_binary_elf_64bit": true,
+    "conda_unpack_included": true,
+    "prefix_relocation_executed": false,
+    "runtime_compatibility_verified": false,
+    "torch_cuda": "12.8"
+  },
+  "baseline_root": "/data/omi_runtime/baselines/reconstruction_20261119",
+  "data03_root": "/data/omi_runtime/baselines/reconstruction_20261119/workspace/FoundationStereo/DATA",
+  "environment04_root": "/data/omi_runtime/baselines/reconstruction_20261119/environment_runtime/foundation_stereo",
+  "active_environments_replaced": false,
+  "old_environment_relocated": false,
+  "old_environment_runtime_compatibility_verified": false,
+  "source_archives_retained": true
+}

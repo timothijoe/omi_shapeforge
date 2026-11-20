@@ -1,0 +1,5 @@
+torch==2.6.0+cu124
+torchvision==0.21.0+cu124
+numpy==1.26.4
+pandas<3
+warp-lang==1.19.0+cu12

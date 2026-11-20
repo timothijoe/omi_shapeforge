@@ -1,0 +1,576 @@
+{
+  "schema_version": 1,
+  "checked_date": "2026-11-20",
+  "path_base": "Root defaults with relative values are relative to repository root. This is descriptive metadata, not a resolver or downloader.",
+  "roots": {
+    "project": {
+      "default": ".",
+      "configuration": "Repository root"
+    },
+    "workspace": {
+      "default": "..",
+      "configuration": "Sibling repository paths in workspace TOML"
+    },
+    "runtime": {
+      "default": "/data/omi_runtime",
+      "configuration": "storage.runtime_root; explicit dependent paths must also be updated"
+    },
+    "migration": {
+      "default": "/data/nov_19_folder",
+      "configuration": "Manual archive input directory"
+    },
+    "isaac51": {
+      "default": "/data/isaac-sim-5.1.0",
+      "configuration": "run_isaac.py --isaac-root"
+    }
+  },
+  "resources": [
+    {
+      "id": "control-venv",
+      "root": "project",
+      "path": ".venv",
+      "tracked": false,
+      "purpose": "Standard-library control environment",
+      "required_for": [
+        "cli"
+      ],
+      "source": "Local Python 3.11 venv",
+      "restore": "Recreate from pyproject.toml; do not transfer a foreign venv.",
+      "availability": "present"
+    },
+    {
+      "id": "stereo-source",
+      "root": "workspace",
+      "path": "FoundationStereo",
+      "tracked": false,
+      "purpose": "Algorithm source and local adaptations",
+      "required_for": [
+        "stereo"
+      ],
+      "source": "timothijoe GitHub fork plus current working tree",
+      "restore": "Restore the recorded commit and local changes; HEAD alone is insufficient. See backends.lock.json.",
+      "availability": "present"
+    },
+    {
+      "id": "stereo-environment",
+      "root": "runtime",
+      "path": "envs/foundation_stereo",
+      "tracked": false,
+      "purpose": "Validated GPU runtime",
+      "required_for": [
+        "stereo"
+      ],
+      "source": "Local Python 3.11 / PyTorch 2.6.0+cu124",
+      "restore": "Rebuild for the target machine with saved package lists and native dependencies; snapshots are not a complete installer.",
+      "availability": "present"
+    },
+    {
+      "id": "bundlesdf-source",
+      "root": "workspace",
+      "path": "BundleSDF",
+      "tracked": false,
+      "purpose": "Algorithm source and local adaptations",
+      "required_for": [
+        "bundlesdf"
+      ],
+      "source": "timothijoe GitHub fork plus current working tree",
+      "restore": "Restore the recorded commit and local changes; HEAD alone is insufficient. See backends.lock.json.",
+      "availability": "present"
+    },
+    {
+      "id": "bundlesdf-environment",
+      "root": "runtime",
+      "path": "envs/bundlesdf",
+      "tracked": false,
+      "purpose": "Validated GPU runtime",
+      "required_for": [
+        "bundlesdf"
+      ],
+      "source": "Local Python 3.11 / PyTorch 2.6.0+cu124",
+      "restore": "Rebuild for the target machine with saved package lists and native dependencies; snapshots are not a complete installer.",
+      "availability": "present"
+    },
+    {
+      "id": "environment-build-notes",
+      "root": "workspace",
+      "path": "local_setup/README.md",
+      "tracked": false,
+      "purpose": "Existing local backend build notes",
+      "required_for": [
+        "backend_rebuild"
+      ],
+      "source": "Current workspace setup",
+      "restore": "Retain this workspace note and associated setup files; main repository does not yet replace the complete GPU bootstrap.",
+      "availability": "present"
+    },
+    {
+      "id": "stereo-checkpoint",
+      "root": "runtime",
+      "path": "models/FoundationStereo/11-33-40/model_best_bp2.pth",
+      "tracked": false,
+      "purpose": "Trusted stereo checkpoint",
+      "required_for": [
+        "stereo"
+      ],
+      "source": "Upstream model matched to migration SHA256",
+      "restore": "Restore checkpoint and cfg.yaml together; expected hash comes from prior validated report.",
+      "availability": "present",
+      "expected_sha256": "8d7850b9dc68d1366722a02a39745704b1db41471211be6abd93ef463727e6be"
+    },
+    {
+      "id": "loftr-checkpoint",
+      "root": "runtime",
+      "path": "models/LoFTR/outdoor_ds.ckpt",
+      "tracked": false,
+      "purpose": "LoFTR outdoor weights",
+      "required_for": [
+        "bundlesdf"
+      ],
+      "source": "Upstream LoFTR download",
+      "restore": "Restore weights and expected backend weights path; retain provenance.",
+      "availability": "present"
+    },
+    {
+      "id": "portable-zip",
+      "root": "migration",
+      "path": "optical_module_portable_20261119.zip",
+      "tracked": false,
+      "purpose": "Independent CPU registration package",
+      "required_for": [
+        "portable_registration",
+        "blender_assets"
+      ],
+      "source": "User-provided package",
+      "restore": "Extract to a new inputs directory; run packaged verify_package.py.",
+      "availability": "present",
+      "expected_sha256": "a2a62c81b65e7781436d5c482432461a11c331d6abca6bf1ed1eca79c150d26b"
+    },
+    {
+      "id": "quick-zip",
+      "root": "migration",
+      "path": "optical_module_quick_20261119.zip",
+      "tracked": false,
+      "purpose": "Quick model and overlay delivery",
+      "required_for": [
+        "result_viewing"
+      ],
+      "source": "User-provided package",
+      "restore": "Extract into a new directory; verify its internal SHA256.json.",
+      "availability": "present",
+      "expected_sha256": "4a6130ceb726ec515165224d0476c8d16cdafd4264d1049db968af508245a8bb"
+    },
+    {
+      "id": "portable-inputs",
+      "root": "runtime",
+      "path": "inputs/optical_packages_20261120_001316/optical_module_portable_20261119",
+      "tracked": false,
+      "purpose": "Immutable photos, model, ROI and scripts",
+      "required_for": [
+        "portable_registration",
+        "blender_assets"
+      ],
+      "source": "portable-zip",
+      "restore": "Extract the portable ZIP and verify its manifest; pass actual path to package scripts.",
+      "availability": "present"
+    },
+    {
+      "id": "portable-replay-report",
+      "root": "runtime",
+      "path": "runs/optical_portable_20261120_001316/inspection_report.json",
+      "tracked": false,
+      "purpose": "Current-machine replay evidence",
+      "required_for": [
+        "evidence"
+      ],
+      "source": "Actual CPU replay on 2026-11-20",
+      "restore": "Retain existing report or rerun into a new directory; do not relabel old reference as fresh evidence.",
+      "availability": "present"
+    },
+    {
+      "id": "blender-runtime",
+      "root": "runtime",
+      "path": "tools/blender-4.5.16-linux-x64/blender",
+      "tracked": false,
+      "purpose": "Matching Blender executable",
+      "required_for": [
+        "blender_assets"
+      ],
+      "source": "Official Blender 4.5.16 LTS",
+      "restore": "Install the official package and verify checksum; command link is machine-specific.",
+      "availability": "present"
+    },
+    {
+      "id": "blender-archive",
+      "root": "runtime",
+      "path": "cache/downloads/blender-4.5.16-linux-x64.tar.xz",
+      "tracked": false,
+      "purpose": "Verified installer archive",
+      "required_for": [
+        "blender_installation"
+      ],
+      "source": "https://download.blender.org/release/Blender4.5/",
+      "restore": "Verify official SHA256 before extraction.",
+      "availability": "present",
+      "expected_sha256": "23432b064977908beb1ab4b7f32f024e7331105c875c187dce002aff84b10c11"
+    },
+    {
+      "id": "blender-validation",
+      "root": "runtime",
+      "path": "runs/blender_validation_20261120",
+      "tracked": false,
+      "purpose": "Saved-model checks and actual render",
+      "required_for": [
+        "evidence"
+      ],
+      "source": "Current-machine Blender execution",
+      "restore": "Retain report and image; a new execution must use new output paths.",
+      "availability": "present"
+    },
+    {
+      "id": "simulation-environment",
+      "root": "runtime",
+      "path": "envs/simulation",
+      "tracked": false,
+      "purpose": "MuJoCo and OpenUSD authoring runtime",
+      "required_for": [
+        "simulation"
+      ],
+      "source": "Local Python 3.11 environment",
+      "restore": "Rebuild using requirements/simulation.lock.txt.",
+      "availability": "present"
+    },
+    {
+      "id": "optical-simulation-asset",
+      "root": "runtime",
+      "path": "assets/optical_module_sim_20261120",
+      "tracked": false,
+      "purpose": "Evaluated OBJ parts and asset.json",
+      "required_for": [
+        "simulation"
+      ],
+      "source": "Connected-groove model via Blender",
+      "restore": "Re-export using export_blender_asset.py into a new directory; retain source hash.",
+      "availability": "present"
+    },
+    {
+      "id": "optical-single-scene",
+      "root": "runtime",
+      "path": "assets/optical_scene_v2_20261120",
+      "tracked": false,
+      "purpose": "Matching MJCF / USD single scene",
+      "required_for": [
+        "simulation"
+      ],
+      "source": "build_scenes.py",
+      "restore": "Generate from exported asset with rows=1 and columns=1.",
+      "availability": "present"
+    },
+    {
+      "id": "optical-array-scene",
+      "root": "runtime",
+      "path": "assets/optical_array_2x2_20261120",
+      "tracked": false,
+      "purpose": "Matching MJCF / USD 2x2 scene",
+      "required_for": [
+        "simulation"
+      ],
+      "source": "build_scenes.py",
+      "restore": "Generate from exported asset with rows=2 and columns=2.",
+      "availability": "present"
+    },
+    {
+      "id": "isaac51-runtime",
+      "root": "isaac51",
+      "path": "python.sh",
+      "tracked": false,
+      "purpose": "Validated Isaac supplier launcher",
+      "required_for": [
+        "isaac_physics"
+      ],
+      "source": "Existing local Isaac Sim installation",
+      "restore": "Restore/install a compatible full runtime including local extensions; do not copy just a Python executable.",
+      "availability": "present"
+    },
+    {
+      "id": "mujoco_optical_v3_20261120",
+      "root": "runtime",
+      "path": "runs/mujoco_optical_v3_20261120/report.json",
+      "tracked": false,
+      "purpose": "Actual engine validation evidence",
+      "required_for": [
+        "evidence"
+      ],
+      "source": "Current-machine simulation run",
+      "restore": "Preserve report and related files; rerun in a new directory if revalidation is needed.",
+      "availability": "present"
+    },
+    {
+      "id": "mujoco_optical_array_v2_20261120",
+      "root": "runtime",
+      "path": "runs/mujoco_optical_array_v2_20261120/report.json",
+      "tracked": false,
+      "purpose": "Actual engine validation evidence",
+      "required_for": [
+        "evidence"
+      ],
+      "source": "Current-machine simulation run",
+      "restore": "Preserve report and related files; rerun in a new directory if revalidation is needed.",
+      "availability": "present"
+    },
+    {
+      "id": "isaac_optical_v3_20261120",
+      "root": "runtime",
+      "path": "runs/isaac_optical_v3_20261120/report.json",
+      "tracked": false,
+      "purpose": "Actual engine validation evidence",
+      "required_for": [
+        "evidence"
+      ],
+      "source": "Current-machine simulation run",
+      "restore": "Preserve report and related files; rerun in a new directory if revalidation is needed.",
+      "availability": "present"
+    },
+    {
+      "id": "isaac_optical_array_20261120",
+      "root": "runtime",
+      "path": "runs/isaac_optical_array_20261120/report.json",
+      "tracked": false,
+      "purpose": "Actual engine validation evidence",
+      "required_for": [
+        "evidence"
+      ],
+      "source": "Current-machine simulation run",
+      "restore": "Preserve report and related files; rerun in a new directory if revalidation is needed.",
+      "availability": "present"
+    },
+    {
+      "id": "migration-handoff",
+      "root": "migration",
+      "path": "HANDOFF.md",
+      "tracked": false,
+      "purpose": "Original migration navigation",
+      "required_for": [
+        "full_migration"
+      ],
+      "source": "05 developer handoff package",
+      "restore": "Retain with 00 tools and full archive manifest.",
+      "availability": "present"
+    },
+    {
+      "id": "01-migration-archive",
+      "root": "migration",
+      "path": "01_projects_and_results.zip",
+      "tracked": false,
+      "purpose": "Complete project/data/environment archive",
+      "required_for": [
+        "full_migration"
+      ],
+      "source": "Original migration manifest",
+      "restore": "Wait for complete upload, check size/hash, then restore into a separate baseline directory.",
+      "availability": "present",
+      "expected_sha256": "0dd0e14bcf53532147d4e3077ca41f8709a572b1d01b8fe99f4d3283174e1b89"
+    },
+    {
+      "id": "02-migration-archive",
+      "root": "migration",
+      "path": "02_BundleSDF_trial_data.zip",
+      "tracked": false,
+      "purpose": "Complete project/data/environment archive",
+      "required_for": [
+        "full_migration"
+      ],
+      "source": "Original migration manifest",
+      "restore": "Wait for complete upload, check size/hash, then restore into a separate baseline directory.",
+      "availability": "present",
+      "expected_sha256": "9641eec7babb03856f0b06b383cdac3b498ce826eacc4ab1ab93586ad4de9156",
+      "verification": "data02_validation.json",
+      "extracted": true,
+      "restore_report": "restored_data02.json"
+    },
+    {
+      "id": "03-migration-archive",
+      "root": "migration",
+      "path": "03_FoundationStereo_DATA.zip",
+      "tracked": false,
+      "purpose": "Complete project/data/environment archive",
+      "required_for": [
+        "full_migration"
+      ],
+      "source": "Original migration manifest",
+      "restore": "Wait for complete upload, check size/hash, then restore into a separate baseline directory.",
+      "availability": "present",
+      "expected_sha256": "6284db3e34438356cbed97f0ecc503ca47695624dec20aaab6840911ace8a597",
+      "extracted": true,
+      "verification": "data03_04_validation.json"
+    },
+    {
+      "id": "04-migration-archive",
+      "root": "migration",
+      "path": "04_foundation_stereo_linux_environment.zip",
+      "tracked": false,
+      "purpose": "Complete project/data/environment archive",
+      "required_for": [
+        "full_migration"
+      ],
+      "source": "Original migration manifest",
+      "restore": "Wait for complete upload, check size/hash, then restore into a separate baseline directory.",
+      "availability": "present",
+      "expected_sha256": "974759a99588b6b6ed8ae68cd81b3d1ec886172be97c6900c6b94fe33aac2fe2",
+      "extracted": true,
+      "verification": "data03_04_validation.json"
+    },
+    {
+      "id": "marvin_mjcf",
+      "root": "workspace",
+      "path": "omi_proj/local/assets/robot_assets/mujoco/right_chopping_scene.xml",
+      "tracked": false,
+      "purpose": "Full MuJoCo dual-arm scene; requires adjacent meshes and referenced hand assets.",
+      "required_for": [
+        "robot_integration"
+      ],
+      "source": "omi_proj resource and migration documents",
+      "restore": "Restore the complete documented directory with its mesh/source/provenance and relative layout.",
+      "availability": "present"
+    },
+    {
+      "id": "marvin_meshes",
+      "root": "workspace",
+      "path": "omi_proj/local/assets/MarvinCCS",
+      "tracked": false,
+      "purpose": "Meshes referenced by the MJCF; preserve adjacency to robot_assets.",
+      "required_for": [
+        "robot_integration"
+      ],
+      "source": "omi_proj resource and migration documents",
+      "restore": "Restore the complete documented directory with its mesh/source/provenance and relative layout.",
+      "availability": "present"
+    },
+    {
+      "id": "stand_urdf",
+      "root": "workspace",
+      "path": "omi_proj/local/models/omi_marvin_stand_axis_corrected_v1",
+      "tracked": false,
+      "purpose": "Derived visualization URDF plus meshes/source/provenance; not calibrated robot physics.",
+      "required_for": [
+        "robot_integration"
+      ],
+      "source": "omi_proj resource and migration documents",
+      "restore": "Restore the complete documented directory with its mesh/source/provenance and relative layout.",
+      "availability": "present"
+    },
+    {
+      "id": "vendor_gripper_resources",
+      "root": "workspace",
+      "path": "omi_proj/local/vendor/optical_module_pu",
+      "tracked": false,
+      "purpose": "Original vendor bundle may contain robot/gripper model resources; exact model files still require inspection.",
+      "required_for": [
+        "robot_integration"
+      ],
+      "source": "omi_proj resource and migration documents",
+      "restore": "Restore the complete documented directory with its mesh/source/provenance and relative layout.",
+      "availability": "present"
+    },
+    {
+      "id": "omi-transfer-archive",
+      "root": "migration",
+      "path": "omi_transfer_20261120_004618.tar.gz",
+      "purpose": "Robot assets, nine demonstration episodes, BC weights and offline source snapshot",
+      "required_for": [
+        "robot_integration",
+        "omi_offline_validation"
+      ],
+      "source": "User-uploaded transfer package",
+      "restore": "Extract to a new baseline; verify SHA256SUMS and source manifest; keep source snapshot separate from current Git checkout.",
+      "archive_sha256_computed": "aa2f86ae3f00c8cfaeb2b429326ae8248cfcde2decfc9c3e91c88e7f4956d765",
+      "tracked": false,
+      "availability": "present"
+    },
+    {
+      "id": "reconstruction-baseline",
+      "root": "runtime",
+      "path": "baselines/reconstruction_20261119",
+      "purpose": "Restored 01 project snapshot and historical results",
+      "required_for": [
+        "historical_replay"
+      ],
+      "source": "01_projects_and_results.zip",
+      "restore": "Use supplied restore.py --archive 01_projects_and_results.zip with a fresh destination.",
+      "tracked": false,
+      "availability": "present"
+    },
+    {
+      "id": "omi-transfer-baseline",
+      "root": "runtime",
+      "path": "baselines/omi_transfer_20261120_004618",
+      "purpose": "Verified external OMI assets and dataset snapshot",
+      "required_for": [
+        "robot_integration",
+        "omi_offline_validation"
+      ],
+      "source": "omi_transfer_20261120_004618.tar.gz",
+      "restore": "Preserve full directory layout; local symlink points to packaged omi_proj/local.",
+      "tracked": false,
+      "availability": "present"
+    },
+    {
+      "id": "omi-asset-runtime",
+      "root": "runtime",
+      "path": "envs/omi_assets",
+      "purpose": "Python 3.12 / MuJoCo 3.15 asset review; separate from optical MuJoCo 3.3.7",
+      "required_for": [
+        "robot_asset_review"
+      ],
+      "source": "Current-machine isolated environment",
+      "restore": "Rebuild from manifests/environments/omi-assets-freeze.txt; this environment does not include the complete BC training stack.",
+      "tracked": false,
+      "availability": "present"
+    },
+    {
+      "id": "bundlesdf-restored-data",
+      "root": "runtime",
+      "path": "baselines/reconstruction_20261119/workspace/BundleSDF_trial/data",
+      "tracked": false,
+      "purpose": "Fully restored 02 raw recordings, extracted frames, calibration and processed caches",
+      "required_for": [
+        "historical_raw_data_workflows"
+      ],
+      "source": "02_BundleSDF_trial_data.zip",
+      "restore": "Merge using the supplied restore.py --archive 02_BundleSDF_trial_data.zip --resume into the verified reconstruction baseline.",
+      "availability": "present",
+      "restore_report": "restored_data02.json"
+    },
+    {
+      "id": "foundationstereo-restored-data",
+      "path": "baselines/reconstruction_20261119/workspace/FoundationStereo/DATA",
+      "purpose": "Complete restored FoundationStereo DATA including raw recordings and processed inputs",
+      "required_for": [
+        "historical_stereo_workflows"
+      ],
+      "source": "03_FoundationStereo_DATA.zip",
+      "restore": "Use supplied restore.py --archive 03_FoundationStereo_DATA.zip --resume into the reconstruction baseline.",
+      "root": "runtime",
+      "tracked": false,
+      "availability": "present"
+    },
+    {
+      "id": "legacy-conda-environment-snapshot",
+      "path": "baselines/reconstruction_20261119/environment_runtime/foundation_stereo",
+      "purpose": "Unrelocated historical Conda-pack snapshot; not the active development environment",
+      "required_for": [
+        "historical_environment_recovery"
+      ],
+      "source": "04_foundation_stereo_linux_environment.zip",
+      "restore": "Restore with symlink support. Prefix relocation and runtime compatibility validation are separate future steps.",
+      "root": "runtime",
+      "tracked": false,
+      "availability": "present"
+    }
+  ],
+  "integrity_note": "Latest transfer_validation.json records full 01 archive and per-file verification plus all OMI checksum/source entries. Other expected hashes retain their earlier evidence; availability is a dated snapshot.",
+  "checked_utc": "2026-11-20T01:16:15.234377+00:00",
+  "latest_transfer_validation": "transfer_validation.json",
+  "latest_data02_validation": "data02_validation.json",
+  "latest_extraction_index": "extracted_archives.json",
+  "latest_data03_04_validation": "data03_04_validation.json"
+}

@@ -1,0 +1,76 @@
+{
+  "checked_utc": "2026-11-19T17:12:58.378800+00:00",
+  "status": "passed_documentation_audit",
+  "base_commit": "a12c225",
+  "markdown_files": 52,
+  "local_links_checked": 193,
+  "missing_local_links": [],
+  "bash_blocks_syntax_checked": 17,
+  "old_personal_paths_in_authored_markdown": [],
+  "catalog_resources": 33,
+  "catalog_present": 25,
+  "catalog_missing_ids": [
+    "01-migration-archive",
+    "02-migration-archive",
+    "03-migration-archive",
+    "04-migration-archive",
+    "marvin_mjcf",
+    "marvin_meshes",
+    "stand_urdf",
+    "vendor_gripper_resources"
+  ],
+  "simulation_report_checks": [
+    {
+      "id": "mujoco_optical_v3_20261120",
+      "status": "passed_mujoco_load_step_render_and_settle",
+      "report_hash_matches": true
+    },
+    {
+      "id": "mujoco_optical_array_v2_20261120",
+      "status": "passed_mujoco_load_step_render_and_settle",
+      "report_hash_matches": true
+    },
+    {
+      "id": "isaac_optical_v3_20261120",
+      "status": "passed_isaac_physx_load_step_and_settle",
+      "report_hash_matches": true
+    },
+    {
+      "id": "isaac_optical_array_20261120",
+      "status": "passed_isaac_physx_load_step_and_settle",
+      "report_hash_matches": true
+    }
+  ],
+  "portable_reference_metrics_match": true,
+  "historical_manifest_files_preserved": true,
+  "large_resource_ignore_checks": "passed",
+  "implementation_files_unchanged": true,
+  "main_empty": true,
+  "external_urls_live_checked": false,
+  "expensive_inference_or_simulation_rerun": false,
+  "gui_or_hardware_checked": false,
+  "git_push_performed": false,
+  "validation_scope": "Actual help/doctor, local paths, Bash syntax, existing reports and Git diff only; tutorial installs and expensive workloads were not executed.",
+  "domain_roles_verified": [
+    "perception",
+    "simulation"
+  ],
+  "doctor_ready": true,
+  "entrypoint_help_checks": [
+    "omi-shapeforge --help",
+    "omi-shapeforge smoke --help",
+    "python -m omi_shapeforge --version",
+    "build_scenes.py --help",
+    "run_mujoco.py --help",
+    "run_isaac.py --help",
+    "Blender export_blender_asset.py -- --help",
+    "portable run_demo.py --help",
+    "portable check_replay.py --help",
+    "portable rebuild_blender.py --help"
+  ],
+  "prior_control_test_record": {
+    "passed": 4,
+    "rerun_during_documentation_pass": false
+  },
+  "local_commit_created": false
+}
