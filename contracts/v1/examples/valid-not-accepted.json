@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "record_kind": "example",
+  "run_id": "example-valid-not-accepted",
+  "workflow": "smoke.stereo",
+  "started_utc": "2026-11-20T02:00:00Z",
+  "finished_utc": "2026-11-20T02:00:05Z",
+  "execution": {
+    "state": "succeeded",
+    "returncode": 0,
+    "command": [
+      "/example/env/bin/python",
+      "/example/source/run_local_smoke.py",
+      "--output",
+      "/example/run/backend"
+    ],
+    "cwd": "/example/source",
+    "log": "run.log",
+    "error": null
+  },
+  "sources": [
+    {
+      "repository": "/example/omi_shapeforge",
+      "head": "cccccccccccccccccccccccccccccccccccccccc",
+      "dirty": false,
+      "entrypoint_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "note": "Synthetic orchestrator identity."
+    },
+    {
+      "repository": "/example/source",
+      "head": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "dirty": false,
+      "entrypoint_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "note": "Synthetic example; not a real run."
+    }
+  ],
+  "environment": {
+    "executable": "/example/env/bin/python",
+    "versions": {
+      "python": "3.11.15"
+    }
+  },
+  "parameters": {
+    "iterations": 32
+  },
+  "inputs": [
+    {
+      "id": "left",
+      "path": "/example/input/left",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 128,
+      "format": "opaque",
+      "units": null,
+      "frame": null
+    },
+    {
+      "id": "right",
+      "path": "/example/input/right",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 128,
+      "format": "opaque",
+      "units": null,
+      "frame": null
+    },
+    {
+      "id": "intrinsics",
+      "path": "/example/input/intrinsics",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 128,
+      "format": "opaque",
+      "units": null,
+      "frame": null
+    },
+    {
+      "id": "checkpoint",
+      "path": "/example/input/checkpoint",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 128,
+      "format": "opaque",
+      "units": null,
+      "frame": null
+    },
+    {
+      "id": "model_config",
+      "path": "/example/input/model_config",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 128,
+      "format": "opaque",
+      "units": null,
+      "frame": null
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "report",
+      "path": "backend/report.json",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 128,
+      "format": "json",
+      "units": null,
+      "frame": null
+    },
+    {
+      "id": "disparity",
+      "path": "backend/disparity.npy",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 128,
+      "format": "npy",
+      "units": "pixel",
+      "frame": "left_image"
+    },
+    {
+      "id": "depth",
+      "path": "backend/depth_meter.npy",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 128,
+      "format": "npy",
+      "units": "m",
+      "frame": "camera"
+    },
+    {
+      "id": "cloud",
+      "path": "backend/cloud.ply",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 128,
+      "format": "ply",
+      "units": "m",
+      "frame": "camera"
+    },
+    {
+      "id": "preview",
+      "path": "backend/vis.png",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 128,
+      "format": "png",
+      "units": null,
+      "frame": null
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "checks": [
+      {
+        "id": "required_artifacts",
+        "status": "passed",
+        "method": "example only: required_artifacts",
+        "expected": "all required artifacts",
+        "observed": "present",
+        "evidence": [
+          "report"
+        ]
+      },
+      {
+        "id": "report_status",
+        "status": "passed",
+        "method": "example only: report_status",
+        "expected": "passed_real_gpu_stereo_inference",
+        "observed": "passed_real_gpu_stereo_inference",
+        "evidence": [
+          "report"
+        ]
+      },
+      {
+        "id": "hashes",
+        "status": "passed",
+        "method": "example only: hashes",
+        "expected": "all recorded hashes match",
+        "observed": "match",
+        "evidence": [
+          "report"
+        ]
+      },
+      {
+        "id": "content",
+        "status": "passed",
+        "method": "example only: content",
+        "expected": "profile content rules hold",
+        "observed": "checked",
+        "evidence": [
+          "report"
+        ]
+      }
+    ]
+  },
+  "acceptance": {
+    "status": "not_evaluated",
+    "scope": "official_stereo_sample",
+    "checks": []
+  },
+  "legacy": null,
+  "limitations": [
+    "Synthetic contract example; no files or inference were produced.",
+    "Official sample checks do not establish real-world pose or depth accuracy."
+  ]
+}

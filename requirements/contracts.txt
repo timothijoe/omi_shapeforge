@@ -1,0 +1,2 @@
+# Offline contract development checks only; not a control-plane runtime dependency.
+jsonschema==4.23.0

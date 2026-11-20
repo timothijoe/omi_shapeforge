@@ -7,6 +7,7 @@
 | [resources.json](resources.json) | 根目录、资源路径、用途、来源、必需功能、恢复方法和检查日期 |
 | [backends.lock.json](backends.lock.json) | 后端初始化 Git HEAD、工作树和入口快照；不强制检出 |
 | [source_baseline_20261120.json](source_baseline_20261120.json) | ENG-001 本地源码版本、原变更清单、bundle 恢复及控制层／GPU smoke 证据 |
+| [contract_validation_20261120.json](contract_validation_20261120.json) | ENG-002 Schema／示例／反例检查、原报告只读核对；不是新增运行验收 |
 | [initial_validation.json](initial_validation.json) | 主项目初始化与两条 GPU 调度的历史验证 |
 | [portable_validation.json](portable_validation.json) | 本机已确认 ROI 配准的复验结果与包哈希 |
 | [simulation_validation.json](simulation_validation.json) | Blender 和两引擎测试报告索引 |

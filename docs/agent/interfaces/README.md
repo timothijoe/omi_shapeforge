@@ -3,6 +3,7 @@
 - [CLI、Python 入口和退出语义](cli.md)
 - [配置文件与路径解析](configuration.md)
 - [数据格式、坐标和单位](data-formats.md)
+- [运行与产物合同 v1](run-contract.md)：ENG-002 定版规范、状态规则、流程要求与旧格式适配；运行层尚未接入。
 - [本地资源与恢复](local-resources.md)
 - [外部算法、仿真和机器人系统](external-systems.md)
 

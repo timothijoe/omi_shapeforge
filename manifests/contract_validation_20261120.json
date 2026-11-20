@@ -1,0 +1,122 @@
+{
+  "task": "ENG-002",
+  "recorded_utc": "2026-11-20T02:02:44.068373+00:00",
+  "schema_version": 1,
+  "status": "passed",
+  "contract_examples": 11,
+  "negative_cases": 27,
+  "strict_json_cases": 3,
+  "checks": {
+    "contract_checks": {
+      "status": "passed",
+      "command": [
+        "python3",
+        "scripts/validation/check_contracts.py"
+      ],
+      "log": "/data/omi_runtime/runs/eng002_contracts_20261120T020243Z/contract_checks.log"
+    },
+    "control_tests": {
+      "status": "passed",
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "log": "/data/omi_runtime/runs/eng002_contracts_20261120T020243Z/control_tests.log"
+    },
+    "strict_json": {
+      "status": "passed",
+      "cases": [
+        "duplicate keys",
+        "NaN",
+        "Infinity"
+      ]
+    }
+  },
+  "jsonschema_version": "4.23.0",
+  "runtime_integrated": false,
+  "gpu_or_simulation_rerun": false,
+  "legacy_samples": [
+    {
+      "workflow": "smoke.stereo",
+      "report": "/data/omi_runtime/runs/omi_shapeforge/20261120T014811_666235Z_stereo/report.json",
+      "sha256": "9f0344b70b1833b6056d57bc5cf796d8e246d9da44f87f4d6a1e7233b088778a",
+      "report_status_matches": true,
+      "required_filenames_present": true,
+      "scope": "Read-only layout inspection; no rerun, decoding or new acceptance."
+    },
+    {
+      "workflow": "smoke.bundlesdf",
+      "report": "/data/omi_runtime/runs/omi_shapeforge/20261120T014828_903620Z_bundlesdf/report.json",
+      "sha256": "28091076906f7a78036ed6c26c5d54bde04eabf0340d548c6ae79202510f8a6c",
+      "report_status_matches": true,
+      "required_filenames_present": true,
+      "scope": "Read-only layout inspection; no rerun, decoding or new acceptance."
+    },
+    {
+      "workflow": "simulation.mujoco",
+      "report": "/data/omi_runtime/runs/mujoco_optical_array_v2_20261120/report.json",
+      "sha256": "74e97bb6705b34054ddad9b27304a31bf91c69983179af689bb3def207e4dcc1",
+      "report_status_matches": true,
+      "required_filenames_present": true,
+      "scope": "Read-only layout inspection; no rerun, decoding or new acceptance."
+    },
+    {
+      "legacy_format": "isaac-report",
+      "path": "/data/omi_runtime/runs/isaac_optical_array_20261120/report.json",
+      "sha256": "bfa404e54f2fd8f65ac9ceca1efe3656e33a67fcc302f0ae2cccead3ecd1c516",
+      "has_status": true,
+      "scope": "Read-only field inventory; adapter implementation deferred to ENG-003."
+    },
+    {
+      "legacy_format": "blender-asset",
+      "path": "/data/omi_runtime/assets/optical_module_sim_20261120/asset.json",
+      "sha256": "06011f9b29ee72f56ec02352c3959e2bcad125212f3c0392f314d8fd421c4acd",
+      "has_status": false,
+      "scope": "Read-only field inventory; adapter implementation deferred to ENG-003."
+    },
+    {
+      "legacy_format": "scene-manifest",
+      "path": "/data/omi_runtime/assets/optical_array_2x2_20261120/scene_manifest.json",
+      "sha256": "3810e7d40394ed09772e1ba35cb8a8d0bfd5001a4f015be1cd199f99e4c1631c",
+      "has_status": false,
+      "scope": "Read-only field inventory; adapter implementation deferred to ENG-003."
+    }
+  ],
+  "contract_files_sha256": {
+    "contracts/v1/examples/acceptance-failed.json": "03e4b8037ea77db05d832a84f158d369c4a11f6918f7114ed01abb59a01e54ed",
+    "contracts/v1/examples/bundlesdf-success.json": "4971d3316a50bc7f28cc23dca720748affa8b95f42c8ecd83ac0af0764139c9b",
+    "contracts/v1/examples/cancelled.json": "f6e16e0e9f340defce9c3dbf05b6fdb89a430d8eb2a5b67e824c517a37435539",
+    "contracts/v1/examples/legacy-unknown.json": "6aaa50019aff113c6eb9e58b2f8d4b4b88965ebf6f1a4ca846aea23c7cc581f4",
+    "contracts/v1/examples/missing-report.json": "50feb6f1db4f619218514106d3cc785b7daf9303c4c8740d02c6fc52a7bb10b5",
+    "contracts/v1/examples/mujoco-success.json": "40b1c7ece27069b2825068da59b0b167040f3dd94c41f26e23981f6beebec7ac",
+    "contracts/v1/examples/process-failure.json": "00de82c643458ea4f587dd015b59f354f21f053086b957e07f84d051220d1c03",
+    "contracts/v1/examples/running.json": "751f85383bd586ae0ae9253d81ce7b0d35c2d8ede4d599fc4adf113b2468f5dd",
+    "contracts/v1/examples/spawn-failure.json": "e227414004800057874d45af78b119b7571484c4d0d3cd2d9db4997cdee48643",
+    "contracts/v1/examples/stereo-success.json": "d0ddf201714f2d79a37d430c2382502e3543fef5426093c5e786891a721203a5",
+    "contracts/v1/examples/valid-not-accepted.json": "8cbcffef86062fc7bc34d586d81d9e6fde932b422a57966551a9c0813c3b8004",
+    "contracts/v1/invalid-cases.json": "0779d890628bdc4ba665c17b6824c6f64c72385722c7900504613662731c147f",
+    "contracts/v1/profiles.json": "dc42dc4a635824ef6d007018b3322a7a3cbad7fbc558d971be202f17c5ba02d1",
+    "contracts/v1/run.schema.json": "d19465f67a344917ed423bf889c5d749e231bc09d8f19d43cfc8f40bd2df3d71"
+  },
+  "checker_sha256": "b6db3c2a34a93dfa40a5b3e419ca9b95435d4201eb895bba34dcd5137b0159da",
+  "limitations": [
+    "Contract checks validate structure and relationships, not referenced file contents.",
+    "Examples are synthetic and never runtime acceptance evidence.",
+    "Legacy readers and runtime adapters remain to be implemented."
+  ],
+  "final_review": {
+    "documents": 66,
+    "local_links": 337,
+    "errors": [],
+    "contract_hashes_match": true,
+    "historical_reports_unchanged": true,
+    "invalid_record_exit_code": 1,
+    "runtime_code_unchanged": true,
+    "main_tree_empty": true
+  }
+}

@@ -10,6 +10,8 @@ omi-shapeforge --version
 
 `--config` 是顶层参数，放在子命令前。当前没有 `simulation`、`register`、`blender` 或硬件 CLI 子命令。
 
+ENG-002 已定版[运行合同 v1](run-contract.md)，但没有接入此 CLI；现有输出、路径和退出规则仍如下所述。
+
 ## doctor
 
 输出 JSON，路径检查全部为真则退出 0，否则 1。检查项为：后端目录、可执行 Python、入口脚本；stereo 另检查 checkpoint 文件，bundlesdf 另检查 nvcc 文件。Git HEAD、状态和哈希记录在 `backends`。

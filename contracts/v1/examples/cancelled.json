@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "record_kind": "example",
+  "run_id": "example-cancelled",
+  "workflow": "smoke.stereo",
+  "started_utc": "2026-11-20T02:00:00Z",
+  "finished_utc": "2026-11-20T02:00:05Z",
+  "execution": {
+    "state": "cancelled",
+    "returncode": -2,
+    "command": [
+      "/example/env/bin/python",
+      "/example/source/run_local_smoke.py",
+      "--output",
+      "/example/run/backend"
+    ],
+    "cwd": "/example/source",
+    "log": "run.log",
+    "error": "Example: interrupted by user"
+  },
+  "sources": [
+    {
+      "repository": "/example/omi_shapeforge",
+      "head": "cccccccccccccccccccccccccccccccccccccccc",
+      "dirty": false,
+      "entrypoint_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "note": "Synthetic orchestrator identity."
+    },
+    {
+      "repository": "/example/source",
+      "head": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "dirty": false,
+      "entrypoint_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "note": "Synthetic example; not a real run."
+    }
+  ],
+  "environment": {
+    "executable": "/example/env/bin/python",
+    "versions": {
+      "python": "3.11.15"
+    }
+  },
+  "parameters": {
+    "iterations": 32
+  },
+  "inputs": [
+    {
+      "id": "left",
+      "path": "/example/input/left",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 128,
+      "format": "opaque",
+      "units": null,
+      "frame": null
+    },
+    {
+      "id": "right",
+      "path": "/example/input/right",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 128,
+      "format": "opaque",
+      "units": null,
+      "frame": null
+    },
+    {
+      "id": "intrinsics",
+      "path": "/example/input/intrinsics",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 128,
+      "format": "opaque",
+      "units": null,
+      "frame": null
+    },
+    {
+      "id": "checkpoint",
+      "path": "/example/input/checkpoint",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 128,
+      "format": "opaque",
+      "units": null,
+      "frame": null
+    },
+    {
+      "id": "model_config",
+      "path": "/example/input/model_config",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 128,
+      "format": "opaque",
+      "units": null,
+      "frame": null
+    }
+  ],
+  "artifacts": [],
+  "validation": {
+    "status": "not_evaluated",
+    "checks": []
+  },
+  "acceptance": {
+    "status": "not_evaluated",
+    "scope": "official_stereo_sample",
+    "checks": []
+  },
+  "legacy": null,
+  "limitations": [
+    "Synthetic contract example; no files or inference were produced.",
+    "Official sample checks do not establish real-world pose or depth accuracy."
+  ]
+}

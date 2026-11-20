@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "record_kind": "example",
+  "run_id": "example-mujoco-success",
+  "workflow": "simulation.mujoco",
+  "started_utc": "2026-11-20T02:00:00Z",
+  "finished_utc": "2026-11-20T02:00:05Z",
+  "execution": {
+    "state": "succeeded",
+    "returncode": 0,
+    "command": [
+      "/example/env/bin/python",
+      "/example/source/scripts/simulation/run_mujoco.py",
+      "--scene",
+      "/example/input/scene",
+      "--steps",
+      "240",
+      "--output",
+      "/example/run/backend"
+    ],
+    "cwd": "/example/source",
+    "log": "run.log",
+    "error": null
+  },
+  "sources": [
+    {
+      "repository": "/example/source",
+      "head": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "dirty": false,
+      "entrypoint_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "note": "Synthetic example; not a real run."
+    }
+  ],
+  "environment": {
+    "executable": "/example/env/bin/python",
+    "versions": {
+      "python": "3.11.15"
+    }
+  },
+  "parameters": {
+    "steps": 240
+  },
+  "inputs": [
+    {
+      "id": "scene",
+      "path": "/example/input/scene",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 128,
+      "format": "opaque",
+      "units": null,
+      "frame": null
+    },
+    {
+      "id": "scene_dependencies",
+      "path": "/example/input/scene_dependencies",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 128,
+      "format": "opaque",
+      "units": null,
+      "frame": null
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "report",
+      "path": "backend/report.json",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 128,
+      "format": "json",
+      "units": null,
+      "frame": null
+    },
+    {
+      "id": "trajectory",
+      "path": "backend/trajectory.npz",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 128,
+      "format": "npz",
+      "units": "mixed",
+      "frame": "mjcf_world"
+    },
+    {
+      "id": "samples",
+      "path": "backend/samples.json",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 128,
+      "format": "json",
+      "units": "mixed",
+      "frame": "mjcf_world"
+    },
+    {
+      "id": "initial_image",
+      "path": "backend/initial.png",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 128,
+      "format": "png",
+      "units": null,
+      "frame": null
+    },
+    {
+      "id": "settled_image",
+      "path": "backend/settled.png",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "size_bytes": 128,
+      "format": "png",
+      "units": null,
+      "frame": null
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "checks": [
+      {
+        "id": "required_artifacts",
+        "status": "passed",
+        "method": "example only: required_artifacts",
+        "expected": "all required artifacts",
+        "observed": "present",
+        "evidence": [
+          "report"
+        ]
+      },
+      {
+        "id": "report_status",
+        "status": "passed",
+        "method": "example only: report_status",
+        "expected": "passed_mujoco_load_step_render_and_settle",
+        "observed": "passed_mujoco_load_step_render_and_settle",
+        "evidence": [
+          "report"
+        ]
+      },
+      {
+        "id": "hashes",
+        "status": "passed",
+        "method": "example only: hashes",
+        "expected": "all recorded hashes match",
+        "observed": "match",
+        "evidence": [
+          "report"
+        ]
+      },
+      {
+        "id": "content",
+        "status": "passed",
+        "method": "example only: content",
+        "expected": "profile content rules hold",
+        "observed": "checked",
+        "evidence": [
+          "report"
+        ]
+      }
+    ]
+  },
+  "acceptance": {
+    "status": "passed",
+    "scope": "mujoco_load_step_render_settle",
+    "checks": [
+      {
+        "id": "fall_contact_settle",
+        "status": "passed",
+        "method": "example only: fall_contact_settle",
+        "expected": "profile scoped checks",
+        "observed": "passed",
+        "evidence": [
+          "report"
+        ]
+      }
+    ]
+  },
+  "legacy": null,
+  "limitations": [
+    "Synthetic example; not runtime evidence.",
+    "Does not establish full reconstruction or calibrated physical accuracy."
+  ]
+}

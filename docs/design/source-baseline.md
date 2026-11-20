@@ -57,10 +57,10 @@ bundle 不包含外部数据、模型权重、环境、生成资产、原生编�
 | 官方双目 smoke | `20261120T014811_666235Z_stereo`：960×540、32 次迭代、470,018 点 |
 | BundleSDF 组件 smoke | `20261120T014828_903620Z_bundlesdf`：C++、CUDA、PyTorch3D、Kaolin、Warp、LoFTR 检查通过；2,893 组匹配 |
 
-两次 smoke 的运行清单均记录干净的主项目 `eb8da42` 及上述后端提交，输出位于 `/data/omi_runtime/runs/omi_shapeforge/` 的新目录。主项目后续交付修改限于文档和元数据，运行代码与该验证版本一致。
+两次 smoke 的运行清单均记录干净的主项目 `eb8da42` 及上述后端提交，输出位于 `/data/omi_runtime/runs/omi_shapeforge/` 的新目录。ENG-001 的后续交付修改限于文档和元数据，运行代码与该验证版本一致；后续阶段另见当前总览与各自记录。
 
 本轮没有重编译 BundleSDF 原生模块，报告另外记录了使用中的 `my_cpp` 文件哈希；没有进行完整视频在线重建、光模块原始录制重算、仿真场景复验或训练。历史环境与已有实验保持原样。
 
 ## 下一步
 
-ENG-001 完成。下一项为 ENG-002：先定版运行记录、产物合同和旧报告适配规则，再开展共用运行层实现。具体顺序见[统一开发方案](unified-development.md)。
+ENG-001 完成。ENG-002 已完成[运行合同 v1](../agent/interfaces/run-contract.md)，下一项 ENG-003 开展共用运行层实现；本页的源码与恢复证据仍对应 ENG-001 时点。具体顺序见[统一开发方案](unified-development.md)。

@@ -29,6 +29,8 @@ BundleSDF 适配了现代 PCL 指针、头文件、pybind11 与 CUDA 构建，�
 
 ## 已知限制
 
+ENG-002 已定版[运行合同 v1](../../interfaces/run-contract.md)及两个 smoke 的输入／产物要求，离线示例检查通过；目前尚未接入 `run_smoke`，原 CLI 输出与检查行为不变。公共运行层与实际内容校验由 ENG-003 实现。
+
 该阶段没有重新运行旧光模块的原始左右 IR／全部录制，没有外部深度真值比较，也没有完成官方 BundleSDF 视频在线跟踪与 textured mesh 全链路。组件成功不能推导这些能力已通过。旧机 PyTorch 2.7.1+cu128 的恢复结果属于原交接背景。
 
 历史见[本机基线阶段](../chronicles/2026-11-19-backend-baseline.md)。

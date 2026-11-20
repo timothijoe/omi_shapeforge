@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "record_kind": "example",
+  "run_id": "example-legacy-import",
+  "workflow": "simulation.mujoco",
+  "started_utc": null,
+  "finished_utc": null,
+  "execution": {
+    "state": "unknown",
+    "returncode": null,
+    "command": [],
+    "cwd": null,
+    "log": null,
+    "error": null
+  },
+  "sources": [],
+  "environment": {
+    "executable": null,
+    "versions": {}
+  },
+  "parameters": {
+    "iterations": 32
+  },
+  "inputs": [],
+  "artifacts": [],
+  "validation": {
+    "status": "not_evaluated",
+    "checks": []
+  },
+  "acceptance": {
+    "status": "not_evaluated",
+    "scope": "mujoco_load_step_render_settle",
+    "checks": []
+  },
+  "legacy": {
+    "format": "mujoco-report-v0",
+    "adapter_version": 1,
+    "documents": [
+      {
+        "id": "legacy_report",
+        "path": "/example/history/report.json",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "size_bytes": 128,
+        "format": "json",
+        "units": null,
+        "frame": null
+      }
+    ],
+    "raw_status": "passed_mujoco_load_step_render_and_settle",
+    "missing_fields": [
+      "execution.returncode",
+      "started_utc",
+      "finished_utc",
+      "sources"
+    ]
+  },
+  "limitations": [
+    "Synthetic legacy-import example; raw status is retained without promoting it to current acceptance."
+  ]
+}

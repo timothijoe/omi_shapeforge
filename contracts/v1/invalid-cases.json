@@ -1,0 +1,301 @@
+[
+  {
+    "id": "future-version",
+    "example": "stereo-success.json",
+    "edits": [
+      {
+        "path": "/schema_version",
+        "value": 2
+      }
+    ],
+    "expected_error": "1 was expected"
+  },
+  {
+    "id": "nonzero-success",
+    "example": "stereo-success.json",
+    "edits": [
+      {
+        "path": "/execution/returncode",
+        "value": 7
+      }
+    ],
+    "expected_error": "successful execution requires"
+  },
+  {
+    "id": "zero-failure",
+    "example": "process-failure.json",
+    "edits": [
+      {
+        "path": "/execution/returncode",
+        "value": 0
+      }
+    ],
+    "expected_error": "failed/cancelled execution"
+  },
+  {
+    "id": "empty-success",
+    "example": "stereo-success.json",
+    "edits": [
+      {
+        "path": "/validation/checks",
+        "value": []
+      }
+    ],
+    "expected_error": "passed requires nonempty"
+  },
+  {
+    "id": "missing-artifact",
+    "example": "stereo-success.json",
+    "edits": [
+      {
+        "path": "/artifacts",
+        "value": []
+      }
+    ],
+    "expected_error": "missing required artifact"
+  },
+  {
+    "id": "unit-mismatch",
+    "example": "stereo-success.json",
+    "edits": [
+      {
+        "path": "/artifacts/2/units",
+        "value": "mm"
+      }
+    ],
+    "expected_error": "units/frame mismatch"
+  },
+  {
+    "id": "path-escape",
+    "example": "stereo-success.json",
+    "edits": [
+      {
+        "path": "/artifacts/0/path",
+        "value": "../report.json"
+      }
+    ],
+    "expected_error": "artifact path must stay"
+  },
+  {
+    "id": "absolute-output",
+    "example": "stereo-success.json",
+    "edits": [
+      {
+        "path": "/artifacts/0/path",
+        "value": "/tmp/report.json"
+      }
+    ],
+    "expected_error": "artifact path must stay"
+  },
+  {
+    "id": "log-escape",
+    "example": "stereo-success.json",
+    "edits": [
+      {
+        "path": "/execution/log",
+        "value": "../run.log"
+      }
+    ],
+    "expected_error": "log must stay"
+  },
+  {
+    "id": "invalid-hash",
+    "example": "stereo-success.json",
+    "edits": [
+      {
+        "path": "/artifacts/0/sha256",
+        "value": "not-a-hash"
+      }
+    ],
+    "expected_error": "does not match"
+  },
+  {
+    "id": "missing-hash",
+    "example": "stereo-success.json",
+    "edits": [
+      {
+        "path": "/artifacts/0/sha256",
+        "value": null
+      }
+    ],
+    "expected_error": "validated files need hash"
+  },
+  {
+    "id": "empty-file",
+    "example": "stereo-success.json",
+    "edits": [
+      {
+        "path": "/artifacts/0/size_bytes",
+        "value": 0
+      }
+    ],
+    "expected_error": "validated files need hash"
+  },
+  {
+    "id": "missing-input",
+    "example": "stereo-success.json",
+    "edits": [
+      {
+        "path": "/inputs",
+        "value": []
+      }
+    ],
+    "expected_error": "missing required input"
+  },
+  {
+    "id": "unknown-evidence",
+    "example": "stereo-success.json",
+    "edits": [
+      {
+        "path": "/acceptance/checks/0/evidence",
+        "value": [
+          "missing"
+        ]
+      }
+    ],
+    "expected_error": "unknown evidence"
+  },
+  {
+    "id": "failed-check-passed-summary",
+    "example": "stereo-success.json",
+    "edits": [
+      {
+        "path": "/acceptance/checks/0/status",
+        "value": "failed"
+      }
+    ],
+    "expected_error": "all-passed checks"
+  },
+  {
+    "id": "unsupported-claim",
+    "example": "stereo-success.json",
+    "edits": [
+      {
+        "path": "/acceptance/scope",
+        "value": "physical_accuracy"
+      }
+    ],
+    "expected_error": "scope exceeds profile"
+  },
+  {
+    "id": "unknown-workflow",
+    "example": "stereo-success.json",
+    "edits": [
+      {
+        "path": "/workflow",
+        "value": "simulation.robot"
+      }
+    ],
+    "expected_error": "workflow has no v1 profile"
+  },
+  {
+    "id": "reversed-time",
+    "example": "stereo-success.json",
+    "edits": [
+      {
+        "path": "/finished_utc",
+        "value": "2026-11-20T01:00:00Z"
+      }
+    ],
+    "expected_error": "finished_utc precedes"
+  },
+  {
+    "id": "non-utc",
+    "example": "stereo-success.json",
+    "edits": [
+      {
+        "path": "/started_utc",
+        "value": "2026-11-20T10:00:00+08:00"
+      }
+    ],
+    "expected_error": "timestamps must be UTC"
+  },
+  {
+    "id": "unfinished-end",
+    "example": "running.json",
+    "edits": [
+      {
+        "path": "/finished_utc",
+        "value": "2026-11-20T02:00:05Z"
+      }
+    ],
+    "expected_error": "unfinished execution"
+  },
+  {
+    "id": "native-unknown",
+    "example": "stereo-success.json",
+    "edits": [
+      {
+        "path": "/execution/state",
+        "value": "unknown"
+      }
+    ],
+    "expected_error": "unknown execution is reserved"
+  },
+  {
+    "id": "legacy-promoted",
+    "example": "legacy-unknown.json",
+    "edits": [
+      {
+        "path": "/acceptance/status",
+        "value": "passed"
+      }
+    ],
+    "expected_error": "acceptance evaluation requires"
+  },
+  {
+    "id": "duplicate-file-id",
+    "example": "stereo-success.json",
+    "edits": [
+      {
+        "path": "/artifacts/1/id",
+        "value": "report"
+      }
+    ],
+    "expected_error": "file IDs must be unique"
+  },
+  {
+    "id": "duplicate-output-path",
+    "example": "stereo-success.json",
+    "edits": [
+      {
+        "path": "/artifacts/1/path",
+        "value": "backend/report.json"
+      }
+    ],
+    "expected_error": "artifact paths must be unique"
+  },
+  {
+    "id": "unknown-field",
+    "example": "stereo-success.json",
+    "edits": [
+      {
+        "path": "/undocumented",
+        "value": true
+      }
+    ],
+    "expected_error": "Additional properties are not allowed"
+  },
+  {
+    "id": "relative-input",
+    "example": "stereo-success.json",
+    "edits": [
+      {
+        "path": "/inputs/0/path",
+        "value": "left.png"
+      }
+    ],
+    "expected_error": "paths must be absolute"
+  },
+  {
+    "id": "wrong-report-status",
+    "example": "stereo-success.json",
+    "edits": [
+      {
+        "path": "/validation/checks/1/observed",
+        "value": "passed_something_else"
+      }
+    ],
+    "expected_error": "report status must exactly match"
+  }
+]

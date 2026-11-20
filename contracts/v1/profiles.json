@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "profiles": {
+    "smoke.stereo": {
+      "report_status": "passed_real_gpu_stereo_inference",
+      "scope": "official_stereo_sample",
+      "required_inputs": [
+        "left",
+        "right",
+        "intrinsics",
+        "checkpoint",
+        "model_config"
+      ],
+      "required_artifacts": {
+        "report": {
+          "path": "backend/report.json",
+          "format": "json",
+          "units": null,
+          "frame": null
+        },
+        "disparity": {
+          "path": "backend/disparity.npy",
+          "format": "npy",
+          "units": "pixel",
+          "frame": "left_image"
+        },
+        "depth": {
+          "path": "backend/depth_meter.npy",
+          "format": "npy",
+          "units": "m",
+          "frame": "camera"
+        },
+        "cloud": {
+          "path": "backend/cloud.ply",
+          "format": "ply",
+          "units": "m",
+          "frame": "camera"
+        },
+        "preview": {
+          "path": "backend/vis.png",
+          "format": "png",
+          "units": null,
+          "frame": null
+        }
+      },
+      "content_rules": [
+        "RGB input sizes agree; intrinsics and baseline are valid",
+        "disparity/depth are finite HxW arrays matching input size; depth is nonnegative",
+        "PLY is readable with finite coordinates and positive point count matching report",
+        "PNG is decodable; report image_shape and iterations match resolved parameters"
+      ],
+      "acceptance_checks": [
+        "official_sample_checks"
+      ]
+    },
+    "smoke.bundlesdf": {
+      "report_status": "passed_cuda_kernels_cpp_bindings_and_real_loftr_matching",
+      "scope": "bundlesdf_components",
+      "required_inputs": [
+        "left",
+        "right",
+        "loftr_checkpoint",
+        "bundletrack_config"
+      ],
+      "required_artifacts": {
+        "report": {
+          "path": "backend/report.json",
+          "format": "json",
+          "units": null,
+          "frame": null
+        },
+        "matches": {
+          "path": "backend/loftr_matches.npy",
+          "format": "npy",
+          "units": "pixel",
+          "frame": "resized_image_pair"
+        },
+        "preview": {
+          "path": "backend/loftr_matches.jpg",
+          "format": "jpeg",
+          "units": null,
+          "frame": null
+        }
+      },
+      "content_rules": [
+        "matches are finite Nx5 with N >= 10; N equals report loftr_matches",
+        "pair images are resized to 640x448; coordinates refer to those images",
+        "report hash_grid_forward_backward, so3_roundtrip, pytorch3d_cuda_knn_forward_backward and warp_cuda_kernel are passed; kaolin_octree_bytes > 0",
+        "JPEG is decodable"
+      ],
+      "acceptance_checks": [
+        "component_checks"
+      ]
+    },
+    "simulation.mujoco": {
+      "report_status": "passed_mujoco_load_step_render_and_settle",
+      "scope": "mujoco_load_step_render_settle",
+      "required_inputs": [
+        "scene",
+        "scene_dependencies"
+      ],
+      "required_artifacts": {
+        "report": {
+          "path": "backend/report.json",
+          "format": "json",
+          "units": null,
+          "frame": null
+        },
+        "trajectory": {
+          "path": "backend/trajectory.npz",
+          "format": "npz",
+          "units": "mixed",
+          "frame": "mjcf_world"
+        },
+        "samples": {
+          "path": "backend/samples.json",
+          "format": "json",
+          "units": "mixed",
+          "frame": "mjcf_world"
+        },
+        "initial_image": {
+          "path": "backend/initial.png",
+          "format": "png",
+          "units": null,
+          "frame": null
+        },
+        "settled_image": {
+          "path": "backend/settled.png",
+          "format": "png",
+          "units": null,
+          "frame": null
+        }
+      },
+      "content_rules": [
+        "NPZ initial_qpos/final_qpos/final_qvel are finite; dimensions agree with model",
+        "samples have monotonic time_s and finite qpos; all referenced images decode",
+        "report scene_sha256 and runner_sha256 match inputs and source; steps matches positive requested steps",
+        "report modules matches selected scene; physical_accuracy_validated remains false for this profile"
+      ],
+      "acceptance_checks": [
+        "fall_contact_settle"
+      ]
+    }
+  }
+}
