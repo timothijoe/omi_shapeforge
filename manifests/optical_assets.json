@@ -1,0 +1,226 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-11-20T02:15:23.525730+00:00",
+  "asset_family": "OM-001",
+  "display_name": "光模块建模资产 001",
+  "manufacturer": null,
+  "manufacturer_model": null,
+  "identity_note": "Local catalog family for the current modeling subject; not a manufacturer SKU or claim of four distinct physical product models.",
+  "version_policy": "Names label existing immutable source snapshots. Increment rNN within a modeling variant when source changes; retain historical V2 as REF-V2. Original files are never renamed by this registry.",
+  "current_visual_asset": "OM-001/GROOVE-r01",
+  "versions": [
+    {
+      "id": "OM-001/PHOTO-r01",
+      "display_name": "照片外观稿",
+      "source_file": "photo_unscaled.blend",
+      "source_path": "/data/omi_runtime/inputs/optical_packages_20261120_001316/optical_module_portable_20261119/models/photo_unscaled.blend",
+      "source_sha256": "c6951dd0d7a7795e2e98e13292fc5681197783b7e2a41af3710f295affa1b4da",
+      "derived_from": null,
+      "reference_assets": [],
+      "source_unit_system": "NONE",
+      "visual_bounds_size_m": null,
+      "visible_evaluated_parts": 20,
+      "display_mesh_triangles": 4220,
+      "physical_accuracy_validated": false,
+      "limitations": [
+        "Unscaled photo construction; no physical dimension claim."
+      ],
+      "part_source_names": [
+        "01 Main upper sheet",
+        "02 Lower shell and projecting lower guard",
+        "03 Side wall left",
+        "03 Side wall right",
+        "04 Upper guard recessed floor",
+        "05 Upper guard flange left",
+        "05 Upper guard flange right",
+        "06 Upper guard front rim",
+        "07 Channel back step",
+        "08 Contact board — hidden rear length assumed",
+        "09 Visible metallic contact region — no claimed pin count",
+        "10 Interior shadow block — unobserved simplification",
+        "11 Raised metal head cover",
+        "12 Black handle seat",
+        "13 Side spring plate left",
+        "14 Green pull arm left",
+        "13 Side spring plate right",
+        "14 Green pull arm right",
+        "15 Estimated folded seam left",
+        "15 Estimated folded seam right"
+      ]
+    },
+    {
+      "id": "OM-001/METRIC-r01",
+      "display_name": "双目尺寸修正版",
+      "source_file": "stereo_refined.blend",
+      "source_path": "/data/omi_runtime/inputs/optical_packages_20261120_001316/optical_module_portable_20261119/models/stereo_refined.blend",
+      "source_sha256": "9d8fa798c10675ac1420d8052d673241976bf2594a380201df3a07673b009ff8",
+      "derived_from": "OM-001/PHOTO-r01",
+      "reference_assets": [],
+      "source_unit_system": "METRIC",
+      "visual_bounds_size_m": [
+        0.01878956,
+        0.10043665,
+        0.010449504
+      ],
+      "visible_evaluated_parts": 20,
+      "display_mesh_triangles": 4220,
+      "physical_accuracy_validated": false,
+      "limitations": [
+        "Frozen stereo-based size estimate; no new 59-frame estimation or metrology certification."
+      ],
+      "part_source_names": [
+        "01 Main upper sheet",
+        "02 Lower shell and projecting lower guard",
+        "03 Side wall left",
+        "03 Side wall right",
+        "04 Upper guard recessed floor",
+        "05 Upper guard flange left",
+        "05 Upper guard flange right",
+        "06 Upper guard front rim",
+        "07 Channel back step",
+        "08 Contact board — hidden rear length assumed",
+        "09 Visible metallic contact region — no claimed pin count",
+        "10 Interior shadow block — unobserved simplification",
+        "11 Raised metal head cover",
+        "12 Black handle seat",
+        "13 Side spring plate left",
+        "14 Green pull arm left",
+        "13 Side spring plate right",
+        "14 Green pull arm right",
+        "15 Estimated folded seam left",
+        "15 Estimated folded seam right"
+      ]
+    },
+    {
+      "id": "OM-001/GROOVE-r01",
+      "display_name": "连通槽模型",
+      "source_file": "connected_groove.blend",
+      "source_path": "/data/omi_runtime/inputs/optical_packages_20261120_001316/optical_module_portable_20261119/models/connected_groove.blend",
+      "source_sha256": "016ac93da1f252e2f13325ac20454d1a02b82e31a840ac4f95bffa4218d0b8d2",
+      "derived_from": "OM-001/METRIC-r01",
+      "reference_assets": [
+        "OM-001/REF-V2"
+      ],
+      "source_unit_system": "METRIC",
+      "visual_bounds_size_m": [
+        0.01878956,
+        0.100366462,
+        0.010449504
+      ],
+      "visible_evaluated_parts": 15,
+      "display_mesh_triangles": 4044,
+      "physical_accuracy_validated": false,
+      "limitations": [
+        "Groove geometry references V2; the complete model is not independent of V2.",
+        "Groove depth and shell thickness are assumptions, not measured precision."
+      ],
+      "part_source_names": [
+        "02 Lower shell and projecting lower guard",
+        "03 Side wall left",
+        "03 Side wall right",
+        "08 Contact board — hidden rear length assumed",
+        "09 Visible metallic contact region — no claimed pin count",
+        "10 Interior shadow block — unobserved simplification",
+        "11 Raised metal head cover",
+        "12 Black handle seat",
+        "13 Side spring plate left",
+        "14 Green pull arm left",
+        "13 Side spring plate right",
+        "14 Green pull arm right",
+        "15 Estimated folded seam left",
+        "15 Estimated folded seam right",
+        "01 Connected equal-depth upper grooves"
+      ]
+    },
+    {
+      "id": "OM-001/REF-V2",
+      "display_name": "历史 V2 参考",
+      "source_file": "v2_reference.blend",
+      "source_path": "/data/omi_runtime/inputs/optical_packages_20261120_001316/optical_module_portable_20261119/models/v2_reference.blend",
+      "source_sha256": "9244ba54328e5a9c808bf65580eb669695741c8ca6ea0786b1fb4b410ed768cb",
+      "derived_from": null,
+      "reference_assets": [],
+      "source_unit_system": "METRIC",
+      "visual_bounds_size_m": [
+        0.01735802,
+        0.069444723,
+        0.010376522
+      ],
+      "visible_evaluated_parts": 3,
+      "display_mesh_triangles": 35676,
+      "physical_accuracy_validated": false,
+      "limitations": [
+        "Historical V2 label retained; not a new global project version.",
+        "No pull-arm geometry in this reference; total bounds are not comparable to models including handles."
+      ],
+      "part_source_names": [
+        "contact_board",
+        "housing",
+        "visible_contact_region"
+      ]
+    }
+  ],
+  "scene_instances": {
+    "scene_manifest": "/data/omi_runtime/assets/optical_array_2x2_20261120/scene_manifest.json",
+    "scene_sha256": "3810e7d40394ed09772e1ba35cb8a8d0bfd5001a4f015be1cd199f99e4c1631c",
+    "scene_id": "SC-OM001-ARRAY2x2-r01",
+    "instances": [
+      {
+        "id": "OM-001-I01",
+        "model_version": "OM-001/GROOVE-r01",
+        "mjcf_body": "optical_module_0",
+        "initial_position_m": [
+          -0.06,
+          -0.07,
+          0.055
+        ]
+      },
+      {
+        "id": "OM-001-I02",
+        "model_version": "OM-001/GROOVE-r01",
+        "mjcf_body": "optical_module_1",
+        "initial_position_m": [
+          0.06,
+          -0.07,
+          0.055
+        ]
+      },
+      {
+        "id": "OM-001-I03",
+        "model_version": "OM-001/GROOVE-r01",
+        "mjcf_body": "optical_module_2",
+        "initial_position_m": [
+          -0.06,
+          0.07,
+          0.055
+        ]
+      },
+      {
+        "id": "OM-001-I04",
+        "model_version": "OM-001/GROOVE-r01",
+        "mjcf_body": "optical_module_3",
+        "initial_position_m": [
+          0.06,
+          0.07,
+          0.055
+        ]
+      }
+    ]
+  },
+  "viewer_evidence": {
+    "export_directory": "/data/omi_runtime/runs/optical_asset_versions_20261120",
+    "mesh_data_sha256": "5455a848da5fbe4fc9043bbfda4e471fd47f89355264c25923a79adb3d76c163",
+    "geometry_method": "Evaluated Blender mesh/curve objects, world transforms applied; hidden cutters excluded; centered and independently normalized for display; coordinates rounded to 1e-6 of longest extent; no decimation.",
+    "appearance": "Theme-aware illustrative materials; no photometric claim.",
+    "source_blends_unchanged": true,
+    "browser_checks": {
+      "four_models_rendered": true,
+      "view_switch": true,
+      "part_name_and_highlight": true,
+      "narrow_viewport_no_overflow": true,
+      "javascript_errors": 0,
+      "runtime_external_network_requests": false,
+      "note": "Local Chromium preview tested; host inline rendering may differ."
+    }
+  }
+}

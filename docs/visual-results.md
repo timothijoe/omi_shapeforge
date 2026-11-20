@@ -1,5 +1,7 @@
 # 已有资产与可视化结果
 
+版本名称与源文件映射见[光模块资产版本](asset-versions.md)；2×2 中的四个模块是同一模型的四个实例。
+
 核对日期：2026-11-20。本次找到 **2496 个可视化文件、78 个分组**，覆盖本机运行、便携包和恢复的旧机实验 results 目录。原始采集数据帧、第三方软件素材不纳入此展示目录。未去除重复图或失败试验，方便回溯。
 
 完整清单：[CSV](</data/omi_runtime/runs/asset_visual_catalog_20261120T020714Z/files.csv>) · [JSON](</data/omi_runtime/runs/asset_visual_catalog_20261120T020714Z/inventory.json>)。图片、模型和逐组图册均在外部资源目录；本仓库仅维护入口。
