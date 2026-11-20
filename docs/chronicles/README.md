@@ -9,3 +9,5 @@
 - [2026-11-20：共用运行层最终版本复验](2026-11-20-runner-final-verification.md)
 
 领域内实验仍分别追加到[感知编年](../agent/perception/chronicles/README.md)和[仿真编年](../agent/simulation/chronicles/README.md)。
+
+- [2026-11-20：重启前完整接续交接](2026-11-20-restart-handoff.md)

@@ -4,6 +4,7 @@
 
 | 文件 | 职责 |
 | --- | --- |
+| [restart_handoff_20261120.json](restart_handoff_20261120.json) | 本轮重启前版本、Blender 会话快照、重开验证与持久备份 |
 | [resources.json](resources.json) | 根目录、资源路径、用途、来源、必需功能、恢复方法和检查日期 |
 | [visual_catalog_20261120.json](visual_catalog_20261120.json) | 资产可视化图册范围与完整文件目录；不改变能力验收状态 |
 | [optical_assets.json](optical_assets.json) | 光模块模型名称、源文件哈希、版本关系、部件及场景实例身份 |

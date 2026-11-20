@@ -2,7 +2,7 @@
 
 核对日期：2026-11-20。ENG-001～003 已完成：源码基线、统一合同和共用运行层；本轮新跑两项 GPU smoke 与 MuJoCo 2×2 场景，并完成资产名称及可视化整理。没有运行训练或硬件控制。
 
-完整交接见[当前全部进展快照](chronicles/2026-11-20-workspace-handoff.md)，具体能力以领域纪传体为准。
+最新接续见[重启前完整交接](chronicles/2026-11-20-restart-handoff.md)和[重启恢复教程](../tutorials/restart_resume.md)。当前 Blender 未保存会话已独立备份并重开核验；完整历史仍见[早期工作区快照](chronicles/2026-11-20-workspace-handoff.md)，能力事实以领域纪传体为准。
 
 ## 已完成范围
 

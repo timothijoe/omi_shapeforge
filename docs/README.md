@@ -3,6 +3,7 @@
 本目录面向维护者和 Agent；实际操作者优先阅读[教程](../tutorials/README.md)。
 
 - [根目录交接文档](../HANDOFF.md)：接手阅读顺序、工作树、环境与数据位置、验证边界及下一步。
+- [最新重启交接](chronicles/2026-11-20-restart-handoff.md) · [重启恢复步骤](../tutorials/restart_resume.md)：包含 Blender 会话备份、V3 主线和持久源码备份位置。
 - [当前总览](current.md)：全项目唯一的当前摘要，链接领域现状。
 - [资产与可视化目录](visual-results.md)：代表图、模型源文件及全部历史图册。
 - [光模块资产版本](asset-versions.md)：OM-001 的四份模型版本与四个场景实例命名。

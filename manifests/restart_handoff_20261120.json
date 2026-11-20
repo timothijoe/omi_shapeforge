@@ -1,0 +1,102 @@
+{
+  "recorded_utc": "2026-11-20T05:09:48.423378+00:00",
+  "scope": "Pre-restart handoff, live Blender session preservation and source backups; no new GPU or physics run.",
+  "backup_directory": "/data/omi_runtime/baselines/restart_handoff_20261120T043105Z",
+  "repositories": {
+    "omi_shapeforge": {
+      "path": "/home/linux/omi_folder/omi_shapeforge",
+      "branch": "docs/restart-handoff",
+      "head": "9e14cbeb525bb02b5a8f9077655d23e440505c09",
+      "status": "",
+      "origin": "git@github.com:timothijoe/omi_shapeforge.git"
+    },
+    "FoundationStereo": {
+      "path": "/home/linux/omi_folder/FoundationStereo",
+      "branch": "feature/local-runtime-baseline",
+      "head": "e46fa7098730674bfc9f96047b4d2ffe9a87e1b4",
+      "status": "",
+      "origin": "git@github.com:timothijoe/FoundationStereo.git"
+    },
+    "BundleSDF": {
+      "path": "/home/linux/omi_folder/BundleSDF",
+      "branch": "feature/local-runtime-baseline",
+      "head": "b1a55878264e8c28841507bb578835c94a63d475",
+      "status": "",
+      "origin": "git@github.com:timothijoe/BundleSDF.git"
+    },
+    "omi_proj": {
+      "path": "/home/linux/omi_folder/omi_proj",
+      "branch": "oct_26_branch",
+      "head": "963a7c29f8e39bff59ba4eb285693976b224961e",
+      "status": "",
+      "origin": "git@github.com:timothijoe/omi_proj.git"
+    }
+  },
+  "blender_session": {
+    "recorded_utc": "2026-11-20T04:43:43.885543+00:00",
+    "source_file": "/data/omi_runtime/assets/optical_module_v3/work/OM-001-V3.blend",
+    "dirty_before": true,
+    "snapshot": "/data/omi_runtime/baselines/restart_handoff_20261120T043105Z/V3-live-session.blend",
+    "source_file_overwritten": false,
+    "save_mode": "copy=True",
+    "status": "saved",
+    "source_file_after": "/data/omi_runtime/assets/optical_module_v3/work/OM-001-V3.blend",
+    "dirty_after": true
+  },
+  "blender_reopen_validation": "/data/omi_runtime/baselines/restart_handoff_20261120T043105Z/session_reopen_validation.json",
+  "visible_evaluated_geometry_equal": true,
+  "checks": {
+    "doctor": {
+      "returncode": 0,
+      "log": "/data/omi_runtime/baselines/restart_handoff_20261120T043105Z/doctor.log"
+    },
+    "cli_help": {
+      "returncode": 0,
+      "log": "/data/omi_runtime/baselines/restart_handoff_20261120T043105Z/cli_help.log"
+    }
+  },
+  "persistent_files": {
+    "V3-live-session.blend": {
+      "path": "/data/omi_runtime/baselines/restart_handoff_20261120T043105Z/V3-live-session.blend",
+      "size_bytes": 4795770,
+      "sha256": "8b067f8dfe02d562bac8131e7560c7de1130e69f1b5947f81adb89b2ddc00b83"
+    },
+    "V3-working-file-before.blend": {
+      "path": "/data/omi_runtime/baselines/restart_handoff_20261120T043105Z/V3-working-file-before.blend",
+      "size_bytes": 4721977,
+      "sha256": "016ac93da1f252e2f13325ac20454d1a02b82e31a840ac4f95bffa4218d0b8d2"
+    },
+    "comparison-fragment.html": {
+      "path": "/data/omi_runtime/baselines/restart_handoff_20261120T043105Z/comparison-fragment.html",
+      "size_bytes": 404632,
+      "sha256": "b6ffe52c36ad3138de620224bdae09e8c2f9e8fa1a7aa6026a876396b0dccb7e"
+    },
+    "comparison-desktop.html": {
+      "path": "/data/omi_runtime/baselines/restart_handoff_20261120T043105Z/comparison-desktop.html",
+      "size_bytes": 490353,
+      "sha256": "73336003d6122009df3a6ca7d77b2fc83014d09c26d7340ac0c00b1a92832688"
+    },
+    "session_reopen_validation.json": {
+      "path": "/data/omi_runtime/baselines/restart_handoff_20261120T043105Z/session_reopen_validation.json",
+      "size_bytes": 7451,
+      "sha256": "78e8cb2ecec8b55641ff6d296818c4c9aa1d2681418fa330402c5ed72f72b2d6"
+    }
+  },
+  "restart_performed": false,
+  "pushed": false,
+  "notes": [
+    "The live session was saved with copy=True; original V3 work file was not overwritten.",
+    "Window IDs, PIDs and /tmp markers are transient and must not be relied on after reboot.",
+    "The saved live session and working file reopen successfully and have identical visible evaluated mesh geometry; other UI/material/hidden state differences are not exhaustively compared.",
+    "Source bundle receipt is written after final documentation commit as delivery.json in the backup directory."
+  ],
+  "document_review": {
+    "documents": 76,
+    "local_links": 526,
+    "persistent_file_hashes": "passed",
+    "session_snapshot_reopened": true,
+    "visible_geometry_matches_disk_work_file": true,
+    "runtime_code_unchanged": true,
+    "main_tree_empty": true
+  }
+}

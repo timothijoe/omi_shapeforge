@@ -15,3 +15,5 @@
 当前没有本项目录制或真机执行能力，因此没有对应操作教程。能力边界见[能力表](../docs/capabilities.md)，资源状态见[清单](../manifests/README.md)。
 
 - [Open3D 原生桌面 mesh 查看器](native_mesh_viewer.md)：恢复原电脑的历史 V2／V1 查看方式。
+
+- [重启后恢复工作](restart_resume.md)：Blender V3 会话、原生 V2 查看、现有环境与代码接续。
