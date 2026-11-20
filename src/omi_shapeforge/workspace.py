@@ -37,6 +37,10 @@ def load_config(path=None):
         if not entry.is_relative_to(Path(backend['repository'])):
             raise ValueError(f'Entrypoint escapes the {name} repository')
         backend['entrypoint'] = str(entry)
+    for backend in config.get('simulations', {}).values():
+        for key in ('environment', 'entrypoint', 'scene'):
+            backend[key] = str(resolve_path(path.parent, backend[key]))
+        backend['python'] = str(Path(backend['environment']) / 'bin/python')
     return config
 
 
@@ -82,10 +86,16 @@ def doctor(config):
             checks[name]['checkpoint'] = Path(backend['checkpoint']).is_file()
         if name == 'bundlesdf':
             checks[name]['nvcc'] = (Path(backend['cuda_home']) / 'bin/nvcc').is_file()
+    simulations = {
+        name: {'python': Path(b['python']).is_file() and os.access(b['python'], os.X_OK),
+               'entrypoint': Path(b['entrypoint']).is_file(), 'scene': Path(b['scene']).is_file()}
+        for name, b in config.get('simulations', {}).items()
+    }
     return {
-        'ready': all(all(values.values()) for values in checks.values()),
+        'ready': all(all(values.values()) for values in [*checks.values(), *simulations.values()]),
         'scope': 'Checks configured paths and launchers; run smoke workflows to verify GPU execution.',
         'config': config['_file'], 'checks': checks,
+        'simulations': simulations,
         'backends': {name: git_snapshot(b['repository'], b['entrypoint'])
                      for name, b in config['backends'].items()},
     }
@@ -120,50 +130,7 @@ def backend_environment(config, name):
 
 
 def run_smoke(config, name, output=None):
-    backend = config['backends'][name]
-    readiness = doctor(config)
-    if not all(readiness['checks'][name].values()):
-        raise ValueError(f'{name} is not ready: {readiness["checks"][name]}')
-    if output is None:
-        label = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S_%fZ')
-        output = Path(config['storage']['run_directory']) / f'{label}_{name}'
-    else:
-        output = Path(output).expanduser().resolve()
-    # Exclusive directory creation prevents accidental replacement of old results.
-    output.mkdir(parents=True, exist_ok=False)
-    command = [backend['python'], backend['entrypoint']]
-    if name == 'stereo':
-        command += ['--checkpoint', backend['checkpoint']]
-    command += ['--output', str(output)]
-    manifest = {
-        'workflow': name, 'status': 'running', 'started_utc': timestamp(),
-        'config': config, 'command': command, 'output': str(output),
-        'shapeforge': git_snapshot(PROJECT_ROOT),
-        'backend': readiness['backends'][name],
-    }
-
-    def save():
-        (output / 'run_manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
-
-    save()
-    try:
-        with (output / 'run.log').open('w') as log:
-            result = subprocess.run(command, cwd=backend['repository'],
-                                    env=backend_environment(config, name),
-                                    stdout=log, stderr=subprocess.STDOUT, check=False)
-        manifest['returncode'] = result.returncode
-        manifest['status'] = 'passed' if result.returncode == 0 else 'failed'
-        if result.returncode == 0:
-            # These entrypoints promise a result report; an empty run is a failure.
-            report = json.loads((output / 'report.json').read_text())
-            expected = {'stereo': 'passed_real_gpu_stereo_inference',
-                        'bundlesdf': 'passed_cuda_kernels_cpp_bindings_and_real_loftr_matching'}
-            if report.get('status') != expected[name]:
-                raise ValueError(f'Unexpected backend report: {report.get("status")}')
-    except BaseException as exc:
-        manifest.update(status='failed', error=f'{type(exc).__name__}: {exc}')
-        raise
-    finally:
-        manifest['finished_utc'] = timestamp()
-        save()
-    return manifest
+    from .workflows import launch
+    if name not in ('stereo', 'bundlesdf'):
+        raise ValueError(f'Unknown smoke backend: {name}')
+    return launch(config, 'smoke.' + name, output)

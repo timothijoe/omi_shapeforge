@@ -17,7 +17,11 @@ class RunSafetyTests(unittest.TestCase):
         self.repo.mkdir()
         self.script = self.repo / 'entry.py'
         self.checkpoint = self.root / 'model.pth'
-        self.checkpoint.touch()
+        self.checkpoint.write_bytes(b'fixture')
+        (self.root / 'cfg.yaml').write_text('fixture: true')
+        (self.repo / 'assets').mkdir()
+        for name in ('left.png', 'right.png', 'K.txt'):
+            (self.repo / 'assets' / name).write_bytes(b'fixture')
         self.config = {
             '_file': str(self.root / 'workspace.toml'),
             'storage': {'runtime_root': str(self.root / 'runtime'),
@@ -45,19 +49,20 @@ class RunSafetyTests(unittest.TestCase):
         output = self.root / 'failed result'
         result = run_smoke(self.config, 'stereo', output)
         recorded = json.loads((output / 'run_manifest.json').read_text())
-        self.assertEqual(result['status'], 'failed')
-        self.assertEqual(recorded['returncode'], 7)
+        self.assertEqual(result['execution']['state'], 'failed')
+        self.assertEqual(recorded['execution']['returncode'], 7)
         self.assertIn('finished_utc', recorded)
         self.assertIn('backend failure', (output / 'run.log').read_text())
 
     def test_zero_exit_without_report_cannot_pass(self):
         self.script.write_text('print("no result produced")\n')
         output = self.root / 'missing report'
-        with self.assertRaises(FileNotFoundError):
-            run_smoke(self.config, 'stereo', output)
+        run_smoke(self.config, 'stereo', output)
         recorded = json.loads((output / 'run_manifest.json').read_text())
-        self.assertEqual(recorded['status'], 'failed')
-        self.assertIn('FileNotFoundError', recorded['error'])
+        self.assertEqual(recorded['execution']['state'], 'succeeded')
+        self.assertEqual(recorded['validation']['status'], 'failed')
+        self.assertEqual(recorded['acceptance']['status'], 'not_evaluated')
+        self.assertIn('FileNotFoundError', recorded['validation']['checks'][-1]['observed'])
 
 
 class ConfigTests(unittest.TestCase):

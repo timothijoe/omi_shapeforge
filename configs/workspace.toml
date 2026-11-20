@@ -15,3 +15,8 @@ repository = "../../BundleSDF"
 environment = "/data/omi_runtime/envs/bundlesdf"
 entrypoint = "smoke_local.py"
 cuda_home = "/usr/local/cuda-12.4"
+
+[simulations.mujoco]
+environment = "/data/omi_runtime/envs/simulation"
+entrypoint = "../scripts/simulation/run_mujoco.py"
+scene = "/data/omi_runtime/assets/optical_array_2x2_20261120/scene.xml"
