@@ -110,8 +110,14 @@ class WorkflowTests(unittest.TestCase):
     @unittest.skipUnless(os.name == 'posix', 'Process-group interruption uses POSIX signals')
     def test_interrupt_stops_child_process_and_saves_cancelled_record(self):
         marker = self.root / 'child.pid'
+        grandchild_marker = self.root / 'grandchild.pid'
         output = self.root / 'interrupted'
-        child = f'import os,time; from pathlib import Path; Path({str(marker)!r}).write_text(str(os.getpid())); time.sleep(60)'
+        grandchild = ('import os,time,signal; from pathlib import Path; '
+                      'signal.signal(signal.SIGINT,signal.SIG_IGN); '
+                      f'Path({str(grandchild_marker)!r}).write_text(str(os.getpid())); time.sleep(60)')
+        child = ('import os,time,subprocess,sys; from pathlib import Path; '
+                 f'subprocess.Popen([sys.executable,"-c",{grandchild!r}]); '
+                 f'Path({str(marker)!r}).write_text(str(os.getpid())); time.sleep(60)')
         script = ('import os,sys; from omi_shapeforge.runner import *\n'
                   'def prepare(output, record):\n'
                   f' return ProcessPlan([sys.executable,"-c",{child!r}],{str(self.root)!r},dict(os.environ),[])\n'
@@ -123,12 +129,13 @@ class WorkflowTests(unittest.TestCase):
                                       stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
         try:
             for _ in range(200):
-                if marker.exists():
+                if marker.exists() and grandchild_marker.exists():
                     break
                 if controller.poll() is not None:
                     self.fail(controller.stderr.read().decode())
                 time.sleep(.01)
             self.assertTrue(marker.exists(), 'Child failed to start')
+            self.assertTrue(grandchild_marker.exists(), 'Grandchild failed to start')
             controller.send_signal(signal.SIGINT)
             controller.communicate(timeout=12)
             record = read_json(output / 'run_manifest.json')
@@ -136,6 +143,13 @@ class WorkflowTests(unittest.TestCase):
             self.assertIsNotNone(record['finished_utc'])
             with self.assertRaises(ProcessLookupError):
                 os.kill(int(marker.read_text()), 0)
+            status = Path('/proc') / grandchild_marker.read_text() / 'status'
+            for _ in range(100):
+                if not status.exists() or 'State:\tZ' in status.read_text():
+                    break
+                time.sleep(.01)
+            self.assertTrue(not status.exists() or 'State:\tZ' in status.read_text(),
+                            'A descendant ignoring SIGINT is still running')
         finally:
             if controller.poll() is None:
                 controller.kill()

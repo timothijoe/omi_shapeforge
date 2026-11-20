@@ -109,9 +109,15 @@ def invoke(command, cwd, env, log):
                 pass
             try:
                 process.wait(timeout=timeout)
-                break
             except subprocess.TimeoutExpired:
                 continue
+            # The group leader can exit while descendants still hold GPU work.
+            # Escalate for the remaining group rather than treating wait() as
+            # proof that every process has stopped.
+            try:
+                os.killpg(process.pid, 0)
+            except ProcessLookupError:
+                break
         raise RunCancelled(returncode=process.returncode) from None
 
 
