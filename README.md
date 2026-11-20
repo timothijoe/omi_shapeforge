@@ -20,6 +20,7 @@ OMI 的光模块感知、资产化与仿真开发主项目，Python 包名为 `o
 | --- | --- |
 | 操作者安装与运行 | [教程总目录](tutorials/README.md) · [快速运行](tutorials/quickstart.md) |
 | 当前能力、证据与限制 | [当前总览](docs/current.md) · [能力总表](docs/capabilities.md) |
+| 查看资产和已有可视化 | [图片、交互页面与模型目录](docs/visual-results.md) |
 | Agent 接续开发 | [知识库入口](docs/agent/README.md) |
 | 架构与维护规则 | [设计索引](docs/design/README.md) |
 | 数据、权重、环境和机器人资产 | [资源清单说明](manifests/README.md) |

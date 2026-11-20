@@ -1,0 +1,15 @@
+{
+  "recorded_utc": "2026-11-20T02:07:15.340005+00:00",
+  "catalog_directory": "/data/omi_runtime/runs/asset_visual_catalog_20261120T020714Z",
+  "file_count": 2496,
+  "group_count": 78,
+  "source_roots": [
+    "/data/omi_runtime/runs",
+    "/data/omi_runtime/inputs/optical_packages_20261120_001316",
+    "/data/omi_runtime/baselines/reconstruction_20261119/workspace/BundleSDF_trial/results"
+  ],
+  "inventory": "/data/omi_runtime/runs/asset_visual_catalog_20261120T020714Z/inventory.json",
+  "inventory_sha256": "55a3b6c3f18e905bf06caad6631c15e7d43f8a21e1a11c21eb6f31cb25bd27c5",
+  "images_modified": false,
+  "new_capability_validation": false
+}
