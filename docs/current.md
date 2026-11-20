@@ -39,4 +39,6 @@ ENG-003 已完成，14 项控制层测试通过，两个 smoke 与 MuJoCo 2×2 �
 
 运行层最新干净版本与中断回收补强后的复验见[最终验证](../manifests/workflow_final_validation_20261120.json)。
 
+资产查看器另修复了桌面 Chrome 无 WebGL 时的空白问题，已加入 CPU 网格渲染并核对真实桌面画面；详见[兼容性验证](../manifests/viewer_compatibility_validation_20261120.json)，资产几何与能力精度结论不变。
+
 进展形成过程见[全局快照](chronicles/README.md)、[感知编年](agent/perception/chronicles/README.md)和[仿真编年](agent/simulation/chronicles/README.md)。

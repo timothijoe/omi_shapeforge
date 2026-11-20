@@ -7,6 +7,7 @@
 | [resources.json](resources.json) | 根目录、资源路径、用途、来源、必需功能、恢复方法和检查日期 |
 | [visual_catalog_20261120.json](visual_catalog_20261120.json) | 资产可视化图册范围与完整文件目录；不改变能力验收状态 |
 | [optical_assets.json](optical_assets.json) | 光模块模型名称、源文件哈希、版本关系、部件及场景实例身份 |
+| [viewer_compatibility_validation_20261120.json](viewer_compatibility_validation_20261120.json) | 实际桌面无 WebGL 导致空白的原因、CPU 后备渲染及验证 |
 | [backends.lock.json](backends.lock.json) | 后端初始化 Git HEAD、工作树和入口快照；不强制检出 |
 | [source_baseline_20261120.json](source_baseline_20261120.json) | ENG-001 本地源码版本、原变更清单、bundle 恢复及控制层／GPU smoke 证据 |
 | [contract_validation_20261120.json](contract_validation_20261120.json) | ENG-002 Schema／示例／反例检查、原报告只读核对；不是新增运行验收 |

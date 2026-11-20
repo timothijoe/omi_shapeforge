@@ -1,0 +1,52 @@
+{
+  "recorded_utc": "2026-11-20T03:35:39.148111+00:00",
+  "issue": "Actual desktop Chrome has no WebGL; the previous headless test enabled software WebGL and did not cover this configuration.",
+  "fix": "Automatically rasterize the original meshes on CPU with per-pixel depth when WebGL is unavailable; retain controls.",
+  "checks": {
+    "status": "passed",
+    "webgl_disabled": true,
+    "meshes": [
+      {
+        "renderer": "cpu",
+        "triangles": 4140,
+        "painted": 13857
+      },
+      {
+        "renderer": "cpu",
+        "triangles": 4148,
+        "painted": 13403
+      },
+      {
+        "renderer": "cpu",
+        "triangles": 3968,
+        "painted": 13430
+      },
+      {
+        "renderer": "cpu",
+        "triangles": 35676,
+        "painted": 25601
+      }
+    ],
+    "rotation": true,
+    "zoom": true,
+    "view_and_part_selection": true,
+    "errors": []
+  },
+  "evidence_directory": "/data/omi_runtime/runs/optical_viewer_fix_20261120",
+  "fragment_path": "/home/linux/omi_folder/work/visualizations/optical-module-versions.html",
+  "fragment_sha256": "84e01040332b7d078d108db854cec2d6455044db88a16a46cca4729e6446f20a",
+  "desktop_path": "/data/omi_runtime/runs/optical_asset_versions_20261120/preview.html",
+  "desktop_sha256": "7f77f4e559c397c98153b9631e0e9071975769be165d8d59fd66d078c63aa6bd",
+  "geometry_payload_unchanged": true,
+  "limitations": [
+    "CPU rendering performance depends on viewport size and mesh density.",
+    "This repairs viewing compatibility, not asset geometry or physical accuracy."
+  ],
+  "actual_desktop_verification": {
+    "four_meshes_visible": true,
+    "screenshot": "/data/omi_runtime/runs/optical_viewer_fix_20261120/desktop-after.png",
+    "screenshot_sha256": "3d153bcebb66a831f0987e7214a9a3448efc55fd838ad4f16e28f0025f639072",
+    "browser_window": "Optical Module Versions - Google Chrome",
+    "method": "Refreshed the existing desktop window and visually inspected the desktop capture."
+  }
+}
