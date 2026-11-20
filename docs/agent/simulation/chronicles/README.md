@@ -10,3 +10,4 @@
 - [2026-11-20：桌面网格查看兼容性修复](2026-11-20-viewer-cpu-fallback.md)
 
 - [2026-11-20：恢复原机 Open3D 原生查看器](2026-11-20-native-mesh-viewer.md)
+- [2026-11-20：用户指定 Blender V3 为主线](2026-11-20-blender-v3-primary.md)

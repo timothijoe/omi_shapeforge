@@ -4,6 +4,8 @@ OMI 的光模块感知、资产化与仿真开发主项目，Python 包名为 `o
 
 接续会话先读 [交接文档](HANDOFF.md)，再进入当前状态和能力文档。
 
+当前资产主线：**V3 为 Blender 主模型，V2 为辅助参考与对比**。工作文件与版本约定见[资产版本](docs/asset-versions.md)。
+
 当前已验证：官方双目样例、BundleSDF 组件检查、已圈选光模块 CPU 配准、Blender 资产导出，以及 MuJoCo／Isaac PhysX 的单模块与 2×2 场景。完整在线重建、机器人接入和实物精度仍未验收，见[能力总表](docs/capabilities.md)。
 
 ## 最短入口

@@ -26,6 +26,8 @@
 
 ## 当前工作与下一步
 
+用户已确定 **V3（Blender）为主模型，V2 为辅助参考与对比**。V3-r01 对应现有连通槽几何，已建立冻结副本与独立工作副本；未改变几何和精度结论。具体见[资产版本](asset-versions.md)与[ADR 002](agent/simulation/decisions/002-blender-v3-primary.md)。
+
 ENG-001 已完成：仿真、知识库和基线记录纳入本地 `dev`；两个后端适配分别提交在 `feature/local-runtime-baseline`，四仓库源码 bundle 均成功恢复。原工作区与恢复副本各 4 项控制层测试通过，两项 GPU smoke 通过；见[基线说明](design/source-baseline.md)和[新阶段记录](chronicles/2026-11-20-source-baseline.md)。未推送，远端默认分支仍不含这些本地提交。
 
 ENG-002 已完成[运行与产物合同 v1](agent/interfaces/run-contract.md)：三项流程规则、11 个合成示例、27 个反例及严格 JSON 检查通过，现有 4 项控制层测试通过。该阶段只读核对旧报告；后续 ENG-003 已接入运行层，旧报告转换器仍待实现。原阶段见[记录](chronicles/2026-11-20-run-contract.md)。
@@ -43,4 +45,4 @@ ENG-003 已完成，14 项控制层测试通过，两个 smoke 与 MuJoCo 2×2 �
 
 进展形成过程见[全局快照](chronicles/README.md)、[感知编年](agent/perception/chronicles/README.md)和[仿真编年](agent/simulation/chronicles/README.md)。
 
-原电脑的 Open3D 原生查看器也已在本机打开，实际显示历史 V2 mesh；启动方式与 V1／点云切换范围见[原生查看教程](../tutorials/native_mesh_viewer.md)。这不是当前 GROOVE-r01 的几何更新。
+原电脑的 Open3D 原生查看器也已在本机打开，实际显示历史 V2 mesh；启动方式与 V1／点云切换范围见[原生查看教程](../tutorials/native_mesh_viewer.md)。这不是当前 V3（旧别名 GROOVE-r01） 的几何更新。

@@ -1,0 +1,62 @@
+{
+  "recorded_utc": "2026-11-20T04:20:24.479661+00:00",
+  "decision": "V3 Blender primary; V2 auxiliary reference and comparison",
+  "user_authorized": true,
+  "asset": "OM-001/V3",
+  "revision": "r01",
+  "alias": "OM-001/GROOVE-r01",
+  "source": "/data/omi_runtime/inputs/optical_packages_20261120_001316/optical_module_portable_20261119/models/connected_groove.blend",
+  "frozen_release": "/data/omi_runtime/assets/optical_module_v3/releases/r01/OM-001-V3-r01.blend",
+  "working_file": "/data/omi_runtime/assets/optical_module_v3/work/OM-001-V3.blend",
+  "source_and_release_sha256": "016ac93da1f252e2f13325ac20454d1a02b82e31a840ac4f95bffa4218d0b8d2",
+  "working_copy_initial_sha256": "016ac93da1f252e2f13325ac20454d1a02b82e31a840ac4f95bffa4218d0b8d2",
+  "working_copy_matches_at_validation": true,
+  "existing_scene_source_matches_v3_baseline": true,
+  "blender_gui": {
+    "pid_at_launch": 1119887,
+    "ready_log": "/data/omi_runtime/runs/v3_designation_20261120T041554Z/blender.log",
+    "visible_parts": 15,
+    "actual_desktop_model_visible": true,
+    "desktop_screenshot": "/data/omi_runtime/runs/v3_designation_20261120T041554Z/blender-v3-desktop.png",
+    "screenshot_sha256": "91fee489ae7db77747cebf3580829f0f044491a08279abd64e6a91ea258004e7",
+    "save_performed_by_setup_script": false
+  },
+  "comparison_viewer": {
+    "default": "V3",
+    "v2_role": "auxiliary reference and comparison",
+    "fragment_sha256": "b6ffe52c36ad3138de620224bdae09e8c2f9e8fa1a7aa6026a876396b0dccb7e",
+    "validation": {
+      "status": "passed",
+      "webgl_disabled": true,
+      "meshes": [
+        {
+          "renderer": "cpu",
+          "triangles": 4140,
+          "painted": 13857
+        },
+        {
+          "renderer": "cpu",
+          "triangles": 4148,
+          "painted": 13403
+        },
+        {
+          "renderer": "cpu",
+          "triangles": 3968,
+          "painted": 13430
+        },
+        {
+          "renderer": "cpu",
+          "triangles": 35676,
+          "painted": 25601
+        }
+      ],
+      "rotation": true,
+      "zoom": true,
+      "view_and_part_selection": true,
+      "errors": []
+    }
+  },
+  "geometry_changed": false,
+  "physical_accuracy_validation_added": false,
+  "historical_reports_unchanged": true
+}

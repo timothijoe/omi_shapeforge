@@ -565,6 +565,37 @@
       "root": "runtime",
       "tracked": false,
       "availability": "present"
+    },
+    {
+      "id": "optical-v3-r01",
+      "root": "runtime",
+      "path": "assets/optical_module_v3/releases/r01/OM-001-V3-r01.blend",
+      "tracked": false,
+      "purpose": "User-designated Blender V3 r01 frozen source baseline",
+      "required_for": [
+        "v3-authoring",
+        "v3-asset-export"
+      ],
+      "source": "/data/omi_runtime/inputs/optical_packages_20261120_001316/optical_module_portable_20261119/models/connected_groove.blend",
+      "expected_sha256": "016ac93da1f252e2f13325ac20454d1a02b82e31a840ac4f95bffa4218d0b8d2",
+      "restore": "Copy the original connected_groove.blend and verify this hash; never overwrite an existing revision.",
+      "availability": "present",
+      "checked_date": "2026-11-20"
+    },
+    {
+      "id": "optical-v3-work",
+      "root": "runtime",
+      "path": "assets/optical_module_v3/work/OM-001-V3.blend",
+      "tracked": false,
+      "purpose": "Primary editable Blender V3 working file; changes must be versioned into new release snapshots",
+      "required_for": [
+        "v3-authoring"
+      ],
+      "source": "/data/omi_runtime/assets/optical_module_v3/releases/r01/OM-001-V3-r01.blend",
+      "initial_sha256": "016ac93da1f252e2f13325ac20454d1a02b82e31a840ac4f95bffa4218d0b8d2",
+      "restore": "Recover the latest saved V3 working revision; only initialize from r01 if no newer work exists. Never overwrite user edits with this initial baseline.",
+      "availability": "present",
+      "checked_date": "2026-11-20"
     }
   ],
   "integrity_note": "Latest transfer_validation.json records full 01 archive and per-file verification plus all OMI checksum/source entries. Other expected hashes retain their earlier evidence; availability is a dated snapshot.",
@@ -572,5 +603,6 @@
   "latest_transfer_validation": "transfer_validation.json",
   "latest_data02_validation": "data02_validation.json",
   "latest_extraction_index": "extracted_archives.json",
-  "latest_data03_04_validation": "data03_04_validation.json"
+  "latest_data03_04_validation": "data03_04_validation.json",
+  "latest_asset_designation": "asset_v3_designation_20261120.json"
 }

@@ -6,8 +6,8 @@
   "manufacturer": null,
   "manufacturer_model": null,
   "identity_note": "Local catalog family for the current modeling subject; not a manufacturer SKU or claim of four distinct physical product models.",
-  "version_policy": "Names label existing immutable source snapshots. Increment rNN within a modeling variant when source changes; retain historical V2 as REF-V2. Original files are never renamed by this registry.",
-  "current_visual_asset": "OM-001/GROOVE-r01",
+  "version_policy": "User designated the Blender modeling line as V3, with connected-groove geometry as its current r01 baseline. Blender is the primary editor; V2 is auxiliary reference/comparison. Original source names and frozen releases are preserved; new geometry revisions receive new rNN snapshots.",
+  "current_visual_asset": "OM-001/V3",
   "versions": [
     {
       "id": "OM-001/PHOTO-r01",
@@ -46,7 +46,8 @@
         "14 Green pull arm right",
         "15 Estimated folded seam left",
         "15 Estimated folded seam right"
-      ]
+      ],
+      "role": "blender_lineage_history"
     },
     {
       "id": "OM-001/METRIC-r01",
@@ -89,11 +90,12 @@
         "14 Green pull arm right",
         "15 Estimated folded seam left",
         "15 Estimated folded seam right"
-      ]
+      ],
+      "role": "blender_lineage_history"
     },
     {
-      "id": "OM-001/GROOVE-r01",
-      "display_name": "连通槽模型",
+      "id": "OM-001/V3",
+      "display_name": "V3 · Blender 主模型（连通槽）",
       "source_file": "connected_groove.blend",
       "source_path": "/data/omi_runtime/inputs/optical_packages_20261120_001316/optical_module_portable_20261119/models/connected_groove.blend",
       "source_sha256": "016ac93da1f252e2f13325ac20454d1a02b82e31a840ac4f95bffa4218d0b8d2",
@@ -130,11 +132,20 @@
         "15 Estimated folded seam left",
         "15 Estimated folded seam right",
         "01 Connected equal-depth upper grooves"
-      ]
+      ],
+      "aliases": [
+        "OM-001/GROOVE-r01"
+      ],
+      "revision": "r01",
+      "role": "primary",
+      "authoring_file": "/data/omi_runtime/assets/optical_module_v3/work/OM-001-V3.blend",
+      "authoring_initial_sha256": "016ac93da1f252e2f13325ac20454d1a02b82e31a840ac4f95bffa4218d0b8d2",
+      "release_file": "/data/omi_runtime/assets/optical_module_v3/releases/r01/OM-001-V3-r01.blend",
+      "release_sha256": "016ac93da1f252e2f13325ac20454d1a02b82e31a840ac4f95bffa4218d0b8d2"
     },
     {
       "id": "OM-001/REF-V2",
-      "display_name": "历史 V2 参考",
+      "display_name": "V2 · 辅助参考与对比",
       "source_file": "v2_reference.blend",
       "source_path": "/data/omi_runtime/inputs/optical_packages_20261120_001316/optical_module_portable_20261119/models/v2_reference.blend",
       "source_sha256": "9244ba54328e5a9c808bf65580eb669695741c8ca6ea0786b1fb4b410ed768cb",
@@ -157,6 +168,10 @@
         "contact_board",
         "housing",
         "visible_contact_region"
+      ],
+      "role": "reference_and_comparison",
+      "aliases": [
+        "V2"
       ]
     }
   ],
@@ -167,45 +182,50 @@
     "instances": [
       {
         "id": "OM-001-I01",
-        "model_version": "OM-001/GROOVE-r01",
+        "model_version": "OM-001/V3",
         "mjcf_body": "optical_module_0",
         "initial_position_m": [
           -0.06,
           -0.07,
           0.055
-        ]
+        ],
+        "previous_model_version": "OM-001/GROOVE-r01"
       },
       {
         "id": "OM-001-I02",
-        "model_version": "OM-001/GROOVE-r01",
+        "model_version": "OM-001/V3",
         "mjcf_body": "optical_module_1",
         "initial_position_m": [
           0.06,
           -0.07,
           0.055
-        ]
+        ],
+        "previous_model_version": "OM-001/GROOVE-r01"
       },
       {
         "id": "OM-001-I03",
-        "model_version": "OM-001/GROOVE-r01",
+        "model_version": "OM-001/V3",
         "mjcf_body": "optical_module_2",
         "initial_position_m": [
           -0.06,
           0.07,
           0.055
-        ]
+        ],
+        "previous_model_version": "OM-001/GROOVE-r01"
       },
       {
         "id": "OM-001-I04",
-        "model_version": "OM-001/GROOVE-r01",
+        "model_version": "OM-001/V3",
         "mjcf_body": "optical_module_3",
         "initial_position_m": [
           0.06,
           0.07,
           0.055
-        ]
+        ],
+        "previous_model_version": "OM-001/GROOVE-r01"
       }
-    ]
+    ],
+    "binding_note": "Existing scene geometry is byte-identical to the newly named V3 baseline; only catalog identity changes, not historical scene manifests."
   },
   "viewer_evidence": {
     "export_directory": "/data/omi_runtime/runs/optical_asset_versions_20261120",
@@ -228,5 +248,24 @@
         "unpkg.com"
       ]
     }
+  },
+  "updated_utc": "2026-11-20T04:15:54.437914+00:00",
+  "primary_authoring_tool": "Blender",
+  "primary_authoring_file": "/data/omi_runtime/assets/optical_module_v3/work/OM-001-V3.blend",
+  "reference_assets": [
+    "OM-001/REF-V2"
+  ],
+  "aliases": {
+    "OM-001/GROOVE-r01": "OM-001/V3",
+    "V3": "OM-001/V3",
+    "V2": "OM-001/REF-V2"
+  },
+  "designation": {
+    "date": "2026-11-20",
+    "requested_by": "user",
+    "instruction": "blender的这个我们叫做v3吧，然后我们重点使用blender，v2作为v3的辅助和对比",
+    "geometry_changed": false,
+    "project_package_version_changed": false,
+    "historical_v1_v2_v2_1_preserved": true
   }
 }

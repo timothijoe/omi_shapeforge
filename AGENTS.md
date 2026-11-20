@@ -11,3 +11,4 @@
 - Start documentation work at `docs/README.md` and `docs/agent/README.md`; operator procedures live in `tutorials/`.
 - Maintain capability facts in domain `evolution/` pages, summarize them in `current.md`, and append validated stages to `chronicles/`. Keep historical records and mark corrections with new evidence.
 - Use `manifests/resources.json` for resource provenance and restoration metadata; it is not an automatic downloader or runtime resolver. Preserve historical validation snapshots.
+- The user designated the Blender optical-module line as V3. Use Blender and the V3 authoring copy as the primary asset workflow; retain V2 as auxiliary reference/comparison. Resolve current files and legacy aliases through `manifests/optical_assets.json`; preserve historical V1/V2/V2.1 assets and evidence.

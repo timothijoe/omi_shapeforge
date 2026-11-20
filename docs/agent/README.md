@@ -10,6 +10,8 @@
 | simulation | [仿真](simulation/README.md) | Blender 资产化、双引擎原型、机器人资产审查 |
 | interfaces | [稳定边界](interfaces/README.md) | CLI、配置、格式、资源及外部系统 |
 
+资产编辑默认采用 Blender／V3，V2 用于辅助和对比；先查看[资产版本](../asset-versions.md)中的工作文件与冻结修订。
+
 维护遵循[文档制度](../design/documentation-system.md)。能力事实写纪传体，已验证阶段追加编年，架构决定递增编号；先核实证据，再更新摘要。
 
 暂缓范围：完整视频在线重建、59 帧尺寸重新估计、真实机器人／夹爪和夹具接入、Isaac RTX／GUI 验收及实物精度认证。资源现已到齐，未接入／未验收条件见[清单说明](../../manifests/README.md)和[全部进展快照](../chronicles/2026-11-20-workspace-handoff.md)。

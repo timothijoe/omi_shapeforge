@@ -1,17 +1,18 @@
 # Blender 打开、检查与导出
 
-前提：Blender 4.5.16 LTS 和 portable 包已准备。软件位置与 SHA256 见[资源清单](../manifests/README.md)。本机已后台重开、渲染和导出；GUI 操作尚未验收。
+前提：Blender 4.5.16 LTS 和 portable 包已准备。软件位置与 SHA256 见[资源清单](../manifests/README.md)。用户已指定 Blender／V3 为主线，V2 只用于辅助与对比；工作文件和冻结副本见[资产版本](../docs/asset-versions.md)。
 
 ## 打开或检查保存模型
 
 ```bash
 RUNTIME_ROOT=/data/omi_runtime
 PACKAGE="$RUNTIME_ROOT/inputs/optical_packages_20261120_001316/optical_module_portable_20261119"
+V3_MODEL="$RUNTIME_ROOT/assets/optical_module_v3/work/OM-001-V3.blend"
 blender --version
-blender "$PACKAGE/models/connected_groove.blend"
+blender --disable-autoexec "$V3_MODEL"
 ```
 
-第二条启动图形界面。若只做后台检查，可在新目录保存报告：
+最后一条打开 V3 工作副本。迁移包的 connected_groove.blend 与 releases/r01 中的冻结副本保留为基线；后续编辑在工作副本进行。若只做后台检查，可在新目录保存报告：
 
 ```bash
 CHECK_DIR=$(mktemp -d "$RUNTIME_ROOT/runs/blender_check_XXXXXX")
@@ -26,12 +27,12 @@ blender --background --factory-startup --disable-autoexec --python-exit-code 1 \
 
 ```bash
 ASSET_DIR="$RUNTIME_ROOT/assets/optical_$(date +%Y%m%d_%H%M%S)"
-blender --background "$PACKAGE/models/connected_groove.blend" --disable-autoexec \
+blender --background "$V3_MODEL" --disable-autoexec \
   --python-exit-code 1 --python scripts/simulation/export_blender_asset.py -- \
   --package "$PACKAGE" --output "$ASSET_DIR"
 ```
 
-预期输出 `asset.json`、`meshes/part_*.obj`，当前资产为 15 个外观部件。不要把 Blender 专用脚本直接交给主 venv 的 Python；它依赖 bpy。导出不保存修改到源模型，已有输出目录拒绝。
+预期输出 `asset.json`、`meshes/part_*.obj`，当前资产为 15 个外观部件。导出器仍依赖当前连通槽集合及便携包的刚体几何：若后续修改了 V3 的外形／碰撞边界，必须同步维护导出逻辑和碰撞源，不能直接沿用旧碰撞盒。不要把 Blender 专用脚本直接交给主 venv 的 Python；它依赖 bpy。导出不保存修改到源模型，已有输出目录拒绝。
 
 ## 可选重建入口的状态
 
