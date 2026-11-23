@@ -1,0 +1,17 @@
+{
+  "asset_id": "OM-001/V4",
+  "revision": "r06",
+  "name": "V4-r06 · 银灰材质候选",
+  "directory": "/data/omi_runtime/assets/optical_module_v4/r06",
+  "asset_manifest": "/data/omi_runtime/assets/optical_module_v4/r06/asset_manifest.json",
+  "asset_manifest_sha256": "ee3ea4bc2a8f2d3aee151ac413c7202c032aa5b52dd6c90a25f4f44b7f83a5bc",
+  "delivery_manifest": "/data/omi_runtime/assets/optical_module_v4/r06/delivery_manifest.json",
+  "run": "/data/omi_runtime/runs/module_v4_material_20261122",
+  "comparison": "/data/omi_runtime/runs/module_v4_material_20261122/module_material_comparison.png",
+  "hybrid_preview": "/data/omi_runtime/runs/module_v4_material_20261122/hybrid_r06/hybrid_detail.png",
+  "geometry_unchanged": true,
+  "protected_old_files_unchanged": 1348,
+  "adopted_r05_baseline_changed": false,
+  "physical_color_calibration": false,
+  "new_training_performed": false
+}

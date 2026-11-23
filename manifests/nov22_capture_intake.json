@@ -1,0 +1,13 @@
+{
+  "backup_root": "/data/zt-think-d1-data/nov_22/session_backup_20261121_20261122_20261122_014108",
+  "tools_handoff": "/data/zt-think-d1-data/nov_22/capture_tools_handoff_20261122_015025",
+  "inspection_report": "/data/omi_runtime/runs/nov22_data_intake_20261122/report.json",
+  "preview": "/data/omi_runtime/runs/nov22_data_intake_20261122/sample_overview.jpg",
+  "formal_samples": 287,
+  "image_hashes_checked": 1148,
+  "errors": 0,
+  "mcap_rehashed_locally": false,
+  "source_complete": "/data/zt-think-d1-data/nov_22/session_backup_20261121_20261122_20261122_014108/COMPLETE.json",
+  "documentation": "docs/chronicles/2026-11-22-new-capture-intake.md",
+  "source_data_modified": false
+}

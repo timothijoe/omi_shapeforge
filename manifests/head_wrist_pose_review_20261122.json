@@ -1,0 +1,74 @@
+{
+  "date": "2026-11-22",
+  "run": "/data/omi_runtime/runs/head_wrist_pose_review_20261122",
+  "url": "http://127.0.0.1:8876",
+  "samples": 287,
+  "historical_clouds": 5,
+  "new_clouds": 1,
+  "new_cloud_points": 592016,
+  "geometry_persistence_tests": 7,
+  "control_tests": {
+    "passed": 14,
+    "skipped": 21
+  },
+  "browser_checks": "/data/omi_runtime/runs/head_wrist_pose_review_20261122/browser_validation.json",
+  "documentation": "tutorials/head_wrist_pose_review.md",
+  "source_snapshot": [
+    {
+      "source": "/home/linux/omi_folder/omi_shapeforge/scripts/perception/pose_review_server.py",
+      "snapshot": "/data/omi_runtime/runs/head_wrist_pose_review_20261122/source_snapshot/omi_shapeforge/scripts/perception/pose_review_server.py",
+      "sha256": "5440de806c2f27974fd67d7120193d7c98714dc833b656f731116caacb6c6a48"
+    },
+    {
+      "source": "/home/linux/omi_folder/omi_shapeforge/scripts/perception/pose_review_geometry.py",
+      "snapshot": "/data/omi_runtime/runs/head_wrist_pose_review_20261122/source_snapshot/omi_shapeforge/scripts/perception/pose_review_geometry.py",
+      "sha256": "de47319831bf2301586bb47e9148dac0562fc087a72e0fd9da67fbd198036137"
+    },
+    {
+      "source": "/home/linux/omi_folder/omi_shapeforge/scripts/perception/pose_review.html",
+      "snapshot": "/data/omi_runtime/runs/head_wrist_pose_review_20261122/source_snapshot/omi_shapeforge/scripts/perception/pose_review.html",
+      "sha256": "5afeaafa0c785408855e0f63738abba3ce300ce179d5d44fe92142062823da92"
+    },
+    {
+      "source": "/home/linux/omi_folder/omi_shapeforge/scripts/perception/test_pose_review.py",
+      "snapshot": "/data/omi_runtime/runs/head_wrist_pose_review_20261122/source_snapshot/omi_shapeforge/scripts/perception/test_pose_review.py",
+      "sha256": "61b3ce6c4ce6a3539a970e042b5cdcd8f0acc5a0d823ff08726289b3f2548a3b"
+    },
+    {
+      "source": "/home/linux/omi_folder/omi_shapeforge/tutorials/head_wrist_pose_review.md",
+      "snapshot": "/data/omi_runtime/runs/head_wrist_pose_review_20261122/source_snapshot/omi_shapeforge/tutorials/head_wrist_pose_review.md",
+      "sha256": "d16b868d7b5e8ed3f5c8a2ce1c9482300eac3f5e69690ba87671d165dc089f74"
+    },
+    {
+      "source": "/home/linux/omi_folder/omi_shapeforge/docs/agent/perception/evolution/head-wrist-pose-review.md",
+      "snapshot": "/data/omi_runtime/runs/head_wrist_pose_review_20261122/source_snapshot/omi_shapeforge/docs/agent/perception/evolution/head-wrist-pose-review.md",
+      "sha256": "d325e630a234af99cf093194d7b63c9a01897042b8b3c0ea0ed79a8470804987"
+    },
+    {
+      "source": "/home/linux/omi_folder/omi_shapeforge/docs/agent/perception/chronicles/2026-11-22-head-wrist-pose-review.md",
+      "snapshot": "/data/omi_runtime/runs/head_wrist_pose_review_20261122/source_snapshot/omi_shapeforge/docs/agent/perception/chronicles/2026-11-22-head-wrist-pose-review.md",
+      "sha256": "1d2486f2a11631ee45c6b7c528c556cb68c80f58157a4c0e39738cdecacbc045"
+    },
+    {
+      "source": "/home/linux/omi_folder/FoundationStereo/scripts/infer_pose_review_sample.py",
+      "snapshot": "/data/omi_runtime/runs/head_wrist_pose_review_20261122/source_snapshot/FoundationStereo/scripts/infer_pose_review_sample.py",
+      "sha256": "02c29aa4a0ca1d9bb158b811480297f8ce25d6d54ffba2ba631d8574d1ddade2"
+    }
+  ],
+  "raw_data_modified": false,
+  "physical_pose_accuracy_validated": false,
+  "automatic_full_scene_detection": false,
+  "first_sample": "assistant ROI and six approximate shell-corner correspondences; socket projected using resulting candidate extrinsic; not accepted ground truth",
+  "git": {
+    "omi_shapeforge": {
+      "branch": "feature/isaac-contact-insertion",
+      "head": "66ff11720e5dc4327041d709b661dec73c83f605",
+      "working_tree_sources_not_committed_by_this_task": true
+    },
+    "FoundationStereo": {
+      "branch": "feature/local-runtime-baseline",
+      "head": "e46fa7098730674bfc9f96047b4d2ffe9a87e1b4",
+      "working_tree_sources_not_committed_by_this_task": true
+    }
+  }
+}

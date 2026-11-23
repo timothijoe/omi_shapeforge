@@ -1,0 +1,109 @@
+{
+  "run": "/data/omi_runtime/runs/three_variable_grasp_preview_20261123_r01",
+  "viewer": "http://127.0.0.1:8894",
+  "user_intent": "fore/aft, height, pitch only; centered width; no yaw or roll",
+  "temporary_preview_levels": {
+    "fore_aft_mm": [
+      -3,
+      0,
+      3
+    ],
+    "height_mm": [
+      -1,
+      0,
+      1
+    ],
+    "pitch_deg": [
+      -4,
+      0,
+      4
+    ]
+  },
+  "sampling_ranges_accepted_by_user": false,
+  "new_training_performed": false,
+  "validation": {
+    "target_cases": 27,
+    "target_visible_geometry_all_passed": true,
+    "all_contact_and_prior_checks_passed": true,
+    "maximum_actual_deviation": {
+      "fore_aft_mm": 0.0007784565233839302,
+      "height_mm": 0.0017481046165308545,
+      "pitch_deg": 0.001674583548945485,
+      "lateral_center_mm": 0.004520718870083373,
+      "non_pitch_rotation_deg": 0.00904060999182228
+    },
+    "source_scene_unchanged": true,
+    "browser": {
+      "combinations_checked": 27,
+      "all_three_images_loaded_and_match_each_case": true,
+      "reset_to_zero": {
+        "fore_aft_mm": 0,
+        "height_mm": 0,
+        "pitch_deg": 0
+      },
+      "errors": []
+    },
+    "scope": "static closure and gravity hold only; no new training, moving or insertion validation"
+  },
+  "source_snapshot": [
+    {
+      "source": "scripts/perception/preview_three_variable_grasp.py",
+      "snapshot": "/data/omi_runtime/runs/three_variable_grasp_preview_20261123_r01/source_snapshot/scripts/perception/preview_three_variable_grasp.py",
+      "sha256": "748dfeb3339bab0dcf110131a81a4017d7377a5f5d6aaf08331a708b42791a24"
+    },
+    {
+      "source": "scripts/perception/render_three_variable_preview.py",
+      "snapshot": "/data/omi_runtime/runs/three_variable_grasp_preview_20261123_r01/source_snapshot/scripts/perception/render_three_variable_preview.py",
+      "sha256": "c690e7718e6707a1acbfe914221445a33a5f268d3e80ec8aa4a7713199b41786"
+    },
+    {
+      "source": "scripts/perception/three_variable_grasp_preview.html",
+      "snapshot": "/data/omi_runtime/runs/three_variable_grasp_preview_20261123_r01/source_snapshot/scripts/perception/three_variable_grasp_preview.html",
+      "sha256": "89f21e446375449cb03422ca52d8ee82227e9932e967b36204caf54dc74fc58f"
+    },
+    {
+      "source": "scripts/perception/generate_contact_wrist_dataset.py",
+      "snapshot": "/data/omi_runtime/runs/three_variable_grasp_preview_20261123_r01/source_snapshot/scripts/perception/generate_contact_wrist_dataset.py",
+      "sha256": "e47caf4fef8793c5e76fdd0ab228e7dcf61b73e73dd4ce4823467c46e9e5a5dd"
+    },
+    {
+      "source": "scripts/perception/contact_visual_gate.py",
+      "snapshot": "/data/omi_runtime/runs/three_variable_grasp_preview_20261123_r01/source_snapshot/scripts/perception/contact_visual_gate.py",
+      "sha256": "038e11409859e15ae038434a88491e2f3217757e059545f8b071a4ad66a9becb"
+    },
+    {
+      "source": "scripts/perception/generate_sim_wrist_dataset.py",
+      "snapshot": "/data/omi_runtime/runs/three_variable_grasp_preview_20261123_r01/source_snapshot/scripts/perception/generate_sim_wrist_dataset.py",
+      "sha256": "3340c796050287b96e2418b03ecdfc59572a45cc42dd56ff4541dc707550a6d6"
+    },
+    {
+      "source": "docs/agent/perception/evolution/three-variable-grasp-preview.md",
+      "snapshot": "/data/omi_runtime/runs/three_variable_grasp_preview_20261123_r01/source_snapshot/docs/agent/perception/evolution/three-variable-grasp-preview.md",
+      "sha256": "81ee912e8dda9289eae3620aa387af17832a74e582f6de6aabb99eadcaeec40f"
+    },
+    {
+      "source": "docs/agent/perception/chronicles/2026-11-23-three-variable-grasp-preview.md",
+      "snapshot": "/data/omi_runtime/runs/three_variable_grasp_preview_20261123_r01/source_snapshot/docs/agent/perception/chronicles/2026-11-23-three-variable-grasp-preview.md",
+      "sha256": "d2b1c82f2621ba7551852c95d3ce0beba832f8f0de4116156fea1fd08cf7812e"
+    }
+  ],
+  "main_record": "docs/agent/perception/evolution/three-variable-grasp-preview.md",
+  "source_scene": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/data/scene.xml",
+  "source_scene_sha256": "3d3ff0d891b67958dc9c745ef369bbd91a7f7d9b53451747c669a1e6c32f79f1",
+  "user_confirmation": {
+    "date": "2026-11-23",
+    "variable_definition_and_visualization_accepted": true,
+    "confirmed_variables": [
+      "fore_aft",
+      "height",
+      "pitch"
+    ],
+    "fixed_constraints": [
+      "lateral_center",
+      "yaw",
+      "roll"
+    ],
+    "formal_sampling_ranges_and_steps_finalized": false,
+    "training_requested_in_this_confirmation": false
+  }
+}

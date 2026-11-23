@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "bundle_id": "WRIST-VISUAL-WG-r10-OM-r08-20261122",
+  "scope": "Visual assets and static observation reproduction; not a validated replacement for robot contact/training scenes",
+  "guide": "docs/agent/simulation/evolution/wrist-assets-handoff.md",
+  "tutorial": "tutorials/reuse_wrist_visual_assets.md",
+  "assets": {
+    "tool": {
+      "identity": "WG-DAIMON-OBS-r10",
+      "directory": "/data/omi_runtime/assets/daimon/wrist_gripper_observation_r10",
+      "manifest": "/data/omi_runtime/assets/daimon/wrist_gripper_observation_r10/asset_manifest.json",
+      "manifest_sha256": "14ff12dd1727ca37fc454478940b2392fb14e1a805fc2ed471a95ec9f617a05f",
+      "delivery_manifest": "/data/omi_runtime/assets/daimon/wrist_gripper_observation_r10/delivery_manifest.json",
+      "delivery_manifest_sha256": "4822521ce53e39e991cbe16a3b1cc4097fb423c8f267f52c13899a7c4c3a6fe8",
+      "files": {
+        "blend": "/data/omi_runtime/assets/daimon/wrist_gripper_observation_r10/WG-DAIMON-OBS-r10.blend",
+        "glb": "/data/omi_runtime/assets/daimon/wrist_gripper_observation_r10/WG-DAIMON-OBS-r10.glb",
+        "camera_glb": "/data/omi_runtime/assets/daimon/wrist_gripper_observation_r10/wrist_camera.glb",
+        "gripper_glb": "/data/omi_runtime/assets/daimon/wrist_gripper_observation_r10/gripper.glb"
+      },
+      "visual_parts": 49
+    },
+    "module": {
+      "identity": "OM-001/V4 r08",
+      "directory": "/data/omi_runtime/assets/optical_module_v4/r08",
+      "manifest": "/data/omi_runtime/assets/optical_module_v4/r08/asset_manifest.json",
+      "manifest_sha256": "183d94354995599e568db29e9b0d4c004af010ab3e37cf6bc84ce9455f4ca636",
+      "delivery_manifest": "/data/omi_runtime/assets/optical_module_v4/r08/delivery_manifest.json",
+      "delivery_manifest_sha256": "e5edc4196eb2ba31748fc1d5fa923dfd467277d2ff04d88a0de5bf43385035ce",
+      "files": {
+        "blend": "/data/omi_runtime/assets/optical_module_v4/r08/OM-001-V4-r08.blend",
+        "obj": "/data/omi_runtime/assets/optical_module_v4/r08/OM-001-V4-r08.obj",
+        "glb": "/data/omi_runtime/assets/optical_module_v4/r08/OM-001-V4-r08.glb"
+      },
+      "visual_parts": 17
+    }
+  },
+  "module_visual_patch": "/data/omi_runtime/assets/optical_module_v4/r08/mujoco_visual_patch.json",
+  "static_inspection_scene": {
+    "path": "/data/omi_runtime/runs/wrist_primary_refinement_20261122/final/audit_scene.xml",
+    "sha256": "cdd6e067b44d6d7187055720ae94419a863af30426af61553d4c62a44a5196d3",
+    "requires_mj_step": false,
+    "initial_insertion_depth_mm": -2,
+    "physics_manifest": "/data/omi_runtime/assets/sim_insertion/r06/asset_manifest.json",
+    "dependencies": "/data/omi_runtime/runs/wrist_asset_handoff_check_20261122_181528/scene_dependencies.json",
+    "dependencies_sha256": "71be1ee3888a99cd915bb1a36d088edf5c51fde0155ca7cad68bbbb42f2ba724",
+    "dependency_root_counts": {
+      "/data/omi_runtime/assets/daimon/wrist_gripper_observation_r10": 49,
+      "/data/omi_runtime/assets/optical_module_v4/r07": 5,
+      "/data/omi_runtime/assets/optical_module_v4/r08": 17,
+      "/data/omi_runtime/assets/sim_insertion/r06": 604
+    }
+  },
+  "reproduction": {
+    "python": "/data/omi_runtime/envs/omi_mesh_audit/bin/python",
+    "python_version_checked": "3.12.7",
+    "mujoco_version_checked": "3.15.0",
+    "source_run": "/data/omi_runtime/runs/wrist_primary_refinement_20261122",
+    "script": "/data/omi_runtime/runs/wrist_primary_refinement_20261122/render_final.py",
+    "script_sha256": "89b5901984c40e226c6a42b5809091247a24a83018aace8f7c516f8ed0fea912",
+    "trial_config": "/data/omi_runtime/runs/wrist_primary_refinement_20261122/trials.json",
+    "trial_config_sha256": "8f0a7ef56cca8c29848a2e02ae4faaa6f0fe6723528178a0f17f2ee52229b0e8",
+    "case": "final",
+    "requires_fresh_output_directory": true,
+    "additional_inputs": [
+      "/data/omi_runtime/runs/module_v4_plain_material_20261122/hybrid_r07/render_scene.xml",
+      "/home/linux/Downloads/img/wrist_intrinsics_1920x1080.json",
+      "/data/omi_runtime/assets/sim_insertion/r06/asset_manifest.json"
+    ],
+    "verification": "/data/omi_runtime/runs/wrist_asset_handoff_check_20261122_181528/verification.json"
+  },
+  "binding_contract": {
+    "unit": "meter",
+    "tool_frame": "TCP flange origin; +Z toward fingertips; +X camera/top side; jaws translate along Y",
+    "tool_to_module_means": "T_TCP_from_module, mapping module-local points into tool TCP frame",
+    "component_counts": {
+      "base": 16,
+      "jaw_left": 11,
+      "jaw_right": 11,
+      "camera_mount": 2,
+      "camera": 9
+    },
+    "legacy_left_urdf_parent_map": {
+      "base": "TCP_Link_L",
+      "camera": "TCP_Link_L",
+      "camera_mount": "TCP_Link_L",
+      "jaw_left": "Arm_L10_Link",
+      "jaw_right": "Arm_L11_Link"
+    },
+    "material_rgba_priority": [
+      "mujoco_rgba",
+      "color"
+    ],
+    "camera_convention": "xyaxes_tcp = [right,up]; CV camera-to-TCP rotation = columns(right,-up,optical_forward_tcp)",
+    "module_parts_index_policy": "Use source_part_index/name; new17-part manifest is not old18-part enumeration",
+    "handle_pose_deg": -35
+  },
+  "validation_boundaries": {
+    "physical_dimension_certified": false,
+    "true_grasp_validated": false,
+    "camera_calibration_certified": false,
+    "per_frame_pose_ground_truth": false,
+    "new_policy_training": false,
+    "current_legacy_mount_helper_drop_in_compatible": false,
+    "native_mujoco_fovy_is_fisheye": false
+  },
+  "preserved_references": {
+    "tool_r09": "/data/omi_runtime/assets/daimon/wrist_gripper_cloud_r09",
+    "frozen_tool_r08": "/data/omi_runtime/assets/daimon/releases/wrist_gripper_aligned_r08_frozen_20261122",
+    "module_r07": "/data/omi_runtime/assets/optical_module_v4/r07",
+    "adopted_module_baseline": "OM-001/V4 r05 双窗尾槽版"
+  },
+  "source_registration": "manifests/wrist_primary_refinement_20261122.json"
+}

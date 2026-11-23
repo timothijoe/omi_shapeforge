@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-22",
+  "run": "/data/omi_runtime/runs/interaction_surface_representation_20261122/whole_context_20261122",
+  "url": "http://127.0.0.1:8891",
+  "change": "Default whole-object context with in-place dense interaction points and local inset",
+  "point_sets_unchanged": {
+    "module": {
+      "count": 22528,
+      "sha256": "3fe643677df01dd02e63ebf291003acadb868d1fcf04f2356298466696aa2e80",
+      "global_points": 2048
+    },
+    "socket": {
+      "count": 43008,
+      "sha256": "bb2f9c82f0f5bd7e3500f27220a869903222f5e740e84d00628ff742df3ef675",
+      "global_points": 2048
+    }
+  },
+  "source_snapshot": [
+    {
+      "source": "scripts/perception/render_interaction_surface.py",
+      "snapshot": "/data/omi_runtime/runs/interaction_surface_representation_20261122/whole_context_20261122/source_snapshot/scripts/perception/render_interaction_surface.py",
+      "sha256": "166a025a5935e49664ad7e3dc9af7c352497075db9a5b97975a276e286b7d9a1"
+    },
+    {
+      "source": "scripts/perception/interaction_surface_viewer.html",
+      "snapshot": "/data/omi_runtime/runs/interaction_surface_representation_20261122/whole_context_20261122/source_snapshot/scripts/perception/interaction_surface_viewer.html",
+      "sha256": "1e61cd7bca0e444aa123157ffccc55300bee5353835fd534915955c1706e0e55"
+    },
+    {
+      "source": "tutorials/interaction_surface_representation.md",
+      "snapshot": "/data/omi_runtime/runs/interaction_surface_representation_20261122/whole_context_20261122/source_snapshot/tutorials/interaction_surface_representation.md",
+      "sha256": "6739557d9ef4acad940204c5778a900ff00366779f798829d8327e3e60580cf3"
+    },
+    {
+      "source": "docs/design/interaction-surface-representation.md",
+      "snapshot": "/data/omi_runtime/runs/interaction_surface_representation_20261122/whole_context_20261122/source_snapshot/docs/design/interaction-surface-representation.md",
+      "sha256": "f024e7bf4717c66b94069f35236d966fc8fbd4da41ae5b8be195bc489ba5e8b4"
+    },
+    {
+      "source": "docs/agent/perception/evolution/interaction-surface-representation.md",
+      "snapshot": "/data/omi_runtime/runs/interaction_surface_representation_20261122/whole_context_20261122/source_snapshot/docs/agent/perception/evolution/interaction-surface-representation.md",
+      "sha256": "056c81e268f3728208294f916df22c5b3857e99725036e0daaf85c587d3f1cdf"
+    }
+  ],
+  "browser_checks_passed": 12,
+  "browser_errors": [],
+  "network_or_pose_changes": false,
+  "previous_local_view": "/data/omi_runtime/runs/interaction_surface_representation_20261122/whole_context_20261122/index_local_before.html"
+}

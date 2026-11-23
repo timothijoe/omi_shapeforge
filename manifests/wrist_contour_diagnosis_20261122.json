@@ -1,0 +1,11 @@
+{
+  "run": "/data/omi_runtime/runs/wrist_contour_diagnosis_20261122",
+  "report": "/data/omi_runtime/runs/wrist_contour_diagnosis_20261122/contour_report.json",
+  "camera_only_probe": "/data/omi_runtime/runs/wrist_contour_diagnosis_20261122/camera_only_probe.json",
+  "comparison": "/data/omi_runtime/runs/wrist_contour_diagnosis_20261122/outer_contour_comparison.png",
+  "source_asset": "WG-DAIMON-ALIGNED-r08",
+  "urdf_chain_used": false,
+  "geometry_modified": false,
+  "probe_camera_adopted": false,
+  "scope": "Approximate visible outer-edge diagnosis, not independent calibration or exact causal attribution"
+}

@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "asset_id": "OS-001",
+  "name_zh": "光模块插接座",
+  "aliases": [
+    "光模块插座",
+    "插接座"
+  ],
+  "scope": "Housing, metal cage, PCB, electronics and detachable lower support; optical module is a separate asset.",
+  "insertion_module": "OM-001/V3 r01",
+  "retained_mesh_count": 135,
+  "dimensions_refitted": false,
+  "physical_accuracy_verified": false,
+  "collision_revalidated": false,
+  "legacy_sources_preserved": true,
+  "protected_v3_sha256": {
+    "/data/omi_runtime/assets/optical_module_v3/work/OM-001-V3.blend": "016ac93da1f252e2f13325ac20454d1a02b82e31a840ac4f95bffa4218d0b8d2",
+    "/data/omi_runtime/assets/optical_module_v3/releases/r01/OM-001-V3-r01.blend": "016ac93da1f252e2f13325ac20454d1a02b82e31a840ac4f95bffa4218d0b8d2"
+  },
+  "revision": "r04-width-review",
+  "status": "user_requested_width_review_candidate_not_measured",
+  "parent": "OS-001/r01",
+  "assembly": "/data/omi_runtime/assets/optical_socket/revisions/r04/OS-001-r04.blend",
+  "glb": "/data/omi_runtime/assets/optical_socket/revisions/r04/OS-001-r04.glb",
+  "evidence_run": "/data/omi_runtime/runs/v3_socket_r04_20261120T082303Z",
+  "comparison": "/data/omi_runtime/runs/v3_socket_r04_20261120T082303Z/insertion_geometry.png",
+  "comparison_blender": "/data/omi_runtime/runs/socket_flat_rear_20261120T064745Z/socket_mesh_review.blend",
+  "dimension_table": "/data/omi_runtime/runs/socket_flat_rear_20261120T064745Z/dimension_comparison.csv",
+  "evidence_report": "/data/omi_runtime/runs/v3_socket_r04_20261120T082303Z/insertion_contract.json",
+  "validation": {
+    "blender_reopen": true,
+    "closed_nondegenerate_parts": 135,
+    "other_meshes_unchanged": 86,
+    "changed_meshes": 49,
+    "gltf_errors": 0,
+    "gltf_warnings": 0,
+    "surface_and_bidirectional_sampled_containment_checked": true,
+    "full_rigid_insertion_passed": false,
+    "stop_depth_mm": 51.28169432282448,
+    "fine_contact_exclusion_is_diagnostic_only": true
+  },
+  "historical_revisions": [
+    {
+      "revision": "r01-rear-review",
+      "manifest": "/data/omi_runtime/runs/socket_flat_rear_20261120T064745Z/previous_socket_assets_r01.json",
+      "assembly": "/data/omi_runtime/assets/optical_socket/revisions/r01/OS-001-r01.blend",
+      "insertion_scene": "/data/omi_runtime/assets/optical_socket/revisions/r01-insertion-v2/OS-001-r01-insertion-V2.blend",
+      "scope": "End-face cleanup only; did not address the two whole protrusions identified by the user."
+    }
+  ],
+  "script": "scripts/simulation/narrow_socket_channel.py",
+  "script_sha256": "3da9716d0fba17c5fe5f17e0d3fb139968cb046f5789c5625f53d54a1004b510",
+  "desktop_review": {
+    "screenshot": "/data/omi_runtime/runs/socket_flat_rear_20261120T064745Z/desktop_comparison_zoom.png",
+    "same_scale_four_model_review_opened": true
+  },
+  "files_sha256": {
+    "/data/omi_runtime/assets/optical_socket/revisions/r04/OS-001-r04.blend": "44e24fbe1ef3b352c61adcea6e84a9044de13275d1f62856e8a502ed275e0f48",
+    "/data/omi_runtime/assets/optical_socket/revisions/r04/OS-001-r04.glb": "4359578ad0c1ffeb6488e3beb4fc399e05f369f3739fae8f859c188e131d7871",
+    "/data/omi_runtime/assets/optical_socket/revisions/r04/revision.json": "a6783ca9f4baa4b53f8d8d93bee96e46e03a1daf790523d6026f8a740f9f0a71",
+    "/data/omi_runtime/runs/v3_socket_r04_20261120T082303Z/inputs/manifest.json": "250c108b6e304b966d35032ec9e68264f014eeaa3615ca4fc8a993df77b6b599",
+    "/data/omi_runtime/runs/v3_socket_r04_20261120T082303Z/insertion_contract.json": "c5059e09101bb16cd166412d77efca6a7c13873527e5e4217d71fa37fdd25a23",
+    "/data/omi_runtime/runs/v3_socket_r04_20261120T082303Z/collision/surface_contacts.json": "e68efba88d3c8423e581a87af43d4f5703f05689c3ed8cb43b7d1a71bd18fc62",
+    "/data/omi_runtime/runs/v3_socket_r04_20261120T082303Z/collision/volume_clearance_sections.json": "ec1fea549700d92f143f36e04aee0b7c82e93fe9394637ac01f6ffc6d1815de7",
+    "/data/omi_runtime/runs/v3_socket_r04_20261120T082303Z/insertion_geometry.png": "2adf536fe6eeb6d841001507310f5f0d445de3f9175ff769cbf18ef85094661e"
+  },
+  "preferred_viewer": {
+    "tool": "Open3D native GUI",
+    "script": "scripts/simulation/view_socket_comparison.py",
+    "script_sha256": "db39140f3d6939e444c468989030712ccc481f4c0fab92c6d3338435b4e70014",
+    "receipt": "/data/omi_runtime/runs/socket_flat_rear_20261120T064745Z/open3d_viewer.json",
+    "desktop_screenshot": "/data/omi_runtime/runs/socket_flat_rear_20261120T064745Z/open3d_interaction.png",
+    "rotation_sync_checked": true,
+    "scope": "Four upper cropped meshes; no lower stand or inserted optical module. Read-only.",
+    "default_right_model": "r01"
+  },
+  "alternative_revisions": [
+    {
+      "revision": "r02-flat-rear",
+      "assembly": "/data/omi_runtime/assets/optical_socket/revisions/r02/OS-001-r02.blend",
+      "glb": "/data/omi_runtime/assets/optical_socket/revisions/r02/OS-001-r02.glb",
+      "insertion_scene": "/data/omi_runtime/assets/optical_socket/revisions/r02-insertion-v2/OS-001-r02-insertion-V2.blend",
+      "status": "user_directed_review_candidate_not_sensor_certified",
+      "adoption": "not adopted after user reviewed rear photos; retain only as alternative"
+    },
+    {
+      "revision": "r03-narrow-channel",
+      "assembly": "/data/omi_runtime/assets/optical_socket/revisions/r03/OS-001-r03.blend",
+      "glb": "/data/omi_runtime/assets/optical_socket/revisions/r03/OS-001-r03.glb",
+      "parent": "r01-rear-review",
+      "status": "unproven_visual_width_hypothesis_not_adopted",
+      "inner_width_mm": 18.6,
+      "white_aperture_width_mm": 20.2,
+      "rear_structures_retained": true,
+      "insertion_review": "manifests/v3_socket_insertion_20261120.json",
+      "dimensions_measured_from_photos": false
+    }
+  ],
+  "user_review": "User acknowledged rear protruding structures are visible in photos; keep protruding version. This does not certify dimensions.",
+  "current_geometry_review_candidate": {
+    "revision": "r04-width-review",
+    "assembly": "/data/omi_runtime/assets/optical_socket/revisions/r04/OS-001-r04.blend",
+    "glb": "/data/omi_runtime/assets/optical_socket/revisions/r04/OS-001-r04.glb",
+    "inner_width_mm": 19.0,
+    "white_aperture_width_mm": 20.6,
+    "status": "user_requested_width_review_candidate_not_measured",
+    "validation_manifest": "manifests/socket_r04_20261120.json",
+    "dimensions_measured_from_photos": false
+  },
+  "accepted_structure_reference": "r01: rear protrusions retained after user photo review; r02 flat rear not adopted",
+  "latest_width_evidence_review": "/data/omi_runtime/runs/width_evidence_20261120T081118Z/review.json",
+  "preferred_insertion_viewer_run": "/data/omi_runtime/runs/v3_socket_r04_20261120T082303Z",
+  "display_lower_stand": true,
+  "legacy_v2_insertion_scene": "/data/omi_runtime/assets/optical_socket/revisions/r01-insertion-v2/OS-001-r01-insertion-V2.blend",
+  "baseline_structure_revision": "r01-rear-review",
+  "insertion_contract": "/data/omi_runtime/runs/v3_socket_r04_20261120T082303Z/insertion_contract.json",
+  "measured_simulation_variant": {
+    "asset_id": "OS-001/M1888-r01",
+    "directory": "/data/omi_runtime/assets/optical_socket/measured/r01",
+    "blend": "/data/omi_runtime/assets/optical_socket/measured/r01/OS-001-M1888-r01.blend",
+    "glb": "/data/omi_runtime/assets/optical_socket/measured/r01/OS-001-M1888-r01.glb",
+    "channel_width_mm": 18.8,
+    "channel_height_mm": 8.8,
+    "front_view_left_margin_mm": 6.9,
+    "measurement_location_confirmed": false,
+    "geometry_source": "/data/omi_runtime/assets/sim_insertion/r06",
+    "validation": "measured_v4_simulation_20261121.json",
+    "original_assets_unchanged": true
+  }
+}

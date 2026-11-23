@@ -1,0 +1,28 @@
+{
+  "asset_id": "OM-001/V4",
+  "revision": "r03",
+  "asset_directory": "/data/omi_runtime/assets/optical_module_v4/r03",
+  "manifest": "/data/omi_runtime/assets/optical_module_v4/r03/asset_manifest.json",
+  "manifest_sha256": "8dba55ec5bbfc1de65e4656fc6191b627580698b05619efc0dd8dbe970ba3b82",
+  "validation": "/data/omi_runtime/assets/optical_module_v4/r03/validation.json",
+  "photo_sources": [
+    {
+      "path": "/home/linux/Downloads/img/20261121-194740.jpg",
+      "sha256": "a337430c07154f98e7e271d0bbf80ae5631a7943cc68960ae4d240cc69acecdf"
+    },
+    {
+      "path": "/home/linux/Downloads/img/20261121-194745.jpg",
+      "sha256": "7ffeccf52a6fd4999156735b1f122ffca85987c1785c91f6169f2461a6dd48b3"
+    }
+  ],
+  "height_review_video": {
+    "path": "/home/linux/Downloads/飞书20261121-193612.qt",
+    "sha256": "1871ac1ad492d20052ef5338e8b88f819e18202646ec0c9e1fb807b7824846b2",
+    "review": "Side and oblique views; user explicitly confirmed downward Z correction, not axial retreat."
+  },
+  "protected_old_files_unchanged": 599,
+  "static_withdrawal_samples": 31,
+  "old_training_unchanged": true,
+  "rubber_deformation_or_force_tested": false,
+  "historical_revision": "r02 retained but rejected on elevation; r01 retained"
+}

@@ -1,0 +1,30 @@
+{
+  "status": "static_preview_with_real_black_contact_pads_not_physical_grasp_validated",
+  "date": "2026-11-22",
+  "run": "/data/omi_runtime/runs/hybrid_black_contact_20261122",
+  "preview": "/data/omi_runtime/runs/hybrid_black_contact_20261122/hybrid_black_contact.png",
+  "contact_detail": "/data/omi_runtime/runs/hybrid_black_contact_20261122/black_contact_detail.png",
+  "full_resolution": "/data/omi_runtime/runs/hybrid_black_contact_20261122/hybrid_full.png",
+  "report": "/data/omi_runtime/runs/hybrid_black_contact_20261122/report.json",
+  "report_sha256": "7eb9be3ded0239086aead9965f05801ad99f6137f63ade487346b725ea6c7d38",
+  "intrinsics": "/home/linux/Downloads/img/wrist_intrinsics_1920x1080.json",
+  "real_source": "/data/omi_runtime/runs/wrist_module_outline_20261120T095830Z/frame_000.png",
+  "black_contact_checks": {
+    "left": {
+      "source_mask_pixels": 783,
+      "unchanged_core_pixels": 647,
+      "minimum_distance_to_visible_sim_module_px": 1.0,
+      "near_module_pixels_within_2px": 32
+    },
+    "right": {
+      "source_mask_pixels": 653,
+      "unchanged_core_pixels": 543,
+      "minimum_distance_to_visible_sim_module_px": 1.0,
+      "near_module_pixels_within_2px": 43
+    }
+  },
+  "earlier_visual_feedback": "positive overall; contact-pad correction requested",
+  "current_correction_user_reviewed": false,
+  "mesh_changed": false,
+  "training_performed": false
+}

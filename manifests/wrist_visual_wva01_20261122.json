@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "release_id": "WVA-01",
+  "display_name": "腕部实拍对齐版",
+  "designation_date": "2026-11-22",
+  "designation": "user_accepted_visual_baseline",
+  "acceptance_statement": "好很多，现在可以作为一个版本了，你起一个新的版本名字，同时也给写一下有关的docs",
+  "scope": "Accepted wrist visual comparison and asset assembly; not a certified physical calibration or trained policy release",
+  "release_directory": "/data/omi_runtime/releases/wrist/WVA-01",
+  "guide": "docs/agent/simulation/evolution/wrist-visual-wva01.md",
+  "assets": {
+    "tool": {
+      "identity": "WG-DAIMON-LOGO-r15",
+      "revision": "r15",
+      "directory": "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15",
+      "manifest": "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/asset_manifest.json",
+      "manifest_sha256": "c9b243954c7d9bcb511e91534793eaac206fcc3b4405d40580b0082e2eee070f",
+      "delivery_manifest": "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/delivery_manifest.json",
+      "delivery_manifest_sha256": "d3f9a9e74045c1ef7365c1d33991c99c50f992b6bbefd33f876e678b799bcc01",
+      "files": {
+        "blend": "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/WG-DAIMON-LOGO-r15.blend",
+        "glb": "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/WG-DAIMON-LOGO-r15.glb",
+        "camera_glb": "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/wrist_camera.glb",
+        "gripper_glb": "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/gripper.glb"
+      },
+      "parts": 49
+    },
+    "module": {
+      "identity": "OM-001/V4",
+      "revision": "r08",
+      "directory": "/data/omi_runtime/assets/optical_module_v4/r08",
+      "manifest": "/data/omi_runtime/assets/optical_module_v4/r08/asset_manifest.json",
+      "manifest_sha256": "183d94354995599e568db29e9b0d4c004af010ab3e37cf6bc84ce9455f4ca636",
+      "delivery_manifest": "/data/omi_runtime/assets/optical_module_v4/r08/delivery_manifest.json",
+      "delivery_manifest_sha256": "e5edc4196eb2ba31748fc1d5fa923dfd467277d2ff04d88a0de5bf43385035ce",
+      "files": {
+        "blend": "/data/omi_runtime/assets/optical_module_v4/r08/OM-001-V4-r08.blend",
+        "obj": "/data/omi_runtime/assets/optical_module_v4/r08/OM-001-V4-r08.obj",
+        "glb": "/data/omi_runtime/assets/optical_module_v4/r08/OM-001-V4-r08.glb"
+      },
+      "parts": 17
+    }
+  },
+  "scene": {
+    "file": "/data/omi_runtime/releases/wrist/WVA-01/scene/audit_scene.xml",
+    "sha256": "9b2ed941428c4280b7f00087fce285cee390f0a9ef0af61154c4551c2c9aa9bd",
+    "dependencies": "/data/omi_runtime/releases/wrist/WVA-01/scene/dependencies.json",
+    "dependency_count": 677,
+    "initial_insertion_depth_mm": -2,
+    "physics_manifest": "/data/omi_runtime/assets/sim_insertion/r06/asset_manifest.json",
+    "physics_manifest_sha256": "350d26d3fcb99cef1168d888fa4de289879eb3ff048667b7964b0a806cf65f31",
+    "mj_step_required": false,
+    "collision_geom_groups_hidden": [
+      3,
+      4,
+      5
+    ]
+  },
+  "camera": {
+    "model": "opencv_fisheye_via_cubemap",
+    "image_size": [
+      1920,
+      1080
+    ],
+    "intrinsics": "/data/omi_runtime/releases/wrist/WVA-01/evidence/wrist_intrinsics_1920x1080.json",
+    "intrinsics_sha256": "14e55db162c49693fda3190f0091cfff053620eb478f0ab497b4b4c8a7358933",
+    "capture_binding_certified": false,
+    "pose_tcp": {
+      "optical_position_m": [
+        0.0863483932046896,
+        -0.00018677014387511465,
+        0.055480380169977986
+      ],
+      "glass_center_m": [
+        0.08646447491580034,
+        -0.00018513462758133932,
+        0.05489171867010556
+      ],
+      "optical_forward_tcp": [
+        -0.19346951851791397,
+        -0.002725860489625552,
+        0.9811024997873756
+      ],
+      "xyaxes_tcp": [
+        0.004990600769355116,
+        0.9999804687950331,
+        0.0037624370328766554,
+        0.9810935935518115,
+        -0.005624207771459721,
+        0.1934521361436363
+      ],
+      "fovy_degrees": 90,
+      "model": "Pinhole cubemap sampler; observation uses supplied OpenCV fisheye K/D",
+      "estimated_enclosure_size_mm": [
+        42,
+        40,
+        28
+      ]
+    }
+  },
+  "assembly": {
+    "T_TCP_from_module": {
+      "position_m": [
+        -0.00693561645124878,
+        -0.0006454158992500048,
+        0.23764585400658933
+      ],
+      "rotation": [
+        [
+          0.011319122544472555,
+          0.020135424648365607,
+          0.9997331854745312
+        ],
+        [
+          -0.99989849363127,
+          0.008880038316719853,
+          0.011142143124675461
+        ],
+        [
+          -0.008653317210202025,
+          -0.9997578254726109,
+          0.020233895016433277
+        ]
+      ]
+    },
+    "opening_per_jaw_mm": 0,
+    "handle_angle_deg": -35,
+    "units": "meter",
+    "tool_axes": "+Z toward tips; +X camera/silver logo face; jaws along Y"
+  },
+  "comparison": {
+    "source": "/data/zt-think-d1-data/nov_22/session_backup_20261121_20261122_20261122_014108/captures/BundleSDF_trial/datasets/units/unit_001_20261121/samples/sample_20261121_212334_434186_62cb90/wrist_rgb.png",
+    "choice": "Original unit001 camera/attachment fitting reference; not an independent held-out evaluation",
+    "pose_policy": "Reuse existing camera and attachment; nominal socket pose -2mm, not per-frame socket fitting",
+    "real_image_sha256": "92c82bcc9c9efd4bfc7b389e42ef9344fe3da16b6d83b1ce26626d72095edace",
+    "rendered_image": "/data/omi_runtime/releases/wrist/WVA-01/evidence/asset_same_pose_fisheye_1920.png",
+    "rendered_image_sha256": "016848fc884d4a45c32d6a4b9e74869aecc09793255a6acd8c77f916b86a21e5",
+    "tool_asset": "WG-DAIMON-LOGO-r15",
+    "module_asset": "OM-001/V4 r08",
+    "image_size": [
+      1920,
+      1080
+    ],
+    "overview_crop_xyxy": [
+      600,
+      580,
+      1340,
+      1080
+    ],
+    "detail_crop_xyxy": [
+      780,
+      650,
+      1160,
+      1030
+    ],
+    "comparison": "/data/omi_runtime/releases/wrist/WVA-01/evidence/real_vs_sim_wrist_r15.png",
+    "detail_comparison": "/data/omi_runtime/releases/wrist/WVA-01/evidence/wrist_detail_r15.png",
+    "camera_report": "/data/omi_runtime/releases/wrist/WVA-01/evidence/camera_render_report.json",
+    "photometric_adjustment": false,
+    "per_image_alignment_warp": false,
+    "synthetic_image_contains_real_gripper_pixels": false,
+    "viewer": "/data/omi_runtime/releases/wrist/WVA-01/evidence/view_comparison.py"
+  },
+  "reproduction": {
+    "python": "/data/omi_runtime/envs/omi_mesh_audit/bin/python",
+    "script": "/data/omi_runtime/releases/wrist/WVA-01/reproduction/render_r15.py",
+    "trial_config": "/data/omi_runtime/releases/wrist/WVA-01/reproduction/trials.json",
+    "embedded_source_run_to_replace": "/data/omi_runtime/runs/wrist_r15_capture_compare_20261122",
+    "case": "r15",
+    "always_render_to_new_run": true
+  },
+  "limits": [
+    "Approximate photo/stereo dimensions, no manufacturer CAD",
+    "No new extrinsic or intrinsic calibration; unit001 is a fitting reference, not held-out evidence",
+    "Remaining liner color, black-arm/metal appearance, pull handle, socket relative pose and background differences",
+    "Logo traced from physical photo, not official vector art; marker sticker omitted",
+    "Visual tool and U-handle only; no new grasp, inertia, robot collision or RL validation",
+    "Old r10 pixel metrics and prior policy success rates do not transfer to this release"
+  ],
+  "historical_bundle": {
+    "manifest": "/home/linux/omi_folder/omi_shapeforge/manifests/wrist_visual_asset_handoff_20261122.json",
+    "sha256": "a9df1e12485c7b8882af915114ea1c5bb6ff276a2ea2023cad313ece60e759c5",
+    "retained": true
+  },
+  "standalone_module_adopted_baseline_unchanged": "OM-001/V4 r05 双窗尾槽版"
+}

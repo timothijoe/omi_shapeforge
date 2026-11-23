@@ -173,6 +173,188 @@
       "aliases": [
         "V2"
       ]
+    },
+    {
+      "id": "OM-001/MEASURED-r01",
+      "display_name": "实测截面与下部前端斜面 · 独立修订",
+      "derived_from": "OM-001/V3 r01",
+      "role": "separate_measured_geometry_candidate_not_training_default",
+      "source_path": "/data/omi_runtime/assets/optical_module_measured/r01/OM-001-MEASURED-r01.blend",
+      "source_sha256": "d4294f89583d0feea0b4038c444b208e3fd2c6622b42efd927bf11c44b8ab1ee",
+      "asset_manifest": "/data/omi_runtime/assets/optical_module_measured/r01/asset_manifest.json",
+      "validation": "/data/omi_runtime/assets/optical_module_measured/r01/validation.json",
+      "visible_evaluated_parts": 15,
+      "physical_accuracy_validated": false,
+      "verified_dimensions_mm": {
+        "shaft_max_width_including_side_springs": 18.1,
+        "shaft_height": 8.2,
+        "lower_projecting_lip_tip_height": 8.0
+      },
+      "limitations": [
+        "Taper length 5.193792 mm inherited from V3, not measured.",
+        "Upper leading guard extends 3.158383 mm beyond lower lip; 8.0 mm applies at lower lip front.",
+        "Two decorative open seam meshes remain visual-only.",
+        "No new collision decomposition, dynamic insertion or policy validation."
+      ],
+      "original_assets_unchanged": true,
+      "installed_in_training": false
+    },
+    {
+      "id": "OM-001/V4",
+      "revision": "r05",
+      "display_name": "V4-r05 · 双窗尾槽版",
+      "derived_from": "OM-001/V3 r01 via OM-001/MEASURED-r01",
+      "role": "provisional_visual_baseline",
+      "source_path": "/data/omi_runtime/assets/optical_module_v4/r05/OM-001-V4-r05.blend",
+      "source_sha256": "615274f6d35b4998bd15a0aea622770e9019951a91050eb368312d126a9cd156",
+      "asset_manifest": "/data/omi_runtime/assets/optical_module_v4/r05/asset_manifest.json",
+      "validation": "/data/omi_runtime/assets/optical_module_v4/r05/validation.json",
+      "visible_evaluated_parts": 18,
+      "physical_accuracy_validated": false,
+      "reference_video": "/home/linux/Downloads/飞书20261121-193612.qt",
+      "reference_video_sha256": "1871ac1ad492d20052ef5338e8b88f819e18202646ec0c9e1fb807b7824846b2",
+      "retained_dimensions_mm": [
+        18.1,
+        8.2,
+        8.0
+      ],
+      "new_features": [
+        "taller lower cap face with twin inward legs",
+        "three short wide metal end pads",
+        "two empty upper windows, no raised rubber filling"
+      ],
+      "feature_dimensions_measured": false,
+      "original_assets_unchanged": true,
+      "installed_in_training": false,
+      "photo_references": [
+        "/home/linux/Downloads/img/20261121-194740.jpg",
+        "/home/linux/Downloads/img/20261121-194745.jpg",
+        "/home/linux/Downloads/img/20261121-200216.jpg"
+      ],
+      "historical_revisions": [
+        {
+          "id": "OM-001/V4",
+          "revision": "r01",
+          "display_name": "V4 · 尾端上侧长方形缺口与视频结构补充",
+          "derived_from": "OM-001/V3 r01 via OM-001/MEASURED-r01",
+          "role": "separate_visual_geometry_revision_for_review",
+          "source_path": "/data/omi_runtime/assets/optical_module_v4/r01/OM-001-V4-r01.blend",
+          "source_sha256": "3954be1964dbc8f9cb9d5a810f800361ac879fade48f3ae0245b3c72420a5480",
+          "asset_manifest": "/data/omi_runtime/assets/optical_module_v4/r01/asset_manifest.json",
+          "validation": "/data/omi_runtime/assets/optical_module_v4/r01/validation.json",
+          "visible_evaluated_parts": 15,
+          "physical_accuracy_validated": false,
+          "reference_video": "/home/linux/Downloads/飞书20261121-193612.qt",
+          "reference_video_sha256": "1871ac1ad492d20052ef5338e8b88f819e18202646ec0c9e1fb807b7824846b2",
+          "retained_dimensions_mm": [
+            18.1,
+            8.2,
+            8.0
+          ],
+          "new_features": [
+            "upper metal rear-edge rectangular cutout",
+            "side plate lower-edge notches",
+            "black tail blind recess"
+          ],
+          "feature_dimensions_measured": false,
+          "original_assets_unchanged": true,
+          "installed_in_training": false
+        },
+        {
+          "revision": "r02",
+          "path": "/data/omi_runtime/assets/optical_module_v4/r02",
+          "status": "superseded_after_user_height_review",
+          "reason": "Twin-leg plug and three tabs present, but user found both too high; r03 corrects downward position.",
+          "asset_manifest": "/data/omi_runtime/assets/optical_module_v4/r02/asset_manifest.json"
+        },
+        {
+          "id": "OM-001/V4",
+          "revision": "r03",
+          "display_name": "V4 · 双脚胶件、三个金属凸片及下沉修正",
+          "derived_from": "OM-001/V3 r01 via OM-001/MEASURED-r01",
+          "role": "separate_visual_geometry_revision_for_review",
+          "source_path": "/data/omi_runtime/assets/optical_module_v4/r03/OM-001-V4-r03.blend",
+          "source_sha256": "fca55676fe584f34d269daf91cc85f7491e01d34468001ce28e55ec4c5f06656",
+          "asset_manifest": "/data/omi_runtime/assets/optical_module_v4/r03/asset_manifest.json",
+          "validation": "/data/omi_runtime/assets/optical_module_v4/r03/validation.json",
+          "visible_evaluated_parts": 18,
+          "physical_accuracy_validated": false,
+          "reference_video": "/home/linux/Downloads/飞书20261121-193612.qt",
+          "reference_video_sha256": "1871ac1ad492d20052ef5338e8b88f819e18202646ec0c9e1fb807b7824846b2",
+          "retained_dimensions_mm": [
+            18.1,
+            8.2,
+            8.0
+          ],
+          "new_features": [
+            "rear upper rectangular cutout",
+            "three recessed metal tabs",
+            "removable connected twin-leg black plug",
+            "receiving spaces under cover"
+          ],
+          "feature_dimensions_measured": false,
+          "original_assets_unchanged": true,
+          "installed_in_training": false,
+          "photo_references": [
+            "/home/linux/Downloads/img/20261121-194740.jpg",
+            "/home/linux/Downloads/img/20261121-194745.jpg"
+          ],
+          "height_correction_from_r02_mm": -1.5
+        },
+        {
+          "id": "OM-001/V4",
+          "revision": "r04",
+          "display_name": "V4 · 正视端面比例、三个宽短金属端面与黑色窗口",
+          "derived_from": "OM-001/V3 r01 via OM-001/MEASURED-r01",
+          "role": "separate_visual_geometry_revision_for_review",
+          "source_path": "/data/omi_runtime/assets/optical_module_v4/r04/OM-001-V4-r04.blend",
+          "source_sha256": "586fe49627e23014c41a1a99a58cb0b2d403ba972d5f4b75363561cd933397a3",
+          "asset_manifest": "/data/omi_runtime/assets/optical_module_v4/r04/asset_manifest.json",
+          "validation": "/data/omi_runtime/assets/optical_module_v4/r04/validation.json",
+          "visible_evaluated_parts": 18,
+          "physical_accuracy_validated": false,
+          "reference_video": "/home/linux/Downloads/飞书20261121-193612.qt",
+          "reference_video_sha256": "1871ac1ad492d20052ef5338e8b88f819e18202646ec0c9e1fb807b7824846b2",
+          "retained_dimensions_mm": [
+            18.1,
+            8.2,
+            8.0
+          ],
+          "new_features": [
+            "taller removable twin-leg plug cap face",
+            "three short wide metal end pads",
+            "two upper windows exposing inner black rubber"
+          ],
+          "feature_dimensions_measured": false,
+          "original_assets_unchanged": true,
+          "installed_in_training": false,
+          "photo_references": [
+            "/home/linux/Downloads/img/20261121-194740.jpg",
+            "/home/linux/Downloads/img/20261121-194745.jpg",
+            "/home/linux/Downloads/img/20261121-200216.jpg"
+          ],
+          "cap_front_height_mm": 7.1,
+          "bottom_margin_mm": 1.2,
+          "metal_end_widths_mm": [
+            1.8,
+            3.2,
+            1.8
+          ],
+          "review_status": "pending user visual review"
+        }
+      ],
+      "cap_front_height_mm": 7.1,
+      "bottom_margin_mm": 1.2,
+      "metal_end_widths_mm": [
+        1.8,
+        3.2,
+        1.8
+      ],
+      "review_status": "user_adopted_provisional_visual_baseline",
+      "window_contents": "empty at metal-end elevation; r04 rubber interpretation rejected by user",
+      "version_name_zh": "双窗尾槽版",
+      "designation_manifest": "module_v4_r05_designation_20261121.json",
+      "runtime_version_label": "/data/omi_runtime/assets/optical_module_v4/r05/version_name.json"
     }
   ],
   "scene_instances": {
@@ -267,5 +449,115 @@
     "geometry_changed": false,
     "project_package_version_changed": false,
     "historical_v1_v2_v2_1_preserved": true
+  },
+  "latest_separate_measured_candidate": "OM-001/MEASURED-r01",
+  "latest_visual_review_asset": "OM-001/V4",
+  "provisional_visual_baseline": {
+    "asset_id": "OM-001/V4",
+    "revision": "r05",
+    "name_zh": "双窗尾槽版",
+    "file": "/data/omi_runtime/assets/optical_module_v4/r05/OM-001-V4-r05.blend",
+    "sha256": "615274f6d35b4998bd15a0aea622770e9019951a91050eb368312d126a9cd156",
+    "designation_manifest": "module_v4_r05_designation_20261121.json"
+  },
+  "named_baselines": {
+    "双窗尾槽版": {
+      "asset_id": "OM-001/V4",
+      "revision": "r05",
+      "name_zh": "双窗尾槽版",
+      "file": "/data/omi_runtime/assets/optical_module_v4/r05/OM-001-V4-r05.blend",
+      "sha256": "615274f6d35b4998bd15a0aea622770e9019951a91050eb368312d126a9cd156",
+      "designation_manifest": "module_v4_r05_designation_20261121.json"
+    }
+  },
+  "appearance_candidates": [
+    {
+      "id": "OM-001/V4",
+      "revision": "r06",
+      "display_name": "V4-r06 · 银灰材质候选",
+      "parent_revision": "r05",
+      "role": "material_only_candidate",
+      "source_path": "/data/omi_runtime/assets/optical_module_v4/r06/OM-001-V4-r06.blend",
+      "source_sha256": "b78f36377b454abc4d3561c38e05b4373b726fc7f371b294bf4ed92f85ee53da",
+      "asset_manifest": "/data/omi_runtime/assets/optical_module_v4/r06/asset_manifest.json",
+      "geometry_validation": "/data/omi_runtime/assets/optical_module_v4/r06/geometry_validation.json",
+      "visual_parts": 18,
+      "geometry_changed": false,
+      "baseline_adoption_changed": false,
+      "physical_accuracy_validated": false,
+      "appearance_calibrated": false,
+      "review_status": "colors_approximately_accepted_grain_rejected_by_user",
+      "manifest": "module_material_r06_20261122.json"
+    },
+    {
+      "id": "OM-001/V4",
+      "revision": "r07",
+      "display_name": "V4-r07 · 纯色银灰材质候选",
+      "parent_revision": "r06",
+      "role": "material_only_candidate",
+      "source_path": "/data/omi_runtime/assets/optical_module_v4/r07/OM-001-V4-r07.blend",
+      "source_sha256": "4362cf767bbabf5c89946b48fa5b015eba57b1203b2c013643fcf3e41ab17a3c",
+      "asset_manifest": "/data/omi_runtime/assets/optical_module_v4/r07/asset_manifest.json",
+      "geometry_validation": "/data/omi_runtime/assets/optical_module_v4/r07/validation.json",
+      "visual_parts": 18,
+      "geometry_changed": false,
+      "baseline_adoption_changed": false,
+      "physical_accuracy_validated": false,
+      "appearance_calibrated": false,
+      "review_status": "candidate_pending_user_visual_review",
+      "manifest": "module_material_r07_20261122.json",
+      "added_grain_removed": true
+    },
+    {
+      "id": "OM-001/V4",
+      "revision": "r08",
+      "display_name": "V4-r08 · U形拉环补全候选",
+      "parent_revision": "r07",
+      "role": "separate_visual_geometry_candidate",
+      "source_path": "/data/omi_runtime/assets/optical_module_v4/r08/OM-001-V4-r08.blend",
+      "source_sha256": "1891a691b3c1fc4ee0dded9272b63618ba61cf8327a0c5bc35b76948892b3258",
+      "asset_manifest": "/data/omi_runtime/assets/optical_module_v4/r08/asset_manifest.json",
+      "visual_parts": 17,
+      "changed_geometry": "Two disconnected green arms replaced by one connected U handle;16 other meshes unchanged",
+      "baseline_adoption_changed": false,
+      "physical_accuracy_validated": false,
+      "review_status": "candidate_pending_visual_review",
+      "manifest": "wrist_primary_refinement_20261122.json"
+    }
+  ],
+  "latest_material_candidate": {
+    "id": "OM-001/V4",
+    "revision": "r07",
+    "display_name": "V4-r07 · 纯色银灰材质候选",
+    "parent_revision": "r06",
+    "role": "material_only_candidate",
+    "source_path": "/data/omi_runtime/assets/optical_module_v4/r07/OM-001-V4-r07.blend",
+    "source_sha256": "4362cf767bbabf5c89946b48fa5b015eba57b1203b2c013643fcf3e41ab17a3c",
+    "asset_manifest": "/data/omi_runtime/assets/optical_module_v4/r07/asset_manifest.json",
+    "geometry_validation": "/data/omi_runtime/assets/optical_module_v4/r07/validation.json",
+    "visual_parts": 18,
+    "geometry_changed": false,
+    "baseline_adoption_changed": false,
+    "physical_accuracy_validated": false,
+    "appearance_calibrated": false,
+    "review_status": "candidate_pending_user_visual_review",
+    "manifest": "module_material_r07_20261122.json",
+    "added_grain_removed": true
+  },
+  "latest_visual_geometry_candidate": {
+    "id": "OM-001/V4",
+    "revision": "r08",
+    "display_name": "V4-r08 · U形拉环补全候选",
+    "parent_revision": "r07",
+    "role": "separate_visual_geometry_candidate",
+    "source_path": "/data/omi_runtime/assets/optical_module_v4/r08/OM-001-V4-r08.blend",
+    "source_sha256": "1891a691b3c1fc4ee0dded9272b63618ba61cf8327a0c5bc35b76948892b3258",
+    "asset_manifest": "/data/omi_runtime/assets/optical_module_v4/r08/asset_manifest.json",
+    "visual_parts": 17,
+    "changed_geometry": "Two disconnected green arms replaced by one connected U handle;16 other meshes unchanged",
+    "baseline_adoption_changed": false,
+    "physical_accuracy_validated": false,
+    "review_status": "candidate_pending_visual_review",
+    "manifest": "wrist_primary_refinement_20261122.json"
   }
 }

@@ -1,0 +1,15 @@
+{
+  "run": "/data/omi_runtime/runs/v2d_wrist_trial_20261121",
+  "source": "https://github.com/nvidia-isaac/video_to_data",
+  "source_commit": "1e862a8984bf28474c324c1b49db99b2da7ece80",
+  "status": "actual_native_trial_sam2_helpful_predicted_depth_foundationpose_failed",
+  "summary": "/data/omi_runtime/runs/v2d_wrist_trial_20261121/summary.json",
+  "provenance": "/data/omi_runtime/runs/v2d_wrist_trial_20261121/provenance.json",
+  "preview": "/data/omi_runtime/runs/v2d_wrist_trial_20261121/first_frame_comparison.png",
+  "video": "/data/omi_runtime/runs/v2d_wrist_trial_20261121/comparison_h264.mp4",
+  "sam2_frames": 61,
+  "pixel_refined_frames": 61,
+  "pose_accuracy_validated": false,
+  "head_cloud_pose_used": false,
+  "custom_pixel_refinement": true
+}

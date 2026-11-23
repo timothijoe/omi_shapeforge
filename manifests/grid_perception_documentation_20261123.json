@@ -1,0 +1,471 @@
+{
+  "checked_date": "2026-11-23",
+  "scope": "Documentation reconciliation only; no dataset regeneration, model training or source-asset changes",
+  "evolution": "docs/agent/perception/evolution/grid-perception-data-v1.md",
+  "chronicle": "docs/agent/perception/chronicles/2026-11-23-grid-perception-data-v1.md",
+  "operator_guide": "tutorials/grid_perception_data_v1.md",
+  "facts_verified": {
+    "candidate_images": 16490,
+    "physical_images": 16251,
+    "strict_images": 14549,
+    "auxiliary_images": 1702,
+    "rejected_candidates": 239,
+    "strict_split": {
+      "train": 12463,
+      "val": 987,
+      "test": 1099
+    },
+    "strict_grasp_groups": 1926,
+    "training_performed_in_data_generation": false,
+    "phase": "pre-insertion static simulation views"
+  },
+  "related_links_checked": [
+    {
+      "document": "docs/agent/perception/evolution/grid-perception-data-v1.md",
+      "target": "../chronicles/2026-11-23-grid-perception-data-v1.md"
+    },
+    {
+      "document": "docs/agent/perception/evolution/grid-perception-data-v1.md",
+      "target": "../../../../tutorials/grid_perception_data_v1.md"
+    },
+    {
+      "document": "docs/agent/perception/evolution/grid-perception-data-v1.md",
+      "target": "../../../../manifests/grid_perception_data_20261123_v1.json"
+    },
+    {
+      "document": "docs/agent/perception/evolution/grid-perception-data-v1.md",
+      "target": "three-variable-grasp-preview.md"
+    },
+    {
+      "document": "docs/agent/perception/evolution/grid-perception-data-v1.md",
+      "target": "/data/omi_runtime/runs/grid_perception_20261123_v1/plan.json"
+    },
+    {
+      "document": "docs/agent/perception/evolution/grid-perception-data-v1.md",
+      "target": "/data/omi_runtime/runs/grid_perception_20261123_v1/data/complete.json"
+    },
+    {
+      "document": "docs/agent/perception/evolution/grid-perception-data-v1.md",
+      "target": "/data/omi_runtime/runs/grid_perception_20261123_v1/data/label_audit.json"
+    },
+    {
+      "document": "docs/agent/perception/evolution/grid-perception-data-v1.md",
+      "target": "/data/omi_runtime/runs/grid_perception_20261123_v1/strict_subset_report.json"
+    },
+    {
+      "document": "docs/agent/perception/evolution/grid-perception-data-v1.md",
+      "target": "/data/omi_runtime/runs/grid_perception_20261123_v1/coverage_by_grasp.json"
+    },
+    {
+      "document": "docs/agent/perception/evolution/grid-perception-data-v1.md",
+      "target": "/data/omi_runtime/runs/grid_perception_20261123_v1/render_replay_report.json"
+    },
+    {
+      "document": "docs/agent/perception/evolution/grid-perception-data-v1.md",
+      "target": "/data/omi_runtime/runs/grid_perception_20261123_v1/review/browser_validation.json"
+    },
+    {
+      "document": "docs/agent/perception/evolution/grid-perception-data-v1.md",
+      "target": "/data/omi_runtime/runs/grid_perception_20261123_v1/review/quality_tier_browser_validation.json"
+    },
+    {
+      "document": "docs/agent/perception/evolution/grid-perception-data-v1.md",
+      "target": "/data/omi_runtime/runs/grid_perception_20261123_v1/annotation_example_5964/annotation.json"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/2026-11-23-grid-perception-data-v1.md",
+      "target": "../evolution/grid-perception-data-v1.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/2026-11-23-grid-perception-data-v1.md",
+      "target": "../evolution/grid-perception-data-v1.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/2026-11-23-grid-perception-data-v1.md",
+      "target": "../../../../tutorials/grid_perception_data_v1.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/2026-11-23-grid-perception-data-v1.md",
+      "target": "../../../../manifests/grid_perception_data_20261123_v1.json"
+    },
+    {
+      "document": "tutorials/grid_perception_data_v1.md",
+      "target": "../docs/agent/perception/evolution/grid-perception-data-v1.md"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "agent/perception/evolution/grid-perception-data-v1.md"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "agent/perception/evolution/grid-perception-data-v1.md"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "agent/perception/chronicles/2026-11-23-grid-perception-data-v1.md"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "../tutorials/grid_perception_data_v1.md"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "agent/perception/evolution/contact-wrist-surface-learning.md"
+    },
+    {
+      "document": "docs/agent/README.md",
+      "target": "perception/evolution/grid-perception-data-v1.md"
+    },
+    {
+      "document": "docs/agent/README.md",
+      "target": "perception/chronicles/2026-11-23-grid-perception-data-v1.md"
+    },
+    {
+      "document": "docs/agent/README.md",
+      "target": "../../tutorials/grid_perception_data_v1.md"
+    },
+    {
+      "document": "docs/agent/README.md",
+      "target": "perception/evolution/contact-wrist-surface-learning.md"
+    },
+    {
+      "document": "docs/agent/perception/README.md",
+      "target": "evolution/grid-perception-data-v1.md"
+    },
+    {
+      "document": "docs/agent/perception/README.md",
+      "target": "chronicles/2026-11-23-grid-perception-data-v1.md"
+    },
+    {
+      "document": "docs/agent/perception/README.md",
+      "target": "../../../tutorials/grid_perception_data_v1.md"
+    },
+    {
+      "document": "docs/agent/perception/README.md",
+      "target": "evolution/three-variable-grasp-preview.md"
+    },
+    {
+      "document": "docs/agent/perception/README.md",
+      "target": "evolution/pointcloud-geometry-pcg01.md"
+    },
+    {
+      "document": "docs/agent/perception/README.md",
+      "target": "chronicles/2026-11-23-pointcloud-geometry.md"
+    },
+    {
+      "document": "docs/agent/perception/README.md",
+      "target": "charter.md"
+    },
+    {
+      "document": "docs/agent/perception/README.md",
+      "target": "current.md"
+    },
+    {
+      "document": "docs/agent/perception/README.md",
+      "target": "evolution/README.md"
+    },
+    {
+      "document": "docs/agent/perception/README.md",
+      "target": "chronicles/README.md"
+    },
+    {
+      "document": "docs/agent/perception/README.md",
+      "target": "decisions/README.md"
+    },
+    {
+      "document": "docs/agent/perception/evolution/README.md",
+      "target": "grid-perception-data-v1.md"
+    },
+    {
+      "document": "docs/agent/perception/evolution/README.md",
+      "target": "three-variable-grasp-preview.md"
+    },
+    {
+      "document": "docs/agent/perception/evolution/README.md",
+      "target": "contact-wrist-surface-learning.md"
+    },
+    {
+      "document": "docs/agent/perception/evolution/README.md",
+      "target": "pointcloud-geometry-pcg01.md"
+    },
+    {
+      "document": "docs/agent/perception/evolution/README.md",
+      "target": "sim-wrist-surface-learning.md"
+    },
+    {
+      "document": "docs/agent/perception/evolution/README.md",
+      "target": "interaction-surface-representation.md"
+    },
+    {
+      "document": "docs/agent/perception/evolution/README.md",
+      "target": "image-to-surface-network.md"
+    },
+    {
+      "document": "docs/agent/perception/evolution/README.md",
+      "target": "head-wrist-pose-review.md"
+    },
+    {
+      "document": "docs/agent/perception/evolution/README.md",
+      "target": "stereo-and-backends.md"
+    },
+    {
+      "document": "docs/agent/perception/evolution/README.md",
+      "target": "confirmed-registration.md"
+    },
+    {
+      "document": "docs/agent/perception/evolution/README.md",
+      "target": "data-and-replay.md"
+    },
+    {
+      "document": "docs/agent/perception/evolution/README.md",
+      "target": "../chronicles/README.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-23-grid-perception-data-v1.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-23-three-variable-grasp-preview.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-23-contact-wrist-training.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-23-pointcloud-geometry.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-22-sim-wrist-surface-learning.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-22-tip-mouth-surface.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-22-image-complete-surface.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-22-guided-initialization-color.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-22-independent-pose-controls.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-22-head-wrist-pose-review.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-19-backend-baseline.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-20-portable-registration.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-20-full-project-arrived.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-20-bundlesdf-data-verified.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-20-bundlesdf-data-restored.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-20-foundation-data-environment-restored.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "../../../chronicles/2026-11-20-workspace-handoff.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "../current.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-20-wrist-episode-outline.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-21-episode-mesh-batch.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-21-v3-pointcloud-overlay.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-21-socket-cloud-and-video-to-data.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-21-video-to-data-wrist-trial.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-21-stereo-cloud-pixel-trial.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-21-stereo-pose-structure-review.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-21-known-face-fine-pose.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-21-mesh-feature-fisheye-tracking.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-21-markerless-structural-features.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "2026-11-21-structural-edge-ownership.md"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "target": "../../../chronicles/2026-11-21-perception-progress-handoff.md"
+    },
+    {
+      "document": "tutorials/README.md",
+      "target": "grid_perception_data_v1.md"
+    },
+    {
+      "document": "tutorials/README.md",
+      "target": "contact_wrist_surface_learning.md"
+    },
+    {
+      "document": "docs/capabilities.md",
+      "target": "agent/perception/evolution/grid-perception-data-v1.md"
+    },
+    {
+      "document": "docs/capabilities.md",
+      "target": "agent/perception/chronicles/2026-11-23-grid-perception-data-v1.md"
+    },
+    {
+      "document": "docs/current.md",
+      "target": "agent/perception/evolution/grid-perception-data-v1.md"
+    },
+    {
+      "document": "docs/current.md",
+      "target": "agent/perception/evolution/three-variable-grasp-preview.md"
+    },
+    {
+      "document": "docs/current.md",
+      "target": "agent/perception/evolution/contact-wrist-surface-learning.md"
+    },
+    {
+      "document": "docs/agent/perception/current.md",
+      "target": "evolution/grid-perception-data-v1.md"
+    },
+    {
+      "document": "docs/agent/perception/current.md",
+      "target": "evolution/three-variable-grasp-preview.md"
+    },
+    {
+      "document": "docs/agent/perception/current.md",
+      "target": "evolution/contact-wrist-surface-learning.md"
+    },
+    {
+      "document": "HANDOFF.md",
+      "target": "docs/agent/perception/evolution/grid-perception-data-v1.md"
+    },
+    {
+      "document": "HANDOFF.md",
+      "target": "docs/agent/perception/evolution/three-variable-grasp-preview.md"
+    },
+    {
+      "document": "HANDOFF.md",
+      "target": "docs/agent/perception/evolution/contact-wrist-surface-learning.md"
+    },
+    {
+      "document": "HANDOFF.md",
+      "target": "tutorials/contact_wrist_surface_learning.md"
+    }
+  ],
+  "data_records_unchanged": true,
+  "parent_records_sha256": "390f225f1717431da0b8044d4498dc97d88add368eb652e156ff6df8741f3d66",
+  "strict_records_sha256": "cad6ed8d036e9850bcde24a0417b3cd07a7a1c4504bec96363c4d349be8e09af",
+  "documentation_snapshot": [
+    {
+      "document": "docs/agent/perception/evolution/grid-perception-data-v1.md",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/documentation_20261123_final/docs/agent/perception/evolution/grid-perception-data-v1.md",
+      "sha256": "ed246eb5791d7f0d17e09842a6ef875efcd8ea728122a0940fe73b223ed049f3"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/2026-11-23-grid-perception-data-v1.md",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/documentation_20261123_final/docs/agent/perception/chronicles/2026-11-23-grid-perception-data-v1.md",
+      "sha256": "b5fc6e088b33b4d0537e347915da67c952e61105876e949bd2bbe58f63ec318e"
+    },
+    {
+      "document": "tutorials/grid_perception_data_v1.md",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/documentation_20261123_final/tutorials/grid_perception_data_v1.md",
+      "sha256": "5837c5e6e6925df2ad9b7190ef442b0f088cc540441903b0b27c8ec5113aa47b"
+    },
+    {
+      "document": "docs/README.md",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/documentation_20261123_final/docs/README.md",
+      "sha256": "8b57ce0497c0c46c00c9596c13575211a4295206db7df1f937649a99a26beaf9"
+    },
+    {
+      "document": "docs/agent/README.md",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/documentation_20261123_final/docs/agent/README.md",
+      "sha256": "4b7cead417c517c74c0ca67a6567e1e63fd55aadfe4f1f72561a768b4d3ef564"
+    },
+    {
+      "document": "docs/agent/perception/README.md",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/documentation_20261123_final/docs/agent/perception/README.md",
+      "sha256": "5cb3cd6d716564d6b231e2812fab89310b5a0e537e66c2d2a35078e19ebbe822"
+    },
+    {
+      "document": "docs/agent/perception/evolution/README.md",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/documentation_20261123_final/docs/agent/perception/evolution/README.md",
+      "sha256": "80cd51f8cf96fd3a6e11e8eb46477608cada2e9d0e324c9b2bd637f519e75e8a"
+    },
+    {
+      "document": "docs/agent/perception/chronicles/README.md",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/documentation_20261123_final/docs/agent/perception/chronicles/README.md",
+      "sha256": "01e853a6f467e24307e8005e0ee880752eef0969e203426aaa9a32e2a6a33fb5"
+    },
+    {
+      "document": "tutorials/README.md",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/documentation_20261123_final/tutorials/README.md",
+      "sha256": "2494447d14d031a7cbec91fabb912b3e88fc08fefe569c54ee123355f91b8433"
+    },
+    {
+      "document": "docs/capabilities.md",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/documentation_20261123_final/docs/capabilities.md",
+      "sha256": "22bf7c0ca18b7c831ea194803c83cc4c0a3d4a5e470e351dab453c903dc2f09e"
+    },
+    {
+      "document": "docs/current.md",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/documentation_20261123_final/docs/current.md",
+      "sha256": "cb7509d9ca8277df5dcc11e5bf6a1499d5735e2d17ca17667091dc51b7720739"
+    },
+    {
+      "document": "docs/agent/perception/current.md",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/documentation_20261123_final/docs/agent/perception/current.md",
+      "sha256": "736a24e389d64a1d3501992ce94f4785809cf58a4c31ad4ce7217a9b8b81a26a"
+    },
+    {
+      "document": "HANDOFF.md",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/documentation_20261123_final/HANDOFF.md",
+      "sha256": "176eb8c4367d8e342b46a298b8227727a77c31b8c33116767d9bc1b5a9ce345e"
+    }
+  ],
+  "historical_capture_snapshots_preserved": true
+}

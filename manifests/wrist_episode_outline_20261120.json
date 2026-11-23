@@ -1,0 +1,23 @@
+{
+  "source_run": "/home/linux/omi_folder/omi_proj/local/rl_episodes/spacepilot_response_20261017_213359",
+  "episodes_with_observations": 9,
+  "episode_inventory": "/data/omi_runtime/runs/episode_wrist_outline_20261120T102752Z/episode_inventory.json",
+  "recommended_episode": "8083942d4ead4367aa334198e7a9890f",
+  "alternate_episode": "19c7887c59f34dcb9d53bd1d8bc9b950",
+  "selected_frames": 8,
+  "wrist_image_domain": "recorded pre-cropped 128x128 RGB policy ROI, not full camera frames",
+  "contour_method": "Manual fixed ROI/seed prior, per-image GrabCut and green HSV mask; conservative top-boundary heuristic; visibly imperfect near occlusion",
+  "recorded_pose_frame": "base_link as required by original EEF decoder",
+  "recorded_pose_representation": "xyz in meters plus quaternion xyzw; exported RPY uses extrinsic fixed XYZ Euler degrees",
+  "module_camera_pose_available": false,
+  "reason": "Current contour alone is not a reliable 6D pose; calibration-version/source-image-size confirmation and visible 2D-3D correspondences or a calibrated hand-eye/grasp transform are needed",
+  "important_observation": "EEF pitch changes in base frame do not imply equal changes of module pitch relative to a co-moving wrist camera; occlusion and grasp motion must be distinguished",
+  "sources_sha256": {
+    "/data/omi_runtime/runs/episode_wrist_outline_20261120T102752Z/episode_inventory.json": "cde4a7485c21a03e4ec6144ace9a2629abcfd89cd25547b05a374b74c205d247",
+    "/data/omi_runtime/runs/episode_wrist_outline_20261120T102752Z/selected_outline_records_v2.json": "2c5a63c85eca83a2ab97c12daadab7fffa35576b9c46b60c16336b2f7afabff7",
+    "/data/omi_runtime/runs/episode_wrist_outline_20261120T102752Z/conditional_roi_intrinsics.json": "4d386aa7b925a024659261d6ec042480baf36b033462a71f14266063cf84b75c",
+    "/data/omi_runtime/runs/episode_wrist_outline_20261120T102752Z/selected_episode_outlines_v2.png": "f12b49561477f35884c1375033ebc3c56f73b6007cc0962c383018e3f68c18f8"
+  },
+  "preview_opened_on_desktop": true,
+  "notes": "docs/agent/perception/chronicles/2026-11-20-wrist-episode-outline.md"
+}

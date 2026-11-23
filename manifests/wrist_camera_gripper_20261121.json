@@ -1,0 +1,20 @@
+{
+  "asset_id": "WG-DAIMON-VIS-r04",
+  "asset_directory": "/data/omi_runtime/assets/daimon/wrist_gripper_video_r04",
+  "asset_manifest": "/data/omi_runtime/assets/daimon/wrist_gripper_video_r04/asset_manifest.json",
+  "asset_manifest_sha256": "02c781990ffcb99b6372afc45ad0ccec94f362a713befcd16baf288023fbdbc9",
+  "delivery_manifest": "/data/omi_runtime/assets/daimon/wrist_gripper_video_r04/delivery_manifest.json",
+  "run": "/data/omi_runtime/runs/wrist_camera_gripper_20261121",
+  "report": "/data/omi_runtime/runs/wrist_camera_gripper_20261121/report.json",
+  "report_sha256": "7ced6ace738025db20f376d8c0cfafb3db1aca5e597f57d0d02450ce1c2aaf62",
+  "scene": "/data/omi_runtime/runs/wrist_camera_gripper_20261121/robot_scene_final",
+  "video": "/data/omi_runtime/runs/wrist_camera_gripper_20261121/corrected_final_cycle/robot_contact_cycle.mp4",
+  "source_video": "/home/linux/Downloads/飞书20261121-212005.qt",
+  "source_video_sha256": "d21ca642ae0b6b1c915d9fbdf0bb4bd1f156209bcd0d8fcebe8f1a0ac68bad0b",
+  "parts": 31,
+  "rule_cases_passed": 2,
+  "nominal_tool_fixture_clearance_mm": 1.9614745000000104,
+  "hardware_sku_confirmed": false,
+  "camera_calibrated": false,
+  "physical_grasp_validated": false
+}

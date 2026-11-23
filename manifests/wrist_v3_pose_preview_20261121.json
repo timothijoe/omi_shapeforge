@@ -1,0 +1,64 @@
+{
+  "status": "rough_pose_hypothesis_with_real_v3_mesh_projection",
+  "source_image": "/data/omi_runtime/runs/wrist_module_outline_20261120T095830Z/frame_000.png",
+  "image_domain": "1920x1080 original distorted wrist frame",
+  "model": "OM-001/V3 unchanged frozen evaluated geometry",
+  "translation_mm": [
+    0.4132358976452298,
+    52.474898136402416,
+    187.23218631932966
+  ],
+  "rotation_vector_rad": [
+    -0.053153551580230954,
+    -2.386746074575064,
+    2.0088428654921064
+  ],
+  "rpy_extrinsic_xyz_deg": [
+    -99.83390583207384,
+    0.3134754639193889,
+    177.71224591509883
+  ],
+  "T_model_to_camera_m": [
+    [
+      -0.9991879947889701,
+      0.01220420611882037,
+      -0.038398026285295636,
+      0.00041323589764522976
+    ],
+    [
+      0.03991763481164257,
+      0.17044128252705193,
+      -0.9845589630091118,
+      0.052474898136402416
+    ],
+    [
+      -0.005471151674121995,
+      -0.9852922543913265,
+      -0.1707900463604829,
+      0.18723218631932967
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "fit_corner_rmse_px": 1.2758542954314676,
+  "estimation_seconds_single_image": 0.09643424399837386,
+  "scope": "Known wrist-view ROI and semantic corner proxies; not unconstrained single-image pose recognition; no independent pose accuracy verification",
+  "full_mesh_overlay": "/data/omi_runtime/runs/wrist_v3_pose_20261120T155953Z/result/mesh_overlay.png",
+  "preview": "/data/omi_runtime/runs/wrist_v3_pose_20261120T155953Z/result/pose_mesh_preview.png",
+  "pose_record": "/data/omi_runtime/runs/wrist_v3_pose_20261120T155953Z/result/pose.json",
+  "validation": "/data/omi_runtime/runs/wrist_v3_pose_20261120T155953Z/result/validation.json",
+  "important_mismatch": "Projected pull arms do not match the visible handle; preserve that discrepancy for diagnosis rather than deforming the mesh",
+  "episode_roi_pose_status": "Still pending calibration-domain confirmation and robust visible correspondences",
+  "source_script": "scripts/perception/estimate_wrist_module_pose.py",
+  "source_script_sha256": "f1e3c3880e4f10809a43ae92756f6d71849cd38580a5df73c9b77bc5265e73e4",
+  "files_sha256": {
+    "/data/omi_runtime/runs/wrist_v3_pose_20261120T155953Z/result/pose.json": "3d72d84e63d4cd1e5599da03f86b77ca138d7e5321d5cc001acbfb629fd41529",
+    "/data/omi_runtime/runs/wrist_v3_pose_20261120T155953Z/result/validation.json": "28dc764a4b7706b7bd02375f91ffa02ea1627ce3e366858761921a075c6a426d",
+    "/data/omi_runtime/runs/wrist_v3_pose_20261120T155953Z/result/mesh_overlay.png": "1f5da47157d91dd048df507ee328e44cac8a44b0485d9bfa6c252fdc6d1af806",
+    "/data/omi_runtime/runs/wrist_v3_pose_20261120T155953Z/result/pose_mesh_preview.png": "1e65158cec0df96ebc17315e80c5972e2b284b193b024c6b514cf777549c29c6"
+  }
+}

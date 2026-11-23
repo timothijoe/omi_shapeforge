@@ -1,0 +1,17 @@
+{
+  "asset_id": "WG-DAIMON-REFINED-r07",
+  "display_name": "WG-r07 · 双峰衬垫轮廓修正版",
+  "parent_asset": "WG-DAIMON-REFINED-r06",
+  "asset_directory": "/data/omi_runtime/assets/daimon/wrist_gripper_refined_r07",
+  "asset_manifest": "/data/omi_runtime/assets/daimon/wrist_gripper_refined_r07/asset_manifest.json",
+  "asset_manifest_sha256": "b095db5fe2ae8cfebfa0342a56439db68ac97e856c47f2141f924af78bbb2ab9",
+  "run": "/data/omi_runtime/runs/wrist_tool_profile_20261122",
+  "review": "/data/omi_runtime/runs/wrist_tool_profile_20261122/photo_profile_comparison.png",
+  "validation": "/data/omi_runtime/assets/daimon/wrist_gripper_refined_r07/validation.json",
+  "parts": 49,
+  "unchanged_base_camera_parts": 27,
+  "modified_jaw_parts": 22,
+  "reference_module_intersections": 0,
+  "physical_grasp_validated": false,
+  "new_training_performed": false
+}

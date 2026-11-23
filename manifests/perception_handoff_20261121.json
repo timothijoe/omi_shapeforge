@@ -1,0 +1,35 @@
+{
+  "created_at_utc": "2026-11-21T09:39:40.485315+00:00",
+  "scope": "Current real-vision/perception work; parallel simulation work is referenced but not comprehensively backed up here",
+  "handoff_document": "docs/chronicles/2026-11-21-perception-progress-handoff.md",
+  "snapshot_directory": "/data/omi_runtime/baselines/perception_handoff_20261121T092928Z",
+  "snapshot_index": "/data/omi_runtime/baselines/perception_handoff_20261121T092928Z/delivery.json",
+  "active_run": "/data/omi_runtime/runs/structural_ownership_20261121",
+  "active_result_manifest": "manifests/structural_edge_ownership_20261121.json",
+  "active_features": [
+    "shaft_left",
+    "head_left",
+    "shaft_right",
+    "black_cap_bottom"
+  ],
+  "excluded_feature": "head_right",
+  "source_frames": 61,
+  "marker_policy": "Do not use added marker; no pending label-identity confirmation",
+  "green_accessory_used": false,
+  "precise_6d_pose_validated": false,
+  "real_insertion_depth_or_success_validated": false,
+  "committed_or_pushed_by_this_recording": false,
+  "repositories": {
+    "omi_shapeforge": {
+      "path": "/home/linux/omi_folder/omi_shapeforge",
+      "branch": "feature/dual-camera-training",
+      "head": "66ff11720e5dc4327041d709b661dec73c83f605"
+    },
+    "FoundationStereo": {
+      "path": "/home/linux/omi_folder/FoundationStereo",
+      "branch": "feature/local-runtime-baseline",
+      "head": "e46fa7098730674bfc9f96047b4d2ffe9a87e1b4"
+    }
+  },
+  "raw_data_models_environments_copied": false
+}

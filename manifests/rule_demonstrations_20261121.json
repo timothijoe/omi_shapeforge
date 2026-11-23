@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-21",
+  "dataset": "/data/omi_runtime/runs/scripted_preinsert_20261121_v1",
+  "training_run": "/data/omi_runtime/runs/rule_assisted_train_20261121_final",
+  "source_snapshot": "/data/omi_runtime/runs/rule_assisted_train_20261121_final/source_snapshot",
+  "repositories": {
+    "omi_proj": {
+      "branch": "feature/shapeforge-vision-training",
+      "head": "963a7c29f8e39bff59ba4eb285693976b224961e",
+      "uncommitted": true
+    },
+    "omi_shapeforge": {
+      "branch": "feature/dual-camera-training",
+      "head": "66ff11720e5dc4327041d709b661dec73c83f605",
+      "uncommitted": true
+    }
+  },
+  "validation": {
+    "scripted_training_transitions": 393,
+    "online_policy_transitions": 397,
+    "human_transitions": 0,
+    "source_labels_distinct": true,
+    "training_split_only": true,
+    "batch_counts": {
+      "scripted": 8,
+      "online": 8
+    },
+    "padding_preserved": true,
+    "bc_encoder_frozen_through_sac": true,
+    "critic_updates": 20,
+    "actor_updates": 6,
+    "independent_process_resume": true,
+    "checkpoint_reload_action_difference": 0.0,
+    "rule_successes": 16,
+    "rule_attempts": 16
+  },
+  "bc": {
+    "training_episodes": [
+      "rule_000100",
+      "rule_000101",
+      "rule_000102",
+      "rule_000103",
+      "rule_000104",
+      "rule_000105",
+      "rule_000106",
+      "rule_000107"
+    ],
+    "validation_episodes": [
+      "rule_000108",
+      "rule_000109",
+      "rule_000110",
+      "rule_000111"
+    ],
+    "test_episodes": [
+      "rule_000112",
+      "rule_000113",
+      "rule_000114",
+      "rule_000115"
+    ],
+    "training_samples": 393,
+    "validation_samples": 180,
+    "test_samples": 251,
+    "validation_before": 0.631499038360737,
+    "validation_after": 0.04456833496137902,
+    "selected_step": 175,
+    "bc_updates_executed": 200,
+    "test_action_mse": 0.046890907236937666,
+    "source": "scripted",
+    "teacher_privileged": true,
+    "policy_inputs": "two RGB histories plus padding, no privileged state",
+    "exploration_std_initial": 0.1
+  },
+  "policy_test": {
+    "cases": [
+      {
+        "seed": 112,
+        "steps": 180,
+        "is_success": false,
+        "tcp_error_m": 0.06312248999772486
+      },
+      {
+        "seed": 113,
+        "steps": 180,
+        "is_success": false,
+        "tcp_error_m": 0.06995562157749448
+      },
+      {
+        "seed": 114,
+        "steps": 180,
+        "is_success": false,
+        "tcp_error_m": 0.06796142782395559
+      },
+      {
+        "seed": 115,
+        "steps": 180,
+        "is_success": false,
+        "tcp_error_m": 0.06592853847561914
+      }
+    ],
+    "success_rate": 0.0,
+    "teacher_interventions": 0,
+    "replay_written": false,
+    "deterministic": true
+  },
+  "tests": {
+    "new_behavior_passed": 8,
+    "omi_regression_passed": 53,
+    "omi_regression_skipped": 2,
+    "shapeforge_control_passed": 14,
+    "optional_skipped_in_control": 9
+  },
+  "limits": [
+    "contact-disabled preinsert only",
+    "privileged simulation teacher, RGB-only student",
+    "rule success does not certify student policy or physical insertion"
+  ],
+  "artifact_sha256": {
+    "/data/omi_runtime/runs/scripted_preinsert_20261121_v1/dataset.json": "edc29f92fac868547f6ab345ed4a193750f1211474932831954c2ed092f604c4",
+    "/data/omi_runtime/runs/scripted_preinsert_20261121_v1/rule_demo.mp4": "f9f844980b95ae145a26416deb7527a04b8edfceb65c764b1114d9ce49c85fbf",
+    "/data/omi_runtime/runs/scripted_preinsert_20261121_v1/rule_demo.gif": "4a05a83374fa9f1997fc16026a88051fbc44d9629f7f4f1776228f1cabbad3fc",
+    "/data/omi_runtime/runs/rule_assisted_train_20261121_final/rule_bc/report.json": "9c3c1318d6d940691262583e68513788ea5a2f9dba65d03685b6d4e05a3a973e",
+    "/data/omi_runtime/runs/rule_assisted_train_20261121_final/rule_bc/closed_loop_test.json": "68de07278f45a992b70398d46d577af6fad9fdbd76d590afd39a3ebfb46b2c01",
+    "/data/omi_runtime/runs/rule_assisted_train_20261121_final/report_000000.json": "46ca960246b32c0d92b1deb7cd4741bdc9b20a32f56ebaae67e3dd0842e6a2fa",
+    "/data/omi_runtime/runs/rule_assisted_train_20261121_final/report_000002.json": "5eb0f3a3e313e4194c998ebe5c9f53f71845b5b26625c41768e397ff7624c952",
+    "/data/omi_runtime/runs/rule_assisted_train_20261121_final/status.json": "51ad31df8826c08ce2b044ef7b4d979a394ff9253ade135a6f265e9697ec719f",
+    "/data/omi_runtime/runs/rule_assisted_train_20261121_final/learner.pt": "5477628b7a9ee7591778d93763932670d4ef9ca6c2add71de10ddc94e82ad095",
+    "/data/omi_runtime/runs/rule_assisted_train_20261121_final/actor.pt": "4ee234837431566232f6d89b2d79432b24bd90305fd5238220c4951dd9a45700",
+    "/data/omi_runtime/runs/rule_assisted_train_20261121_final/training_settings.json": "4bdd766951ff20a585564eb256d159ccfd5e5ea1e8eab3735c191bf2b95662b3",
+    "/data/omi_runtime/runs/rule_assisted_train_20261121_final/rule_data_audit.json": "0f01357fdb0e001f9e0aed2a033b392ac727ce2d34077f32637435e98b78bdb3",
+    "/data/omi_runtime/runs/rule_assisted_train_20261121_final/source_snapshot_sha256.json": "7cdd620a6614364f1fa7195e3039c58cb2c3ac800e16b0750cad669e2c83600a"
+  }
+}

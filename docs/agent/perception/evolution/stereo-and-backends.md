@@ -34,3 +34,7 @@ ENG-003 已接入[运行合同 v1](../../interfaces/run-contract.md)，两项新
 该阶段没有重新运行旧光模块的原始左右 IR／全部录制，没有外部深度真值比较，也没有完成官方 BundleSDF 视频在线跟踪与 textured mesh 全链路。组件成功不能推导这些能力已通过。旧机 PyTorch 2.7.1+cu128 的恢复结果属于原交接背景。
 
 历史见[本机基线阶段](../chronicles/2026-11-19-backend-baseline.md)。
+
+## 新增真实光模块双目样本推理（2026-11-21）
+
+已对近距离光模块录制中的 11 对 1280×720 左右 IR 图重新运行 FoundationStereo，含反向一致性检查共 22 次前向；米制深度用于新的点云位姿匹配和 RGB 轮廓联合精修。后端入口为 `scripts/run_stereo_pose_inputs.py`，新结果在 `/data/omi_runtime/runs/stereo_pixel_pose_20261121/fresh_stereo`。不覆盖旧缓存，不等同于全 59 帧重建或实物精度验证，详见[阶段记录](../chronicles/2026-11-21-stereo-cloud-pixel-trial.md)。

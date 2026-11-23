@@ -1,0 +1,20 @@
+{
+  "asset_id": "OM-001/V4",
+  "revision": "r04",
+  "directory": "/data/omi_runtime/assets/optical_module_v4/r04",
+  "manifest": "/data/omi_runtime/assets/optical_module_v4/r04/asset_manifest.json",
+  "manifest_sha256": "dba12fb32a1c8903ab0d3b1cda0f469b56cd7f5be03e6b494d98b8d447c67027",
+  "validation": "/data/omi_runtime/assets/optical_module_v4/r04/validation.json",
+  "reference_photo": "/home/linux/Downloads/img/20261121-200216.jpg",
+  "old_files_unchanged": 644,
+  "front_cap_height_mm": 7.1,
+  "bottom_margin_mm": 1.2,
+  "widths_of_metal_ends_mm": [
+    1.8,
+    3.2,
+    1.8
+  ],
+  "metric_dimensions_verified_against_real_object": false,
+  "user_visual_acceptance": false,
+  "training_unchanged": true
+}

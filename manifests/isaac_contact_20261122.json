@@ -1,0 +1,318 @@
+{
+  "schema_version": 1,
+  "experiment": "ISAAC-SIM-r06-PGS-v1",
+  "checked_date": "2026-11-22",
+  "acceptance_scope": "MuJoCo source rule-cycle criteria and local obstacle checks; excludes the learning-evaluation 10N stop gate",
+  "source_asset": "SIM-OM001-OS001-r06",
+  "run_root": "/data/omi_runtime/runs/isaac_contact_development_20261122",
+  "cases": [
+    {
+      "group": "local",
+      "case": "normal",
+      "report": "/data/omi_runtime/runs/isaac_contact_development_20261122/pgs_local/normal/report.json",
+      "completed": true,
+      "accepted": true,
+      "execution_returncode": 0,
+      "timed_out": false,
+      "solver": "PGS",
+      "dt": 0.0002,
+      "seed": 7,
+      "phases": {
+        "insert": {
+          "success": true,
+          "final_depth_mm": 51.28169191816779,
+          "steps": 111
+        },
+        "withdraw": {
+          "success": true,
+          "final_depth_mm": -2.9999516736534093,
+          "steps": 111
+        }
+      },
+      "report_sha256": "f02085288714fe1735b942662b454bc7fb9bd6a414f800f3cdae003075434289",
+      "max_penetration_mm": 0.00397406802221667,
+      "max_sampled_contact_force_N": 0.3809236167029491,
+      "max_substep_contact_force_N": 4.520972926229692,
+      "renderer_executed": false
+    },
+    {
+      "group": "local",
+      "case": "half_step",
+      "report": "/data/omi_runtime/runs/isaac_contact_development_20261122/pgs_local/half_step/report.json",
+      "completed": true,
+      "accepted": true,
+      "execution_returncode": 0,
+      "timed_out": false,
+      "solver": "PGS",
+      "dt": 0.0001,
+      "seed": 7,
+      "phases": {
+        "insert": {
+          "success": true,
+          "final_depth_mm": 51.281689124200064,
+          "steps": 111
+        },
+        "withdraw": {
+          "success": true,
+          "final_depth_mm": -2.9999516736534093,
+          "steps": 111
+        }
+      },
+      "report_sha256": "24bd45303bf65e79b20feb7ad02592f89a672bb5c841768bc75b724d74206f8d",
+      "max_penetration_mm": 0.0023079326183506055,
+      "max_sampled_contact_force_N": 0.37924671275395494,
+      "max_substep_contact_force_N": 8.825437955693024,
+      "renderer_executed": false
+    },
+    {
+      "group": "local",
+      "case": "locked",
+      "report": "/data/omi_runtime/runs/isaac_contact_development_20261122/pgs_local/locked/report.json",
+      "completed": true,
+      "accepted": true,
+      "execution_returncode": 0,
+      "timed_out": false,
+      "solver": "PGS",
+      "dt": 0.0002,
+      "seed": 7,
+      "phases": {
+        "insert": {
+          "success": false,
+          "final_depth_mm": 7.70917573759289,
+          "steps": 24
+        }
+      },
+      "report_sha256": "68162f5497d14195c149810053c80d1d38b77dd3d12379b29d5d2c203dee5104",
+      "max_penetration_mm": 0.004117668140679598,
+      "max_sampled_contact_force_N": 11.465929705690517,
+      "max_substep_contact_force_N": 11.495328229566056,
+      "renderer_executed": false
+    },
+    {
+      "group": "local",
+      "case": "x_plus",
+      "report": "/data/omi_runtime/runs/isaac_contact_development_20261122/pgs_local/x_plus/report.json",
+      "completed": true,
+      "accepted": true,
+      "execution_returncode": 0,
+      "timed_out": false,
+      "solver": "PGS",
+      "dt": 0.0002,
+      "seed": 7,
+      "phases": {
+        "insert": {
+          "success": false,
+          "final_depth_mm": -0.10000689139632879,
+          "steps": 42
+        }
+      },
+      "report_sha256": "f747f4c441da16a14dbaaae9f4cbefa1c3f5d48a4af20b81271be5033454f4e9",
+      "max_penetration_mm": 0.00241096131503582,
+      "max_sampled_contact_force_N": 2.0000002405140607,
+      "max_substep_contact_force_N": 3.7376125692389985,
+      "renderer_executed": false
+    },
+    {
+      "group": "local",
+      "case": "x_minus",
+      "report": "/data/omi_runtime/runs/isaac_contact_development_20261122/pgs_local/x_minus/report.json",
+      "completed": true,
+      "accepted": true,
+      "execution_returncode": 0,
+      "timed_out": false,
+      "solver": "PGS",
+      "dt": 0.0002,
+      "seed": 7,
+      "phases": {
+        "insert": {
+          "success": false,
+          "final_depth_mm": -0.10000689139632879,
+          "steps": 42
+        }
+      },
+      "report_sha256": "d9f2cd8d5022d35a4c11740a92a06ac30441c8742111fd97ce5debb4aa1ed6ba",
+      "max_penetration_mm": 0.0024100299924612045,
+      "max_sampled_contact_force_N": 2.0000001779863648,
+      "max_substep_contact_force_N": 3.7382540176623884,
+      "renderer_executed": false
+    },
+    {
+      "group": "local",
+      "case": "yaw_plus",
+      "report": "/data/omi_runtime/runs/isaac_contact_development_20261122/pgs_local/yaw_plus/report.json",
+      "completed": true,
+      "accepted": true,
+      "execution_returncode": 0,
+      "timed_out": false,
+      "solver": "PGS",
+      "dt": 0.0002,
+      "seed": 7,
+      "phases": {
+        "insert": {
+          "success": false,
+          "final_depth_mm": 0.19273760299504383,
+          "steps": 42
+        }
+      },
+      "report_sha256": "d58e4a666e70531d8f3f14ec691288c96d937d706af7350fe26e71d8062a3bb9",
+      "max_penetration_mm": 0.00924849882721901,
+      "max_sampled_contact_force_N": 2.000010948608373,
+      "max_substep_contact_force_N": 6.824845052579844,
+      "renderer_executed": false
+    },
+    {
+      "group": "local",
+      "case": "yaw_minus",
+      "report": "/data/omi_runtime/runs/isaac_contact_development_20261122/pgs_local/yaw_minus/report.json",
+      "completed": true,
+      "accepted": true,
+      "execution_returncode": 0,
+      "timed_out": false,
+      "solver": "PGS",
+      "dt": 0.0002,
+      "seed": 7,
+      "phases": {
+        "insert": {
+          "success": false,
+          "final_depth_mm": 0.18959718327338493,
+          "steps": 42
+        }
+      },
+      "report_sha256": "d774986b5b1ab88a025a2f476a3bd9ee408a6b746e39ba62614aa46aa90c4431",
+      "max_penetration_mm": 0.0,
+      "max_sampled_contact_force_N": 1.9999999123609151,
+      "max_substep_contact_force_N": 6.845379535036597,
+      "renderer_executed": false
+    },
+    {
+      "group": "robot",
+      "case": "robot_video",
+      "report": "/data/omi_runtime/runs/isaac_contact_development_20261122/pgs_robot/robot_video/report.json",
+      "completed": true,
+      "accepted": true,
+      "execution_returncode": 0,
+      "timed_out": false,
+      "solver": "PGS",
+      "dt": 0.0002,
+      "seed": 7,
+      "phases": {
+        "insert": {
+          "success": true,
+          "steps": 182,
+          "final_depth_mm": 51.277976424373314
+        },
+        "withdraw": {
+          "success": true,
+          "steps": 187,
+          "final_depth_mm": -5.0247482637740095
+        }
+      },
+      "report_sha256": "6b184474731562e93efc9cbf9e0302a0f2dd2025bafd56c1a8702a77be6ca198",
+      "max_penetration_mm": 0.03137792373308912,
+      "max_sampled_contact_force_N": 21.317159194513728,
+      "max_substep_contact_force_N": 85.45134593192729,
+      "renderer_executed": true,
+      "min_floor_gap_mm": 0.11742451526359476,
+      "learner_10N_force_gate_passed": false,
+      "camera_frames": 369,
+      "video": "/data/omi_runtime/runs/isaac_contact_development_20261122/pgs_robot/robot_video/cycle.mp4",
+      "preview": "/data/omi_runtime/runs/isaac_contact_development_20261122/pgs_robot/robot_video/preview.png"
+    },
+    {
+      "group": "robot",
+      "case": "robot_19",
+      "report": "/data/omi_runtime/runs/isaac_contact_development_20261122/pgs_robot/robot_19/report.json",
+      "completed": true,
+      "accepted": true,
+      "execution_returncode": 0,
+      "timed_out": false,
+      "solver": "PGS",
+      "dt": 0.0002,
+      "seed": 19,
+      "phases": {
+        "insert": {
+          "success": true,
+          "steps": 184,
+          "final_depth_mm": 51.27792832811248
+        },
+        "withdraw": {
+          "success": true,
+          "steps": 187,
+          "final_depth_mm": -5.024873673976018
+        }
+      },
+      "report_sha256": "ddfc62151600f348ced368eabb95f957e00f08cea38299884019d9938d8bad30",
+      "max_penetration_mm": 0.03091226244578138,
+      "max_sampled_contact_force_N": 3.414311844428835,
+      "max_substep_contact_force_N": 53.395341661997506,
+      "renderer_executed": false,
+      "min_floor_gap_mm": 0.11039116718009867,
+      "learner_10N_force_gate_passed": true
+    },
+    {
+      "group": "robot",
+      "case": "robot_41",
+      "report": "/data/omi_runtime/runs/isaac_contact_development_20261122/pgs_robot/robot_41/report.json",
+      "completed": true,
+      "accepted": true,
+      "execution_returncode": 0,
+      "timed_out": false,
+      "solver": "PGS",
+      "dt": 0.0002,
+      "seed": 41,
+      "phases": {
+        "insert": {
+          "success": true,
+          "steps": 181,
+          "final_depth_mm": 51.2779441610152
+        },
+        "withdraw": {
+          "success": true,
+          "steps": 187,
+          "final_depth_mm": -5.026572257553594
+        }
+      },
+      "report_sha256": "8c1dd3fda79f3469eea97b8512e0ddb86fb531da98394b3d143b9476fcc9cd26",
+      "max_penetration_mm": 0.03068595106014982,
+      "max_sampled_contact_force_N": 4.740729125413437,
+      "max_substep_contact_force_N": 24.62180343799816,
+      "renderer_executed": false,
+      "min_floor_gap_mm": 0.11039116718009867,
+      "learner_10N_force_gate_passed": true
+    }
+  ],
+  "completed_cases": 10,
+  "expected_cases": 10,
+  "all_required_passed": true,
+  "viewer_asset": "/data/omi_runtime/runs/isaac_contact_development_20261122/review_assets/ISAAC-SIM-r06-PGS-initial.usdc",
+  "source_protection": {
+    "files_checked": 649,
+    "changed": [],
+    "all_unchanged": true
+  },
+  "tests": {
+    "control": {
+      "status": "passed",
+      "executed": 14,
+      "skipped": 21,
+      "log": "/data/omi_runtime/runs/isaac_contact_development_20261122/final_control_tests.log"
+    },
+    "independent_fk": {
+      "status": "passed",
+      "executed": 1,
+      "skipped": 0,
+      "log": "/data/omi_runtime/runs/isaac_contact_development_20261122/final_transfer_tests.log"
+    }
+  },
+  "physical_accuracy_validated": false,
+  "training_executed": false,
+  "gui_interaction_validated": false,
+  "limitations": [
+    "Fixed module attachment; physical grasp and robot self-contact unvalidated",
+    "Robot rule cycles do not apply the learner 10N force gate; some control samples exceed it",
+    "RGBA materials and legacy pinhole cameras; no WG-r08/fisheye integration",
+    "PhysX cooking still approximates some curved colliders; see full cooking audit",
+    "Rule-based trials only; no Isaac BC/SAC learning result",
+    "Initial offsets are small; no broad robustness or real-robot validation"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "asset": "WG-DAIMON-REFINED-r07",
+  "run": "/data/omi_runtime/runs/wrist_camera_consistency_20261122",
+  "dimension_report": "/data/omi_runtime/runs/wrist_camera_consistency_20261122/dimension_audit.json",
+  "camera_report": "/data/omi_runtime/runs/wrist_camera_consistency_20261122/camera_render_report.json",
+  "real_sources": "/data/omi_runtime/runs/wrist_camera_consistency_20261122/real_sample_review.json",
+  "comparison": "/data/omi_runtime/runs/wrist_camera_consistency_20261122/real_vs_camera_models.png",
+  "dimension_accuracy_certified": false,
+  "current_camera_matches_real": false,
+  "geometry_modified": false,
+  "camera_extrinsics_optimized": false,
+  "training_performed": false
+}

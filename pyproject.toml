@@ -11,6 +11,10 @@ license-files = ["LICENSE"]
 requires-python = ">=3.11"
 dependencies = []
 
+[project.optional-dependencies]
+simulation = ["mujoco>=3.3.7,<4", "gymnasium>=1,<2", "numpy>=1.26,<3"]
+mesh-assets = ["mujoco>=3.15,<4", "numpy>=2,<3", "trimesh>=4,<6", "scipy>=1.10,<2", "coacd>=1,<2", "rtree", "networkx", "shapely", "mapbox-earcut", "pillow>=11,<13", "imageio>=2.37,<3"]
+
 [project.scripts]
 omi-shapeforge = "omi_shapeforge.cli:main"
 

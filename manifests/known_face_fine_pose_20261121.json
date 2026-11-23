@@ -1,0 +1,12 @@
+{
+  "status": "known_face_fine_alignment_not_accepted_as_precision_pose",
+  "run": "/data/omi_runtime/runs/stereo_fine_pose_prior_20261121_r03",
+  "report": "/data/omi_runtime/runs/stereo_fine_pose_prior_20261121_r03/report.json",
+  "review": "/data/omi_runtime/runs/stereo_fine_pose_prior_20261121_r03/fine_pose_review.png",
+  "quality": "/data/omi_runtime/runs/stereo_fine_pose_prior_20261121_r03/quality_review.json",
+  "known_face_prior": true,
+  "target_manual_points_used_for_optimization": false,
+  "physical_pose_accuracy_validated": false,
+  "user_position_angle_tolerances": "not_yet_provided",
+  "script_sha256": "784807ab71e030450bd63346fbfb39f22c029a3be2ec2e7912d5497dc0df4edc"
+}

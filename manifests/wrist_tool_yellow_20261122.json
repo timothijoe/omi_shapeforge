@@ -1,0 +1,14 @@
+{
+  "asset_id": "WG-DAIMON-REFINED-r06",
+  "parent_asset": "WG-DAIMON-REFINED-r05",
+  "asset_directory": "/data/omi_runtime/assets/daimon/wrist_gripper_refined_r06",
+  "asset_manifest": "/data/omi_runtime/assets/daimon/wrist_gripper_refined_r06/asset_manifest.json",
+  "asset_manifest_sha256": "958d09283765f5aa86729e62245e3f2e484de9cd31fdc5fb7825d1bd0f193bb3",
+  "validation": "/data/omi_runtime/assets/daimon/wrist_gripper_refined_r06/validation.json",
+  "run": "/data/omi_runtime/runs/wrist_tool_yellow_20261122",
+  "comparison": "/data/omi_runtime/runs/wrist_tool_yellow_20261122/yellow_liner_comparison.png",
+  "geometry_unchanged": true,
+  "changed_material_parts": 4,
+  "user_correction": "yellow liner, not red/orange",
+  "new_training_performed": false
+}

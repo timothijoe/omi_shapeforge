@@ -1,0 +1,19 @@
+{
+  "asset_id": "WG-DAIMON-SHOULDER-r13",
+  "display_name": "WG-r13 · 斜边平台指尖候选",
+  "parent_asset": "WG-DAIMON-TRAPEZOID-r12",
+  "asset_directory": "/data/omi_runtime/assets/daimon/wrist_gripper_shoulder_r13",
+  "asset_manifest": "/data/omi_runtime/assets/daimon/wrist_gripper_shoulder_r13/asset_manifest.json",
+  "asset_manifest_sha256": "34852318d5d45ab56cf02094e8ad56c16810461a941e49ace89d3f94c6fcd0f4",
+  "delivery_manifest": "/data/omi_runtime/assets/daimon/wrist_gripper_shoulder_r13/delivery_manifest.json",
+  "delivery_manifest_sha256": "dfb6afd4cee4fa08eeee0db521a16a16e47b88e05aebe7e324273e01181ebe82",
+  "run": "/data/omi_runtime/runs/wrist_marked_tip_20261122",
+  "comparison": "/data/omi_runtime/runs/wrist_marked_tip_20261122/marked_outline_comparison.png",
+  "annotation": "/home/linux/Downloads/img/20261122-222136.jpg",
+  "validation": "/data/omi_runtime/assets/daimon/wrist_gripper_shoulder_r13/validation.json",
+  "changed_parts": 2,
+  "unchanged_parts": 47,
+  "retains_front_alignment": true,
+  "camera_and_attachment_unchanged": true,
+  "replaces_fixed_handoff_bundle": false
+}

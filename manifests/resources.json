@@ -596,6 +596,1007 @@
       "restore": "Recover the latest saved V3 working revision; only initialize from r01 if no newer work exists. Never overwrite user edits with this initial baseline.",
       "availability": "present",
       "checked_date": "2026-11-20"
+    },
+    {
+      "id": "optical-socket-r03",
+      "root": "runtime",
+      "path": "assets/optical_socket/revisions/r03/OS-001-r03.blend",
+      "tracked": false,
+      "purpose": "Photo-constrained narrow-channel review candidate; rear structures retained; inner width 18.60 mm is not independently measured",
+      "required_for": [
+        "socket-authoring",
+        "v3-insertion-review"
+      ],
+      "source": "OS-001/r01 plus scripts/simulation/narrow_socket_channel.py; see manifests/v3_socket_insertion_20261120.json",
+      "expected_sha256": "948a4c2246611b9c3d089998d637e176cdd0a23ddb9d832fa4cbe8743a1771a5",
+      "restore": "Restore external assets and source images. Rebuild in a new output directory with the recorded r01 parent and body frame; do not overwrite any revision.",
+      "availability": "present",
+      "checked_date": "2026-11-20"
+    },
+    {
+      "id": "v3-socket-insertion-review",
+      "root": "runtime",
+      "path": "runs/v3_socket_insertion_20261120T073119Z",
+      "tracked": false,
+      "purpose": "Original phone photo copies, actual V3 and socket mesh exports, wide/narrow insertion checks, pose contracts and Open3D evidence",
+      "required_for": [
+        "v3-insertion-review"
+      ],
+      "source": "User images plus recorded V3/r01 and OS-001/r01/r03 assets; all reports keep source hashes",
+      "restore": "Back up this external run directory including photos and inputs. Repository scripts alone do not contain binary assets or photo originals.",
+      "availability": "present",
+      "checked_date": "2026-11-20"
+    },
+    {
+      "id": "optical-socket-r04",
+      "root": "runtime",
+      "path": "assets/optical_socket/revisions/r04/OS-001-r04.blend",
+      "tracked": false,
+      "purpose": "Current 19.00 mm inner-channel review candidate, slightly wider than r03 per user request; not metrology-certified",
+      "required_for": [
+        "socket-authoring",
+        "v3-insertion-review"
+      ],
+      "source": "OS-001/r01 plus scripts/simulation/narrow_socket_channel.py --inner-width-mm 19.0 --revision r04",
+      "expected_sha256": "44e24fbe1ef3b352c61adcea6e84a9044de13275d1f62856e8a502ed275e0f48",
+      "restore": "Preserve external r01 and body-frame input; rebuild only in a fresh output directory. Keep r01/r02/r03 and the associated evidence runs.",
+      "availability": "present",
+      "checked_date": "2026-11-20"
+    },
+    {
+      "id": "robot-urdf-rl-mvp",
+      "root": "runtime",
+      "path": "runs/robot_urdf_mvp_20261120T090059Z",
+      "tracked": false,
+      "purpose": "Full supplied URDF import, reference insertion assets and contact-disabled 6D TCP reach architecture smoke",
+      "required_for": [
+        "robot-simulation-mvp"
+      ],
+      "source": "Source URDF and mesh hashes in scene/robot_manifest.json; scripts in src/omi_shapeforge/sim",
+      "restore": "Preserve source vendor meshes and source optical input exports; rebuild in a fresh output directory with robot_scene. Not a trained policy or calibrated contact model.",
+      "availability": "present",
+      "checked_date": "2026-11-20"
+    },
+    {
+      "id": "dual-camera-sim-training-scene",
+      "root": "runtime",
+      "path": "runs/dual_camera_scene_20261121_final",
+      "tracked": false,
+      "purpose": "Real URDF, rigid-attached V3 and r04 pre-insertion scene with head and wrist pinhole cameras",
+      "required_for": [
+        "dual-camera-sim-training"
+      ],
+      "source": "Derived from robot-urdf-rl-mvp by sim/vision_scene.py; 175 mesh dependency hashes in robot_manifest.json",
+      "restore": "Restore parent robot and optical meshes, then rebuild into a new directory using tutorials/dual_camera_training.md. Camera and tool transforms are simulation assumptions; contacts disabled.",
+      "availability": "present",
+      "checked_date": "2026-11-21"
+    },
+    {
+      "id": "dual-camera-sim-training-run",
+      "root": "runtime",
+      "path": "runs/dual_camera_training_20261121_final",
+      "tracked": false,
+      "purpose": "Visual SAC episodes, independent replay, learner/actor checkpoints, resume evidence, camera GIFs and source snapshot",
+      "required_for": [
+        "dual-camera-sim-training-resume"
+      ],
+      "source": "ShapeForge MuJoCo plus omi_proj current9stack/SAC; manifests/dual_camera_training_20261121.json records validation and hashes",
+      "restore": "Back up complete directory including frames and replay; restore exact scene dependencies and use the simulation --resume entry. source_snapshot preserves uncommitted implementation. Not a successful insertion policy.",
+      "availability": "present",
+      "checked_date": "2026-11-21"
+    },
+    {
+      "id": "dual-camera-sim-training-environment",
+      "root": "runtime",
+      "path": "envs/omi_sim_train",
+      "tracked": false,
+      "purpose": "Dedicated Python 3.12 MuJoCo 3.15 and Torch 2.6 CUDA 12.4 visual training environment",
+      "required_for": [
+        "dual-camera-sim-training"
+      ],
+      "source": "PyTorch cu124 index and PyPI; omi_proj/requirements/sim-train-cu124.txt and run/environment.txt",
+      "restore": "Create a fresh Python 3.12 venv; install torch 2.6 cu124 first, then requirements/sim-train-cu124.txt. Use both repository src paths. Do not relocate or overwrite old environments.",
+      "availability": "present",
+      "checked_date": "2026-11-21"
+    },
+    {
+      "id": "scripted-preinsert-demonstrations",
+      "root": "runtime",
+      "path": "runs/scripted_preinsert_20261121_v1",
+      "tracked": false,
+      "purpose": "16 successful explicitly scripted preinsert episodes, disjoint splits, three-view video and immutable frame references",
+      "required_for": [
+        "rule-assisted-sim-training"
+      ],
+      "source": "ShapeForge PreinsertRuleTeacher through actual IK/servo; OMI collect_shapeforge_rules.py; hashes in dataset.json",
+      "restore": "Preserve dataset.json, all episodes and frames together. Recollect into a new directory using tutorials/rule_demonstrations.md. Do not relabel scripted data as human or train on validation/test splits.",
+      "availability": "present",
+      "checked_date": "2026-11-21"
+    },
+    {
+      "id": "rule-assisted-sim-training",
+      "root": "runtime",
+      "path": "runs/rule_assisted_train_20261121_final",
+      "tracked": false,
+      "purpose": "Visual rule BC initialization, mixed scripted/online SAC, resume validation and source snapshot",
+      "required_for": [
+        "rule-assisted-sim-training-resume"
+      ],
+      "source": "Independent scripted demonstration corpus and OMI visual learner; manifests/rule_demonstrations_20261121.json",
+      "restore": "Restore complete run, separate scripted dataset and original scene dependencies; use simulation --resume with matching max-steps 180 and capacity 1024. training_settings.json binds the teacher source and mixture. Student heldout closed-loop success is not established.",
+      "availability": "present",
+      "checked_date": "2026-11-21"
+    },
+    {
+      "id": "mesh-insertability-audit",
+      "root": "runtime",
+      "path": "runs/mesh_insertability_20261121",
+      "tracked": false,
+      "purpose": "Fresh V3/r04 exports, topology repair derivative, triangle/containment audit, cavity-preserving collision pieces and actual axial contact probes; full insertion failed",
+      "required_for": [
+        "mesh-insertability-review",
+        "collision-mesh-development"
+      ],
+      "source": "Unchanged V3/r04 Blender files; source and artifact hashes in manifests/mesh_insertability_20261121.json",
+      "restore": "Preserve complete audit directory and source_snapshot; reconstruct exports with Blender and independent omi_mesh_audit environment. Full rigid probe must still block near 4.21 mm until entrance geometry/compliance is corrected. Structural-only diagnostic is not accepted insertion.",
+      "availability": "present",
+      "checked_date": "2026-11-21"
+    },
+    {
+      "id": "mesh-audit-environment",
+      "root": "runtime",
+      "path": "envs/omi_mesh_audit",
+      "tracked": false,
+      "purpose": "Independent Python 3.12 MuJoCo/trimesh/CoACD geometry inspection environment",
+      "required_for": [
+        "mesh-insertability-review"
+      ],
+      "source": "Installed from PyPI using uv; pinned installed versions in runs/mesh_insertability_20261121/environment.txt",
+      "restore": "Create a new Python 3.12 venv and install recorded packages. Blender raw-surface checks use the existing recorded Blender executable; containment check used the existing foundation_stereo Open3D environment. Do not overwrite training environments.",
+      "availability": "present",
+      "checked_date": "2026-11-21"
+    },
+    {
+      "id": "independent-contact-simulation-asset-r03",
+      "root": "runtime",
+      "path": "assets/sim_insertion/r03",
+      "tracked": false,
+      "purpose": "Independent SIM-OM001-OS001-r03 Blender/MJCF/OBJ asset with bounded equivalent spring contacts; original V3/r04 unchanged",
+      "required_for": [
+        "contact-insertion-simulation"
+      ],
+      "source": "V3/r04 collision derivative and cavity decomposition plus newly authored seven spring contacts; manifests/simulation_assets.json",
+      "restore": "Restore the complete asset folder or rebuild contact_asset and author_contact_asset into a NEW directory. Retain r01/r02 history. Joint dynamics are in MJCF/asset_manifest; the Blender file is a standalone editing view, not physical calibration.",
+      "availability": "present",
+      "checked_date": "2026-11-21"
+    },
+    {
+      "id": "robot-contact-scene-final",
+      "root": "runtime",
+      "path": "runs/contact_robot_scene_20261121_final",
+      "tracked": false,
+      "purpose": "Real dual-arm URDF, fixed module attachment, active optical contacts and dual RGB cameras",
+      "required_for": [
+        "contact-insertion-simulation",
+        "contact-visual-training"
+      ],
+      "source": "Existing URDF camera scene plus independent SIM asset; contact_robot_scene builder; mesh dependencies hashed in robot_manifest.json",
+      "restore": "Restore robot meshes and independent asset, or rebuild in a new directory. The scene contract is distinct from old no-contact preinsert runs. Full contact grasp and robot self-contact are not validated.",
+      "availability": "present",
+      "checked_date": "2026-11-21"
+    },
+    {
+      "id": "contact-rule-dataset-final",
+      "root": "runtime",
+      "path": "runs/contact_rule_dataset_20261121_final",
+      "tracked": false,
+      "purpose": "Ten successful scripted contact-insertion episodes; disjoint train/validation/test splits and real dual-camera frames",
+      "required_for": [
+        "contact-visual-training"
+      ],
+      "source": "ContactInsertionTeacher through actual robot IK/servo/contact physics; dataset.json and additive source_provenance_addendum.json",
+      "restore": "Preserve dataset.json, all frames and episodes together. Use only training split for BC and SAC sampling. Recollect with max-steps 350 and declared small reset jitter into a new folder.",
+      "availability": "present",
+      "checked_date": "2026-11-21"
+    },
+    {
+      "id": "contact-visual-training-final",
+      "root": "runtime",
+      "path": "runs/contact_visual_training_20261121_final",
+      "tracked": false,
+      "purpose": "Actual pre-tanh BC, mixed SAC, replay, checkpoint/resume evidence; visual closed-loop success still unvalidated",
+      "required_for": [
+        "contact-visual-training-resume"
+      ],
+      "source": "Independent contact scene and rule corpus; manifests/contact_simulation_asset_20261121.json records evidence and limits",
+      "restore": "Restore full run, scene, rule corpus and recorded environment. Resume with matching max-steps 350 and capacity 1024. Raw episode count and retained ring size differ after overwrite. Do not label this short-run policy as a successful autonomous insertion controller.",
+      "availability": "present",
+      "checked_date": "2026-11-21"
+    },
+    {
+      "id": "contact-policy-study-20261121",
+      "root": "runtime",
+      "path": "runs/contact_intervention_study_20261121",
+      "tracked": false,
+      "purpose": "Ten BC training episodes, two twenty-episode rule-assisted RL variants, source-correct intervention replay, no-takeover tests and fresh confirmation",
+      "required_for": [
+        "contact-policy-improvement-review",
+        "contact-intervention-study-resume"
+      ],
+      "source": "Frozen SIM-OM001-OS001-r03 scene plus existing OMI SAC; manifests/contact_policy_study_20261121.json",
+      "restore": "Preserve complete root including frames, episodes, replay, protocol, initial and warmup checkpoints, invocations and delivery snapshot. Restore the exact scene and mesh paths. Use contact_intervention_study rl --resume with the matching variant; never mix the old reward contract. Counts are limited simulation evidence, not a 10+20 success guarantee.",
+      "availability": "present",
+      "checked_date": "2026-11-21"
+    },
+    {
+      "id": "measured-module-r01",
+      "root": "runtime",
+      "path": "assets/optical_module_measured/r01",
+      "tracked": false,
+      "purpose": "Separate measured-section module mesh with 8.2 to 8.0 mm upturned lower lip",
+      "required_for": [
+        "measured-module-review"
+      ],
+      "source": "Read-only OM-001/V3 r01 plus user measurements 2026-11-21",
+      "restore": "Copy asset directory including build_scripts and hashes; rebuilding requires a fresh output path. Build with Blender, write_precise_obj.py on new blend, then validate.py with omi_mesh_audit. Does not replace training assets.",
+      "availability": "present",
+      "manifest": "assets/optical_module_measured/r01/asset_manifest.json"
+    },
+    {
+      "id": "optical-module-v4-r01",
+      "root": "runtime",
+      "path": "assets/optical_module_v4/r01",
+      "tracked": false,
+      "purpose": "V4 independent visual mesh with video-observed rear upper rectangular cutout, side notches, black rear recess",
+      "required_for": [
+        "module-v4-review"
+      ],
+      "source": "V3-derived MEASURED-r01 plus user video 2026-11-21 and explicit upper-rear-notch clarification",
+      "restore": "Copy directory including build_scripts and evidence; build_v4.py requires original measured source and run evidence with a fresh output path. No prior model or training configuration replaced.",
+      "availability": "present",
+      "manifest": "assets/optical_module_v4/r01/asset_manifest.json"
+    },
+    {
+      "id": "optical-module-v4-r03",
+      "root": "runtime",
+      "path": "assets/optical_module_v4/r03",
+      "tracked": false,
+      "purpose": "Independent V4 with removable twin-leg plug and three metal tabs, lowered after user side-video review",
+      "required_for": [
+        "module-v4-review"
+      ],
+      "source": "V4-r01 geometry + two user closeups + explicit downward placement correction; r02 retained as superseded",
+      "restore": "Copy asset directory including build_scripts/evidence. build_r03.py uses V4-r01 and protected prior assets; rebuilding requires a new output path. Existing training and V3 are unchanged.",
+      "availability": "present",
+      "manifest": "assets/optical_module_v4/r03/asset_manifest.json"
+    },
+    {
+      "id": "optical-module-v4-r04",
+      "root": "runtime",
+      "path": "assets/optical_module_v4/r04",
+      "tracked": false,
+      "purpose": "Front-photo proportion correction: taller plug cap, wide short metal ends, two black windows",
+      "required_for": [
+        "module-v4-review"
+      ],
+      "source": "V4 lineage plus user front photo 20261121-200216.jpg; older revisions preserved",
+      "restore": "Copy asset directory including build_scripts/evidence. Rebuild in fresh paths with build_r04.py, then repair_export.py on the generated blend to close the microscopic Boolean seam, then validate_r04.py.",
+      "availability": "present",
+      "manifest": "assets/optical_module_v4/r04/asset_manifest.json"
+    },
+    {
+      "id": "optical-module-v4-r05",
+      "root": "runtime",
+      "path": "assets/optical_module_v4/r05",
+      "tracked": false,
+      "purpose": "User-adopted provisional visual baseline: 双窗尾槽版; two empty windows between three metal ends",
+      "required_for": [
+        "module-v4-review"
+      ],
+      "source": "V4-r04 proportions plus explicit user correction that upper windows are voids",
+      "restore": "Copy directory including build_scripts; rebuild using build_r05.py with fresh output paths then validate_r05.py. Prior assets and training are unchanged.",
+      "availability": "present",
+      "manifest": "assets/optical_module_v4/r05/asset_manifest.json",
+      "display_name": "V4-r05 · 双窗尾槽版",
+      "review_status": "user_adopted_provisional_visual_baseline",
+      "version_label": "assets/optical_module_v4/r05/version_name.json"
+    },
+    {
+      "id": "measured-v4-sim-r06",
+      "root": "runtime",
+      "path": "assets/sim_insertion/r06",
+      "tracked": false,
+      "purpose": "Measured V4 contact candidate: fixed visuals and bounded convex proxies, equivalent spring contacts",
+      "required_for": [
+        "measured-v4-simulation"
+      ],
+      "source": "V4-r05 visual baseline + retained SIM-r03 socket geometry and user dimensional constraints",
+      "restore": "Restore the directories and source snapshot together; MJCF uses absolute mesh paths. See tutorials/measured_v4_simulation.md.",
+      "availability": "present"
+    },
+    {
+      "id": "socket-measured-1888-r01",
+      "root": "runtime",
+      "path": "assets/optical_socket/measured/r01",
+      "tracked": false,
+      "purpose": "Independent socket geometry with 18.8x8.8mm throat and assumed front-left margin6.9mm",
+      "required_for": [
+        "measured-v4-simulation"
+      ],
+      "source": "V4-r05 visual baseline + retained SIM-r03 socket geometry and user dimensional constraints",
+      "restore": "Restore the directories and source snapshot together; MJCF uses absolute mesh paths. See tutorials/measured_v4_simulation.md.",
+      "availability": "present"
+    },
+    {
+      "id": "measured-v4-simulation-study",
+      "root": "runtime",
+      "path": "runs/measured_v4_sim_20261121",
+      "tracked": false,
+      "purpose": "Local controls, robot 3/3 cycles, two-camera audit, failed old-policy transfer, source snapshot and discarded candidates",
+      "required_for": [
+        "measured-v4-simulation"
+      ],
+      "source": "V4-r05 visual baseline + retained SIM-r03 socket geometry and user dimensional constraints",
+      "restore": "Restore the directories and source snapshot together; MJCF uses absolute mesh paths. See tutorials/measured_v4_simulation.md.",
+      "availability": "present"
+    },
+    {
+      "id": "daimon-wrist-tool-visual-r04",
+      "root": "runtime",
+      "path": "assets/daimon/wrist_gripper_video_r04",
+      "tracked": false,
+      "purpose": "Video-informed wrist camera and tactile gripper visual asset; 31 parts, exact hardware SKU unconfirmed",
+      "required_for": [
+        "wrist-tool-simulation-preview"
+      ],
+      "source": "User video 20261121-212005.qt, existing flange/URDF frames, procedural Blender modeling",
+      "restore": "Restore asset and run directories together with parent measured_v4_sim scene and referenced robot meshes; see tutorials/wrist_camera_gripper.md. No hardware connection required.",
+      "availability": "present"
+    },
+    {
+      "id": "wrist-camera-gripper-study",
+      "root": "runtime",
+      "path": "runs/wrist_camera_gripper_20261121",
+      "tracked": false,
+      "purpose": "Live MuJoCo demonstration, camera mounting, pose correction, tool clearance and rule-cycle evidence",
+      "required_for": [
+        "wrist-tool-simulation-preview"
+      ],
+      "source": "User video 20261121-212005.qt, existing flange/URDF frames, procedural Blender modeling",
+      "restore": "Restore asset and run directories together with parent measured_v4_sim scene and referenced robot meshes; see tutorials/wrist_camera_gripper.md. No hardware connection required.",
+      "availability": "present"
+    },
+    {
+      "id": "hybrid-wrist-preview-20261121",
+      "root": "runtime",
+      "path": "runs/hybrid_hand_preview_20261121",
+      "tracked": false,
+      "purpose": "First real-gripper/MuJoCo-asset static fish-eye composite, original image and masks retained",
+      "required_for": [
+        "hybrid-wrist-preview"
+      ],
+      "source": "User wrist frame/intrinsics and current simulation meshes; manual-assisted segmentation",
+      "restore": "Restore run/evidence and parent SIM-r06 assets; scripts contain fixed paths, use a new output directory for further trials.",
+      "availability": "present"
+    },
+    {
+      "id": "hybrid-black-contact-20261122",
+      "root": "runtime",
+      "path": "runs/hybrid_black_contact_20261122",
+      "tracked": false,
+      "purpose": "Corrected static composite preserving the two true black gripper contact pads and reference photos",
+      "required_for": [
+        "hybrid-wrist-preview"
+      ],
+      "source": "User wrist frame/intrinsics and current simulation meshes; manual-assisted segmentation",
+      "restore": "Restore run/evidence and parent SIM-r06 assets; scripts contain fixed paths, use a new output directory for further trials.",
+      "availability": "present"
+    },
+    {
+      "id": "optical-module-v4-r06-material",
+      "root": "runtime",
+      "path": "assets/optical_module_v4/r06",
+      "tracked": false,
+      "purpose": "Independent silver-material candidate with same r05 geometry, UV/PBR textures and explicit MuJoCo appearance adapter",
+      "required_for": [
+        "module-material-review"
+      ],
+      "source": "Frozen V4-r05 geometry and user wrist/phone image references; deterministic procedural grain",
+      "restore": "Restore complete new asset folder including OBJ/MTL/textures, or use packed Blender/GLB. Keep r05 and old simulation scenes unchanged.",
+      "availability": "present"
+    },
+    {
+      "id": "module-v4-material-review",
+      "root": "runtime",
+      "path": "runs/module_v4_material_20261122",
+      "tracked": false,
+      "purpose": "Controlled real/r05/r06 appearance comparisons and geometry/source-integrity evidence",
+      "required_for": [
+        "module-material-review"
+      ],
+      "source": "Frozen V4-r05 geometry and user wrist/phone image references; deterministic procedural grain",
+      "restore": "Restore complete new asset folder including OBJ/MTL/textures, or use packed Blender/GLB. Keep r05 and old simulation scenes unchanged.",
+      "availability": "present"
+    },
+    {
+      "id": "optical-module-v4-r07-plain-material",
+      "root": "runtime",
+      "path": "assets/optical_module_v4/r07",
+      "tracked": false,
+      "purpose": "Uniform color material candidate and static wrist preview; no added grain",
+      "required_for": [
+        "module-material-review"
+      ],
+      "source": "r06 colors and geometry; user requested removal of grain",
+      "restore": "Restore complete folder; build scripts and packed Blender/GLB in r07 asset. Preserve earlier revisions.",
+      "availability": "present"
+    },
+    {
+      "id": "module-v4-plain-material-review",
+      "root": "runtime",
+      "path": "runs/module_v4_plain_material_20261122",
+      "tracked": false,
+      "purpose": "Uniform color material candidate and static wrist preview; no added grain",
+      "required_for": [
+        "module-material-review"
+      ],
+      "source": "r06 colors and geometry; user requested removal of grain",
+      "restore": "Restore complete folder; build scripts and packed Blender/GLB in r07 asset. Preserve earlier revisions.",
+      "availability": "present"
+    },
+    {
+      "id": "nov22-capture-backup",
+      "root": "absolute",
+      "path": "/data/zt-think-d1-data/nov_22/session_backup_20261121_20261122_20261122_014108",
+      "tracked": false,
+      "purpose": "287 head/wrist four-image samples and two D435 tool modeling recordings; historical development backup",
+      "source": "User supplied nov_22 folder and backup README",
+      "restore": "Keep source bytes unchanged; map historical absolute paths at load time. Do not overwrite current r05/r07 assets with archived V2 snapshots.",
+      "availability": "present",
+      "validation": "1148 formal image hashes and PNG integrity verified locally; MCAP validation from archived QC only",
+      "manifest": "nov22_capture_intake.json"
+    },
+    {
+      "id": "daimon-wrist-gripper-refined-r05",
+      "root": "runtime",
+      "path": "assets/daimon/wrist_gripper_refined_r05",
+      "tracked": false,
+      "purpose": "49-part refined visual asset, separate camera/gripper GLB and kinematic MJCF",
+      "source": "nov_22 two D435 recordings plus earlier phone photos and video",
+      "restore": "Keep full directory; use build_scripts and design/evidence. Preserve r04 tool and r07 module source assets. Absolute script paths target this workspace.",
+      "availability": "present",
+      "manifest": "wrist_tool_refinement_20261122.json"
+    },
+    {
+      "id": "wrist-tool-refinement-evidence",
+      "root": "runtime",
+      "path": "runs/wrist_tool_refinement_20261122",
+      "tracked": false,
+      "purpose": "Four-frame stereo depth, approximate dimensions, photo/video provenance and validation",
+      "source": "nov_22 two D435 recordings plus earlier phone photos and video",
+      "restore": "Keep full directory; use build_scripts and design/evidence. Preserve r04 tool and r07 module source assets. Absolute script paths target this workspace.",
+      "availability": "present",
+      "manifest": "wrist_tool_refinement_20261122.json"
+    },
+    {
+      "id": "daimon-wrist-tool-r06-yellow",
+      "root": "runtime",
+      "path": "assets/daimon/wrist_gripper_refined_r06",
+      "tracked": false,
+      "purpose": "Yellow liner material correction; 49 unchanged r05 meshes",
+      "source": "User color correction and original close-up photograph",
+      "restore": "Restore whole asset directory; keep r05 and original meshes. Build scripts stored in asset.",
+      "availability": "present",
+      "manifest": "wrist_tool_yellow_20261122.json"
+    },
+    {
+      "id": "daimon-wrist-gripper-profile-r07",
+      "root": "runtime",
+      "path": "assets/daimon/wrist_gripper_refined_r07",
+      "tracked": false,
+      "purpose": "Photo-guided jaw outline, double-lobed yellow liner and side-stereo thickness correction",
+      "source": "20261122-113448.jpg plus previous calibrated stereo sample232640_07",
+      "restore": "Restore directory with scripts/evidence; preserve WG-r06 and optical module r07; common flange coordinates are meters.",
+      "availability": "present",
+      "manifest": "wrist_tool_profile_20261122.json"
+    },
+    {
+      "id": "wrist-tool-photo-profile-evidence",
+      "root": "runtime",
+      "path": "runs/wrist_tool_profile_20261122",
+      "tracked": false,
+      "purpose": "Photo-guided jaw outline, double-lobed yellow liner and side-stereo thickness correction",
+      "source": "20261122-113448.jpg plus previous calibrated stereo sample232640_07",
+      "restore": "Restore directory with scripts/evidence; preserve WG-r06 and optical module r07; common flange coordinates are meters.",
+      "availability": "present",
+      "manifest": "wrist_tool_profile_20261122.json"
+    },
+    {
+      "id": "wrist-camera-consistency-20261122",
+      "root": "runtime",
+      "path": "runs/wrist_camera_consistency_20261122",
+      "tracked": false,
+      "purpose": "WG-r07 dimensions and real-vs-rendered wrist camera audit; mismatch documented",
+      "source": "WG-r07 meshes, nominal SIM-r06 scene, four nov22 wrist samples, existing fisheye file",
+      "restore": "Restore reports, images and static audit_scene.xml; source assets and real data retained separately.",
+      "availability": "present",
+      "manifest": "wrist_camera_consistency_20261122.json"
+    },
+    {
+      "id": "daimon-wrist-aligned-r08",
+      "root": "runtime",
+      "path": "assets/daimon/wrist_gripper_aligned_r08",
+      "tracked": false,
+      "purpose": "Model-relative camera mount/attachment alignment candidate; original gripper geometry retained",
+      "source": "nov22 wrist fit unit001; heldout003/008/012/014; fixed provided fisheye K/D; WG-r07 geometry prior",
+      "restore": "Restore full directory and dependencies. Build/evidence in asset; preserve all prior revisions. Fixed K/D binding remains assumed.",
+      "availability": "present",
+      "manifest": "wrist_alignment_20261122.json"
+    },
+    {
+      "id": "wrist-alignment-evidence",
+      "root": "runtime",
+      "path": "runs/wrist_alignment_20261122",
+      "tracked": false,
+      "purpose": "Manual geometric-edge fit, heldout edge review, collision constraints and pure fisheye before/after renders",
+      "source": "nov22 wrist fit unit001; heldout003/008/012/014; fixed provided fisheye K/D; WG-r07 geometry prior",
+      "restore": "Restore full directory and dependencies. Build/evidence in asset; preserve all prior revisions. Fixed K/D binding remains assumed.",
+      "availability": "present",
+      "manifest": "wrist_alignment_20261122.json"
+    },
+    {
+      "id": "head-wrist-pose-review-20261122",
+      "root": "runtime",
+      "path": "/data/omi_runtime/runs/head_wrist_pose_review_20261122",
+      "kind": "interactive_pose_review_and_annotations",
+      "status": "local_window_and_functional_checks_passed_not_pose_accuracy",
+      "provenance": "Nov22 immutable captures; V4-r05 mesh; SIM-r06 fixed socket meshes; source hashes in session.json",
+      "restore": "tutorials/head_wrist_pose_review.md; foundation_stereo environment; sibling FoundationStereo single-sample adapter; preserved annotations/history",
+      "raw_capture_modified": false,
+      "initialization_color_update": {
+        "path": "/data/omi_runtime/runs/head_wrist_pose_review_20261122/initialization_color_20261122",
+        "manifest": "manifests/head_wrist_initialization_color_20261122.json",
+        "cloud_display_layout": "xyz_rgb_head_uv_float32"
+      }
+    },
+    {
+      "id": "isaac-contact-support",
+      "root": "runtime",
+      "path": "envs/isaac_contact_support",
+      "tracked": false,
+      "purpose": "Isolated Python support packages for Isaac contact/RTX experiments",
+      "required_for": [
+        "isaac-contact"
+      ],
+      "source": "Installed with Isaac 5.1 Python into a separate target directory; versions in configs/isaac_contact_support_requirements.txt",
+      "restore": "Recreate a new support directory from the pinned requirements with the matching Isaac Python; pass --support. Do not overwrite the vendor installation.",
+      "availability": "present",
+      "checked_date": "2026-11-22"
+    },
+    {
+      "id": "isaac-contact-experiments-20261122",
+      "root": "runtime",
+      "path": "runs/isaac_contact_development_20261122",
+      "tracked": false,
+      "purpose": "Frozen SIM-r06 transfers, derived USD scenes, physics/RTX runs and failed diagnostics",
+      "required_for": [
+        "isaac-contact-replay"
+      ],
+      "source": "Derived from SIM-OM001-OS001-r06 and measured_v4_sim_20261121 robot scene; 649 source files retained unchanged",
+      "restore": "Preserve the full run tree including code snapshots, transfer.json/meshes.npz, JSONL and reports. Rebuild using tutorials/isaac_contact_insertion.md and the recorded source manifests.",
+      "availability": "present",
+      "checked_date": "2026-11-22",
+      "evidence_manifest": "manifests/isaac_contact_20261122.json"
+    },
+    {
+      "id": "wrist-r08-frozen",
+      "root": "runtime",
+      "path": "assets/daimon/releases/wrist_gripper_aligned_r08_frozen_20261122",
+      "tracked": false,
+      "purpose": "User-requested immutable byte copy of r08 before scan-based refinement",
+      "source": "nov22 archived stereo/depth acquisition; preserved WG-r08 baseline",
+      "restore": "Restore complete directory plus provenance dependencies; frozen r08 manifests retain original paths and may need load-time remapping when relocated.",
+      "availability": "present",
+      "manifest": "wrist_pointcloud_refinement_20261122.json"
+    },
+    {
+      "id": "wrist-cloud-r09",
+      "root": "runtime",
+      "path": "assets/daimon/wrist_gripper_cloud_r09",
+      "tracked": false,
+      "purpose": "49-part cloud-constrained visual candidate;8 local meshes revised",
+      "source": "nov22 archived stereo/depth acquisition; preserved WG-r08 baseline",
+      "restore": "Restore complete directory plus provenance dependencies; frozen r08 manifests retain original paths and may need load-time remapping when relocated.",
+      "availability": "present",
+      "manifest": "wrist_pointcloud_refinement_20261122.json"
+    },
+    {
+      "id": "wrist-scan-refinement",
+      "root": "runtime",
+      "path": "runs/wrist_pointcloud_refinement_20261122",
+      "tracked": false,
+      "purpose": "Metric stereo points, scene registration, reviewed segmentation, profile fitting and comparisons",
+      "source": "nov22 archived stereo/depth acquisition; preserved WG-r08 baseline",
+      "restore": "Restore complete directory plus provenance dependencies; frozen r08 manifests retain original paths and may need load-time remapping when relocated.",
+      "availability": "present",
+      "manifest": "wrist_pointcloud_refinement_20261122.json"
+    },
+    {
+      "id": "wrist-pose-study-20261122",
+      "root": "runtime",
+      "path": "runs/wrist_pose_study_20261122",
+      "tracked": false,
+      "purpose": "Fixed-r09 pose/opening/focal/handle-angle diagnostic renders and heldout review; no candidate adopted",
+      "source": "WG-r09 plus existing fisheye file and nov22 wrist frames",
+      "restore": "Restore scripts/reports/trial scenes; preserve original r09 and original K/D. Trial XML references original asset meshes.",
+      "availability": "present",
+      "manifest": "wrist_pose_study_20261122.json"
+    },
+    {
+      "id": "isaac-contact-visual-review-20261122",
+      "root": "runtime",
+      "path": "runs/isaac_contact_visual_review_20261122",
+      "tracked": false,
+      "purpose": "Gentle-approach force trials, image ablations and refined high-resolution video",
+      "required_for": [
+        "isaac-contact-visual-review"
+      ],
+      "source": "Frozen SIM-r06 transfer and existing V4-r07 GLB/uniform textures",
+      "restore": "Preserve full run tree and code snapshots; use tutorials/isaac_contact_insertion.md. Keep task reports separate from session cleanup status.",
+      "availability": "present",
+      "checked_date": "2026-11-22",
+      "evidence_manifest": "manifests/isaac_contact_visual_review_20261122.json"
+    },
+    {
+      "id": "module-v4-r08-u-handle",
+      "root": "runtime",
+      "path": "assets/optical_module_v4/r08",
+      "tracked": false,
+      "purpose": "Coarse U handle completion; original16 body pieces unchanged",
+      "source": "User prioritizes main geometry; r09 tool, r07 module and nov22 imagery/stereo evidence",
+      "restore": "Restore full asset/run directory with meshes/textures/scripts; old assets and frozenr08 retained. Final renderer:render_final.py final.",
+      "availability": "present",
+      "manifest": "wrist_primary_refinement_20261122.json"
+    },
+    {
+      "id": "wrist-observation-r10",
+      "root": "runtime",
+      "path": "assets/daimon/wrist_gripper_observation_r10",
+      "tracked": false,
+      "purpose": "Only two inner-lip meshes updated; camera/attachment unchanged from r09",
+      "source": "User prioritizes main geometry; r09 tool, r07 module and nov22 imagery/stereo evidence",
+      "restore": "Restore full asset/run directory with meshes/textures/scripts; old assets and frozenr08 retained. Final renderer:render_final.py final.",
+      "availability": "present",
+      "manifest": "wrist_primary_refinement_20261122.json"
+    },
+    {
+      "id": "wrist-primary-refinement",
+      "root": "runtime",
+      "path": "runs/wrist_primary_refinement_20261122",
+      "tracked": false,
+      "purpose": "Primary contour study, point-cloud tradeoffs, rejected camera trial and final independent-frame checks",
+      "source": "User prioritizes main geometry; r09 tool, r07 module and nov22 imagery/stereo evidence",
+      "restore": "Restore full asset/run directory with meshes/textures/scripts; old assets and frozenr08 retained. Final renderer:render_final.py final.",
+      "availability": "present",
+      "manifest": "wrist_primary_refinement_20261122.json"
+    },
+    {
+      "id": "wrist-visual-handoff-verification-20261122",
+      "root": "runtime",
+      "path": "runs/wrist_asset_handoff_check_20261122_181528",
+      "tracked": false,
+      "purpose": "Read-only asset package checks, static-scene dependency inventory and isolated renderer reproduction for receiving agents",
+      "source": "Pinned WG-r10 + OM-r08 visual bundle",
+      "restore": "Restore this validation directory alongside the asset roots and dependency paths recorded in scene_dependencies.json; no auto-download behavior.",
+      "availability": "present",
+      "manifest": "wrist_visual_asset_handoff_20261122.json"
+    },
+    {
+      "id": "image-to-complete-surface-20261122",
+      "root": "runtime",
+      "path": "/data/omi_runtime/runs/image_to_complete_surface_20261122",
+      "kind": "surface_point_templates_and_untrained_neural_prototype",
+      "status": "forward_backward_and_viewer_verified_not_pose_accuracy",
+      "provenance": "source hashes in templates_v2/manifest.json; prototype/report.json; source_snapshot/",
+      "restore": "tutorials/image_to_complete_surface.md; foundation_stereo environment; no trained model checkpoint",
+      "training_performed": false
+    },
+    {
+      "id": "wrist-fingertip-chamfer-r11",
+      "root": "runtime",
+      "path": "assets/daimon/wrist_gripper_chamfer_r11",
+      "tracked": false,
+      "purpose": "Two wider blunt silver fingertips with explicit chamfer;47 parts unchanged",
+      "source": "User feedback, 20261122-000200.jpg and20261122-113448.jpg; existing scan evidence",
+      "restore": "Restore full directory; source r10 and fixed handoff remain intact. Explicitly select r11 when evaluating new fingertip shape.",
+      "availability": "present",
+      "manifest": "wrist_fingertip_chamfer_20261122.json"
+    },
+    {
+      "id": "wrist-fingertip-review",
+      "root": "runtime",
+      "path": "runs/wrist_fingertip_chamfer_20261122",
+      "tracked": false,
+      "purpose": "Photo comparison, cross sections, scan review and unchanged-camera renders",
+      "source": "User feedback, 20261122-000200.jpg and20261122-113448.jpg; existing scan evidence",
+      "restore": "Restore full directory; source r10 and fixed handoff remain intact. Explicitly select r11 when evaluating new fingertip shape.",
+      "availability": "present",
+      "manifest": "wrist_fingertip_chamfer_20261122.json"
+    },
+    {
+      "id": "wg-r10-om-r08-isaac-consumer-20261122",
+      "root": "runtime",
+      "path": "runs/wg_r10_om_r08_isaac_20261122",
+      "tracked": false,
+      "purpose": "Pinned WG-r10/OM-r08 consumer copies, static reproduction, new robot mount and Isaac preview",
+      "required_for": [
+        "wrist-bundle-isaac"
+      ],
+      "source": "wrist_visual_asset_handoff_20261122.json; source assets retained",
+      "restore": "Preserve input copies, manifests, reproduction and code snapshots; see tutorials/wrist_bundle_isaac.md. Do not overwrite the pinned originals.",
+      "availability": "present",
+      "checked_date": "2026-11-22",
+      "evidence_manifest": "manifests/wrist_bundle_isaac_20261122.json"
+    },
+    {
+      "id": "interaction-surface-20261122",
+      "root": "runtime",
+      "path": "/data/omi_runtime/runs/interaction_surface_representation_20261122",
+      "kind": "tip_mouth_dense_and_compact_surface_representation",
+      "status": "sampling_geometry_network_plumbing_and_viewer_verified_not_physical_accuracy",
+      "provenance": "templates/manifest.json; network_templates/manifest.json; prototype/report.json",
+      "restore": "tutorials/interaction_surface_representation.md",
+      "source_mesh_modified": false
+    },
+    {
+      "id": "isaac-right-arm-park-20261122",
+      "root": "runtime",
+      "path": "runs/right_arm_park_20261122",
+      "tracked": false,
+      "purpose": "Temporary inactive-arm parking and wrist visibility audit",
+      "required_for": [
+        "parked-wrist-scene"
+      ],
+      "source": "Derived from pinned WG-r10/OM-r08 robot scene; only right initial joint values changed",
+      "restore": "Restore the prior bundle and use scripts/simulation/park_right_arm.py; preserve old scenes and visibility evidence.",
+      "availability": "present",
+      "checked_date": "2026-11-22",
+      "evidence_manifest": "manifests/right_arm_park_20261122.json"
+    },
+    {
+      "id": "wrist-trapezoid-r12",
+      "root": "runtime",
+      "path": "assets/daimon/wrist_gripper_trapezoid_r12",
+      "tracked": false,
+      "purpose": "Trapezoid silver covers with max-Z flush to unchanged black pads; backing rim recessed",
+      "source": "User clarified along gripper extension axis; r11 preserved",
+      "restore": "Restore whole directory with scripts/evidence; explicitly select r12 instead of silently changing the fixed r10 handoff.",
+      "availability": "present",
+      "manifest": "wrist_trapezoid_tip_20261122.json"
+    },
+    {
+      "id": "wrist-trapezoid-review",
+      "root": "runtime",
+      "path": "runs/wrist_trapezoid_tip_20261122",
+      "tracked": false,
+      "purpose": "User-axis clarification, actual mesh alignment validation and orthographic review",
+      "source": "User clarified along gripper extension axis; r11 preserved",
+      "restore": "Restore whole directory with scripts/evidence; explicitly select r12 instead of silently changing the fixed r10 handoff.",
+      "availability": "present",
+      "manifest": "wrist_trapezoid_tip_20261122.json"
+    },
+    {
+      "id": "wrist-marked-tip-r13",
+      "root": "runtime",
+      "path": "assets/daimon/wrist_gripper_shoulder_r13",
+      "tracked": false,
+      "purpose": "Silver outer slope and rear plateau matching user red-line guide; front flush constraint retained",
+      "source": "User annotated20261122-222136.jpg and preserved r12 geometry",
+      "restore": "Restore full directory. Explicitly select r13; fixed r10 bundle and all earlier revisions retained.",
+      "availability": "present",
+      "manifest": "wrist_marked_tip_20261122.json"
+    },
+    {
+      "id": "wrist-marked-tip-review",
+      "root": "runtime",
+      "path": "runs/wrist_marked_tip_20261122",
+      "tracked": false,
+      "purpose": "Annotated reference mapping, orthographic comparison and mesh alignment checks",
+      "source": "User annotated20261122-222136.jpg and preserved r12 geometry",
+      "restore": "Restore full directory. Explicitly select r13; fixed r10 bundle and all earlier revisions retained.",
+      "availability": "present",
+      "manifest": "wrist_marked_tip_20261122.json"
+    },
+    {
+      "id": "sim-wrist-surface-learning-r01",
+      "root": "runtime",
+      "path": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01",
+      "kind": "generated_wrist_videos_privileged_labels_trained_model_and_evaluation",
+      "status": "trained_and_heldout_sim_evaluated_not_real_world_accuracy",
+      "provenance": "data/config.json; data/label_audit.json; train/config.json; train/report.json; source_snapshot/",
+      "restore": "tutorials/sim_wrist_surface_learning.md",
+      "training_performed": true,
+      "manifest": "manifests/sim_wrist_surface_learning_20261122_r01.json"
+    },
+    {
+      "id": "resnet18-imagenet1k-f37072fd",
+      "root": "runtime",
+      "path": "/data/omi_runtime/models/vision/resnet18-f37072fd.pth",
+      "kind": "pretrained_encoder",
+      "source": "https://download.pytorch.org/models/resnet18-f37072fd.pth",
+      "sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+      "usage": "ImageNet initialization of the shared encoder, then supervised simulation fine-tuning"
+    },
+    {
+      "id": "wrist-photo-tip-r14",
+      "root": "runtime",
+      "path": "assets/daimon/wrist_gripper_photo_r14",
+      "tracked": false,
+      "purpose": "Original-photo proportion reviewed silver-tip candidate",
+      "source": "Original photos 20261122-000200.jpg and 20261122-113448.jpg; preserved r13 geometry",
+      "restore": "Restore complete directory; explicitly select r14. Fixed r10 bundle retained.",
+      "availability": "present",
+      "manifest": "wrist_tip_photo_review_20261122.json"
+    },
+    {
+      "id": "wrist-photo-tip-review",
+      "root": "runtime",
+      "path": "runs/wrist_tip_photo_review_20261122",
+      "tracked": false,
+      "purpose": "Original photo manual anchors, affine proportion overlay and geometry validation",
+      "source": "Original photos 20261122-000200.jpg and 20261122-113448.jpg; preserved r13 geometry",
+      "restore": "Restore complete directory; explicitly select r14. Fixed r10 bundle retained.",
+      "availability": "present",
+      "manifest": "wrist_tip_photo_review_20261122.json"
+    },
+    {
+      "id": "wrist-logo-r15",
+      "root": "runtime",
+      "path": "assets/daimon/wrist_gripper_logo_r15",
+      "tracked": false,
+      "purpose": "Photo-derived DAIMON logo appearance candidate; r14 geometry unchanged",
+      "source": "Original close-up20261122-000200.jpg; placement20261122-113448.jpg",
+      "restore": "Restore full folder including textures and OBJ MTL/UV. Fixed r10 bundle remains unchanged.",
+      "availability": "present",
+      "manifest": "wrist_logo_20261122.json"
+    },
+    {
+      "id": "wrist-logo-review",
+      "root": "runtime",
+      "path": "runs/wrist_logo_20261122",
+      "tracked": false,
+      "purpose": "Photo-derived DAIMON logo appearance candidate; r14 geometry unchanged",
+      "source": "Original close-up20261122-000200.jpg; placement20261122-113448.jpg",
+      "restore": "Restore full folder including textures and OBJ MTL/UV. Fixed r10 bundle remains unchanged.",
+      "availability": "present",
+      "manifest": "wrist_logo_20261122.json"
+    },
+    {
+      "id": "wrist-visual-wva01",
+      "root": "runtime",
+      "path": "releases/wrist/WVA-01",
+      "tracked": false,
+      "purpose": "User-accepted wrist visual baseline; exact r15/r08 scene and evidence snapshot",
+      "manifest": "wrist_visual_wva01_20261122.json",
+      "restore": "Restore release directory plus assets and scene dependencies from release_manifest.json; snapshot is not a self-contained asset bundle",
+      "availability": "present"
+    },
+    {
+      "id": "isaac-rule-feedback-study-20261122",
+      "root": "runtime",
+      "path": "runs/isaac_rl_20261122",
+      "tracked": false,
+      "purpose": "Isaac rule-feedback demonstrations, SAC replay/checkpoints, independent evaluation and source snapshots",
+      "required_for": [
+        "isaac-rule-feedback-resume"
+      ],
+      "source": "Pinned WG-r10/OM-r08 parked-arm transfer and recorded pretrained ResNet10 backbone",
+      "restore": "Preserve full study and worker folders, stage_sources and source_final. Use omi_proj/tutorials/isaac_rule_feedback.md and verify the contract; do not mix old replay.",
+      "availability": "present",
+      "checked_date": "2026-11-22",
+      "evidence_manifest": "manifests/isaac_rule_feedback_20261122.json"
+    },
+    {
+      "id": "wrist-grasp-contact-r01",
+      "root": "runtime",
+      "path": "assets/daimon/wrist_grasp_contact_r01",
+      "tracked": false,
+      "purpose": "Free module bilateral black-pad grasp candidate; retained WVA01 reference assets",
+      "manifest": "wrist_contact_closure_20261122.json",
+      "restore": "Restore candidate and referenced meshes/textures from dependencies.json; use gravity_hold keyframe for closed inspection",
+      "availability": "present"
+    },
+    {
+      "id": "regular-surface-schemes-20261122",
+      "root": "runtime",
+      "path": "/data/omi_runtime/runs/regular_surface_schemes_20261122",
+      "kind": "mesh_surface_resampling_same_predicted_poses",
+      "manifest": "manifests/sim_surface_schemes_20261122.json",
+      "restore": "tutorials/sim_wrist_surface_learning.md",
+      "results": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/results/surface_schemes_v1"
+    },
+    {
+      "id": "smooth-guide-contact-20261123",
+      "root": "runtime",
+      "path": "/data/omi_runtime/runs/smooth_guide_20261122",
+      "kind": "experimental_isaac_collision_candidate",
+      "manifest": "manifests/smooth_guide_contact_20261123.json",
+      "restore": "docs/agent/simulation/evolution/smooth-guide-contact.md",
+      "results": "/data/omi_runtime/runs/smooth_guide_20261122/r06",
+      "accepted_for_training": false
+    },
+    {
+      "id": "contact-wrist-surface-learning-20261123-r01",
+      "root": "runtime",
+      "path": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01",
+      "kind": "contact_qualified_fisheye_dataset_and_finetuned_surface_network",
+      "status": "trained_tested_simulation_only",
+      "manifest": "manifests/contact_wrist_surface_learning_20261123_r01.json",
+      "restore": "tutorials/contact_wrist_surface_learning.md",
+      "provenance": "GC-r01 closure source; source_snapshot/; final_source_snapshot/; data/label_audit.json",
+      "migration_note": "Keep shards/ and repair_visible_gate/ because data/episodes uses symlinks. Preserve failed audit directory."
+    },
+    {
+      "id": "three-variable-grasp-preview-20261123",
+      "root": "runtime",
+      "path": "/data/omi_runtime/runs/three_variable_grasp_preview_20261123_r01",
+      "kind": "three_variable_pose_preview_and_contact_checks",
+      "manifest": "manifests/three_variable_grasp_preview_20261123.json",
+      "restore": "docs/agent/perception/evolution/three-variable-grasp-preview.md",
+      "training_performed": false
+    },
+    {
+      "id": "pointcloud-matching-pcg01",
+      "root": "runtime",
+      "path": "assets/pointcloud_matching/PCG-01",
+      "purpose": "No-color module and upper socket registration geometry",
+      "manifest": "pointcloud_geometry_pcg01_20261123.json",
+      "tracked": false,
+      "availability": "present",
+      "restore": "Portable copy /home/linux/Downloads/PCG-01.zip contains standalone PLY/NPZ; original source assets not required for loading"
+    },
+    {
+      "id": "isaac-smooth-retrain-20261123",
+      "root": "runtime",
+      "path": "/data/omi_runtime/runs/isaac_smooth_retrain_20261123",
+      "kind": "exploratory_isaac_bc_rule_feedback_sac",
+      "manifest": "manifests/isaac_smooth_retrain_20261123.json",
+      "restore": "docs/agent/simulation/evolution/smooth-guide-retraining.md",
+      "results": "/data/omi_runtime/runs/isaac_smooth_retrain_20261123/review_final",
+      "physical_qualification_passed": false
+    },
+    {
+      "id": "staged-contact-contract-20261123",
+      "root": "runtime",
+      "path": "/data/omi_runtime/runs/staged_contact_20261123",
+      "kind": "staged_insertion_task_contract_candidate",
+      "manifest": "manifests/staged_contact_20261123.json",
+      "restore": "docs/agent/simulation/evolution/staged-insertion-contract.md",
+      "results": "/data/omi_runtime/runs/staged_contact_20261123/summary.json"
+    },
+    {
+      "id": "grid-perception-data-20261123-v1",
+      "root": "runtime",
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1",
+      "kind": "bounded_grid_fisheye_rgb_masks_pose_and_surface_labels",
+      "status": "generated_audited_untrained",
+      "manifest": "manifests/grid_perception_data_20261123_v1.json",
+      "restore": "tutorials/grid_perception_data_v1.md",
+      "recommended_training_data": "/data/omi_runtime/runs/grid_perception_20261123_v1/data_strict",
+      "strict_images": 14549,
+      "physical_images": 16251,
+      "training_performed": false,
+      "documentation_review": "manifests/grid_perception_documentation_20261123.json",
+      "task_handoff": "docs/chronicles/2026-11-23-perception-grid-pretraining-handoff.md"
+    },
+    {
+      "id": "rule-insertion-review-20261123",
+      "root": "runtime",
+      "path": "/data/omi_runtime/runs/staged_rule_review_20261123",
+      "kind": "rule_insertion_review",
+      "manifest": "manifests/rule_insertion_review_20261123.json",
+      "restore": "docs/agent/simulation/evolution/rule-insertion-review.md",
+      "results": "/data/omi_runtime/runs/staged_rule_review_20261123/summary.json"
     }
   ],
   "integrity_note": "Latest transfer_validation.json records full 01 archive and per-file verification plus all OMI checksum/source entries. Other expected hashes retain their earlier evidence; availability is a dated snapshot.",
@@ -604,5 +1605,31 @@
   "latest_data02_validation": "data02_validation.json",
   "latest_extraction_index": "extracted_archives.json",
   "latest_data03_04_validation": "data03_04_validation.json",
-  "latest_asset_designation": "asset_v3_designation_20261120.json"
+  "latest_asset_designation": "asset_v3_designation_20261120.json",
+  "latest_insertion_validation": "manifests/socket_r04_20261120.json",
+  "latest_robot_simulation_validation": "manifests/robot_rl_mvp_20261120.json",
+  "latest_visual_training_validation": "manifests/dual_camera_training_20261121.json",
+  "latest_rule_training_validation": "manifests/rule_demonstrations_20261121.json",
+  "latest_mesh_insertability_validation": "manifests/mesh_insertability_20261121.json",
+  "latest_contact_asset_validation": "manifests/contact_simulation_asset_20261121.json",
+  "latest_contact_policy_study": "manifests/contact_policy_study_20261121.json",
+  "latest_measured_v4_simulation": "measured_v4_simulation_20261121.json",
+  "latest_wrist_camera_gripper": "wrist_camera_gripper_20261121.json",
+  "latest_hybrid_wrist_preview": "hybrid_black_contact_20261122.json",
+  "latest_module_material_candidate": "module_material_r07_20261122.json",
+  "latest_capture_intake": "nov22_capture_intake.json",
+  "latest_wrist_tool_refinement": "wrist_tool_refinement_20261122.json",
+  "latest_wrist_tool_appearance": "wrist_tool_yellow_20261122.json",
+  "latest_wrist_tool_profile": "wrist_tool_profile_20261122.json",
+  "latest_wrist_camera_consistency": "wrist_camera_consistency_20261122.json",
+  "latest_wrist_alignment_candidate": "wrist_alignment_20261122.json",
+  "latest_wrist_pointcloud_refinement": "wrist_pointcloud_refinement_20261122.json",
+  "latest_wrist_pose_study": "wrist_pose_study_20261122.json",
+  "latest_wrist_primary_refinement": "wrist_primary_refinement_20261122.json",
+  "latest_wrist_visual_handoff": "wrist_visual_asset_handoff_20261122.json",
+  "latest_wrist_fingertip_candidate": "wrist_tip_photo_review_20261122.json",
+  "latest_wrist_logo_candidate": "wrist_logo_20261122.json",
+  "current_accepted_wrist_visual_release": "wrist_visual_wva01_20261122.json",
+  "latest_wrist_contact_candidate": "wrist_contact_closure_20261122.json",
+  "latest_pointcloud_geometry_export": "pointcloud_geometry_pcg01_20261123.json"
 }

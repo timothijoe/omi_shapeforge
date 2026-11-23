@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-21T05:27:47.302980+00:00",
+  "delivery_directory": "/data/omi_migration/shapeforge_assets_20261121T051808Z",
+  "operator_guide": "../tutorials/asset_migration_20261121.md",
+  "archives": [
+    {
+      "archive": "01_assets_scenes.tar.gz",
+      "files": 28786,
+      "source_bytes": 7971669165,
+      "archive_bytes": 5596466310,
+      "sha256": "6cae1a7005dc2e28c195614ff4bac974e0a1c40acdf24bccd862fe3fe165a752"
+    },
+    {
+      "archive": "02_weights_dependencies.tar.gz",
+      "files": 992,
+      "source_bytes": 2878976722,
+      "archive_bytes": 2661796518,
+      "sha256": "cc7e43358df756e9a72eb2d5eb7c2b64cc5426ab54cce6dbb97267a52f4c9680"
+    },
+    {
+      "archive": "03_completed_training.tar.gz",
+      "files": 15841,
+      "source_bytes": 13445874956,
+      "archive_bytes": 5092164134,
+      "sha256": "6f1614586555d88ed16b0940da2b4acceb2496fcca353ee994acf81b10a5b433"
+    }
+  ],
+  "total_archive_bytes": 13350426962,
+  "total_members": 45619,
+  "source_commits_included": false,
+  "source_note": "User will commit and upload the four working repositories separately; external and historical asset helper sources are included.",
+  "large_raw_capture_datasets_included": false,
+  "small_samples_and_derived_training_data_included": true,
+  "running_followup_training_included": false,
+  "completed_training_scope": [
+    "contact_intervention_study_20261121/rl",
+    "contact_intervention_study_20261121/bc_plain",
+    "contact_intervention_study_20261121/bc_rotation10",
+    "contact_intervention_study_20261121/demonstrations",
+    "contact_visual_training_20261121_final"
+  ],
+  "verification": {
+    "all_archive_and_member_hashes_passed": true,
+    "all_five_relocated_scenes_loaded": true,
+    "scene_report": "/data/omi_migration/shapeforge_assets_20261121T051808Z/scene_load_verification.json",
+    "restored_files_hash_verified": 686,
+    "new_machine_gpu_environment_validated": false
+  }
+}

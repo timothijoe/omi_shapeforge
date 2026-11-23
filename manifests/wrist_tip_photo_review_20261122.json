@@ -1,0 +1,25 @@
+{
+  "asset_id": "WG-DAIMON-PHOTO-r14",
+  "display_name": "WG-r14 · 实拍比例复核指尖候选",
+  "parent_asset": "WG-DAIMON-SHOULDER-r13",
+  "asset_directory": "/data/omi_runtime/assets/daimon/wrist_gripper_photo_r14",
+  "asset_manifest": "/data/omi_runtime/assets/daimon/wrist_gripper_photo_r14/asset_manifest.json",
+  "asset_manifest_sha256": "843d7a082908092bd3b2ec593f6a477613962c3889c2338483c9b4a24fd0806b",
+  "delivery_manifest": "/data/omi_runtime/assets/daimon/wrist_gripper_photo_r14/delivery_manifest.json",
+  "delivery_manifest_sha256": "fc4a59d0cb166569d424f6dc1ba65714a275b8e93dfd76a25a44c41d822f9cc9",
+  "run": "/data/omi_runtime/runs/wrist_tip_photo_review_20261122",
+  "comparison": "/data/omi_runtime/runs/wrist_tip_photo_review_20261122/photo_comparison.png",
+  "photo_overlay": "/data/omi_runtime/runs/wrist_tip_photo_review_20261122/original_photo_overlays.png",
+  "source_photos": [
+    "/home/linux/Downloads/img/20261122-000200.jpg",
+    "/home/linux/Downloads/img/20261122-113448.jpg"
+  ],
+  "annotation_used_as_metric_target": false,
+  "validation": "/data/omi_runtime/assets/daimon/wrist_gripper_photo_r14/validation.json",
+  "changed_parts": 2,
+  "unchanged_parts": 47,
+  "retains_front_alignment": true,
+  "camera_and_attachment_unchanged": true,
+  "replaces_fixed_handoff_bundle": false,
+  "fixed_handoff_sha256": "a9df1e12485c7b8882af915114ea1c5bb6ff276a2ea2023cad313ece60e759c5"
+}

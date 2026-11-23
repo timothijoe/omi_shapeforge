@@ -1,0 +1,430 @@
+{
+  "schema_version": 1,
+  "id": "rule-insertion-review-20261123",
+  "run_root": "/data/omi_runtime/runs/staged_rule_review_20261123",
+  "status": "closed",
+  "guide": "docs/agent/simulation/evolution/rule-insertion-review.md",
+  "chronicle": "docs/chronicles/2026-11-23-rule-insertion-review.md",
+  "protocol": "/data/omi_runtime/runs/staged_rule_review_20261123/protocol.json",
+  "summary": "/data/omi_runtime/runs/staged_rule_review_20261123/summary.json",
+  "video": "/data/omi_runtime/runs/staged_rule_review_20261123/review/rule_demonstration.mp4",
+  "validation": {
+    "task_contract": "entry-strict-interior-tolerant-v1",
+    "groups": {
+      "normal": {
+        "successes": 8,
+        "total": 8
+      },
+      "recovery": {
+        "successes": 4,
+        "total": 4
+      }
+    },
+    "cases": [
+      {
+        "name": "normal_500",
+        "group": "normal",
+        "seed": 500,
+        "offset_mm": 0.0,
+        "render": true,
+        "task_success": true,
+        "native_exit_code": 0,
+        "steps": 396,
+        "final_depth_mm": 51.28150099799509,
+        "first_qualified_depth_mm": 5.124079488725531,
+        "contact_mean_peak_N": 0.102124824677184,
+        "contact_substep_peak_N": 5.850865090906196,
+        "point_penetration_peak_mm": 0.00025890767574310303,
+        "control_box_overlap_peak_mm": 0.000160505253518628,
+        "reset_count": 1,
+        "failure_reason": null,
+        "recording": {
+          "fps": 10,
+          "width": 1440,
+          "height": 960,
+          "renderer": "actual Isaac RTX, zero simulation time during capture",
+          "close_eye_world": [
+            0.5790108367488054,
+            0.325374489946,
+            0.8656909429031601
+          ],
+          "close_target_world": [
+            0.6590108367488053,
+            0.205374489946,
+            0.8066909429031601
+          ],
+          "wrist_projection": {
+            "model": "opencv_fisheye_via_cubemap",
+            "K": [
+              [
+                656.3888033002843,
+                0.0,
+                969.5144704283534
+              ],
+              [
+                0.0,
+                661.2072138230802,
+                551.7507393929942
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "D": [
+              -0.027276188479153772,
+              -0.003880950207246229,
+              -0.0024510944482520475,
+              0.0027821862968941133
+            ],
+            "image_size": [
+              1920,
+              1080
+            ],
+            "intrinsics_source": "/home/linux/Downloads/img/wrist_intrinsics_1920x1080.json",
+            "binding_to_new_capture_confirmed": false
+          },
+          "wrist_roi": [
+            766,
+            566,
+            1155,
+            955
+          ],
+          "wrist_front_resolution": 1024,
+          "wrist_display_resolution": 480,
+          "views": [
+            "close",
+            "overview",
+            "fisheye_wrist_roi"
+          ],
+          "teacher": "scripted privileged controller, not learned policy",
+          "pose_invariance_checked": true,
+          "captured_frames": 397,
+          "display_only_hold_frames": 15,
+          "encoder_exit_code": 0,
+          "task_accepted": true
+        }
+      },
+      {
+        "name": "normal_501",
+        "group": "normal",
+        "seed": 501,
+        "offset_mm": 0.0,
+        "render": false,
+        "task_success": true,
+        "native_exit_code": 0,
+        "steps": 395,
+        "final_depth_mm": 51.28079741121681,
+        "first_qualified_depth_mm": 5.122768432062902,
+        "contact_mean_peak_N": 0.3242547165311142,
+        "contact_substep_peak_N": 7.945698507880764,
+        "point_penetration_peak_mm": 0.05115191379445605,
+        "control_box_overlap_peak_mm": 0.048231444825574954,
+        "reset_count": 1,
+        "failure_reason": null
+      },
+      {
+        "name": "normal_502",
+        "group": "normal",
+        "seed": 502,
+        "offset_mm": 0.0,
+        "render": false,
+        "task_success": true,
+        "native_exit_code": 0,
+        "steps": 395,
+        "final_depth_mm": 51.28124898306711,
+        "first_qualified_depth_mm": 5.02442197677583,
+        "contact_mean_peak_N": 0.12036222841071076,
+        "contact_substep_peak_N": 11.761421483242968,
+        "point_penetration_peak_mm": 0.00018055746409118,
+        "control_box_overlap_peak_mm": 0.0,
+        "reset_count": 1,
+        "failure_reason": null
+      },
+      {
+        "name": "normal_503",
+        "group": "normal",
+        "seed": 503,
+        "offset_mm": 0.0,
+        "render": false,
+        "task_success": true,
+        "native_exit_code": 0,
+        "steps": 399,
+        "final_depth_mm": 51.281172544350675,
+        "first_qualified_depth_mm": 5.16246485510675,
+        "contact_mean_peak_N": 0.12224352139682024,
+        "contact_substep_peak_N": 13.668225256254416,
+        "point_penetration_peak_mm": 0.05116013198858127,
+        "control_box_overlap_peak_mm": 0.0369784296422801,
+        "reset_count": 1,
+        "failure_reason": null
+      },
+      {
+        "name": "normal_520",
+        "group": "normal",
+        "seed": 520,
+        "offset_mm": 0.0,
+        "render": false,
+        "task_success": true,
+        "native_exit_code": 0,
+        "steps": 405,
+        "final_depth_mm": 51.28110773700939,
+        "first_qualified_depth_mm": 5.06089778543468,
+        "contact_mean_peak_N": 0.377436313580536,
+        "contact_substep_peak_N": 10.674914961352606,
+        "point_penetration_peak_mm": 0.0511403959535528,
+        "control_box_overlap_peak_mm": 0.05007247241890084,
+        "reset_count": 1,
+        "failure_reason": null
+      },
+      {
+        "name": "normal_521",
+        "group": "normal",
+        "seed": 521,
+        "offset_mm": 0.0,
+        "render": false,
+        "task_success": true,
+        "native_exit_code": 0,
+        "steps": 395,
+        "final_depth_mm": 51.28161721226261,
+        "first_qualified_depth_mm": 5.11019217063847,
+        "contact_mean_peak_N": 0.09803363944797709,
+        "contact_substep_peak_N": 9.463826499995843,
+        "point_penetration_peak_mm": 0.00022910535335540771,
+        "control_box_overlap_peak_mm": 0.0002498206347137377,
+        "reset_count": 1,
+        "failure_reason": null
+      },
+      {
+        "name": "normal_522",
+        "group": "normal",
+        "seed": 522,
+        "offset_mm": 0.0,
+        "render": false,
+        "task_success": true,
+        "native_exit_code": 0,
+        "steps": 396,
+        "final_depth_mm": 51.28152120694641,
+        "first_qualified_depth_mm": 5.165744137719727,
+        "contact_mean_peak_N": 0.13245416338804805,
+        "contact_substep_peak_N": 10.390312891104333,
+        "point_penetration_peak_mm": 0.0002216547727584839,
+        "control_box_overlap_peak_mm": 0.0001870658479993792,
+        "reset_count": 1,
+        "failure_reason": null
+      },
+      {
+        "name": "normal_523",
+        "group": "normal",
+        "seed": 523,
+        "offset_mm": 0.0,
+        "render": false,
+        "task_success": true,
+        "native_exit_code": 0,
+        "steps": 397,
+        "final_depth_mm": 51.2811374306906,
+        "first_qualified_depth_mm": 5.063461479791069,
+        "contact_mean_peak_N": 0.1204371757559006,
+        "contact_substep_peak_N": 11.545870656846175,
+        "point_penetration_peak_mm": 0.00018064156392938457,
+        "control_box_overlap_peak_mm": 5.379332625177202e-06,
+        "reset_count": 1,
+        "failure_reason": null
+      },
+      {
+        "name": "recovery_700_plus",
+        "group": "recovery",
+        "seed": 700,
+        "offset_mm": 1.0,
+        "render": true,
+        "task_success": true,
+        "native_exit_code": 0,
+        "steps": 581,
+        "final_depth_mm": 51.28133314160884,
+        "first_qualified_depth_mm": 5.052673037922557,
+        "contact_mean_peak_N": 0.12357752384535342,
+        "contact_substep_peak_N": 17.19783525913966,
+        "point_penetration_peak_mm": 0.055745076679158956,
+        "control_box_overlap_peak_mm": 0.0503392609822878,
+        "reset_count": 1,
+        "failure_reason": null,
+        "blocked_depth_mm": -0.0005481996669638445,
+        "retreat_depth_mm": -4.921818072336491,
+        "recording": {
+          "fps": 10,
+          "width": 1440,
+          "height": 960,
+          "renderer": "actual Isaac RTX, zero simulation time during capture",
+          "close_eye_world": [
+            0.5790108367488054,
+            0.325374489946,
+            0.8656909429031601
+          ],
+          "close_target_world": [
+            0.6590108367488053,
+            0.205374489946,
+            0.8066909429031601
+          ],
+          "wrist_projection": {
+            "model": "opencv_fisheye_via_cubemap",
+            "K": [
+              [
+                656.3888033002843,
+                0.0,
+                969.5144704283534
+              ],
+              [
+                0.0,
+                661.2072138230802,
+                551.7507393929942
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "D": [
+              -0.027276188479153772,
+              -0.003880950207246229,
+              -0.0024510944482520475,
+              0.0027821862968941133
+            ],
+            "image_size": [
+              1920,
+              1080
+            ],
+            "intrinsics_source": "/home/linux/Downloads/img/wrist_intrinsics_1920x1080.json",
+            "binding_to_new_capture_confirmed": false
+          },
+          "wrist_roi": [
+            766,
+            566,
+            1155,
+            955
+          ],
+          "wrist_front_resolution": 1024,
+          "wrist_display_resolution": 480,
+          "views": [
+            "close",
+            "overview",
+            "fisheye_wrist_roi"
+          ],
+          "teacher": "scripted privileged controller, not learned policy",
+          "pose_invariance_checked": true,
+          "captured_frames": 582,
+          "display_only_hold_frames": 15,
+          "encoder_exit_code": 0,
+          "task_accepted": true
+        }
+      },
+      {
+        "name": "recovery_700_minus",
+        "group": "recovery",
+        "seed": 700,
+        "offset_mm": -1.0,
+        "render": false,
+        "task_success": true,
+        "native_exit_code": 0,
+        "steps": 602,
+        "final_depth_mm": 51.280971746963445,
+        "first_qualified_depth_mm": 5.040393708104068,
+        "contact_mean_peak_N": 0.26982453759140984,
+        "contact_substep_peak_N": 7.760349866430315,
+        "point_penetration_peak_mm": 0.05599551514023915,
+        "control_box_overlap_peak_mm": 0.054100040427183804,
+        "reset_count": 1,
+        "failure_reason": null,
+        "blocked_depth_mm": -0.0002928871288945256,
+        "retreat_depth_mm": -4.922502120293949
+      },
+      {
+        "name": "recovery_701_plus",
+        "group": "recovery",
+        "seed": 701,
+        "offset_mm": 1.0,
+        "render": false,
+        "task_success": true,
+        "native_exit_code": 0,
+        "steps": 566,
+        "final_depth_mm": 51.28132755473794,
+        "first_qualified_depth_mm": 5.0538655437011055,
+        "contact_mean_peak_N": 0.11430274002868122,
+        "contact_substep_peak_N": 6.091175946494374,
+        "point_penetration_peak_mm": 0.00036743711007147795,
+        "control_box_overlap_peak_mm": 0.0,
+        "reset_count": 1,
+        "failure_reason": null,
+        "blocked_depth_mm": -0.0006240105810380037,
+        "retreat_depth_mm": -4.921727739150274
+      },
+      {
+        "name": "recovery_701_minus",
+        "group": "recovery",
+        "seed": 701,
+        "offset_mm": -1.0,
+        "render": false,
+        "task_success": true,
+        "native_exit_code": 0,
+        "steps": 601,
+        "final_depth_mm": 51.28120424694084,
+        "first_qualified_depth_mm": 5.036460693422148,
+        "contact_mean_peak_N": 0.13436059328527447,
+        "contact_substep_peak_N": 10.859027570404654,
+        "point_penetration_peak_mm": 0.05601611701422371,
+        "control_box_overlap_peak_mm": 0.05513002393010835,
+        "reset_count": 1,
+        "failure_reason": null,
+        "blocked_depth_mm": -0.00012784575564595002,
+        "retreat_depth_mm": -4.923993735615332
+      }
+    ],
+    "all_native_exits_zero": true,
+    "outer_tool_session_exit_code": 143,
+    "outer_exit_reason": "not diagnosed; all 12 native children have exit 0 and complete records",
+    "assets_verified": {
+      "tool": {
+        "identity": "WG-DAIMON-OBS-r10",
+        "files_verified": 90,
+        "delivery_sha256": "4822521ce53e39e991cbe16a3b1cc4097fb423c8f267f52c13899a7c4c3a6fe8"
+      },
+      "module": {
+        "identity": "OM-001/V4 r08",
+        "files_verified": 66,
+        "delivery_sha256": "e5edc4196eb2ba31748fc1d5fa923dfd467277d2ff04d88a0de5bf43385035ce"
+      }
+    },
+    "sources_sha256": {
+      "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/probe_smooth_contact.py": "64d550d16830040692649d802f6446bf1923bfbdf4b9aa99319aeee97de2c7b1",
+      "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_scene.py": "fcbb7a2ec9d5176c631e59b521fc6f4d4aaaff8b2fa41a8c5d30788724412562",
+      "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_runtime.py": "ba52d428408843238b9bc8c023647e04220879ec33b6decd3bc0a133cc2e3214",
+      "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_kinematics.py": "97c583aa3a63fbf016d33cd1fc98fdff0a9045e583ff4cb8b557df2811b26316",
+      "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/contact_teacher.py": "14691f5924b42482a1fdb7788112b323542e97dac0589d467a85ac6101676741",
+      "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_approach.py": "ceea6c1ca29e37628c8bb11fcfaa00720b1f9214e735db40c972cfb09cdeea74",
+      "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_diagnostics.py": "0b02671f4014c96739b6c35ce7109f31a9f515c44ffcc6148445f4dbfa2647f6",
+      "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/box_overlap.py": "8a468a86fd461ec4992735bcf039b97b6fdf049d21a68bcc34511b8a9f6f27e6",
+      "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_demo_recorder.py": "b2793fabca25ba82a0682db437feedc825ac3d3541249ec427ffcdca7686735e",
+      "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_appearance.py": "8cf5095e7d25315d79c05303e33b39f1c756898d8a0718325849dc68844003c3",
+      "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/wrist_fisheye.py": "8f25df888d79198fc50d140c4aac5ec17a7c2a8758ed2891cc7c03e41f842b6e",
+      "/home/linux/omi_folder/omi_proj/src/omi_hil_rl/hil/insertion_task.py": "1986131f8f72736e77fbd14a97b4479507fb237c17eaca37d3ac314f7c8efe38"
+    },
+    "transfer_sha256": "cf3292f916737c191cdc7b4cc8dc07e9a0e0bb1eac2282e27a0bbb590da721cb",
+    "meshes_sha256": "deacdc6cf90ed4752c96e54ed005fa09bc1f14a987216e465db034786efe6eb3",
+    "meshes_equal_previous_candidate": true,
+    "learned_policy": false,
+    "real_hardware_calibrated": false,
+    "excluded_preview": "camera_preview",
+    "final_withdrawal_tested": false
+  },
+  "artifacts_sha256": {
+    "protocol.json": "34f267f936727a1a9910a12f2235f6934959896a348f3a5041e6dbe279f93322",
+    "receipts.json": "396a893bcaf756f55297b9918c030f6be6a495efcfd7dfd3c21fdd3a4f36cdcb",
+    "summary.json": "9fa2cc91ea7eac6934282e4eb4b1d1846ce6d5c20ceac9369e7692734019c1c8",
+    "summarize.py": "b43caae5971b9b68b2a6ce36f60bed427ec108a6db604d5f9cf0e4560c2327f0",
+    "review/rule_demonstration.mp4": "a7a5e5df3a5f6669c9f119c67809044f9cc7244f22294f9b74c167a95af70af2",
+    "review/video_sources.json": "920ab62769281118d2aeae489f9e6ab10d5d4fbc0dda5570ae1d1a44c7486e5d"
+  },
+  "user_feedback": "很好，我看了一下你的这个，比之前好很多。",
+  "feedback_scope": "demo appearance and behaviour; not real physics or learned-policy acceptance"
+}

@@ -1,0 +1,1208 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-21",
+  "run": "/data/omi_runtime/runs/mesh_insertability_20261121",
+  "status": "full_mesh_insertion_failed; topology and cavity representation repaired independently",
+  "full_mesh_insertability_passed": false,
+  "real_object_insertability_certified": false,
+  "source_blender_unchanged": {
+    "module": true,
+    "socket": true
+  },
+  "source_assets": {
+    "module": {
+      "file": "/data/omi_runtime/assets/optical_module_v3/work/OM-001-V3.blend",
+      "sha256": "016ac93da1f252e2f13325ac20454d1a02b82e31a840ac4f95bffa4218d0b8d2"
+    },
+    "socket": {
+      "file": "/data/omi_runtime/assets/optical_socket/revisions/r04/OS-001-r04.blend",
+      "sha256": "44e24fbe1ef3b352c61adcea6e84a9044de13275d1f62856e8a502ed275e0f48"
+    }
+  },
+  "source_state": {
+    "branch": "feature/dual-camera-training",
+    "head": "66ff11720e5dc4327041d709b661dec73c83f605",
+    "uncommitted": true,
+    "snapshot": "/data/omi_runtime/runs/mesh_insertability_20261121/source_snapshot"
+  },
+  "topology": {
+    "module": {
+      "parts": 15,
+      "closed": 13,
+      "degenerate_faces": 40
+    },
+    "socket": {
+      "parts": 135,
+      "closed": 135,
+      "degenerate_faces": 0
+    }
+  },
+  "repairs": {
+    "removed_degenerate_faces": 40,
+    "open_seam_parts_capped": 2,
+    "boundary_loops_capped": 4,
+    "all_part_envelopes_preserved": true,
+    "blender_authoring_modified": false
+  },
+  "raw_triangle_first_contact": [
+    4.2109375,
+    4.21875
+  ],
+  "raw_triangle_structural_stop": [
+    51.28125,
+    51.2890625
+  ],
+  "dynamic_probes": {
+    "raw_hulls": {
+      "final_depth_mm": -0.7931094982151721,
+      "reached_shoulder": false,
+      "worst_contact_gap_mm": -0.006838395053073484,
+      "first_contact": {
+        "depth_mm": -0.7908732262822191,
+        "contacts": [
+          {
+            "parts": [
+              "Housing printed frame",
+              "01 Connected equal-depth upper grooves"
+            ],
+            "gap_mm": -0.0006416405355399828,
+            "position_mm": [
+              -9.240600106556599,
+              2.64280879026034,
+              4.588436975882229
+            ]
+          },
+          {
+            "parts": [
+              "Housing printed frame",
+              "01 Connected equal-depth upper grooves"
+            ],
+            "gap_mm": -0.0006415219622585809,
+            "position_mm": [
+              -2.712436315568051,
+              2.6428088558845264,
+              4.588437002361738
+            ]
+          }
+        ]
+      }
+    },
+    "split_rigid": {
+      "final_depth_mm": 4.211952131913552,
+      "reached_shoulder": false,
+      "worst_contact_gap_mm": -0.0044586660938699734,
+      "first_contact": {
+        "depth_mm": 4.215113627191756,
+        "contacts": [
+          {
+            "parts": [
+              "Visible folded spring finger 0",
+              "02 Lower shell and projecting lower guard"
+            ],
+            "gap_mm": -0.0009600590996631815,
+            "position_mm": [
+              -8.78154474572655,
+              0.8478795427932324,
+              -2.812451312441649
+            ]
+          },
+          {
+            "parts": [
+              "Visible folded spring finger 1",
+              "02 Lower shell and projecting lower guard"
+            ],
+            "gap_mm": -0.00096005700733603,
+            "position_mm": [
+              -7.033139920445925,
+              0.8478795421576969,
+              -2.812451311610652
+            ]
+          },
+          {
+            "parts": [
+              "Visible folded spring finger 2",
+              "02 Lower shell and projecting lower guard"
+            ],
+            "gap_mm": -0.0009600563913955532,
+            "position_mm": [
+              -4.266470215728952,
+              0.8478795419698303,
+              -2.812451311366618
+            ]
+          },
+          {
+            "parts": [
+              "Visible folded spring finger 3",
+              "02 Lower shell and projecting lower guard"
+            ],
+            "gap_mm": -0.000960059168683771,
+            "position_mm": [
+              0.4999018645587555,
+              0.8478795428143276,
+              -2.8124513124689603
+            ]
+          },
+          {
+            "parts": [
+              "Visible folded spring finger 4",
+              "02 Lower shell and projecting lower guard"
+            ],
+            "gap_mm": -0.0009600575445746192,
+            "position_mm": [
+              2.2483117086234703,
+              0.847879542321043,
+              -2.8124513118239
+            ]
+          },
+          {
+            "parts": [
+              "Visible folded spring finger 5",
+              "02 Lower shell and projecting lower guard"
+            ],
+            "gap_mm": -0.0009600591519743872,
+            "position_mm": [
+              5.0517853058121425,
+              0.8478795428090925,
+              -2.8124513124624464
+            ]
+          },
+          {
+            "parts": [
+              "Visible folded spring finger 6",
+              "02 Lower shell and projecting lower guard"
+            ],
+            "gap_mm": -0.0009600575859089283,
+            "position_mm": [
+              7.818455031841111,
+              0.8478795423337946,
+              -2.812451311840166
+            ]
+          }
+        ]
+      }
+    },
+    "structural_diagnostic": {
+      "final_depth_mm": 51.28170948936093,
+      "reached_shoulder": true,
+      "worst_contact_gap_mm": -0.00790820683260928,
+      "first_contact": {
+        "depth_mm": 51.28511642664801,
+        "contacts": [
+          {
+            "parts": [
+              "Cage upper mouth rim",
+              "11 Raised metal head cover"
+            ],
+            "gap_mm": -0.001811310665062259,
+            "position_mm": [
+              -9.095749735832237,
+              1.8490943706921175,
+              5.849999841302635
+            ]
+          },
+          {
+            "parts": [
+              "Cage upper mouth rim",
+              "11 Raised metal head cover"
+            ],
+            "gap_mm": -0.001811310665062259,
+            "position_mm": [
+              8.095749735832236,
+              1.8490943706921175,
+              5.849999841302635
+            ]
+          },
+          {
+            "parts": [
+              "Cage upper mouth rim",
+              "11 Raised metal head cover"
+            ],
+            "gap_mm": -0.001811310665062259,
+            "position_mm": [
+              8.095749735832236,
+              1.8490943706921175,
+              5.499999970197678
+            ]
+          },
+          {
+            "parts": [
+              "Cage upper mouth rim",
+              "11 Raised metal head cover"
+            ],
+            "gap_mm": -0.001811310665062259,
+            "position_mm": [
+              -9.095749735832237,
+              1.8490943706921175,
+              5.499999970197678
+            ]
+          }
+        ]
+      }
+    },
+    "offaxis_plus1": {
+      "final_depth_mm": -0.0999879102956549,
+      "reached_shoulder": false,
+      "worst_contact_gap_mm": -0.007674684929601149,
+      "first_contact": {
+        "depth_mm": -0.09688072519099356,
+        "contacts": [
+          {
+            "parts": [
+              "Folded vertical mouth rim.001",
+              "01 Connected equal-depth upper grooves"
+            ],
+            "gap_mm": -0.0015010868998578588,
+            "position_mm": [
+              9.229999966476027,
+              1.9492494011592574,
+              4.1978933705605215
+            ]
+          },
+          {
+            "parts": [
+              "Folded vertical mouth rim.001",
+              "01 Connected equal-depth upper grooves"
+            ],
+            "gap_mm": -0.001498306363178917,
+            "position_mm": [
+              9.229999966476027,
+              1.9492507914275967,
+              4.588509937098538
+            ]
+          },
+          {
+            "parts": [
+              "Folded vertical mouth rim.001",
+              "01 Connected equal-depth upper grooves"
+            ],
+            "gap_mm": -0.0014982255682708268,
+            "position_mm": [
+              9.240589958024842,
+              1.9492508318250508,
+              4.588509937164121
+            ]
+          },
+          {
+            "parts": [
+              "Folded vertical mouth rim.001",
+              "01 Connected equal-depth upper grooves"
+            ],
+            "gap_mm": -0.0015011085277947134,
+            "position_mm": [
+              9.24058995472978,
+              1.9492493903452888,
+              4.198020120555167
+            ]
+          },
+          {
+            "parts": [
+              "Folded vertical mouth rim.001",
+              "01 Connected equal-depth upper grooves"
+            ],
+            "gap_mm": -0.0014999109587546852,
+            "position_mm": [
+              9.240578748303001,
+              1.9492499883975918,
+              3.219239492680973
+            ]
+          },
+          {
+            "parts": [
+              "Folded vertical mouth rim.001",
+              "01 Connected equal-depth upper grooves"
+            ],
+            "gap_mm": -0.0014999676123362508,
+            "position_mm": [
+              9.240578748405715,
+              1.9492499600707731,
+              2.828729667122532
+            ]
+          },
+          {
+            "parts": [
+              "Folded vertical mouth rim.001",
+              "01 Connected equal-depth upper grooves"
+            ],
+            "gap_mm": -0.0014999661747030352,
+            "position_mm": [
+              9.229999004571088,
+              1.9492499607895906,
+              2.828729666789765
+            ]
+          },
+          {
+            "parts": [
+              "Folded vertical mouth rim.001",
+              "01 Connected equal-depth upper grooves"
+            ],
+            "gap_mm": -0.0009733651485765559,
+            "position_mm": [
+              9.229999342272121,
+              1.9495132615597266,
+              4.192799801149969
+            ]
+          }
+        ]
+      }
+    },
+    "offaxis_minus1": {
+      "final_depth_mm": -0.09998953594717941,
+      "reached_shoulder": false,
+      "worst_contact_gap_mm": -0.007674472945997301,
+      "first_contact": {
+        "depth_mm": -0.09688072734315245,
+        "contacts": [
+          {
+            "parts": [
+              "Folded vertical mouth rim",
+              "01 Connected equal-depth upper grooves"
+            ],
+            "gap_mm": -0.0015006053902893134,
+            "position_mm": [
+              -10.230000130005834,
+              1.949249641903953,
+              4.19298003745534
+            ]
+          },
+          {
+            "parts": [
+              "Folded vertical mouth rim",
+              "01 Connected equal-depth upper grooves"
+            ],
+            "gap_mm": -0.001501155672687304,
+            "position_mm": [
+              -10.240589953180447,
+              1.949249366762754,
+              4.192980037471345
+            ]
+          },
+          {
+            "parts": [
+              "Folded vertical mouth rim",
+              "01 Connected equal-depth upper grooves"
+            ],
+            "gap_mm": -0.0014992561180279026,
+            "position_mm": [
+              -10.240589955269888,
+              1.9492503165400836,
+              4.588509927544523
+            ]
+          },
+          {
+            "parts": [
+              "Folded vertical mouth rim",
+              "01 Connected equal-depth upper grooves"
+            ],
+            "gap_mm": -0.0014992446904569905,
+            "position_mm": [
+              -10.230000130005834,
+              1.949250322253869,
+              4.588509927595767
+            ]
+          },
+          {
+            "parts": [
+              "Folded vertical mouth rim",
+              "01 Connected equal-depth upper grooves"
+            ],
+            "gap_mm": -0.001499866135201396,
+            "position_mm": [
+              -10.230003356105378,
+              1.9492500035434823,
+              2.8287288196438736
+            ]
+          },
+          {
+            "parts": [
+              "Folded vertical mouth rim",
+              "01 Connected equal-depth upper grooves"
+            ],
+            "gap_mm": -0.0014998597766596646,
+            "position_mm": [
+              -10.240593175375164,
+              1.9492500067227874,
+              2.8287288198389984
+            ]
+          },
+          {
+            "parts": [
+              "Folded vertical mouth rim",
+              "01 Connected equal-depth upper grooves"
+            ],
+            "gap_mm": -0.0014997236831950419,
+            "position_mm": [
+              -10.24059317350309,
+              1.9492500747702444,
+              4.19279878802344
+            ]
+          },
+          {
+            "parts": [
+              "Folded vertical mouth rim",
+              "01 Connected equal-depth upper grooves"
+            ],
+            "gap_mm": -0.0014997765485674948,
+            "position_mm": [
+              -10.230003355912682,
+              1.9492500483372766,
+              4.19279878710129
+            ]
+          }
+        ]
+      }
+    },
+    "compliant_trial": {
+      "final_depth_mm": 4.745199556416981,
+      "reached_shoulder": false,
+      "worst_contact_gap_mm": -0.01541656685612958,
+      "first_contact": {
+        "depth_mm": 4.21547265007108,
+        "contacts": [
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 0"
+            ],
+            "gap_mm": -0.0009600312158764999,
+            "position_mm": [
+              -7.800098171746661,
+              0.8478795343445364,
+              -2.812451301351259
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 0"
+            ],
+            "gap_mm": -0.0009600312158764999,
+            "position_mm": [
+              -8.885189810306528,
+              0.8478795343445364,
+              -2.812451301351259
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 1"
+            ],
+            "gap_mm": -0.0009600311890007544,
+            "position_mm": [
+              -5.033428226501539,
+              0.8478795343363715,
+              -2.8124513013405856
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 1"
+            ],
+            "gap_mm": -0.0009600311890007544,
+            "position_mm": [
+              -7.0331398804013165,
+              0.8478795343363715,
+              -2.8124513013405856
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 2"
+            ],
+            "gap_mm": -0.0009600311273497662,
+            "position_mm": [
+              -2.2667633026665306,
+              0.8478795343176417,
+              -2.812451301316103
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 2"
+            ],
+            "gap_mm": -0.0009600311273497662,
+            "position_mm": [
+              -4.266469856362298,
+              0.8478795343176417,
+              -2.812451301316103
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 3"
+            ],
+            "gap_mm": -0.0009600306724659143,
+            "position_mm": [
+              0.4999018789568904,
+              0.8478795341794463,
+              -2.81245130113546
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 3"
+            ],
+            "gap_mm": -0.0009600306724659143,
+            "position_mm": [
+              -1.4998000549796968,
+              0.8478795341794463,
+              -2.81245130113546
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 4"
+            ],
+            "gap_mm": -0.0009600317385296013,
+            "position_mm": [
+              1.2668600196934394,
+              0.8478795345033204,
+              -2.812451301558814
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 4"
+            ],
+            "gap_mm": -0.0009600317385296013,
+            "position_mm": [
+              3.2665717306867768,
+              0.8478795345033204,
+              -2.812451301558814
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 5"
+            ],
+            "gap_mm": -0.0009600311690104515,
+            "position_mm": [
+              6.033236590496606,
+              0.8478795343302984,
+              -2.812451301332647
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 5"
+            ],
+            "gap_mm": -0.0009600311690104515,
+            "position_mm": [
+              4.033530212450405,
+              0.8478795343302984,
+              -2.812451301332647
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 6"
+            ],
+            "gap_mm": -0.000960030026748819,
+            "position_mm": [
+              7.885189807503766,
+              0.8478795339832749,
+              -2.812451300879034
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 6"
+            ],
+            "gap_mm": -0.000960030026748819,
+            "position_mm": [
+              6.800199936442115,
+              0.8478795339832749,
+              -2.812451300879034
+            ]
+          }
+        ]
+      },
+      "status": "rejected: soft joint limit violated; no acceptance"
+    },
+    "compliant_limited": {
+      "final_depth_mm": 4.212003515871026,
+      "reached_shoulder": false,
+      "worst_contact_gap_mm": -0.0038028314025607447,
+      "first_contact": {
+        "depth_mm": 4.21547265007108,
+        "contacts": [
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 0"
+            ],
+            "gap_mm": -0.0009600312158764999,
+            "position_mm": [
+              -7.800098171746661,
+              0.8478795343445364,
+              -2.812451301351259
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 0"
+            ],
+            "gap_mm": -0.0009600312158764999,
+            "position_mm": [
+              -8.885189810306528,
+              0.8478795343445364,
+              -2.812451301351259
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 1"
+            ],
+            "gap_mm": -0.0009600311890007544,
+            "position_mm": [
+              -5.033428226501539,
+              0.8478795343363715,
+              -2.8124513013405856
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 1"
+            ],
+            "gap_mm": -0.0009600311890007544,
+            "position_mm": [
+              -7.0331398804013165,
+              0.8478795343363715,
+              -2.8124513013405856
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 2"
+            ],
+            "gap_mm": -0.0009600311273497662,
+            "position_mm": [
+              -2.2667633026665306,
+              0.8478795343176417,
+              -2.812451301316103
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 2"
+            ],
+            "gap_mm": -0.0009600311273497662,
+            "position_mm": [
+              -4.266469856362298,
+              0.8478795343176417,
+              -2.812451301316103
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 3"
+            ],
+            "gap_mm": -0.0009600306724659143,
+            "position_mm": [
+              0.4999018789568904,
+              0.8478795341794463,
+              -2.81245130113546
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 3"
+            ],
+            "gap_mm": -0.0009600306724659143,
+            "position_mm": [
+              -1.4998000549796968,
+              0.8478795341794463,
+              -2.81245130113546
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 4"
+            ],
+            "gap_mm": -0.0009600317385296013,
+            "position_mm": [
+              1.2668600196934394,
+              0.8478795345033204,
+              -2.812451301558814
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 4"
+            ],
+            "gap_mm": -0.0009600317385296013,
+            "position_mm": [
+              3.2665717306867768,
+              0.8478795345033204,
+              -2.812451301558814
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 5"
+            ],
+            "gap_mm": -0.0009600311690104515,
+            "position_mm": [
+              6.033236590496606,
+              0.8478795343302984,
+              -2.812451301332647
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 5"
+            ],
+            "gap_mm": -0.0009600311690104515,
+            "position_mm": [
+              4.033530212450405,
+              0.8478795343302984,
+              -2.812451301332647
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 6"
+            ],
+            "gap_mm": -0.000960030026748819,
+            "position_mm": [
+              7.885189807503766,
+              0.8478795339832749,
+              -2.812451300879034
+            ]
+          },
+          {
+            "parts": [
+              "02 Lower shell and projecting lower guard",
+              "Visible folded spring finger 6"
+            ],
+            "gap_mm": -0.000960030026748819,
+            "position_mm": [
+              6.800199936442115,
+              0.8478795339832749,
+              -2.812451300879034
+            ]
+          }
+        ]
+      },
+      "status": "hypothesis failed; not adopted"
+    },
+    "repaired_mesh_rigid": {
+      "final_depth_mm": 4.211952131913552,
+      "reached_shoulder": false,
+      "worst_contact_gap_mm": -0.0044586660938699734,
+      "first_contact": {
+        "depth_mm": 4.215113627191756,
+        "contacts": [
+          {
+            "parts": [
+              "Visible folded spring finger 0",
+              "02 Lower shell and projecting lower guard"
+            ],
+            "gap_mm": -0.0009600590996631815,
+            "position_mm": [
+              -8.78154474572655,
+              0.8478795427932324,
+              -2.812451312441649
+            ]
+          },
+          {
+            "parts": [
+              "Visible folded spring finger 1",
+              "02 Lower shell and projecting lower guard"
+            ],
+            "gap_mm": -0.00096005700733603,
+            "position_mm": [
+              -7.033139920445925,
+              0.8478795421576969,
+              -2.812451311610652
+            ]
+          },
+          {
+            "parts": [
+              "Visible folded spring finger 2",
+              "02 Lower shell and projecting lower guard"
+            ],
+            "gap_mm": -0.0009600563913955532,
+            "position_mm": [
+              -4.266470215728952,
+              0.8478795419698303,
+              -2.812451311366618
+            ]
+          },
+          {
+            "parts": [
+              "Visible folded spring finger 3",
+              "02 Lower shell and projecting lower guard"
+            ],
+            "gap_mm": -0.000960059168683771,
+            "position_mm": [
+              0.4999018645587555,
+              0.8478795428143276,
+              -2.8124513124689603
+            ]
+          },
+          {
+            "parts": [
+              "Visible folded spring finger 4",
+              "02 Lower shell and projecting lower guard"
+            ],
+            "gap_mm": -0.0009600575445746192,
+            "position_mm": [
+              2.2483117086234703,
+              0.847879542321043,
+              -2.8124513118239
+            ]
+          },
+          {
+            "parts": [
+              "Visible folded spring finger 5",
+              "02 Lower shell and projecting lower guard"
+            ],
+            "gap_mm": -0.0009600591519743872,
+            "position_mm": [
+              5.0517853058121425,
+              0.8478795428090925,
+              -2.8124513124624464
+            ]
+          },
+          {
+            "parts": [
+              "Visible folded spring finger 6",
+              "02 Lower shell and projecting lower guard"
+            ],
+            "gap_mm": -0.0009600575859089283,
+            "position_mm": [
+              7.818455031841111,
+              0.8478795423337946,
+              -2.812451311840166
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "timestep_refinement": {
+    "split_rigid": {
+      "coarse_timestep_s": 0.0002,
+      "refined_timestep_s": 0.0001,
+      "final_depth_difference_mm": 2.4868995751603507e-14
+    },
+    "structural_diagnostic": {
+      "coarse_timestep_s": 0.0002,
+      "refined_timestep_s": 0.0001,
+      "final_depth_difference_mm": 2.842170943040401e-14
+    }
+  },
+  "tests": {
+    "mesh_behavior_passed": 3,
+    "control_passed": 14,
+    "optional_skipped_in_control": 12
+  },
+  "limitations": [
+    "dimensions are model estimates, not certified metrology",
+    "convex decomposition approximate; normalized threshold not absolute accuracy bound",
+    "structural diagnostic excludes 22 entrance components and is not a full insertion pass",
+    "whole-lip hinge is a failed uncalibrated hypothesis, not a compliant insertion model",
+    "isolated axial rig; no robot/grasp; friction mass drive assumptions",
+    "finite-step mesh and sampled containment checks do not certify all possible paths"
+  ],
+  "next_required": "Review entrance spring fingers and rolled seam geometry/connection; build and validate deformable contact without deleting obstruction or tunneling into floor",
+  "official_references": [
+    "https://mujoco.readthedocs.io/en/stable/computation/",
+    "https://github.com/SarahWeiii/CoACD"
+  ],
+  "artifact_sha256": {
+    "/data/omi_runtime/runs/mesh_insertability_20261121/inputs/manifest.json": "250c108b6e304b966d35032ec9e68264f014eeaa3615ca4fc8a993df77b6b599",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/topology.json": "b656bfbdea1f7ebd1dcca244dc2fa6da5db7cfa8cc550996f366a0d35baa1ec5",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/surface/surface_contacts.json": "e68efba88d3c8423e581a87af43d4f5703f05689c3ed8cb43b7d1a71bd18fc62",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/collision/volume_clearance_sections.json": "ec1fea549700d92f143f36e04aee0b7c82e93fe9394637ac01f6ffc6d1815de7",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/collision_repaired_inputs/manifest.json": "e43ad5683af26fa0b5cfc38bb527e45f05b4665a552444ab2dc7a9ed115b3279",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/collision_repaired_inputs/repair_report.json": "918beda26d2dc066c9ba98b8007b80f10b45918424b501c3e0270c8cbc9fc849",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/mesh_insertion_findings.png": "29b22b64e4713562ede5294bc584f3eb3cb2d2b348bf4af0b0123c46b5f84436",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/environment.txt": "ec65098b5065d70cd06d79ceace9a79c0d903132f607e21d037ba45203c332db",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/mesh_tests.log": "ffe220f3fb90d13b675fc75c75e0046a287955394e5353e456f59e39a7bc5d96",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/control_tests.log": "29057723a0b54463f6cca8561995d27ffda4919ff55cde729796e8512db6ea23",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/raw_hulls/dynamic_report.json": "c533902a1bac49354dced9f5bfe5d759f926750666c094de3b2d59261cb75f38",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/split_rigid/dynamic_report.json": "72de7f9c40d119af228566db93d235ff7493b3aea81e88600f161d0908a5af1c",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/structural_diagnostic/dynamic_report.json": "38a50d3a7e481b52a0b61e19e7e1008c39bb5c37ae670164bcf4a160572f4e72",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/offaxis_plus1/dynamic_report.json": "338c6477dd551406b4f555d40f5e3aff94f90a7e945b95775782a2c8e0844daa",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/offaxis_minus1/dynamic_report.json": "46c1fadbb6885cc2e358294921b54d95ef037d0726d11f8c7eb1e3349c17214b",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/compliant_trial/dynamic_report.json": "db96a05c88b1645465ebdfee499a7e008d4e19efb9fabb6425deedf55e147e5c",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/compliant_limited/dynamic_report.json": "0ea776c7a40809dfcbdd29ecc35c42fec571c976fc10e04d46424b9a3e4b1a67",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/repaired_mesh_rigid/dynamic_report.json": "83650a39f09ebfaded2ec755d3810fb8c98a2de69dc3f197ec77e1ff8298ba6d",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/split_rigid/dynamic_refined_report.json": "8dbb6fd4e848ed596324d31154e9d76a01915805ac51b13677285c55867650d6",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/structural_diagnostic/dynamic_refined_report.json": "c77b545da398e6fbbe3e3cbe04a42cd18ae73cda60e672b9941628e2180dd881",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/module_014/010.npz": "156d484fbb9b13330fb0b14f761e398359bee5afa00d1c8388afb473323f2e0e",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/module_014/005.npz": "27502ed0498eb4ee8f28b7b2057bac58846084ee3715c9bf460b15926433a7a2",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/module_014/003.npz": "dfc5ba95931500e89a6acfaaf458cf43942fb0cfd86721d5bbce5ab2957525a5",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/module_014/006.npz": "100ad7cfb5101d026d2511db1a080859e0cd5c01ba6ff5eaec111be9b26c4506",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/module_014/009.npz": "e0f56ba703dd1b4fa6601cc7f9b1ec8510b5e6423dbb62c2d6a11bbc09f3d7cf",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/module_014/002.npz": "2b6f34c9c9d176e5abddd9d139cd7c3b283412af6436f535d3b2286b8d7ddb86",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/module_014/011.npz": "7fe0651fc9cbb33cb9a8c0d399e2c2f51bfa29fa6e63146bacfe1179dd1e1a2d",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/module_014/record.json": "6f16fa2a70fd8a3b5792864dbad80c7f54540e390fb89f6c3c413c84c9543572",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/module_014/013.npz": "61dafcd68565516e351bd6c9ba6607185139cb5e30ec2fb84d077e8035dbf252",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/module_014/001.npz": "2c5b3304a42d0ee8892675e619b9f082777d5c5648f355a77e4601acfed4904c",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/module_014/008.npz": "0f87e0c743823c4ad15e459679af4129ece63c3cba1afd6451983ae55d16077a",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/module_014/012.npz": "caf960588a5a20eec51bd09e90cce0bf66d9e260c871fcfaccf97fe8f2473276",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/module_014/007.npz": "b8f8c37845239e0d0a21131ed35497c921e3e9e6172833183532c6bb976fee96",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/module_014/000.npz": "6f0614f9c81eadfdd1b6267fae8fe039bc7936f3a77088f065cf13b35f7e8d41",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/module_014/004.npz": "af07d3dc50f41332ecdb59aae0ad4bb91bf44b1467ef81c63a7fda06a6fb45a5",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/131.npz": "e911e2ec611e2fac1edc10fea64798cdac784d8212a4f076eb035c238054d212",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/132.npz": "99dd5534d0c6f8042fa72fc62645b77ea84adb4e9304d44e666347fc64c5f950",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/156.npz": "ca96dbd9d97013c7548e9338201635a7c4735076eb850d9413af29b126b42520",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/043.npz": "3925beb8ea55fe2844df8c6c1762b95b2fd910852f40e6521dd1ab8ab6872db4",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/166.npz": "89d97bb3ad5771c03994f3fe33732e1dd6ab5c5ebace42876c41e72e26cbc8a9",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/084.npz": "59fb0f8c58ce8393de7c4b5073b94e04f6d3832904881e9bc02f1912044ee2d3",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/098.npz": "db7821c4eb67f6059b3bdc4c008ee10f93a2e595ad916d84333150c5fda419c6",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/144.npz": "d97a8f688a7933b0797503b22cc5f851efb3a4c757ce157614ce5b58a29b3342",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/171.npz": "e79a843591573c705508a68e6398b564fb0e8e3fa7fda229aa7fa65d9f02b418",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/032.npz": "b629878ec2ec1eaf62deb1b43be396f2d30996ceae7d84db9dbd9596fd928d43",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/060.npz": "be8219d1a6fc0f2daaf79b2e7299132172cc675927ebc9d069e0b6d9aff271ac",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/097.npz": "94b299c4da103c30bc4264346feee5f0eaf5c1f1119c69b845895695480ffb8a",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/152.npz": "bb9aa44a197b1b8546e178defac25b7b4688331c352b674a7a9c62dc14d7c72a",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/066.npz": "a2a1b0b445d75422269d1c763364e08265410a13c33ec512754f2c9bbc04498a",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/176.npz": "e4ecb6c8b2e78e2b308b46ba326709d59ab37fdb4c69e15197e19bb6bab21381",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/010.npz": "66b51894a839c9d2725a703d11ac14f1cc17df98a98eef7f44045eb9d1c834fd",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/053.npz": "f4c8e99ed44ba3ff779b19da0ed246aa8c349c2ca68148ec90d4e3219aef4b01",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/209.npz": "019dd64befbae90dfc5499ae47138553f39e7ce110b2f37088096d8ae6759308",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/063.npz": "a9cfd2b95ac768194de4dd03d6a812ea88807dde7b9e771f466b987f3ef8b6c1",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/019.npz": "7175e43beefafe9af4f747969032213292dbcdcbca45ddfb9fda9142ec500052",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/070.npz": "62f5e41d9f55e9fbe787727c4057b46e1e102196d315e341a6ed7a90c5f421d5",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/173.npz": "811e2014c9e40464db3e7fd259d084ce322717afd74a31a3e88583d90d66747f",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/024.npz": "fe9f2fbcd938c452af5961987c9276173962c203e77e444b0391af75f72741b7",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/005.npz": "08308b80eada2b99d44c4a4866af3d45fdbd846c0608b1490933ba53de04a28b",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/064.npz": "80f11f49e97c7b9389cdc75a87e48f49436c52c98b2fb59f24f1bca8b2b49bd5",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/170.npz": "b086d79d72575c8bf4236b3e208806e7e554e87d076339da2a8dbef6f1086065",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/038.npz": "016cb10115fed27ae85e455754a1d51798b896643b3c918fddedd3f939e3e5a2",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/029.npz": "71a19bf36558003ed04cff7d40171820effe95fef0b4373604277b1c3466c20a",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/180.npz": "d17e655cbcc532b68f57707348d24a02299bcc5325f58dcbb2ba8789adce939e",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/135.npz": "ddcd5501c47645b22dc2e5e3699e62eb0cd5219de46b0bb76270636d0dd12912",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/015.npz": "e1ea422bf5b75c6d7449532dbbdf260adff028f9a1dfd3c395af3cdc84eddfa6",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/109.npz": "d3ee141c642dafac44b631e4b0d7ac3b79266fda5e0f66ad3cbee1f3bb0e4a0f",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/111.npz": "24b206f5fc3da54018b9422ee74f521f605b528de67de924deb704cc720b488f",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/157.npz": "011e090fb8024f7ae80f2a3532434cd271c74398a029b6bf563f07e7796c7dc0",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/075.npz": "3ad79e45e8194f18196879cb3c7508e78ee5b9aeda0d099c38648dd8c4835774",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/178.npz": "328e476eca3d6b515187771d9316732b1f3bfa5816bfb193434d9f6d0b6dfa3f",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/030.npz": "daf0de1944eca464f882ca3c3621fb31503b0f1d57db50967b6094819bddc8b3",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/082.npz": "584939baea2fe456491b1ee9f197a41ee9078d30901f3365f2fe6a9f6c37f55f",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/062.npz": "45b44addd9cfdafd232302df59509c4c5036b3640d765dbcad3606f421136904",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/160.npz": "54f6888559c739fd4e8900a9da5a6461ce89a4504bd2f06532c4f2fc108ad4b3",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/025.npz": "cff2bec74d5ff46ecb7b7fd5b6acaa41d9a02163e88b7ce23755b1389b6008e9",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/103.npz": "3ec91a60781c18484838eb27fa6be89e23e788685b472923a19aa178e2c4102b",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/207.npz": "6e01f175d54e1609562f7eeeb0d067430554fbc13e49ebe814925568a29ece71",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/017.npz": "64cb1a9ffef75ebc704351413c58e17fbc85d499678477d340094f097df8c57a",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/085.npz": "2eb12acde9e8eaf5984bd9a8d721a232ff1633c9fb18bb9956ba032f2ff21fd8",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/187.npz": "de9577a39a805b9c46d8aef7d9928bd80fffaaf3c2e0303bb841041e4b189c68",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/107.npz": "9815bc1dc7d98e34712fa2ab39c4b26e89b7a99eb84f46a67a3f361084a0ab8c",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/099.npz": "ba0e527de6759c1789cad6581dfe6bc335aab93444493ec346c352f45a0d44c8",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/182.npz": "56bbc2c1eb0dc1108469a0073998b6dd054ad764a10cc2ea4675b09999cfcd86",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/200.npz": "fd43b171719ab96e605e01cc1ccdf018be48483dfc7f2f38c1068535ee0c2546",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/104.npz": "2fb18dc95fcd2bd9824425ab282fbf8e9a0713871bb8e72a48e6a7706c79fe58",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/102.npz": "220d62a4d71816e2791161a739a61ced6875057d8c17cb4596c082293ce2db88",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/059.npz": "ee9f5e2cb6e8c4b36c7b575f26e1cb6c2fb43d7cd3f6e838db7e4c3283664547",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/159.npz": "0cfb7173138465da081b04edfbf8a4723f73a22a5be2129bc9b2e5016b2c4706",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/003.npz": "c1ff95c1ac62837afeba5565446e29f309fccdd577ef2fe63552e24ebfbc004f",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/039.npz": "0c21edc08746c0e46aa152a241451e1aaebcaf69fb7bae1888723ce5b7ec40b8",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/046.npz": "f5e4edbeb16aead709d5296e93c23752eeccb6ccbc44f838bcf16d34ba25d86c",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/100.npz": "5c6ef5a91910c67fe15c465cbaacb29c2cb211cfe991e3d5a991d9bf3e8622d3",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/161.npz": "bbf10e1246ec03d203df85341d1595639d378bc2252975b2280a21f634106d74",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/196.npz": "d20a9fefd0c06a243381005ab1b516898b467e17a145215971ef6c1467b4576f",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/006.npz": "fbbff8d57a570b1aed87066e243906ee40b6855c72d9eadc676a9cf18f1a97e4",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/140.npz": "a5cfd27ee9124f1ea34fb3d495dff758a216d3fdfa66c532d9ef294ffde2c548",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/134.npz": "399b19453223981232cd44204facc84ac1139d3193c554b60e8820fd9bddabda",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/118.npz": "a01cc4b752d8114345036bfe2f5979b55b7cc47103ba89673f74e2505fc80ea8",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/061.npz": "c23fe4b23a1efd05d1de62eca658153f1dcd77b7a6114e470e1775b5fb17f372",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/110.npz": "4c323fdf81f39883ea17d6a133986e327e680b5757a4d0809efcf28d1ba48527",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/018.npz": "ad7c0808d828323ce35d3bf2cc304b5b0652b4cf2cb2faa3223eb8bbd71806ab",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/009.npz": "2f9215a76eacc702edd4651ec82323016f0bb68d6576a365b18e8f86726da9f0",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/184.npz": "65c3ac1de3c0b74ef6a9bd718baf754b1d58f579fa007f1e6873c5bd98f706ed",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/121.npz": "e8b8f08c8cd6a06712ac6fb248c62476ec95b87544b9cc5e7421b5a89c1d1d16",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/204.npz": "48798d6ce5dba307ac55589f3d782da78e6925a7ae361d78b2fca895a584d246",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/067.npz": "c833767289b06ddda451c552a18739eeb6b827726981bbf45ce12f126aa07070",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/205.npz": "7435990282243464f5f152623ec429cfebfc3df1f697bb8b5c212611f6cebd2f",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/002.npz": "1139382b8d77e329f01117ab59d3af30913938a189dedc923e0aec76c7d115ef",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/011.npz": "f9916ba5ef2856943672d1977e1b51d16f829382d0f668c78c9bdd82c3b94cc8",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/183.npz": "8813d0615f50ef8294e4b8b83ff8c8d4360605e2f48ad2d7a9cff3c25172b795",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/089.npz": "75dee14509797458b7a14f43ff70c1ec021d4c7e5fa9b325616c8d5c8f9d0ef8",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/133.npz": "e60273e78e0be5e5a392aba656126de388bd7e9bd44fe5d577b0d45410b062a0",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/123.npz": "abf9d39b1bea2a7ea9892df2867b1befe6cae217760db90cca5a83b5f843adf2",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/149.npz": "7400a9d68553e4cb3ea55ba38d6b255a33caf0829d65fd6eb68f2c6d7408de91",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/026.npz": "f742683b5b810e68a06ead5892ad3ea24ee9ee6df2f2a57b7b3157c61c20f376",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/179.npz": "c4a8ba6fa560cf312460404ca54ec9ceec5716e8d81335f38b78f935e1398505",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/219.npz": "71982ac99c61bcb1c43377b83a9f4c4757c13eea9caebfbb91f9b8ce5a43464a",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/117.npz": "9d8c017b2a648de73fb2a4a552447e4597b4cd2c680bf907454cecb502d10df5",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/record.json": "843bca2007b09aa01005afefa1f0f8bef930ea81e6aa8ce153092bf29e58dcd5",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/192.npz": "2ff8e2cc9bd8cb618436716359aed2ba05ce01c241a293daad728992e1c03b6c",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/164.npz": "ace95d5e89cf7c49ebc1bce089fa7a3ab7339e703794565269aefb79a9bade20",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/153.npz": "9e7580b7d8e47995951c03524ce2e08d44a7219ff55cce07a03b5695a1c3c410",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/125.npz": "af11bb51ba0e462607b0788cee9396028942144a3ebc8a458a97ae63bfd4f598",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/013.npz": "e7190c21fa0db4e2c5ae9c2f8b6c2fa83f8d1d0f60470bcd4016a7f8d6815232",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/148.npz": "c3d5371eccdd22c49b59da61bf8a7599cef8f8604cb08d1fcfea041387621697",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/113.npz": "dd4615a6f973d38f8e73404b282ee8bc6455650542086137f44673ccfc06a9e7",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/142.npz": "7d1c9dde9e761ad9fe4fe44477703a85bfaa6412c76993baf26a38f4a26225fc",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/114.npz": "abf84055dd9632343370105adff44c818c5f49e984b4e0807e5deea4dc03d641",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/217.npz": "4ef4723f79d71b3968625e03fdc0c8fee1cb28b3fe49f864327a0c2c8b5c52bc",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/014.npz": "4e7518c54254a26f67f4a54e7710fb72d383490d0f68bcc79721e3354c67f751",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/189.npz": "056c620b0fbca75d2d9871e6e9331d2b508a21efd0112e6a6278c5e58a2a48ed",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/001.npz": "ea3a3f0700da9ee81f643f82e324864bebe2dd748cb84cb0767cd43937630e10",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/092.npz": "8bdb43be5e8ab73a071035c4396d268db17fde3fb5843a7c0bb45cb24af0f472",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/042.npz": "117a441e4b9918355958b43c72796334ccd710dbc62030357f5ba456afbe6e12",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/023.npz": "d1d1c2388880c941d596c776212c0b3e10ed1709c31e168fee56d129a9ab157a",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/087.npz": "3a72f83f57f40918958bc4f11aca3a5c8165bc9cbba129ef6aac37fad844a201",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/141.npz": "226cb5e5ad259ba008471cdb5daa8e654ee84e1c3d1ba549ce0bc4c93e00fde6",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/128.npz": "9d22428a06bca65ff382742be90ecd9d8ddebc309eb1cf5f1e4e064975ebd52e",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/151.npz": "bee3dc3c3b6ec271e47b3c7fd0c92fdd9ef054e5cf41f91e28652dc1484e168e",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/195.npz": "16ca5b58264433f4e9d5e97e091a191861859296a02f0e8d94cb49f564575acc",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/150.npz": "966f9ae3481724ac052a16725b0cfe67b387165ec529d68fdfa20933c7322ad4",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/169.npz": "d784477f058cf3bf8b2004a4bd6278d53f04831e1ff0aeb4ffe5d93798ff8715",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/137.npz": "52ed777804dd75a8d01cb5c7de5f23f83f4e79db9d12d46764c275581cf541c7",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/167.npz": "b35aec19cb3af65132d5bb855d39d51475b0dc2ea9e065d16b4ab23f844cd6ab",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/185.npz": "247fda20312efecc621f08a0f4d0032d4142fa3dd0b893d012ab2de9d636126e",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/091.npz": "2a5671df65f78fdad73b61d0d4e31bf0083b1e7fdacd317a5a807d5d9e618957",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/031.npz": "e0d6399606c95716cd219bbb46fec7db55f08660195db621b5d35d3eb6658bd7",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/120.npz": "4e0eda3c4f5f9abaa67358569372962658df5af359c90d96bb0851f9316d83a9",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/055.npz": "bc67d4eb3a7b13f8094d5411abe776592777b9c6dca4d2177311b027c67813f1",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/212.npz": "cafbab5673570e18386a7a2f5b98326faf25afad90330e2127ae4d85b8c67f83",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/211.npz": "9905798cd66bf0aa46adf120fad275ed2d678297eddaebcc54799b331b4e2ea6",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/081.npz": "b56f1ff9a214ca139bd61e1b372a1ffc7245c921c17e0ab044896b0b4a2ac340",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/095.npz": "bdd409279c45cc36fe6fedea43129b2e4f970129732a9c3b9301ad1225779d59",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/036.npz": "d513e432c1628cab765f07f331e156f1b0320c7be66485b87f5baf0823b0f154",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/008.npz": "4c186e281f4457e37852e7398f5581bb1231bb210da7d307046b10cb0ae95ede",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/115.npz": "5bf5f2f0a383a57da229dfba0429e369df9b2b1b2beb9b9e6efd8ced72c38cb3",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/016.npz": "15ce3def40b8e82b0b92fe92c2a99575efd50aa8b08045d8cffc692580eccae6",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/078.npz": "92697fe040df05378ee3bc55f05d3a43c0812df50c5add5af88788ab7729d5f6",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/088.npz": "bbe5890f480adf35d40ba4fdd19fe7dc41c36a6e7cc56a0fe364e2b5f424e0fe",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/168.npz": "418ca351eacb1390b4848914a90a18337bac8a7d13fec34da6437d82680f54c8",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/155.npz": "07b84621eddc0d13c8ccbcbbfc615337eb64d8aef8e43605ca764260a6f62370",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/076.npz": "a6507dc2105417bcc6731b12b442163b4f6816398b6085ff447a1fbf88fa0451",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/190.npz": "2ae89531b823f7b8185386763f8ac27a10366d2f558aeead6ec79f42c01fe58c",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/116.npz": "790d7725a7ece648daae4588247a42f15dd1a82ff4172e0e10b2e7ed2a9a7ab8",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/139.npz": "661ef21632c2ed9ec9ad405629fbfaf17a8b1e3dcfbc9abfdf346f241dfb93f6",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/126.npz": "7af18a60c38599a2f76c393c905fc946743114e22efd7b5465ad9c9ef2320c72",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/105.npz": "c0c7cb2d0c97a08cb748e990e5f6e68b1cd9ccc2faf6f22cc639570aa3f5e40d",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/206.npz": "cc12ec4051615ae461a119e1f2d4069b573206419a9ce2264368b42819cee697",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/119.npz": "b1c0f61fa74534d016b24ba0d133960727a80c2082871c7b7591fb09025392e5",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/220.npz": "b43a20489754856662abf55ab0152194249c6162a17866d5310d86b478ce6b25",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/202.npz": "b1cc08957875d84c80a44da79174ff6323e361b269c6163e58a72023fc0e368b",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/213.npz": "c162cd436a6de22241a8ab64be4f9ffc5262aaa97f21b3c12d981253c2f65c68",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/193.npz": "949cd3e6fa869db061cfc5e9b5e5fa660784e9b56e4e5f26db269b725356682f",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/086.npz": "a3fd2851949127f0ee0812f367d4cb25d4f6b9149b4e0b4e3c9ff7f9b12b4b21",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/143.npz": "fc87e7f1dac2a9eb6da895f0edf5cb4e7707306f72721a8d3b5a8dd48cd0aaf6",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/028.npz": "11ab72345403c450a54f98d9bfe61be02b91645a1c8a2fc4bee9f406069f101c",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/077.npz": "2ede8eaab098b40ed3e0bb3498fdb9d0b12687d7c1cf6d3840dbeb8375203a59",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/094.npz": "38be20cb4ba856159d623bd8ffd84a14c87aea4e101cd2ee74ce89787c888adf",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/188.npz": "f8c5c95b61a13ef55355a7f58c1f70344754570e11b9af8abea88bda50e3aa53",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/040.npz": "d4e6bda711a878d7c11e918b9a5ef217bbd55a848900ea70541a16fc6ea1b658",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/201.npz": "177bed1a64c69bba356f4a05f0c77ed70c5c164baad9f04def059f1bfcc04b3f",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/108.npz": "1212cf3ab6edf7eb4e581d3c04198396394f703ba9a9f608f8480712b083118b",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/083.npz": "092763b1862c6171b4d0a0ac4f440dc647cd7b3e89dc219d7cb7a474fdc0b33c",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/154.npz": "8bf0be0e0fd202d8ff3083c5c7dbfcfe89eaa268f08204291b998b1fcf947eb4",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/208.npz": "2f0ab12a12b7b8afb79110c6599094e320c2c9157cd8692d02083f13eb4f135c",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/146.npz": "eb05b1eea7cef5ace5a24e72967184f8cbbbd21510012d26d3dab6efb46c088f",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/165.npz": "7d725b062fd7ec977babd94dc0b3def19fc4ba71512e3bb3d9eb5008afcd7659",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/090.npz": "6bd9fff8058ee08b9743953201b2be70d93f64c0f809158caf794402eb488cc6",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/057.npz": "443639916faced5de9d6fa79cf679c6095cbee76cd62cbf6bb55178d9c00045f",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/096.npz": "91a18c75120886dc6ca41752a28288b4d121598f5e757b79872ccdb41223335b",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/175.npz": "08a8adc2c51a157cfd2edfcaed182ea67f9ccad584f9e25dabf40761b7d9e296",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/012.npz": "ae820d9e7593501c0fe962da391ae3cff7d22ac2e5cc7b2b99980f300647646b",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/191.npz": "fca5539f1df7bdca17fd65cfaf4a5ec8b7eea88dc6824d36557e786d5ff75247",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/214.npz": "6ce2a9134dee4837ea30aff722408e96f364fdb44a041a82e8431bd4854cd286",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/045.npz": "69cbf6111fff12d5f0cc3b84c2707bec71cca74bfee6b3e74a92a455e72f8cc6",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/079.npz": "b2a7a83ad4dacc2fd3117bccda11968b400c9f9bb941934f9db9c70c961e8621",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/194.npz": "ee4c21dd31f78fb77f9fa38cf89d252c24036b096f0daf8ad52711de2cdecb2b",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/033.npz": "d74a1934be2f53f475b828034274c12fc22430df656a3f79a1c1ab5052ebda2e",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/072.npz": "1a293313822c8f5b456d6ae0e27f59fbd4528e1dd37f584502e563bb7d8141fa",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/051.npz": "0e1b41cae72ce76cb06c580d4815f0addba2f4a6182d9aeb5e48e884241e95c9",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/158.npz": "7f28f6934086ad095b84a52509e9e8b6a38af31146f94d82e8df486a366ca4fe",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/020.npz": "c43f722d8db366087f7595e0379585ce1482a27060236c776a212853b52dca29",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/054.npz": "79d5e7c97ea063d9b8a8cb1bb8c08bd55adb17caa16a5903ae9f9072e3197382",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/065.npz": "3104805594dd08b96103ba7c4127a4be26b1d8f0dd32f90e99ed28313cb2ce4c",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/073.npz": "1370568cfc182ef7671579a01d441c748b9a17121a95da6f40d7bcd475ecaaa6",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/007.npz": "228663562d232f738a1ea48f512f8d1c245b19b36778cbed388564deaf4d242a",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/210.npz": "1c56312bd87f71c808cfc8b1636090b22ee400f6c0e3afb1be3540748bf764f2",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/122.npz": "b3708e4e45830ddbc6e630b4eb922cf2bb7163e606f3328f00263d8e034135a3",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/000.npz": "852c1fb61f32948ded4668e0269b6335f79254231c93caf58c8ceda00882f0c4",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/177.npz": "16ab5b24ae0400103a7081efa6974ae8096a4df9b5c6bebbafae37ea0c3d1752",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/218.npz": "d2995b79afd9ce619125a177ec74f6ce6187c23f0a915a56c8c74cedd6479e56",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/069.npz": "bc62096172495ea556910abe042494c216fcc05425c9f7ae367404c90deecc52",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/203.npz": "4d4d46f75a881c7a0d6244c7e863e12e3621284de0d8bacea26cd504994affd6",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/058.npz": "5b160559b7e0f27ebf4828d7cc27ce5753300b7b1b299c55a36e3779a4b44329",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/052.npz": "6ca1181b642829e88e3e7884175338824c7c48e203b9fbaf840b4da8b3d4ddf2",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/049.npz": "b21ddfc4fe573a300962ba713a98a4e296b118f6b87921fb861b3043b2da2e31",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/198.npz": "acfd4a9bf83c4dbc188d4c628a84fbae4555b5a6fa7cbdad2b51d08c287544b4",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/147.npz": "6d2a964b9cb18d124e3ba593ada5056eb6f93be6fca9fb401d434212c9f3b307",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/074.npz": "ab2ba26bd7f785e0f4cd6aa14195b26c34df32625d5edaa1b113194fa9dab786",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/050.npz": "492523ae34fdf8e8588ad3f1aaef3f3a77f5def6708cfcd2fb2f924aaeb9cda2",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/199.npz": "01e9063b026b68d53405b6eee49d0494d19e79cf4a64a22d5931d5a84ae6fb32",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/035.npz": "42e2507be3154ac49032c1fc48eff9e2a5d30f11b585bd483716d959915cca88",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/216.npz": "fea40faf64c614f29d029c169b72b21d7c356328892563e654bca27b3ac7a597",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/172.npz": "38c7dfcbd7478a00c4b271e8701a6e18cc668eacb20ccb390869d0abf23fdf68",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/048.npz": "a01d1b63c1a921ca7425e2903f8c65e455d3d7af5b75fcbcbd3474fc4da36467",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/129.npz": "4407a466f926864e76babdcb2a800de5886c0238a10b6e03784284e43fd5d7f8",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/022.npz": "7f17fea664cf6043287372f07e343bf81e9ef67a0b31e08d4b04d8fedd4de2e5",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/004.npz": "0f02f27cb4e3ed0ccfbe9e1d9a089f366ae702c3e841f565221583dcc0c57b29",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/130.npz": "20e12188d99ace960db551dfb6d2ead71414b3936577bfdb6b73a077a7c03ab2",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/021.npz": "22c22546503e318feb7499c933c9bdbc2591d2f65067f966abe49bcf6cf53871",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/136.npz": "2e88d5dff647ac5fc007858728073bd8e8d36ee0e41f6e6852ab4f6eb5d5faee",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/041.npz": "d4c95111c831fadf23c42c91a3997cc3fb26d1e6ac9acfcdfde482a66345a3c0",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/174.npz": "cd3896c1579c13031ead60c2968df9e3941f8825028a6fb33f17b83e99eab5e4",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/047.npz": "62c52732e2b9bcb0f9bebb1a9f1938682463074a01455f4002ecc852a17a144b",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/080.npz": "8551c1b9b929f58ef75226c127302c4c75455c456c99667354af54600cb204dd",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/037.npz": "ae25518f09bcfc1781c8c880c4e55befc553fed80bbd9354b73d668270e24aaf",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/112.npz": "a1aaa909b576cb7671c0a5dfe144d0b3fb7072e812b9f06043dbd31386d5155f",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/162.npz": "a32f61944113afe725772fa1e3b37b11417c5527bd34ed3c219fa8d59f67633c",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/181.npz": "dc0338891af5bdd14af97257b83147c82108476f0717f1e1e6b0c6cf9b406b66",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/124.npz": "ff05b2ae40a5b53c8a057f16e0c63604447ceb116ada634de06a54ffa8d6be90",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/093.npz": "2b99880e15d607fc59cc7c053f2c5ec9aa45f60ec5d5766ddf60010f6ae72586",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/197.npz": "d15cd2836dfc7ac4ded98d2727eeb6f83fcdbc5ce4de37fd3df9b1781d318bfd",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/056.npz": "7fae1b22fea0e699bdea5d6b2972c331f2eaf5a6d05c675ed23dc94e3cde36bd",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/027.npz": "98f78708d31632bd802c393c284fedc3de4c288a74b894394b8ef782542ed779",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/071.npz": "fd1be43ee9b8c6d625a2d0e11db483baee71de2a26ed104411091d35695e067b",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/163.npz": "2145c09dca631f3da8ac3b82eaaca018e9f76e4ce8443f43d0e7eeef99e28aae",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/034.npz": "e4dc92f3a3b90d004c5eb5cb5f552f0ece2c151acc9ae98757f8761e3254d217",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/215.npz": "5d8dbbd112bf7a2bc46669e61dde06f3bca5833fdfc493cbaf2cfd20ffe7e6e2",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/186.npz": "b551ea9347be438311545385ee2318ee70891a08f046d7d722979542cc0bfb1a",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/044.npz": "a4e454bfd5568c4eb9c71dd00dd5b1a2baf924d29b52e47a62ba179b8410c7a9",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/145.npz": "9fe218864ac34ae3a9d5d720259c4111fdd103ec75d9f8033a95231cf4f80f21",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/106.npz": "10cdd03cec69a406bef605eb76cb1d52463c9f8d8d76a960eff4d70bd618b685",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/138.npz": "ccabc802d162ca94c57b7e45b97209ff4c19c6ae642fb87f94cd3f4d357ac9ef",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/068.npz": "71d85efae4b7a9b456d7944e78d3d69e2ce7c3aee5edfa8517ac3b80d54657b9",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/127.npz": "2d49632cbceca21cde28a42c971bfbb105152f976312086ffb8cb7b7a537eb82",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_033/101.npz": "516c81285dd587c964cd9e7d4df545ead89deb48ce23626098bc26e18b180189",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_120/002.npz": "4255772f19f432756c832b4f169b66c62e8b69b9e04549106d078f837b4f0127",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_120/record.json": "85bf98f6d54394cc2a4ed1dbb16f54b5409ecd331cd4b0ba50b48f25a8508019",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_120/001.npz": "8010cb779d08b83410c77fc7f250601bb3a8d73a360f2cf5e4c038b7aef5caab",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/decomposition_normalized/socket_120/000.npz": "7f29c173d4eba3cc842e206b3e9850f0db640b99c0a3996abf445c0de8a1f714",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/source_snapshot/tests/test_mesh_audit.py": "a74585619ed5c1dd7c6f547767cde4a90400e3111d2884596c28e356b9be6fe8",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/source_snapshot/src/omi_shapeforge/sim/mesh_audit.py": "5a1412f2ffe68c41cb623645d9b39ae3edbf527b1909f29a3a836ce454f33809",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/source_snapshot/src/omi_shapeforge/sim/prepare_collision_parts.py": "6d41186964274e7d480da80a16c0fb42045022578d013d4a180daea2bcd8c330",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/source_snapshot/src/omi_shapeforge/sim/mesh_contact_probe.py": "5bf8ceb12e991b3350cce9e4829ea65d084f58db9fe5152514afd7554daf41b4",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/source_snapshot/src/omi_shapeforge/sim/repair_collision_export.py": "f6c6a69db53dc1940c8fcfbbd4a3bae343687cd64c4618ada66b58e36db15974",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/source_snapshot/scripts/simulation/audit_v3_insertion.py": "9067390d9c6b66c1bca18571201f0beabaeea0e0a6635ccbd8ea35f610bfae40",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/source_snapshot/scripts/simulation/export_insertion_inputs.py": "3a20b596bd851305fefb58741e36a1ba10e719729b08ac645b9a3aed0df0c789",
+    "/data/omi_runtime/runs/mesh_insertability_20261121/repaired_topology.json": "dae2db1078d4ed1e6c4dd56b33fed8fba70e25f83ae5022feb3ee872a71a0264"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "asset_id": "WG-DAIMON-LOGO-r15",
+  "display_name": "WG-r15 · DAIMON表面标志版",
+  "parent_asset": "WG-DAIMON-PHOTO-r14",
+  "asset_directory": "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15",
+  "asset_manifest": "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/asset_manifest.json",
+  "asset_manifest_sha256": "c9b243954c7d9bcb511e91534793eaac206fcc3b4405d40580b0082e2eee070f",
+  "delivery_manifest": "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/delivery_manifest.json",
+  "delivery_manifest_sha256": "d3f9a9e74045c1ef7365c1d33991c99c50f992b6bbefd33f876e678b799bcc01",
+  "comparison": "/data/omi_runtime/runs/wrist_logo_20261122/logo_comparison.png",
+  "run": "/data/omi_runtime/runs/wrist_logo_20261122",
+  "geometry_unchanged_parts": 49,
+  "unchanged_obj_files": 47,
+  "appearance_changed_parts": 2,
+  "mujoco_preview": "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/preview_scene.xml",
+  "fixed_handoff_bundle_replaced": false
+}

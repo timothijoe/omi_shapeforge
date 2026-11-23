@@ -1,0 +1,348 @@
+{
+  "experiment": "sim-wrist-surface-learning-r01",
+  "recorded_utc": "2026-11-22T14:35:31.177568+00:00",
+  "run": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01",
+  "url": "http://127.0.0.1:8892",
+  "engine": "MuJoCo kinematic rendering with full robot and fisheye projection",
+  "data": {
+    "frames": 3072,
+    "clips": 256,
+    "split_frames": {
+      "train": 2304,
+      "val": 384,
+      "test": 384
+    },
+    "split_clips": {
+      "train": 192,
+      "val": 32,
+      "test": 32
+    },
+    "elapsed_s": 589.5219216346741,
+    "source_assets_verified_unchanged": 156,
+    "geometry_label_validation_pending": true,
+    "not_physical_grasp_validation": true
+  },
+  "label_audit": {
+    "accepted_for_sim_supervision": true,
+    "physical_pose_accuracy_validated": false,
+    "records_sha256": "8ed3265e7c9b1bd1dce067ebcc62753a31a5d5c5edeee4bb0a9d484a4403bfbe",
+    "frames_verified": 3072,
+    "episodes": 256,
+    "all_rgb_hashes_and_resolutions_verified": true,
+    "split_by_complete_grasp_configuration": true,
+    "identical_images_across_splits": false,
+    "rigid_matrix_max_error": 4.3298697960381105e-15,
+    "independent_fk_samples": 9,
+    "independent_fk_max_matrix_difference": 0.0,
+    "rendered_mesh_parts_checked": 129,
+    "rendered_vs_authored_vertex_max_error_m": 1.082834473188449e-08,
+    "module_r05_vs_rendered_r08_geometry_audit": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/module_template_render_geometry_audit.json",
+    "grasp_parameter_min": [
+      -0.49101563052013575,
+      -3.971796570112028,
+      -0.9981707739242518,
+      -3.9750206524207483,
+      -1.4955843839007161,
+      -1.4919187227292623
+    ],
+    "grasp_parameter_max": [
+      0.49875992401950164,
+      3.996883582014367,
+      0.9989554263983913,
+      3.9957892715610193,
+      1.489181566734438,
+      1.4726602273765406
+    ],
+    "arm_joint_total_range_rad": [
+      0.17435567240212857,
+      0.1400538288794031,
+      0.13659277826064414,
+      0.20837130873270104,
+      0.3427043643551302,
+      0.2496582427695565,
+      0.3420931204885743
+    ],
+    "label_semantics": "Exact known scene transforms under kinematic rendering; no real-world calibration or physical grasp acceptance"
+  },
+  "training": {
+    "status": "trained_and_heldout_simulation_evaluated",
+    "selected_epoch": 19,
+    "optimizer_updates_total": 3600,
+    "selected_checkpoint_updates": 2736,
+    "checkpoint_selection": "validation only",
+    "test_metrics": {
+      "network": {
+        "module": {
+          "translation_mm": {
+            "mean": 1.1641582972208242,
+            "median": 0.9934878760665777,
+            "p90": 2.404779240060236
+          },
+          "rotation_deg": {
+            "mean": 1.0451870329569655,
+            "median": 0.953866599120285,
+            "p90": 1.7634547709923447
+          }
+        },
+        "socket": {
+          "translation_mm": {
+            "mean": 1.3724048253100574,
+            "median": 1.0784534525637954,
+            "p90": 2.770911170286105
+          },
+          "rotation_deg": {
+            "mean": 0.2663710086078494,
+            "median": 0.23938032481319582,
+            "p90": 0.4578606796094857
+          }
+        },
+        "relative_tip_error_mm": {
+          "mean": 1.9216436512572137,
+          "median": 1.661740900186865,
+          "p90": 3.3972352787382536
+        },
+        "relative_tip_axis_mae_mm": [
+          0.5049519327360893,
+          1.4807120339280182,
+          0.7350990889553195
+        ]
+      },
+      "constant_train_mean": {
+        "module": {
+          "translation_mm": {
+            "mean": 2.3310290573093533,
+            "median": 2.2312413123829193,
+            "p90": 3.8866414550433603
+          },
+          "rotation_deg": {
+            "mean": 2.1437709193367347,
+            "median": 2.0847310290584224,
+            "p90": 3.2831270425734975
+          }
+        },
+        "socket": {
+          "translation_mm": {
+            "mean": 22.759182966251924,
+            "median": 22.354319209338602,
+            "p90": 33.30364167326943
+          },
+          "rotation_deg": {
+            "mean": 3.159704798781487,
+            "median": 2.953128354551671,
+            "p90": 4.737938458237898
+          }
+        },
+        "relative_tip_error_mm": {
+          "mean": 21.423247047634863,
+          "median": 21.482803737141772,
+          "p90": 31.42623350100583
+        },
+        "relative_tip_axis_mae_mm": [
+          11.622435415714529,
+          11.80955889750012,
+          9.27319164151121
+        ]
+      },
+      "frames": 384
+    },
+    "training_seconds": 369.48226046562195,
+    "training_performed": true,
+    "real_image_accuracy_validated": false,
+    "visibility_head_trained": false,
+    "output_counts": {
+      "module": 22528,
+      "socket": 43008
+    },
+    "parameters": 12426396,
+    "checkpoint_sha256": "82f16ca0c0fde8f30250c1d29d3e2aea499d780d99ec0a101d5d91a1b52725f0"
+  },
+  "full_forward_image_only_verified": true,
+  "negative_control_relative_tip_mean_mm": 29.462985903816193,
+  "tests": {
+    "new_learning_tests": 4,
+    "network_geometry_regression": 4,
+    "control_passed": 14,
+    "control_skipped": 29,
+    "browser_checks": 7,
+    "browser_errors": []
+  },
+  "source_snapshot": [
+    {
+      "source": "scripts/perception/generate_sim_wrist_dataset.py",
+      "snapshot": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/source_snapshot/scripts/perception/generate_sim_wrist_dataset.py",
+      "sha256": "3340c796050287b96e2418b03ecdfc59572a45cc42dd56ff4541dc707550a6d6"
+    },
+    {
+      "source": "scripts/perception/audit_sim_wrist_dataset.py",
+      "snapshot": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/source_snapshot/scripts/perception/audit_sim_wrist_dataset.py",
+      "sha256": "7ecc6324b8125478de41693d578c32a96645120cec9036736bb0eb49e2f488d8"
+    },
+    {
+      "source": "scripts/perception/train_sim_wrist_surface.py",
+      "snapshot": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/source_snapshot/scripts/perception/train_sim_wrist_surface.py",
+      "sha256": "06f6cd5a096b1a1fde73669a8a7e72e66de326af9c706aa26c40d8ea912566c6"
+    },
+    {
+      "source": "scripts/perception/image_to_surface_network.py",
+      "snapshot": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/source_snapshot/scripts/perception/image_to_surface_network.py",
+      "sha256": "2990dc124f9445541272fe4dffffb56d145574b63c29ad62b0c51980db901fc3"
+    },
+    {
+      "source": "scripts/perception/render_sim_surface_results.py",
+      "snapshot": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/source_snapshot/scripts/perception/render_sim_surface_results.py",
+      "sha256": "eb3d9ef179c966c37449160c92affb88601bb6df5763c0473ee888b19193c96c"
+    },
+    {
+      "source": "scripts/perception/sim_surface_results.html",
+      "snapshot": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/source_snapshot/scripts/perception/sim_surface_results.html",
+      "sha256": "e18f0a64ac9ef10ef0934777d0ff117a6d74337e21568d89c73ea6ad12675825"
+    },
+    {
+      "source": "scripts/perception/verify_trained_sim_surface.py",
+      "snapshot": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/source_snapshot/scripts/perception/verify_trained_sim_surface.py",
+      "sha256": "30c631e4f1eed4c369580b124cf8f35a762ec3d308770a010df49a3c5cd27a8c"
+    },
+    {
+      "source": "scripts/perception/infer_trained_surface.py",
+      "snapshot": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/source_snapshot/scripts/perception/infer_trained_surface.py",
+      "sha256": "ff5925fa2303280014b8c3031db0a275f7f42239d8253b8789b74d94d3fa1a2d"
+    },
+    {
+      "source": "scripts/perception/test_sim_wrist_learning.py",
+      "snapshot": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/source_snapshot/scripts/perception/test_sim_wrist_learning.py",
+      "sha256": "d558abda6f626420f0b91dc57ccf90c044855f0aef7143ee351cac252a022bf7"
+    },
+    {
+      "source": "scripts/perception/build_surface_representation.py",
+      "snapshot": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/source_snapshot/scripts/perception/build_surface_representation.py",
+      "sha256": "1eb6a110f1a40c62e782ef53dce1d1663daa2bf9a0a6c245b836d773b4e6e655"
+    },
+    {
+      "source": "src/omi_shapeforge/sim/wrist_fisheye.py",
+      "snapshot": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/source_snapshot/src/omi_shapeforge/sim/wrist_fisheye.py",
+      "sha256": "8f25df888d79198fc50d140c4aac5ec17a7c2a8758ed2891cc7c03e41f842b6e"
+    },
+    {
+      "source": "docs/agent/perception/evolution/sim-wrist-surface-learning.md",
+      "snapshot": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/source_snapshot/docs/agent/perception/evolution/sim-wrist-surface-learning.md",
+      "sha256": "a097a065adfddba58a196d7586d4ba11d1385d15625a04f71be9b78335258489"
+    },
+    {
+      "source": "docs/agent/perception/chronicles/2026-11-22-sim-wrist-surface-learning.md",
+      "snapshot": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/source_snapshot/docs/agent/perception/chronicles/2026-11-22-sim-wrist-surface-learning.md",
+      "sha256": "a1512d8d2f92dbd8605f32824c6e25721cc7a1bf8da6cf52e1ebfc3909adcb80"
+    },
+    {
+      "source": "tutorials/sim_wrist_surface_learning.md",
+      "snapshot": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/source_snapshot/tutorials/sim_wrist_surface_learning.md",
+      "sha256": "eb1a1280ebda24b792dbb44820d5cb4e4b5714bd46d38d92758778b1ea23e459"
+    }
+  ],
+  "artifacts": {
+    "data/config.json": {
+      "path": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/data/config.json",
+      "sha256": "480f5df3280c3ed80770688b2fce481c19693b686db36b6ef87735d260db6b34",
+      "bytes": 2090
+    },
+    "data/calibration.json": {
+      "path": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/data/calibration.json",
+      "sha256": "d30cac245b555eb623e9612e0cc2c8b87c3d5e9cd6825f7b6b3ba0766691cedc",
+      "bytes": 1087
+    },
+    "data/records.jsonl": {
+      "path": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/data/records.jsonl",
+      "sha256": "8ed3265e7c9b1bd1dce067ebcc62753a31a5d5c5edeee4bb0a9d484a4403bfbe",
+      "bytes": 6574964
+    },
+    "data/episodes.json": {
+      "path": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/data/episodes.json",
+      "sha256": "a9bc94a0ddcbb3b713e181776301d6cf34c18ebbd056cd0d61e6babf250e1780",
+      "bytes": 372336
+    },
+    "data/label_audit.json": {
+      "path": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/data/label_audit.json",
+      "sha256": "9c24c4143aa9d4746a6250bb76e029c7b2b58152ea54d60fd5461405c064f915",
+      "bytes": 1445
+    },
+    "train/config.json": {
+      "path": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/train/config.json",
+      "sha256": "b153840e5371160e6824a655abf221ebb15ed7bdf515b5e9bb5b2bf51eeb0d3f",
+      "bytes": 4381
+    },
+    "train/report.json": {
+      "path": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/train/report.json",
+      "sha256": "aff6dcf49b388db40f5c5eae4bc35c7e1a41835ea6d78d85fa8cf35afc7589e9",
+      "bytes": 2501
+    },
+    "train/best.pt": {
+      "path": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/train/best.pt",
+      "sha256": "82f16ca0c0fde8f30250c1d29d3e2aea499d780d99ec0a101d5d91a1b52725f0",
+      "bytes": 150652567
+    },
+    "train/last.pt": {
+      "path": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/train/last.pt",
+      "sha256": "6fecbf24bc4b0026f99fc0b721fb3cffb7a723787a744609905940c7abc16e6d",
+      "bytes": 150657303
+    },
+    "train/test_predictions.npz": {
+      "path": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/train/test_predictions.npz",
+      "sha256": "a69459eca80d40a7d32b0de79934cad8c8601927926fb9a4182468d94c503e18",
+      "bytes": 79792
+    },
+    "full_forward_check/report.json": {
+      "path": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/full_forward_check/report.json",
+      "sha256": "25790c84bf5e5347284bd870c1353c9b3375dea52ee7074c40c22a19b07b9d67",
+      "bytes": 4199
+    },
+    "results/heldout_predictions.mp4": {
+      "path": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/results/heldout_predictions.mp4",
+      "sha256": "c824dfe76ff50e709046f7231e55c691c9d210d0174f635f88efed207c5693c1",
+      "bytes": 1154419
+    },
+    "results/visualization_manifest.json": {
+      "path": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/results/visualization_manifest.json",
+      "sha256": "31984ceb2553d77f138605f5bf5761489267a8123dcde89b61cda94a881cf49c",
+      "bytes": 420
+    },
+    "results/browser_validation.json": {
+      "path": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/results/browser_validation.json",
+      "sha256": "e51a249d0efce603c131a90f5f55887f4adb29dae0c119416e4a5a845cdfc463",
+      "bytes": 348
+    },
+    "inference_example/prediction.json": {
+      "path": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/inference_example/prediction.json",
+      "sha256": "3c9ec4ecef9b8159e2f500014e97901ff669c7200f957c34c9eea980c21780a9",
+      "bytes": 2222
+    },
+    "train/inference.pt": {
+      "path": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/train/inference.pt",
+      "sha256": "9e2e5e8fcb939b5007e4826d8d22d54b28651ae547a9a56c119f3a47a974e468",
+      "bytes": 51437754
+    },
+    "results/grasp_variations.jpg": {
+      "path": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/results/grasp_variations.jpg",
+      "sha256": "6092debbb82b2cb1ab76d57e2b1b4c85deb4ea859e28639e35032ff14c03b0ba",
+      "bytes": 291481
+    }
+  },
+  "documentation": "docs/agent/perception/evolution/sim-wrist-surface-learning.md",
+  "git_at_recording": {
+    "branch": "feature/isaac-contact-insertion",
+    "head": "66ff11720e5dc4327041d709b661dec73c83f605"
+  },
+  "committed_or_pushed_by_this_task": false,
+  "real_robot_control_executed": false,
+  "real_image_accuracy_validated": false,
+  "latest_display_update": {
+    "manifest": "manifests/sim_surface_schemes_20261122.json",
+    "path": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/results/surface_schemes_v1",
+    "new_training_performed": false
+  },
+  "display_update_history": [
+    {
+      "manifest": "manifests/sim_surface_color_compare_20261122.json",
+      "path": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/results/color_compare_v2",
+      "video": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/results/color_compare_v2/heldout_gt_pred_separate.mp4"
+    }
+  ]
+}

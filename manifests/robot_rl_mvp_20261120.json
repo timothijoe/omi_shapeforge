@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "status": "real_urdf_reach_architecture_mvp",
+  "primary_scene": "/data/omi_runtime/runs/robot_urdf_mvp_20261120T090059Z/scene/scene.xml",
+  "robot_source": "/data/omi_runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/vendor/optical_module_pu/source/OpticalModule_PU/omi_ws/src/marvin_stand_viz/urdf/marvin_stand.urdf",
+  "robot_source_sha256": "354931ab500b63d74a3c45e03fd680fdfe2b73212bf37dfeab469c8bcc6f9445",
+  "source_urdf_unchanged": true,
+  "robot_joint_count": 18,
+  "robot_actuators": 18,
+  "mimic_equalities": 2,
+  "removed_zero_volume_marker_geometry": [
+    "TCP_Link_R/visual",
+    "TCP_Link_R/collision",
+    "TCP_Link_L/visual",
+    "TCP_Link_L/collision"
+  ],
+  "optical_visual_parts": 150,
+  "layout_reference": "/data/omi_runtime/runs/robot_urdf_mvp_20261120T090059Z/layout_reference.jpg",
+  "layout_reference_sha256": "e9ab2cc20add7dc153c1e75bae35fcff3cd0bdc6794c57d23d676fd9beec2bb9",
+  "reach_smoke": {
+    "initial_error_m": 0.017443161457777023,
+    "steps": 31,
+    "is_success": true,
+    "task": "urdf_tcp_small_reach_not_insertion",
+    "tcp_error_m": 0.0026468415602180764,
+    "rotation_error_rad_approx": 4.536773344966873e-05,
+    "requested_action": [
+      0.011166170239448547,
+      -0.0007114789332263172,
+      -1.0,
+      -0.0016228228341788054,
+      -0.004318334627896547,
+      -0.0005058164242655039
+    ],
+    "joint_targets": [
+      0.4644305814824387,
+      -0.6072758746210016,
+      0.015898722873939092,
+      -1.408833854999475,
+      0.004623356953056866,
+      0.005994583831225462,
+      -0.008012299271674165
+    ],
+    "contacts_enabled": false,
+    "tcp_calibrated": false,
+    "policy_source": "scripted_dls_ik_not_rl",
+    "physical_insertion_verified": false
+  },
+  "interface_validation": {
+    "gymnasium_checker_passed": true,
+    "seed13_success": true,
+    "initial_error_m": 0.017449308186769485,
+    "final_error_m": 0.002637506867333846,
+    "steps": 31,
+    "inactive_arm_max_joint_drift_rad": 2.55351295663786e-15,
+    "invalid_action_no_state_advance": true,
+    "contacts_enabled": false,
+    "task": "URDF TCP reach, not insertion"
+  },
+  "proxy_fixture_regression": "/data/omi_runtime/runs/sim_mvp_20261120T085558Z/report.json",
+  "tests": {
+    "control_layer_passed": 14,
+    "optional_proxy_tests_passed_in_sim_env": 4,
+    "optional_proxy_tests_skipped_in_control_env": 4
+  },
+  "scope": {
+    "real_robot_urdf_used": true,
+    "robot_contacts_enabled": false,
+    "gravity_compensation": true,
+    "tool_tcp_calibrated": false,
+    "module_grasped": false,
+    "robot_insertion_implemented": false,
+    "rl_training_run": false,
+    "hardware_connected": false
+  },
+  "plan": "docs/design/robot-rl-development-plan.md",
+  "tutorial": "tutorials/robot_sim_mvp.md",
+  "preview": "/data/omi_runtime/runs/robot_urdf_mvp_20261120T090059Z/robot_final.png",
+  "source_commits": {
+    "shapeforge_base": "66ff11720e5dc4327041d709b661dec73c83f605",
+    "omi_proj_read_only": "963a7c29f8e39bff59ba4eb285693976b224961e"
+  },
+  "source_files_sha256": {
+    "src/omi_shapeforge/sim/robot_env.py": "9bf4d23fb6ef78f4bf4abdf31c01430018307fb4f26c76473a048782ab04a262",
+    "src/omi_shapeforge/sim/insertion_env.py": "6c9dbe4512e5657188982187610301968823a4a1ffa90ee6815ca086adcd6720",
+    "src/omi_shapeforge/sim/config.py": "e45a824ffb82fc5964293f78bb2d4753d0f53de6be7db7f6deddbb45585e9aa5",
+    "src/omi_shapeforge/sim/smoke.py": "32aaa9ee2b2adc37fd692ae9f698d564ea99c1fc1770b840dbd21db5eaa06e99",
+    "src/omi_shapeforge/sim/factory.py": "3e8a46d63ba337dc3a3d528e31b8d135427b0d6cbdccb3c506945a211292163a",
+    "src/omi_shapeforge/sim/robot_scene.py": "47e65ebe6f18d3a1ffe3eee2ff3f219a988f0c7795b78dfa0c5dfc6a3e5755b1",
+    "src/omi_shapeforge/sim/scene.py": "1be0dffe70ec83151b3f296777efe26bc5940530dfd4efa95510eb200ae1d7a3",
+    "src/omi_shapeforge/sim/__init__.py": "abd55463d8d4543b6fcd6a6a47db2d1e0923d82963b03c06bcce16415acfc767"
+  },
+  "artifacts_sha256": {
+    "/data/omi_runtime/runs/robot_urdf_mvp_20261120T090059Z/scene/scene.xml": "69ca037b875bbf5622d61c82e65ee22601815583d0a3dfdbcc663bcaf90c87ef",
+    "/data/omi_runtime/runs/robot_urdf_mvp_20261120T090059Z/scene/resolved.urdf": "97877ba7ecf5e0bde4437c3c9e85d554a5338b703782bf93ff9189fa8cf7d48d",
+    "/data/omi_runtime/runs/robot_urdf_mvp_20261120T090059Z/scene/robot_manifest.json": "58e6527789396ef69183760e040b1b626f1b4e0c27cf87d36a091aee62325791",
+    "/data/omi_runtime/runs/robot_urdf_mvp_20261120T090059Z/reach_smoke.json": "536150f8074af2096d424e037b0a022fd6c1dd26c0d4a50cc9a62699dbebc496",
+    "/data/omi_runtime/runs/robot_urdf_mvp_20261120T090059Z/interface_validation.json": "b007bb9bb932049c62ed192630b443d804bd58a3003580a94fe33ed48616a265",
+    "/data/omi_runtime/runs/robot_urdf_mvp_20261120T090059Z/robot_final.png": "1f0da3640744b73941a4f60bc480ed0f3b17692abcc74575678d3956431f7501"
+  },
+  "interactive_viewer": {
+    "script": "src/omi_shapeforge/sim/robot_viewer.py",
+    "script_sha256": "24b7854f38e32c347eaa39b5548c71738cf82e25df6374bbd3680ebdc2318cd4",
+    "desktop_screenshot": "/data/omi_runtime/runs/robot_urdf_mvp_20261120T090059Z/interactive_desktop_clear.png",
+    "visible_verified": true,
+    "physics_stepping": false,
+    "policy_running": false
+  }
+}

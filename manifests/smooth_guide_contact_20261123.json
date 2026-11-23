@@ -1,0 +1,494 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-23",
+  "scope": "experimental fixed-attachment Isaac collision candidate; no new BC/RL",
+  "asset_id": "SIM-SMOOTH-GUIDE-candidate-r04",
+  "run": "/data/omi_runtime/runs/smooth_guide_20261122/r06",
+  "parent_run": "/data/omi_runtime/runs/smooth_guide_20261122",
+  "accepted_for_training": false,
+  "complete_robot_qualification": false,
+  "summary": {
+    "qualification_cases": {
+      "local_normal": {
+        "phases": {
+          "insert": {
+            "success": true,
+            "final_depth_mm": 51.28170030007096,
+            "steps": 111
+          },
+          "withdraw": {
+            "success": true,
+            "final_depth_mm": -2.9999516736534093,
+            "steps": 111
+          }
+        },
+        "accepted": true,
+        "dt": 0.0002,
+        "seed": 7,
+        "all_substeps_contact_sum_peak_N": 4.648140165954828,
+        "sampled_contact_sum_peak_N": 0.2999753140444446
+      },
+      "local_offset_plus": {
+        "phases": {
+          "insert": {
+            "success": false,
+            "final_depth_mm": -1.2649205014092502e-05,
+            "steps": 42
+          }
+        },
+        "accepted": true,
+        "dt": 0.0002,
+        "seed": 7,
+        "all_substeps_contact_sum_peak_N": 2.0000002432141173,
+        "sampled_contact_sum_peak_N": 2.0000002432141173
+      },
+      "local_offset_minus": {
+        "phases": {
+          "insert": {
+            "success": false,
+            "final_depth_mm": -1.2649205014092502e-05,
+            "steps": 42
+          }
+        },
+        "accepted": true,
+        "dt": 0.0002,
+        "seed": 7,
+        "all_substeps_contact_sum_peak_N": 2.0000002809439366,
+        "sampled_contact_sum_peak_N": 2.0000002747622148
+      },
+      "local_yaw_plus": {
+        "phases": {
+          "insert": {
+            "success": false,
+            "final_depth_mm": 0.28145539145283793,
+            "steps": 42
+          }
+        },
+        "accepted": true,
+        "dt": 0.0002,
+        "seed": 7,
+        "all_substeps_contact_sum_peak_N": 5.395459683671303,
+        "sampled_contact_sum_peak_N": 1.9999999931700636
+      },
+      "local_half_step": {
+        "phases": {
+          "insert": {
+            "success": true,
+            "final_depth_mm": 51.28169843742581,
+            "steps": 111
+          },
+          "withdraw": {
+            "success": true,
+            "final_depth_mm": -2.9999516736534093,
+            "steps": 111
+          }
+        },
+        "accepted": true,
+        "dt": 0.0001,
+        "seed": 7,
+        "all_substeps_contact_sum_peak_N": 5.616313137579709,
+        "sampled_contact_sum_peak_N": 0.2999827373257498
+      },
+      "robot_recovery_plus_slow": {
+        "accepted": false,
+        "error": "RuntimeError('Probe phase failed: {\"phase\": \"push_misaligned\", \"reason\": \"physics_guard\", \"steps\": 108, \"depth_mm\": -4.548234155010711e-05, \"scalar_sample_max_N\": 3.08321588929146, \"scalar_mean_max_N\": 0.04327298258715405, \"axial_mean_max_N\": 0.04327298258431256, \"penetration_max_mm\": 0.055768206948414445}')",
+        "final_depth_mm": -4.548234155010711e-05,
+        "last_phase": "push_misaligned",
+        "phases_completed_or_attempted": [
+          "offset_outside",
+          "approach_offset_outside",
+          "push_misaligned"
+        ],
+        "steps_recorded": 142,
+        "all_substeps_contact_sum_peak_N": 17.68796239048255,
+        "sampled_contact_sum_peak_N": 3.08321588929146
+      },
+      "robot_recovery_minus_slow": {
+        "accepted": false,
+        "error": "RuntimeError('Probe phase failed: {\"phase\": \"push_misaligned\", \"reason\": \"physics_guard\", \"steps\": 102, \"depth_mm\": 0.011304075955983928, \"scalar_sample_max_N\": 0.0, \"scalar_mean_max_N\": 0.13757548603007855, \"axial_mean_max_N\": 0.13757548602950642, \"penetration_max_mm\": 0.05585741746472195}')",
+        "final_depth_mm": 0.011304075955983928,
+        "last_phase": "push_misaligned",
+        "phases_completed_or_attempted": [
+          "offset_outside",
+          "approach_offset_outside",
+          "push_misaligned"
+        ],
+        "steps_recorded": 138,
+        "all_substeps_contact_sum_peak_N": 5.023234407417512,
+        "sampled_contact_sum_peak_N": 0.0
+      },
+      "robot_aligned_half_step": {
+        "accepted": true,
+        "phases": [
+          {
+            "phase": "align_outside",
+            "reason": "target_reached",
+            "steps": 3,
+            "depth_mm": -5.043073757495669,
+            "scalar_sample_max_N": 0.0,
+            "scalar_mean_max_N": 0.0,
+            "axial_mean_max_N": 0.0,
+            "penetration_max_mm": 0.0
+          },
+          {
+            "phase": "insert_aligned",
+            "reason": "seated",
+            "steps": 388,
+            "depth_mm": 51.280676592955416,
+            "scalar_sample_max_N": 0.0,
+            "scalar_mean_max_N": 0.08833774944098573,
+            "axial_mean_max_N": 0.08833774943923345,
+            "penetration_max_mm": 0.0001377925400447566
+          },
+          {
+            "phase": "withdraw_aligned",
+            "reason": "target_reached",
+            "steps": 338,
+            "depth_mm": -4.957834995960493,
+            "scalar_sample_max_N": 0.0,
+            "scalar_mean_max_N": 0.0,
+            "axial_mean_max_N": 0.0,
+            "penetration_max_mm": 0.0
+          }
+        ],
+        "interior": {
+          "samples": 287,
+          "scalar_sample_max_N": 0.0,
+          "scalar_mean_max_N": 0.0,
+          "axial_mean_max_N": 0.0,
+          "substep_peak_max_N": 0.0,
+          "minimum_depth_increment_mm": 0.030957760935102385
+        },
+        "offset_mm": 0.0,
+        "dt": 0.0001,
+        "seed": 7,
+        "reset_count": 1,
+        "teleport_after_reset": false,
+        "contact_offset_m": 1e-07,
+        "seated_target_overtravel_mm": 0.1,
+        "minimum_final_axial_target_increment_mm": 0.05,
+        "learned_policy": false,
+        "all_substeps_contact_sum_peak_N": 13.669221862073853,
+        "sampled_contact_sum_peak_N": 0.0
+      }
+    },
+    "passed": 6,
+    "total": 8,
+    "learned_policy_evaluated": false,
+    "physically_calibrated": false,
+    "local_passed": 5,
+    "local_total": 5,
+    "robot_passed": 1,
+    "robot_total": 3,
+    "candidate": "SIM-SMOOTH-GUIDE-candidate-r04",
+    "protocol": {
+      "scope": "candidate physics qualification, no learned policy",
+      "acceptance": {
+        "normal_full_cycle": true,
+        "entrance_obstruction_depth_max_mm": 2.0,
+        "recovery_without_physical_reset": true,
+        "control_sample_force_limit_N": 10.0,
+        "maximum_penetration_mm": 0.05,
+        "interior_axial_absolute_sum_mean_max_N": 1.0,
+        "interior_depth_range_mm": [
+          5.0,
+          50.2816944
+        ],
+        "positive_interior_progress": true
+      },
+      "pending_cases": [
+        "local_offset_plus_1mm",
+        "local_offset_minus_1mm",
+        "local_yaw_plus_2deg",
+        "local_half_step",
+        "robot_recovery_plus_1mm",
+        "robot_recovery_minus_1mm",
+        "robot_aligned_half_step"
+      ],
+      "baseline": "local_normal completed before this matrix; remaining acceptance fixed before running those cases",
+      "physical_parameters_calibrated": false,
+      "contact_offset_m": 1e-07,
+      "previous_trial": "/data/omi_runtime/runs/smooth_guide_20261122",
+      "change_reason": "Test whether target jumps cause transient penetration: ramp the 7 active arm joint targets over each 100ms control interval. Geometry and all acceptance thresholds unchanged.",
+      "candidate": "SIM-SMOOTH-GUIDE-candidate-r04",
+      "controller_recipe": "bounded50um",
+      "seated_target_overtravel_mm": 0.1,
+      "minimum_final_axial_target_increment_mm": 0.05,
+      "shoulder_contact_offset_m": 5e-06,
+      "joint_target_interpolation": "linear",
+      "approach_hover_depth_mm": -1.0,
+      "motion_phase_budget": 450
+    },
+    "subprocess_receipts": [
+      {
+        "name": "local_normal",
+        "command": [
+          "/data/isaac-sim-5.1.0/python.sh",
+          "scripts/simulation/run_isaac_contact.py",
+          "--transfer",
+          "/data/omi_runtime/runs/smooth_guide_20261122/r06/local_transfer",
+          "--steps",
+          "180",
+          "--contact-offset",
+          ".0000001",
+          "--output",
+          "/data/omi_runtime/runs/smooth_guide_20261122/r06/local_normal",
+          "--audit-all-colliders"
+        ],
+        "exit_code": 0,
+        "elapsed_s": 39.498600244522095
+      },
+      {
+        "name": "local_offset_plus",
+        "command": [
+          "/data/isaac-sim-5.1.0/python.sh",
+          "scripts/simulation/run_isaac_contact.py",
+          "--transfer",
+          "/data/omi_runtime/runs/smooth_guide_20261122/r06/local_transfer",
+          "--steps",
+          "180",
+          "--contact-offset",
+          ".0000001",
+          "--output",
+          "/data/omi_runtime/runs/smooth_guide_20261122/r06/local_offset_plus",
+          "--lateral-mm",
+          "1"
+        ],
+        "exit_code": 0,
+        "elapsed_s": 16.935506343841553
+      },
+      {
+        "name": "local_offset_minus",
+        "command": [
+          "/data/isaac-sim-5.1.0/python.sh",
+          "scripts/simulation/run_isaac_contact.py",
+          "--transfer",
+          "/data/omi_runtime/runs/smooth_guide_20261122/r06/local_transfer",
+          "--steps",
+          "180",
+          "--contact-offset",
+          ".0000001",
+          "--output",
+          "/data/omi_runtime/runs/smooth_guide_20261122/r06/local_offset_minus",
+          "--lateral-mm",
+          "-1"
+        ],
+        "exit_code": 0,
+        "elapsed_s": 16.5192928314209
+      },
+      {
+        "name": "local_yaw_plus",
+        "command": [
+          "/data/isaac-sim-5.1.0/python.sh",
+          "scripts/simulation/run_isaac_contact.py",
+          "--transfer",
+          "/data/omi_runtime/runs/smooth_guide_20261122/r06/local_transfer",
+          "--steps",
+          "180",
+          "--contact-offset",
+          ".0000001",
+          "--output",
+          "/data/omi_runtime/runs/smooth_guide_20261122/r06/local_yaw_plus",
+          "--yaw-deg",
+          "2"
+        ],
+        "exit_code": 0,
+        "elapsed_s": 14.922305822372437
+      },
+      {
+        "name": "local_half_step",
+        "command": [
+          "/data/isaac-sim-5.1.0/python.sh",
+          "scripts/simulation/run_isaac_contact.py",
+          "--transfer",
+          "/data/omi_runtime/runs/smooth_guide_20261122/r06/local_transfer",
+          "--steps",
+          "180",
+          "--contact-offset",
+          ".0000001",
+          "--output",
+          "/data/omi_runtime/runs/smooth_guide_20261122/r06/local_half_step",
+          "--dt",
+          ".0001"
+        ],
+        "exit_code": 0,
+        "elapsed_s": 66.20082473754883
+      },
+      {
+        "name": "robot_recovery_plus_slow",
+        "command": [
+          "/data/isaac-sim-5.1.0/python.sh",
+          "scripts/simulation/probe_smooth_contact.py",
+          "--transfer",
+          "/data/omi_runtime/runs/smooth_guide_20261122/r06/robot_transfer",
+          "--contact-offset",
+          ".0000001",
+          "--output",
+          "/data/omi_runtime/runs/smooth_guide_20261122/r06/robot_recovery_plus_slow",
+          "--offset-mm",
+          "1"
+        ],
+        "exit_code": 1,
+        "elapsed_s": 140.49465942382812
+      },
+      {
+        "name": "robot_recovery_minus_slow",
+        "command": [
+          "/data/isaac-sim-5.1.0/python.sh",
+          "scripts/simulation/probe_smooth_contact.py",
+          "--transfer",
+          "/data/omi_runtime/runs/smooth_guide_20261122/r06/robot_transfer",
+          "--contact-offset",
+          ".0000001",
+          "--output",
+          "/data/omi_runtime/runs/smooth_guide_20261122/r06/robot_recovery_minus_slow",
+          "--offset-mm",
+          "-1"
+        ],
+        "exit_code": 1,
+        "elapsed_s": 141.5872962474823
+      },
+      {
+        "name": "robot_aligned_half_step",
+        "command": [
+          "/data/isaac-sim-5.1.0/python.sh",
+          "scripts/simulation/probe_smooth_contact.py",
+          "--transfer",
+          "/data/omi_runtime/runs/smooth_guide_20261122/r06/robot_transfer",
+          "--contact-offset",
+          ".0000001",
+          "--output",
+          "/data/omi_runtime/runs/smooth_guide_20261122/r06/robot_aligned_half_step",
+          "--offset-mm",
+          "0",
+          "--dt",
+          ".0001"
+        ],
+        "exit_code": 0,
+        "elapsed_s": 978.5581080913544
+      }
+    ],
+    "cooked_geometry": [],
+    "native_box_shapes": [
+      "sim_module_smooth_shaft",
+      "sim_module_smooth_shoulder",
+      "sim_socket_smooth_left",
+      "sim_socket_smooth_right",
+      "sim_socket_smooth_bottom",
+      "sim_socket_smooth_top"
+    ],
+    "other_development_receipts": [],
+    "failed_probe_development": [
+      "parent/robot_recovery_plus: phase bookkeeping stopped after successful outside positioning",
+      "parent/robot_recovery_plus_r02: force-only obstruction detector timed out despite sustained entrance contact",
+      "r01 full-motion cases: top-only shoulder detector rejected real bottom/side mouth contact; final r02 recognizes all four mouth faces",
+      "r02 5um-offset trials: entrance penetration exceeded 0.05 mm with both faster and slower approach; final recipe restores 0.1um offset",
+      "r02 half-step with 10um final increment: stalled before shoulder; final recipe uses bounded 50um target increment",
+      "r04 shoulder-only 5um offset with mesh convexes: initial stop penetration exceeded 0.05mm; native box representation tested separately"
+    ],
+    "development_failure_files": [
+      "/data/omi_runtime/runs/smooth_guide_20261122/contact5um/robot_aligned_smoke/failure.json",
+      "/data/omi_runtime/runs/smooth_guide_20261122/contact5um/robot_aligned_smoke_r02/failure.json",
+      "/data/omi_runtime/runs/smooth_guide_20261122/endpoint5um/failure.json",
+      "/data/omi_runtime/runs/smooth_guide_20261122/r02/robot_aligned_half_step/failure.json",
+      "/data/omi_runtime/runs/smooth_guide_20261122/r02/robot_recovery_minus/failure.json",
+      "/data/omi_runtime/runs/smooth_guide_20261122/r02/robot_recovery_minus_slow/failure.json",
+      "/data/omi_runtime/runs/smooth_guide_20261122/r02/robot_recovery_plus/failure.json",
+      "/data/omi_runtime/runs/smooth_guide_20261122/r02/robot_recovery_plus_slow/failure.json",
+      "/data/omi_runtime/runs/smooth_guide_20261122/r03/robot_aligned_half_step/failure.json",
+      "/data/omi_runtime/runs/smooth_guide_20261122/r03/robot_recovery_minus_slow/failure.json",
+      "/data/omi_runtime/runs/smooth_guide_20261122/r03/robot_recovery_plus_slow/failure.json",
+      "/data/omi_runtime/runs/smooth_guide_20261122/r04/robot_aligned_half_step/failure.json",
+      "/data/omi_runtime/runs/smooth_guide_20261122/r04/robot_recovery_minus_slow/failure.json",
+      "/data/omi_runtime/runs/smooth_guide_20261122/r04/robot_recovery_plus_slow/failure.json",
+      "/data/omi_runtime/runs/smooth_guide_20261122/r05/robot_aligned_half_step/failure.json",
+      "/data/omi_runtime/runs/smooth_guide_20261122/r05/robot_recovery_minus_slow/failure.json",
+      "/data/omi_runtime/runs/smooth_guide_20261122/r06/robot_recovery_minus_slow/failure.json",
+      "/data/omi_runtime/runs/smooth_guide_20261122/r06/robot_recovery_plus_slow/failure.json",
+      "/data/omi_runtime/runs/smooth_guide_20261122/robot_aligned_half_step/failure.json",
+      "/data/omi_runtime/runs/smooth_guide_20261122/robot_recovery_minus/failure.json",
+      "/data/omi_runtime/runs/smooth_guide_20261122/robot_recovery_plus/failure.json",
+      "/data/omi_runtime/runs/smooth_guide_20261122/robot_recovery_plus_r02/failure.json",
+      "/data/omi_runtime/runs/smooth_guide_20261122/robot_recovery_plus_r03/failure.json"
+    ],
+    "source_preservation": {
+      "local": {
+        "/data/omi_runtime/runs/isaac_contact_development_20261122/local_transfer/transfer.json": true,
+        "/data/omi_runtime/runs/isaac_contact_development_20261122/local_transfer/meshes.npz": true
+      },
+      "robot": {
+        "/data/omi_runtime/runs/right_arm_park_20261122/transfer/transfer.json": true,
+        "/data/omi_runtime/runs/right_arm_park_20261122/transfer/meshes.npz": true
+      },
+      "original_visual_assets": [
+        {
+          "asset": "WG-DAIMON-OBS-r10",
+          "files": 90,
+          "unchanged": true
+        },
+        {
+          "asset": "OM-001/V4 r08",
+          "files": 66,
+          "unchanged": true
+        }
+      ]
+    }
+  },
+  "protocol": "/data/omi_runtime/runs/smooth_guide_20261122/r06/protocol.json",
+  "review": "/data/omi_runtime/runs/smooth_guide_20261122/r06/review.png",
+  "documentation": "docs/agent/simulation/evolution/smooth-guide-contact.md",
+  "source_snapshot": "/data/omi_runtime/runs/smooth_guide_20261122/r06/source_final",
+  "sources_sha256": {
+    "scripts/simulation/build_smooth_contact_candidate.py": "7d70c3d52745f3b95e3ebe7a121c5766b80f135348328e9ecdfe8ed73e176abd",
+    "scripts/simulation/probe_smooth_contact.py": "7d40b26a4d8f6ff8ccf61bdd005873cc1d4a36a3fd44cefc8a49e6f5c645531e",
+    "scripts/simulation/summarize_smooth_contact.py": "4d6a307d8f3e2db891283fe9881e528431acead4ab57a9acb864ed98d0edf4f1",
+    "scripts/simulation/run_isaac_contact.py": "95ee1fd0a20b3f1b69c85ef1d26921029acb5de867da8313203b00a4665a7199",
+    "src/omi_shapeforge/sim/isaac_contact_runtime.py": "9cfedb98e747bfe1a38f54b967748a1151132edef4230ae30c125ba511a617bd",
+    "src/omi_shapeforge/sim/isaac_contact_scene.py": "fcbb7a2ec9d5176c631e59b521fc6f4d4aaaff8b2fa41a8c5d30788724412562",
+    "src/omi_shapeforge/sim/isaac_contact_diagnostics.py": "0b02671f4014c96739b6c35ce7109f31a9f515c44ffcc6148445f4dbfa2647f6",
+    "tests/test_isaac_contact_monitor.py": "3117c3078949c2c9d505a1f1928d9dd0f786bda78b07d68cab14d4ad964dc963"
+  },
+  "tests": {
+    "control_executed": 14,
+    "control_skipped": 32,
+    "contact_monitor_regressions_passed": 3
+  },
+  "old_assets_and_training_preserved": true,
+  "learned_policy_evaluated": false,
+  "physical_calibration": false,
+  "local_transfer": {
+    "path": "/data/omi_runtime/runs/smooth_guide_20261122/r06/local_transfer",
+    "sha256": "55cb6c068ef84260b04952fd664717d9672cc8d0e516a2d68d8ca62c021a0416"
+  },
+  "robot_transfer": {
+    "path": "/data/omi_runtime/runs/smooth_guide_20261122/r06/robot_transfer",
+    "sha256": "9665ee642e0971cad1504d03292e5d0eb23a1cf3fc93afeba7c05e819f448624"
+  },
+  "final_asset_check": {
+    "visual_assets": [
+      {
+        "asset": "WG-DAIMON-OBS-r10",
+        "files": 90,
+        "unchanged": true
+      },
+      {
+        "asset": "OM-001/V4 r08",
+        "files": 66,
+        "unchanged": true
+      }
+    ],
+    "source_transfers_unchanged": true
+  },
+  "desktop_viewer": [
+    {
+      "window": "0x4800007",
+      "pid": 3293064,
+      "properties": "_NET_WM_NAME(UTF8_STRING) = \"Image Viewer\"\n_NET_WM_DESKTOP(CARDINAL) = 0"
+    }
+  ],
+  "simulation_processes_remaining": [],
+  "final_supervisor_exit_codes": {
+    "local_matrix": 0,
+    "robot_matrix": 0
+  }
+}

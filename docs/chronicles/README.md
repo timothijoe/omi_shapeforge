@@ -1,5 +1,87 @@
 # 跨领域阶段与交接记录
 
+- [2026-11-23本窗口交接：Isaac插入、规则反馈RL与收尾](2026-11-23-isaac-rule-rl-window-handoff.md)
+
+- [2026-11-23：规则插入成功率、demo展示与收尾](2026-11-23-rule-insertion-review.md)
+
+- [2026-11-23本窗口交接：外观资产、GC-r01与PCG-01](./2026-11-23-mesh-contact-pcg-window-handoff.md)
+
+- [2026-11-23：分阶段插入合同与真实退回重插验证](2026-11-23-staged-insertion-contract.md)
+
+- [2026-11-23：PCG-01纯几何提取、可视化、独立交付及完整归档](../agent/perception/chronicles/2026-11-23-pointcloud-geometry.md)
+
+- [2026-11-23：Isaac顺滑通道重训与实仿研发方向](2026-11-23-isaac-smooth-retraining.md)
+
+- [2026-11-22：黑胶垫双面接触修订](../agent/simulation/chronicles/2026-11-22-wrist-contact-closure.md)
+
+- [2026-11-22：WVA-01仿真视觉资产完整阶段编年](../agent/simulation/chronicles/2026-11-22-wva01-assets.md)
+
+- [2026-11-22：Isaac规则反馈RL完整运行](2026-11-22-isaac-rule-feedback-rl.md)
+
+- [2026-11-22：WVA-01命名与固定](2026-11-22-wva01-designation.md)
+
+- [2026-11-22：DAIMON表面标志](2026-11-22-wrist-logo.md)
+
+- [2026-11-22：原始实拍比例复核](2026-11-22-wrist-tip-photo-review.md)
+
+- [2026-11-22：按红线修正银色外缘](2026-11-22-wrist-marked-tip.md)
+
+- [2026-11-22：梯形轮廓与前端齐平纠正](2026-11-22-wrist-trapezoid-tip.md)
+
+- [2026-11-22：固定WG-r10＋OM-r08接入Isaac](2026-11-22-wrist-bundle-isaac.md)
+
+- [2026-11-22：银色指尖过尖的修正](2026-11-22-wrist-fingertip-chamfer.md)
+
+- [2026-11-22：当前资产文档与其他Agent复用交接](2026-11-22-wrist-asset-agent-handoff.md)
+
+- [2026-11-22：粗补拉环，重点改善主体轮廓](2026-11-22-primary-refinement.md)
+
+- [2026-11-22：Isaac接触与图像复核](2026-11-22-isaac-contact-visual-review.md)
+
+- [2026-11-22：固定r09后的位姿与其他因素试验](2026-11-22-wrist-pose-study.md)
+
+- [2026-11-22：Isaac Sim同源插接实验](2026-11-22-isaac-contact.md)
+
+- [2026-11-22：保留r08、用扫描点云优化r09](2026-11-22-wrist-pointcloud-refinement.md)
+
+- [2026-11-22：腕部安装与参考夹持变换调整](2026-11-22-wrist-alignment.md)
+
+- [2026-11-22：尺寸与腕部图像一致性检查](2026-11-22-wrist-camera-consistency.md)
+
+- [2026-11-22：夹爪照片轮廓纠正](2026-11-22-wrist-tool-photo-profile.md)
+
+- [2026-11-22：腕部相机与夹爪精修](2026-11-22-wrist-tool-refinement.md)。
+
+- [2026-11-22：新采集数据接收与初检](2026-11-22-new-capture-intake.md)。
+
+- [2026-11-22：mesh、仿真、腕部视觉与训练完整汇总](2026-11-22-simulation-mesh-visual-progress.md)。
+
+- [2026-11-22：模块r07移除颗粒，保留色调](2026-11-22-module-material-r07.md)。
+
+- [2026-11-22：光模块银灰材质独立修订](2026-11-22-module-material-r06.md)
+
+- [2026-11-22：混合腕部图像反馈与黑色接触面修正](2026-11-22-hybrid-wrist-contact-review.md)
+
+- [2026-11-21：视频参考腕部相机与夹爪](2026-11-21-wrist-camera-gripper.md)
+
+- [2026-11-21：V4与实测插槽接回MuJoCo](2026-11-21-v4-measured-simulation.md)
+
+- [2026-11-21：V4-r05「双窗尾槽版」暂定基线与开发过程](2026-11-21-v4-double-window-baseline.md)
+
+- [2026-11-21：真实视觉位姿与结构特征开发交接](2026-11-21-perception-progress-handoff.md)
+
+- [2026-11-21：当前完整进展与接续交接](2026-11-21-current-progress-handoff.md)
+
+- [2026-11-21：资产说明、自主视觉成功案例与RL改善对照](2026-11-21-contact-policy-improvement.md)
+
+- [2026-11-21：资产数量、成功案例和RL试验复核](2026-11-21-simulation-status-review.md)
+
+- [2026-11-21：独立接触资产、机械臂插入退出和训练链路交付](2026-11-21-contact-asset-completed.md)
+
+- [2026-11-21：独立仿真资产开发前的进展、卡点和验收约定](2026-11-21-simulation-asset-start.md)
+
+历史停点：[2026-11-20：插接资产与机械臂仿真阶段交接](2026-11-20-robot-simulation-progress.md)。保留该时点的恢复入口和未提交状态；当前接续优先看上方最新交接。
+
 本目录保存全项目阶段快照，供跨会话交接。快照描述记录当时的已验证进展，后续变化以[当前总览](../current.md)及领域纪传体为准，不回写旧快照。
 
 - [2026-11-20：工作区完整进展与交接快照](2026-11-20-workspace-handoff.md)

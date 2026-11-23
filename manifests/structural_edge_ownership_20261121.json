@@ -1,0 +1,16 @@
+{
+  "status": "gripper_edge_contamination_filtered_pose_precision_unvalidated",
+  "run": "/data/omi_runtime/runs/structural_ownership_20261121",
+  "preview": "/data/omi_runtime/runs/structural_ownership_20261121/ownership_correction.png",
+  "summary": "/data/omi_runtime/runs/structural_ownership_20261121/filtered/summary.json",
+  "validation": "/data/omi_runtime/runs/structural_ownership_20261121/validation.json",
+  "excluded_feature": "head_right",
+  "frames": 61,
+  "marker_used": false,
+  "physical_pose_accuracy_validated": false,
+  "source_sha256": {
+    "/home/linux/omi_folder/omi_shapeforge/scripts/perception/prepare_structural_ownership.py": "a9a05ef0f8474eac502832b11d6ab4a62b7479eff453c6948bfec8f54aeaa428",
+    "/home/linux/omi_folder/omi_shapeforge/scripts/perception/structural_edge_pose.py": "b2ac8e5a1858cf9a1763911c253e410228f8658cbb657a998e80485c7e0bd8d4",
+    "/home/linux/omi_folder/omi_shapeforge/scripts/perception/run_structural_edge_trial.py": "269d653d86cf429efe643ffb9305ee0a5917c3587a08dd6b1e943d647ab8ee48"
+  }
+}

@@ -1,0 +1,338 @@
+{
+  "schema_version": 1,
+  "module": "OM-001/V3 r01",
+  "socket_candidate": "OS-001/r03",
+  "status": "photo_constrained_geometry_review_not_physical_insertion_acceptance",
+  "source_photos": [
+    {
+      "path": "/home/linux/Downloads/img/20261120-152624.jpg",
+      "sha256": "587fd9db50eddd2eb2c10129ca58cd1355f6faca41e4313e4e6981285c20550c",
+      "size": [
+        5712,
+        4284
+      ],
+      "exif": {
+        "271": "Apple",
+        "272": "iPhone 15 Plus",
+        "274": "1",
+        "306": "2026:10:01 20:27:35"
+      }
+    },
+    {
+      "path": "/home/linux/Downloads/img/20261120-152641.jpg",
+      "sha256": "eb0d6e804f19f85e5a94041a296f662b5637a71fd3b285a329ed2271c50b305c",
+      "size": [
+        5712,
+        4284
+      ],
+      "exif": {
+        "271": "Apple",
+        "272": "iPhone 15 Plus",
+        "274": "1",
+        "306": "2026:10:01 20:27:38"
+      }
+    },
+    {
+      "path": "/home/linux/Downloads/img/20261120-152648.jpg",
+      "sha256": "2bc763d095505f08b29e70ee095dda8cdf99f4ce46ce5c82b0ab08ef003474b5",
+      "size": [
+        5712,
+        4284
+      ],
+      "exif": {
+        "271": "Apple",
+        "272": "iPhone 15 Plus",
+        "274": "1",
+        "306": "2026:10:01 20:27:40"
+      }
+    },
+    {
+      "path": "/home/linux/Downloads/img/20261120-152658.jpg",
+      "sha256": "9ee389c612914954a01a4e689eda7ebc3268f5b3decdbe8ec2bc0f6179b6c43f",
+      "size": [
+        1080,
+        2340
+      ],
+      "exif": {}
+    }
+  ],
+  "user_stop_interpretation": "20261120-152658.jpg treated as mechanically seated: flat narrow segment inserted until larger end shoulder stops at slot. Electrical seating not confirmed.",
+  "original_wide_channel_run": "/data/omi_runtime/runs/v3_socket_insertion_20261120T073119Z",
+  "current_run": "/data/omi_runtime/runs/v3_socket_insertion_20261120T073119Z/narrow_candidate",
+  "contract": "/data/omi_runtime/runs/v3_socket_insertion_20261120T073119Z/narrow_candidate/insertion_contract.json",
+  "diagram": "/data/omi_runtime/runs/v3_socket_insertion_20261120T073119Z/narrow_candidate/insertion_geometry.png",
+  "dimensions_mm": {
+    "white_opening_nominal_width_mm": 20.2,
+    "white_opening_nominal_height_mm": 10.8,
+    "metal_basic_channel_width_mm": 18.6,
+    "metal_basic_channel_height_mm": 9.6,
+    "module_shaft_width_with_side_springs_mm": 18.174102529883385,
+    "module_shaft_height_mm": 7.838252931833267,
+    "module_head_max_height_mm": 10.449503548443317,
+    "tip_to_head_shoulder_mm": 51.28169432282448,
+    "nominal_centered_lateral_margin_per_side_mm": 0.21294873505830836,
+    "nominal_centered_vertical_margin_per_side_mm": 0.8808735340833662,
+    "margins_exclude_socket_fine_contacts": true
+  },
+  "width_candidate": {
+    "revision": "OS-001/r03",
+    "previous_inner_width_mm": 20.9,
+    "candidate_inner_width_mm": 18.6,
+    "basis": "User noted width mismatch; close photographs show snug fit. 18.60 mm is an explicit modeling hypothesis conditional on current V3 dimensions, not a pixel-calibrated measurement.",
+    "candidate_to_shaft_width_ratio": 1.0234343054583477,
+    "nominal_lateral_margin_each_mm": 0.21294873505830836,
+    "socket_sheet_thickness_mm": 0.29999999999999893,
+    "no_module_rescale": true,
+    "rear_structures_retained": true,
+    "unchanged_height_depth_and_axis": true,
+    "requires_metric_confirmation": true
+  },
+  "sources": {
+    "module": {
+      "file": "/data/omi_runtime/assets/optical_module_v3/work/OM-001-V3.blend",
+      "sha256": "016ac93da1f252e2f13325ac20454d1a02b82e31a840ac4f95bffa4218d0b8d2"
+    },
+    "socket": {
+      "file": "/data/omi_runtime/assets/optical_socket/revisions/r03/OS-001-r03.blend",
+      "sha256": "948a4c2246611b9c3d089998d637e176cdd0a23ddb9d832fa4cbe8743a1771a5"
+    }
+  },
+  "collision_summary": {
+    "sample_step_mm": 0.25,
+    "surface_onset_bracket_resolution_mm": 0.01,
+    "full_rigid_first_contact": {
+      "bracket_mm": [
+        4.2109375,
+        4.21875
+      ],
+      "contacts": [
+        {
+          "module_part": "02 Lower shell and projecting lower guard",
+          "socket_part": "Visible folded spring finger 0",
+          "category": "fine_contact_or_compliant",
+          "triangle_pairs": 9,
+          "module_faces": [
+            15,
+            18,
+            170,
+            171,
+            172
+          ],
+          "socket_faces": [
+            5,
+            13,
+            17
+          ]
+        },
+        {
+          "module_part": "02 Lower shell and projecting lower guard",
+          "socket_part": "Visible folded spring finger 1",
+          "category": "fine_contact_or_compliant",
+          "triangle_pairs": 10,
+          "module_faces": [
+            170,
+            171,
+            172
+          ],
+          "socket_faces": [
+            0,
+            5,
+            13,
+            17
+          ]
+        },
+        {
+          "module_part": "02 Lower shell and projecting lower guard",
+          "socket_part": "Visible folded spring finger 2",
+          "category": "fine_contact_or_compliant",
+          "triangle_pairs": 8,
+          "module_faces": [
+            171,
+            172
+          ],
+          "socket_faces": [
+            0,
+            5,
+            13,
+            17
+          ]
+        },
+        {
+          "module_part": "02 Lower shell and projecting lower guard",
+          "socket_part": "Visible folded spring finger 3",
+          "category": "fine_contact_or_compliant",
+          "triangle_pairs": 10,
+          "module_faces": [
+            171,
+            172,
+            173
+          ],
+          "socket_faces": [
+            0,
+            5,
+            13,
+            17
+          ]
+        },
+        {
+          "module_part": "02 Lower shell and projecting lower guard",
+          "socket_part": "Visible folded spring finger 4",
+          "category": "fine_contact_or_compliant",
+          "triangle_pairs": 10,
+          "module_faces": [
+            171,
+            172,
+            173
+          ],
+          "socket_faces": [
+            0,
+            5,
+            13,
+            17
+          ]
+        },
+        {
+          "module_part": "02 Lower shell and projecting lower guard",
+          "socket_part": "Visible folded spring finger 5",
+          "category": "fine_contact_or_compliant",
+          "triangle_pairs": 10,
+          "module_faces": [
+            171,
+            172,
+            173
+          ],
+          "socket_faces": [
+            0,
+            5,
+            13,
+            17
+          ]
+        },
+        {
+          "module_part": "02 Lower shell and projecting lower guard",
+          "socket_part": "Visible folded spring finger 6",
+          "category": "fine_contact_or_compliant",
+          "triangle_pairs": 10,
+          "module_faces": [
+            65,
+            67,
+            68,
+            171,
+            172,
+            173
+          ],
+          "socket_faces": [
+            0,
+            5,
+            17
+          ]
+        }
+      ]
+    },
+    "excluding_fine_contacts_first_contact": {
+      "bracket_mm": [
+        51.28125,
+        51.2890625
+      ],
+      "contacts": [
+        {
+          "module_part": "11 Raised metal head cover",
+          "socket_part": "Cage upper mouth rim",
+          "category": "structural",
+          "triangle_pairs": 12,
+          "module_faces": [
+            110,
+            158,
+            180,
+            181
+          ],
+          "socket_faces": [
+            1,
+            5,
+            7,
+            10
+          ]
+        }
+      ]
+    },
+    "bidirectional_sampled_containment_first_bad": {
+      "all_rigid": {
+        "first_bad_sample_mm": 4.25
+      },
+      "excluding_fine_contact_details": {
+        "first_bad_sample_mm": 51.5
+      },
+      "structural_only": {
+        "first_bad_sample_mm": 51.5
+      }
+    },
+    "closed_module_parts": 13,
+    "open_module_seams": [
+      "15 Estimated folded seam left",
+      "15 Estimated folded seam right"
+    ],
+    "near_stop_sampled_clearance_mm": {
+      "depth_mm": 50.28169432282448,
+      "sampled_min_distance_mm": 0.21294797211899222,
+      "module_part": "13 Side spring plate right",
+      "socket_part": "Cage bottom and thin sidewalls",
+      "module_point_mm": [
+        8.587051264941692,
+        -1.4356537830680303,
+        1.5013523264919566
+      ],
+      "socket_point_mm": [
+        8.799999237060547,
+        -1.4356536865234375,
+        1.5013525485992432
+      ]
+    },
+    "pitch_sensitivity": "At stop-minus-1mm, +1 degree pitch already intersects non-fine geometry in this fixed-origin perturbation check; not an independently validated robot tolerance.",
+    "yaw_and_lateral_sensitivity": "At stop-minus-1mm, independent +/-0.5mm lateral shifts and +/-1 degree yaw intersect non-fine geometry. These finite perturbations are diagnostics, not a certified robot tolerance."
+  },
+  "physical_insertion_verified": false,
+  "electrical_seating_verified": false,
+  "viewer": {
+    "tool": "Open3D",
+    "script": "scripts/simulation/view_v3_insertion.py",
+    "receipt": "/data/omi_runtime/runs/v3_socket_insertion_20261120T073119Z/narrow_candidate/insertion_viewer.json",
+    "entry_and_stop_controls_checked": true,
+    "control_panel_refresh_checked": true,
+    "default_run": "/data/omi_runtime/runs/v3_socket_r04_20261120T082303Z",
+    "lower_stand_visible": true
+  },
+  "files_sha256": {
+    "/data/omi_runtime/runs/v3_socket_insertion_20261120T073119Z/narrow_candidate/insertion_contract.json": "8424381debacd5d98373a917900c02bba4a99727653b8a982246b82bb86da56d",
+    "/data/omi_runtime/runs/v3_socket_insertion_20261120T073119Z/narrow_candidate/inputs/manifest.json": "dccb139fe075b812fcf8f783ffff51c3931451ca55d547d85f2cd9c6e8be882c",
+    "/data/omi_runtime/runs/v3_socket_insertion_20261120T073119Z/narrow_candidate/collision/surface_contacts.json": "c53f4ef0827b07fcbffe3ed0b6fcbd5225b0b76c965bc617af534fd56b987c9d",
+    "/data/omi_runtime/runs/v3_socket_insertion_20261120T073119Z/narrow_candidate/collision/volume_clearance_sections.json": "4d1492e9059bf73c5f076bfc3f050310f780e0c541b9b0f95eb9b269c0e98de8",
+    "/data/omi_runtime/runs/v3_socket_insertion_20261120T073119Z/narrow_candidate/insertion_geometry.png": "bc6f401cff2d28b334356845f4c5b2df3dc26ba080899723bfb791f927c15b4d",
+    "/data/omi_runtime/runs/v3_socket_insertion_20261120T073119Z/narrow_candidate/desktop_entry.png": "a9e0af141aa0cf722e22dadde66cb3603e03b4f46efb5ab4c6dcdd8f7d3884fa",
+    "/data/omi_runtime/runs/v3_socket_insertion_20261120T073119Z/narrow_candidate/desktop_stop.png": "d8d2ee302a4969428a85570ac1c17d8092f58cdce78990806d1622bea4e64049",
+    "/data/omi_runtime/assets/optical_socket/revisions/r03/OS-001-r03.blend": "948a4c2246611b9c3d089998d637e176cdd0a23ddb9d832fa4cbe8743a1771a5",
+    "/data/omi_runtime/assets/optical_socket/revisions/r03/OS-001-r03.glb": "a999980c866c7d9716f4c72a8ece3867dc6b9c0e7d5fb624dfae3aaa1a0b9a03"
+  },
+  "scripts_sha256": {
+    "scripts/simulation/export_insertion_inputs.py": "3a20b596bd851305fefb58741e36a1ba10e719729b08ac645b9a3aed0df0c789",
+    "scripts/simulation/audit_v3_insertion.py": "9067390d9c6b66c1bca18571201f0beabaeea0e0a6635ccbd8ea35f610bfae40",
+    "scripts/simulation/view_v3_insertion.py": "630621a0075cd1bc2a4f714bee29f6422ba8ee402307270ed434d2bebcfae486",
+    "scripts/simulation/narrow_socket_channel.py": "530e159833cb0e116be40093f3775b0c2ed9e5624492fa7e322a842b876ba4a4"
+  },
+  "archived_source_photos": "/data/omi_runtime/runs/v3_socket_insertion_20261120T073119Z/photos",
+  "latest_width_evidence_review": {
+    "status": "r03_width_unproven_not_adopted_as_correction",
+    "reason": "No independent image or point-cloud quantitative fit supports 18.60mm; module scale and both-body errors remain possible.",
+    "evidence_report": "/data/omi_runtime/runs/width_evidence_20261120T081118Z/module_width_hypotheses.json",
+    "baseline_metric_reproduced": true,
+    "module_enlargement_counterfactual_body_mm": 19.762483597540665,
+    "physical_dimensions_validated": false,
+    "current_display": {
+      "socket": "r01 original width baseline",
+      "module": "V3 unchanged",
+      "lower_stand_visible": true,
+      "screenshot": "/data/omi_runtime/runs/width_evidence_20261120T081118Z/full_assembly_visible.png"
+    },
+    "viewer_script_sha256": "630621a0075cd1bc2a4f714bee29f6422ba8ee402307270ed434d2bebcfae486"
+  },
+  "latest_width_candidate_manifest": "manifests/socket_r04_20261120.json"
+}

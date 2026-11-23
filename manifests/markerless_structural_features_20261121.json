@@ -1,0 +1,16 @@
+{
+  "status": "marker_free_structural_candidates_occluded_precision_unresolved",
+  "run": "/data/omi_runtime/runs/structural_features_20261121/wrist_lines",
+  "summary": "/data/omi_runtime/runs/structural_features_20261121/wrist_lines/summary.json",
+  "preview": "/data/omi_runtime/runs/structural_features_20261121/wrist_lines/structural_review.png",
+  "feature_count_types": 5,
+  "tested_frames": 61,
+  "marker_use_prohibited": true,
+  "marker_replacement_tests_passed": 9,
+  "physical_pose_accuracy_validated": false,
+  "partial_occlusion_pose_update_accepted": false,
+  "source_sha256": {
+    "/home/linux/omi_folder/omi_shapeforge/scripts/perception/structural_edge_pose.py": "8860c20713f8e471cefe2d3a5ec1041d3e31f7ec5b47441760016d1eb37612d9",
+    "/home/linux/omi_folder/omi_shapeforge/scripts/perception/run_structural_edge_trial.py": "6697c4bac642b8362bcd5c27793d26de74a904f45a406ad9c15e1ea814c4be35"
+  }
+}

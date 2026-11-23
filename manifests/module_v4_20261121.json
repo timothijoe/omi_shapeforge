@@ -1,0 +1,13 @@
+{
+  "asset_id": "OM-001/V4",
+  "revision": "r01",
+  "asset_directory": "/data/omi_runtime/assets/optical_module_v4/r01",
+  "manifest": "/data/omi_runtime/assets/optical_module_v4/r01/asset_manifest.json",
+  "manifest_sha256": "6a30d73d79ccdecd9df141757df557e3f6262465b5ed352664cd6e384c0ccde9",
+  "validation": "/data/omi_runtime/assets/optical_module_v4/r01/validation.json",
+  "source_video": "/home/linux/Downloads/飞书20261121-193612.qt",
+  "source_video_sha256": "1871ac1ad492d20052ef5338e8b88f819e18202646ec0c9e1fb807b7824846b2",
+  "run_directory": "/data/omi_runtime/runs/module_v4_groove_20261121",
+  "protected_old_files_unchanged": 529,
+  "current_training_asset_unchanged": true
+}

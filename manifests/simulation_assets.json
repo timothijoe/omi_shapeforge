@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "family": "SIM-OM001-OS001",
+  "primary_source_family": "New measured candidate uses frozen OM-001/V4-r05 with a derived OS-001/M1888-r01; original V3/r04 and SIM-r03 remain unchanged.",
+  "current": "SIM-OM001-OS001-r06",
+  "entries": [
+    {
+      "asset_id": "SIM-OM001-OS001-r01",
+      "path": "/data/omi_runtime/assets/sim_insertion/r01",
+      "status": "rejected",
+      "reason": "transient contact penetration about 0.225mm",
+      "manifest_sha256": "b622daa855a07a737ea81c291eb64883318cf0433f526182c0d68b4e50bedb3f",
+      "real_elasticity_calibrated": false
+    },
+    {
+      "asset_id": "SIM-OM001-OS001-r02",
+      "path": "/data/omi_runtime/assets/sim_insertion/r02",
+      "status": "superseded",
+      "reason": "normal cycle passed, but 0.35mm full stroke intersects a fixed rib",
+      "manifest_sha256": "c2bf82dae88cd2ca02dbd59cf2b867337b1e39ddc27bba91a2e3eadcb0f55272",
+      "real_elasticity_calibrated": false
+    },
+    {
+      "asset_id": "SIM-OM001-OS001-r03",
+      "path": "/data/omi_runtime/assets/sim_insertion/r03",
+      "status": "legacy_validated_asset_used_by_existing_training_runs",
+      "reason": "0.27mm stroke; local and robot rule contact validation passed",
+      "manifest_sha256": "ea4354a7a49a609d902896170934bc9fd527413bb7f12fbd8a809103e327385d",
+      "real_elasticity_calibrated": false
+    },
+    {
+      "asset_id": "SIM-OM001-OS001-r04",
+      "path": "/data/omi_runtime/assets/sim_insertion/r04",
+      "status": "rejected",
+      "reason": "Raw CoACD inflation blocked nominal entry before mouth.",
+      "manifest_sha256": "770d696d7b536708d85d935b54464a0ddb3028c7d972c7cbf94e5b066f59972c",
+      "real_elasticity_calibrated": false
+    },
+    {
+      "asset_id": "SIM-OM001-OS001-r05",
+      "path": "/data/omi_runtime/assets/sim_insertion/r05",
+      "status": "rejected",
+      "reason": "Intermediate clipping implementation failed enclosing-box regression; not accepted.",
+      "manifest_sha256": "08f2df51c93dff592dccf402ef59ad1b3a9c7cde429bb993de01854ea999a070",
+      "real_elasticity_calibrated": false
+    },
+    {
+      "asset_id": "SIM-OM001-OS001-r06",
+      "path": "/data/omi_runtime/assets/sim_insertion/r06",
+      "status": "current_measured_simulation_candidate",
+      "reason": "18.8x8.8mm throat, assumed front-left margin6.9mm, V4-r05 visuals; local and robot rule cycles pass; old policies fail direct transfer.",
+      "manifest_sha256": "350d26d3fcb99cef1168d888fa4de289879eb3ff048667b7964b0a806cf65f31",
+      "real_elasticity_calibrated": false
+    }
+  ],
+  "validation": "measured_v4_simulation_20261121.json",
+  "operator_guide": "../tutorials/measured_v4_simulation.md",
+  "previous_training_asset": "SIM-OM001-OS001-r03",
+  "latest_wrist_tool_scene": {
+    "tool_asset": "WG-DAIMON-VIS-r04",
+    "contact_asset": "SIM-OM001-OS001-r06",
+    "scene": "/data/omi_runtime/runs/wrist_camera_gripper_20261121/robot_scene_final",
+    "validation": "wrist_camera_gripper_20261121.json",
+    "scope": "visual wrist tool and optical mount candidate; fixed payload and inherited URDF dynamics"
+  }
+}

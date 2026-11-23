@@ -1,0 +1,871 @@
+{
+  "version": "grid-perception-20261123-v1",
+  "run": "/data/omi_runtime/runs/grid_perception_20261123_v1",
+  "viewer": "http://127.0.0.1:8895",
+  "status": "generated_annotated_audited_not_trained",
+  "recommended_data": "/data/omi_runtime/runs/grid_perception_20261123_v1/data_strict",
+  "physical_parent_data": "/data/omi_runtime/runs/grid_perception_20261123_v1/data",
+  "plan": {
+    "version": "grid-perception-v1",
+    "phase": "pre-insertion only",
+    "module_grid": {
+      "fore_aft_mm": [
+        -3.0,
+        -2.5,
+        -2.0,
+        -1.5,
+        -1.0,
+        -0.5,
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0
+      ],
+      "height_mm": [
+        -1.0,
+        -0.75,
+        -0.5,
+        -0.25,
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "pitch_deg": [
+        -4.0,
+        -3.5,
+        -3.0,
+        -2.5,
+        -2.0,
+        -1.5,
+        -1.0,
+        -0.5,
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0
+      ]
+    },
+    "module_grid_complete": true,
+    "module_grasp_groups": 1989,
+    "module_fixed_constraints": [
+      "lateral_center=0",
+      "no non-pitch rotation"
+    ],
+    "socket_translation": {
+      "lateral_mm": [
+        -3.0,
+        -2.5,
+        -2.0,
+        -1.5,
+        -1.0,
+        -0.5,
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0
+      ],
+      "vertical_mm": [
+        -3.0,
+        -2.5,
+        -2.0,
+        -1.5,
+        -1.0,
+        -0.5,
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0
+      ],
+      "tip_gap_mm": [
+        0.5,
+        1,
+        1.5,
+        2,
+        3,
+        4,
+        5,
+        7.5,
+        10,
+        15,
+        20,
+        30,
+        40
+      ]
+    },
+    "socket_rotation_xyz_deg": [
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "near_mouth_lateral_and_vertical_mm": [
+      -1.0,
+      -0.75,
+      -0.5,
+      -0.25,
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "candidate_images": 16490,
+    "full_nine_variable_cartesian_product": false,
+    "coverage_description": "Complete 1989 module grid with six deterministic socket views each; complete socket translation and joint-angle grids at nominal grasp; near-mouth local fine grid. Requested cells rejected by physics, mesh collision, IK or visibility remain explicitly recorded.",
+    "split_policy": "Entire module grasp ID remains in one split. Dense socket grids only at nominal grasp; this split measures module/general paired-view interpolation, not independent dense-socket generalization.",
+    "nominal_grasp_split": "train",
+    "fine_sampling_is_not_claimed_prediction_accuracy": true,
+    "render_resolution": [
+      960,
+      540
+    ],
+    "template_contract": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/network_templates/manifest.json",
+    "label_storage": "shared surface templates plus actual transforms; no duplicated full point clouds per image",
+    "visibility_labels": "rendered module/socket instance mask",
+    "acceptance": {
+      "module_target_fore_aft_height_tolerance_mm": 0.1,
+      "module_pitch_tolerance_deg": 0.5,
+      "lateral_center_tolerance_mm": 0.1,
+      "non_pitch_rotation_tolerance_deg": 0.5,
+      "each_pad_force_N": 0.1,
+      "max_visible_pad_penetration_mm": 0.05,
+      "minimum_visible_module_pixels": 60,
+      "minimum_visible_socket_pixels": 100,
+      "reject_module_or_gripper_intersection_with_socket": true
+    },
+    "training_performed": false,
+    "real_world_labels": false
+  },
+  "physical_capture": {
+    "candidate_images": 16490,
+    "accepted_images": 16251,
+    "rejected_images": 239,
+    "rejection_reasons": {
+      "grasp_configuration_failed": 36,
+      "module_socket_mesh_intersection": 203
+    },
+    "grasp_grid_cells_checked": 1989,
+    "grasp_grid_cells_passed": 1983,
+    "grasp_groups_with_images": 1983,
+    "split_images": {
+      "train": 13959,
+      "val": 1110,
+      "test": 1182
+    },
+    "coverage_partition_complete": true,
+    "training_performed": false
+  },
+  "strict_core": {
+    "physical_parent_images": 16251,
+    "strict_images": 14549,
+    "auxiliary_only_images": 1702,
+    "limits": {
+      "fore_aft_error_mm": 0.1,
+      "height_error_mm": 0.1,
+      "pitch_error_deg": 0.25,
+      "lateral_center_mm": 0.02,
+      "non_pitch_rotation_deg": 0.05
+    },
+    "violation_counts_not_mutually_exclusive": {
+      "lateral_center_mm": 1402,
+      "non_pitch_rotation_deg": 342
+    },
+    "strict_grasp_groups": 1926,
+    "split_images": {
+      "train": 12463,
+      "val": 987,
+      "test": 1099
+    },
+    "accepted_for_sim_supervision": true,
+    "physical_validation_inherited_from": "/data/omi_runtime/runs/grid_perception_20261123_v1/data/label_audit.json",
+    "physical_validation_sha256": "9bddec0b9d392ec553d44cc23c89d476938ca7c164b66d9099468620b7680754",
+    "parent_records_sha256": "390f225f1717431da0b8044d4498dc97d88add368eb652e156ff6df8741f3d66",
+    "strict_records_sha256": "cad6ed8d036e9850bcde24a0417b3cd07a7a1c4504bec96363c4d349be8e09af",
+    "parent_unmodified": true,
+    "training_performed": false,
+    "notes": "Working task-prior quality thresholds, not real metrology or neural accuracy. Parent retains valid but off-prior physical states for inspection."
+  },
+  "physical_label_audit": {
+    "accepted_for_sim_supervision": true,
+    "images_checked": 16251,
+    "mask_hashes_values_pixel_counts_and_bboxes_checked": true,
+    "all_actual_poses_independently_replayed": true,
+    "max_pose_matrix_difference": 0.0,
+    "all_frame_bilateral_contacts_recomputed": true,
+    "replayed_min_each_force_N": 1.60081842820963,
+    "requested_socket_translation_max_difference_mm": 0.032492932813307514,
+    "requested_socket_rotation_max_difference_deg": 0.0030617944132637666,
+    "minimum_module_surface_mouth_plane_gap_mm": 0.5000823526677802,
+    "shared_source_assets_unchanged": true,
+    "module_no_weld": true,
+    "module_prior_checked_each_frame": true,
+    "grouped_split_no_identical_image_leakage": true,
+    "coverage_partition": {
+      "candidate_images": 16490,
+      "accepted_images": 16251,
+      "rejected_images": 239,
+      "rejection_reasons": {
+        "grasp_configuration_failed": 36,
+        "module_socket_mesh_intersection": 203
+      },
+      "grasp_grid_cells_checked": 1989,
+      "grasp_grid_cells_passed": 1983,
+      "grasp_groups_with_images": 1983,
+      "split_images": {
+        "train": 13959,
+        "val": 1110,
+        "test": 1182
+      },
+      "coverage_partition_complete": true,
+      "training_performed": false
+    },
+    "real_world_accuracy_validated": false,
+    "socket_insertion_contact_validated": false,
+    "continuous_motion_validated": false,
+    "template_manifest": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/network_templates/manifest.json",
+    "template_manifest_sha256": "12e4e663ae3f7819db17f41d7179fcfdf4a32da5311083ad989ae7053bf62e6b"
+  },
+  "render_replay": {
+    "selected_states": [
+      {
+        "sample_id": 0,
+        "families": [
+          "module_full_grid"
+        ],
+        "mask_mismatch_pixels": 0,
+        "decoded_rgb_mae": 0.0,
+        "decoded_rgb_max_difference": 0.0,
+        "changed_rgb_pixel_fraction": 0.0
+      },
+      {
+        "sample_id": 5949,
+        "families": [
+          "module_full_grid"
+        ],
+        "mask_mismatch_pixels": 0,
+        "decoded_rgb_mae": 0.0,
+        "decoded_rgb_max_difference": 0.0,
+        "changed_rgb_pixel_fraction": 0.0
+      },
+      {
+        "sample_id": 11933,
+        "families": [
+          "module_full_grid"
+        ],
+        "mask_mismatch_pixels": 0,
+        "decoded_rgb_mae": 0.0006835133744855967,
+        "decoded_rgb_max_difference": 6.0,
+        "changed_rgb_pixel_fraction": 0.0007214506172839506
+      },
+      {
+        "sample_id": 5964,
+        "families": [
+          "module_full_grid",
+          "socket_full_translation_grid_at_nominal_grasp",
+          "socket_fine_near_mouth_grid_at_nominal_grasp"
+        ],
+        "mask_mismatch_pixels": 0,
+        "decoded_rgb_mae": 0.0,
+        "decoded_rgb_max_difference": 0.0,
+        "changed_rgb_pixel_fraction": 0.0
+      },
+      {
+        "sample_id": 14176,
+        "families": [
+          "socket_fine_near_mouth_grid_at_nominal_grasp"
+        ],
+        "mask_mismatch_pixels": 0,
+        "decoded_rgb_mae": 0.0,
+        "decoded_rgb_max_difference": 0.0,
+        "changed_rgb_pixel_fraction": 0.0
+      },
+      {
+        "sample_id": 14294,
+        "families": [
+          "socket_fine_near_mouth_grid_at_nominal_grasp"
+        ],
+        "mask_mismatch_pixels": 0,
+        "decoded_rgb_mae": 0.0007452417695473251,
+        "decoded_rgb_max_difference": 3.0,
+        "changed_rgb_pixel_fraction": 0.0007098765432098765
+      },
+      {
+        "sample_id": 5965,
+        "families": [
+          "module_full_grid",
+          "socket_full_translation_grid_at_nominal_grasp",
+          "socket_full_rotation_grid_at_nominal_grasp"
+        ],
+        "mask_mismatch_pixels": 0,
+        "decoded_rgb_mae": 0.000462962962962963,
+        "decoded_rgb_max_difference": 3.0,
+        "changed_rgb_pixel_fraction": 0.0004494598765432099
+      },
+      {
+        "sample_id": 15391,
+        "families": [
+          "socket_full_rotation_grid_at_nominal_grasp"
+        ],
+        "mask_mismatch_pixels": 0,
+        "decoded_rgb_mae": 0.00011252572016460906,
+        "decoded_rgb_max_difference": 2.0,
+        "changed_rgb_pixel_fraction": 0.00011766975308641975
+      },
+      {
+        "sample_id": 16489,
+        "families": [
+          "socket_full_rotation_grid_at_nominal_grasp"
+        ],
+        "mask_mismatch_pixels": 0,
+        "decoded_rgb_mae": 0.0,
+        "decoded_rgb_max_difference": 0.0,
+        "changed_rgb_pixel_fraction": 0.0
+      },
+      {
+        "sample_id": 13036,
+        "families": [
+          "socket_full_translation_grid_at_nominal_grasp",
+          "socket_fine_near_mouth_grid_at_nominal_grasp"
+        ],
+        "mask_mismatch_pixels": 0,
+        "decoded_rgb_mae": 0.0,
+        "decoded_rgb_max_difference": 0.0,
+        "changed_rgb_pixel_fraction": 0.0
+      },
+      {
+        "sample_id": 14126,
+        "families": [
+          "socket_full_translation_grid_at_nominal_grasp"
+        ],
+        "mask_mismatch_pixels": 0,
+        "decoded_rgb_mae": 0.0,
+        "decoded_rgb_max_difference": 0.0,
+        "changed_rgb_pixel_fraction": 0.0
+      },
+      {
+        "sample_id": 11016,
+        "families": [
+          "module_full_grid"
+        ],
+        "mask_mismatch_pixels": 0,
+        "decoded_rgb_mae": 0.0,
+        "decoded_rgb_max_difference": 0.0,
+        "changed_rgb_pixel_fraction": 0.0
+      },
+      {
+        "sample_id": 816,
+        "families": [
+          "module_full_grid"
+        ],
+        "mask_mismatch_pixels": 0,
+        "decoded_rgb_mae": 5.015432098765432e-05,
+        "decoded_rgb_max_difference": 2.0,
+        "changed_rgb_pixel_fraction": 5.787037037037037e-05
+      },
+      {
+        "sample_id": 96,
+        "families": [
+          "module_full_grid"
+        ],
+        "mask_mismatch_pixels": 0,
+        "decoded_rgb_mae": 0.000211548353909465,
+        "decoded_rgb_max_difference": 3.0,
+        "changed_rgb_pixel_fraction": 0.00016589506172839507
+      }
+    ],
+    "all_masks_exact": true,
+    "all_RGB_exact": false,
+    "max_RGB_MAE": 0.0007452417695473251,
+    "max_changed_pixel_fraction": 0.0007214506172839506,
+    "scope": "Independent state replay; report photometric differences separately from geometry mask agreement"
+  },
+  "cache_gate_equivalence": {
+    "cases": 27,
+    "accepted_flags_matched": true,
+    "nonpad_collision_sets_matched": true,
+    "max_pad_distance_difference_mm": 0,
+    "negative_cases": [
+      {
+        "case": "up10",
+        "both_rejected": true
+      },
+      {
+        "case": "down10",
+        "both_rejected": true
+      },
+      {
+        "case": "yaw20",
+        "both_rejected": true
+      },
+      {
+        "case": "lateral5",
+        "both_rejected": true
+      }
+    ]
+  },
+  "socket_gate_equivalence": {
+    "cases": [
+      {
+        "relation": {
+          "lateral_mm": -3,
+          "vertical_mm": -3,
+          "tip_gap_mm": 0.5,
+          "rotation_socket_xyz_deg": [
+            0,
+            0,
+            0
+          ]
+        },
+        "original": "module_socket_mesh_intersection",
+        "cached": "module_socket_mesh_intersection"
+      },
+      {
+        "relation": {
+          "lateral_mm": 0,
+          "vertical_mm": 0,
+          "tip_gap_mm": 0.5,
+          "rotation_socket_xyz_deg": [
+            0,
+            0,
+            0
+          ]
+        },
+        "original": null,
+        "cached": null
+      },
+      {
+        "relation": {
+          "lateral_mm": 3,
+          "vertical_mm": 3,
+          "tip_gap_mm": 2,
+          "rotation_socket_xyz_deg": [
+            0,
+            0,
+            0
+          ]
+        },
+        "original": null,
+        "cached": null
+      },
+      {
+        "relation": {
+          "lateral_mm": 0,
+          "vertical_mm": 0,
+          "tip_gap_mm": 40,
+          "rotation_socket_xyz_deg": [
+            0,
+            0,
+            0
+          ]
+        },
+        "original": null,
+        "cached": null
+      }
+    ],
+    "all_matched": true
+  },
+  "browser_validation": {
+    "checks": [
+      {
+        "family": "module_full_grid",
+        "values": {
+          "fore_aft_mm": 0,
+          "height_mm": 0,
+          "pitch_deg": 0,
+          "view": 0
+        },
+        "id": 5964,
+        "accepted": true,
+        "point_pixels": 70028,
+        "gl_error": 0,
+        "page_error": ""
+      },
+      {
+        "family": "module_full_grid",
+        "values": {
+          "fore_aft_mm": -3,
+          "height_mm": -1,
+          "pitch_deg": -4,
+          "view": 0
+        },
+        "id": 0,
+        "accepted": true,
+        "point_pixels": 64381,
+        "gl_error": 0,
+        "page_error": ""
+      },
+      {
+        "family": "module_full_grid",
+        "values": {
+          "fore_aft_mm": 3,
+          "height_mm": 1,
+          "pitch_deg": 4,
+          "view": 5
+        },
+        "id": 11933,
+        "accepted": true,
+        "point_pixels": 78185,
+        "gl_error": 0,
+        "page_error": ""
+      },
+      {
+        "family": "module_full_grid",
+        "values": {
+          "fore_aft_mm": 2.5,
+          "height_mm": 0,
+          "pitch_deg": 4,
+          "view": 0
+        },
+        "id": 10602,
+        "accepted": false,
+        "reason": "grasp_configuration_failed",
+        "point_pixels": 0,
+        "gl_error": 0,
+        "page_error": ""
+      },
+      {
+        "family": "socket_full_translation_grid_at_nominal_grasp",
+        "values": {
+          "lateral_mm": -3,
+          "vertical_mm": -3,
+          "tip_gap_mm": 0.5
+        },
+        "id": 11934,
+        "accepted": false,
+        "reason": "module_socket_mesh_intersection",
+        "point_pixels": 0,
+        "gl_error": 0,
+        "page_error": ""
+      },
+      {
+        "family": "socket_full_translation_grid_at_nominal_grasp",
+        "values": {
+          "lateral_mm": 3,
+          "vertical_mm": 3,
+          "tip_gap_mm": 0.5
+        },
+        "id": 14114,
+        "accepted": true,
+        "point_pixels": 69440,
+        "gl_error": 0,
+        "page_error": ""
+      },
+      {
+        "family": "socket_full_translation_grid_at_nominal_grasp",
+        "values": {
+          "lateral_mm": 0,
+          "vertical_mm": 0,
+          "tip_gap_mm": 40
+        },
+        "id": 5966,
+        "accepted": true,
+        "point_pixels": 72587,
+        "gl_error": 0,
+        "page_error": ""
+      },
+      {
+        "family": "socket_full_rotation_grid_at_nominal_grasp",
+        "values": {
+          "rx": -6,
+          "ry": -6,
+          "rz": -6
+        },
+        "id": 14295,
+        "accepted": true,
+        "point_pixels": 65142,
+        "gl_error": 0,
+        "page_error": ""
+      },
+      {
+        "family": "socket_full_rotation_grid_at_nominal_grasp",
+        "values": {
+          "rx": 6,
+          "ry": 6,
+          "rz": 6
+        },
+        "id": 16489,
+        "accepted": true,
+        "point_pixels": 70776,
+        "gl_error": 0,
+        "page_error": ""
+      },
+      {
+        "family": "socket_fine_near_mouth_grid_at_nominal_grasp",
+        "values": {
+          "lateral_mm": 0.25,
+          "vertical_mm": 0.25,
+          "tip_gap_mm": 1
+        },
+        "id": 14233,
+        "accepted": true,
+        "point_pixels": 69734,
+        "gl_error": 0,
+        "page_error": ""
+      }
+    ],
+    "visible_mask_overlay_changes_pixels": true,
+    "local_cloud_renders": true,
+    "errors": []
+  },
+  "quality_tier_browser_validation": {
+    "id": 5,
+    "status": "样本 5 · g0000 · train · 物理有效辅助样本：偏离严格三变量条件，不进入主训练子集",
+    "aux_color": true,
+    "strict_count": 14549,
+    "strict_groups": 1926,
+    "error": ""
+  },
+  "source_snapshots": [
+    {
+      "source": "scripts/perception/build_grid_perception_plan.py",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/final_source_snapshot/scripts/perception/build_grid_perception_plan.py",
+      "sha256": "a269281863b490900cac0e21abeeb477a18907d82feaaf331370a2b7f8989cc3"
+    },
+    {
+      "source": "scripts/perception/generate_grid_perception.py",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/final_source_snapshot/scripts/perception/generate_grid_perception.py",
+      "sha256": "cc77623293db577580645abdf485fdedeaf2a356358e13be5929024790adc057"
+    },
+    {
+      "source": "scripts/perception/cached_contact_geometry.py",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/final_source_snapshot/scripts/perception/cached_contact_geometry.py",
+      "sha256": "32662d1f1ceaea3f3091c3991d1a806c1d068fa105f5aea173760a964f9aebb4"
+    },
+    {
+      "source": "scripts/perception/audit_grid_perception.py",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/final_source_snapshot/scripts/perception/audit_grid_perception.py",
+      "sha256": "608b1d380634bee792c323797ce05fa03237cf2271cad9d339439e44d5af44e9"
+    },
+    {
+      "source": "scripts/perception/filter_grid_three_variable.py",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/final_source_snapshot/scripts/perception/filter_grid_three_variable.py",
+      "sha256": "ca433208031cb29dc22d797a095d7d6ee16082fe99d510ec26240d9506afcb14"
+    },
+    {
+      "source": "scripts/perception/verify_grid_render_replay.py",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/final_source_snapshot/scripts/perception/verify_grid_render_replay.py",
+      "sha256": "700468e0cd0e3fab92d6bffdb5989c4d1569bc07def901df560cd996ce863b2f"
+    },
+    {
+      "source": "scripts/perception/render_grid_perception.py",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/final_source_snapshot/scripts/perception/render_grid_perception.py",
+      "sha256": "ad648699b1ee27cb9638a8398a84c1f4fe5fc9136bc6903ebec30107f1100d73"
+    },
+    {
+      "source": "scripts/perception/grid_perception_viewer.html",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/final_source_snapshot/scripts/perception/grid_perception_viewer.html",
+      "sha256": "c7b09be9246d857a6b356560a33088f48ce7d1ed5796ce721a514d4beb2d8b8f"
+    },
+    {
+      "source": "scripts/perception/export_grid_annotation.py",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/final_source_snapshot/scripts/perception/export_grid_annotation.py",
+      "sha256": "08a0b80b6135ae5d155dda12e51612163e31bbcfeef0e0fb22540b188ce87d3b"
+    },
+    {
+      "source": "scripts/perception/generate_contact_wrist_dataset.py",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/final_source_snapshot/scripts/perception/generate_contact_wrist_dataset.py",
+      "sha256": "e47caf4fef8793c5e76fdd0ab228e7dcf61b73e73dd4ce4823467c46e9e5a5dd"
+    },
+    {
+      "source": "scripts/perception/contact_visual_gate.py",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/final_source_snapshot/scripts/perception/contact_visual_gate.py",
+      "sha256": "038e11409859e15ae038434a88491e2f3217757e059545f8b071a4ad66a9becb"
+    },
+    {
+      "source": "scripts/perception/preview_three_variable_grasp.py",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/final_source_snapshot/scripts/perception/preview_three_variable_grasp.py",
+      "sha256": "748dfeb3339bab0dcf110131a81a4017d7377a5f5d6aaf08331a708b42791a24"
+    },
+    {
+      "source": "scripts/perception/generate_sim_wrist_dataset.py",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/final_source_snapshot/scripts/perception/generate_sim_wrist_dataset.py",
+      "sha256": "3340c796050287b96e2418b03ecdfc59572a45cc42dd56ff4541dc707550a6d6"
+    },
+    {
+      "source": "src/omi_shapeforge/sim/wrist_fisheye.py",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/final_source_snapshot/src/omi_shapeforge/sim/wrist_fisheye.py",
+      "sha256": "8f25df888d79198fc50d140c4aac5ec17a7c2a8758ed2891cc7c03e41f842b6e"
+    },
+    {
+      "source": "docs/agent/perception/evolution/grid-perception-data-v1.md",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/final_source_snapshot/docs/agent/perception/evolution/grid-perception-data-v1.md",
+      "sha256": "c8a9a6ad5f3a91db4e60922970598eaa2c9f55ed7d7ecd5440909fb5a94b34d0"
+    },
+    {
+      "source": "docs/agent/perception/chronicles/2026-11-23-grid-perception-data-v1.md",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/final_source_snapshot/docs/agent/perception/chronicles/2026-11-23-grid-perception-data-v1.md",
+      "sha256": "ab53dc998b4de41000de87a15646e6d79504056db9f033d34f591dcc213a819d"
+    },
+    {
+      "source": "tutorials/grid_perception_data_v1.md",
+      "snapshot": "/data/omi_runtime/runs/grid_perception_20261123_v1/final_source_snapshot/tutorials/grid_perception_data_v1.md",
+      "sha256": "5837c5e6e6925df2ad9b7190ef442b0f088cc540441903b0b27c8ec5113aa47b"
+    }
+  ],
+  "references": [
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/plan.json",
+      "sha256": "2f2a9a71a6889ac753f852cdaada5cc5f3186a058c7eeb81cb439acba07d6406"
+    },
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/candidates.jsonl",
+      "sha256": "6f08ab3ac1f680f23757e3c2d26f5004ec6bc878f22d51aba43ee48426e11afa"
+    },
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/data/complete.json",
+      "sha256": "f862c9e074d8d2d2230a504ad91a3dfc6e4dbd6e63e9eda8c5196c7d8923fcbc"
+    },
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/data/records.jsonl",
+      "sha256": "390f225f1717431da0b8044d4498dc97d88add368eb652e156ff6df8741f3d66"
+    },
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/data/label_audit.json",
+      "sha256": "9bddec0b9d392ec553d44cc23c89d476938ca7c164b66d9099468620b7680754"
+    },
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/data/rejected.jsonl",
+      "sha256": "d859c258758a500f1d87271a8e3506150d6b10ef2b53b8d796883bad1e4e0cda"
+    },
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/data/calibration.json",
+      "sha256": "a9d76c80e5e61cad7b3627c6ed333a9638e497671af7b9c2c2eaaa86cde5b78d"
+    },
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/data/config.json",
+      "sha256": "e5b9bb5f5faf68deea1f81809d581ca01ef8ff22c6e9a515c4478935bdbc8d30"
+    },
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/data/scene.xml",
+      "sha256": "3d3ff0d891b67958dc9c745ef369bbd91a7f7d9b53451747c669a1e6c32f79f1"
+    },
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/data/physics_scene.xml",
+      "sha256": "7aa46680daff401ef4b33692d07b0ccba279a5bcaac308cd3eada179a8647c97"
+    },
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/data/dependencies.json",
+      "sha256": "b902d2da1712ea38b17b94b7830c1b8b1172ce1fd8e8a24f233ab39bc18da54f"
+    },
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/data_strict/records.jsonl",
+      "sha256": "cad6ed8d036e9850bcde24a0417b3cd07a7a1c4504bec96363c4d349be8e09af"
+    },
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/data_strict/config.json",
+      "sha256": "69baa1c19d95569e23b0cb61775c561de5eb67b209d83e0388f0692d46950f72"
+    },
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/data_strict/label_audit.json",
+      "sha256": "90d1b2b4b7a14bc3c71564abd97117f14387980e11a37b86cd14c88c2ae4e308"
+    },
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/strict_subset_report.json",
+      "sha256": "90d1b2b4b7a14bc3c71564abd97117f14387980e11a37b86cd14c88c2ae4e308"
+    },
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/coverage.csv",
+      "sha256": "2a73e29cdaa85bc995ec4458b853da109b299cb7333ab9f0c6498ca79d67a54d"
+    },
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/coverage_by_grasp.json",
+      "sha256": "0f3edb5bec6c6148de2d8cd5d9bbb659f6365d26494bd721119236d36add46d8"
+    },
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/sampling_pools.json",
+      "sha256": "85bd70d6149cc87a377133e7bca53329d1301045892ca4bb22cdf9a757b0aa22"
+    },
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/cache_validation/report.json",
+      "sha256": "52dada8a2eb181e3cf0802f9798574e90ce7a2935588c35ccad68067ec32b7d4"
+    },
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/socket_cache_check/report.json",
+      "sha256": "093f0e521fca36983d0fe1a94ec766bd38b0c80ca5b70e0127a596b011f9a336"
+    },
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/render_replay_report.json",
+      "sha256": "6d6c5ea49e657f287d2ade04d65f98198c59b4f674dd4b6ee6179d50a48e9ecb"
+    },
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/review/browser_validation.json",
+      "sha256": "67ba1e77d7cb59aa363399b131a948479ac63c27d6f1a8daaa035d041e962425"
+    },
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/review/quality_tier_browser_validation.json",
+      "sha256": "e607a3ec61cfd48b7a5ce7850927f78860e69ff93078387447a4fe1656464711"
+    },
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/annotation_example_5964/annotation.json",
+      "sha256": "016864533e634d07c4e2d949048166fdc57a940652fe19abc5f2b467a96e1cfe"
+    },
+    {
+      "path": "/data/omi_runtime/runs/grid_perception_20261123_v1/index.html",
+      "sha256": "6863c96c1acd0ba333a2190e90b15ea88f6c940cb1c416c83ea247ee31afb9f3"
+    }
+  ],
+  "shared_templates": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/network_templates/manifest.json",
+  "shared_template_manifest_sha256": "12e4e663ae3f7819db17f41d7179fcfdf4a32da5311083ad989ae7053bf62e6b",
+  "restore": "tutorials/grid_perception_data_v1.md",
+  "training_performed": false,
+  "real_world_accuracy_validated": false,
+  "insertion_contact_validated": false,
+  "full_nine_variable_cartesian_product": false,
+  "strict_grid_complete": false,
+  "migration_note": "Restore shards/, data/ and data_strict/ symlinks, shared network_templates, and all source asset dependencies. Point clouds are templates transformed by recorded actual poses.",
+  "documentation_updates": [
+    {
+      "date": "2026-11-23",
+      "manifest": "manifests/grid_perception_documentation_20261123.json",
+      "archive": "/data/omi_runtime/runs/grid_perception_20261123_v1/documentation_20261123_final",
+      "historical_snapshot_preserved": true
+    }
+  ],
+  "task_handoff": {
+    "date": "2026-11-23",
+    "task_handoff": "docs/chronicles/2026-11-23-perception-grid-pretraining-handoff.md",
+    "archive": "/data/omi_runtime/runs/grid_perception_20261123_v1/handoff_20261123/2026-11-23-perception-grid-pretraining-handoff.md",
+    "sha256": "93e25b4e2e754603c02b50f4122f8c83309264ac8fdf901ff6fcf0aa4f9cdcac",
+    "links_checked": [
+      "../agent/perception/evolution/three-variable-grasp-preview.md",
+      "../../tutorials/grid_perception_data_v1.md",
+      "../agent/perception/evolution/contact-wrist-surface-learning.md",
+      "../agent/simulation/evolution/staged-insertion-contract.md",
+      "../agent/perception/evolution/grid-perception-data-v1.md",
+      "../agent/perception/chronicles/2026-11-23-grid-perception-data-v1.md",
+      "../../tutorials/grid_perception_data_v1.md",
+      "../../manifests/grid_perception_data_20261123_v1.json",
+      "../../manifests/grid_perception_documentation_20261123.json"
+    ],
+    "strict_counts_verified": true,
+    "parent_and_strict_records_unchanged": true,
+    "data_generation_complete": true,
+    "new_training_started_by_this_documentation_task": false,
+    "parallel_task_handoffs_preserved": true
+  }
+}

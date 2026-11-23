@@ -1,0 +1,16 @@
+{
+  "asset_id": "OM-001/V4",
+  "revision": "r05",
+  "directory": "/data/omi_runtime/assets/optical_module_v4/r05",
+  "manifest": "/data/omi_runtime/assets/optical_module_v4/r05/asset_manifest.json",
+  "manifest_sha256": "b50055a8d494410951f402fb6b56824eb551043a216b06b209cd414d95cc6b08",
+  "validation": "/data/omi_runtime/assets/optical_module_v4/r05/validation.json",
+  "user_correction": "The regions level with the three metal ends are empty, not rubber.",
+  "empty_window_probe_samples": 280,
+  "main_module_parts_unchanged_from_r04": 17,
+  "old_files_unchanged": 686,
+  "training_unchanged": true,
+  "display_name": "V4-r05 · 双窗尾槽版",
+  "review_status": "user_adopted_provisional_visual_baseline",
+  "designation_manifest": "module_v4_r05_designation_20261121.json"
+}

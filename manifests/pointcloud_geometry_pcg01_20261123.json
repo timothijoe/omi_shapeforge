@@ -1,0 +1,14 @@
+{
+  "asset_id": "PCG-01",
+  "directory": "/home/linux/Downloads/PCG-01",
+  "zip": "/home/linux/Downloads/PCG-01.zip",
+  "zip_bytes": 914836,
+  "zip_sha256": "6215ae794b4b29d31e0a3640c9af6048ffba496632f057debb40cbea834c0d7f",
+  "files": 11,
+  "total_directory_bytes": 1335147,
+  "portable_paths_checked": true,
+  "zip_integrity_checked": true,
+  "source_geometry_directory": "/data/omi_runtime/assets/pointcloud_matching/PCG-01",
+  "validation": "/data/omi_runtime/assets/pointcloud_matching/PCG-01/validation.json",
+  "guide": "docs/agent/perception/evolution/pointcloud-geometry-pcg01.md"
+}

@@ -1,0 +1,544 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-23",
+  "task_contract": "entry-strict-interior-tolerant-v1",
+  "run_root": "/data/omi_runtime/runs/staged_contact_20261123",
+  "summary": {
+    "task_contract": "entry-strict-interior-tolerant-v1",
+    "passed": 5,
+    "total": 5,
+    "cases": {
+      "aligned_520": {
+        "accepted": true,
+        "steps": 405,
+        "phases": [
+          {
+            "phase": "align_outside",
+            "reason": "target_reached",
+            "steps": 7,
+            "depth_mm": -4.9312766890070066,
+            "scalar_sample_max_N": 0.0,
+            "scalar_mean_max_N": 0.0,
+            "axial_mean_max_N": 0.0,
+            "penetration_max_mm": 0.0
+          },
+          {
+            "phase": "insert_aligned",
+            "reason": "seated",
+            "steps": 398,
+            "depth_mm": 51.28110773700939,
+            "scalar_sample_max_N": 0.0,
+            "scalar_mean_max_N": 0.377436313580536,
+            "axial_mean_max_N": 0.37743631340926953,
+            "penetration_max_mm": 0.0511403959535528
+          }
+        ],
+        "first_qualified_depth_mm": 5.06089778543468,
+        "final_depth_mm": 51.28110773700939,
+        "point_penetration_peak_mm": 0.0511403959535528,
+        "control_geometry_overlap_peak_mm": 0.05007247241890084,
+        "contact_mean_peak_N": 0.377436313580536,
+        "contact_substep_peak_N": 10.674914961352606,
+        "old_point_guard_exceedance_intervals": 2,
+        "old_sample_force_guard_exceedance_intervals": 0,
+        "source_hashes": {
+          "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/probe_smooth_contact.py": "f1a0a954bdecac4a0c1acdba67e72092180c7179531f9d73316e5f7c84a4e5ba",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_scene.py": "fcbb7a2ec9d5176c631e59b521fc6f4d4aaaff8b2fa41a8c5d30788724412562",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_runtime.py": "34d7a9a4d6448c810a054645766fd348430a9460be873ee75b22bc8d7887a87b",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_kinematics.py": "97c583aa3a63fbf016d33cd1fc98fdff0a9045e583ff4cb8b557df2811b26316",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/contact_teacher.py": "14691f5924b42482a1fdb7788112b323542e97dac0589d467a85ac6101676741",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_approach.py": "ceea6c1ca29e37628c8bb11fcfaa00720b1f9214e735db40c972cfb09cdeea74",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_diagnostics.py": "0b02671f4014c96739b6c35ce7109f31a9f515c44ffcc6148445f4dbfa2647f6",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/box_overlap.py": "8a468a86fd461ec4992735bcf039b97b6fdf049d21a68bcc34511b8a9f6f27e6",
+          "/home/linux/omi_folder/omi_proj/src/omi_hil_rl/hil/insertion_task.py": "d25d175734dde650b9d016bda9e9324d9b1570887626f03127253729a853c3d3"
+        }
+      },
+      "recovery_plus": {
+        "accepted": true,
+        "steps": 598,
+        "phases": [
+          {
+            "phase": "offset_outside",
+            "reason": "target_reached",
+            "steps": 10,
+            "depth_mm": -5.073865502506864,
+            "scalar_sample_max_N": 0.0,
+            "scalar_mean_max_N": 0.0,
+            "axial_mean_max_N": 0.0,
+            "penetration_max_mm": 0.0
+          },
+          {
+            "phase": "approach_offset_outside",
+            "reason": "target_reached",
+            "steps": 27,
+            "depth_mm": -1.0565998224139244,
+            "scalar_sample_max_N": 0.0,
+            "scalar_mean_max_N": 0.0,
+            "axial_mean_max_N": 0.0,
+            "penetration_max_mm": 0.0
+          },
+          {
+            "phase": "push_misaligned",
+            "reason": "entrance_blocked",
+            "steps": 127,
+            "depth_mm": -0.0005436124760451744,
+            "scalar_sample_max_N": 2.804565302677108,
+            "scalar_mean_max_N": 0.13679812973170427,
+            "axial_mean_max_N": 0.13679812969186855,
+            "penetration_max_mm": 0.05561506623052992
+          },
+          {
+            "phase": "retreat_same_offset",
+            "reason": "target_reached",
+            "steps": 32,
+            "depth_mm": -4.923098962466224,
+            "scalar_sample_max_N": 0.0,
+            "scalar_mean_max_N": 0.0,
+            "axial_mean_max_N": 0.0,
+            "penetration_max_mm": 0.00040638516907165467
+          },
+          {
+            "phase": "align_outside",
+            "reason": "target_reached",
+            "steps": 9,
+            "depth_mm": -4.947649936844494,
+            "scalar_sample_max_N": 0.0,
+            "scalar_mean_max_N": 0.0,
+            "axial_mean_max_N": 0.0,
+            "penetration_max_mm": 0.0
+          },
+          {
+            "phase": "insert_aligned",
+            "reason": "seated",
+            "steps": 393,
+            "depth_mm": 51.28130142748127,
+            "scalar_sample_max_N": 0.2839870868021901,
+            "scalar_mean_max_N": 0.11963383107118399,
+            "axial_mean_max_N": 0.1196338309984224,
+            "penetration_max_mm": 0.05115877866046503
+          }
+        ],
+        "first_qualified_depth_mm": 5.0493956732112935,
+        "final_depth_mm": 51.28130142748127,
+        "point_penetration_peak_mm": 0.05561506623052992,
+        "control_geometry_overlap_peak_mm": 0.050693854677978656,
+        "contact_mean_peak_N": 0.13679812973170427,
+        "contact_substep_peak_N": 16.720579005777953,
+        "old_point_guard_exceedance_intervals": 3,
+        "old_sample_force_guard_exceedance_intervals": 0,
+        "source_hashes": {
+          "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/probe_smooth_contact.py": "3f32af2cab3769eaccd55ef54d687009a4001ade205347b2fb542f8f86a61553",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_scene.py": "fcbb7a2ec9d5176c631e59b521fc6f4d4aaaff8b2fa41a8c5d30788724412562",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_runtime.py": "34d7a9a4d6448c810a054645766fd348430a9460be873ee75b22bc8d7887a87b",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_kinematics.py": "97c583aa3a63fbf016d33cd1fc98fdff0a9045e583ff4cb8b557df2811b26316",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/contact_teacher.py": "14691f5924b42482a1fdb7788112b323542e97dac0589d467a85ac6101676741",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_approach.py": "ceea6c1ca29e37628c8bb11fcfaa00720b1f9214e735db40c972cfb09cdeea74",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_diagnostics.py": "0b02671f4014c96739b6c35ce7109f31a9f515c44ffcc6148445f4dbfa2647f6",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/box_overlap.py": "8a468a86fd461ec4992735bcf039b97b6fdf049d21a68bcc34511b8a9f6f27e6",
+          "/home/linux/omi_folder/omi_proj/src/omi_hil_rl/hil/insertion_task.py": "99b5a6c3c2b70e3bc42ac9dc981a4a7c1058b4890fd17bc7ae559522bbd5bd5e"
+        }
+      },
+      "recovery_minus": {
+        "accepted": true,
+        "steps": 577,
+        "phases": [
+          {
+            "phase": "offset_outside",
+            "reason": "target_reached",
+            "steps": 10,
+            "depth_mm": -5.0692645897283715,
+            "scalar_sample_max_N": 0.0,
+            "scalar_mean_max_N": 0.0,
+            "axial_mean_max_N": 0.0,
+            "penetration_max_mm": 0.0
+          },
+          {
+            "phase": "approach_offset_outside",
+            "reason": "target_reached",
+            "steps": 27,
+            "depth_mm": -1.0540038269925391,
+            "scalar_sample_max_N": 0.0,
+            "scalar_mean_max_N": 0.0,
+            "axial_mean_max_N": 0.0,
+            "penetration_max_mm": 0.0
+          },
+          {
+            "phase": "push_misaligned",
+            "reason": "entrance_blocked",
+            "steps": 109,
+            "depth_mm": -0.00018689326055931765,
+            "scalar_sample_max_N": 1.7615937395021444,
+            "scalar_mean_max_N": 0.09198014810514546,
+            "axial_mean_max_N": 0.09198014810436916,
+            "penetration_max_mm": 0.05586635597865097
+          },
+          {
+            "phase": "retreat_same_offset",
+            "reason": "target_reached",
+            "steps": 32,
+            "depth_mm": -4.923097952432478,
+            "scalar_sample_max_N": 0.0,
+            "scalar_mean_max_N": 0.0,
+            "axial_mean_max_N": 0.0,
+            "penetration_max_mm": 0.00022690063872232713
+          },
+          {
+            "phase": "align_outside",
+            "reason": "target_reached",
+            "steps": 9,
+            "depth_mm": -4.9664050130414825,
+            "scalar_sample_max_N": 0.0,
+            "scalar_mean_max_N": 0.0,
+            "axial_mean_max_N": 0.0,
+            "penetration_max_mm": 0.0
+          },
+          {
+            "phase": "insert_aligned",
+            "reason": "seated",
+            "steps": 390,
+            "depth_mm": 51.28132611000112,
+            "scalar_sample_max_N": 0.0,
+            "scalar_mean_max_N": 0.1277238200774923,
+            "axial_mean_max_N": 0.12772382007625538,
+            "penetration_max_mm": 0.00019178744992132124
+          }
+        ],
+        "first_qualified_depth_mm": 5.036102803297224,
+        "final_depth_mm": 51.28132611000112,
+        "point_penetration_peak_mm": 0.05586635597865097,
+        "control_geometry_overlap_peak_mm": 0.04785330557987438,
+        "contact_mean_peak_N": 0.1277238200774923,
+        "contact_substep_peak_N": 5.565599891141954,
+        "old_point_guard_exceedance_intervals": 2,
+        "old_sample_force_guard_exceedance_intervals": 0,
+        "source_hashes": {
+          "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/probe_smooth_contact.py": "3f32af2cab3769eaccd55ef54d687009a4001ade205347b2fb542f8f86a61553",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_scene.py": "fcbb7a2ec9d5176c631e59b521fc6f4d4aaaff8b2fa41a8c5d30788724412562",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_runtime.py": "34d7a9a4d6448c810a054645766fd348430a9460be873ee75b22bc8d7887a87b",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_kinematics.py": "97c583aa3a63fbf016d33cd1fc98fdff0a9045e583ff4cb8b557df2811b26316",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/contact_teacher.py": "14691f5924b42482a1fdb7788112b323542e97dac0589d467a85ac6101676741",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_approach.py": "ceea6c1ca29e37628c8bb11fcfaa00720b1f9214e735db40c972cfb09cdeea74",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_diagnostics.py": "0b02671f4014c96739b6c35ce7109f31a9f515c44ffcc6148445f4dbfa2647f6",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/box_overlap.py": "8a468a86fd461ec4992735bcf039b97b6fdf049d21a68bcc34511b8a9f6f27e6",
+          "/home/linux/omi_folder/omi_proj/src/omi_hil_rl/hil/insertion_task.py": "99b5a6c3c2b70e3bc42ac9dc981a4a7c1058b4890fd17bc7ae559522bbd5bd5e"
+        }
+      },
+      "aligned_half_step": {
+        "accepted": true,
+        "steps": 391,
+        "phases": [
+          {
+            "phase": "align_outside",
+            "reason": "target_reached",
+            "steps": 3,
+            "depth_mm": -5.069273267330592,
+            "max_depth_mm": -5.069273267330592,
+            "scalar_sample_max_N": 0.0,
+            "scalar_mean_max_N": 0.0,
+            "axial_mean_max_N": 0.0,
+            "penetration_max_mm": 0.0
+          },
+          {
+            "phase": "insert_aligned",
+            "reason": "seated",
+            "steps": 388,
+            "depth_mm": 51.2808084499575,
+            "max_depth_mm": 51.28172410641769,
+            "scalar_sample_max_N": 0.0,
+            "scalar_mean_max_N": 0.10344728105621992,
+            "axial_mean_max_N": 0.10344728105621925,
+            "penetration_max_mm": 0.0009011147881210491
+          }
+        ],
+        "first_qualified_depth_mm": 5.1330681444216975,
+        "final_depth_mm": 51.2808084499575,
+        "point_penetration_peak_mm": 0.0009011147881210491,
+        "control_geometry_overlap_peak_mm": 0.0003278436428374998,
+        "contact_mean_peak_N": 0.10344728105621992,
+        "contact_substep_peak_N": 15.134035202209011,
+        "old_point_guard_exceedance_intervals": 0,
+        "old_sample_force_guard_exceedance_intervals": 0,
+        "source_hashes": {
+          "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/probe_smooth_contact.py": "f4bb70054389310759287bce6fbc5e96036618a28856b349d18ab762766791e8",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_scene.py": "fcbb7a2ec9d5176c631e59b521fc6f4d4aaaff8b2fa41a8c5d30788724412562",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_runtime.py": "34d7a9a4d6448c810a054645766fd348430a9460be873ee75b22bc8d7887a87b",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_kinematics.py": "97c583aa3a63fbf016d33cd1fc98fdff0a9045e583ff4cb8b557df2811b26316",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/contact_teacher.py": "14691f5924b42482a1fdb7788112b323542e97dac0589d467a85ac6101676741",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_approach.py": "ceea6c1ca29e37628c8bb11fcfaa00720b1f9214e735db40c972cfb09cdeea74",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_diagnostics.py": "0b02671f4014c96739b6c35ce7109f31a9f515c44ffcc6148445f4dbfa2647f6",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/box_overlap.py": "8a468a86fd461ec4992735bcf039b97b6fdf049d21a68bcc34511b8a9f6f27e6",
+          "/home/linux/omi_folder/omi_proj/src/omi_hil_rl/hil/insertion_task.py": "99b5a6c3c2b70e3bc42ac9dc981a4a7c1058b4890fd17bc7ae559522bbd5bd5e"
+        }
+      },
+      "interior_rub": {
+        "accepted": true,
+        "steps": 410,
+        "phases": [
+          {
+            "phase": "align_outside",
+            "reason": "target_reached",
+            "steps": 4,
+            "depth_mm": -5.070266164010876,
+            "max_depth_mm": -5.070266164010876,
+            "scalar_sample_max_N": 0.0,
+            "scalar_mean_max_N": 0.0,
+            "axial_mean_max_N": 0.0,
+            "penetration_max_mm": 0.0
+          },
+          {
+            "phase": "enter_guide",
+            "reason": "target_reached",
+            "steps": 93,
+            "depth_mm": 9.95020342240527,
+            "max_depth_mm": 9.95020342240527,
+            "scalar_sample_max_N": 0.0,
+            "scalar_mean_max_N": 0.0,
+            "axial_mean_max_N": 0.0,
+            "penetration_max_mm": 0.0
+          },
+          {
+            "phase": "slide_with_contact",
+            "reason": "target_reached",
+            "steps": 125,
+            "depth_mm": 29.928187570085665,
+            "max_depth_mm": 29.928187570085665,
+            "scalar_sample_max_N": 0.0,
+            "scalar_mean_max_N": 0.018345757432118602,
+            "axial_mean_max_N": 1.1636861195572085e-07,
+            "penetration_max_mm": 0.02169012623198796
+          },
+          {
+            "phase": "insert_aligned",
+            "reason": "seated",
+            "steps": 188,
+            "depth_mm": 51.281168146610796,
+            "max_depth_mm": 51.320493233212765,
+            "scalar_sample_max_N": 0.6795337880305445,
+            "scalar_mean_max_N": 0.15562133657070445,
+            "axial_mean_max_N": 0.15562133657041954,
+            "penetration_max_mm": 0.051162151066819206
+          }
+        ],
+        "first_qualified_depth_mm": 5.109744870034796,
+        "final_depth_mm": 51.281168146610796,
+        "point_penetration_peak_mm": 0.051162151066819206,
+        "control_geometry_overlap_peak_mm": 0.03885890635589584,
+        "contact_mean_peak_N": 0.15562133657070445,
+        "contact_substep_peak_N": 9.81414137640975,
+        "old_point_guard_exceedance_intervals": 1,
+        "old_sample_force_guard_exceedance_intervals": 0,
+        "source_hashes": {
+          "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/probe_smooth_contact.py": "f4bb70054389310759287bce6fbc5e96036618a28856b349d18ab762766791e8",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_scene.py": "fcbb7a2ec9d5176c631e59b521fc6f4d4aaaff8b2fa41a8c5d30788724412562",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_runtime.py": "34d7a9a4d6448c810a054645766fd348430a9460be873ee75b22bc8d7887a87b",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_kinematics.py": "97c583aa3a63fbf016d33cd1fc98fdff0a9045e583ff4cb8b557df2811b26316",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/contact_teacher.py": "14691f5924b42482a1fdb7788112b323542e97dac0589d467a85ac6101676741",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_approach.py": "ceea6c1ca29e37628c8bb11fcfaa00720b1f9214e735db40c972cfb09cdeea74",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_diagnostics.py": "0b02671f4014c96739b6c35ce7109f31a9f515c44ffcc6148445f4dbfa2647f6",
+          "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/box_overlap.py": "8a468a86fd461ec4992735bcf039b97b6fdf049d21a68bcc34511b8a9f6f27e6",
+          "/home/linux/omi_folder/omi_proj/src/omi_hil_rl/hil/insertion_task.py": "99b5a6c3c2b70e3bc42ac9dc981a4a7c1058b4890fd17bc7ae559522bbd5bd5e"
+        }
+      }
+    },
+    "interior_rub": {
+      "contact_intervals": 65,
+      "intervals": 125,
+      "mean_contact_peak_N": 0.018345757432118602,
+      "start_depth_mm": 9.942194387876235,
+      "end_depth_mm": 29.928187570085665
+    },
+    "geometry_and_friction_changed": false,
+    "rl_retrained": false,
+    "real_hardware_calibrated": false,
+    "limitations": [
+      "New task criteria; not an improvement of old BC/RL scores",
+      "Contact norm-sum proxy is not real wrist force; thresholds are hypotheses",
+      "OBB overlap is control-sampled, not the maximum over physics substeps",
+      "Recovery here is a scripted validation controller; online RL recovery arbitration is not integrated"
+    ]
+  },
+  "protocol": {
+    "task": "entry strict; minor interior contact tolerated; genuine retreat and reinsertion",
+    "source": "/data/omi_runtime/runs/smooth_guide_20261122/r06/robot_transfer",
+    "geometry_changed": false,
+    "friction_changed": false,
+    "old_results_unchanged": true,
+    "robot_cases": [
+      {
+        "name": "aligned_520",
+        "seed": 520,
+        "offset_mm": 0,
+        "dt": 0.0002
+      },
+      {
+        "name": "recovery_plus",
+        "seed": 7,
+        "offset_mm": 1,
+        "dt": 0.0002
+      },
+      {
+        "name": "recovery_minus",
+        "seed": 7,
+        "offset_mm": -1,
+        "dt": 0.0002
+      },
+      {
+        "name": "aligned_half_step",
+        "seed": 7,
+        "offset_mm": 0,
+        "dt": 0.0001
+      },
+      {
+        "name": "interior_rub",
+        "seed": 7,
+        "offset_mm": 0,
+        "interior_rub_mm": 0.31,
+        "dt": 0.0002,
+        "scope": "after qualified entry, intentionally contact wall while sliding from depth10 to30, then recenter and seat"
+      }
+    ],
+    "success": "qualify entry, real stable seat, no hard task failure; offset cases must block then retreat/re-align without reset",
+    "final_withdrawal": false,
+    "rl_training_executed": false,
+    "real_hardware_calibrated": false
+  },
+  "source_preservation": {
+    "unchanged_transfer_fields_except_manifest": true,
+    "source_transfer_unchanged": true,
+    "visual_assets": [
+      {
+        "asset": "WG-DAIMON-OBS-r10",
+        "files": 90,
+        "unchanged": true
+      },
+      {
+        "asset": "OM-001/V4 r08",
+        "files": 66,
+        "unchanged": true
+      }
+    ]
+  },
+  "decision_replay_audit": {
+    "aligned_520": {
+      "rows": 405,
+      "decision_and_stage_match": true
+    },
+    "recovery_plus": {
+      "rows": 598,
+      "decision_and_stage_match": true
+    },
+    "recovery_minus": {
+      "rows": 577,
+      "decision_and_stage_match": true
+    },
+    "aligned_half_step": {
+      "rows": 391,
+      "decision_and_stage_match": true
+    },
+    "interior_rub": {
+      "rows": 410,
+      "decision_and_stage_match": true
+    }
+  },
+  "native_matrix_receipts": [
+    {
+      "name": "recovery_minus",
+      "command": [
+        "/data/isaac-sim-5.1.0/python.sh",
+        "-u",
+        "scripts/simulation/probe_smooth_contact.py",
+        "--transfer",
+        "/data/omi_runtime/runs/staged_contact_20261123/robot_transfer",
+        "--output",
+        "/data/omi_runtime/runs/staged_contact_20261123/recovery_minus",
+        "--skip-final-withdrawal",
+        "--offset-mm",
+        "-1",
+        "--dt",
+        ".0002"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 660.7071599960327
+    },
+    {
+      "name": "recovery_plus",
+      "command": [
+        "/data/isaac-sim-5.1.0/python.sh",
+        "-u",
+        "scripts/simulation/probe_smooth_contact.py",
+        "--transfer",
+        "/data/omi_runtime/runs/staged_contact_20261123/robot_transfer",
+        "--output",
+        "/data/omi_runtime/runs/staged_contact_20261123/recovery_plus",
+        "--skip-final-withdrawal",
+        "--offset-mm",
+        "1",
+        "--dt",
+        ".0002"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 691.6705722808838
+    },
+    {
+      "name": "aligned_half_step",
+      "command": [
+        "/data/isaac-sim-5.1.0/python.sh",
+        "-u",
+        "scripts/simulation/probe_smooth_contact.py",
+        "--transfer",
+        "/data/omi_runtime/runs/staged_contact_20261123/robot_transfer",
+        "--output",
+        "/data/omi_runtime/runs/staged_contact_20261123/aligned_half_step",
+        "--skip-final-withdrawal",
+        "--offset-mm",
+        "0",
+        "--dt",
+        ".0001"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 645.0173225402832
+    }
+  ],
+  "tool_receipts": {
+    "aligned_520": 0,
+    "matrix": 0,
+    "interior_rub": 143,
+    "interior_rub_task_report_accepted": true,
+    "exit_143_cause": "not diagnosed"
+  },
+  "source_final": "/data/omi_runtime/runs/staged_contact_20261123/source_final",
+  "source_hashes": {
+    "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_runtime.py": "ba52d428408843238b9bc8c023647e04220879ec33b6decd3bc0a133cc2e3214",
+    "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/box_overlap.py": "8a468a86fd461ec4992735bcf039b97b6fdf049d21a68bcc34511b8a9f6f27e6",
+    "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/build_staged_contact_candidate.py": "17ae9b42352ff6e3cf19f76fb9d30deffc056d2153f3cdf9e3ecae019fcb4813",
+    "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/probe_smooth_contact.py": "f4bb70054389310759287bce6fbc5e96036618a28856b349d18ab762766791e8",
+    "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/summarize_staged_contact.py": "acc2c4716ccc8f78f131c68f38d60b070acd26cb56fb4d668ae9608000eb8c2b",
+    "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/isaac_rl_worker.py": "470c07de9592fdb10064fda3dc29e90d01592ab4a00fbba9dbfe728a86760aa9",
+    "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/run_isaac_contact.py": "476dfdc376f4e12231ec9f0086e312c3923b2a1cca0e8b3c15e592815518ca21",
+    "/home/linux/omi_folder/omi_proj/src/omi_hil_rl/hil/insertion_task.py": "1986131f8f72736e77fbd14a97b4479507fb237c17eaca37d3ac314f7c8efe38",
+    "/home/linux/omi_folder/omi_proj/src/omi_hil_rl/training/isaac_client.py": "3c7fd72549c64451ee983f8f8943bc9cd0fcc8b5482b848d96da241a36ce4c6b",
+    "/home/linux/omi_folder/omi_shapeforge/tests/test_box_overlap.py": "b43a0545f63688db326eefb843504653c9296367518471f57467577eaeb49bea",
+    "/home/linux/omi_folder/omi_shapeforge/tests/test_isaac_contact_monitor.py": "6e2dd2502c8d05834fa01577210e3161b6271d410131509605996349e10fdbbc",
+    "/home/linux/omi_folder/omi_proj/tests/test_insertion_task.py": "5d016fe7bd4bcfe28baad7e17ef452ca5958a512cd9cd2fb20ab6c8d130ab51d",
+    "/home/linux/omi_folder/omi_proj/tests/test_isaac_rule_bridge.py": "1c85f4a78ed7f88aa1b055a5c4208bacb8ed0af5b9c82fe502c85b97f75893b5"
+  },
+  "tests": {
+    "shared_task_bridge_metrics": 19,
+    "box_geometry": 2,
+    "contact_monitor": 4,
+    "control_executed": 14,
+    "control_skipped": 36
+  },
+  "old_results_relabelled": false,
+  "real_hardware_calibrated": false,
+  "rl_retrained": false,
+  "docs": "docs/agent/simulation/evolution/staged-insertion-contract.md",
+  "review": "/data/omi_runtime/runs/staged_contact_20261123/review.png",
+  "desktop_review": [
+    {
+      "pid": 3996882,
+      "window": "0x4800007"
+    }
+  ],
+  "remaining_simulator_processes": []
+}

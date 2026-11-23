@@ -20,6 +20,10 @@
 
 ## 建议先看的图
 
+机器人主线新增：[完整 URDF＋圆桌＋插接参考资产的 MuJoCo 原型](/data/omi_runtime/runs/robot_urdf_mvp_20261120T090059Z/robot_final.png)。当前为无接触到达／接口阶段，模块尚未被夹持；[架构和计划](design/robot-rl-development-plan.md)。
+
+新增：当前 V3／插接座 r04 的[截面与插入终点示意](/data/omi_runtime/runs/v3_socket_r04_20261120T082303Z/insertion_geometry.png)、[带完整下部的 Open3D 限位状态](/data/omi_runtime/runs/v3_socket_r04_20261120T082303Z/desktop_stop_full.png)。通道宽 19.00 mm 是用户要求下的候选，尺寸和弹性插装未验收；[交互查看命令](../tutorials/v3_socket_insertion.md)。这些新结果不回写上面的历史图册数量。
+
 | 内容 | 原图 |
 | --- | --- |
 | 照片与早期模型对比（历史照片稿） | [查看](</data/omi_runtime/inputs/optical_packages_20261120_001316/optical_module_portable_20261119/results_reference/previews/photo_vs_model.png>) |

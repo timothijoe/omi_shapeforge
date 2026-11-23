@@ -57,5 +57,13 @@
       "prismatic_finger_joints": 4,
       "missing_mesh_references": 0
     }
-  ]
+  ],
+  "latest_wrist_tool_visual_candidate": {
+    "asset_id": "WG-DAIMON-VIS-r04",
+    "path": "/data/omi_runtime/assets/daimon/wrist_gripper_video_r04",
+    "scene": "/data/omi_runtime/runs/wrist_camera_gripper_20261121/robot_scene_final",
+    "manifest": "wrist_camera_gripper_20261121.json",
+    "source": "user video and 72mm vendor flange reference; not exact matched vendor CAD",
+    "real_grasp_verified": false
+  }
 }

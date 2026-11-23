@@ -1,0 +1,32 @@
+{
+  "source": "/data/zt-think-d1-data/nov_22/session_backup_20261121_20261122_20261122_014108/captures/BundleSDF_trial/datasets/units/unit_001_20261121/samples/sample_20261121_212334_434186_62cb90/wrist_rgb.png",
+  "choice": "Original unit001 camera/attachment fitting reference; not an independent held-out evaluation",
+  "pose_policy": "Reuse existing camera and attachment; nominal socket pose -2mm, not per-frame socket fitting",
+  "real_image_sha256": "92c82bcc9c9efd4bfc7b389e42ef9344fe3da16b6d83b1ce26626d72095edace",
+  "rendered_image": "/data/omi_runtime/runs/wrist_r15_capture_compare_20261122/r15/asset_same_pose_fisheye_1920.png",
+  "rendered_image_sha256": "016848fc884d4a45c32d6a4b9e74869aecc09793255a6acd8c77f916b86a21e5",
+  "tool_asset": "WG-DAIMON-LOGO-r15",
+  "module_asset": "OM-001/V4 r08",
+  "image_size": [
+    1920,
+    1080
+  ],
+  "overview_crop_xyxy": [
+    600,
+    580,
+    1340,
+    1080
+  ],
+  "detail_crop_xyxy": [
+    780,
+    650,
+    1160,
+    1030
+  ],
+  "comparison": "/data/omi_runtime/runs/wrist_r15_capture_compare_20261122/real_vs_sim_wrist_r15.png",
+  "detail_comparison": "/data/omi_runtime/runs/wrist_r15_capture_compare_20261122/wrist_detail_r15.png",
+  "camera_report": "/data/omi_runtime/runs/wrist_r15_capture_compare_20261122/r15/camera_render_report.json",
+  "photometric_adjustment": false,
+  "per_image_alignment_warp": false,
+  "synthetic_image_contains_real_gripper_pixels": false
+}

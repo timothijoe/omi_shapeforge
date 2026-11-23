@@ -1,0 +1,34 @@
+{
+  "asset_id": "WG-DAIMON-ALIGNED-r08",
+  "asset_directory": "/data/omi_runtime/assets/daimon/wrist_gripper_aligned_r08",
+  "asset_manifest": "/data/omi_runtime/assets/daimon/wrist_gripper_aligned_r08/asset_manifest.json",
+  "asset_manifest_sha256": "b42cc999f0da57297eec7a2c82908df7654aac42f14f1799ca4d2168091a64dd",
+  "run": "/data/omi_runtime/runs/wrist_alignment_20261122",
+  "comparison": "/data/omi_runtime/runs/wrist_alignment_20261122/alignment_comparison.png",
+  "fit_report": "/data/omi_runtime/runs/wrist_alignment_20261122/constrained_fit_report.json",
+  "heldout_report": "/data/omi_runtime/runs/wrist_alignment_20261122/heldout_reviewed_report.json",
+  "geometry_validation": "/data/omi_runtime/assets/daimon/wrist_gripper_aligned_r08/validation.json",
+  "unchanged_gripper_and_base_meshes": 39,
+  "independent_gripper_glb_unchanged": true,
+  "heldout_units": [
+    3,
+    8,
+    12,
+    14
+  ],
+  "heldout_mean_edge_error_before_px": [
+    15.79568660641112,
+    17.60567143260069,
+    16.074046155911034,
+    15.645474727339606
+  ],
+  "heldout_mean_edge_error_after_px": [
+    3.355941898061392,
+    3.01417978299696,
+    2.9645749307799756,
+    2.8232546738908755
+  ],
+  "physical_calibration_certified": false,
+  "full_image_matches_real": false,
+  "training_performed": false
+}

@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-21",
+  "study_root": "/data/omi_runtime/runs/contact_intervention_study_20261121",
+  "delivery_directory": "/data/omi_runtime/runs/contact_intervention_study_20261121/delivery",
+  "repositories": {
+    "omi_proj": {
+      "head": "963a7c29f8e39bff59ba4eb285693976b224961e",
+      "branch": "feature/shapeforge-vision-training",
+      "uncommitted": true
+    },
+    "omi_shapeforge": {
+      "head": "66ff11720e5dc4327041d709b661dec73c83f605",
+      "branch": "feature/dual-camera-training",
+      "uncommitted": true
+    }
+  },
+  "purpose": "Assess actual policy improvement, not only successful gradient execution",
+  "fixed_conditions": {
+    "asset_id": "SIM-OM001-OS001-r03",
+    "asset_hashes_unchanged": true,
+    "original_physical_success_conditions": true,
+    "final_evaluation_teacher_interventions": 0,
+    "joint_reset_jitter_rad": 0.0005,
+    "observations": "dual rendered RGB history; state/tactile padded",
+    "extra_marker_textures": 0
+  },
+  "bc": {
+    "training_episodes": 10,
+    "training_transitions": 1749,
+    "validation_episodes": 2,
+    "validation_transitions": 350,
+    "updates_per_candidate": 3000,
+    "plain_validation_success": "0/2",
+    "rotation_weight10_validation_success": "2/2"
+  },
+  "actual_learning_and_replay_audit": {
+    "rl": {
+      "episodes": 20,
+      "total_steps": 4462,
+      "sources": {
+        "policy": 2161,
+        "scripted_intervention": 2301
+      },
+      "distinct_teacher_overrides": 2301,
+      "bounded_policy_noise_records": 0,
+      "retained_replay": 4000,
+      "actor_optimizer_steps": 2231,
+      "critic_optimizer_steps": 5462,
+      "correct_executed_action_labels": true,
+      "causal_history": true,
+      "human_actions": 0,
+      "encoder_unchanged": true
+    },
+    "rl_bounded": {
+      "episodes": 20,
+      "total_steps": 4215,
+      "sources": {
+        "policy": 2829,
+        "scripted_intervention": 1386
+      },
+      "distinct_teacher_overrides": 1386,
+      "bounded_policy_noise_records": 2829,
+      "retained_replay": 4000,
+      "actor_optimizer_steps": 2107,
+      "critic_optimizer_steps": 5215,
+      "correct_executed_action_labels": true,
+      "causal_history": true,
+      "human_actions": 0,
+      "encoder_unchanged": true
+    },
+    "assets_unchanged": true,
+    "extra_marker_texture_count": 0
+  },
+  "paired_warmup_state_equal": {
+    "actor": true,
+    "critic": true,
+    "target": true,
+    "actor_optimizer": true,
+    "critic_optimizer": true,
+    "alpha_optimizer": true,
+    "temperature_raw": true
+  },
+  "independent_evaluation": {
+    "test_seeds": [
+      700,
+      701,
+      702,
+      703
+    ],
+    "fresh_seeds": [
+      800,
+      801,
+      802,
+      803
+    ],
+    "first_test_successes": {
+      "bc": 3,
+      "rl": 4,
+      "bounded_plus_rotation_anchor_rl": 0,
+      "bc_only_same_retained_data": 0
+    },
+    "fresh_successes": {
+      "bc": 4,
+      "rl": 4
+    },
+    "combined_distinct_starts": {
+      "bc": "7/8",
+      "rl": "8/8"
+    },
+    "final_comparison": "/data/omi_runtime/runs/contact_intervention_study_20261121/final_comparison/report.json",
+    "successful_rl_video_verified": true
+  },
+  "protocol_differences": [
+    "new potential-shaped reward and gamma .995; old runs isolated",
+    "online rule takeovers with exact accepted-command provenance",
+    "second variant jointly changes deployment exploration and rotation imitation weights",
+    "second variant inherits same 1000-step critic warmup rather than training another identical warmup"
+  ],
+  "scope_limits": [
+    "8 starts per BC/RL comparison, fixed scene and narrow reset range",
+    "one additional success is limited pilot evidence, not a universal advantage guarantee",
+    "BC-only control is retrospective, not identical chronological sampling",
+    "original full real-world EEF/tactile observation conditions not reproduced",
+    "sim contact-force sum sampled at control rate; not calibrated hardware safety"
+  ],
+  "tests": {
+    "final_regression_passed": 59,
+    "skipped": 2
+  },
+  "additional_trials": {
+    "archived_pilot": "rl_bounded_random_critic_pilot excluded due critic-initialization confound",
+    "weighted_rl_replay_control": "code prepared but not executed"
+  },
+  "user_marker_instruction": "extra marker sticker may be ignored; not a required intrinsic object feature",
+  "artifact_sha256": {
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/protocol.json": "25075366c4f534dfa642c75fbaaa93f33c3a5df48dfd046f50d9a3362f5b6fea",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/contract.json": "a65f83f4f3b5c3e6b6dd1216ab01f22872a2d30fabd6d05e24ec416a3698942f",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/bounded_variant_plan.json": "522d04d621aa6228aa988d9e5c0cec3083049b91388b999d5126e280d3b7526f",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/production_selection_plan.json": "d614e5a555ddb6795b1ec3783b4c98721730af1214ea766fda13a4d5793e965f",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/additional_control_plan.json": "030674a2e0b8838499fd9f15cc3fb784ea9549e9a615c4bbe68966b38b8718c1",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/rotation_anchor_control_plan.json": "53f008da11a97e50df9491a67c4c330827bf0bdfb5c7ecd956f012a4a38f047d",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/demonstrations/dataset.json": "3a7060272d4117c16f0180298da8fbdbea81c5a8de44587ddafb40a9d29547bf",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/audit.json": "484fb0afef07de89e1c6647c302abc7961f79d0f7643edb3449dd6ad2642c87d",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/exploration_audit.json": "70a572394c0c635cfc26776cdf657aaf4c21d9ca8f0528628109ee4f3ee9269b",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/augmentation_sensitivity.json": "f8b585b112b7876b82e03ddee9f2fee4844483912e0b4557c594ae00796e5600",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/final_regression.log": "1a73d41d1ff07da0e1d17046e35b547a6d684c1efc11f1780746c253fa253a9e",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/final_comparison/report.json": "8ce7cb1fbe0ce7f84851ff95ab66cb7bc880fd03117fe29c3ffc5c888d8412e7",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/final_comparison/selection.json": "c2346c0de5a40178dfbeb60d67d44436f69d0ad084896eefa26f11f57cbbb26a",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/final_comparison/comparison.png": "2ed94c832880d646141d2c4b6b37d757fb9479eca94ef25af2669fc7f104f956",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/final_comparison/rl_success_video/policy.mp4": "a7bfb43f0d2f9f326bc700f96ae6979de01d545b8d30758c3b7a6736aeb17427",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/final_comparison/rl_success_video/report.json": "9cb02f58f52980ef886e57607801a25e631b89e6a0a80a176c1225667cadbde6",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/delivery/source_sha256.json": "c638b310a88cf7573a4a44839f972e721862219f5a7ffc27025cc533f0fcd04e",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/bc_plain/actor.pt": "56260170f7a4584590edbbc7db80b75d36da665cb54c4f73b8c2ef94fa6488be",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/bc_plain/report.json": "995337fe0a14b8e09419b0ce8cb42d712939b7185463f025adc862c1e3493888",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/bc_plain/history.json": "b69f13556e68aa2826328535123a70fc472f35119005a1dee82208e5d6526a87",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/bc_plain/validation_closed_loop/report.json": "792cc7827ef70323082525dc3bbb9390407711ae234e69ca745f023b41f8c2d1",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/bc_rotation10/actor.pt": "43508b793adac60d192e119ae590e235f5904327cfd35483f8ccc169cb174f32",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/bc_rotation10/report.json": "16935b00715081dd9d9d49570f3645750dcc979cbee20017d1380c5620840562",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/bc_rotation10/history.json": "2310c803f476b2285508780d89bae7c5abf5a1b5dd3ac0639a6e326dc36bf768",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/bc_rotation10/validation_success_video/report.json": "69323e492bdf343a1c7330f97fbc240b3ced3f52869a2663822207c6582664e3",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/bc_rotation10/validation_closed_loop/report.json": "ead32ceeec57d8b583e1cc4a69ee3b72046be17f027099db8fb8f33d2ba043d4",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/rl/actor.pt": "8bb150d1393644e95d5427aad4669e8d57da695117c58248e88adb30fb584200",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/rl/learner.pt": "60783ec3fb5c69f8c6d3c56ceeb2bd9921ed27b6be1d477d1a2b837d014d1589",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/rl/report.json": "cc9ed8a245d26c89ba99a5682d87259d525e189ae71049afa84369f94ac1a5b2",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/rl/history.json": "75ff4b64aa48cc0507cf57b1ec85112cd34db5d461a46e7e0843723f31f4b2ee",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/rl/after_warmup.pt": "0d1a59b42a2502a0b85de759d4156cf7d163138a1cb33db63068ddb7e64c1b9c",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/rl/final_test_bc/report.json": "edabdce870ce2fd1d6f64be80e2ff55beae97dfd67089693fb7cc5055c510423",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/rl/final_test_rl/report.json": "73a363f1bbd30e9da1e1ff813491e44bf0350960f619eb013e286f1499e426ce",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/rl/validation_10/report.json": "bcfae8a764830b8eb5aec0a6765e66692db17256bc07fe3b840f8c2255dba902",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/rl/validation_05/report.json": "dbfe209a38dfd8cea537684eaed106639c0813e7f7c7d444fc628ebb15e2db12",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/rl/validation_20/report.json": "48b2803b3e3919e7705815f2387f4ffa44d55ee816940a62c529223558dffd8a",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/rl_bounded/actor.pt": "3f1827f95098d51edd942e25a7ec5e132641e16e304ccfeb3f0d38f3a5fe7786",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/rl_bounded/learner.pt": "3c6afd151568ac086fb89f209796dcf73a7657c2f255128a4f9613b4f2585784",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/rl_bounded/report.json": "86eeca015a358e5580c092682974060197904955ac46cd8b78f1eeea8ae3263f",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/rl_bounded/history.json": "21b1736d5aeecc4b8c1e0e99bccbd1367aee7e604f4a1c849cbf8d22feb64745",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/rl_bounded/variant.json": "9dd05e5dd282f573276c51dbbb25937a9ace985e18ae92481c2242232a865be2",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/rl_bounded/initialization.json": "4fdbba86dd937cf51403a3084e733a75fb261f2a0949009a7a89f38ceb2d1e33",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/rl_bounded/after_warmup.pt": "bc08d53e7673a9ba2eea1196dc56be263c7ffd4488cd20d7968f2aeb33dd4d33",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/rl_bounded/final_test_bc/report.json": "edabdce870ce2fd1d6f64be80e2ff55beae97dfd67089693fb7cc5055c510423",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/rl_bounded/final_test_rl/report.json": "cd81d0a5d644a4222f2897bec25362a9f8ea1309eeef452ecc0acfbedd4f22a3",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/rl_bounded/validation_10/report.json": "e740e6cf6f400b7f5541d42c1d5c52640129e78f36a6b35589dde947c72360f9",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/rl_bounded/validation_05/report.json": "0ba6ac082d1749af2d6a9e3d9f4a83efa51e1cd88cfc37f57beccbc2fd06a03e",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/rl_bounded/validation_20/report.json": "7dc950f7eb4108354d2578a79f593913e13a0c73ecb8e9e95f39e437256b80b5",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/bc_same_intervention_data/actor.pt": "e3913827b548e4544779995f67623b7ccae8a387dac461176d3c4663445053c5",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/bc_same_intervention_data/report.json": "d1550986951510291a202832bd2d34d027e262dc832cd004e167758852546212",
+    "/data/omi_runtime/runs/contact_intervention_study_20261121/bc_same_intervention_data/final_test/report.json": "6d25e140f5aa75a476d44b5ebfb1aa8ad65c05b308f2d740c52768d60d53177e"
+  }
+}

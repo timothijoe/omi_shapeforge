@@ -1,0 +1,608 @@
+{
+  "run": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01",
+  "viewer": "http://127.0.0.1:8893",
+  "status": "completed_contact_qualified_simulation_finetuning_and_independent_test",
+  "asset_identity": {
+    "tool": "WG-r15",
+    "module": "OM-r08",
+    "contact": "GC-r01",
+    "socket": "SIM-r06_visual_only"
+  },
+  "dataset": {
+    "frames": 3072,
+    "clips": 256,
+    "split_frames": {
+      "train": 2304,
+      "val": 384,
+      "test": 384
+    },
+    "split_clips": {
+      "train": 192,
+      "val": 32,
+      "test": 32
+    },
+    "attempts": 276,
+    "rejected": 20,
+    "all_accepted_episodes_pass_contact_gate": true,
+    "source_assets_unchanged": true,
+    "insertion_validated": false
+  },
+  "dataset_audit": {
+    "accepted_for_sim_supervision": true,
+    "frames_verified": 3072,
+    "episodes": 256,
+    "records_sha256": "517ce7a14f9a1b914af5a35e08c7dcb0844f45e3572b92cc36ae7ae6e0f5490d",
+    "all_images_hash_and_resolution_verified": true,
+    "grouped_splits_no_duplicate_images_or_initial_grasps": true,
+    "state_replay_labels_checked": 3072,
+    "max_label_matrix_error": 0.0,
+    "rendered_visual_parts_checked": 129,
+    "compiled_mesh_max_error_m": 1.082834473188449e-08,
+    "template_original_surface_max_error_m": 1.4636318473529282e-08,
+    "module_free_no_weld": true,
+    "contact_enabled": true,
+    "contact_samples_verified": 547072,
+    "all_saved_frame_contacts_independently_recomputed": true,
+    "replayed_minimum_each_pad_force_n": 2.002542053008391,
+    "minimum_each_pad_force_n": 1.9953773052478299,
+    "max_slip_mm": 0.05842892448191009,
+    "max_rotation_drift_deg": 0.02857268810496532,
+    "max_collision_penetration_mm": 0.0018664962136722067,
+    "all_frames_visible_surface_gate_present": true,
+    "robot_control": "kinematic FK visual context, dynamic tool servo",
+    "socket_contacts_enabled": false,
+    "real_world_accuracy_validated": false
+  },
+  "training_report": {
+    "status": "trained_and_heldout_simulation_evaluated",
+    "selected_epoch": 25,
+    "optimizer_updates_total": 3600,
+    "selected_checkpoint_updates": 3600,
+    "checkpoint_selection": "validation only",
+    "test_metrics": {
+      "network": {
+        "module": {
+          "translation_mm": {
+            "mean": 0.4423336763900155,
+            "median": 0.3096205729182643,
+            "p90": 0.5497962740312577
+          },
+          "rotation_deg": {
+            "mean": 0.7597197406127032,
+            "median": 0.4451424943817043,
+            "p90": 1.084866266825292
+          }
+        },
+        "socket": {
+          "translation_mm": {
+            "mean": 0.631837118673967,
+            "median": 0.5256597363335399,
+            "p90": 1.124782448836827
+          },
+          "rotation_deg": {
+            "mean": 0.13240318819415048,
+            "median": 0.11063791235390455,
+            "p90": 0.23856941491036707
+          }
+        },
+        "relative_tip_error_mm": {
+          "mean": 0.9820313764565128,
+          "median": 0.7222131962622383,
+          "p90": 1.3812320448258635
+        },
+        "relative_tip_axis_mae_mm": [
+          0.48157300252557994,
+          0.47236429267569163,
+          0.49461185756227577
+        ]
+      },
+      "constant_train_mean": {
+        "module": {
+          "translation_mm": {
+            "mean": 1.6223964396229817,
+            "median": 1.127179725406153,
+            "p90": 1.6621434390416185
+          },
+          "rotation_deg": {
+            "mean": 3.184859306118133,
+            "median": 1.6215841267624915,
+            "p90": 4.7800967673507815
+          }
+        },
+        "socket": {
+          "translation_mm": {
+            "mean": 17.66810869039325,
+            "median": 17.176987758461813,
+            "p90": 27.097580677233804
+          },
+          "rotation_deg": {
+            "mean": 3.0046912937395986,
+            "median": 2.9987041292266614,
+            "p90": 4.140451827621957
+          }
+        },
+        "relative_tip_error_mm": {
+          "mean": 16.54384817006391,
+          "median": 15.764462430189448,
+          "p90": 25.78150044419152
+        },
+        "relative_tip_axis_mae_mm": [
+          7.7163131510576575,
+          7.991328012498471,
+          9.239480485339763
+        ]
+      },
+      "frames": 384
+    },
+    "training_seconds": 329.07815432548523,
+    "training_performed": true,
+    "real_image_accuracy_validated": false,
+    "visibility_head_trained": false,
+    "output_counts": {
+      "module": 37895,
+      "socket": 204820
+    },
+    "parameters": 12426396,
+    "checkpoint_sha256": "7322cc5687ea105264b59ac347254fcd30c2f511b37fc3dc773c5127cad39f66"
+  },
+  "same_test_old_vs_new": {
+    "old_frozen": {
+      "checkpoint": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/train/best.pt",
+      "sha256": "82f16ca0c0fde8f30250c1d29d3e2aea499d780d99ec0a101d5d91a1b52725f0",
+      "metrics": {
+        "network": {
+          "module": {
+            "translation_mm": {
+              "mean": 1.77028957777041,
+              "median": 1.272398370633244,
+              "p90": 2.077906480466928
+            },
+            "rotation_deg": {
+              "mean": 3.8077647192230284,
+              "median": 1.892454045820867,
+              "p90": 6.7934432939695535
+            }
+          },
+          "socket": {
+            "translation_mm": {
+              "mean": 12.294469723072309,
+              "median": 12.167344078136829,
+              "p90": 17.947150527954445
+            },
+            "rotation_deg": {
+              "mean": 1.2187892390962884,
+              "median": 1.1974172428448724,
+              "p90": 1.9294131070046356
+            }
+          },
+          "relative_tip_error_mm": {
+            "mean": 12.259620110113573,
+            "median": 11.813911238399838,
+            "p90": 18.037299952144238
+          },
+          "relative_tip_axis_mae_mm": [
+            3.762667656203195,
+            9.624248989838808,
+            4.448212724013139
+          ]
+        },
+        "constant_train_mean": {
+          "module": {
+            "translation_mm": {
+              "mean": 1.6223964396229817,
+              "median": 1.127179725406153,
+              "p90": 1.6621434390416185
+            },
+            "rotation_deg": {
+              "mean": 3.184859306118133,
+              "median": 1.6215841267624915,
+              "p90": 4.7800967673507815
+            }
+          },
+          "socket": {
+            "translation_mm": {
+              "mean": 17.66810869039325,
+              "median": 17.176987758461813,
+              "p90": 27.097580677233804
+            },
+            "rotation_deg": {
+              "mean": 3.0046912937395986,
+              "median": 2.9987041292266614,
+              "p90": 4.140451827621957
+            }
+          },
+          "relative_tip_error_mm": {
+            "mean": 16.54384817006391,
+            "median": 15.764462430189448,
+            "p90": 25.78150044419152
+          },
+          "relative_tip_axis_mae_mm": [
+            7.7163131510576575,
+            7.991328012498471,
+            9.239480485339763
+          ]
+        },
+        "frames": 384
+      }
+    },
+    "contact_finetuned": {
+      "checkpoint": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/train/best.pt",
+      "sha256": "7322cc5687ea105264b59ac347254fcd30c2f511b37fc3dc773c5127cad39f66",
+      "metrics": {
+        "network": {
+          "module": {
+            "translation_mm": {
+              "mean": 0.44227807947517067,
+              "median": 0.30928232486729207,
+              "p90": 0.5491660485291132
+            },
+            "rotation_deg": {
+              "mean": 0.759796254426839,
+              "median": 0.44553563552191006,
+              "p90": 1.0853959705947658
+            }
+          },
+          "socket": {
+            "translation_mm": {
+              "mean": 0.6318249109311421,
+              "median": 0.5261077968439166,
+              "p90": 1.125311646837397
+            },
+            "rotation_deg": {
+              "mean": 0.13271833481703676,
+              "median": 0.11057173968942902,
+              "p90": 0.23820404222656322
+            }
+          },
+          "relative_tip_error_mm": {
+            "mean": 0.9820348993073832,
+            "median": 0.7221463176545464,
+            "p90": 1.381536298980582
+          },
+          "relative_tip_axis_mae_mm": [
+            0.48155028020274665,
+            0.47234677532568264,
+            0.4946352082803533
+          ]
+        },
+        "constant_train_mean": {
+          "module": {
+            "translation_mm": {
+              "mean": 1.6223964396229817,
+              "median": 1.127179725406153,
+              "p90": 1.6621434390416185
+            },
+            "rotation_deg": {
+              "mean": 3.184859306118133,
+              "median": 1.6215841267624915,
+              "p90": 4.7800967673507815
+            }
+          },
+          "socket": {
+            "translation_mm": {
+              "mean": 17.66810869039325,
+              "median": 17.176987758461813,
+              "p90": 27.097580677233804
+            },
+            "rotation_deg": {
+              "mean": 3.0046912937395986,
+              "median": 2.9987041292266614,
+              "p90": 4.140451827621957
+            }
+          },
+          "relative_tip_error_mm": {
+            "mean": 16.54384817006391,
+            "median": 15.764462430189448,
+            "p90": 25.78150044419152
+          },
+          "relative_tip_axis_mae_mm": [
+            7.7163131510576575,
+            7.991328012498471,
+            9.239480485339763
+          ]
+        },
+        "frames": 384
+      }
+    }
+  },
+  "failure_analysis": {
+    "worst_frame_id": 2716,
+    "worst_episode": "test_0002",
+    "worst_frame": 4,
+    "max_relative_tip_error_mm": 10.973768259523494,
+    "frames_over_2mm": 15,
+    "frames_over_5mm": 12,
+    "total_test_frames": 384,
+    "closest_training_module_rotation_deg": 13.917931935549747,
+    "worst_frame_contact": {
+      "held": true,
+      "pad_normal_force_n": {
+        "left": 2.751830086999133,
+        "right": 2.6686940292679013
+      },
+      "pad_contact_count": {
+        "left": 1,
+        "right": 2
+      },
+      "T_TCP_from_module": [
+        [
+          -0.011418981345314891,
+          -0.47254744583343455,
+          0.8812312513190425,
+          0.011061430527214474
+        ],
+        [
+          -0.9896179569472304,
+          -0.12092859136208176,
+          -0.07766965352545811,
+          0.00437917667426679
+        ],
+        [
+          0.14326865027848,
+          -0.8729691788531098,
+          -0.46626055657743837,
+          0.23556624974403098
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "worst_frame_visible_surface_gate": {
+      "accepted": true,
+      "nonpad_intersections": [],
+      "pads": {
+        "left": {
+          "distance_mm": -0.0030044442163443233,
+          "touch_or_overlap": true
+        },
+        "right": {
+          "distance_mm": -0.0007586476086126012,
+          "touch_or_overlap": true
+        }
+      },
+      "excludes_articulated_green_handle": true
+    },
+    "episode_mean_tip_mm": {
+      "test_0000": 1.1386172116271822,
+      "test_0001": 0.830128241678049,
+      "test_0002": 7.5004157486365495,
+      "test_0003": 0.5434924122574158,
+      "test_0004": 0.6452593298402778,
+      "test_0005": 0.6140590518941799,
+      "test_0006": 0.550693705653598,
+      "test_0007": 0.5915234912387886,
+      "test_0008": 1.0732887595058473,
+      "test_0009": 0.8167568890002553,
+      "test_0010": 0.6809419376229173,
+      "test_0011": 0.5746983319128258,
+      "test_0012": 0.8934981389497995,
+      "test_0013": 0.6845807491503891,
+      "test_0014": 0.6470357207224352,
+      "test_0015": 1.1294032363345632,
+      "test_0016": 0.8767778457678381,
+      "test_0017": 1.3025922122924227,
+      "test_0018": 0.6952412716090923,
+      "test_0019": 1.1957071120852854,
+      "test_0020": 0.7417138713468453,
+      "test_0021": 0.7792677920648615,
+      "test_0022": 0.6969583258573561,
+      "test_0023": 0.47459652439573435,
+      "test_0024": 0.8108829294797965,
+      "test_0025": 1.094160805278923,
+      "test_0026": 0.8378677944861007,
+      "test_0027": 0.7297258297540336,
+      "test_0028": 0.6131369712196937,
+      "test_0029": 0.452307623820005,
+      "test_0030": 0.6150613163830473,
+      "test_0031": 0.5946128647423043
+    },
+    "interpretation": "Stable post-closure held-out orientation is poorly covered by training; coverage gap is a plausible contributor, not a proved unique cause. No test-driven retraining was performed."
+  },
+  "approach_clearance": {
+    "mouth_y_m": 0.00185,
+    "minimum_axial_tip_clearance_mm": 25.897510768007827,
+    "maximum_axial_tip_clearance_mm": 71.52872547443954,
+    "minimum_sampled_module_surface_plane_clearance_mm": 25.635965955563545,
+    "scope": "axial mouth plane separation; not a full socket contact or swept-volume audit"
+  },
+  "preferred_surface_scheme": "whole_grid",
+  "fallback_surface_scheme": "focus_only",
+  "scope_limits": [
+    "Robot is FK visual replay; dynamic tool follows mocap target",
+    "Module remains free and contact-driven",
+    "Socket contacts disabled; pre-insertion only",
+    "No real camera accuracy or insertion success validated",
+    "Visibility head untrained; presence head uncalibrated"
+  ],
+  "source_snapshot": [
+    {
+      "source": "scripts/perception/generate_contact_wrist_dataset.py",
+      "snapshot": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/final_source_snapshot/scripts/perception/generate_contact_wrist_dataset.py",
+      "sha256": "e47caf4fef8793c5e76fdd0ab228e7dcf61b73e73dd4ce4823467c46e9e5a5dd"
+    },
+    {
+      "source": "scripts/perception/contact_visual_gate.py",
+      "snapshot": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/final_source_snapshot/scripts/perception/contact_visual_gate.py",
+      "sha256": "038e11409859e15ae038434a88491e2f3217757e059545f8b071a4ad66a9becb"
+    },
+    {
+      "source": "scripts/perception/audit_contact_wrist_dataset.py",
+      "snapshot": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/final_source_snapshot/scripts/perception/audit_contact_wrist_dataset.py",
+      "sha256": "58886a55f86b118d1a29b8e46b5c85263e4616549c2be6ddfee26549e59f1f81"
+    },
+    {
+      "source": "scripts/perception/train_sim_wrist_surface.py",
+      "snapshot": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/final_source_snapshot/scripts/perception/train_sim_wrist_surface.py",
+      "sha256": "d3103a34024ae9ab018643f0eb89ddc4dd27f2ee4b381152f583573cd90f7d29"
+    },
+    {
+      "source": "scripts/perception/evaluate_contact_transfer.py",
+      "snapshot": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/final_source_snapshot/scripts/perception/evaluate_contact_transfer.py",
+      "sha256": "dae72f448c6cf66f948394dc7848dda73dd56c11b3a5dd140323035196353616"
+    },
+    {
+      "source": "scripts/perception/render_contact_transfer_comparison.py",
+      "snapshot": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/final_source_snapshot/scripts/perception/render_contact_transfer_comparison.py",
+      "sha256": "f9ce4ab25f0d2270ae933b0ed6680325ae22edbb4ba17e35a998a71e4a66cb0d"
+    },
+    {
+      "source": "scripts/perception/image_to_surface_network.py",
+      "snapshot": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/final_source_snapshot/scripts/perception/image_to_surface_network.py",
+      "sha256": "2990dc124f9445541272fe4dffffb56d145574b63c29ad62b0c51980db901fc3"
+    },
+    {
+      "source": "scripts/perception/generate_sim_wrist_dataset.py",
+      "snapshot": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/final_source_snapshot/scripts/perception/generate_sim_wrist_dataset.py",
+      "sha256": "3340c796050287b96e2418b03ecdfc59572a45cc42dd56ff4541dc707550a6d6"
+    },
+    {
+      "source": "scripts/perception/render_sim_surface_results.py",
+      "snapshot": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/final_source_snapshot/scripts/perception/render_sim_surface_results.py",
+      "sha256": "7ea021b37423abd6d0cce683a36d98fd77966e4984e7012a4917d614916291de"
+    },
+    {
+      "source": "scripts/perception/render_sim_color_compare.py",
+      "snapshot": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/final_source_snapshot/scripts/perception/render_sim_color_compare.py",
+      "sha256": "746796201915740c373d51ba93a2110de33273038c22eb38d6a0c6b7609ad790"
+    },
+    {
+      "source": "scripts/perception/render_surface_scheme_results.py",
+      "snapshot": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/final_source_snapshot/scripts/perception/render_surface_scheme_results.py",
+      "sha256": "8ee184304876832b1d7414645f747fe6d443ac9529beab70a98c6603ed6272ac"
+    },
+    {
+      "source": "scripts/perception/sim_surface_results.html",
+      "snapshot": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/final_source_snapshot/scripts/perception/sim_surface_results.html",
+      "sha256": "b3e82e01705431840113d50f36f4c09ef0dc500858829fc186ff96075e5075ad"
+    },
+    {
+      "source": "scripts/perception/verify_trained_sim_surface.py",
+      "snapshot": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/final_source_snapshot/scripts/perception/verify_trained_sim_surface.py",
+      "sha256": "3fa796fe5b9d281f6b22c597aab38efe3ec1b5d583442891b4e8fb16a2080d6e"
+    },
+    {
+      "source": "scripts/perception/infer_trained_surface.py",
+      "snapshot": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/final_source_snapshot/scripts/perception/infer_trained_surface.py",
+      "sha256": "378d6e734051cf105d77e249e6112258dc6736acb6622a860137f0ffce9466ab"
+    },
+    {
+      "source": "scripts/perception/build_surface_representation.py",
+      "snapshot": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/final_source_snapshot/scripts/perception/build_surface_representation.py",
+      "sha256": "1eb6a110f1a40c62e782ef53dce1d1663daa2bf9a0a6c245b836d773b4e6e655"
+    },
+    {
+      "source": "docs/agent/perception/evolution/contact-wrist-surface-learning.md",
+      "snapshot": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/final_source_snapshot/docs/agent/perception/evolution/contact-wrist-surface-learning.md",
+      "sha256": "f448a5fba4d39eaca2a654621c25a801e74ef5ca6f97491fad22352558a82797"
+    },
+    {
+      "source": "docs/agent/perception/chronicles/2026-11-23-contact-wrist-training.md",
+      "snapshot": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/final_source_snapshot/docs/agent/perception/chronicles/2026-11-23-contact-wrist-training.md",
+      "sha256": "4e81a16d10744668281daeb8f71181250ea8740dfc91d870d9bef42e2a68628a"
+    },
+    {
+      "source": "tutorials/contact_wrist_surface_learning.md",
+      "snapshot": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/final_source_snapshot/tutorials/contact_wrist_surface_learning.md",
+      "sha256": "441d009d1cc0d7ed1e2112ffa6bc61973da63bddc7a6a8e43476963567672e7c"
+    }
+  ],
+  "historical_source_snapshots": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/source_snapshot",
+  "audit_failure_preserved": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/data_initial_audit_rejected",
+  "repair": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/repair_visible_gate",
+  "restore": "tutorials/contact_wrist_surface_learning.md",
+  "references": [
+    {
+      "path": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/data/config.json",
+      "sha256": "c37f44d463fb4a16f53463760c1dc3bcfacda4a3f00aac663d976dd4d3366e7b"
+    },
+    {
+      "path": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/data/records.jsonl",
+      "sha256": "517ce7a14f9a1b914af5a35e08c7dcb0844f45e3572b92cc36ae7ae6e0f5490d"
+    },
+    {
+      "path": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/data/episodes.json",
+      "sha256": "f46828a4eab601e2e23b333c5ac47642427cf81cf1e925519b6ebad821f432f8"
+    },
+    {
+      "path": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/data/complete.json",
+      "sha256": "85460e53b835f7ff1c87f7bb0244c0d14afb27cf108d93f9159deca68942f6ca"
+    },
+    {
+      "path": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/data/label_audit.json",
+      "sha256": "2c96247950580eb0cbb2696c32c95d0378aa8ec2ec013328eaf95c651d6eeb69"
+    },
+    {
+      "path": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/data/attempts.json",
+      "sha256": "f8d1dbfe587228cd3f84d4f5042f66f35e2aa27ccdee3af183302f2a4b51125b"
+    },
+    {
+      "path": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/data/scene.xml",
+      "sha256": "3d3ff0d891b67958dc9c745ef369bbd91a7f7d9b53451747c669a1e6c32f79f1"
+    },
+    {
+      "path": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/data/dependencies.json",
+      "sha256": "b902d2da1712ea38b17b94b7830c1b8b1172ce1fd8e8a24f233ab39bc18da54f"
+    },
+    {
+      "path": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/network_templates/manifest.json",
+      "sha256": "12e4e663ae3f7819db17f41d7179fcfdf4a32da5311083ad989ae7053bf62e6b"
+    },
+    {
+      "path": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/train/config.json",
+      "sha256": "4956aa9a0e203d306146aca4f7a44b7b951ebb7cd471dd8e786ebffb5a4130e2"
+    },
+    {
+      "path": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/train/best.pt",
+      "sha256": "7322cc5687ea105264b59ac347254fcd30c2f511b37fc3dc773c5127cad39f66"
+    },
+    {
+      "path": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/train/inference.pt",
+      "sha256": "82cb5356c44314ba927b0120ab32c21f7133663412355309507c5bd66959547b"
+    },
+    {
+      "path": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/train/report.json",
+      "sha256": "ab330690abe7b1be00a226ec274fa6a038d5557f376a0e24b6a07b68686e13cb"
+    },
+    {
+      "path": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/train/test_predictions.npz",
+      "sha256": "5c6ae48528c70c5451e1a36bf380f9a15ac157b285a66d62eb83d683d9e94839"
+    },
+    {
+      "path": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/transfer_evaluation/report.json",
+      "sha256": "7f1fd83dc0fd9969de1b2d4c169e062f7fc52fbc7c0f5c4b643128e9811cd848"
+    },
+    {
+      "path": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/full_forward_check/report.json",
+      "sha256": "fde2c6c5975aacc66d72daab41c73b5bae30ce938a8ec93802b201461f0e2e14"
+    },
+    {
+      "path": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/failure_analysis.json",
+      "sha256": "21f8582e65eacc3ad0616acc187c545a678bb93fca8f49b1b4ece337a67c3be2"
+    },
+    {
+      "path": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/approach_clearance.json",
+      "sha256": "da3fcfd648c0b3eb37327429d02d9f57547374824ecca1c873418f512d80cd85"
+    },
+    {
+      "path": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/inference_example/prediction.json",
+      "sha256": "8ca5330b8001787aaa4a1844fb110f923c63fc119930c39a9e640d35846089e2"
+    },
+    {
+      "path": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/results/surface_schemes_v1/browser_validation.json",
+      "sha256": "7a76f1aec7b8411abed3cad2debeeedee546dc03d973752107d6cf65938b455b"
+    },
+    {
+      "path": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/results/contact_browser_validation.json",
+      "sha256": "1b23f8d0c46c2e317ad8c7c68f191eca9d93ffdb8ddd4ad4d3271eab62bf7a7b"
+    },
+    {
+      "path": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/index.html",
+      "sha256": "2cf4e49950576c4f3894a36f10b8848be614ec4cf3ab41bea313043908af2a02"
+    }
+  ],
+  "source_protection_report": "/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/protected_sources.json"
+}

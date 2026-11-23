@@ -1,0 +1,90 @@
+{
+  "date": "2026-11-22",
+  "run": "/data/omi_runtime/runs/interaction_surface_representation_20261122",
+  "url": "http://127.0.0.1:8891",
+  "source_snapshot": [
+    {
+      "source": "scripts/perception/build_interaction_surface.py",
+      "snapshot": "/data/omi_runtime/runs/interaction_surface_representation_20261122/source_snapshot/scripts/perception/build_interaction_surface.py",
+      "sha256": "5e2741d2e9c695025a2f7a5f59bc8d556aa1d0eb98dac6e97302c9f7743de878"
+    },
+    {
+      "source": "scripts/perception/render_interaction_surface.py",
+      "snapshot": "/data/omi_runtime/runs/interaction_surface_representation_20261122/source_snapshot/scripts/perception/render_interaction_surface.py",
+      "sha256": "f7ebfb0e30b92cc4b62fbde1acbeff2cc35a2275e973cb8c5db80e0cba282951"
+    },
+    {
+      "source": "scripts/perception/interaction_surface_viewer.html",
+      "snapshot": "/data/omi_runtime/runs/interaction_surface_representation_20261122/source_snapshot/scripts/perception/interaction_surface_viewer.html",
+      "sha256": "4fdc82bcbe61c0ce0276b19e9902a7030f72d32b34ee5214ab8b597e2c3ad314"
+    },
+    {
+      "source": "scripts/perception/test_interaction_surface.py",
+      "snapshot": "/data/omi_runtime/runs/interaction_surface_representation_20261122/source_snapshot/scripts/perception/test_interaction_surface.py",
+      "sha256": "d092bdb515bccce27a910c132ecec541e2d2ca7c68618845fa057de0da969e63"
+    },
+    {
+      "source": "scripts/perception/image_to_surface_network.py",
+      "snapshot": "/data/omi_runtime/runs/interaction_surface_representation_20261122/source_snapshot/scripts/perception/image_to_surface_network.py",
+      "sha256": "fca017b797458458eaab6b0198b06247268844b28746d998aef73f9579fbfa49"
+    },
+    {
+      "source": "scripts/perception/test_image_to_surface.py",
+      "snapshot": "/data/omi_runtime/runs/interaction_surface_representation_20261122/source_snapshot/scripts/perception/test_image_to_surface.py",
+      "sha256": "0acccf0723473654aef2c94beefda3f46eda6c5e59360ea0a98396786ab670ea"
+    },
+    {
+      "source": "scripts/perception/run_image_to_surface_prototype.py",
+      "snapshot": "/data/omi_runtime/runs/interaction_surface_representation_20261122/source_snapshot/scripts/perception/run_image_to_surface_prototype.py",
+      "sha256": "8b47a0a72c68f36d1577387cb4d9b0ee0b10d24f1d4ea1a61be62f1acefddc03"
+    },
+    {
+      "source": "scripts/perception/build_surface_representation.py",
+      "snapshot": "/data/omi_runtime/runs/interaction_surface_representation_20261122/source_snapshot/scripts/perception/build_surface_representation.py",
+      "sha256": "1eb6a110f1a40c62e782ef53dce1d1663daa2bf9a0a6c245b836d773b4e6e655"
+    },
+    {
+      "source": "docs/design/interaction-surface-representation.md",
+      "snapshot": "/data/omi_runtime/runs/interaction_surface_representation_20261122/source_snapshot/docs/design/interaction-surface-representation.md",
+      "sha256": "5b492e48153769a4f2dae4b316570a972c6e700b56f0b63e071f3225e9d791ff"
+    },
+    {
+      "source": "tutorials/interaction_surface_representation.md",
+      "snapshot": "/data/omi_runtime/runs/interaction_surface_representation_20261122/source_snapshot/tutorials/interaction_surface_representation.md",
+      "sha256": "fa3d5e87ad0b2380af7ca6ac14af4b3fe4ee27078e8d44f60384584fdf14661d"
+    },
+    {
+      "source": "docs/agent/perception/evolution/interaction-surface-representation.md",
+      "snapshot": "/data/omi_runtime/runs/interaction_surface_representation_20261122/source_snapshot/docs/agent/perception/evolution/interaction-surface-representation.md",
+      "sha256": "8e217441f5a5772de9bd3c0c8900089f7b1a2e94ea85429049d9cd7a77a94f76"
+    },
+    {
+      "source": "docs/agent/perception/chronicles/2026-11-22-tip-mouth-surface.md",
+      "snapshot": "/data/omi_runtime/runs/interaction_surface_representation_20261122/source_snapshot/docs/agent/perception/chronicles/2026-11-22-tip-mouth-surface.md",
+      "sha256": "04e4fac887e6c9bfc5e5b9be018a8af52fabe225964043b15389c6eecb5f3b3c"
+    }
+  ],
+  "source_mesh_files_verified_unchanged": 128,
+  "dense_local_counts": {
+    "module": {
+      "surface": 85000,
+      "edge": 21352
+    },
+    "socket": {
+      "surface": 382518,
+      "edge": 40284
+    }
+  },
+  "network_counts": {
+    "module": 22528,
+    "socket": 43008
+  },
+  "unit_tests_passed": 8,
+  "browser_checks_passed": 12,
+  "browser_errors": [],
+  "network_forward_and_synthetic_backward_completed": true,
+  "optimizer_steps": 0,
+  "physical_accuracy_validated": false,
+  "old_artifacts_preserved": true,
+  "documentation": "docs/design/interaction-surface-representation.md"
+}

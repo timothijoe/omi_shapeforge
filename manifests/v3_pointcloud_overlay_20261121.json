@@ -1,0 +1,12 @@
+{
+  "run": "/data/omi_runtime/runs/pointcloud_v3_overlay_20261121_face_corrected",
+  "report": "/data/omi_runtime/runs/pointcloud_v3_overlay_20261121_face_corrected/report.json",
+  "viewer": "/data/omi_runtime/runs/pointcloud_v3_overlay_20261121_face_corrected/registration/overlay.html",
+  "validation": "/data/omi_runtime/runs/pointcloud_v3_overlay_20261121_face_corrected/correction_validation.json",
+  "status": "user_face_corrected_v3_overlay",
+  "absolute_pose_accuracy_validated": false,
+  "orientation_unique": false,
+  "previous_run": "/data/omi_runtime/runs/pointcloud_v3_overlay_20261121_0140",
+  "face_prior": "toward-camera",
+  "visible_browser_webgl_verified": true
+}

@@ -1,0 +1,10 @@
+{
+  "asset_id": "OM-001/MEASURED-r01",
+  "directory": "/data/omi_runtime/assets/optical_module_measured/r01",
+  "asset_manifest": "/data/omi_runtime/assets/optical_module_measured/r01/asset_manifest.json",
+  "asset_manifest_sha256": "34c8b17c4e63c9ec12ee9826abfdee7096a741f5f381815146755acfadc9091f",
+  "validation": "/data/omi_runtime/assets/optical_module_measured/r01/validation.json",
+  "blender_reopen": "/data/omi_runtime/assets/optical_module_measured/r01/blender_reopen.json",
+  "source_files_unchanged_count": 503,
+  "installed_in_training": false
+}

@@ -1,5 +1,58 @@
 # OMI ShapeForge 交接文档
 
+当前Isaac插入／规则反馈RL窗口已收尾：[专项交接](docs/chronicles/2026-11-23-isaac-rule-rl-window-handoff.md)。含固定WG-r10＋OM-r08、旧BC／RL结果、新规则8/8与恢复4/4、视频恢复、源码快照、实仿缺项及接续注意事项；不替代并行感知／资产交接。
+
+当前感知任务交接：[三变量采样、细网格数据与后续预训练](docs/chronicles/2026-11-23-perception-grid-pretraining-handoff.md)。含已确认目标、数据入口、验证、历史模型区别、恢复和接续事项；不替代并行资产／控制任务交接。
+
+本窗口专项交接：[外观资产、GC-r01接触与PCG-01纯几何交付](docs/chronicles/2026-11-23-mesh-contact-pcg-window-handoff.md)。最近可复制产物是Downloads/PCG-01.zip；文档包含版本区别、窗口恢复、验证和接手注意事项，不替代并行主线状态。
+
+[感知细网格数据v1](docs/agent/perception/evolution/grid-perception-data-v1.md)已完成：16490候选全部检查，16251张物理有效图；严格三变量主集14549张（训练12463／验证987／测试1099），辅助1702张，未收录239个。窗口8895，模块和插座范围／步长、有效区域及标注均可查看；当前仅孔口前静态样本，未训练新网络。推荐入口`grid_perception_20261123_v1/data_strict/`。
+
+
+纯几何资产导出专项已归档：用户看过PCG-01三维展示后要求复制走，交付`/home/linux/Downloads/PCG-01/`及`PCG-01.zip`。先读[PCG-01纪传体](docs/agent/perception/evolution/pointcloud-geometry-pcg01.md)和[编年体](docs/agent/perception/chronicles/2026-11-23-pointcloud-geometry.md)；文件不带颜色、沿用原坐标，插口排除大支架，与旧完整模板范围不同。此项不改并行感知／控制训练状态。
+
+用户已查看可视化并确认光模块相对夹爪只采样**前后、上下、俯仰**，左右居中、偏转和侧倾固定。[三变量预览](docs/agent/perception/evolution/three-variable-grasp-preview.md)已完成27组静态夹持检查，窗口8894；三变量含义与可视化表达已获认可，正式采样范围／步长另议，未开始新训练。
+
+2026-11-23：GC-r01接触版感知训练已完成。256段／3072帧经接触与可见网格筛选，方案一模板续训25轮；同一新测试集尖端误差旧模型12.26mm→新模型0.98mm，P90为1.38mm，最差仍10.97mm。窗口8893；仅接近阶段仿真，非插入／真机验收。 [完整记录](docs/agent/perception/evolution/contact-wrist-surface-learning.md) · [恢复](tutorials/contact_wrist_surface_learning.md)。
+
+腕部夹持专项最新：[GC-r01双胶垫接触修订](docs/agent/simulation/evolution/wrist-contact-closure.md)已保存。旧WVA-01有左右间隙；新场景模块不焊死，双指闭合产生接触，5例移动／释放及半步长通过。源mesh、WVA-01和当前r10训练场景保持原样。
+
+最新仿真资产专项状态：**WVA-01「腕部实拍对齐版」已具备并获用户接受**。复用先读[版本纪传体](docs/agent/simulation/evolution/wrist-visual-wva01.md)、[阶段编年](docs/agent/simulation/chronicles/2026-11-22-wva01-assets.md)和[固定清单](manifests/wrist_visual_wva01_20261122.json)。固定r15夹爪／相机＋r08模块及插槽参考场景；视觉基线与下方感知／r10训练进度分别管理，不改变其他主线任务优先级。
+
+历史首轮训练：[仿真腕部视频→完整点云](tutorials/sim_wrist_surface_learning.md)，窗口`http://127.0.0.1:8892`。数据256配置／3072帧，25轮3600更新，最佳第19轮；独立测试尖端相对误差均值1.92mm，对比平均位姿基线21.42mm。模型在`/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/train/best.pt`，含视频、完整点云和复现记录。旧“未训练”页面是历史原型；当前训练也尚未完成真机／插接精度验收。
+
+8891显示后续：按用户要求保留整体脉络，默认完整材质色点云＋原位重点加密，并提供局部小窗。没有改变点集或位姿，仍为模块22528／插座43008点。[操作](tutorials/interaction_surface_representation.md)。
+
+表征后续：用户重点改为模块尖端和插孔接触几何。已新增[局部精细点云窗口](tutorials/interaction_surface_representation.md)，地址`http://127.0.0.1:8891`；密集参照和网络模板分开，后者模块22528／插座43008点，包含全局／局部／棱边三层。源mesh不改，旧8890点数窗口保留；当时网络未训练；现有已训练结果见本页顶部。
+
+历史未训练原型：[图像→完整表面点云原型](tutorials/image_to_complete_surface.md)，独立窗口`http://127.0.0.1:8890`。模块2048／插座8192点、共享图像编码器／自动局部裁剪／双位姿头／模板刚体解码已实现并检查前向和梯度；网络尚未训练，当前数值输出不可当定位结果。8876人工调节与原标注保留。
+
+历史r10视觉资产专项交接（2026-11-22）：[WG-r10＋OM-r08接入说明](docs/agent/simulation/evolution/wrist-assets-handoff.md)、[机器清单](manifests/wrist_visual_asset_handoff_20261122.json)、[独立复现教程](tutorials/reuse_wrist_visual_assets.md)。已核对哈希、依赖和隔离重渲染，原结果不变。旧挂载助手的组件／颜色映射尚需适配；本项不改变下方感知／Isaac任务的优先级。
+
+初始化与颜色后续：[四点结构引导＋密集彩色点云](docs/agent/perception/chronicles/2026-11-22-guided-initialization-color.md)已接入。原图按序点四角，结合双目深度求初值；原始RGB／选区辅助色可切换，目标邻域密集保留。首条有待审阅建议，用户原调整已保存；两组调节仍独立，真实精度未认证。前后端点云布局同步更新为八列，重启服务后刷新页面。
+
+位姿窗口后续：点云与像素拟合已拆成左右视图下方各六轴的独立调节栏，互不覆盖；外参只在显式应用时才替换投影。28项隔离／保存恢复浏览器检查通过，正式标注不改。[操作](tutorials/head_wrist_pose_review.md)。
+
+2026-11-22新增可操作入口：[头部点云＋腕部位姿审阅窗口](tutorials/head_wrist_pose_review.md)，本机`http://127.0.0.1:8876`。支持287条数据、模块／插座独立六轴滑条、按需双目点云、鱼眼线框、手工结构点精修、逐条外参候选及历史保存。首条仅为待审阅演示初值，插座仍偏；[能力边界](docs/agent/perception/evolution/head-wrist-pose-review.md)。
+
+当前任务优先级（2026-11-22用户重新指定）：**腕部相机中的光模块位姿估计与头部双目点云几何约束优先**。从新备份的287组四图和已有五组点云接续，先核查相机标定／坐标关系，再做结构约束与mesh回投影；详见[感知接续决定](docs/chronicles/2026-11-22-perception-priority.md)。Isaac图像对照和RL仿真作为后续工作，以下旧优先级按历史阶段理解。
+
+真实视觉接续（2026-11-21）：先读[感知开发完整交接](docs/chronicles/2026-11-21-perception-progress-handoff.md)。当前主线不使用附加 marker，已完成模块/夹爪归属过滤，右侧可疑头部线停用，保留四组结构；精确六维、遮挡定位和到位判断尚未验收。当前感知源码/文档及主要证据另存于 `/data/omi_runtime/baselines/perception_handoff_20261121T092928Z/`。这与下方仿真策略结果分开评价，当前工作树修改尚未提交。
+
+最新策略试验：已完成10个BC训练回合、两组各20回合接管RL和关闭接管的独立测试／新初态确认，合计BC 7/8、第一轮RL 8/8；另一个组合及等数据额外BC失败。资产仍是一套包含模块／插座／7触点的装配包，额外marker贴纸可忽略。全部进展、失败和限制见[汇总](docs/chronicles/2026-11-21-contact-policy-improvement.md)，数据／源码快照见[新清单](manifests/contact_policy_study_20261121.json)。
+
+最新交付：用户要求不改现有mesh、创建新仿真资产，已建立 **SIM-OM001-OS001-r03** 并完成局部／机械臂规则接触插入退出、双相机和实际训练续训。见[观看与操作](tutorials/contact_simulation.md)、[交付记录](docs/chronicles/2026-11-21-contact-asset-completed.md)。视觉闭环仍未成功，不能把规则通过当作策略成功；原mesh与旧失败证据保留。
+
+当前优先级（2026-11-21）：用户要求先检测mesh并保证插入。已完成[原网格／碰撞体／实际接触检查](docs/agent/simulation/evolution/mesh-insertability.md)，原完整模型在4.212mm被入口弹片阻挡；主体51.282mm通路仅为排除细件的诊断。不能声称插入成功。拓扑修复和孔形分解已另存，下一步复核弹片与横向卷边，见[教程](tutorials/mesh_insertability.md)。
+
+规则示范接续（2026-11-21）：已新增预插入规则老师、16段成功示范、三视图回放、视觉BC与规则／在线混合训练，见[教程](tutorials/rule_demonstrations.md)和[能力边界](docs/agent/simulation/evolution/rule-demonstrations.md)。独立规则来源和BC设置随新训练目录恢复；旧无示范结果保留。
+
+2026-11-21 最新接续：[双相机仿真与 OMI 视觉训练](docs/agent/simulation/evolution/visual-training.md)已跑通，累计 300 条经验／20 次 SAC 更新并完成续训。见[启动教程](tutorials/dual_camera_training.md)与[本次编年](docs/agent/simulation/chronicles/2026-11-21-dual-camera-training.md)。本次同时修改 `omi_proj` 的独立仿真训练入口，代码未提交；下面旧基线关于“没有修改 OMI／没有训练”的描述是历史范围。
+
+最新开发方向：用户要求优先搭建**包含真实机械臂 URDF 的仿真与 RL 架构**，先做简单可运行版本。已完成完整双臂／夹爪 URDF 导入、圆桌和插接资产参考场景、6D TCP→IK→伺服的 Gym 小幅到达检查；当前关闭接触、未建立抓取关系、未训练 RL。后续按[开发计划](docs/design/robot-rl-development-plan.md)推进工具 TCP／夹持模块／预插入到达；[启动教程](tutorials/robot_sim_mvp.md)。纯笛卡尔夹具只作回归，不是主场景。
+
+最新插接座工作：当前为 **OS-001/r04 孔宽检查候选**，金属通道内宽 19.00 mm、白色孔口宽 20.60 mm，相对当前 V3 单侧名义间隙约 0.41 mm。按用户要求比 r03 略放宽，保留背面结构和完整下部支架，V3 未缩放。默认使用 [Open3D 插入查看器](tutorials/v3_socket_insertion.md)；[当前证据与边界](docs/agent/simulation/evolution/v3-insertion.md)、[r04 清单](manifests/socket_r04_20261120.json)。这些尺寸不是独立实测结果；约 51.28 mm 台阶限位已有几何检查，弹片让位和物理插装仍未验收。r01～r03 及历史报告保留。
+
 交接更新日期：2026-11-20。主项目为本文所在的 `omi_shapeforge` 仓库，展示名 OMI ShapeForge。ENG-001 已保存本地源码基线并复验控制层与两项 GPU smoke；后续 ENG-002～003 已定版并接入[统一合同 v1](docs/agent/interfaces/run-contract.md)，两项 smoke 和 MuJoCo 2×2 复验通过。资产名称见[版本目录](docs/asset-versions.md)，全部既有图像见[可视化目录](docs/visual-results.md)。训练未重跑。原始完整交接快照保留不变。
 
 ## 重启接续入口（本次最新）

@@ -1,0 +1,22 @@
+{
+  "status": "static_real_gripper_sim_assets_preview_not_training_validated",
+  "run": "/data/omi_runtime/runs/hybrid_hand_preview_20261121",
+  "preview": "/data/omi_runtime/runs/hybrid_hand_preview_20261121/hybrid_detail.png",
+  "full_resolution": "/data/omi_runtime/runs/hybrid_hand_preview_20261121/hybrid_full.png",
+  "report": "/data/omi_runtime/runs/hybrid_hand_preview_20261121/report.json",
+  "report_sha256": "0711a4a840a40637b4b43d1de0f2cf10da45aeff9862e4f722564fee4def4c3e",
+  "intrinsics": "/home/linux/Downloads/img/wrist_intrinsics_1920x1080.json",
+  "intrinsics_sha256": "14e55db162c49693fda3190f0091cfff053620eb478f0ab497b4b4c8a7358933",
+  "real_hand_source": "/data/omi_runtime/runs/wrist_module_outline_20261120T095830Z/frame_000.png",
+  "real_hand_core_pixels_unchanged": 149335,
+  "simulation_asset": "SIM-OM001-OS001-r06",
+  "module_asset": "OM-001/V4 r05",
+  "existing_live_scene_modified": false,
+  "training_performed": false,
+  "user_feedback": {
+    "date": "2026-11-22",
+    "overall_visual_quality": "positive",
+    "requested_correction": "Preserve black gripper contact pads and align the module with them; orange liner is not the primary contact."
+  },
+  "followup_manifest": "hybrid_black_contact_20261122.json"
+}

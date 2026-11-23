@@ -1,0 +1,27 @@
+{
+  "asset_id": "GC-r01",
+  "display_name": "黑胶垫双面接触修订候选",
+  "directory": "/data/omi_runtime/assets/daimon/wrist_grasp_contact_r01",
+  "manifest": "/data/omi_runtime/assets/daimon/wrist_grasp_contact_r01/asset_manifest.json",
+  "manifest_sha256": "e696b28323fb0b96ededfa881f3ba92e24e5a1f7bf2d7940827c54516bef2cd3",
+  "delivery_manifest": "/data/omi_runtime/assets/daimon/wrist_grasp_contact_r01/delivery_manifest.json",
+  "delivery_manifest_sha256": "c5a6d7d587fa728cc4653c66854d7744c2edd50f28778425f49a59e7c8a3a2ba",
+  "parent_visual_release": "WVA-01",
+  "run": "/data/omi_runtime/runs/wrist_contact_closure_20261122",
+  "comparison": "/data/omi_runtime/assets/daimon/wrist_grasp_contact_r01/evidence/contact_comparison.png",
+  "cases": {
+    "case_count": 5,
+    "all_cases_pass": true,
+    "half_step_pass": true,
+    "tool_translation_mm": 22.360679775,
+    "max_relative_slip_mm": 0.004636665802296956,
+    "surface_audit": "/data/omi_runtime/assets/daimon/wrist_grasp_contact_r01/evidence/surface_audit.json",
+    "cases": "/data/omi_runtime/assets/daimon/wrist_grasp_contact_r01/evidence/cases_report.json",
+    "release_test_pass": true,
+    "bilateral_force_checked_every_ms": 10,
+    "no_other_tool_visual_intersections": true,
+    "source_assets_and_WVA01_unchanged": true
+  },
+  "scene": "/data/omi_runtime/assets/daimon/wrist_grasp_contact_r01/contact_scene.xml",
+  "default_keyframe": "gravity_hold"
+}

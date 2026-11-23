@@ -1,5 +1,9 @@
 # 同源 MuJoCo 与 Isaac 场景
 
+新增[Isaac同源接触插入与RTX双相机](isaac-contact.md)。下文保留早期落台场景的验证范围，其中“未运行RTX/无机器人”只适用于该历史场景。
+
+本页范围是早期单模块／2×2方阵的同源落台原型，保留其已验证参数与局限。当前MuJoCo接触插入主线见[仿真器记录](../../../simulation.md)及[独立接触资产](contact-simulation-asset.md)；不要把本页的单盒碰撞、无机器人和旧MuJoCo版本当成新任务现状。
+
 ## 生成结构
 
 `build_scenes.py` 读取 `asset.json` 和部件 OBJ，复制网格到新目录，生成 `scene.xml`、`scene.usda` 和 `scene_manifest.json`。两个格式共享模块初始位置、桌面、示意轨道、重力及物理假设。
@@ -26,6 +30,6 @@ ENG-003 新增 `omi-shapeforge simulate mujoco`，默认读取配置中的 2×2 
 
 ## 未验证边界
 
-未运行 Isaac RTX 相机或 GUI 交互。两引擎结果只证明局部同源资产可加载且简化接触能运行，不证明动力学一致、质量／摩擦正确、现场复现、夹持或插接成功。当前光模块场景尚未接入机械臂／夹爪，也没有实机接口；新到达资源的离线预检见[机器人资产](robot-assets.md)。
+未运行 Isaac RTX 相机或 GUI 交互。本页的两引擎结果只证明同源落台资产可加载且简化接触能运行，不证明动力学一致、质量／摩擦正确、现场复现、夹持或插接成功。这组早期单模块／方阵场景不含机械臂／夹爪或实机接口；后续真实URDF接入及新接触任务另见[机器人资产](robot-assets.md)和[独立接触资产](contact-simulation-asset.md)。
 
 数据格式见[接口](../../interfaces/data-formats.md)，操作见[MuJoCo 教程](../../../../tutorials/mujoco_scene.md)。

@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "experiment": "SC-WG-r10-OM-r08-ISAAC-r01",
+  "checked_date": "2026-11-22",
+  "fixed_bundle": "/home/linux/omi_folder/omi_shapeforge/manifests/wrist_visual_asset_handoff_20261122.json",
+  "fixed_bundle_sha256": "a9df1e12485c7b8882af915114ea1c5bb6ff276a2ea2023cad313ece60e759c5",
+  "run_root": "/data/omi_runtime/runs/wg_r10_om_r08_isaac_20261122",
+  "tool_asset": "WG-DAIMON-OBS-r10",
+  "module_asset": "OM-001/V4 r08",
+  "source_preservation": [
+    {
+      "asset": "WG-DAIMON-OBS-r10",
+      "files_unchanged": 90
+    },
+    {
+      "asset": "OM-001/V4 r08",
+      "files_unchanged": 66
+    }
+  ],
+  "static_scene_dependencies_verified": 675,
+  "mujoco_reproduction": {
+    "mujoco_reproduction_shape": [
+      1080,
+      1920,
+      3
+    ],
+    "mujoco_reproduction_mean_absolute_channel_difference": 1.6075102880658437e-07,
+    "pinned_camera_projection_points": 765,
+    "max_implementation_projection_error_px": 3.374058890477191e-05,
+    "mean_implementation_projection_error_px": 2.496095952102661e-05,
+    "source_assets": [
+      {
+        "asset": "WG-DAIMON-OBS-r10",
+        "files_unchanged": 90
+      },
+      {
+        "asset": "OM-001/V4 r08",
+        "files_unchanged": 66
+      }
+    ],
+    "physical_accuracy_validated": false
+  },
+  "mount_solution": "/data/omi_runtime/runs/wg_r10_om_r08_isaac_20261122/integration/mount_solution.json",
+  "mount_audit": "/data/omi_runtime/runs/wg_r10_om_r08_isaac_20261122/integration/mount_audit.json",
+  "minimum_sampled_tool_socket_gap_mm": 5.070320477016433,
+  "static_path_samples": 22,
+  "isaac_preview_report": "/data/omi_runtime/runs/wg_r10_om_r08_isaac_20261122/isaac_preview/report.json",
+  "preview_process_exit_code": 0,
+  "scene": "/data/omi_runtime/runs/wg_r10_om_r08_isaac_20261122/isaac_preview/WG-r10_OM-r08_robot.usdc",
+  "fisheye_image": "/data/omi_runtime/runs/wg_r10_om_r08_isaac_20261122/isaac_preview/closed_wrist_fisheye_1920.png",
+  "jaw_video": "/data/omi_runtime/runs/wg_r10_om_r08_isaac_20261122/isaac_preview/jaw_preview.mp4",
+  "GUI_opened_and_screenshot_checked": true,
+  "GUI_timeline_initially_paused": true,
+  "desktop_evidence": "/data/omi_runtime/runs/wg_r10_om_r08_isaac_20261122/desktop_isaac_front.png",
+  "report_correction": "/data/omi_runtime/runs/wg_r10_om_r08_isaac_20261122/report_correction.json",
+  "camera_projection": {
+    "model": "opencv_fisheye_via_cubemap",
+    "K": [
+      [
+        656.3888033002843,
+        0.0,
+        969.5144704283534
+      ],
+      [
+        0.0,
+        661.2072138230802,
+        551.7507393929942
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "D": [
+      -0.027276188479153772,
+      -0.003880950207246229,
+      -0.0024510944482520475,
+      0.0027821862968941133
+    ],
+    "image_size": [
+      1920,
+      1080
+    ],
+    "intrinsics_source": "/home/linux/Downloads/img/wrist_intrinsics_1920x1080.json",
+    "binding_to_new_capture_confirmed": false
+  },
+  "tool_collision_enabled": false,
+  "new_handle_collision_enabled": false,
+  "dynamic_insertion_validated": false,
+  "physical_grasp_validated": false,
+  "new_training": false,
+  "tests": {
+    "control_executed": 14,
+    "control_skipped": 28,
+    "mount_executed": 2,
+    "fisheye_executed": 2
+  },
+  "scope": "Pinned visual bundle mounted in full robot scene; static path, jaw-drive preview and projection checks, not new robot contact/training acceptance",
+  "desktop_evidence_final": "/data/omi_runtime/runs/wg_r10_om_r08_isaac_20261122/desktop_final.png"
+}

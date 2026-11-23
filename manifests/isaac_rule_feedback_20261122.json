@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "experiment": "isaac-rule-feedback-pilot-20261122",
+  "run_root": "/data/omi_runtime/runs/isaac_rl_20261122",
+  "training_samples": 441,
+  "validation_samples": 220,
+  "bc_updates": 1000,
+  "bc_selected_step": 700,
+  "critic_updates": 224,
+  "actor_updates": 96,
+  "replay_samples": 728,
+  "action_sources": {
+    "scripted_intervention": 368,
+    "policy": 360
+  },
+  "human_actions": 0,
+  "online_episodes": [
+    {
+      "episode": 1,
+      "seed": 1000,
+      "steps": 304,
+      "assisted_success": true,
+      "intervention_steps": 104,
+      "policy_steps": 200,
+      "policy_version_used": 32,
+      "updates_before": 32,
+      "updates_after": 96,
+      "actor_parameter_max_change": 0.0003311343025416136,
+      "final_depth_mm": 51.28131559658672
+    },
+    {
+      "episode": 2,
+      "seed": 1001,
+      "steps": 229,
+      "assisted_success": true,
+      "intervention_steps": 160,
+      "policy_steps": 69,
+      "policy_version_used": 96,
+      "updates_before": 96,
+      "updates_after": 160,
+      "actor_parameter_max_change": 0.00039511919021606445,
+      "final_depth_mm": 51.280998849766355
+    },
+    {
+      "episode": 3,
+      "seed": 1002,
+      "steps": 195,
+      "assisted_success": false,
+      "intervention_steps": 104,
+      "policy_steps": 91,
+      "policy_version_used": 160,
+      "updates_before": 160,
+      "updates_after": 224,
+      "actor_parameter_max_change": 0.00039528682827949524,
+      "final_depth_mm": 47.1370699856455
+    }
+  ],
+  "assisted_successes": 2,
+  "independent_reload": {
+    "updates": 224,
+    "network_and_optimizer_exact_reload": {
+      "actor": true,
+      "critic": true,
+      "target": true,
+      "actor_optimizer": true,
+      "critic_optimizer": true,
+      "alpha_optimizer": true
+    },
+    "replay_size": 728,
+    "action_sources": {
+      "scripted_intervention": 368,
+      "policy": 360
+    },
+    "human_mask_count": 0,
+    "independent_process": true
+  },
+  "bc_evaluation": {
+    "cases": [
+      {
+        "seed": 700,
+        "steps": 35,
+        "is_success": false,
+        "depth_mm": 5.204502931573584,
+        "failure": "physics_guard",
+        "teacher_requests": 0,
+        "max_control_force_N": 0.023964654243945272
+      },
+      {
+        "seed": 701,
+        "steps": 83,
+        "is_success": false,
+        "depth_mm": 20.99833193513455,
+        "failure": "control_force_limit",
+        "teacher_requests": 0,
+        "max_control_force_N": 51.4693126560844
+      }
+    ],
+    "success_rate": 0.0,
+    "policy_version": 0,
+    "deterministic": true,
+    "teacher_enabled": false,
+    "replay_written": false,
+    "checkpoint_sha256": "381666d5c75caf2ff1f986821f3bd2c751c5b78448e7aecf337c94d610c6310b"
+  },
+  "rl_evaluation": {
+    "cases": [
+      {
+        "seed": 700,
+        "steps": 165,
+        "is_success": false,
+        "depth_mm": 38.856937186353875,
+        "failure": "control_force_limit",
+        "teacher_requests": 0,
+        "max_control_force_N": 17.45960924403022
+      },
+      {
+        "seed": 701,
+        "steps": 173,
+        "is_success": false,
+        "depth_mm": 44.371804227103546,
+        "failure": "control_force_limit",
+        "teacher_requests": 0,
+        "max_control_force_N": 14.489315654046258
+      }
+    ],
+    "success_rate": 0.0,
+    "policy_version": 224,
+    "deterministic": true,
+    "teacher_enabled": false,
+    "replay_written": false,
+    "checkpoint_sha256": "8b6141b6c21a7b7c85e4fb38c6e199d665af650dac2f331e771e69766d8d5310"
+  },
+  "stage_receipts": [
+    {
+      "stage": "bc",
+      "command": [
+        "/data/omi_runtime/envs/omi_sim_train/bin/python",
+        "-u",
+        "-m",
+        "omi_hil_rl.training.isaac_rule_feedback",
+        "bc",
+        "--run",
+        "/data/omi_runtime/runs/isaac_rl_20261122/study"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 14.520739602012327
+    },
+    {
+      "stage": "evaluate_bc",
+      "command": [
+        "/data/omi_runtime/envs/omi_sim_train/bin/python",
+        "-u",
+        "-m",
+        "omi_hil_rl.training.isaac_rule_feedback",
+        "evaluate",
+        "--kind",
+        "bc",
+        "--run",
+        "/data/omi_runtime/runs/isaac_rl_20261122/study"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 141.00072503800038
+    },
+    {
+      "stage": "rl",
+      "command": [
+        "/data/omi_runtime/envs/omi_sim_train/bin/python",
+        "-u",
+        "-m",
+        "omi_hil_rl.training.isaac_rule_feedback",
+        "rl",
+        "--episodes",
+        "2",
+        "--run",
+        "/data/omi_runtime/runs/isaac_rl_20261122/study"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 799.3742223200097
+    },
+    {
+      "stage": "resume",
+      "command": [
+        "/data/omi_runtime/envs/omi_sim_train/bin/python",
+        "-u",
+        "-m",
+        "omi_hil_rl.training.isaac_rule_feedback",
+        "rl",
+        "--episodes",
+        "3",
+        "--resume",
+        "--run",
+        "/data/omi_runtime/runs/isaac_rl_20261122/study"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 262.3249719130108
+    },
+    {
+      "stage": "evaluate_rl",
+      "command": [
+        "/data/omi_runtime/envs/omi_sim_train/bin/python",
+        "-u",
+        "-m",
+        "omi_hil_rl.training.isaac_rule_feedback",
+        "evaluate",
+        "--kind",
+        "rl",
+        "--run",
+        "/data/omi_runtime/runs/isaac_rl_20261122/study"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 434.01625519100344
+    }
+  ],
+  "pipeline_validated": true,
+  "autonomous_policy_validated": false,
+  "limitations": [
+    "Small fixed-scene study; frozen visual encoder; not a converged or real-robot policy",
+    "Feedback from privileged rules, distinct from human operator labels",
+    "Current visual assets with fixed attachment and uncalibrated contact/camera assumptions",
+    "Clean episode-boundary resume tested; arbitrary crash recovery not claimed"
+  ],
+  "artifacts": {
+    "bc/actor.pt": {
+      "path": "/data/omi_runtime/runs/isaac_rl_20261122/study/bc/actor.pt",
+      "sha256": "381666d5c75caf2ff1f986821f3bd2c751c5b78448e7aecf337c94d610c6310b"
+    },
+    "rl/actor.pt": {
+      "path": "/data/omi_runtime/runs/isaac_rl_20261122/study/rl/actor.pt",
+      "sha256": "8b6141b6c21a7b7c85e4fb38c6e199d665af650dac2f331e771e69766d8d5310"
+    },
+    "rl/learner.pt": {
+      "path": "/data/omi_runtime/runs/isaac_rl_20261122/study/rl/learner.pt",
+      "sha256": "bb17d0be907a74e4afce086a3995bc933e8534d667d494de51a76c70af1a3056"
+    },
+    "contract.json": {
+      "path": "/data/omi_runtime/runs/isaac_rl_20261122/study/contract.json",
+      "sha256": "93f181e7fd9ef4e2de0196efde7b2a04c9682c978fdb7ecb2d3dbc6374b9ed2f"
+    },
+    "protocol.json": {
+      "path": "/data/omi_runtime/runs/isaac_rl_20261122/study/protocol.json",
+      "sha256": "82232e0b7038e35614ad58437e39de5b8ab611f00062b6c4c7d43c2dc80ee2e9"
+    }
+  },
+  "tool_session_receipts": {
+    "collection_outer_session": 143,
+    "pipeline_outer_session": 143,
+    "isaac_worker_session": 0,
+    "note": "The five supervised stage subprocesses all exited 0 and complete reports/checkpoints/replay were independently verified. Outer session signal cause not diagnosed; do not report all wrapper exits as clean."
+  },
+  "worker_shutdown": {
+    "clean": true,
+    "episodes": 12
+  },
+  "source_snapshot": "/data/omi_runtime/runs/isaac_rl_20261122/source_final",
+  "source_snapshot_hashes": "/data/omi_runtime/runs/isaac_rl_20261122/source_final_hashes.json",
+  "learning_plot": "/data/omi_runtime/runs/isaac_rl_20261122/review_final/learning_summary.png",
+  "evaluation_video": "/data/omi_runtime/runs/isaac_rl_20261122/review_final/policy_evaluation_comparison.mp4",
+  "source_asset_preservation": [
+    {
+      "asset": "WG-DAIMON-OBS-r10",
+      "files": 90,
+      "unchanged": true
+    },
+    {
+      "asset": "OM-001/V4 r08",
+      "files": 66,
+      "unchanged": true
+    }
+  ],
+  "desktop_review": "/data/omi_runtime/runs/isaac_rl_20261122/review_final/desktop.png"
+}

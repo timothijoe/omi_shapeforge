@@ -1,0 +1,16 @@
+{
+  "status": "fresh_stereo_cloud_initialization_and_joint_pixel_refinement_completed",
+  "run": "/data/omi_runtime/runs/stereo_pixel_pose_20261121",
+  "summary": "/data/omi_runtime/runs/stereo_pixel_pose_20261121/summary.json",
+  "provenance": "/data/omi_runtime/runs/stereo_pixel_pose_20261121/provenance.json",
+  "validation": "/data/omi_runtime/runs/stereo_pixel_pose_20261121/validation.json",
+  "preview": "/data/omi_runtime/runs/stereo_pixel_pose_20261121/overview.png",
+  "viewer": "/data/omi_runtime/runs/stereo_pixel_pose_20261121/pointcloud_before_after.html",
+  "tested_frames": 11,
+  "available_extracted_frames": 59,
+  "saved_object_poses_used": false,
+  "physical_pose_accuracy_validated": false,
+  "user_acceptance": "not_accepted",
+  "structural_review": "failed_local_feature_consistency_optical_0885",
+  "audit_run": "/data/omi_runtime/runs/stereo_pose_structure_audit_20261121"
+}

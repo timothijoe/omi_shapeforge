@@ -1,0 +1,20 @@
+{
+  "asset_id": "WG-DAIMON-CLOUD-r09",
+  "asset_directory": "/data/omi_runtime/assets/daimon/wrist_gripper_cloud_r09",
+  "asset_manifest": "/data/omi_runtime/assets/daimon/wrist_gripper_cloud_r09/asset_manifest.json",
+  "asset_manifest_sha256": "0b1373a302eeed671e2a673e4d7a8c769cf6a2d6938ba6ca89b17c19f37dccb9",
+  "run": "/data/omi_runtime/runs/wrist_pointcloud_refinement_20261122",
+  "pointcloud": "/data/omi_runtime/runs/wrist_pointcloud_refinement_20261122/tool_scan_reference.ply",
+  "comparison": "/data/omi_runtime/runs/wrist_pointcloud_refinement_20261122/cloud_refinement_comparison.png",
+  "surface_evaluation": "/data/omi_runtime/runs/wrist_pointcloud_refinement_20261122/surface_evaluation.json",
+  "contour_evaluation": "/data/omi_runtime/runs/wrist_pointcloud_refinement_20261122/contour_report.json",
+  "preserved_parent": "wrist_tool_r08_preservation_20261122.json",
+  "registered_views": 11,
+  "selected_views": 15,
+  "changed_meshes": 8,
+  "unchanged_meshes": 41,
+  "camera_parameters_changed": false,
+  "reference_attachment_changed": false,
+  "physical_grasp_validated": false,
+  "training_performed": false
+}

@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-21",
+  "task": "dual-camera MuJoCo preinsert visual training chain",
+  "scene": "/data/omi_runtime/runs/dual_camera_scene_20261121_final",
+  "training_run": "/data/omi_runtime/runs/dual_camera_training_20261121_final",
+  "source_snapshot": "/data/omi_runtime/runs/dual_camera_training_20261121_final/source_snapshot",
+  "repositories": {
+    "omi_proj": {
+      "head": "963a7c29f8e39bff59ba4eb285693976b224961e",
+      "branch": "feature/shapeforge-vision-training",
+      "has_uncommitted_work": true
+    },
+    "omi_shapeforge": {
+      "head": "66ff11720e5dc4327041d709b661dec73c83f605",
+      "branch": "feature/dual-camera-training",
+      "has_uncommitted_work": true
+    }
+  },
+  "environment": "/data/omi_runtime/envs/omi_sim_train",
+  "observations": {
+    "rgb": "rendered head pinhole camera",
+    "wrist_rgb": "rendered TCP-attached pinhole camera",
+    "state": "zero padding",
+    "tactile": "zero padding",
+    "history": "10 causal frames with left padding and validity masks"
+  },
+  "validation": {
+    "training_episodes": 3,
+    "replay_transitions": 300,
+    "critic_updates": 20,
+    "actor_updates": 10,
+    "collection_policy_versions": [
+      0,
+      8,
+      16
+    ],
+    "published_versions": [
+      8,
+      16,
+      20
+    ],
+    "process_resume_passed": true,
+    "checkpoint_reload_max_action_delta": 0.0,
+    "camera_motion_and_padding_tests_passed": 10,
+    "omi_regression_passed": 44,
+    "omi_regression_skipped": 1,
+    "omi_regression_skip_reason": "optional recorded dataset unavailable",
+    "shapeforge_control_passed": 14,
+    "shapeforge_optional_tests_skipped_in_control_env": 7,
+    "data_audit": "/data/omi_runtime/runs/dual_camera_training_20261121_final/data_audit.json",
+    "policy_evaluation_success": false
+  },
+  "limits": [
+    "contacts disabled",
+    "rigid module attachment, not validated contact grasp",
+    "camera and tool mounts are uncalibrated simulation assumptions",
+    "no tactile sensing or elastic insertion",
+    "short pipeline verification, not a trained successful task policy"
+  ],
+  "artifact_sha256": {
+    "/data/omi_runtime/runs/dual_camera_scene_20261121_final/scene.xml": "e975ef784ed9849162202ed43778f9839da8ceedc1db4419d30a481974ac20d6",
+    "/data/omi_runtime/runs/dual_camera_scene_20261121_final/robot_manifest.json": "6e701c463128f994448c18fef57d6e1bfe7e62de5960d98f93944df3b5071a8d",
+    "/data/omi_runtime/runs/dual_camera_training_20261121_final/report_000000.json": "56c8f0a4fc0778937aaa7a60bcd918e8686e281eb44d7b69552864bcd8f5a8f7",
+    "/data/omi_runtime/runs/dual_camera_training_20261121_final/report_000002.json": "40982029a37e6f8a1546f647024d1b3a00dcb767c328b64cc9c20bd39a3133d8",
+    "/data/omi_runtime/runs/dual_camera_training_20261121_final/data_audit.json": "a09fa4c83a13edc521b1c0d28febda47c6acd2a4236559cf612c964bb3965048",
+    "/data/omi_runtime/runs/dual_camera_training_20261121_final/actor.pt": "27319389b60f932ba803d7e8115f83cb5e455a25cd1446576f5dddf62269f942",
+    "/data/omi_runtime/runs/dual_camera_training_20261121_final/learner.pt": "6d080e6511ab8a91e9977da13e23421b881f58bc5d6bc34b9c52fd495b766928",
+    "/data/omi_runtime/runs/dual_camera_training_20261121_final/environment.txt": "8455f25829627b49aa47c0048af65d84fe4301a586089cd4301066db2399d6f3",
+    "/data/omi_runtime/runs/dual_camera_training_20261121_final/source_snapshot_sha256.json": "8baa6842d2b017186318047a99edf908ab3693cdfa34777a7fdf48668af1885f",
+    "/data/omi_runtime/runs/dual_camera_training_20261121_final/session_000000.json": "96263bf7f42a56bf3d26af1676e383bcdabd7a3e9ff161ee14e45d91b2bf53db",
+    "/data/omi_runtime/runs/dual_camera_training_20261121_final/session_000002.json": "f186326bc2c6f9ded39422638bc79d0bfca329dbc8e091c8af699b07353362a3",
+    "/data/omi_runtime/runs/dual_camera_behavior_final_20261121.log": "7231e6873cb1b605e368d01922d1a08e56e317df1cb91c5b8cfe77bb898f4819",
+    "/data/omi_runtime/runs/dual_camera_regression_20261121.log": "e955f8a7303c5661376003f1b6ec78d70c4e235b58f6ee983466701944e091b0"
+  }
+}

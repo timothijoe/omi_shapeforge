@@ -1,0 +1,27 @@
+{
+  "asset_id": "WG-DAIMON-REFINED-r05",
+  "display_name": "WG-r05 · 双目参考精修版",
+  "asset_directory": "/data/omi_runtime/assets/daimon/wrist_gripper_refined_r05",
+  "asset_manifest": "/data/omi_runtime/assets/daimon/wrist_gripper_refined_r05/asset_manifest.json",
+  "asset_manifest_sha256": "47baaac4a20a9d39fb5e3438932201cccebfbeae16e3cf071191931d4114f5c4",
+  "delivery_manifest": "/data/omi_runtime/assets/daimon/wrist_gripper_refined_r05/delivery_manifest.json",
+  "run": "/data/omi_runtime/runs/wrist_tool_refinement_20261122",
+  "parts": 49,
+  "component_counts": {
+    "base": 16,
+    "jaw_left": 11,
+    "jaw_right": 11,
+    "camera_mount": 2,
+    "camera": 9
+  },
+  "validation": "/data/omi_runtime/assets/daimon/wrist_gripper_refined_r05/validation.json",
+  "review": "/data/omi_runtime/runs/wrist_tool_refinement_20261122/refined_tool_review.png",
+  "source_hashes": "/data/omi_runtime/runs/wrist_tool_refinement_20261122/source_sha256.json",
+  "camera_glb": "/data/omi_runtime/assets/daimon/wrist_gripper_refined_r05/wrist_camera.glb",
+  "gripper_glb": "/data/omi_runtime/assets/daimon/wrist_gripper_refined_r05/gripper.glb",
+  "replaces_old_asset": false,
+  "real_dimension_certified": false,
+  "camera_extrinsics_calibrated": false,
+  "physical_grasp_validated": false,
+  "new_policy_training": false
+}

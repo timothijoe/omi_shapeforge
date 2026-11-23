@@ -1,5 +1,7 @@
 # 接口索引
 
+- [腕部／模块视觉资产接入合同](../simulation/evolution/wrist-assets-handoff.md)：版本、坐标方向、部件语义、材料、鱼眼与运行依赖。
+
 - [CLI、Python 入口和退出语义](cli.md)
 - [配置文件与路径解析](configuration.md)
 - [数据格式、坐标和单位](data-formats.md)

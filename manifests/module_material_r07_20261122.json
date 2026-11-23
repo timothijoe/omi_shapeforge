@@ -1,0 +1,21 @@
+{
+  "asset_id": "OM-001/V4",
+  "revision": "r07",
+  "name": "V4-r07 · 纯色银灰材质候选",
+  "directory": "/data/omi_runtime/assets/optical_module_v4/r07",
+  "asset_manifest": "/data/omi_runtime/assets/optical_module_v4/r07/asset_manifest.json",
+  "asset_manifest_sha256": "3aea589a3b070e188659fe63d4b786849079603111fc8c70c0076467e47e74f3",
+  "delivery_manifest": "/data/omi_runtime/assets/optical_module_v4/r07/delivery_manifest.json",
+  "run": "/data/omi_runtime/runs/module_v4_plain_material_20261122",
+  "hybrid_preview": "/data/omi_runtime/runs/module_v4_plain_material_20261122/r07_plain_material_preview.png",
+  "geometry_unchanged": true,
+  "r06_colors_preserved": true,
+  "added_grain_removed": true,
+  "protected_old_files_unchanged": 1397,
+  "adopted_r05_baseline_changed": false,
+  "new_training_performed": false,
+  "real_comparison": "/data/omi_runtime/runs/module_v4_plain_material_20261122/real_vs_r07_plain_comparison.png",
+  "real_comparison_provenance": "/data/omi_runtime/runs/module_v4_plain_material_20261122/real_vs_r07_plain_comparison.json",
+  "grain_comparison": "/data/omi_runtime/runs/module_v4_plain_material_20261122/r06_vs_r07_grain_comparison.png",
+  "progress_document": "docs/chronicles/2026-11-22-simulation-mesh-visual-progress.md"
+}

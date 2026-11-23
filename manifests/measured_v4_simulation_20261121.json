@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-21",
+  "asset_id": "SIM-OM001-OS001-r06",
+  "module_visual_baseline": "OM-001/V4 r05 双窗尾槽版",
+  "asset_directory": "/data/omi_runtime/assets/sim_insertion/r06",
+  "socket_asset_directory": "/data/omi_runtime/assets/optical_socket/measured/r01",
+  "run_directory": "/data/omi_runtime/runs/measured_v4_sim_20261121",
+  "report": "/data/omi_runtime/runs/measured_v4_sim_20261121/report.json",
+  "report_sha256": "ca72abb11ea21a3cface539d658009596240efa258757d712ba25c701d957187",
+  "asset_manifest": "/data/omi_runtime/assets/sim_insertion/r06/asset_manifest.json",
+  "asset_manifest_sha256": "350d26d3fcb99cef1168d888fa4de289879eb3ff048667b7964b0a806cf65f31",
+  "robot_scene": "/data/omi_runtime/runs/measured_v4_sim_20261121/robot_scene",
+  "robot_validation": "/data/omi_runtime/runs/measured_v4_sim_20261121/robot_validation/report.json",
+  "robot_video": "/data/omi_runtime/runs/measured_v4_sim_20261121/robot_validation/robot_contact_cycle.mp4",
+  "camera_check": "/data/omi_runtime/runs/measured_v4_sim_20261121/camera_check/report.json",
+  "policy_transfer": "/data/omi_runtime/runs/measured_v4_sim_20261121/old_policy_transfer/report.json",
+  "source_snapshot": "/data/omi_runtime/runs/measured_v4_sim_20261121/source_snapshot",
+  "geometry_mm": {
+    "metal_opening_width": 18.799999999999997,
+    "metal_opening_height": 8.8,
+    "front_view_left_inner_wall_to_white_frame_edge": 6.9,
+    "old_same_margin": 7.0
+  },
+  "side_margin_measurement_location_confirmed": false,
+  "side_margin_interpretation": "front +Y view, screen-left is +X; no PCB or lower stand included; not separately confirmed by user",
+  "validation": {
+    "local_insert_withdraw": true,
+    "negative_controls_blocked": true,
+    "half_timestep_passed": true,
+    "robot_insert_withdraw_successes": 3,
+    "robot_trials": 3,
+    "head_and_wrist_see_module_and_socket": true,
+    "old_bc_transfer_successes": 0,
+    "old_rl_transfer_successes": 0,
+    "transfer_trials_each": 2,
+    "new_training_performed": false
+  },
+  "old_training_scene_preserved": true,
+  "physical_contact_calibrated": false
+}

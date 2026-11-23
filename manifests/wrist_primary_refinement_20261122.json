@@ -1,0 +1,22 @@
+{
+  "tool_asset": "WG-DAIMON-OBS-r10",
+  "tool_directory": "/data/omi_runtime/assets/daimon/wrist_gripper_observation_r10",
+  "tool_manifest": "/data/omi_runtime/assets/daimon/wrist_gripper_observation_r10/asset_manifest.json",
+  "tool_manifest_sha256": "14ff12dd1727ca37fc454478940b2392fb14e1a805fc2ed471a95ec9f617a05f",
+  "module_asset": "OM-001/V4 r08",
+  "module_directory": "/data/omi_runtime/assets/optical_module_v4/r08",
+  "module_manifest": "/data/omi_runtime/assets/optical_module_v4/r08/asset_manifest.json",
+  "module_manifest_sha256": "183d94354995599e568db29e9b0d4c004af010ab3e37cf6bc84ce9455f4ca636",
+  "run": "/data/omi_runtime/runs/wrist_primary_refinement_20261122",
+  "comparison": "/data/omi_runtime/runs/wrist_primary_refinement_20261122/primary_refinement_comparison.png",
+  "camera_changed": false,
+  "attachment_changed": false,
+  "module_body_changed": false,
+  "handle_is_secondary": true,
+  "final_check_units": [
+    4,
+    7,
+    11
+  ],
+  "training_performed": false
+}

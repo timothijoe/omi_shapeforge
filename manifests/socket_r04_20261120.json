@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "asset": "OS-001/r04",
+  "status": "user_requested_width_review_candidate_not_measured",
+  "source_baseline": "OS-001/r01",
+  "previous_candidate": "OS-001/r03",
+  "request": "Slightly widen the 18.60 mm candidate and update Markdown documents",
+  "selected_width_mm": 19.0,
+  "white_aperture_width_mm": 20.6,
+  "module": "OM-001/V3 r01 unchanged",
+  "module_shaft_max_width_mm": 18.174102529883385,
+  "nominal_side_clearance_mm": 0.41294873505830765,
+  "source_hashes": {
+    "module": {
+      "file": "/data/omi_runtime/assets/optical_module_v3/work/OM-001-V3.blend",
+      "sha256": "016ac93da1f252e2f13325ac20454d1a02b82e31a840ac4f95bffa4218d0b8d2"
+    },
+    "socket": {
+      "file": "/data/omi_runtime/assets/optical_socket/revisions/r04/OS-001-r04.blend",
+      "sha256": "44e24fbe1ef3b352c61adcea6e84a9044de13275d1f62856e8a502ed275e0f48"
+    }
+  },
+  "run": "/data/omi_runtime/runs/v3_socket_r04_20261120T082303Z",
+  "contract": "/data/omi_runtime/runs/v3_socket_r04_20261120T082303Z/insertion_contract.json",
+  "diagram": "/data/omi_runtime/runs/v3_socket_r04_20261120T082303Z/insertion_geometry.png",
+  "validation": {
+    "blender_reopen": true,
+    "closed_nondegenerate_parts": 135,
+    "other_meshes_unchanged": 86,
+    "changed_meshes": 49,
+    "gltf_errors": 0,
+    "gltf_warnings": 0,
+    "surface_and_bidirectional_sampled_containment_checked": true,
+    "full_rigid_insertion_passed": false,
+    "stop_depth_mm": 51.28169432282448,
+    "fine_contact_exclusion_is_diagnostic_only": true
+  },
+  "width_precision_validated": false,
+  "physical_insertion_verified": false,
+  "electrical_seating_verified": false,
+  "viewer": {
+    "script": "scripts/simulation/view_v3_insertion.py",
+    "run": "/data/omi_runtime/runs/v3_socket_r04_20261120T082303Z",
+    "lower_stand_visible": true,
+    "screenshot": "/data/omi_runtime/runs/v3_socket_r04_20261120T082303Z/desktop_stop_full.png",
+    "desktop_visible_checked": true
+  },
+  "files_sha256": {
+    "/data/omi_runtime/assets/optical_socket/revisions/r04/OS-001-r04.blend": "44e24fbe1ef3b352c61adcea6e84a9044de13275d1f62856e8a502ed275e0f48",
+    "/data/omi_runtime/assets/optical_socket/revisions/r04/OS-001-r04.glb": "4359578ad0c1ffeb6488e3beb4fc399e05f369f3739fae8f859c188e131d7871",
+    "/data/omi_runtime/assets/optical_socket/revisions/r04/revision.json": "a6783ca9f4baa4b53f8d8d93bee96e46e03a1daf790523d6026f8a740f9f0a71",
+    "/data/omi_runtime/runs/v3_socket_r04_20261120T082303Z/inputs/manifest.json": "250c108b6e304b966d35032ec9e68264f014eeaa3615ca4fc8a993df77b6b599",
+    "/data/omi_runtime/runs/v3_socket_r04_20261120T082303Z/insertion_contract.json": "c5059e09101bb16cd166412d77efca6a7c13873527e5e4217d71fa37fdd25a23",
+    "/data/omi_runtime/runs/v3_socket_r04_20261120T082303Z/collision/surface_contacts.json": "e68efba88d3c8423e581a87af43d4f5703f05689c3ed8cb43b7d1a71bd18fc62",
+    "/data/omi_runtime/runs/v3_socket_r04_20261120T082303Z/collision/volume_clearance_sections.json": "ec1fea549700d92f143f36e04aee0b7c82e93fe9394637ac01f6ffc6d1815de7",
+    "/data/omi_runtime/runs/v3_socket_r04_20261120T082303Z/insertion_geometry.png": "2adf536fe6eeb6d841001507310f5f0d445de3f9175ff769cbf18ef85094661e",
+    "/data/omi_runtime/runs/v3_socket_r04_20261120T082303Z/desktop_stop_full.png": "5d0a6b69e89476d3a82154848cbfe725610069173005fe4b04e1c871db04d606"
+  },
+  "script_sha256": {
+    "scripts/simulation/narrow_socket_channel.py": "3da9716d0fba17c5fe5f17e0d3fb139968cb046f5789c5625f53d54a1004b510",
+    "scripts/simulation/export_insertion_inputs.py": "3a20b596bd851305fefb58741e36a1ba10e719729b08ac645b9a3aed0df0c789",
+    "scripts/simulation/audit_v3_insertion.py": "9067390d9c6b66c1bca18571201f0beabaeea0e0a6635ccbd8ea35f610bfae40",
+    "scripts/simulation/view_v3_insertion.py": "630621a0075cd1bc2a4f714bee29f6422ba8ee402307270ed434d2bebcfae486"
+  }
+}

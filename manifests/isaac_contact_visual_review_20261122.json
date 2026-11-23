@@ -1,0 +1,167 @@
+{
+  "seed7_comparison": [
+    {
+      "name": "Baseline",
+      "control_peak_N": 21.317159194513728,
+      "physical_step_peak_N": 85.45134593192729
+    },
+    {
+      "name": "Gentle approach",
+      "control_peak_N": 3.0411030006368445,
+      "physical_step_peak_N": 10.59817447748058
+    }
+  ],
+  "cases": [
+    {
+      "case": "gentle_seed7",
+      "accepted": true,
+      "phases": {
+        "insert": {
+          "success": true,
+          "steps": 219,
+          "final_depth_mm": 51.281396095410244
+        },
+        "withdraw": {
+          "success": true,
+          "steps": 187,
+          "final_depth_mm": -5.0547140529440515
+        }
+      },
+      "dt": 0.0002,
+      "max_control_force_N": 3.0411030006368445,
+      "max_physics_step_force_N": 10.59817447748058,
+      "max_penetration_mm": 0.03137792373308912,
+      "force_gate_N": 10.0,
+      "report": "/data/omi_runtime/runs/isaac_contact_visual_review_20261122/gentle_seed7/report.json",
+      "renderer_executed": false
+    },
+    {
+      "case": "gentle_seed19",
+      "accepted": true,
+      "phases": {
+        "insert": {
+          "success": true,
+          "steps": 220,
+          "final_depth_mm": 51.281844957468486
+        },
+        "withdraw": {
+          "success": true,
+          "steps": 187,
+          "final_depth_mm": -5.0500636089794
+        }
+      },
+      "dt": 0.0002,
+      "max_control_force_N": 2.7967589652442135,
+      "max_physics_step_force_N": 12.49888522922001,
+      "max_penetration_mm": 0.03091226244578138,
+      "force_gate_N": 10.0,
+      "report": "/data/omi_runtime/runs/isaac_contact_visual_review_20261122/gentle_seed19/report.json",
+      "renderer_executed": false
+    },
+    {
+      "case": "gentle_seed41",
+      "accepted": true,
+      "phases": {
+        "insert": {
+          "success": true,
+          "steps": 216,
+          "final_depth_mm": 51.281674762327455
+        },
+        "withdraw": {
+          "success": true,
+          "steps": 187,
+          "final_depth_mm": -5.053790846366512
+        }
+      },
+      "dt": 0.0002,
+      "max_control_force_N": 2.648082399150798,
+      "max_physics_step_force_N": 8.626364393543973,
+      "max_penetration_mm": 0.03059933806071058,
+      "force_gate_N": 10.0,
+      "report": "/data/omi_runtime/runs/isaac_contact_visual_review_20261122/gentle_seed41/report.json",
+      "renderer_executed": false
+    },
+    {
+      "case": "gentle_half_seed7",
+      "accepted": true,
+      "phases": {
+        "insert": {
+          "success": true,
+          "steps": 230,
+          "final_depth_mm": 51.28205663479286
+        },
+        "withdraw": {
+          "success": true,
+          "steps": 187,
+          "final_depth_mm": -5.085204670632903
+        }
+      },
+      "dt": 0.0001,
+      "max_control_force_N": 2.7052069862317483,
+      "max_physics_step_force_N": 18.837645108203816,
+      "max_penetration_mm": 0.030161616450641304,
+      "force_gate_N": 10.0,
+      "report": "/data/omi_runtime/runs/isaac_contact_visual_review_20261122/gentle_half_seed7/report.json",
+      "renderer_executed": false
+    },
+    {
+      "case": "gentle_refined_video_r03",
+      "accepted": true,
+      "phases": {
+        "insert": {
+          "success": true,
+          "steps": 219,
+          "final_depth_mm": 51.281396095410244
+        },
+        "withdraw": {
+          "success": true,
+          "steps": 187,
+          "final_depth_mm": -5.0547140529440515
+        }
+      },
+      "dt": 0.0002,
+      "max_control_force_N": 3.0411030006368445,
+      "max_physics_step_force_N": 10.59817447748058,
+      "max_penetration_mm": 0.03137792373308912,
+      "force_gate_N": 10.0,
+      "report": "/data/omi_runtime/runs/isaac_contact_visual_review_20261122/gentle_refined_video_r03/report.json",
+      "renderer_executed": true
+    }
+  ],
+  "image_scope": "Same-pose native-resolution render ablations; no real-camera photometric calibration",
+  "source_normals_mapping": "Rejected due to shading artifacts; automatic geometry normals used",
+  "added_grain_texture": false,
+  "schema_version": 1,
+  "checked_date": "2026-11-22",
+  "run_root": "/data/omi_runtime/runs/isaac_contact_visual_review_20261122",
+  "source_validation": {
+    "geometry_arrays_equal": true,
+    "geometry_arrays_checked": 1294,
+    "source_files_checked": 648,
+    "changed_source_files": [],
+    "source_render_scene_unchanged": true
+  },
+  "appearance_validation": "/data/omi_runtime/runs/isaac_contact_visual_review_20261122/appearance_validation.json",
+  "render_physics_equivalence": {
+    "insertion_depth_mm": 0.0,
+    "contact_force_N": 0.0,
+    "step_peak_contact_force_N": 0.0,
+    "step_peak_penetration_mm": 0.0
+  },
+  "task_results_all_passed": true,
+  "execution_all_clean": false,
+  "tool_session_exit_codes": {
+    "gentle_seed7": 0,
+    "gentle_seed19": 143,
+    "gentle_seed41": 0,
+    "gentle_half_seed7": 143,
+    "gentle_refined_video_r03": 0
+  },
+  "execution_note": "Seed19 and half-step tool sessions returned 143 after complete trajectories/reports had been saved; cause not diagnosed, do not label these as clean process exits.",
+  "native_static_resolution": 768,
+  "native_live_sensor_resolution": 512,
+  "policy_resolution": 128,
+  "video": "/data/omi_runtime/runs/isaac_contact_visual_review_20261122/gentle_refined_video_r03/cycle.mp4",
+  "comparison": "/data/omi_runtime/runs/isaac_contact_visual_review_20261122/comparison_final/wrist_rgb_comparison.png",
+  "physical_accuracy_validated": false
+}

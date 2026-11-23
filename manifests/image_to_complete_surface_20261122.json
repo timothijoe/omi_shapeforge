@@ -1,0 +1,74 @@
+{
+  "date": "2026-11-22",
+  "run": "/data/omi_runtime/runs/image_to_complete_surface_20261122",
+  "url": "http://127.0.0.1:8890",
+  "source_snapshot": [
+    {
+      "source": "scripts/perception/build_surface_representation.py",
+      "snapshot": "/data/omi_runtime/runs/image_to_complete_surface_20261122/source_snapshot/scripts/perception/build_surface_representation.py",
+      "sha256": "1eb6a110f1a40c62e782ef53dce1d1663daa2bf9a0a6c245b836d773b4e6e655"
+    },
+    {
+      "source": "scripts/perception/image_to_surface_network.py",
+      "snapshot": "/data/omi_runtime/runs/image_to_complete_surface_20261122/source_snapshot/scripts/perception/image_to_surface_network.py",
+      "sha256": "777e1660ec5af79214c1c658b76a369b3e1e9ed8edc5c2d68fde85d2e898fac2"
+    },
+    {
+      "source": "scripts/perception/run_image_to_surface_prototype.py",
+      "snapshot": "/data/omi_runtime/runs/image_to_complete_surface_20261122/source_snapshot/scripts/perception/run_image_to_surface_prototype.py",
+      "sha256": "8b47a0a72c68f36d1577387cb4d9b0ee0b10d24f1d4ea1a61be62f1acefddc03"
+    },
+    {
+      "source": "scripts/perception/render_surface_representation.py",
+      "snapshot": "/data/omi_runtime/runs/image_to_complete_surface_20261122/source_snapshot/scripts/perception/render_surface_representation.py",
+      "sha256": "7da27658d33b9c0a15a1a66c7407ffe8b376a1c5860e25519d2be8bafa4c38dd"
+    },
+    {
+      "source": "scripts/perception/surface_representation_viewer.html",
+      "snapshot": "/data/omi_runtime/runs/image_to_complete_surface_20261122/source_snapshot/scripts/perception/surface_representation_viewer.html",
+      "sha256": "1528a60283d2264ec2d5dd2376feecd284e646e141fe32f80e4322fd27d0d229"
+    },
+    {
+      "source": "scripts/perception/test_image_to_surface.py",
+      "snapshot": "/data/omi_runtime/runs/image_to_complete_surface_20261122/source_snapshot/scripts/perception/test_image_to_surface.py",
+      "sha256": "0acccf0723473654aef2c94beefda3f46eda6c5e59360ea0a98396786ab670ea"
+    },
+    {
+      "source": "docs/design/image-to-complete-surface.md",
+      "snapshot": "/data/omi_runtime/runs/image_to_complete_surface_20261122/source_snapshot/docs/design/image-to-complete-surface.md",
+      "sha256": "f2aa826830d4d38dd74cf1a9356e9372898d9db9aa88aa7e46a356b726eed320"
+    },
+    {
+      "source": "tutorials/image_to_complete_surface.md",
+      "snapshot": "/data/omi_runtime/runs/image_to_complete_surface_20261122/source_snapshot/tutorials/image_to_complete_surface.md",
+      "sha256": "cb698993b8bcb461ee98f175dd123d01e9804b8ac243b241adbd1ce9aff8f430"
+    },
+    {
+      "source": "docs/agent/perception/evolution/image-to-surface-network.md",
+      "snapshot": "/data/omi_runtime/runs/image_to_complete_surface_20261122/source_snapshot/docs/agent/perception/evolution/image-to-surface-network.md",
+      "sha256": "19abc1fcdd3e606b4a80be3237c5947bdfd2f5b1bcd7fdb698998e61f5331960"
+    },
+    {
+      "source": "docs/agent/perception/chronicles/2026-11-22-image-complete-surface.md",
+      "snapshot": "/data/omi_runtime/runs/image_to_complete_surface_20261122/source_snapshot/docs/agent/perception/chronicles/2026-11-22-image-complete-surface.md",
+      "sha256": "a5e721383d842d8304a1f431ee52a989214123ed335c7686e89cec75e9fada39"
+    }
+  ],
+  "template_counts": {
+    "module": 2048,
+    "socket": 8192
+  },
+  "template_manifest": "/data/omi_runtime/runs/image_to_complete_surface_20261122/templates_v2/manifest.json",
+  "prototype_report": "/data/omi_runtime/runs/image_to_complete_surface_20261122/prototype/report.json",
+  "browser_checks": 7,
+  "browser_errors": [],
+  "neural_geometry_unit_tests_passed": 4,
+  "source_mesh_files_verified_unchanged": 128,
+  "training_performed": false,
+  "optimizer_steps": 0,
+  "parameter_count": 12426396,
+  "network_outputs_valid_for_localization": false,
+  "manual_pose_input_used": false,
+  "documentation": "docs/design/image-to-complete-surface.md",
+  "annotation_tool_unchanged": true
+}

@@ -1,5 +1,7 @@
 # 重启后恢复工作
 
+接续 2026-11-21 的真实视觉开发时，先读[最新感知交接](../docs/chronicles/2026-11-21-perception-progress-handoff.md)。旧重启 bundle 不包含这些未提交修改；感知范围快照在 `/data/omi_runtime/baselines/perception_handoff_20261121T092928Z/`，以其中 `delivery.json` 和实际工作树核对。当前 active 入口必须传入归属 mask，不要沿用未过滤的旧五组结构线或 marker 路线。下文保留旧模型/会话恢复步骤。
+
 先读 [HANDOFF](../HANDOFF.md) 和[重启前完整快照](../docs/chronicles/2026-11-20-restart-handoff.md)。本教程面向同一机器重启，不需要重新解压数据或重建环境。
 
 ## 1. 最小检查

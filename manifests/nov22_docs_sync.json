@@ -1,0 +1,103 @@
+{
+  "date": "2026-11-22",
+  "scope": "documentation snapshots only",
+  "files": [
+    {
+      "source": "/data/zt-think-d1-data/nov_22/session_backup_20261121_20261122_20261122_014108/README.txt",
+      "destination": "docs/data/nov22/source_notes/README.txt",
+      "sha256": "9d18c0392dd31d4c2d2db81218d54ce3e1ab24a179163b58287bc33ee4b6e75a"
+    },
+    {
+      "source": "/data/zt-think-d1-data/nov_22/session_backup_20261121_20261122_20261122_014108/CURRENT_DATA_OVERVIEW.txt",
+      "destination": "docs/data/nov22/source_notes/CURRENT_DATA_OVERVIEW.txt",
+      "sha256": "2eceebcae508fe51379c23855b0c5c85b54c3c30d35986a2d201a587b0d6c7e1"
+    },
+    {
+      "source": "/data/zt-think-d1-data/nov_22/session_backup_20261121_20261122_20261122_014108/TODAY_DEVELOPMENT.txt",
+      "destination": "docs/data/nov22/source_notes/TODAY_DEVELOPMENT.txt",
+      "sha256": "9ace07aa9e7c9156dc42b653b7223165c189e3302fb90255d643935a7826c928"
+    },
+    {
+      "source": "/data/zt-think-d1-data/nov_22/capture_tools_handoff_20261122_015025/README.md",
+      "destination": "docs/data/nov22/capture_tools/README.md",
+      "sha256": "b2800f21a2b90ac681b4aa767547d0124571101560de7e3c9f5599d631f18c51"
+    },
+    {
+      "source": "/data/zt-think-d1-data/nov_22/capture_tools_handoff_20261122_015025/README.txt",
+      "destination": "docs/data/nov22/capture_tools/README.txt",
+      "sha256": "1eed9648218a0edfe9dfaa6db1225e0324139436ce0b97a4911dccc2d4ca7837"
+    },
+    {
+      "source": "/data/zt-think-d1-data/nov_22/capture_tools_handoff_20261122_015025/docs/01_DAIMON_FOUR_STREAMS.txt",
+      "destination": "docs/data/nov22/capture_tools/docs/01_DAIMON_FOUR_STREAMS.txt",
+      "sha256": "3504351c970428611ac18f8a378d8b5d256cf0724917b8efa3655626e89bd751"
+    },
+    {
+      "source": "/data/zt-think-d1-data/nov_22/capture_tools_handoff_20261122_015025/docs/01_daimon_four_streams.md",
+      "destination": "docs/data/nov22/capture_tools/docs/01_daimon_four_streams.md",
+      "sha256": "f3e292dd20882e2363397f4fd3e1599554e888ee1a583f092208999b285e7e9c"
+    },
+    {
+      "source": "/data/zt-think-d1-data/nov_22/capture_tools_handoff_20261122_015025/docs/02_SIX_MARKER_SCAN.txt",
+      "destination": "docs/data/nov22/capture_tools/docs/02_SIX_MARKER_SCAN.txt",
+      "sha256": "b6c72689da7f26c8342b2a69cf5d25ec53c0015f4bdfcc9b458e349384b190ad"
+    },
+    {
+      "source": "/data/zt-think-d1-data/nov_22/capture_tools_handoff_20261122_015025/docs/02_six_marker_scan.md",
+      "destination": "docs/data/nov22/capture_tools/docs/02_six_marker_scan.md",
+      "sha256": "e89bcb28b96e636c5fd8befcaee25164ea0e05b155352f458b28eed9f92e581a"
+    },
+    {
+      "source": "/data/zt-think-d1-data/nov_22/capture_tools_handoff_20261122_015025/docs/03_HEAD_WRIST_CAPTURE.txt",
+      "destination": "docs/data/nov22/capture_tools/docs/03_HEAD_WRIST_CAPTURE.txt",
+      "sha256": "48f26d44e0482df44c8b9e4b10d3791668ddd43e61f67d92323126fda2191856"
+    },
+    {
+      "source": "/data/zt-think-d1-data/nov_22/capture_tools_handoff_20261122_015025/docs/03_head_wrist_capture.md",
+      "destination": "docs/data/nov22/capture_tools/docs/03_head_wrist_capture.md",
+      "sha256": "48e27893e5c10fd746e80cf8ec3bff2ca2f4f2570ed34e24596cc650b281923d"
+    },
+    {
+      "source": "/data/zt-think-d1-data/nov_22/capture_tools_handoff_20261122_015025/docs/04_data_backup.md",
+      "destination": "docs/data/nov22/capture_tools/docs/04_data_backup.md",
+      "sha256": "01ea536c04fe858cebb65e14ddc9a701383a3a2a80a2ff5351c4ca0d978fd108"
+    },
+    {
+      "source": "/data/zt-think-d1-data/nov_22/capture_tools_handoff_20261122_015025/docs/CURRENT_MACHINE_COMMANDS.txt",
+      "destination": "docs/data/nov22/capture_tools/docs/CURRENT_MACHINE_COMMANDS.txt",
+      "sha256": "4fbe583cc39295fefa90bf4b4d2fbc5a64cd59126fbb99e87d0ef2d072e845be"
+    },
+    {
+      "source": "/data/zt-think-d1-data/nov_22/session_backup_20261121_20261122_20261122_014108/documentation/BundleSDF_trial/docs/chronicles/2026-11-21-session-complete-record.md",
+      "destination": "docs/data/nov22/source_projects/BundleSDF_trial/docs/chronicles/2026-11-21-session-complete-record.md",
+      "sha256": "ca5e550698bb9a77f718942528eb3e191ecba3f2fc092fc78bf56ab2528a1014"
+    },
+    {
+      "source": "/data/zt-think-d1-data/nov_22/session_backup_20261121_20261122_20261122_014108/documentation/BundleSDF_trial/docs/chronicles/2026-11-21-head-wrist-day-summary.md",
+      "destination": "docs/data/nov22/source_projects/BundleSDF_trial/docs/chronicles/2026-11-21-head-wrist-day-summary.md",
+      "sha256": "10b46ac796c6844182a6cd5d37fa421f72c23d43f954a31aa2978d212d593665"
+    },
+    {
+      "source": "/data/zt-think-d1-data/nov_22/session_backup_20261121_20261122_20261122_014108/documentation/BundleSDF_trial/docs/chronicles/2026-11-21-capture-program-handoff.md",
+      "destination": "docs/data/nov22/source_projects/BundleSDF_trial/docs/chronicles/2026-11-21-capture-program-handoff.md",
+      "sha256": "edcba49a68c73f905391a245dbaf971e66fdfe6a001ba5667e7cbc6607408ca0"
+    },
+    {
+      "source": "/data/zt-think-d1-data/nov_22/session_backup_20261121_20261122_20261122_014108/documentation/FoundationStereo/docs/chronicles/2026-11-21-session-checkpoint.md",
+      "destination": "docs/data/nov22/source_projects/FoundationStereo/docs/chronicles/2026-11-21-session-checkpoint.md",
+      "sha256": "ec461eb06adf0fc801ca2473d4e418f8b422515882f9e80af4bc14b676d26bd7"
+    },
+    {
+      "source": "/data/zt-think-d1-data/nov_22/session_backup_20261121_20261122_20261122_014108/documentation/FoundationStereo/docs/chronicles/2026-11-22-recorder-shutdown.md",
+      "destination": "docs/data/nov22/source_projects/FoundationStereo/docs/chronicles/2026-11-22-recorder-shutdown.md",
+      "sha256": "97e00899833b8a1cbccd084805c4b12576f3b21864e409f795edec9c9f0d0331"
+    },
+    {
+      "source": "/data/zt-think-d1-data/nov_22/session_backup_20261121_20261122_20261122_014108/documentation/omi_proj/docs/archive/teleoperation/records/hardware/chronicles/2026-11-21-spacepilot-connection-check.md",
+      "destination": "docs/data/nov22/source_projects/omi_proj/docs/archive/teleoperation/records/hardware/chronicles/2026-11-21-spacepilot-connection-check.md",
+      "sha256": "08e6d2ea3d65a9e0c595be87beeab1321e1b311082ddbdf1f733411550f3ba09"
+    }
+  ],
+  "copied_files": 19,
+  "source_data_modified": false
+}

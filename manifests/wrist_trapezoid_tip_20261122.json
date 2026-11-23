@@ -1,0 +1,20 @@
+{
+  "asset_id": "WG-DAIMON-TRAPEZOID-r12",
+  "display_name": "WG-r12 · 梯形齐平指尖候选",
+  "parent_asset": "WG-DAIMON-CHAMFER-r11",
+  "directory": "/data/omi_runtime/assets/daimon/wrist_gripper_trapezoid_r12",
+  "asset_manifest": "/data/omi_runtime/assets/daimon/wrist_gripper_trapezoid_r12/asset_manifest.json",
+  "asset_manifest_sha256": "eaea535875bb0ef509d7331423d8050f9a577d48a47e737fb481bd9f92140a01",
+  "delivery_manifest": "/data/omi_runtime/assets/daimon/wrist_gripper_trapezoid_r12/delivery_manifest.json",
+  "delivery_manifest_sha256": "300b6f60d4b2d3f29c62778dbbdb9cf50f207adfbc8a668b40560510da97694f",
+  "run": "/data/omi_runtime/runs/wrist_trapezoid_tip_20261122",
+  "comparison": "/data/omi_runtime/runs/wrist_trapezoid_tip_20261122/trapezoid_alignment_comparison.png",
+  "validation": "/data/omi_runtime/assets/daimon/wrist_gripper_trapezoid_r12/validation.json",
+  "changed_meshes": 4,
+  "unchanged_meshes": 45,
+  "black_contact_pads_unchanged": true,
+  "camera_and_attachment_unchanged": true,
+  "replaces_fixed_handoff_bundle": false,
+  "user_constraint": "Silver frontmost end flush with black rubber frontmost end along extension axis, plus trapezoid top face",
+  "real_dimensions_certified": false
+}

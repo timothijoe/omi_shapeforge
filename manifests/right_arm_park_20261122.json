@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "checked_date": "2026-11-22",
+  "scope": "Temporary initial-pose parking of the inactive right arm; not a swept motion or training validation",
+  "run_root": "/data/omi_runtime/runs/right_arm_park_20261122",
+  "source_scene": "/data/omi_runtime/runs/wg_r10_om_r08_isaac_20261122/integration/robot_scene",
+  "new_scene": "/data/omi_runtime/runs/right_arm_park_20261122/isaac_preview_r02/WG-r10_OM-r08_robot.usdc",
+  "joint_settings": {
+    "Arm_R1_Joint": 0.0,
+    "Arm_R2_Joint": 0.0,
+    "Arm_R3_Joint": 0.0,
+    "Arm_R4_Joint": 0.0,
+    "Arm_R5_Joint": 0.0,
+    "Arm_R6_Joint": 0.0,
+    "Arm_R7_Joint": 0.0
+  },
+  "geometry_unchanged": true,
+  "left_tcp_module_wrist_extrinsics_unchanged": true,
+  "parking_validation": "/data/omi_runtime/runs/right_arm_park_20261122/robot_scene/parking_validation.json",
+  "visibility": {
+    "label": "closed",
+    "right_arm_overview_pixels": 36546,
+    "right_arm_cube_pixels": 0,
+    "right_arm_fisheye_pixels": 0
+  },
+  "visibility_scope": "current pre-insertion pose, not all future camera poses",
+  "isaac_report": "/data/omi_runtime/runs/right_arm_park_20261122/isaac_preview_r02/report.json",
+  "wrist_image": "/data/omi_runtime/runs/right_arm_park_20261122/wrist_right_arm_parked.png",
+  "preview_execution_exit_code": 0,
+  "human_feedback_training_ready": false,
+  "desktop_evidence": "/data/omi_runtime/runs/right_arm_park_20261122/desktop.png",
+  "tests": {
+    "control_executed": 14,
+    "control_skipped": 29,
+    "mount_and_parking_executed": 3
+  },
+  "training_readiness_source_sha256": {
+    "../omi_proj/src/omi_hil_rl/training/shapeforge_config.py": "723c4e7d71ab6795222a2dc8088d99da829d77789fca678c1520311af83521c4",
+    "../omi_proj/src/omi_hil_rl/training/contact_study_env.py": "b0782fd5112d41683a025db24cdcf39bc494ce425270d364e947931f6a08c6cc",
+    "../omi_proj/src/omi_hil_rl/training/contact_intervention_study.py": "dbb4a5c1a785512abef9059087ad95b59f1cafcde15aabb14aed1d649d5e17fc"
+  }
+}

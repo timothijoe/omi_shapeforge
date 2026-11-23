@@ -1,0 +1,9 @@
+{
+  "run": "/data/omi_runtime/runs/socket_module_cloud_20261121",
+  "report": "/data/omi_runtime/runs/socket_module_cloud_20261121/report.json",
+  "viewer": "/data/omi_runtime/runs/socket_module_cloud_20261121/overlay.html",
+  "validation": "/data/omi_runtime/runs/socket_module_cloud_20261121/viewer_validation.json",
+  "status": "coarse_socket_fit_with_frozen_module_pose",
+  "module_handle_excluded": true,
+  "insertion_alignment_verified": false
+}

@@ -1,6 +1,8 @@
 # Blender 打开、检查与导出
 
-前提：Blender 4.5.16 LTS 和 portable 包已准备。软件位置与 SHA256 见[资源清单](../manifests/README.md)。用户已指定 Blender／V3 为主线，V2 只用于辅助与对比；工作文件和冻结副本见[资产版本](../docs/asset-versions.md)。
+当前暂定外观基线为V4-r05「双窗尾槽版」；其文件、版本专用构建／验证脚本和只读查看入口见[Mesh开发记录](../docs/mesh-development.md)。下文保留原V3便携包检查／导出流程，不能直接用于重建V4或覆盖r05；后续几何编辑另建工作副本和修订。
+
+历史V3流程前提：Blender 4.5.16 LTS和portable包已准备。软件位置与SHA256见[资源清单](../manifests/README.md)。Blender仍是主要建模工具，V3保留、V2用于辅助对比；当前暂定基线与历史副本见[资产版本](../docs/asset-versions.md)。
 
 ## 打开或检查保存模型
 

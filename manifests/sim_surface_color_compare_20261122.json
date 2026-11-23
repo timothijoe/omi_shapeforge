@@ -1,0 +1,74 @@
+{
+  "run": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/results/color_compare_v2",
+  "source_snapshot": [
+    {
+      "source": "scripts/perception/render_sim_color_compare.py",
+      "snapshot": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/results/color_compare_v2/source_snapshot/scripts/perception/render_sim_color_compare.py",
+      "sha256": "746796201915740c373d51ba93a2110de33273038c22eb38d6a0c6b7609ad790"
+    },
+    {
+      "source": "scripts/perception/render_sim_surface_results.py",
+      "snapshot": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/results/color_compare_v2/source_snapshot/scripts/perception/render_sim_surface_results.py",
+      "sha256": "6dc998b68d1a9aef0e518cf2238e985c53f0dd3c01a1982b734dfda42a3a71a5"
+    },
+    {
+      "source": "scripts/perception/sim_surface_results.html",
+      "snapshot": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/results/color_compare_v2/source_snapshot/scripts/perception/sim_surface_results.html",
+      "sha256": "adcfabf95ae2174fab94dada15dabb70becdbd6f151a8759f9dd7be9d9bb6ace"
+    },
+    {
+      "source": "tutorials/sim_wrist_surface_learning.md",
+      "snapshot": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/results/color_compare_v2/source_snapshot/tutorials/sim_wrist_surface_learning.md",
+      "sha256": "c951e55b6182eb6e5610678b74c911bb19de0c12c2eddb319f938c17857b41e6"
+    },
+    {
+      "source": "docs/agent/perception/evolution/sim-wrist-surface-learning.md",
+      "snapshot": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/results/color_compare_v2/source_snapshot/docs/agent/perception/evolution/sim-wrist-surface-learning.md",
+      "sha256": "3d2da0083866cc23f454e097cedf022c0c4644c135bc273ab67c7fc2e8f382fa"
+    }
+  ],
+  "render_validation": {
+    "frames": 384,
+    "video": "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/results/color_compare_v2/heldout_gt_pred_separate.mp4",
+    "video_episodes": [
+      "test_0000",
+      "test_0001",
+      "test_0002",
+      "test_0003",
+      "test_0025",
+      "test_0014"
+    ],
+    "same_crop_and_scale_for_GT_and_prediction": true,
+    "decoded_video_first_frame_green_pixels_left": 4962,
+    "decoded_video_first_frame_orange_pixels_right": 17381,
+    "unchanged_inputs": {
+      "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/train/report.json": "aff6dcf49b388db40f5c5eae4bc35c7e1a41835ea6d78d85fa8cf35afc7589e9",
+      "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/train/test_predictions.npz": "a69459eca80d40a7d32b0de79934cad8c8601927926fb9a4182468d94c503e18",
+      "/data/omi_runtime/runs/sim_wrist_surface_20261122_r01/train/best.pt": "82f16ca0c0fde8f30250c1d29d3e2aea499d780d99ec0a101d5d91a1b52725f0"
+    },
+    "pose_or_metric_changes": false,
+    "old_overlays_preserved": true
+  },
+  "browser_validation": {
+    "checks": [
+      "Default video uses separate GT/prediction panels",
+      "Green GT and orange prediction visibly occupy different 3D panels",
+      "3D mode gt renders",
+      "3D mode pred renders",
+      "3D mode overlay renders",
+      "3D mode split renders",
+      "Image mode gt selects the separate artifact",
+      "Image mode pred selects the separate artifact",
+      "Image mode overlay selects the separate artifact",
+      "Image mode split selects the separate artifact",
+      "New comparison video plays",
+      "No browser exceptions"
+    ],
+    "colors": {
+      "green_left": 5235,
+      "orange_right": 5011
+    },
+    "errors": []
+  },
+  "scope": "Display-only correction; separate GT and prediction panels; model and metrics unchanged"
+}

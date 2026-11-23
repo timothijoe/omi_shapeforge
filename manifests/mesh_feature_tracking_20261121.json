@@ -1,0 +1,17 @@
+{
+  "status": "feature_tracking_prototype_3d_binding_unverified",
+  "run": "/data/omi_runtime/runs/mesh_feature_tracking_20261121",
+  "current_results": "/data/omi_runtime/runs/mesh_feature_tracking_20261121/feature_preview",
+  "summary": "/data/omi_runtime/runs/mesh_feature_tracking_20261121/feature_preview/summary.json",
+  "validation": "/data/omi_runtime/runs/mesh_feature_tracking_20261121/validation.json",
+  "provenance": "/data/omi_runtime/runs/mesh_feature_tracking_20261121/provenance.json",
+  "feature_preview": "/data/omi_runtime/runs/mesh_feature_tracking_20261121/feature_preview/feature_atlas_review.png",
+  "occlusion_video": "/data/omi_runtime/runs/mesh_feature_tracking_20261121/feature_preview/controlled_occlusion_tracking_h264.mp4",
+  "label_identity_review": "/data/omi_runtime/runs/mesh_feature_tracking_20261121/label_identity_review.png",
+  "default_pose_update": "image_xy_with_retained_depth_rotation_prior",
+  "experimental_se3_accepted": false,
+  "physical_accuracy_validated": false,
+  "same_label_attachment_confirmation": "cancelled_by_user_marker_must_not_be_used",
+  "active_pose_route": false,
+  "superseded_by": "manifests/markerless_structural_features_20261121.json"
+}

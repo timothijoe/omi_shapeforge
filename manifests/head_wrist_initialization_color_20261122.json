@@ -1,0 +1,66 @@
+{
+  "date": "2026-11-22",
+  "run": "/data/omi_runtime/runs/head_wrist_pose_review_20261122/initialization_color_20261122",
+  "source_snapshot": [
+    {
+      "source": "/home/linux/omi_folder/omi_shapeforge/scripts/perception/pose_review_geometry.py",
+      "snapshot": "/data/omi_runtime/runs/head_wrist_pose_review_20261122/initialization_color_20261122/source_snapshot/scripts/perception/pose_review_geometry.py",
+      "sha256": "8db0a7b636fb48d24ef5c26a707ed0829323c6d54328629f0cf6750c2a0bb3b3"
+    },
+    {
+      "source": "/home/linux/omi_folder/omi_shapeforge/scripts/perception/pose_review_server.py",
+      "snapshot": "/data/omi_runtime/runs/head_wrist_pose_review_20261122/initialization_color_20261122/source_snapshot/scripts/perception/pose_review_server.py",
+      "sha256": "6e9f1b666b110ea73d67510b881b6ca2ccdf37191f3eaf8a6edecff121b76cc6"
+    },
+    {
+      "source": "/home/linux/omi_folder/omi_shapeforge/scripts/perception/pose_review.html",
+      "snapshot": "/data/omi_runtime/runs/head_wrist_pose_review_20261122/initialization_color_20261122/source_snapshot/scripts/perception/pose_review.html",
+      "sha256": "f410caef78400d70adcfb88541310fcaafee3d090fdf6e599a7e5d640a2e5f4f"
+    },
+    {
+      "source": "/home/linux/omi_folder/omi_shapeforge/scripts/perception/test_pose_review.py",
+      "snapshot": "/data/omi_runtime/runs/head_wrist_pose_review_20261122/initialization_color_20261122/source_snapshot/scripts/perception/test_pose_review.py",
+      "sha256": "bb5d6b949ddf46ad00aa0255e6d800acc06fc5ab6f45f0579805725742186979"
+    },
+    {
+      "source": "/home/linux/omi_folder/omi_shapeforge/scripts/perception/check_pose_review_initialization.mjs",
+      "snapshot": "/data/omi_runtime/runs/head_wrist_pose_review_20261122/initialization_color_20261122/source_snapshot/scripts/perception/check_pose_review_initialization.mjs",
+      "sha256": "5a024e74e37b1f358fd69ebbd38b59e5af2779184fc8cebf4eaa309db2356e11"
+    },
+    {
+      "source": "/home/linux/omi_folder/omi_shapeforge/scripts/perception/check_pose_review_dual_controls.mjs",
+      "snapshot": "/data/omi_runtime/runs/head_wrist_pose_review_20261122/initialization_color_20261122/source_snapshot/scripts/perception/check_pose_review_dual_controls.mjs",
+      "sha256": "eae6d1e887a856ff3e44930748c81410a941eef4ce1a95e6b74ecdac63a1c753"
+    },
+    {
+      "source": "/home/linux/omi_folder/omi_shapeforge/tutorials/head_wrist_pose_review.md",
+      "snapshot": "/data/omi_runtime/runs/head_wrist_pose_review_20261122/initialization_color_20261122/source_snapshot/tutorials/head_wrist_pose_review.md",
+      "sha256": "a29234b92863949bb00b5dbf5786ab8cb5324980abf27c82a1607d95eb84651b"
+    },
+    {
+      "source": "/home/linux/omi_folder/omi_shapeforge/docs/agent/perception/evolution/head-wrist-pose-review.md",
+      "snapshot": "/data/omi_runtime/runs/head_wrist_pose_review_20261122/initialization_color_20261122/source_snapshot/docs/agent/perception/evolution/head-wrist-pose-review.md",
+      "sha256": "930e1835efef6b520d5ebd0b7c115d10e74b1de29f3f0243aa4a7e8ee97a0ecf"
+    },
+    {
+      "source": "/home/linux/omi_folder/omi_shapeforge/docs/agent/perception/chronicles/2026-11-22-guided-initialization-color.md",
+      "snapshot": "/data/omi_runtime/runs/head_wrist_pose_review_20261122/initialization_color_20261122/source_snapshot/docs/agent/perception/chronicles/2026-11-22-guided-initialization-color.md",
+      "sha256": "8c128a37ab4aec99cbf51a518a45e281f7d856d8806c11324cd9774d9dfde343"
+    }
+  ],
+  "geometry_color_persistence_tests_passed": 11,
+  "browser_initialization_checks_passed": 14,
+  "browser_independent_controls_regression_passed": 28,
+  "control_tests": {
+    "passed": 14,
+    "skipped": 24
+  },
+  "local_icp_on_first_sample": "rejected_at_movement_guard_initialization_preserved",
+  "color_source": "associated full head RGB using factory per-sample calibration; outside FOV gray",
+  "source_data_or_mesh_modified": false,
+  "physical_pose_accuracy_validated": false,
+  "user_adjustments_saved_before_refresh": true,
+  "new_head_candidates_previewed_without_overwriting_saved_user_fits": true,
+  "guided_initializer_requires_four_visible_ordered_top_corners": true,
+  "document": "tutorials/head_wrist_pose_review.md"
+}

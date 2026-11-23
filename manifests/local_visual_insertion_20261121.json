@@ -1,0 +1,14 @@
+{
+  "status": "local_geometry_implemented_occlusion_tracking_design_only",
+  "run": "/data/omi_runtime/runs/local_insertion_geometry_20261121",
+  "design": "docs/design/visual-insertion-local-tracking.md",
+  "local_frames": "/data/omi_runtime/runs/local_insertion_geometry_20261121/local_frames.json",
+  "feature_plan": "/data/omi_runtime/runs/local_insertion_geometry_20261121/feature_binding_plan.json",
+  "geometry_checks": "/data/omi_runtime/runs/local_insertion_geometry_20261121/geometry_checks.json",
+  "occlusion_example_frames": "/data/omi_runtime/runs/local_insertion_geometry_20261121/episode_cases.json",
+  "pose_estimator_implemented_in_this_stage": false,
+  "occluded_tracking_validated": false,
+  "physical_accuracy_validated": false,
+  "success_inference_implemented": false,
+  "script_sha256": "dc7c8972c0409cf0ec6189be07b219f8cc57f6073431090f9f86702f28958ec5"
+}

@@ -1,0 +1,23 @@
+{
+  "asset_id": "WG-DAIMON-CHAMFER-r11",
+  "display_name": "WG-r11 · 宽钝头倒角候选",
+  "parent_asset": "WG-DAIMON-OBS-r10",
+  "asset_directory": "/data/omi_runtime/assets/daimon/wrist_gripper_chamfer_r11",
+  "asset_manifest": "/data/omi_runtime/assets/daimon/wrist_gripper_chamfer_r11/asset_manifest.json",
+  "asset_manifest_sha256": "f6889cd26730d8107bf761b4b01504b4ec4e25838dddbfcf616540d8333c39ff",
+  "delivery_manifest": "/data/omi_runtime/assets/daimon/wrist_gripper_chamfer_r11/delivery_manifest.json",
+  "delivery_manifest_sha256": "e058b4b54dd8ccf1872ec6e8b0bd0879b42a428e1d692a45c07a0d2e5ea571c2",
+  "run": "/data/omi_runtime/runs/wrist_fingertip_chamfer_20261122",
+  "comparison": "/data/omi_runtime/runs/wrist_fingertip_chamfer_20261122/fingertip_comparison.png",
+  "validation": "/data/omi_runtime/assets/daimon/wrist_gripper_chamfer_r11/validation.json",
+  "modified_parts": [
+    "23 tapered silver fingertip left",
+    "23 tapered silver fingertip right"
+  ],
+  "unchanged_parts": 47,
+  "camera_changed": false,
+  "black_contact_pads_changed": false,
+  "reference_gap_changed": false,
+  "replaces_fixed_handoff_bundle": false,
+  "physical_accuracy_certified": false
+}
