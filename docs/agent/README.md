@@ -1,5 +1,7 @@
 # Agent 知识库
 
+- [System1 与 System0 独立插接原型](simulation/evolution/hierarchical-insertion.md)：当前实现与验证边界，旧RL默认保留。
+
 - [System1 与 System0 路径条件化插接讨论](../design/system1-system0-path-conditioned-rl-discussion.md)：2026-11-25设计接续，含已核对实现、异步坐标、路径条件与真机奖励边界；不代表新策略能力。
 
 - [2026-11-25：当前点云展示与r11插接视频交接](../chronicles/2026-11-25-pointcloud-video-handoff.md)，汇总腕部重点叠加、完整三维点云、配色、验证和复现。

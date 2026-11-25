@@ -1,5 +1,7 @@
 # 当前总览
 
+2026-11-25：[System1 与 System0 独立插接原型](agent/simulation/evolution/hierarchical-insertion.md)新增GT／噪声／学习型参考、独立SAC和虚拟腕部六维力。旧RL默认入口保留；规则采集3/3通过，短预算训练及组合评估用于链路验证，尚未建立可靠自主插接能力。
+
 2026-11-25：[System1 与 System0 路径条件化插接讨论](design/system1-system0-path-conditioned-rl-discussion.md)已整理。当前倾向先验证路径条件化SAC直接六维动作，residual为备选对照；三维路径、horizon、异步消息及真机奖励均保留待验证项。本次未实施该架构或新增训练成绩。
 
 2026-11-25：[真实1920腕图追溯与r16外观候选](agent/simulation/evolution/wrist-photo-refinement-r16.md)：15单元287张原腕图哈希通过，确认完整原图与389ROI→128显示链；按原图域约束银壳正面，7个开发参考边缘平均约5.62→2.86 px，颜色由亮黄改为与真实橙色ROI接近。K/D及安装保持，r16仅候选，不替代已认可r15、碰撞或RL。

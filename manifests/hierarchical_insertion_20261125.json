@@ -1,0 +1,2577 @@
+{
+  "version": "hierarchical-insertion-prototype-validation-v1",
+  "date": "2026-11-25",
+  "branch": "feature/system1-system0-prototype",
+  "omi_proj_commit": "4adde8ce8dc2dc334c5955bdb2415e2732de26eb",
+  "capability": "docs/agent/simulation/evolution/hierarchical-insertion.md",
+  "tutorial": "tutorials/hierarchical_insertion.md",
+  "scope": "independent prototype and actual Isaac pipeline validation; not a converged insertion policy or real-robot transfer",
+  "system0": {
+    "algorithm": "independent SB3 SAC MultiInputPolicy, direct 6D action",
+    "bc_updates": 200,
+    "environment_steps": 40,
+    "gradient_updates": 32,
+    "policy_only_evaluation_successes": {
+      "gt": "0/1",
+      "noisy": "0/1",
+      "learned": "0/1"
+    },
+    "no_tactile": true,
+    "sensor": "ideal compensated external contact wrench in configurable virtual TCP-aligned wrist frame"
+  },
+  "system1": {
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 0.11234767735004425,
+        "validation_loss": 0.11041899472258257,
+        "translation_mean_mm": 15.849139213562012
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.11037635446890541,
+        "validation_loss": 0.10587711858966863,
+        "translation_mean_mm": 15.503287315368652
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.09286930282478748,
+        "validation_loss": 0.06460675089267515,
+        "translation_mean_mm": 11.913280487060547
+      }
+    ],
+    "selected_epoch": 3,
+    "validation_frames": 357,
+    "invalid_rotations": 0,
+    "validation_translation_mean_mm": 11.913280487060547,
+    "validation_rotation_mean_deg": 0.09852470182963735,
+    "scope": "supervised validation only; no claim of insertion success or sim2real"
+  },
+  "dataset": {
+    "schema": {
+      "version": "omi-hierarchical-insertion-v1",
+      "reference_points": 8,
+      "history_slots": 4,
+      "observations": "TCP-relative path / 1cm, rotation / 0.1rad; goal, progress, plan age, validity; motion/action/contact history",
+      "action": "unchanged normalized world-TCP translation and rotation-vector delta; full direct action, retreat allowed",
+      "proprioception": "simulated TCP feedback",
+      "contact": "wrist-wrench",
+      "contact_semantics": "ideal compensated virtual wrist Fx,Fy,Fz / 10N; Tx,Ty,Tz / 1Nm; validity; no tactile",
+      "transfer_sha256": "cf3292f916737c191cdc7b4cc8dc07e9a0e0bb1eac2282e27a0bbb590da721cb",
+      "execution_config": {
+        "max_steps": 650,
+        "physics_dt": 0.02,
+        "control_dt": 0.1,
+        "teacher_min_step_mm": 0.05,
+        "target_overtravel_mm": 0.1,
+        "joint_target_interpolation": "linear",
+        "global_contact_offset_m": 1e-07,
+        "per_collider_contact_offsets_m": {
+          "sim_module_smooth_shoulder": 5e-06
+        },
+        "force_stop_N": null,
+        "penetration_stop_mm": null,
+        "solver": "PGS",
+        "insertion_assessment": {
+          "version": "entry-strict-interior-tolerant-v1",
+          "control_dt": 0.1,
+          "entry_start_mm": 1.0,
+          "entry_complete_mm": 5.0,
+          "entry_deadline_mm": 6.0,
+          "entry_lateral_mm": 0.15,
+          "entry_angle_rad": 0.003,
+          "entry_good_samples": 3,
+          "entry_point_limit_mm": 0.08,
+          "interior_point_limit_mm": 0.15,
+          "geometric_overlap_limit_mm": 0.1,
+          "entry_mean_force_N": 5.0,
+          "interior_mean_force_N": 20.0,
+          "catastrophic_mean_force_N": 50.0,
+          "entry_force_samples": 3,
+          "interior_force_samples": 5,
+          "stall_samples": 10,
+          "stall_progress_mm": 0.05,
+          "seat_depth_tolerance_mm": 0.1,
+          "seat_lateral_mm": 0.25,
+          "seat_angle_rad": 0.005,
+          "seat_motion_mm": 0.03,
+          "seat_samples": 3,
+          "force_signal_kind": "simulation_contact_impulse_norm_sum_mean"
+        },
+        "wrist_wrench": {
+          "version": "ideal-compensated-module-external-contact-interval-mean-v1",
+          "origin_offset_tcp_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "axes": "TCP",
+          "units": [
+            "N",
+            "N",
+            "N",
+            "Nm",
+            "Nm",
+            "Nm"
+          ],
+          "interval_s": 0.1,
+          "sign": "external environment wrench on held module; transferred to virtual sensor origin",
+          "scope": "fixed module external contacts only; no gravity/inertia/electronics; not calibrated hardware wrench"
+        },
+        "ik_backend": {
+          "version": "tianji-ccs-left-world-v1",
+          "arm": 0,
+          "model_type": 1017,
+          "joint_names": [
+            "Arm_L1_Joint",
+            "Arm_L2_Joint",
+            "Arm_L3_Joint",
+            "Arm_L4_Joint",
+            "Arm_L5_Joint",
+            "Arm_L6_Joint",
+            "Arm_L7_Joint"
+          ],
+          "joint_signs": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "joint_zero_offsets_rad": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "input_units": "world metres / joint radians",
+          "sdk_units": "base millimetres / joint degrees",
+          "world_from_base": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              -2.220446049250313e-16,
+              1.0000000000000002,
+              0.025999999999999995
+            ],
+            [
+              0.0,
+              -1.0000000000000002,
+              -2.220446049250313e-16,
+              1.121
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "flange_from_tcp": [
+            [
+              0.9999999999920002,
+              -4.000000000059512e-06,
+              7.999712004380655e-12,
+              -1.0547118733938987e-17
+            ],
+            [
+              4.000000000226045e-06,
+              0.9999999999840001,
+              -3.999999999948489e-06,
+              -1.1709654061874394e-33
+            ],
+            [
+              8.000156093146414e-12,
+              4.000000000115022e-06,
+              0.9999999999920002,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "source_sha256": {
+            "fx_kine.py": "c6603de2f315dfc0fc85369be07165af7da0118e3cc4006ca94f8787c04087c5",
+            "libKine.so": "f2aec6ebc1f41302fe0126284076211c044d6c7e1c2276dc919767254e0c597f",
+            "ccs_m6_40.MvKDCfg": "ce20b1a80974c3ed58cdac4973152625096c8ad93a779e5fd4108c26ce19bd52"
+          },
+          "position_tolerance_m": 1e-05,
+          "rotation_tolerance_rad": 0.0001,
+          "max_joint_step_rad": 0.1,
+          "singularity_policy": "reject any SDK singular flag",
+          "fallback": "none",
+          "mapping_validation": {
+            "samples": 66,
+            "max_position_error_m": 5.643241593900938e-06,
+            "max_rotation_error_rad": 2.572371741862243e-05
+          }
+        },
+        "socket_pose_randomization": {
+          "version": "planar-socket-assembly-v1",
+          "translation_mm": 0.2,
+          "yaw_deg": 0.1,
+          "plane": "world XY, fixed world Z",
+          "rotation": "world Z yaw about nominal socket origin",
+          "distribution": "uniform per-axis at reset",
+          "robot_initialization": "original joint reset and jitter; not co-transformed",
+          "policy_pose_input": false
+        },
+        "render_runtime": {
+          "version": "headless-sensors-only-v1",
+          "rt_subframes": 2
+        },
+        "recovery_controller": {
+          "version": "retreat-align-reenter-v1",
+          "max_attempts": 2,
+          "phase_max_steps": 450,
+          "waypoint_tolerance_mm": 0.08,
+          "strict_entry": true
+        },
+        "entry_guidance": {
+          "version": "qualified-entry-hold-v1",
+          "lateral_takeover_mm": 0.1,
+          "angle_takeover_rad": 0.0015,
+          "handback_requires_entry": true
+        }
+      },
+      "reward": "unchanged worker task truth; never recomputed from noisy reference"
+    },
+    "config": {
+      "schema": {
+        "version": "omi-hierarchical-insertion-v1",
+        "reference_points": 8,
+        "history_slots": 4,
+        "observations": "TCP-relative path / 1cm, rotation / 0.1rad; goal, progress, plan age, validity; motion/action/contact history",
+        "action": "unchanged normalized world-TCP translation and rotation-vector delta; full direct action, retreat allowed",
+        "proprioception": "simulated TCP feedback",
+        "contact": "wrist-wrench",
+        "contact_semantics": "ideal compensated virtual wrist Fx,Fy,Fz / 10N; Tx,Ty,Tz / 1Nm; validity; no tactile",
+        "transfer_sha256": "cf3292f916737c191cdc7b4cc8dc07e9a0e0bb1eac2282e27a0bbb590da721cb",
+        "execution_config": {
+          "max_steps": 650,
+          "physics_dt": 0.02,
+          "control_dt": 0.1,
+          "teacher_min_step_mm": 0.05,
+          "target_overtravel_mm": 0.1,
+          "joint_target_interpolation": "linear",
+          "global_contact_offset_m": 1e-07,
+          "per_collider_contact_offsets_m": {
+            "sim_module_smooth_shoulder": 5e-06
+          },
+          "force_stop_N": null,
+          "penetration_stop_mm": null,
+          "solver": "PGS",
+          "insertion_assessment": {
+            "version": "entry-strict-interior-tolerant-v1",
+            "control_dt": 0.1,
+            "entry_start_mm": 1.0,
+            "entry_complete_mm": 5.0,
+            "entry_deadline_mm": 6.0,
+            "entry_lateral_mm": 0.15,
+            "entry_angle_rad": 0.003,
+            "entry_good_samples": 3,
+            "entry_point_limit_mm": 0.08,
+            "interior_point_limit_mm": 0.15,
+            "geometric_overlap_limit_mm": 0.1,
+            "entry_mean_force_N": 5.0,
+            "interior_mean_force_N": 20.0,
+            "catastrophic_mean_force_N": 50.0,
+            "entry_force_samples": 3,
+            "interior_force_samples": 5,
+            "stall_samples": 10,
+            "stall_progress_mm": 0.05,
+            "seat_depth_tolerance_mm": 0.1,
+            "seat_lateral_mm": 0.25,
+            "seat_angle_rad": 0.005,
+            "seat_motion_mm": 0.03,
+            "seat_samples": 3,
+            "force_signal_kind": "simulation_contact_impulse_norm_sum_mean"
+          },
+          "wrist_wrench": {
+            "version": "ideal-compensated-module-external-contact-interval-mean-v1",
+            "origin_offset_tcp_m": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "axes": "TCP",
+            "units": [
+              "N",
+              "N",
+              "N",
+              "Nm",
+              "Nm",
+              "Nm"
+            ],
+            "interval_s": 0.1,
+            "sign": "external environment wrench on held module; transferred to virtual sensor origin",
+            "scope": "fixed module external contacts only; no gravity/inertia/electronics; not calibrated hardware wrench"
+          },
+          "ik_backend": {
+            "version": "tianji-ccs-left-world-v1",
+            "arm": 0,
+            "model_type": 1017,
+            "joint_names": [
+              "Arm_L1_Joint",
+              "Arm_L2_Joint",
+              "Arm_L3_Joint",
+              "Arm_L4_Joint",
+              "Arm_L5_Joint",
+              "Arm_L6_Joint",
+              "Arm_L7_Joint"
+            ],
+            "joint_signs": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "joint_zero_offsets_rad": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "input_units": "world metres / joint radians",
+            "sdk_units": "base millimetres / joint degrees",
+            "world_from_base": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                -2.220446049250313e-16,
+                1.0000000000000002,
+                0.025999999999999995
+              ],
+              [
+                0.0,
+                -1.0000000000000002,
+                -2.220446049250313e-16,
+                1.121
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "flange_from_tcp": [
+              [
+                0.9999999999920002,
+                -4.000000000059512e-06,
+                7.999712004380655e-12,
+                -1.0547118733938987e-17
+              ],
+              [
+                4.000000000226045e-06,
+                0.9999999999840001,
+                -3.999999999948489e-06,
+                -1.1709654061874394e-33
+              ],
+              [
+                8.000156093146414e-12,
+                4.000000000115022e-06,
+                0.9999999999920002,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "source_sha256": {
+              "fx_kine.py": "c6603de2f315dfc0fc85369be07165af7da0118e3cc4006ca94f8787c04087c5",
+              "libKine.so": "f2aec6ebc1f41302fe0126284076211c044d6c7e1c2276dc919767254e0c597f",
+              "ccs_m6_40.MvKDCfg": "ce20b1a80974c3ed58cdac4973152625096c8ad93a779e5fd4108c26ce19bd52"
+            },
+            "position_tolerance_m": 1e-05,
+            "rotation_tolerance_rad": 0.0001,
+            "max_joint_step_rad": 0.1,
+            "singularity_policy": "reject any SDK singular flag",
+            "fallback": "none",
+            "mapping_validation": {
+              "samples": 66,
+              "max_position_error_m": 5.643241593900938e-06,
+              "max_rotation_error_rad": 2.572371741862243e-05
+            }
+          },
+          "socket_pose_randomization": {
+            "version": "planar-socket-assembly-v1",
+            "translation_mm": 0.2,
+            "yaw_deg": 0.1,
+            "plane": "world XY, fixed world Z",
+            "rotation": "world Z yaw about nominal socket origin",
+            "distribution": "uniform per-axis at reset",
+            "robot_initialization": "original joint reset and jitter; not co-transformed",
+            "policy_pose_input": false
+          },
+          "render_runtime": {
+            "version": "headless-sensors-only-v1",
+            "rt_subframes": 2
+          },
+          "recovery_controller": {
+            "version": "retreat-align-reenter-v1",
+            "max_attempts": 2,
+            "phase_max_steps": 450,
+            "waypoint_tolerance_mm": 0.08,
+            "strict_entry": true
+          },
+          "entry_guidance": {
+            "version": "qualified-entry-hold-v1",
+            "lateral_takeover_mm": 0.1,
+            "angle_takeover_rad": 0.0015,
+            "handback_requires_entry": true
+          }
+        },
+        "reward": "unchanged worker task truth; never recomputed from noisy reference"
+      },
+      "reference": {
+        "mode": "gt",
+        "points": 8,
+        "spacing_mm": 0.5,
+        "update_steps": 5,
+        "delay_steps": 0,
+        "translation_noise_mm": 0.0,
+        "rotation_noise_deg": 0.0,
+        "episode_bias_mm": 0.0,
+        "episode_bias_deg": 0.0
+      },
+      "system1_checkpoint_sha256": null
+    },
+    "episodes": [
+      {
+        "seed": 121000,
+        "file": "episode_121000.npz",
+        "sha256": "b9b78428a22367eaa5748e87521fd2d76942c8cae8a622c83d420578efbc2294",
+        "split": "train",
+        "success": true,
+        "steps": 360,
+        "source": "privileged scripted teacher; not policy or human"
+      },
+      {
+        "seed": 121001,
+        "file": "episode_121001.npz",
+        "sha256": "d95c654b845debaa847207512bc28cedd34618f36110ddc4db43ddbb548a0084",
+        "split": "train",
+        "success": true,
+        "steps": 360,
+        "source": "privileged scripted teacher; not policy or human"
+      },
+      {
+        "seed": 121002,
+        "file": "episode_121002.npz",
+        "sha256": "518c1c36c95dfe79b5fe6eda591359d31bbc9e96088a0a38b42345cf3b8820c5",
+        "split": "val",
+        "success": true,
+        "steps": 357,
+        "source": "privileged scripted teacher; not policy or human"
+      }
+    ]
+  },
+  "wrench_audit": {
+    "samples": 1077,
+    "nonzero_samples": 10,
+    "world_insertion_axis": "world +X",
+    "minimum_axial_force_N": -0.38635175962554075,
+    "maximum_axial_force_N": 0.0,
+    "net_force_minus_sum_norm_max_N": 1.3877787807814457e-16,
+    "scope": "actual PhysX insertion sign and vector-sum sanity; not hardware calibration"
+  },
+  "legacy_comparison": {
+    "samples": 720,
+    "seeds": [
+      121000,
+      121001
+    ],
+    "max_absolute_difference": {
+      "tcp_position": 0.0,
+      "tcp_rotation": 0.0,
+      "joint_positions": 0.0,
+      "executed_action": 0.0,
+      "insertion_depth_mm": 0.0,
+      "contact_force_mean_N": 0.0,
+      "reward_terms": 0.0
+    },
+    "original_worker_wrench_flag": false,
+    "instrumented_worker_wrench_flag": true,
+    "both_rule_successes": 2,
+    "legacy_observation_contract_unchanged": true,
+    "scope": "same seeds, PhysX actions/states/reward terms match with sensor flag off/on"
+  },
+  "resume": {
+    "before_timesteps": 40,
+    "after_timesteps": 44,
+    "before_updates": 32,
+    "after_updates": 36,
+    "actor_max_parameter_change": 0.003083419054746628,
+    "training_seeds": [
+      121000,
+      121001,
+      121002,
+      122000,
+      124000
+    ],
+    "prior_attempt": "hier_s01_20261125_resume preserved; old checkpoint seed reuse identified, fixed and retested in resume_v2"
+  },
+  "tests": {
+    "shapeforge_lightweight": {
+      "total": 95,
+      "passed": 29,
+      "skipped": 66
+    },
+    "shapeforge_training_env": {
+      "total": 95,
+      "passed": 67,
+      "skipped": 28
+    },
+    "omi_proj_existing_targeted": {
+      "passed": 52,
+      "skipped": 1
+    },
+    "hierarchical_final": {
+      "passed": 11
+    },
+    "wrist_accumulator": {
+      "passed": 3,
+      "included_in_shapeforge_training_env": true
+    }
+  },
+  "runs": {
+    "wrench_collect": {
+      "directory": "/data/shapeforge/runtime/runs/hier_s01_20261125_wrench_collect",
+      "result": {
+        "complete": true,
+        "error": null,
+        "processes": {
+          "experiment_process.json": {
+            "command": [
+              "/data/shapeforge/runtime/envs/omi_sim_train/bin/python",
+              "-u",
+              "-m",
+              "omi_hil_rl.training.hierarchical_insertion.cli",
+              "collect",
+              "--episodes",
+              "3",
+              "--seed",
+              "121000",
+              "--output",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_wrench_collect/experiment",
+              "--socket",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_wrench_collect/worker.sock",
+              "--transfer",
+              "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer"
+            ],
+            "state": "exited",
+            "start_new_session": true,
+            "returncode": 0,
+            "pid": 1176924,
+            "pgid": 1176924,
+            "elapsed_seconds": 67.23716281799716
+          },
+          "shutdown_process.json": {
+            "command": [
+              "/data/shapeforge/runtime/envs/omi_sim_train/bin/python",
+              "-c",
+              "from omi_hil_rl.training.isaac_client import IsaacClient; import sys; c=IsaacClient(sys.argv[1]); c.request('shutdown'); c.close()",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_wrench_collect/worker.sock"
+            ],
+            "state": "exited",
+            "start_new_session": true,
+            "returncode": 0,
+            "pid": 1178422,
+            "pgid": 1178422,
+            "elapsed_seconds": 0.11430070600181352
+          },
+          "worker_process.json": {
+            "command": [
+              "/data/isaac-sim-5.1.0/python.sh",
+              "-u",
+              "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/isaac_rl_worker.py",
+              "--transfer",
+              "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer",
+              "--output",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_wrench_collect/worker",
+              "--socket",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_wrench_collect/worker.sock",
+              "--max-steps",
+              "650",
+              "--physics-substeps",
+              "5",
+              "--ik-backend",
+              "tianji",
+              "--teacher-min-step-mm",
+              ".05",
+              "--target-overtravel-mm",
+              ".1",
+              "--entry-guidance",
+              "--wrist-wrench",
+              "--wrist-offset-m",
+              "0.0",
+              "0.0",
+              "0.0",
+              "--socket-pose-range-mm",
+              "0.2",
+              "--socket-yaw-range-deg",
+              "0.1",
+              "--tianji-sdk",
+              "/data/shapeforge/runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/vendor/optical_module_pu/source/OpticalModule_PU/Arm_control"
+            ],
+            "state": "exited",
+            "start_new_session": true,
+            "returncode": 0,
+            "pid": 1176035,
+            "pgid": 1176035,
+            "elapsed_seconds": 93.20381233199441
+          }
+        },
+        "scope": "isolated simulation experiment; see evaluation for policy results"
+      }
+    },
+    "s0": {
+      "directory": "/data/shapeforge/runtime/runs/hier_s01_20261125_s0",
+      "result": {
+        "complete": true,
+        "error": null,
+        "processes": {
+          "experiment_process.json": {
+            "command": [
+              "/data/shapeforge/runtime/envs/omi_sim_train/bin/python",
+              "-u",
+              "-m",
+              "omi_hil_rl.training.hierarchical_insertion.cli",
+              "train-s0",
+              "--demos",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_wrench_collect/experiment",
+              "--bc-steps",
+              "200",
+              "--steps",
+              "40",
+              "--learning-starts",
+              "8",
+              "--batch-size",
+              "16",
+              "--seed",
+              "122000",
+              "--output",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_s0/experiment",
+              "--socket",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_s0/worker.sock",
+              "--transfer",
+              "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer"
+            ],
+            "state": "exited",
+            "start_new_session": true,
+            "returncode": 0,
+            "pid": 1179729,
+            "pgid": 1179729,
+            "elapsed_seconds": 6.805381233993103
+          },
+          "shutdown_process.json": {
+            "command": [
+              "/data/shapeforge/runtime/envs/omi_sim_train/bin/python",
+              "-c",
+              "from omi_hil_rl.training.isaac_client import IsaacClient; import sys; c=IsaacClient(sys.argv[1]); c.request('shutdown'); c.close()",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_s0/worker.sock"
+            ],
+            "state": "exited",
+            "start_new_session": true,
+            "returncode": 0,
+            "pid": 1179877,
+            "pgid": 1179877,
+            "elapsed_seconds": 0.11439816499478184
+          },
+          "worker_process.json": {
+            "command": [
+              "/data/isaac-sim-5.1.0/python.sh",
+              "-u",
+              "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/isaac_rl_worker.py",
+              "--transfer",
+              "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer",
+              "--output",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_s0/worker",
+              "--socket",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_s0/worker.sock",
+              "--max-steps",
+              "650",
+              "--physics-substeps",
+              "5",
+              "--ik-backend",
+              "tianji",
+              "--teacher-min-step-mm",
+              ".05",
+              "--target-overtravel-mm",
+              ".1",
+              "--entry-guidance",
+              "--wrist-wrench",
+              "--wrist-offset-m",
+              "0.0",
+              "0.0",
+              "0.0",
+              "--socket-pose-range-mm",
+              "0.2",
+              "--socket-yaw-range-deg",
+              "0.1",
+              "--tianji-sdk",
+              "/data/shapeforge/runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/vendor/optical_module_pu/source/OpticalModule_PU/Arm_control"
+            ],
+            "state": "exited",
+            "start_new_session": true,
+            "returncode": 0,
+            "pid": 1178949,
+            "pgid": 1178949,
+            "elapsed_seconds": 32.211842082004296
+          }
+        },
+        "scope": "isolated simulation experiment; see evaluation for policy results"
+      }
+    },
+    "eval_gt": {
+      "directory": "/data/shapeforge/runtime/runs/hier_s01_20261125_eval_gt",
+      "result": {
+        "complete": true,
+        "error": null,
+        "processes": {
+          "experiment_process.json": {
+            "command": [
+              "/data/shapeforge/runtime/envs/omi_sim_train/bin/python",
+              "-u",
+              "-m",
+              "omi_hil_rl.training.hierarchical_insertion.cli",
+              "evaluate",
+              "--model",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_s0/experiment/system0.zip",
+              "--episodes",
+              "1",
+              "--seed",
+              "123000",
+              "--system1",
+              "gt",
+              "--output",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_eval_gt/experiment",
+              "--socket",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_eval_gt/worker.sock",
+              "--transfer",
+              "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer"
+            ],
+            "state": "exited",
+            "start_new_session": true,
+            "returncode": 0,
+            "pid": 1182101,
+            "pgid": 1182101,
+            "elapsed_seconds": 42.234580229996936
+          },
+          "shutdown_process.json": {
+            "command": [
+              "/data/shapeforge/runtime/envs/omi_sim_train/bin/python",
+              "-c",
+              "from omi_hil_rl.training.isaac_client import IsaacClient; import sys; c=IsaacClient(sys.argv[1]); c.request('shutdown'); c.close()",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_eval_gt/worker.sock"
+            ],
+            "state": "exited",
+            "start_new_session": true,
+            "returncode": 0,
+            "pid": 1183501,
+            "pgid": 1183501,
+            "elapsed_seconds": 0.11448495600780006
+          },
+          "worker_process.json": {
+            "command": [
+              "/data/isaac-sim-5.1.0/python.sh",
+              "-u",
+              "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/isaac_rl_worker.py",
+              "--transfer",
+              "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer",
+              "--output",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_eval_gt/worker",
+              "--socket",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_eval_gt/worker.sock",
+              "--max-steps",
+              "650",
+              "--physics-substeps",
+              "5",
+              "--ik-backend",
+              "tianji",
+              "--teacher-min-step-mm",
+              ".05",
+              "--target-overtravel-mm",
+              ".1",
+              "--entry-guidance",
+              "--wrist-wrench",
+              "--wrist-offset-m",
+              "0.0",
+              "0.0",
+              "0.0",
+              "--socket-pose-range-mm",
+              "0.2",
+              "--socket-yaw-range-deg",
+              "0.1",
+              "--tianji-sdk",
+              "/data/shapeforge/runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/vendor/optical_module_pu/source/OpticalModule_PU/Arm_control"
+            ],
+            "state": "exited",
+            "start_new_session": true,
+            "returncode": 0,
+            "pid": 1181279,
+            "pgid": 1181279,
+            "elapsed_seconds": 66.143405676994
+          }
+        },
+        "scope": "isolated simulation experiment; see evaluation for policy results"
+      },
+      "evaluation": {
+        "cases": [
+          {
+            "seed": 123000,
+            "success": false,
+            "steps": 650,
+            "reward": 1.4387493189997258,
+            "backward_motion_steps": 624,
+            "failure": null,
+            "teacher_requests": 0
+          }
+        ],
+        "successes": 0,
+        "config": {
+          "schema": {
+            "version": "omi-hierarchical-insertion-v1",
+            "reference_points": 8,
+            "history_slots": 4,
+            "observations": "TCP-relative path / 1cm, rotation / 0.1rad; goal, progress, plan age, validity; motion/action/contact history",
+            "action": "unchanged normalized world-TCP translation and rotation-vector delta; full direct action, retreat allowed",
+            "proprioception": "simulated TCP feedback",
+            "contact": "wrist-wrench",
+            "contact_semantics": "ideal compensated virtual wrist Fx,Fy,Fz / 10N; Tx,Ty,Tz / 1Nm; validity; no tactile",
+            "transfer_sha256": "cf3292f916737c191cdc7b4cc8dc07e9a0e0bb1eac2282e27a0bbb590da721cb",
+            "execution_config": {
+              "max_steps": 650,
+              "physics_dt": 0.02,
+              "control_dt": 0.1,
+              "teacher_min_step_mm": 0.05,
+              "target_overtravel_mm": 0.1,
+              "joint_target_interpolation": "linear",
+              "global_contact_offset_m": 1e-07,
+              "per_collider_contact_offsets_m": {
+                "sim_module_smooth_shoulder": 5e-06
+              },
+              "force_stop_N": null,
+              "penetration_stop_mm": null,
+              "solver": "PGS",
+              "insertion_assessment": {
+                "version": "entry-strict-interior-tolerant-v1",
+                "control_dt": 0.1,
+                "entry_start_mm": 1.0,
+                "entry_complete_mm": 5.0,
+                "entry_deadline_mm": 6.0,
+                "entry_lateral_mm": 0.15,
+                "entry_angle_rad": 0.003,
+                "entry_good_samples": 3,
+                "entry_point_limit_mm": 0.08,
+                "interior_point_limit_mm": 0.15,
+                "geometric_overlap_limit_mm": 0.1,
+                "entry_mean_force_N": 5.0,
+                "interior_mean_force_N": 20.0,
+                "catastrophic_mean_force_N": 50.0,
+                "entry_force_samples": 3,
+                "interior_force_samples": 5,
+                "stall_samples": 10,
+                "stall_progress_mm": 0.05,
+                "seat_depth_tolerance_mm": 0.1,
+                "seat_lateral_mm": 0.25,
+                "seat_angle_rad": 0.005,
+                "seat_motion_mm": 0.03,
+                "seat_samples": 3,
+                "force_signal_kind": "simulation_contact_impulse_norm_sum_mean"
+              },
+              "wrist_wrench": {
+                "version": "ideal-compensated-module-external-contact-interval-mean-v1",
+                "origin_offset_tcp_m": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "axes": "TCP",
+                "units": [
+                  "N",
+                  "N",
+                  "N",
+                  "Nm",
+                  "Nm",
+                  "Nm"
+                ],
+                "interval_s": 0.1,
+                "sign": "external environment wrench on held module; transferred to virtual sensor origin",
+                "scope": "fixed module external contacts only; no gravity/inertia/electronics; not calibrated hardware wrench"
+              },
+              "ik_backend": {
+                "version": "tianji-ccs-left-world-v1",
+                "arm": 0,
+                "model_type": 1017,
+                "joint_names": [
+                  "Arm_L1_Joint",
+                  "Arm_L2_Joint",
+                  "Arm_L3_Joint",
+                  "Arm_L4_Joint",
+                  "Arm_L5_Joint",
+                  "Arm_L6_Joint",
+                  "Arm_L7_Joint"
+                ],
+                "joint_signs": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "joint_zero_offsets_rad": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "input_units": "world metres / joint radians",
+                "sdk_units": "base millimetres / joint degrees",
+                "world_from_base": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    -2.220446049250313e-16,
+                    1.0000000000000002,
+                    0.025999999999999995
+                  ],
+                  [
+                    0.0,
+                    -1.0000000000000002,
+                    -2.220446049250313e-16,
+                    1.121
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "flange_from_tcp": [
+                  [
+                    0.9999999999920002,
+                    -4.000000000059512e-06,
+                    7.999712004380655e-12,
+                    -1.0547118733938987e-17
+                  ],
+                  [
+                    4.000000000226045e-06,
+                    0.9999999999840001,
+                    -3.999999999948489e-06,
+                    -1.1709654061874394e-33
+                  ],
+                  [
+                    8.000156093146414e-12,
+                    4.000000000115022e-06,
+                    0.9999999999920002,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "source_sha256": {
+                  "fx_kine.py": "c6603de2f315dfc0fc85369be07165af7da0118e3cc4006ca94f8787c04087c5",
+                  "libKine.so": "f2aec6ebc1f41302fe0126284076211c044d6c7e1c2276dc919767254e0c597f",
+                  "ccs_m6_40.MvKDCfg": "ce20b1a80974c3ed58cdac4973152625096c8ad93a779e5fd4108c26ce19bd52"
+                },
+                "position_tolerance_m": 1e-05,
+                "rotation_tolerance_rad": 0.0001,
+                "max_joint_step_rad": 0.1,
+                "singularity_policy": "reject any SDK singular flag",
+                "fallback": "none",
+                "mapping_validation": {
+                  "samples": 66,
+                  "max_position_error_m": 5.643241593900938e-06,
+                  "max_rotation_error_rad": 2.572371741862243e-05
+                }
+              },
+              "socket_pose_randomization": {
+                "version": "planar-socket-assembly-v1",
+                "translation_mm": 0.2,
+                "yaw_deg": 0.1,
+                "plane": "world XY, fixed world Z",
+                "rotation": "world Z yaw about nominal socket origin",
+                "distribution": "uniform per-axis at reset",
+                "robot_initialization": "original joint reset and jitter; not co-transformed",
+                "policy_pose_input": false
+              },
+              "render_runtime": {
+                "version": "headless-sensors-only-v1",
+                "rt_subframes": 2
+              },
+              "recovery_controller": {
+                "version": "retreat-align-reenter-v1",
+                "max_attempts": 2,
+                "phase_max_steps": 450,
+                "waypoint_tolerance_mm": 0.08,
+                "strict_entry": true
+              },
+              "entry_guidance": {
+                "version": "qualified-entry-hold-v1",
+                "lateral_takeover_mm": 0.1,
+                "angle_takeover_rad": 0.0015,
+                "handback_requires_entry": true
+              }
+            },
+            "reward": "unchanged worker task truth; never recomputed from noisy reference"
+          },
+          "reference": {
+            "mode": "gt",
+            "points": 8,
+            "spacing_mm": 0.5,
+            "update_steps": 5,
+            "delay_steps": 0,
+            "translation_noise_mm": 0.0,
+            "rotation_noise_deg": 0.0,
+            "episode_bias_mm": 0.0,
+            "episode_bias_deg": 0.0
+          },
+          "system1_checkpoint_sha256": null
+        },
+        "source_model_sha256": "5c0ba0c12bfd5638d4361edbb43f57e79f6bffcc53fcf284f05db7c929020c94",
+        "training_config": {
+          "schema": {
+            "version": "omi-hierarchical-insertion-v1",
+            "reference_points": 8,
+            "history_slots": 4,
+            "observations": "TCP-relative path / 1cm, rotation / 0.1rad; goal, progress, plan age, validity; motion/action/contact history",
+            "action": "unchanged normalized world-TCP translation and rotation-vector delta; full direct action, retreat allowed",
+            "proprioception": "simulated TCP feedback",
+            "contact": "wrist-wrench",
+            "contact_semantics": "ideal compensated virtual wrist Fx,Fy,Fz / 10N; Tx,Ty,Tz / 1Nm; validity; no tactile",
+            "transfer_sha256": "cf3292f916737c191cdc7b4cc8dc07e9a0e0bb1eac2282e27a0bbb590da721cb",
+            "execution_config": {
+              "max_steps": 650,
+              "physics_dt": 0.02,
+              "control_dt": 0.1,
+              "teacher_min_step_mm": 0.05,
+              "target_overtravel_mm": 0.1,
+              "joint_target_interpolation": "linear",
+              "global_contact_offset_m": 1e-07,
+              "per_collider_contact_offsets_m": {
+                "sim_module_smooth_shoulder": 5e-06
+              },
+              "force_stop_N": null,
+              "penetration_stop_mm": null,
+              "solver": "PGS",
+              "insertion_assessment": {
+                "version": "entry-strict-interior-tolerant-v1",
+                "control_dt": 0.1,
+                "entry_start_mm": 1.0,
+                "entry_complete_mm": 5.0,
+                "entry_deadline_mm": 6.0,
+                "entry_lateral_mm": 0.15,
+                "entry_angle_rad": 0.003,
+                "entry_good_samples": 3,
+                "entry_point_limit_mm": 0.08,
+                "interior_point_limit_mm": 0.15,
+                "geometric_overlap_limit_mm": 0.1,
+                "entry_mean_force_N": 5.0,
+                "interior_mean_force_N": 20.0,
+                "catastrophic_mean_force_N": 50.0,
+                "entry_force_samples": 3,
+                "interior_force_samples": 5,
+                "stall_samples": 10,
+                "stall_progress_mm": 0.05,
+                "seat_depth_tolerance_mm": 0.1,
+                "seat_lateral_mm": 0.25,
+                "seat_angle_rad": 0.005,
+                "seat_motion_mm": 0.03,
+                "seat_samples": 3,
+                "force_signal_kind": "simulation_contact_impulse_norm_sum_mean"
+              },
+              "wrist_wrench": {
+                "version": "ideal-compensated-module-external-contact-interval-mean-v1",
+                "origin_offset_tcp_m": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "axes": "TCP",
+                "units": [
+                  "N",
+                  "N",
+                  "N",
+                  "Nm",
+                  "Nm",
+                  "Nm"
+                ],
+                "interval_s": 0.1,
+                "sign": "external environment wrench on held module; transferred to virtual sensor origin",
+                "scope": "fixed module external contacts only; no gravity/inertia/electronics; not calibrated hardware wrench"
+              },
+              "ik_backend": {
+                "version": "tianji-ccs-left-world-v1",
+                "arm": 0,
+                "model_type": 1017,
+                "joint_names": [
+                  "Arm_L1_Joint",
+                  "Arm_L2_Joint",
+                  "Arm_L3_Joint",
+                  "Arm_L4_Joint",
+                  "Arm_L5_Joint",
+                  "Arm_L6_Joint",
+                  "Arm_L7_Joint"
+                ],
+                "joint_signs": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "joint_zero_offsets_rad": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "input_units": "world metres / joint radians",
+                "sdk_units": "base millimetres / joint degrees",
+                "world_from_base": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    -2.220446049250313e-16,
+                    1.0000000000000002,
+                    0.025999999999999995
+                  ],
+                  [
+                    0.0,
+                    -1.0000000000000002,
+                    -2.220446049250313e-16,
+                    1.121
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "flange_from_tcp": [
+                  [
+                    0.9999999999920002,
+                    -4.000000000059512e-06,
+                    7.999712004380655e-12,
+                    -1.0547118733938987e-17
+                  ],
+                  [
+                    4.000000000226045e-06,
+                    0.9999999999840001,
+                    -3.999999999948489e-06,
+                    -1.1709654061874394e-33
+                  ],
+                  [
+                    8.000156093146414e-12,
+                    4.000000000115022e-06,
+                    0.9999999999920002,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "source_sha256": {
+                  "fx_kine.py": "c6603de2f315dfc0fc85369be07165af7da0118e3cc4006ca94f8787c04087c5",
+                  "libKine.so": "f2aec6ebc1f41302fe0126284076211c044d6c7e1c2276dc919767254e0c597f",
+                  "ccs_m6_40.MvKDCfg": "ce20b1a80974c3ed58cdac4973152625096c8ad93a779e5fd4108c26ce19bd52"
+                },
+                "position_tolerance_m": 1e-05,
+                "rotation_tolerance_rad": 0.0001,
+                "max_joint_step_rad": 0.1,
+                "singularity_policy": "reject any SDK singular flag",
+                "fallback": "none",
+                "mapping_validation": {
+                  "samples": 66,
+                  "max_position_error_m": 5.643241593900938e-06,
+                  "max_rotation_error_rad": 2.572371741862243e-05
+                }
+              },
+              "socket_pose_randomization": {
+                "version": "planar-socket-assembly-v1",
+                "translation_mm": 0.2,
+                "yaw_deg": 0.1,
+                "plane": "world XY, fixed world Z",
+                "rotation": "world Z yaw about nominal socket origin",
+                "distribution": "uniform per-axis at reset",
+                "robot_initialization": "original joint reset and jitter; not co-transformed",
+                "policy_pose_input": false
+              },
+              "render_runtime": {
+                "version": "headless-sensors-only-v1",
+                "rt_subframes": 2
+              },
+              "recovery_controller": {
+                "version": "retreat-align-reenter-v1",
+                "max_attempts": 2,
+                "phase_max_steps": 450,
+                "waypoint_tolerance_mm": 0.08,
+                "strict_entry": true
+              },
+              "entry_guidance": {
+                "version": "qualified-entry-hold-v1",
+                "lateral_takeover_mm": 0.1,
+                "angle_takeover_rad": 0.0015,
+                "handback_requires_entry": true
+              }
+            },
+            "reward": "unchanged worker task truth; never recomputed from noisy reference"
+          },
+          "reference": {
+            "mode": "gt",
+            "points": 8,
+            "spacing_mm": 0.5,
+            "update_steps": 5,
+            "delay_steps": 0,
+            "translation_noise_mm": 0.0,
+            "rotation_noise_deg": 0.0,
+            "episode_bias_mm": 0.0,
+            "episode_bias_deg": 0.0
+          },
+          "system1_checkpoint_sha256": null
+        },
+        "scope": "held-out policy-only simulation"
+      }
+    },
+    "eval_noisy": {
+      "directory": "/data/shapeforge/runtime/runs/hier_s01_20261125_eval_noisy",
+      "result": {
+        "complete": true,
+        "error": null,
+        "processes": {
+          "experiment_process.json": {
+            "command": [
+              "/data/shapeforge/runtime/envs/omi_sim_train/bin/python",
+              "-u",
+              "-m",
+              "omi_hil_rl.training.hierarchical_insertion.cli",
+              "evaluate",
+              "--model",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_s0/experiment/system0.zip",
+              "--episodes",
+              "1",
+              "--seed",
+              "123000",
+              "--system1",
+              "noisy",
+              "--bias-mm",
+              ".2",
+              "--bias-deg",
+              ".1",
+              "--noise-mm",
+              ".05",
+              "--noise-deg",
+              ".02",
+              "--delay-steps",
+              "2",
+              "--output",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_eval_noisy/experiment",
+              "--socket",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_eval_noisy/worker.sock",
+              "--transfer",
+              "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer"
+            ],
+            "state": "exited",
+            "start_new_session": true,
+            "returncode": 0,
+            "pid": 1184334,
+            "pgid": 1184334,
+            "elapsed_seconds": 44.646784249998746
+          },
+          "shutdown_process.json": {
+            "command": [
+              "/data/shapeforge/runtime/envs/omi_sim_train/bin/python",
+              "-c",
+              "from omi_hil_rl.training.isaac_client import IsaacClient; import sys; c=IsaacClient(sys.argv[1]); c.request('shutdown'); c.close()",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_eval_noisy/worker.sock"
+            ],
+            "state": "exited",
+            "start_new_session": true,
+            "returncode": 0,
+            "pid": 1185348,
+            "pgid": 1185348,
+            "elapsed_seconds": 0.11433691400452517
+          },
+          "worker_process.json": {
+            "command": [
+              "/data/isaac-sim-5.1.0/python.sh",
+              "-u",
+              "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/isaac_rl_worker.py",
+              "--transfer",
+              "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer",
+              "--output",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_eval_noisy/worker",
+              "--socket",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_eval_noisy/worker.sock",
+              "--max-steps",
+              "650",
+              "--physics-substeps",
+              "5",
+              "--ik-backend",
+              "tianji",
+              "--teacher-min-step-mm",
+              ".05",
+              "--target-overtravel-mm",
+              ".1",
+              "--entry-guidance",
+              "--socket-pose-range-mm",
+              "0.2",
+              "--socket-yaw-range-deg",
+              "0.1",
+              "--tianji-sdk",
+              "/data/shapeforge/runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/vendor/optical_module_pu/source/OpticalModule_PU/Arm_control",
+              "--wrist-wrench",
+              "--wrist-offset-m",
+              "0.0",
+              "0.0",
+              "0.0"
+            ],
+            "state": "exited",
+            "start_new_session": true,
+            "returncode": 0,
+            "pid": 1183547,
+            "pgid": 1183547,
+            "elapsed_seconds": 70.26386226298928
+          }
+        },
+        "scope": "isolated simulation experiment; see evaluation for policy results"
+      },
+      "evaluation": {
+        "cases": [
+          {
+            "seed": 123000,
+            "success": false,
+            "steps": 650,
+            "reward": 1.4274839250841675,
+            "backward_motion_steps": 618,
+            "failure": null,
+            "teacher_requests": 0
+          }
+        ],
+        "successes": 0,
+        "config": {
+          "schema": {
+            "version": "omi-hierarchical-insertion-v1",
+            "reference_points": 8,
+            "history_slots": 4,
+            "observations": "TCP-relative path / 1cm, rotation / 0.1rad; goal, progress, plan age, validity; motion/action/contact history",
+            "action": "unchanged normalized world-TCP translation and rotation-vector delta; full direct action, retreat allowed",
+            "proprioception": "simulated TCP feedback",
+            "contact": "wrist-wrench",
+            "contact_semantics": "ideal compensated virtual wrist Fx,Fy,Fz / 10N; Tx,Ty,Tz / 1Nm; validity; no tactile",
+            "transfer_sha256": "cf3292f916737c191cdc7b4cc8dc07e9a0e0bb1eac2282e27a0bbb590da721cb",
+            "execution_config": {
+              "max_steps": 650,
+              "physics_dt": 0.02,
+              "control_dt": 0.1,
+              "teacher_min_step_mm": 0.05,
+              "target_overtravel_mm": 0.1,
+              "joint_target_interpolation": "linear",
+              "global_contact_offset_m": 1e-07,
+              "per_collider_contact_offsets_m": {
+                "sim_module_smooth_shoulder": 5e-06
+              },
+              "force_stop_N": null,
+              "penetration_stop_mm": null,
+              "solver": "PGS",
+              "insertion_assessment": {
+                "version": "entry-strict-interior-tolerant-v1",
+                "control_dt": 0.1,
+                "entry_start_mm": 1.0,
+                "entry_complete_mm": 5.0,
+                "entry_deadline_mm": 6.0,
+                "entry_lateral_mm": 0.15,
+                "entry_angle_rad": 0.003,
+                "entry_good_samples": 3,
+                "entry_point_limit_mm": 0.08,
+                "interior_point_limit_mm": 0.15,
+                "geometric_overlap_limit_mm": 0.1,
+                "entry_mean_force_N": 5.0,
+                "interior_mean_force_N": 20.0,
+                "catastrophic_mean_force_N": 50.0,
+                "entry_force_samples": 3,
+                "interior_force_samples": 5,
+                "stall_samples": 10,
+                "stall_progress_mm": 0.05,
+                "seat_depth_tolerance_mm": 0.1,
+                "seat_lateral_mm": 0.25,
+                "seat_angle_rad": 0.005,
+                "seat_motion_mm": 0.03,
+                "seat_samples": 3,
+                "force_signal_kind": "simulation_contact_impulse_norm_sum_mean"
+              },
+              "wrist_wrench": {
+                "version": "ideal-compensated-module-external-contact-interval-mean-v1",
+                "origin_offset_tcp_m": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "axes": "TCP",
+                "units": [
+                  "N",
+                  "N",
+                  "N",
+                  "Nm",
+                  "Nm",
+                  "Nm"
+                ],
+                "interval_s": 0.1,
+                "sign": "external environment wrench on held module; transferred to virtual sensor origin",
+                "scope": "fixed module external contacts only; no gravity/inertia/electronics; not calibrated hardware wrench"
+              },
+              "ik_backend": {
+                "version": "tianji-ccs-left-world-v1",
+                "arm": 0,
+                "model_type": 1017,
+                "joint_names": [
+                  "Arm_L1_Joint",
+                  "Arm_L2_Joint",
+                  "Arm_L3_Joint",
+                  "Arm_L4_Joint",
+                  "Arm_L5_Joint",
+                  "Arm_L6_Joint",
+                  "Arm_L7_Joint"
+                ],
+                "joint_signs": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "joint_zero_offsets_rad": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "input_units": "world metres / joint radians",
+                "sdk_units": "base millimetres / joint degrees",
+                "world_from_base": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    -2.220446049250313e-16,
+                    1.0000000000000002,
+                    0.025999999999999995
+                  ],
+                  [
+                    0.0,
+                    -1.0000000000000002,
+                    -2.220446049250313e-16,
+                    1.121
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "flange_from_tcp": [
+                  [
+                    0.9999999999920002,
+                    -4.000000000059512e-06,
+                    7.999712004380655e-12,
+                    -1.0547118733938987e-17
+                  ],
+                  [
+                    4.000000000226045e-06,
+                    0.9999999999840001,
+                    -3.999999999948489e-06,
+                    -1.1709654061874394e-33
+                  ],
+                  [
+                    8.000156093146414e-12,
+                    4.000000000115022e-06,
+                    0.9999999999920002,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "source_sha256": {
+                  "fx_kine.py": "c6603de2f315dfc0fc85369be07165af7da0118e3cc4006ca94f8787c04087c5",
+                  "libKine.so": "f2aec6ebc1f41302fe0126284076211c044d6c7e1c2276dc919767254e0c597f",
+                  "ccs_m6_40.MvKDCfg": "ce20b1a80974c3ed58cdac4973152625096c8ad93a779e5fd4108c26ce19bd52"
+                },
+                "position_tolerance_m": 1e-05,
+                "rotation_tolerance_rad": 0.0001,
+                "max_joint_step_rad": 0.1,
+                "singularity_policy": "reject any SDK singular flag",
+                "fallback": "none",
+                "mapping_validation": {
+                  "samples": 66,
+                  "max_position_error_m": 5.643241593900938e-06,
+                  "max_rotation_error_rad": 2.572371741862243e-05
+                }
+              },
+              "socket_pose_randomization": {
+                "version": "planar-socket-assembly-v1",
+                "translation_mm": 0.2,
+                "yaw_deg": 0.1,
+                "plane": "world XY, fixed world Z",
+                "rotation": "world Z yaw about nominal socket origin",
+                "distribution": "uniform per-axis at reset",
+                "robot_initialization": "original joint reset and jitter; not co-transformed",
+                "policy_pose_input": false
+              },
+              "render_runtime": {
+                "version": "headless-sensors-only-v1",
+                "rt_subframes": 2
+              },
+              "recovery_controller": {
+                "version": "retreat-align-reenter-v1",
+                "max_attempts": 2,
+                "phase_max_steps": 450,
+                "waypoint_tolerance_mm": 0.08,
+                "strict_entry": true
+              },
+              "entry_guidance": {
+                "version": "qualified-entry-hold-v1",
+                "lateral_takeover_mm": 0.1,
+                "angle_takeover_rad": 0.0015,
+                "handback_requires_entry": true
+              }
+            },
+            "reward": "unchanged worker task truth; never recomputed from noisy reference"
+          },
+          "reference": {
+            "mode": "noisy",
+            "points": 8,
+            "spacing_mm": 0.5,
+            "update_steps": 5,
+            "delay_steps": 2,
+            "translation_noise_mm": 0.05,
+            "rotation_noise_deg": 0.02,
+            "episode_bias_mm": 0.2,
+            "episode_bias_deg": 0.1
+          },
+          "system1_checkpoint_sha256": null
+        },
+        "source_model_sha256": "5c0ba0c12bfd5638d4361edbb43f57e79f6bffcc53fcf284f05db7c929020c94",
+        "training_config": {
+          "schema": {
+            "version": "omi-hierarchical-insertion-v1",
+            "reference_points": 8,
+            "history_slots": 4,
+            "observations": "TCP-relative path / 1cm, rotation / 0.1rad; goal, progress, plan age, validity; motion/action/contact history",
+            "action": "unchanged normalized world-TCP translation and rotation-vector delta; full direct action, retreat allowed",
+            "proprioception": "simulated TCP feedback",
+            "contact": "wrist-wrench",
+            "contact_semantics": "ideal compensated virtual wrist Fx,Fy,Fz / 10N; Tx,Ty,Tz / 1Nm; validity; no tactile",
+            "transfer_sha256": "cf3292f916737c191cdc7b4cc8dc07e9a0e0bb1eac2282e27a0bbb590da721cb",
+            "execution_config": {
+              "max_steps": 650,
+              "physics_dt": 0.02,
+              "control_dt": 0.1,
+              "teacher_min_step_mm": 0.05,
+              "target_overtravel_mm": 0.1,
+              "joint_target_interpolation": "linear",
+              "global_contact_offset_m": 1e-07,
+              "per_collider_contact_offsets_m": {
+                "sim_module_smooth_shoulder": 5e-06
+              },
+              "force_stop_N": null,
+              "penetration_stop_mm": null,
+              "solver": "PGS",
+              "insertion_assessment": {
+                "version": "entry-strict-interior-tolerant-v1",
+                "control_dt": 0.1,
+                "entry_start_mm": 1.0,
+                "entry_complete_mm": 5.0,
+                "entry_deadline_mm": 6.0,
+                "entry_lateral_mm": 0.15,
+                "entry_angle_rad": 0.003,
+                "entry_good_samples": 3,
+                "entry_point_limit_mm": 0.08,
+                "interior_point_limit_mm": 0.15,
+                "geometric_overlap_limit_mm": 0.1,
+                "entry_mean_force_N": 5.0,
+                "interior_mean_force_N": 20.0,
+                "catastrophic_mean_force_N": 50.0,
+                "entry_force_samples": 3,
+                "interior_force_samples": 5,
+                "stall_samples": 10,
+                "stall_progress_mm": 0.05,
+                "seat_depth_tolerance_mm": 0.1,
+                "seat_lateral_mm": 0.25,
+                "seat_angle_rad": 0.005,
+                "seat_motion_mm": 0.03,
+                "seat_samples": 3,
+                "force_signal_kind": "simulation_contact_impulse_norm_sum_mean"
+              },
+              "wrist_wrench": {
+                "version": "ideal-compensated-module-external-contact-interval-mean-v1",
+                "origin_offset_tcp_m": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "axes": "TCP",
+                "units": [
+                  "N",
+                  "N",
+                  "N",
+                  "Nm",
+                  "Nm",
+                  "Nm"
+                ],
+                "interval_s": 0.1,
+                "sign": "external environment wrench on held module; transferred to virtual sensor origin",
+                "scope": "fixed module external contacts only; no gravity/inertia/electronics; not calibrated hardware wrench"
+              },
+              "ik_backend": {
+                "version": "tianji-ccs-left-world-v1",
+                "arm": 0,
+                "model_type": 1017,
+                "joint_names": [
+                  "Arm_L1_Joint",
+                  "Arm_L2_Joint",
+                  "Arm_L3_Joint",
+                  "Arm_L4_Joint",
+                  "Arm_L5_Joint",
+                  "Arm_L6_Joint",
+                  "Arm_L7_Joint"
+                ],
+                "joint_signs": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "joint_zero_offsets_rad": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "input_units": "world metres / joint radians",
+                "sdk_units": "base millimetres / joint degrees",
+                "world_from_base": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    -2.220446049250313e-16,
+                    1.0000000000000002,
+                    0.025999999999999995
+                  ],
+                  [
+                    0.0,
+                    -1.0000000000000002,
+                    -2.220446049250313e-16,
+                    1.121
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "flange_from_tcp": [
+                  [
+                    0.9999999999920002,
+                    -4.000000000059512e-06,
+                    7.999712004380655e-12,
+                    -1.0547118733938987e-17
+                  ],
+                  [
+                    4.000000000226045e-06,
+                    0.9999999999840001,
+                    -3.999999999948489e-06,
+                    -1.1709654061874394e-33
+                  ],
+                  [
+                    8.000156093146414e-12,
+                    4.000000000115022e-06,
+                    0.9999999999920002,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "source_sha256": {
+                  "fx_kine.py": "c6603de2f315dfc0fc85369be07165af7da0118e3cc4006ca94f8787c04087c5",
+                  "libKine.so": "f2aec6ebc1f41302fe0126284076211c044d6c7e1c2276dc919767254e0c597f",
+                  "ccs_m6_40.MvKDCfg": "ce20b1a80974c3ed58cdac4973152625096c8ad93a779e5fd4108c26ce19bd52"
+                },
+                "position_tolerance_m": 1e-05,
+                "rotation_tolerance_rad": 0.0001,
+                "max_joint_step_rad": 0.1,
+                "singularity_policy": "reject any SDK singular flag",
+                "fallback": "none",
+                "mapping_validation": {
+                  "samples": 66,
+                  "max_position_error_m": 5.643241593900938e-06,
+                  "max_rotation_error_rad": 2.572371741862243e-05
+                }
+              },
+              "socket_pose_randomization": {
+                "version": "planar-socket-assembly-v1",
+                "translation_mm": 0.2,
+                "yaw_deg": 0.1,
+                "plane": "world XY, fixed world Z",
+                "rotation": "world Z yaw about nominal socket origin",
+                "distribution": "uniform per-axis at reset",
+                "robot_initialization": "original joint reset and jitter; not co-transformed",
+                "policy_pose_input": false
+              },
+              "render_runtime": {
+                "version": "headless-sensors-only-v1",
+                "rt_subframes": 2
+              },
+              "recovery_controller": {
+                "version": "retreat-align-reenter-v1",
+                "max_attempts": 2,
+                "phase_max_steps": 450,
+                "waypoint_tolerance_mm": 0.08,
+                "strict_entry": true
+              },
+              "entry_guidance": {
+                "version": "qualified-entry-hold-v1",
+                "lateral_takeover_mm": 0.1,
+                "angle_takeover_rad": 0.0015,
+                "handback_requires_entry": true
+              }
+            },
+            "reward": "unchanged worker task truth; never recomputed from noisy reference"
+          },
+          "reference": {
+            "mode": "gt",
+            "points": 8,
+            "spacing_mm": 0.5,
+            "update_steps": 5,
+            "delay_steps": 0,
+            "translation_noise_mm": 0.0,
+            "rotation_noise_deg": 0.0,
+            "episode_bias_mm": 0.0,
+            "episode_bias_deg": 0.0
+          },
+          "system1_checkpoint_sha256": null
+        },
+        "scope": "held-out policy-only simulation"
+      }
+    },
+    "eval_learned": {
+      "directory": "/data/shapeforge/runtime/runs/hier_s01_20261125_eval_learned",
+      "result": {
+        "complete": true,
+        "error": null,
+        "processes": {
+          "experiment_process.json": {
+            "command": [
+              "/data/shapeforge/runtime/envs/omi_sim_train/bin/python",
+              "-u",
+              "-m",
+              "omi_hil_rl.training.hierarchical_insertion.cli",
+              "evaluate",
+              "--model",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_s0/experiment/system0.zip",
+              "--episodes",
+              "1",
+              "--seed",
+              "123000",
+              "--system1",
+              "learned",
+              "--system1-model",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_s1/system1.pt",
+              "--output",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_eval_learned/experiment",
+              "--socket",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_eval_learned/worker.sock",
+              "--transfer",
+              "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer"
+            ],
+            "state": "exited",
+            "start_new_session": true,
+            "returncode": 0,
+            "pid": 1186598,
+            "pgid": 1186598,
+            "elapsed_seconds": 25.633079871011432
+          },
+          "shutdown_process.json": {
+            "command": [
+              "/data/shapeforge/runtime/envs/omi_sim_train/bin/python",
+              "-c",
+              "from omi_hil_rl.training.isaac_client import IsaacClient; import sys; c=IsaacClient(sys.argv[1]); c.request('shutdown'); c.close()",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_eval_learned/worker.sock"
+            ],
+            "state": "exited",
+            "start_new_session": true,
+            "returncode": 0,
+            "pid": 1187171,
+            "pgid": 1187171,
+            "elapsed_seconds": 0.11669456999516115
+          },
+          "worker_process.json": {
+            "command": [
+              "/data/isaac-sim-5.1.0/python.sh",
+              "-u",
+              "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/isaac_rl_worker.py",
+              "--transfer",
+              "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer",
+              "--output",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_eval_learned/worker",
+              "--socket",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_eval_learned/worker.sock",
+              "--max-steps",
+              "650",
+              "--physics-substeps",
+              "5",
+              "--ik-backend",
+              "tianji",
+              "--teacher-min-step-mm",
+              ".05",
+              "--target-overtravel-mm",
+              ".1",
+              "--entry-guidance",
+              "--socket-pose-range-mm",
+              "0.2",
+              "--socket-yaw-range-deg",
+              "0.1",
+              "--tianji-sdk",
+              "/data/shapeforge/runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/vendor/optical_module_pu/source/OpticalModule_PU/Arm_control",
+              "--wrist-wrench",
+              "--wrist-offset-m",
+              "0.0",
+              "0.0",
+              "0.0"
+            ],
+            "state": "exited",
+            "start_new_session": true,
+            "returncode": 0,
+            "pid": 1185408,
+            "pgid": 1185408,
+            "elapsed_seconds": 51.203629586001625
+          }
+        },
+        "scope": "isolated simulation experiment; see evaluation for policy results"
+      },
+      "evaluation": {
+        "cases": [
+          {
+            "seed": 123000,
+            "success": false,
+            "steps": 376,
+            "reward": 0.19261149888342055,
+            "backward_motion_steps": 53,
+            "failure": "entrance_not_qualified",
+            "teacher_requests": 0
+          }
+        ],
+        "successes": 0,
+        "config": {
+          "schema": {
+            "version": "omi-hierarchical-insertion-v1",
+            "reference_points": 8,
+            "history_slots": 4,
+            "observations": "TCP-relative path / 1cm, rotation / 0.1rad; goal, progress, plan age, validity; motion/action/contact history",
+            "action": "unchanged normalized world-TCP translation and rotation-vector delta; full direct action, retreat allowed",
+            "proprioception": "simulated TCP feedback",
+            "contact": "wrist-wrench",
+            "contact_semantics": "ideal compensated virtual wrist Fx,Fy,Fz / 10N; Tx,Ty,Tz / 1Nm; validity; no tactile",
+            "transfer_sha256": "cf3292f916737c191cdc7b4cc8dc07e9a0e0bb1eac2282e27a0bbb590da721cb",
+            "execution_config": {
+              "max_steps": 650,
+              "physics_dt": 0.02,
+              "control_dt": 0.1,
+              "teacher_min_step_mm": 0.05,
+              "target_overtravel_mm": 0.1,
+              "joint_target_interpolation": "linear",
+              "global_contact_offset_m": 1e-07,
+              "per_collider_contact_offsets_m": {
+                "sim_module_smooth_shoulder": 5e-06
+              },
+              "force_stop_N": null,
+              "penetration_stop_mm": null,
+              "solver": "PGS",
+              "insertion_assessment": {
+                "version": "entry-strict-interior-tolerant-v1",
+                "control_dt": 0.1,
+                "entry_start_mm": 1.0,
+                "entry_complete_mm": 5.0,
+                "entry_deadline_mm": 6.0,
+                "entry_lateral_mm": 0.15,
+                "entry_angle_rad": 0.003,
+                "entry_good_samples": 3,
+                "entry_point_limit_mm": 0.08,
+                "interior_point_limit_mm": 0.15,
+                "geometric_overlap_limit_mm": 0.1,
+                "entry_mean_force_N": 5.0,
+                "interior_mean_force_N": 20.0,
+                "catastrophic_mean_force_N": 50.0,
+                "entry_force_samples": 3,
+                "interior_force_samples": 5,
+                "stall_samples": 10,
+                "stall_progress_mm": 0.05,
+                "seat_depth_tolerance_mm": 0.1,
+                "seat_lateral_mm": 0.25,
+                "seat_angle_rad": 0.005,
+                "seat_motion_mm": 0.03,
+                "seat_samples": 3,
+                "force_signal_kind": "simulation_contact_impulse_norm_sum_mean"
+              },
+              "wrist_wrench": {
+                "version": "ideal-compensated-module-external-contact-interval-mean-v1",
+                "origin_offset_tcp_m": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "axes": "TCP",
+                "units": [
+                  "N",
+                  "N",
+                  "N",
+                  "Nm",
+                  "Nm",
+                  "Nm"
+                ],
+                "interval_s": 0.1,
+                "sign": "external environment wrench on held module; transferred to virtual sensor origin",
+                "scope": "fixed module external contacts only; no gravity/inertia/electronics; not calibrated hardware wrench"
+              },
+              "ik_backend": {
+                "version": "tianji-ccs-left-world-v1",
+                "arm": 0,
+                "model_type": 1017,
+                "joint_names": [
+                  "Arm_L1_Joint",
+                  "Arm_L2_Joint",
+                  "Arm_L3_Joint",
+                  "Arm_L4_Joint",
+                  "Arm_L5_Joint",
+                  "Arm_L6_Joint",
+                  "Arm_L7_Joint"
+                ],
+                "joint_signs": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "joint_zero_offsets_rad": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "input_units": "world metres / joint radians",
+                "sdk_units": "base millimetres / joint degrees",
+                "world_from_base": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    -2.220446049250313e-16,
+                    1.0000000000000002,
+                    0.025999999999999995
+                  ],
+                  [
+                    0.0,
+                    -1.0000000000000002,
+                    -2.220446049250313e-16,
+                    1.121
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "flange_from_tcp": [
+                  [
+                    0.9999999999920002,
+                    -4.000000000059512e-06,
+                    7.999712004380655e-12,
+                    -1.0547118733938987e-17
+                  ],
+                  [
+                    4.000000000226045e-06,
+                    0.9999999999840001,
+                    -3.999999999948489e-06,
+                    -1.1709654061874394e-33
+                  ],
+                  [
+                    8.000156093146414e-12,
+                    4.000000000115022e-06,
+                    0.9999999999920002,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "source_sha256": {
+                  "fx_kine.py": "c6603de2f315dfc0fc85369be07165af7da0118e3cc4006ca94f8787c04087c5",
+                  "libKine.so": "f2aec6ebc1f41302fe0126284076211c044d6c7e1c2276dc919767254e0c597f",
+                  "ccs_m6_40.MvKDCfg": "ce20b1a80974c3ed58cdac4973152625096c8ad93a779e5fd4108c26ce19bd52"
+                },
+                "position_tolerance_m": 1e-05,
+                "rotation_tolerance_rad": 0.0001,
+                "max_joint_step_rad": 0.1,
+                "singularity_policy": "reject any SDK singular flag",
+                "fallback": "none",
+                "mapping_validation": {
+                  "samples": 66,
+                  "max_position_error_m": 5.643241593900938e-06,
+                  "max_rotation_error_rad": 2.572371741862243e-05
+                }
+              },
+              "socket_pose_randomization": {
+                "version": "planar-socket-assembly-v1",
+                "translation_mm": 0.2,
+                "yaw_deg": 0.1,
+                "plane": "world XY, fixed world Z",
+                "rotation": "world Z yaw about nominal socket origin",
+                "distribution": "uniform per-axis at reset",
+                "robot_initialization": "original joint reset and jitter; not co-transformed",
+                "policy_pose_input": false
+              },
+              "render_runtime": {
+                "version": "headless-sensors-only-v1",
+                "rt_subframes": 2
+              },
+              "recovery_controller": {
+                "version": "retreat-align-reenter-v1",
+                "max_attempts": 2,
+                "phase_max_steps": 450,
+                "waypoint_tolerance_mm": 0.08,
+                "strict_entry": true
+              },
+              "entry_guidance": {
+                "version": "qualified-entry-hold-v1",
+                "lateral_takeover_mm": 0.1,
+                "angle_takeover_rad": 0.0015,
+                "handback_requires_entry": true
+              }
+            },
+            "reward": "unchanged worker task truth; never recomputed from noisy reference"
+          },
+          "reference": {
+            "mode": "learned",
+            "points": 8,
+            "spacing_mm": 0.5,
+            "update_steps": 5,
+            "delay_steps": 0,
+            "translation_noise_mm": 0.0,
+            "rotation_noise_deg": 0.0,
+            "episode_bias_mm": 0.0,
+            "episode_bias_deg": 0.0
+          },
+          "system1_checkpoint_sha256": "8ec5488c2f51713698a74cfc6dcf6fb586e85f5c245872b4af5121a3f0f91821"
+        },
+        "source_model_sha256": "5c0ba0c12bfd5638d4361edbb43f57e79f6bffcc53fcf284f05db7c929020c94",
+        "training_config": {
+          "schema": {
+            "version": "omi-hierarchical-insertion-v1",
+            "reference_points": 8,
+            "history_slots": 4,
+            "observations": "TCP-relative path / 1cm, rotation / 0.1rad; goal, progress, plan age, validity; motion/action/contact history",
+            "action": "unchanged normalized world-TCP translation and rotation-vector delta; full direct action, retreat allowed",
+            "proprioception": "simulated TCP feedback",
+            "contact": "wrist-wrench",
+            "contact_semantics": "ideal compensated virtual wrist Fx,Fy,Fz / 10N; Tx,Ty,Tz / 1Nm; validity; no tactile",
+            "transfer_sha256": "cf3292f916737c191cdc7b4cc8dc07e9a0e0bb1eac2282e27a0bbb590da721cb",
+            "execution_config": {
+              "max_steps": 650,
+              "physics_dt": 0.02,
+              "control_dt": 0.1,
+              "teacher_min_step_mm": 0.05,
+              "target_overtravel_mm": 0.1,
+              "joint_target_interpolation": "linear",
+              "global_contact_offset_m": 1e-07,
+              "per_collider_contact_offsets_m": {
+                "sim_module_smooth_shoulder": 5e-06
+              },
+              "force_stop_N": null,
+              "penetration_stop_mm": null,
+              "solver": "PGS",
+              "insertion_assessment": {
+                "version": "entry-strict-interior-tolerant-v1",
+                "control_dt": 0.1,
+                "entry_start_mm": 1.0,
+                "entry_complete_mm": 5.0,
+                "entry_deadline_mm": 6.0,
+                "entry_lateral_mm": 0.15,
+                "entry_angle_rad": 0.003,
+                "entry_good_samples": 3,
+                "entry_point_limit_mm": 0.08,
+                "interior_point_limit_mm": 0.15,
+                "geometric_overlap_limit_mm": 0.1,
+                "entry_mean_force_N": 5.0,
+                "interior_mean_force_N": 20.0,
+                "catastrophic_mean_force_N": 50.0,
+                "entry_force_samples": 3,
+                "interior_force_samples": 5,
+                "stall_samples": 10,
+                "stall_progress_mm": 0.05,
+                "seat_depth_tolerance_mm": 0.1,
+                "seat_lateral_mm": 0.25,
+                "seat_angle_rad": 0.005,
+                "seat_motion_mm": 0.03,
+                "seat_samples": 3,
+                "force_signal_kind": "simulation_contact_impulse_norm_sum_mean"
+              },
+              "wrist_wrench": {
+                "version": "ideal-compensated-module-external-contact-interval-mean-v1",
+                "origin_offset_tcp_m": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "axes": "TCP",
+                "units": [
+                  "N",
+                  "N",
+                  "N",
+                  "Nm",
+                  "Nm",
+                  "Nm"
+                ],
+                "interval_s": 0.1,
+                "sign": "external environment wrench on held module; transferred to virtual sensor origin",
+                "scope": "fixed module external contacts only; no gravity/inertia/electronics; not calibrated hardware wrench"
+              },
+              "ik_backend": {
+                "version": "tianji-ccs-left-world-v1",
+                "arm": 0,
+                "model_type": 1017,
+                "joint_names": [
+                  "Arm_L1_Joint",
+                  "Arm_L2_Joint",
+                  "Arm_L3_Joint",
+                  "Arm_L4_Joint",
+                  "Arm_L5_Joint",
+                  "Arm_L6_Joint",
+                  "Arm_L7_Joint"
+                ],
+                "joint_signs": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "joint_zero_offsets_rad": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "input_units": "world metres / joint radians",
+                "sdk_units": "base millimetres / joint degrees",
+                "world_from_base": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    -2.220446049250313e-16,
+                    1.0000000000000002,
+                    0.025999999999999995
+                  ],
+                  [
+                    0.0,
+                    -1.0000000000000002,
+                    -2.220446049250313e-16,
+                    1.121
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "flange_from_tcp": [
+                  [
+                    0.9999999999920002,
+                    -4.000000000059512e-06,
+                    7.999712004380655e-12,
+                    -1.0547118733938987e-17
+                  ],
+                  [
+                    4.000000000226045e-06,
+                    0.9999999999840001,
+                    -3.999999999948489e-06,
+                    -1.1709654061874394e-33
+                  ],
+                  [
+                    8.000156093146414e-12,
+                    4.000000000115022e-06,
+                    0.9999999999920002,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "source_sha256": {
+                  "fx_kine.py": "c6603de2f315dfc0fc85369be07165af7da0118e3cc4006ca94f8787c04087c5",
+                  "libKine.so": "f2aec6ebc1f41302fe0126284076211c044d6c7e1c2276dc919767254e0c597f",
+                  "ccs_m6_40.MvKDCfg": "ce20b1a80974c3ed58cdac4973152625096c8ad93a779e5fd4108c26ce19bd52"
+                },
+                "position_tolerance_m": 1e-05,
+                "rotation_tolerance_rad": 0.0001,
+                "max_joint_step_rad": 0.1,
+                "singularity_policy": "reject any SDK singular flag",
+                "fallback": "none",
+                "mapping_validation": {
+                  "samples": 66,
+                  "max_position_error_m": 5.643241593900938e-06,
+                  "max_rotation_error_rad": 2.572371741862243e-05
+                }
+              },
+              "socket_pose_randomization": {
+                "version": "planar-socket-assembly-v1",
+                "translation_mm": 0.2,
+                "yaw_deg": 0.1,
+                "plane": "world XY, fixed world Z",
+                "rotation": "world Z yaw about nominal socket origin",
+                "distribution": "uniform per-axis at reset",
+                "robot_initialization": "original joint reset and jitter; not co-transformed",
+                "policy_pose_input": false
+              },
+              "render_runtime": {
+                "version": "headless-sensors-only-v1",
+                "rt_subframes": 2
+              },
+              "recovery_controller": {
+                "version": "retreat-align-reenter-v1",
+                "max_attempts": 2,
+                "phase_max_steps": 450,
+                "waypoint_tolerance_mm": 0.08,
+                "strict_entry": true
+              },
+              "entry_guidance": {
+                "version": "qualified-entry-hold-v1",
+                "lateral_takeover_mm": 0.1,
+                "angle_takeover_rad": 0.0015,
+                "handback_requires_entry": true
+              }
+            },
+            "reward": "unchanged worker task truth; never recomputed from noisy reference"
+          },
+          "reference": {
+            "mode": "gt",
+            "points": 8,
+            "spacing_mm": 0.5,
+            "update_steps": 5,
+            "delay_steps": 0,
+            "translation_noise_mm": 0.0,
+            "rotation_noise_deg": 0.0,
+            "episode_bias_mm": 0.0,
+            "episode_bias_deg": 0.0
+          },
+          "system1_checkpoint_sha256": null
+        },
+        "scope": "held-out policy-only simulation"
+      }
+    },
+    "legacy_compare": {
+      "directory": "/data/shapeforge/runtime/runs/hier_s01_20261125_legacy_compare",
+      "result": {
+        "complete": true,
+        "error": null,
+        "processes": {
+          "experiment_process.json": {
+            "command": [
+              "/data/shapeforge/runtime/envs/omi_sim_train/bin/python",
+              "-u",
+              "-m",
+              "omi_hil_rl.training.hierarchical_insertion.cli",
+              "collect",
+              "--episodes",
+              "2",
+              "--seed",
+              "121000",
+              "--contact",
+              "none",
+              "--output",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_legacy_compare/experiment",
+              "--socket",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_legacy_compare/worker.sock",
+              "--transfer",
+              "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer"
+            ],
+            "state": "exited",
+            "start_new_session": true,
+            "returncode": 0,
+            "pid": 1183484,
+            "pgid": 1183484,
+            "elapsed_seconds": 52.85709226099425
+          },
+          "shutdown_process.json": {
+            "command": [
+              "/data/shapeforge/runtime/envs/omi_sim_train/bin/python",
+              "-c",
+              "from omi_hil_rl.training.isaac_client import IsaacClient; import sys; c=IsaacClient(sys.argv[1]); c.request('shutdown'); c.close()",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_legacy_compare/worker.sock"
+            ],
+            "state": "exited",
+            "start_new_session": true,
+            "returncode": 0,
+            "pid": 1184904,
+            "pgid": 1184904,
+            "elapsed_seconds": 0.11484586801088881
+          },
+          "worker_process.json": {
+            "command": [
+              "/data/isaac-sim-5.1.0/python.sh",
+              "-u",
+              "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/isaac_rl_worker.py",
+              "--transfer",
+              "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer",
+              "--output",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_legacy_compare/worker",
+              "--socket",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_legacy_compare/worker.sock",
+              "--max-steps",
+              "650",
+              "--physics-substeps",
+              "5",
+              "--ik-backend",
+              "tianji",
+              "--teacher-min-step-mm",
+              ".05",
+              "--target-overtravel-mm",
+              ".1",
+              "--entry-guidance",
+              "--socket-pose-range-mm",
+              "0.2",
+              "--socket-yaw-range-deg",
+              "0.1",
+              "--tianji-sdk",
+              "/data/shapeforge/runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/vendor/optical_module_pu/source/OpticalModule_PU/Arm_control"
+            ],
+            "state": "exited",
+            "start_new_session": true,
+            "returncode": 0,
+            "pid": 1182576,
+            "pgid": 1182576,
+            "elapsed_seconds": 78.4853785919986
+          }
+        },
+        "scope": "isolated simulation experiment; see evaluation for policy results"
+      }
+    },
+    "resume_v2": {
+      "directory": "/data/shapeforge/runtime/runs/hier_s01_20261125_resume_v2",
+      "result": {
+        "complete": true,
+        "error": null,
+        "processes": {
+          "experiment_process.json": {
+            "command": [
+              "/data/shapeforge/runtime/envs/omi_sim_train/bin/python",
+              "-u",
+              "-m",
+              "omi_hil_rl.training.hierarchical_insertion.cli",
+              "train-s0",
+              "--model",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_s0/experiment/system0.zip",
+              "--bc-steps",
+              "0",
+              "--steps",
+              "4",
+              "--seed",
+              "124000",
+              "--output",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_resume_v2/experiment",
+              "--socket",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_resume_v2/worker.sock",
+              "--transfer",
+              "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer"
+            ],
+            "state": "exited",
+            "start_new_session": true,
+            "returncode": 0,
+            "pid": 1190734,
+            "pgid": 1190734,
+            "elapsed_seconds": 3.602952622997691
+          },
+          "shutdown_process.json": {
+            "command": [
+              "/data/shapeforge/runtime/envs/omi_sim_train/bin/python",
+              "-c",
+              "from omi_hil_rl.training.isaac_client import IsaacClient; import sys; c=IsaacClient(sys.argv[1]); c.request('shutdown'); c.close()",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_resume_v2/worker.sock"
+            ],
+            "state": "exited",
+            "start_new_session": true,
+            "returncode": 0,
+            "pid": 1190825,
+            "pgid": 1190825,
+            "elapsed_seconds": 0.1143656959902728
+          },
+          "worker_process.json": {
+            "command": [
+              "/data/isaac-sim-5.1.0/python.sh",
+              "-u",
+              "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/isaac_rl_worker.py",
+              "--transfer",
+              "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer",
+              "--output",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_resume_v2/worker",
+              "--socket",
+              "/data/shapeforge/runtime/runs/hier_s01_20261125_resume_v2/worker.sock",
+              "--max-steps",
+              "650",
+              "--physics-substeps",
+              "5",
+              "--ik-backend",
+              "tianji",
+              "--teacher-min-step-mm",
+              ".05",
+              "--target-overtravel-mm",
+              ".1",
+              "--entry-guidance",
+              "--socket-pose-range-mm",
+              "0.2",
+              "--socket-yaw-range-deg",
+              "0.1",
+              "--tianji-sdk",
+              "/data/shapeforge/runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/vendor/optical_module_pu/source/OpticalModule_PU/Arm_control",
+              "--wrist-wrench",
+              "--wrist-offset-m",
+              "0.0",
+              "0.0",
+              "0.0"
+            ],
+            "state": "exited",
+            "start_new_session": true,
+            "returncode": 0,
+            "pid": 1189948,
+            "pgid": 1189948,
+            "elapsed_seconds": 29.0068531279976
+          }
+        },
+        "scope": "isolated simulation experiment; see evaluation for policy results"
+      }
+    }
+  },
+  "limitations": [
+    "Fixed module attachment; no slip or free grasp acceptance",
+    "Ideal external module-contact wrench, not calibrated physical wrist sensor",
+    "Initial normal three-episode dataset does not cover recovery curriculum",
+    "Simulated asynchronous updates, no ROS deployment",
+    "Visual baseline 3 epochs; translation precision insufficient",
+    "All three held-out short-budget policy evaluations failed",
+    "No real-robot execution"
+  ]
+}

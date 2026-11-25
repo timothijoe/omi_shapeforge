@@ -1,5 +1,7 @@
 # System1 与 System0 路径条件化插接讨论
 
+后续：[独立插接原型](../agent/simulation/evolution/hierarchical-insertion.md)已按用户新增要求开发；倒退决策交给System0，第一版使用腕部六维力，不使用双指触觉。下文保留原讨论时点。
+
 讨论日期：2026-11-25。本文保存本轮讨论形成的设计方向、方案修正和待验证问题，作为下次讨论入口。当前倾向先验证路径条件化 SAC 直接输出六维 TCP 动作；System1 和 System0 的新接口、路径条件网络及真机接触迁移尚未实现或验收。
 
 本次源码保存使用两个仓库的 `snapshot/system1-system0-discussion-20261125` 分支。对应的训练源码版本、检查结果及历史测试数据缺口见[工作区源码快照](../../manifests/workspace_snapshot_20261125.json)；大资源仍按[本地资源契约](../agent/interfaces/local-resources.md)单独恢复。

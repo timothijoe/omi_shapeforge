@@ -58,6 +58,8 @@ def main():
     p.add_argument('--teacher-min-step-mm',type=float,default=.01)
     p.add_argument('--target-overtravel-mm',type=float,default=.03)
     p.add_argument('--entry-guidance',action='store_true',help='Hold strict entry and recover missed qualification; new execution contract')
+    p.add_argument('--wrist-wrench',action='store_true',help='Opt-in ideal compensated module-contact wrench observation; legacy default off')
+    p.add_argument('--wrist-offset-m',type=float,nargs=3,default=[0.,0.,0.],help='Virtual sensor origin in TCP frame; axes follow TCP')
     p.add_argument('--asset-contract',choices=['legacy-r10','wva01-gc01-free-grasp-v1','wva01-closed-reference-fixture-v1'],default='legacy-r10')
     a=p.parse_args()
     if a.ik_backend=='tianji' and a.tianji_sdk is None:p.error('--tianji-sdk required for native IK')
@@ -72,6 +74,8 @@ def main():
     snapshot=a.output/'code_snapshot';snapshot.mkdir()
     common_root=repo.parent/'omi_proj/src';sys.path.insert(0,str(common_root))
     for f in [Path(__file__),common_root/'omi_hil_rl/hil/insertion_task.py',*[repo/'src/omi_shapeforge/sim'/n for n in ['isaac_contact_scene.py','isaac_contact_runtime.py','isaac_free_grasp.py','isaac_contact_kinematics.py','tianji_ik.py','socket_pose.py','isaac_appearance.py','isaac_contact_approach.py','contact_teacher.py','isaac_recovery.py','wrist_fisheye.py','isaac_ipc.py','box_overlap.py']]]:shutil.copy2(f,snapshot/f.name)
+    if a.wrist_wrench:
+        shutil.copy2(repo/'src/omi_shapeforge/sim/wrist_wrench.py',snapshot/'wrist_wrench.py')
     (a.output/'execution.json').write_text(json.dumps(dict(arguments={k:str(v) if isinstance(v,Path) else v for k,v in vars(a).items()},
         sources_sha256={f.name:hashlib.sha256(f.read_bytes()).hexdigest() for f in snapshot.iterdir()}),indent=2)+'\n')
     import omi_hil_rl.hil
@@ -130,6 +134,10 @@ def main():
             Experiment=FreeGraspExperiment
         env=Experiment(world,packet,audit,a.output,a.physics_dt,ik_backend=a.ik_backend,
             tianji_sdk=a.tianji_sdk,tianji_config=a.tianji_config,socket_pose_range=pose_range);env.max_steps=a.max_steps
+        wrench_contract=None
+        if a.wrist_wrench:
+            from omi_shapeforge.sim.wrist_wrench import attach_wrist_wrench
+            wrench_contract=attach_wrist_wrench(env,a.wrist_offset_m)
         axis=-np.asarray(env.manifest['socket_to_world']['rotation'])[:,1]
         projection=packet['manifest']['observation_projection'];K=np.asarray(projection['K']);D=np.asarray(projection['D'])
         # Exact legacy real-data ROI coordinates; each output sample stays in the
@@ -200,6 +208,8 @@ def main():
                 force_stop_N=None if env.contact_assessment else 10.,
                 penetration_stop_mm=None if env.contact_assessment else .05,solver=a.solver,
                 insertion_assessment=env.manifest.get('insertion_assessment')))
+        if wrench_contract:
+            meta['execution_config']['wrist_wrench']=wrench_contract
         if env.native_ik:
             meta['action_contract']='isaac-world-tcp-normalized-delta-tianji-servo-v1'
             meta['execution_config']['ik_backend']=env.native_ik.metadata

@@ -1,5 +1,7 @@
 # 操作教程
 
+- [System1 与 System0 独立插接实验](hierarchical_insertion.md)：分别采集、训练下层、噪声评估、训练上层与组合。
+
 - [分层点云查看、同一格式视频制作与旧版恢复](pointcloud_presentation.md)：普通稀疏／重点加密、同一点径、兼容查看器及统一色表。
 
 - [使用天机原厂IK](tianji_native_ik.md)：离线检查、Isaac worker与批量训练入口。

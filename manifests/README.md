@@ -1,5 +1,7 @@
 # 资源与证据清单
 
+- [System1 与 System0 原型验证](hierarchical_insertion_20261125.json)：代码、原生过程、三种参考对照及默认兼容检查。
+
 - [2026-11-25工作区源码快照](workspace_snapshot_20261125.json)：两个仓库的保存分支、训练源码版本、检查结果及BC6148历史数据缺口；本次System1／System0仅记录讨论。
 
 - [runtime实体归拢登记](runtime_relocation_20261123.json)：新实体根、旧兼容前缀、文件身份与环境检查；此前导入／交付迁移登记保留原时点。
