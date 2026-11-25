@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "id": "runtime-relocation-20261123",
+  "date": "2026-11-23",
+  "status": "same_inode_tree_and_environment_entrypoints_verified",
+  "legacy_runtime_root": "/data/omi_runtime",
+  "physical_runtime_root": "/data/shapeforge/runtime",
+  "runtime_is_physical_directory": true,
+  "legacy_root_is_compatibility_symlink": true,
+  "summary": {
+    "files": 590054,
+    "directories": 55774,
+    "symlinks": 2015,
+    "special_entries": 1,
+    "logical_bytes": 255645575712,
+    "unique_regular_file_inodes": 505762,
+    "allocated_regular_file_bytes": 215232589824,
+    "hashed_metadata_paths": 10585,
+    "hashed_metadata_unique_inodes": 10464,
+    "relative_symlinks_escaping_runtime": 0,
+    "preexisting_broken_symlinks": 6
+  },
+  "content_verification": "Complete namespace/device/inode/type/mode/owner/size/blocks/link-count/mtime comparison; regular-file ctime preserved; symlink text and normalized targets preserved. Full SHA256 compared for selected documentation and metadata <=1 MiB; no full binary/model/dataset rehash.",
+  "environment_validation": {
+    "environments": [
+      "omi_sim_train",
+      "video_to_data_trial",
+      "omi_mesh_audit",
+      "omi_assets",
+      "simulation",
+      "foundation_stereo",
+      "bundlesdf"
+    ],
+    "environment_count": 7,
+    "legacy_entrypoints_match_before": true,
+    "canonical_entrypoints_match_before_after_prefix_normalization": true,
+    "modules_checked_when_installed": [
+      "numpy",
+      "mujoco",
+      "torch"
+    ],
+    "gpu_workloads_or_training_run": false,
+    "bytecode_writes_disabled": true
+  },
+  "workspace_configuration_policy": "Existing workspace.toml retains /data/omi_runtime as a stable logical prefix; runtime root in resources.json records the canonical physical location. Frozen scenes, snapshots and scripts are not bulk-rewritten.",
+  "current_guide": "docs/agent/interfaces/local-resources.md",
+  "chronicle": "docs/chronicles/2026-11-23-runtime-relocation.md",
+  "previous_storage_phase": "storage_layout_20261123.json",
+  "payloads_copied": false,
+  "payloads_deleted": false,
+  "frozen_payload_bytes_rewritten": false,
+  "evidence": {
+    "verification.json": {
+      "path": "/data/shapeforge/maintenance/migrations/20261123T153023Z_runtime/verification.json",
+      "sha256": "bd3d530b8d27a93eeb2c975aec2835b59a513599bde9c80e37863e588550962b"
+    },
+    "differences.json": {
+      "path": "/data/shapeforge/maintenance/migrations/20261123T153023Z_runtime/differences.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "environment_comparison.json": {
+      "path": "/data/shapeforge/maintenance/migrations/20261123T153023Z_runtime/environment_comparison.json",
+      "sha256": "4dc30e2a39b7ea81cd366e9e29d3798131488eae1662be952b34534a4681de60"
+    },
+    "navigation_changes.json": {
+      "path": "/data/shapeforge/maintenance/migrations/20261123T153023Z_runtime/navigation_changes.json",
+      "sha256": "47fbb86579c1d8512274d1798f502d6015ee8c0aa64ced07ea441627cd1eb9ab"
+    },
+    "post_migration_validation.json": {
+      "path": "/data/shapeforge/maintenance/migrations/20261123T153023Z_runtime/post_migration_validation.json",
+      "sha256": "3b7e6aeee60419e2649c9c1fa12f76b2f1a01767e35a852e5f746bc4ca446447"
+    }
+  },
+  "restore": [
+    "Restore runtime and storage as physical sibling directories under /data/shapeforge.",
+    "Recreate /data/omi_runtime pointing to /data/shapeforge/runtime before using existing environments or scene scripts.",
+    "Preserve symlink text, hardlinks and sparse allocation; do not follow old aliases to create duplicate copies.",
+    "Preserve external Python installations, current source worktrees and other registered external dependencies separately.",
+    "No deduplication was performed; archive/workspace overlap remains retained."
+  ]
+}

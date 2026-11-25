@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "id": "online-insertion-recovery-20261123",
+  "run_root": "/data/omi_runtime/runs/online_recovery_20261123_v2",
+  "status": "functional_recovery_passed_main_run_shutdown_unverified",
+  "guide": "docs/agent/simulation/evolution/online-insertion-recovery.md",
+  "chronicle": "docs/chronicles/2026-11-23-online-insertion-recovery.md",
+  "task_contract": "entry-strict-interior-tolerant-v1",
+  "intervention_contract": "isaac-staged-recovery-ownership-v1",
+  "validation": {
+    "accepted": true,
+    "cases": [
+      {
+        "case": "normal",
+        "seed": 800,
+        "offset_mm": 0.0,
+        "accepted": true,
+        "reset_count": 1,
+        "steps": 392,
+        "success": true,
+        "failure": null,
+        "final_depth_mm": 51.28103337231287,
+        "recovery_completed": 0,
+        "handback": false,
+        "stages": [
+          "idle"
+        ],
+        "blocked_step": null,
+        "teacher_requests": 0,
+        "learned_policy_evaluated": false,
+        "max_mean_force_N": 0.1718479331851147,
+        "max_substep_force_N": 12.542176282520035,
+        "verified_steps": 392,
+        "intervention_steps": 0,
+        "synthetic_probe_steps": 392,
+        "recovery_events": []
+      },
+      {
+        "case": "recovery_plus",
+        "seed": 801,
+        "offset_mm": 1.0,
+        "accepted": true,
+        "reset_count": 1,
+        "steps": 605,
+        "success": true,
+        "failure": null,
+        "final_depth_mm": 51.28112614779523,
+        "recovery_completed": 1,
+        "handback": true,
+        "stages": [
+          "align_outside",
+          "idle",
+          "reinsert",
+          "retreat"
+        ],
+        "blocked_step": 170,
+        "teacher_requests": 102,
+        "learned_policy_evaluated": false,
+        "max_mean_force_N": 0.19148683621853763,
+        "max_substep_force_N": 17.22561195492757,
+        "pre_recovery_rule_steps": 0,
+        "retreat_min_depth_mm": -4.922680621047592,
+        "handback_step": 276,
+        "handback_depth_mm": 5.172211038551286,
+        "verified_steps": 605,
+        "intervention_steps": 102,
+        "synthetic_probe_steps": 503,
+        "recovery_events": [
+          {
+            "stage": "retreat",
+            "first_command_step": 174
+          },
+          {
+            "stage": "align_outside",
+            "first_command_step": 206
+          },
+          {
+            "stage": "reinsert",
+            "first_command_step": 215
+          }
+        ]
+      },
+      {
+        "case": "recovery_minus",
+        "seed": 802,
+        "offset_mm": -1.0,
+        "accepted": true,
+        "reset_count": 1,
+        "steps": 656,
+        "success": true,
+        "failure": null,
+        "final_depth_mm": 51.28098672362986,
+        "recovery_completed": 1,
+        "handback": true,
+        "stages": [
+          "align_outside",
+          "idle",
+          "reinsert",
+          "retreat"
+        ],
+        "blocked_step": 213,
+        "teacher_requests": 102,
+        "learned_policy_evaluated": false,
+        "max_mean_force_N": 0.3221141834394162,
+        "max_substep_force_N": 12.618634415275753,
+        "pre_recovery_rule_steps": 1,
+        "retreat_min_depth_mm": -4.923420235283489,
+        "handback_step": 319,
+        "handback_depth_mm": 5.1782584044012,
+        "verified_steps": 656,
+        "intervention_steps": 102,
+        "synthetic_probe_steps": 554,
+        "recovery_events": [
+          {
+            "stage": "idle",
+            "first_command_step": 217
+          },
+          {
+            "stage": "retreat",
+            "first_command_step": 218
+          },
+          {
+            "stage": "align_outside",
+            "first_command_step": 250
+          },
+          {
+            "stage": "reinsert",
+            "first_command_step": 258
+          }
+        ]
+      }
+    ],
+    "total_steps": 1653,
+    "source_hashes": {
+      "worker/isaac_contact_scene.py": "fcbb7a2ec9d5176c631e59b521fc6f4d4aaaff8b2fa41a8c5d30788724412562",
+      "worker/isaac_contact_runtime.py": "ba52d428408843238b9bc8c023647e04220879ec33b6decd3bc0a133cc2e3214",
+      "worker/wrist_fisheye.py": "8f25df888d79198fc50d140c4aac5ec17a7c2a8758ed2891cc7c03e41f842b6e",
+      "worker/isaac_contact_kinematics.py": "11915765318f6393f4f1d25f90cd5dc984db0f262a54d73319be17abf68b71eb",
+      "worker/box_overlap.py": "8a468a86fd461ec4992735bcf039b97b6fdf049d21a68bcc34511b8a9f6f27e6",
+      "worker/isaac_appearance.py": "8cf5095e7d25315d79c05303e33b39f1c756898d8a0718325849dc68844003c3",
+      "worker/isaac_ipc.py": "936625d59474b7cb708531c7b61822f4a096f94edf2dce692815c31a17fcfe60",
+      "worker/isaac_recovery.py": "b296553005a8e326eb5fc7f0c0fe82bcfa8bb8ffa4a6e37a064fe324c6f17bc8",
+      "worker/isaac_rl_worker.py": "defb392c2d5d71cf6527f9b695b368eee0bc2b46149a505c404ca4764526501e",
+      "worker/isaac_contact_approach.py": "ceea6c1ca29e37628c8bb11fcfaa00720b1f9214e735db40c972cfb09cdeea74",
+      "worker/insertion_task.py": "1986131f8f72736e77fbd14a97b4479507fb237c17eaca37d3ac314f7c8efe38",
+      "worker/contact_teacher.py": "0d4997f90d8640546e39b9b51d2e74766bc6b8e19a19b71f47ee68d4bedd0f4a",
+      "probe/probe_online_recovery.py": "a2117df85db80425ebfff1e09ed797db2ff77a37b9980e30e4b6e9b9a012f730",
+      "probe/isaac_client.py": "a812dc60361e9d03dcdc3c51d7cc1cf9c3a2f94ec2297350c2f36d5e85f6a2b6",
+      "probe/isaac_intervention.py": "21ccb70d65f351fe56e34df3570d3d5ddbd2316b2bd7a98bcd7c3343d92a9751",
+      "probe/isaac_contact_approach.py": "ceea6c1ca29e37628c8bb11fcfaa00720b1f9214e735db40c972cfb09cdeea74"
+    },
+    "receipts": {
+      "outer_tool_exit_code": 143,
+      "tool_session": 19137,
+      "worker_exit_code": null,
+      "probe_exit_code": null,
+      "native_exit_receipts_available": false,
+      "shutdown_marker_present": false,
+      "all_three_case_reports_present": true,
+      "worker_and_probe_processes_absent_after_run": true,
+      "observed_at_utc": "2026-11-23T12:39:08Z",
+      "cause": "undetermined; do not infer native exit code from complete reports"
+    },
+    "learned_policy_evaluated": false,
+    "training_performed": false,
+    "human_actions": 0,
+    "process_shutdown_verified": false,
+    "audit": "RPC and worker rows agree; fixed goal/reward, single reset, qualified handback; outer exit 143, native exit status unavailable"
+  },
+  "tests": {
+    "focused_tests": {
+      "command": "env PYTHONPATH=/home/linux/omi_folder/omi_proj/src:/home/linux/omi_folder/omi_shapeforge/src /data/omi_runtime/envs/omi_sim_train/bin/python -m pytest -q omi_shapeforge/tests/test_isaac_recovery.py omi_shapeforge/tests/test_isaac_contact_approach.py omi_proj/tests/test_isaac_intervention.py omi_proj/tests/test_insertion_task.py omi_proj/tests/test_isaac_rule_bridge.py omi_proj/tests/test_intervention_metrics.py",
+      "passed": 36,
+      "exit_code": 0,
+      "tool_session": 70745,
+      "stdout": "36 passed in 2.21s"
+    },
+    "control_tests": {
+      "command": ".venv/bin/python -m unittest discover -s tests -v",
+      "run": 56,
+      "passed": 14,
+      "skipped": 42,
+      "exit_code": 0,
+      "log": "control_tests.log"
+    },
+    "training_entry_import": {
+      "command": "python -m omi_hil_rl.training.isaac_rule_feedback --help",
+      "exit_code": 0
+    }
+  },
+  "lifecycle_smoke": {
+    "root": "/data/omi_runtime/runs/online_recovery_lifecycle_20261123",
+    "receipt": {
+      "worker_pid": 129108,
+      "step": 1,
+      "success": false,
+      "teacher_requests": 0,
+      "shutdown_ack": true,
+      "worker_exit_code": 0
+    },
+    "counts_as_insertion_trial": false
+  },
+  "preliminary_run": {
+    "path": "/data/omi_runtime/runs/online_recovery_20261123_v1",
+    "status": "interrupted_incomplete",
+    "reason": "correct executed-action slew synchronization; BrokenPipe on interrupted client"
+  },
+  "artifacts_sha256": {
+    "protocol.json": "a093e41437ae5e3390773c0e64b57bfab0a71fbd58f90344260ec84235e578e9",
+    "process_observation.json": "e748fdbc7ba30b840b37d8bbe348ff76799106071a6d788ecf01c0cc573aaf2d",
+    "verified_summary.json": "3d15f9ebbed1cee3587e78c919962eabb5b1561d7ec4b3c2e83c019f64ab9815",
+    "summarize.py": "aa049d2507806e41d034da0bbbd59e0432c24f2803f474e0480b2b474aef956b",
+    "recovery_traces.png": "c523bb29ea86c368ac8f0257d37199514b09302bcc7d260770feba630dcd6ab0",
+    "test_results.json": "552252425b072a2ed725bddb3d544b67c624578bb5bafd9b437e3e57a8561a75",
+    "source_and_input_audit.json": "f7debf431ef7501ae78bc35658b7f0e05cb5e9cbd217feb9105950dec9294c0f"
+  }
+}

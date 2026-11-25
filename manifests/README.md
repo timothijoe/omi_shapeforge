@@ -1,5 +1,11 @@
 # 资源与证据清单
 
+- [2026-11-25工作区源码快照](workspace_snapshot_20261125.json)：两个仓库的保存分支、训练源码版本、检查结果及BC6148历史数据缺口；本次System1／System0仅记录讨论。
+
+- [runtime实体归拢登记](runtime_relocation_20261123.json)：新实体根、旧兼容前缀、文件身份与环境检查；此前导入／交付迁移登记保留原时点。
+
+- [2026-11-23存储布局与迁移登记](storage_layout_20261123.json)：四批实体的新旧路径、脚本兼容链接及验证范围；当前目录规则见[本地资源契约](../docs/agent/interfaces/local-resources.md)。`resources.json`使用新的实际导入根；日期化的旧迁移、采集与解压验证清单保留原文。
+
 - [PCG-01纯几何便携包登记](pointcloud_geometry_pcg01_20261123.json)：交付目录、ZIP哈希／字节数、源几何目录和验证；能力与使用方法见[纪传体](../docs/agent/perception/evolution/pointcloud-geometry-pcg01.md)。
 
 - [Isaac规则反馈RL登记](isaac_rule_feedback_20261122.json)：完整链路验证与自主策略结果分开。

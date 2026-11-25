@@ -1,5 +1,7 @@
 # 检查真实 mesh 是否可以插入
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../docs/agent/interfaces/local-resources.md)。
+
 当前结论为**完整V3／r04刚体插入不通过**，不是训练失败。原始几何、错误凸包和保留孔形的接触测试已分别运行。详见[能力记录](../docs/agent/simulation/evolution/mesh-insertability.md)。
 
 - [结果图](/data/omi_runtime/runs/mesh_insertability_20261121/mesh_insertion_findings.png)

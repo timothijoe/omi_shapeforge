@@ -1,5 +1,7 @@
 # 感知能力索引
 
+- [点云展示默认约定与已认可兼容查看器](pointcloud-presentation.md)
+
 - [有边界的感知细网格数据 v1：范围、标注与严格主集](grid-perception-data-v1.md)
 - [用户确认的模块前后／上下／俯仰三变量预览](three-variable-grasp-preview.md)
 - [GC-r01接触版腕部表面学习与独立测试](contact-wrist-surface-learning.md)

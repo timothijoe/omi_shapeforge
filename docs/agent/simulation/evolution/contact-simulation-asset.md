@@ -1,5 +1,7 @@
 # 独立接触仿真资产与整条训练链路
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../../interfaces/local-resources.md)。
+
 后续已新增[SIM-r06：V4与实测插槽尺寸](measured-v4-simulation.md)，局部与机械臂规则循环通过；旧BC／RL直接迁移各0/2。**本页以下记录旧SIM-r03的接触与训练链路**，新旧几何及成功率分开维护。
 
 当前学习实验已取得自主成功：在本资产保持不变的情况下，10回合BC＋20回合接管RL及独立复验得到BC 7/8、第一轮RL 8/8，另有失败对照。仿真器全貌见[专门记录](../../../simulation.md)，训练机制见[omi_proj能力文档](../../../../../omi_proj/docs/agent/training/evolution/contact-intervention-study.md)。本页将最新结果与前序短试跑分开记录。

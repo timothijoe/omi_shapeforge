@@ -1,0 +1,46 @@
+{
+  "schema": "alignment-insertion-film-v2",
+  "date": "2026-11-24",
+  "run_directory": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r2",
+  "video": {
+    "path": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r2/film/alignment_insertion_geometry_pose_1080p.mp4",
+    "duration_s": 51.5,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "source_fps": 10,
+    "frames": 1545,
+    "codec": "h264",
+    "bytes": 6061719,
+    "sha256": "b52f95faced2200cf7bab4235cd9a9c3d65b1c285f877e5c37634a2c22baeea9"
+  },
+  "delivery": {
+    "机器人插接_未对准到插入_几何位姿估计_1080p_20261124.mp4": {
+      "path": "/home/linux/Downloads/机器人插接_未对准到插入_几何位姿估计_1080p_20261124.mp4",
+      "bytes": 6061719,
+      "sha256": "b52f95faced2200cf7bab4235cd9a9c3d65b1c285f877e5c37634a2c22baeea9"
+    },
+    "机器人插接_几何位姿估计_封面_20261124.png": {
+      "path": "/home/linux/Downloads/机器人插接_几何位姿估计_封面_20261124.png",
+      "bytes": 602489,
+      "sha256": "6eafd0387570d85007fc3b91ad27eb86daf6c27fe25eec27744951cd9230e814"
+    },
+    "机器人插接_几何位姿估计_过程预览_20261124.jpg": {
+      "path": "/home/linux/Downloads/机器人插接_几何位姿估计_过程预览_20261124.jpg",
+      "bytes": 613774,
+      "sha256": "929da8ac3f0cf3a11e1c3e964bd3f1767c9b743c09d7ad521e0a185a8549f3ca"
+    }
+  },
+  "reference_image": "/home/linux/Downloads/img/20261124-155231.jpg",
+  "on_screen_title": "几何位姿估计",
+  "source": "new single PhysX scripted episode; simulation poses stand in for pointcloud estimates",
+  "network_inference": false,
+  "training": false,
+  "source_control_states": 470,
+  "alignment_audit": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r2/alignment_audit.json",
+  "replay_audit": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r2/replay_validation.json",
+  "quality_check": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r2/quality_check.json",
+  "provenance": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r2/source_provenance.json",
+  "film_mapping": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r2/film/film_manifest.json",
+  "documentation": "docs/agent/perception/evolution/alignment-insertion-film.md"
+}

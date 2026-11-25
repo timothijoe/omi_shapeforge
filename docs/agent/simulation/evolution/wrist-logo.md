@@ -1,5 +1,7 @@
 # WG-r15：DAIMON表面标志版
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../../interfaces/local-resources.md)。
+
 用户接受r14实拍比例后要求增加DAIMON标志。另存WG-DAIMON-LOGO-r15，保留r14和所有旧版，固定WG-r10＋OM-r08交接组合不替换。
 
 ## 标志制作与资产变化

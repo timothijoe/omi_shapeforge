@@ -1,0 +1,80 @@
+{
+  "schema": "alignment-insertion-film-v5",
+  "date": "2026-11-24",
+  "run_directory": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r5",
+  "video": {
+    "path": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r5/film/alignment_insertion_geometry_pose_1080p.mp4",
+    "duration_s": 18.066666666666666,
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "frames": 542,
+    "bytes": 2546707,
+    "sha256": "3ac367a983693b7c4d0ae6a78362c41455ca13888f74e860c3dbee9411eaaf9b"
+  },
+  "delivery": {
+    "机器人插接_简洁三视图_灰度微调_20261124.mp4": {
+      "path": "/home/linux/Downloads/机器人插接_简洁三视图_灰度微调_20261124.mp4",
+      "sha256": "3ac367a983693b7c4d0ae6a78362c41455ca13888f74e860c3dbee9411eaaf9b",
+      "bytes": 2546707
+    },
+    "机器人插接_灰度微调_封面_20261124.png": {
+      "path": "/home/linux/Downloads/机器人插接_灰度微调_封面_20261124.png",
+      "sha256": "bf5cc21cefbce38a8455e5f586df8faffddc2a0639933719269b7f1de39d776c",
+      "bytes": 497865
+    },
+    "机器人插接_灰度微调_过程预览_20261124.jpg": {
+      "path": "/home/linux/Downloads/机器人插接_灰度微调_过程预览_20261124.jpg",
+      "sha256": "f54d427a322679b881eb6d988dc82a3035a5a7487fbcc7e7dd9bff3b696bced8",
+      "bytes": 549199
+    }
+  },
+  "accepted_presentation_baseline": {
+    "revision": "r4",
+    "scope": "presentation only",
+    "user_quote": "好的，很好",
+    "preserved_video": {
+      "path": "/home/linux/Downloads/机器人插接_简洁三视图_仅尖端着色_20261124.mp4",
+      "sha256": "f9103dcbe2688f5bbaa9eda1a35189fcef7f39939acb913b362dd3cfb053e408",
+      "bytes": 2578072
+    }
+  },
+  "requested_palette_adjustment": {
+    "module_ordinary_rgb": [
+      174,
+      187,
+      202
+    ],
+    "socket_ordinary_rgb": [
+      194,
+      205,
+      218
+    ],
+    "tip_rgb": [
+      255,
+      166,
+      68
+    ],
+    "mouth_rgb": [
+      78,
+      240,
+      112
+    ]
+  },
+  "r5_user_reviewed": false,
+  "highlight_colors_unchanged": true,
+  "accepted_layout_preserved": true,
+  "source_capture": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r2/capture",
+  "source_templates": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r2/geometry_templates",
+  "playback_rate": 3,
+  "source_states": 470,
+  "macro_windows": 0,
+  "network_inference": false,
+  "physics_controller_changed": false,
+  "quality_check": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r5/quality_check.json",
+  "acceptance_record": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r5/acceptance_and_palette_check.json",
+  "source_provenance": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r5/source_provenance.json",
+  "documentation": "docs/agent/perception/evolution/alignment-insertion-film.md"
+}

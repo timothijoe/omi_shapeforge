@@ -1,5 +1,7 @@
 # 光模块模型特征与鱼眼跟踪
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../../interfaces/local-resources.md)。
+
 后续用户明确禁止使用额外 marker。本文的标贴/纹理相关内容为历史试验，不再等待贴位确认或用它初始化。当前主线见[无 marker 结构线开发](../chronicles/2026-11-21-markerless-structural-features.md)。
 
 ## 当前能力边界

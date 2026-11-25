@@ -1,0 +1,32 @@
+{
+  "schema": "pointcloud-showcase-video-v1",
+  "date": "2026-11-24",
+  "renderer": "scripts/perception/render_pointcloud_showcase.py",
+  "renderer_sha256": "70c0d77175929bb8f0482b5b868ae52a14869bec26056e22b69624972cf90e43",
+  "run_directory": "/data/shapeforge/runtime/runs/pointcloud_showcase_20261124_v1",
+  "source_run": "/data/shapeforge/runtime/runs/contact_wrist_surface_20261123_r01",
+  "delivery": {
+    "点云估计_展示视频_1080p_20261124.mp4": {
+      "path": "/home/linux/Downloads/点云估计_展示视频_1080p_20261124.mp4",
+      "bytes": 14750322,
+      "sha256": "6fe57acd5cd10070361c24cd7bb99839db5946c81fffd4911579bfbfd0ac4095"
+    },
+    "点云估计_展示封面_20261124.png": {
+      "path": "/home/linux/Downloads/点云估计_展示封面_20261124.png",
+      "bytes": 178731,
+      "sha256": "b6bac1e2cef27ae6f9c0bd1d6963a6550151aabf26684b19dbad2a29f9541b4d"
+    },
+    "点云估计_分镜预览_20261124.jpg": {
+      "path": "/home/linux/Downloads/点云估计_分镜预览_20261124.jpg",
+      "bytes": 432961,
+      "sha256": "9dcb945fd7f5d3368d0e88a46a927fe57804474c80813d6d5b295cb46c55a2bf"
+    }
+  },
+  "validation": "/data/shapeforge/runtime/runs/pointcloud_showcase_20261124_v1/quality_check.json",
+  "source_frame_map": "/data/shapeforge/runtime/runs/pointcloud_showcase_20261124_v1/source_frame_map.json",
+  "documentation": "docs/agent/perception/chronicles/2026-11-24-pointcloud-showcase-video.md",
+  "new_training_performed": false,
+  "source_predictions_and_models_preserved": true,
+  "grid_pretraining_performed": false,
+  "audio": "Original locally synthesized soundtrack; no external assets."
+}

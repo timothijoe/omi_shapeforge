@@ -1,0 +1,80 @@
+{
+  "schema": "wrist-focus-overlay-film-v1",
+  "date": "2026-11-25",
+  "version": "r11 wrist focus-only overlay",
+  "run_directory": "/data/shapeforge/runtime/runs/insertion_wrist_focus_overlay_20261125_r11",
+  "video": {
+    "path": "/data/shapeforge/runtime/runs/insertion_wrist_focus_overlay_20261125_r11/film/alignment_insertion_geometry_pose_1080p.mp4",
+    "frames": 542,
+    "fps": 30,
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "duration_s": 18.066666666666666,
+    "bytes": 3272865,
+    "sha256": "1ef1605949f7a5e0adfe8b6890cfe3d6a8a29f5313f660242267db6ca38ec9da"
+  },
+  "delivery": {
+    "机器人插接_WG-r15_腕部仅橙绿重点_r11_20261125.mp4": {
+      "path": "/home/linux/Downloads/机器人插接_WG-r15_腕部仅橙绿重点_r11_20261125.mp4",
+      "bytes": 3272865,
+      "sha256": "1ef1605949f7a5e0adfe8b6890cfe3d6a8a29f5313f660242267db6ca38ec9da"
+    },
+    "机器人插接_WG-r15_腕部重点叠加_封面_20261125.png": {
+      "path": "/home/linux/Downloads/机器人插接_WG-r15_腕部重点叠加_封面_20261125.png",
+      "bytes": 548755,
+      "sha256": "a3e08d44404d229e829090529b99333a32571a28ba5b21f14113e37b7f6e73a0"
+    },
+    "腕部点云叠加_仅橙绿重点_前后对比_20261125.png": {
+      "path": "/home/linux/Downloads/腕部点云叠加_仅橙绿重点_前后对比_20261125.png",
+      "bytes": 301953,
+      "sha256": "b3bfb9154358e01330716f3f989a0f4bb7e62b50582ee33862a92727febc59f2"
+    },
+    "机器人插接_WG-r15_腕部重点叠加_过程预览_20261125.jpg": {
+      "path": "/home/linux/Downloads/机器人插接_WG-r15_腕部重点叠加_过程预览_20261125.jpg",
+      "bytes": 563358,
+      "sha256": "6a3af19a2424989a6ddc1025f2ea64fb397e4a36129a1e7b23359921dccc98f5"
+    }
+  },
+  "wrist_overlay": "focus-only",
+  "wrist_ordinary_markers_drawn": false,
+  "original_rgb_retained_elsewhere": true,
+  "full_geometry_still_used_for_depth_test": true,
+  "standalone_3d_panel_unchanged": true,
+  "r10_colors_preserved": true,
+  "point_sampling_or_poses_or_cameras_changed": false,
+  "playback_rate": 3,
+  "candidate_user_reviewed": false,
+  "source_sha256": {
+    "/home/linux/omi_folder/omi_shapeforge/scripts/perception/render_alignment_film.py": "300c991a904d4889bafdac06e289d6707c32eb4844d3ac818dd7d01a80414333",
+    "/home/linux/omi_folder/omi_shapeforge/scripts/perception/render_module_palette_film.py": "1a75b55989ea6d0c706dbc57a4b01b90265aa2ca0d2c99a052e86f1f42515d1f",
+    "/home/linux/omi_folder/omi_shapeforge/scripts/perception/render_insertion_multiview.py": "cbfc74efafe7761daedf9708c31d54d5384483d7d288b8ca00cb210d7872f3d4",
+    "/home/linux/omi_folder/omi_shapeforge/configs/pointcloud_presentation.json": "27b9584ed8dec6df7ce391c612bb25621d2ee096b8c2cc3f5e0afc80906b1a8c",
+    "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_capture/capture_report.json": "b24f9a73d4ca70cf2965427baf6de177513e2d6880240a267060b40fbd3c18c4",
+    "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_templates/manifest.json": "128f46c1428a27d38c83c568698247a78a4a3252d26db03686bc31bb20bc7311",
+    "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_templates/module.npz": "b0deb4320e757b53f7805dc9ded9b9e8f1cdc2545e7e0d187d7b75fb01143b22",
+    "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_templates/socket.npz": "6fe1dbacdabe7ea276d286d0f20d7051d37fa75010301c5137b5f9defaca02b6"
+  },
+  "pointcloud_source": "simulation pose reference / ground-truth stand-in; NOT learned predictions",
+  "network_inference": false,
+  "new_physics_run": false,
+  "asset_identity": {
+    "tool": "WG-DAIMON-LOGO-r15",
+    "module": "OM-001/V4 r08",
+    "contract": "wva01-closed-reference-fixture-v1",
+    "integration_release": "SC-WVA01-ISAAC-FIXTURE-r01",
+    "grasp": "fixed module insertion fixture using GC-r01 settled reference pose; NOT free contact grasp"
+  },
+  "grasp_mode": "fixed fixture unchanged from r10",
+  "r10_deliveries_preserved": true,
+  "quality_check": "/data/shapeforge/runtime/runs/insertion_wrist_focus_overlay_20261125_r11/quality_check.json",
+  "documentation": "docs/agent/perception/evolution/alignment-insertion-film.md",
+  "handoff_documentation": "docs/chronicles/2026-11-25-pointcloud-video-handoff.md",
+  "documentation_confirmation": {
+    "date": "2026-11-25",
+    "user_quote": "好的，请你帮忙写到docs文件夹里吧",
+    "scope": "confirm and archive requested presentation rules and delivered r11 evidence",
+    "video_changed": false
+  }
+}

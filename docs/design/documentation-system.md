@@ -1,5 +1,7 @@
 # 文档体系与维护规则
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../agent/interfaces/local-resources.md)。
+
 ## 本轮项目参数
 
 项目为当前仓库 `omi_shapeforge`，领域为 perception 和 simulation。交接资料来自迁移包 HANDOFF、光模块便携包说明及已有验证 JSON；参考项目为同级 FoundationStereo、BundleSDF 和仅作资产资料来源的 omi_proj。大资源根目录由工作区配置指定，本机为 `/data/omi_runtime`；环境与暂缓范围见资源清单及当前总览。

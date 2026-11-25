@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "asset_id": "WG-DAIMON-PHOTO-r16",
+  "status": "unreviewed independent raw-domain visual candidate",
+  "internal_stage": "raw1920 profile and color refinement after initial uniform-width trial",
+  "asset_directory": "/data/shapeforge/runtime/assets/daimon/wrist_gripper_photo_r16",
+  "run_directory": "/data/shapeforge/runtime/runs/wrist_photo_refinement_20261125_r16",
+  "asset_manifest_sha256": "d108671517ff410d51b6bef5caf65f0da0bfc0f9107b3a50a5d53269d1e28d7d",
+  "delivery_manifest": "/data/shapeforge/runtime/assets/daimon/wrist_gripper_photo_r16/delivery_manifest.json",
+  "delivery_manifest_sha256": "d39a8f544dfe37ed8a47dd08eca514a61753dd7c84fea8390e8dec96309ddd0b",
+  "delivery": {
+    "腕部原图1920_真实与r16候选_20261125.png": {
+      "path": "/home/linux/Downloads/腕部原图1920_真实与r16候选_20261125.png",
+      "sha256": "e489531e2a796cd63650665d16976c578d6bf3758048808fdcb6ffb8fc15fffb",
+      "bytes": 1767094
+    },
+    "腕部同一裁剪链_真实_r15_r16_20261125.png": {
+      "path": "/home/linux/Downloads/腕部同一裁剪链_真实_r15_r16_20261125.png",
+      "sha256": "e4daaf876d09748c37ba31fa50a19ee9da8c99fdfc71f19cb002a7704437339b",
+      "bytes": 526105
+    },
+    "夹爪相机_原图域最终核查_r16_20261125.json": {
+      "path": "/home/linux/Downloads/夹爪相机_原图域最终核查_r16_20261125.json",
+      "sha256": "6f3c10ff50eb332c8cb62df28bf7543c12d51de8cfa0ce9133d03097406b9f19",
+      "bytes": 12452
+    },
+    "腕部相机_原图裁剪与内参映射_20261125.json": {
+      "path": "/home/linux/Downloads/腕部相机_原图裁剪与内参映射_20261125.json",
+      "sha256": "76240a15e6469682f7bf1301f74151712a7490b19acb3d06bdf9866f668dec70",
+      "bytes": 5719
+    },
+    "腕部相机_15单元真实图像总览_20261125.png": {
+      "path": "/home/linux/Downloads/腕部相机_15单元真实图像总览_20261125.png",
+      "sha256": "47321198495c3c2ac86d6a2ba5ef9bc5b37b6e6d132faf53b22f4f3f9c479ad9",
+      "bytes": 1562640
+    },
+    "WG-r16_原图域修订候选_20261125.glb": {
+      "path": "/home/linux/Downloads/WG-r16_原图域修订候选_20261125.glb",
+      "sha256": "1e37738fc7fd646dbff2b6c7fdda72dc7a2b8cb2d7022dccff616fefb17d72e1",
+      "bytes": 5561568
+    },
+    "WG-r16_原图域修订候选_含证据_20261125.zip": {
+      "path": "/home/linux/Downloads/WG-r16_原图域修订候选_含证据_20261125.zip",
+      "sha256": "a5c3902e486c001347814bd8bc73adee15cc613b9db789b184bdcbe87f15870f",
+      "bytes": 15441319
+    }
+  },
+  "previous_internal_delivery_preserved": "/data/shapeforge/runtime/runs/wrist_photo_refinement_20261125_r16/initial_delivery_record.json",
+  "geometry_changed_parts": 2,
+  "unchanged_obj_files": 47,
+  "accepted_WVA01_and_original_r15_unchanged": true,
+  "camera_parameters_changed": false,
+  "intrinsics_device_identity_user_confirmed": true,
+  "raw_collection_domain_traced": true,
+  "new_intrinsic_or_handeye_calibration": false,
+  "raw_profile_fit": {
+    "domain": "original1920x1080; no crop or resize used in fitting",
+    "camera_fixed": true,
+    "intrinsics_fixed": true,
+    "front_face_root_width_y_mm": 15.930723468715064,
+    "back_root_width_y_mm_retained": 18.95,
+    "back_depth_x_mm_retained": [
+      -13,
+      13.5
+    ],
+    "profile_model": "small linear cross-depth taper, retaining root back envelope and optical/front face plane",
+    "r15_selected_edge_mean_px": 5.62037504505654,
+    "first_uniform_r16_selected_edge_mean_px": 6.483621059966462,
+    "refined_selected_edge_mean_px": 2.8619578028890884,
+    "refined_selected_edge_max_px": 4.615036676309943,
+    "projected_raw_xy": [
+      [
+        919.5922725854617,
+        712.5845083443112
+      ],
+      [
+        839.7074232679951,
+        783.2715351173736
+      ],
+      [
+        914.6464987662297,
+        786.4168494258652
+      ],
+      [
+        1022.5709586652531,
+        713.1674114406519
+      ],
+      [
+        1101.8546265223915,
+        784.7396974060268
+      ],
+      [
+        1026.95309078447,
+        787.0450772205373
+      ],
+      [
+        970.8672046858889,
+        1003.0053791008881
+      ]
+    ],
+    "target_raw_xy": [
+      [
+        918.0,
+        716.0
+      ],
+      [
+        840.0,
+        781.0
+      ],
+      [
+        918.0,
+        784.0
+      ],
+      [
+        1020.0,
+        717.0
+      ],
+      [
+        1102.0,
+        784.0
+      ],
+      [
+        1028.0,
+        785.0
+      ],
+      [
+        970.0,
+        1005.0
+      ]
+    ],
+    "scope": "development-frame geometry fit using seven existing manually selected edges; not independent calibration or held-out accuracy"
+  },
+  "camera_audit": "/data/shapeforge/runtime/runs/wrist_photo_refinement_20261125_r16/camera_pixel_audit_final.json",
+  "capture_domain_trace": "/data/shapeforge/runtime/runs/wrist_photo_refinement_20261125_r16/capture_domain_trace.json",
+  "static_validation": "/data/shapeforge/runtime/assets/daimon/wrist_gripper_photo_r16/validation.json",
+  "blender_reopen": "/data/shapeforge/runtime/assets/daimon/wrist_gripper_photo_r16/blender_reopen.json",
+  "new_collision_physics_or_RL": false,
+  "documentation": "docs/agent/simulation/evolution/wrist-photo-refinement-r16.md"
+}

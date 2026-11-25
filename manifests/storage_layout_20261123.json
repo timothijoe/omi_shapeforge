@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "id": "storage-layout-20261123",
+  "date": "2026-11-23",
+  "status": "physical_directory_moves_verified",
+  "canonical_storage_root": "/data/shapeforge/storage",
+  "local_index": "/data/shapeforge/README.md",
+  "current_storage_contract": "docs/agent/interfaces/local-resources.md",
+  "chronicle": "docs/chronicles/2026-11-23-storage-layout.md",
+  "mapping": [
+    {
+      "id": "reconstruction_import",
+      "legacy_path": "/data/nov_19_folder",
+      "canonical_path": "/data/shapeforge/storage/imports/reconstruction_2026-11-19",
+      "files": 100,
+      "logical_bytes": 64361048406
+    },
+    {
+      "id": "capture_import",
+      "legacy_path": "/data/zt-think-d1-data/nov_22",
+      "canonical_path": "/data/shapeforge/storage/imports/capture_session_2026-11-22",
+      "files": 3684,
+      "logical_bytes": 13382636376
+    },
+    {
+      "id": "asset_export",
+      "legacy_path": "/data/omi_migration/shapeforge_assets_20261121T051808Z",
+      "canonical_path": "/data/shapeforge/storage/exports/shapeforge_assets_2026-11-21",
+      "files": 35,
+      "logical_bytes": 13365647595
+    },
+    {
+      "id": "restore_check",
+      "legacy_path": "/data/omi_migration/shapeforge_assets_20261121T051808Z_restore_check",
+      "canonical_path": "/data/shapeforge/storage/restore_checks/shapeforge_assets_2026-11-21",
+      "files": 691,
+      "logical_bytes": 37067787
+    }
+  ],
+  "compatibility_links": [
+    {
+      "source": "/data/nov_19_folder",
+      "destination": "/data/shapeforge/storage/imports/reconstruction_2026-11-19"
+    },
+    {
+      "source": "/data/zt-think-d1-data/nov_22",
+      "destination": "/data/shapeforge/storage/imports/capture_session_2026-11-22"
+    },
+    {
+      "source": "/data/omi_migration/shapeforge_assets_20261121T051808Z",
+      "destination": "/data/shapeforge/storage/exports/shapeforge_assets_2026-11-21"
+    },
+    {
+      "source": "/data/omi_migration/shapeforge_assets_20261121T051808Z_restore_check",
+      "destination": "/data/shapeforge/storage/restore_checks/shapeforge_assets_2026-11-21"
+    },
+    {
+      "source": "/data/shapeforge/storage/exports/shapeforge_assets_2026-11-21_restore_check",
+      "destination": "/data/shapeforge/storage/restore_checks/shapeforge_assets_2026-11-21",
+      "reason": "Original run_validation.py and load_scenes.py derive this sibling path from resolved __file__; original files remain unchanged."
+    }
+  ],
+  "validation": {
+    "same_filesystem_atomic_rename": true,
+    "file_identity_and_metadata_preserved": true,
+    "regular_files": 4510,
+    "logical_bytes": 91146400164,
+    "small_file_sha256_limit_bytes": 1048576,
+    "small_file_sha256_pairs_verified": 3597,
+    "large_files_fully_rehashed": false,
+    "entries_accessible_from_both_paths": 5162,
+    "scene_xml_files_checked": 5,
+    "scene_file_references_checked": 1372,
+    "runtime_workflows_rerun": false,
+    "payloads_copied": false,
+    "payloads_deleted": false
+  },
+  "evidence": {
+    "verification.json": {
+      "path": "/data/shapeforge/maintenance/migrations/20261123T135858Z/verification.json",
+      "sha256": "19beec9b26cadd39d47bead9cae83658943000b8aa0cfb8419264c9787f46d28"
+    },
+    "post_migration_validation.json": {
+      "path": "/data/shapeforge/maintenance/migrations/20261123T135858Z/post_migration_validation.json",
+      "sha256": "9fd48b0e955c1c1ff70e89d53b20b2dbaa0b0223b00014205fc3b1b9b562c036"
+    },
+    "before.jsonl": {
+      "path": "/data/shapeforge/maintenance/migrations/20261123T135858Z/before.jsonl",
+      "sha256": "2f3177f94f2b83e8624f267b16e834262f0c253cf215c5fe41461587b5c54701"
+    },
+    "after.jsonl": {
+      "path": "/data/shapeforge/maintenance/migrations/20261123T135858Z/after.jsonl",
+      "sha256": "2f3177f94f2b83e8624f267b16e834262f0c253cf215c5fe41461587b5c54701"
+    }
+  },
+  "restore_policy": [
+    "Restore each canonical batch once, preserving internal layout and file bytes.",
+    "Recreate all compatibility links, including the export script-derived sibling restore path.",
+    "Restore current source worktrees and external dependencies separately; this mapping is not a full backup.",
+    "Preserve dated historical manifests and reports; update current paths in resources.json and this contract instead of bulk replacing frozen records."
+  ],
+  "runtime_root_unchanged": "/data/omi_runtime"
+}

@@ -1,5 +1,34 @@
 # 跨领域阶段与交接记录
 
+- [2026-11-25：点云展示与r11视频交接](2026-11-25-pointcloud-video-handoff.md)：腕部仅橙绿重点、独立完整点云、冷银灰色表、视频与验证恢复入口。
+
+- [2026-11-24：快速5子步规则插入精度核查](2026-11-24-isaac-rule-precision.md)
+
+- [2026-11-24：Isaac学习与控制吞吐窗口收尾](2026-11-24-isaac-performance-window-handoff.md)：全链路优化、55 ms建议配方、默认值与接续限制。
+
+- [2026-11-24：5子步、后台记录与渲染子帧对照](2026-11-24-isaac-fast-collection.md)
+
+- [2026-11-24：GPU物理兼容模式与单环境CPU／GPU对照](2026-11-24-isaac-gpu-physics.md)
+
+- [2026-11-24：完整控制步排查、默认预览与重复计算优化](2026-11-24-isaac-step-profile.md)
+
+- [2026-11-24：天机原厂IK适配与PhysX闭环验证](2026-11-24-tianji-native-ik.md)
+
+- [2026-11-24：50段多样化示范与BC闭环检查](2026-11-24-diverse-demonstrations.md)
+
+- [2026-11-24：控制耗时拆分与四档物理子步对照](2026-11-24-isaac-control-throughput.md)
+
+
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。历史阶段正文保留当时记录。目录映射与恢复要求见[当前资源契约](../agent/interfaces/local-resources.md)。
+
+- [2026-11-23：runtime实体归拢与兼容验证](2026-11-23-runtime-relocation.md)
+
+- [2026-11-23：存储入口统一、实体归类与兼容路径验证](2026-11-23-storage-layout.md)
+
+- [2026-11-23：143收尾排查与分阶段BC／RL重训](2026-11-23-shutdown-audit-staged-retraining.md)
+
+- [2026-11-23：在线接管恢复接入与真实RPC验证](2026-11-23-online-insertion-recovery.md)
+
 - [2026-11-23本窗口交接：Isaac插入、规则反馈RL与收尾](2026-11-23-isaac-rule-rl-window-handoff.md)
 
 - [2026-11-23：规则插入成功率、demo展示与收尾](2026-11-23-rule-insertion-review.md)

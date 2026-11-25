@@ -1,5 +1,7 @@
 # 查看与复现完整表面点云和网络原型
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../docs/agent/interfaces/local-resources.md)。
+
 窗口：`http://127.0.0.1:8890`。第一页可旋转模型并选择512／2048／8192／16384点；“显示加密区域”标出全表面／关键区分配。第二页展示输入图片与实际未训练网络输出，可勾选叠加观察；不代表识别成功。
 
 运行根目录：`/data/omi_runtime/runs/image_to_complete_surface_20261122/`。

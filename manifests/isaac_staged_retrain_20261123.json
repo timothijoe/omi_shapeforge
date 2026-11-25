@@ -1,0 +1,862 @@
+{
+  "schema_version": 1,
+  "id": "isaac-staged-retrain-20261123",
+  "run_root": "/data/omi_runtime/runs/isaac_staged_retrain_20261123",
+  "guide": "docs/agent/simulation/evolution/staged-retraining.md",
+  "chronicle": "docs/chronicles/2026-11-23-shutdown-audit-staged-retraining.md",
+  "status": "bounded_training_and_evaluation_complete",
+  "validation": {
+    "protocol": {
+      "socket": "/data/omi_runtime/runs/isaac_staged_retrain_20261123/worker.sock",
+      "transfer": "/data/omi_runtime/runs/staged_contact_20261123/robot_transfer",
+      "pretrained": "/data/omi_runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/pretrained/serl_resnet10/backbone.pt",
+      "pretrained_sha256": "fc0e3f9c6b54249eaa190bd80d3c22394d5d9a69506835259e7c6ba01d892aa2",
+      "max_steps": 900,
+      "training_seeds": [
+        1100,
+        1101,
+        1102,
+        1103
+      ],
+      "validation_seeds": [
+        1120,
+        1121
+      ],
+      "test_seeds": [
+        1700,
+        1701
+      ],
+      "rl_seeds": [
+        1800,
+        1801,
+        1802
+      ],
+      "bc_steps": 3000,
+      "bc_batch": 64,
+      "batch": 16,
+      "capacity": 4096,
+      "critic_warmup": 128,
+      "updates_per_episode": 256,
+      "gamma": 0.995,
+      "bc_weight": 10.0,
+      "actor_learning_rate": 1e-05,
+      "feedback": "privileged rule takeover; not human operator",
+      "teacher_guard": "initial alignment; task recovery signal; hold through retreat/alignment/qualified reentry; bounded retries",
+      "evaluation": "policy only; phase-qualified entry and persistent contact assessment; no teacher action limiter",
+      "stage": "staged-contact experiment; privileged rule feedback; no real-robot transfer claim",
+      "preset": "staged-retrain",
+      "demonstration_targets": {
+        "training": 2,
+        "validation": 1
+      },
+      "comparison": "small staged-contact trial; BC/RL share held-out initial states; RL has extra online data; not an equal-data algorithm ablation",
+      "evaluation_selection": "final RL checkpoint fixed in advance; no test-based model selection",
+      "intervention_contract": "isaac-staged-recovery-ownership-v1"
+    },
+    "demonstration_attempts": [
+      {
+        "episode": "rule_001100",
+        "split": "training",
+        "seed": 1100,
+        "success": true,
+        "steps": 400,
+        "failure": null
+      },
+      {
+        "episode": "rule_001101",
+        "split": "training",
+        "seed": 1101,
+        "success": true,
+        "steps": 392,
+        "failure": null
+      },
+      {
+        "episode": "rule_001120",
+        "split": "validation",
+        "seed": 1120,
+        "success": true,
+        "steps": 391,
+        "failure": null
+      }
+    ],
+    "training_samples": 792,
+    "validation_samples": 391,
+    "bc_updates": 3000,
+    "bc_selected_step": 2800,
+    "critic_updates": 896,
+    "actor_updates": 384,
+    "online_episodes": [
+      {
+        "episode": 1,
+        "seed": 1800,
+        "steps": 447,
+        "assisted_success": true,
+        "intervention_steps": 104,
+        "policy_steps": 343,
+        "policy_version_used": 128,
+        "updates_before": 128,
+        "updates_after": 384,
+        "actor_parameter_max_change": 0.0014428142458200455,
+        "final_depth_mm": 51.27955579502446
+      },
+      {
+        "episode": 2,
+        "seed": 1801,
+        "steps": 74,
+        "assisted_success": false,
+        "intervention_steps": 48,
+        "policy_steps": 26,
+        "policy_version_used": 384,
+        "updates_before": 384,
+        "updates_after": 640,
+        "actor_parameter_max_change": 0.0014554164372384548,
+        "final_depth_mm": 6.13802540579537
+      },
+      {
+        "episode": 3,
+        "seed": 1802,
+        "steps": 404,
+        "assisted_success": true,
+        "intervention_steps": 120,
+        "policy_steps": 284,
+        "policy_version_used": 640,
+        "updates_before": 640,
+        "updates_after": 896,
+        "actor_parameter_max_change": 0.0014565675519406796,
+        "final_depth_mm": 51.276085260858196
+      }
+    ],
+    "action_sources": {
+      "policy": 653,
+      "scripted_intervention": 272
+    },
+    "human_actions": 0,
+    "bc_evaluation": {
+      "cases": [
+        {
+          "seed": 1700,
+          "steps": 68,
+          "is_success": false,
+          "depth_mm": 6.126323013928815,
+          "failure": "entrance_not_qualified",
+          "teacher_requests": 0,
+          "max_control_force_N": 0.0,
+          "terminated": true,
+          "truncated": false,
+          "max_substep_force_N": 0.0,
+          "max_point_penetration_mm": 0.0
+        },
+        {
+          "seed": 1701,
+          "steps": 804,
+          "is_success": false,
+          "depth_mm": 51.19940012916821,
+          "failure": "large_mean_contact_load",
+          "teacher_requests": 0,
+          "max_control_force_N": 39.820327855852945,
+          "terminated": true,
+          "truncated": false,
+          "max_substep_force_N": 36481.89241299406,
+          "max_point_penetration_mm": 0.06376679812092334
+        }
+      ],
+      "success_rate": 0.0,
+      "policy_version": 0,
+      "deterministic": true,
+      "teacher_enabled": false,
+      "replay_written": false,
+      "checkpoint_sha256": "7538e791330c892645a3a5895832e2224d36a3272ec7b280ba7dd346554ec92a"
+    },
+    "rl_evaluation": {
+      "cases": [
+        {
+          "seed": 1700,
+          "steps": 123,
+          "is_success": false,
+          "depth_mm": 6.015771042422003,
+          "failure": "entrance_not_qualified",
+          "teacher_requests": 0,
+          "max_control_force_N": 12.162599426069653,
+          "terminated": true,
+          "truncated": false,
+          "max_substep_force_N": 88.55877410339843,
+          "max_point_penetration_mm": 0.0466472702100873
+        },
+        {
+          "seed": 1701,
+          "steps": 72,
+          "is_success": false,
+          "depth_mm": 6.007703294230577,
+          "failure": "entrance_not_qualified",
+          "teacher_requests": 0,
+          "max_control_force_N": 0.4706184336100705,
+          "terminated": true,
+          "truncated": false,
+          "max_substep_force_N": 3.9923995791468845,
+          "max_point_penetration_mm": 0.005580601282417774
+        }
+      ],
+      "success_rate": 0.0,
+      "policy_version": 896,
+      "deterministic": true,
+      "teacher_enabled": false,
+      "replay_written": false,
+      "checkpoint_sha256": "b5e7e0b455c7105e035ebe544a1d08d66cca150018538caed6759fa007dd28e9"
+    },
+    "resume": {
+      "from_updates": 640,
+      "actor_exact_reload": true,
+      "state_exact_reload": {
+        "actor": true,
+        "critic": true,
+        "target": true,
+        "actor_optimizer": true,
+        "critic_optimizer": true,
+        "alpha_optimizer": true
+      }
+    },
+    "independent_reload": {
+      "updates": 896,
+      "network_and_optimizer_exact_reload": {
+        "actor": true,
+        "critic": true,
+        "target": true,
+        "actor_optimizer": true,
+        "critic_optimizer": true,
+        "alpha_optimizer": true
+      },
+      "replay_size": 925,
+      "action_sources": {
+        "policy": 653,
+        "scripted_intervention": 272
+      },
+      "human_mask_count": 0,
+      "frozen_encoder_unchanged": true
+    },
+    "interventions": {
+      "episodes": [
+        {
+          "steps": 447,
+          "source_steps": {
+            "scripted_intervention": 104,
+            "policy": 343
+          },
+          "policy_steps": 343,
+          "intervention_steps": 104,
+          "intervention_events": [
+            {
+              "source": "scripted_intervention",
+              "start_index": 0,
+              "end_index": 7,
+              "start_step": 1,
+              "end_step": 8,
+              "steps": 8,
+              "starts_episode": true,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 46,
+              "end_index": 53,
+              "start_step": 47,
+              "end_step": 54,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 96,
+              "end_index": 103,
+              "start_step": 97,
+              "end_step": 104,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 163,
+              "end_index": 170,
+              "start_step": 164,
+              "end_step": 171,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 196,
+              "end_index": 203,
+              "start_step": 197,
+              "end_step": 204,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 232,
+              "end_index": 239,
+              "start_step": 233,
+              "end_step": 240,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 278,
+              "end_index": 285,
+              "start_step": 279,
+              "end_step": 286,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 303,
+              "end_index": 310,
+              "start_step": 304,
+              "end_step": 311,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 339,
+              "end_index": 346,
+              "start_step": 340,
+              "end_step": 347,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 364,
+              "end_index": 371,
+              "start_step": 365,
+              "end_step": 372,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 388,
+              "end_index": 395,
+              "start_step": 389,
+              "end_step": 396,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 412,
+              "end_index": 419,
+              "start_step": 413,
+              "end_step": 420,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 436,
+              "end_index": 443,
+              "start_step": 437,
+              "end_step": 444,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            }
+          ],
+          "event_outcomes": {
+            "returned_to_policy": 13
+          },
+          "initial_events": 1,
+          "noninitial_events": 12,
+          "episode_complete": true,
+          "episode_success": true,
+          "handback_is_not_task_success": true,
+          "episode_number": 1,
+          "seed": 1800,
+          "directory": "/data/omi_runtime/runs/isaac_staged_retrain_20261123/study/rl/episodes/online_0000_1795442259546754535"
+        },
+        {
+          "steps": 74,
+          "source_steps": {
+            "scripted_intervention": 48,
+            "policy": 26
+          },
+          "policy_steps": 26,
+          "intervention_steps": 48,
+          "intervention_events": [
+            {
+              "source": "scripted_intervention",
+              "start_index": 0,
+              "end_index": 7,
+              "start_step": 1,
+              "end_step": 8,
+              "steps": 8,
+              "starts_episode": true,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 11,
+              "end_index": 18,
+              "start_step": 12,
+              "end_step": 19,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 23,
+              "end_index": 30,
+              "start_step": 24,
+              "end_step": 31,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 35,
+              "end_index": 42,
+              "start_step": 36,
+              "end_step": 43,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 51,
+              "end_index": 58,
+              "start_step": 52,
+              "end_step": 59,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 65,
+              "end_index": 72,
+              "start_step": 66,
+              "end_step": 73,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            }
+          ],
+          "event_outcomes": {
+            "returned_to_policy": 6
+          },
+          "initial_events": 1,
+          "noninitial_events": 5,
+          "episode_complete": true,
+          "episode_success": false,
+          "handback_is_not_task_success": true,
+          "episode_number": 2,
+          "seed": 1801,
+          "directory": "/data/omi_runtime/runs/isaac_staged_retrain_20261123/study/rl/episodes/online_0001_1795442642427528493"
+        },
+        {
+          "steps": 404,
+          "source_steps": {
+            "scripted_intervention": 120,
+            "policy": 284
+          },
+          "policy_steps": 284,
+          "intervention_steps": 120,
+          "intervention_events": [
+            {
+              "source": "scripted_intervention",
+              "start_index": 0,
+              "end_index": 7,
+              "start_step": 1,
+              "end_step": 8,
+              "steps": 8,
+              "starts_episode": true,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 26,
+              "end_index": 33,
+              "start_step": 27,
+              "end_step": 34,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 55,
+              "end_index": 62,
+              "start_step": 56,
+              "end_step": 63,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 73,
+              "end_index": 80,
+              "start_step": 74,
+              "end_step": 81,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 120,
+              "end_index": 127,
+              "start_step": 121,
+              "end_step": 128,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 156,
+              "end_index": 163,
+              "start_step": 157,
+              "end_step": 164,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 168,
+              "end_index": 175,
+              "start_step": 169,
+              "end_step": 176,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 186,
+              "end_index": 193,
+              "start_step": 187,
+              "end_step": 194,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 223,
+              "end_index": 230,
+              "start_step": 224,
+              "end_step": 231,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 237,
+              "end_index": 244,
+              "start_step": 238,
+              "end_step": 245,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 259,
+              "end_index": 266,
+              "start_step": 260,
+              "end_step": 267,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 276,
+              "end_index": 283,
+              "start_step": 277,
+              "end_step": 284,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 325,
+              "end_index": 332,
+              "start_step": 326,
+              "end_step": 333,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 347,
+              "end_index": 354,
+              "start_step": 348,
+              "end_step": 355,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            },
+            {
+              "source": "scripted_intervention",
+              "start_index": 381,
+              "end_index": 388,
+              "start_step": 382,
+              "end_step": 389,
+              "steps": 8,
+              "starts_episode": false,
+              "outcome": "returned_to_policy"
+            }
+          ],
+          "event_outcomes": {
+            "returned_to_policy": 15
+          },
+          "initial_events": 1,
+          "noninitial_events": 14,
+          "episode_complete": true,
+          "episode_success": true,
+          "handback_is_not_task_success": true,
+          "episode_number": 3,
+          "seed": 1802,
+          "directory": "/data/omi_runtime/runs/isaac_staged_retrain_20261123/study/rl/episodes/online_0002_1795442730096541051"
+        }
+      ],
+      "episode_count": 3,
+      "assisted_successes": 2,
+      "intervention_steps": 272,
+      "policy_steps": 653,
+      "initial_events": 3,
+      "noninitial_events": 31,
+      "noninitial_event_outcomes": {
+        "returned_to_policy": 31
+      },
+      "handback_is_not_task_success": true
+    },
+    "process_receipts": {
+      "complete": true,
+      "interrupted_signal": null,
+      "processes": {
+        "rl_process.json": {
+          "command": [
+            "/data/omi_runtime/envs/omi_sim_train/bin/python",
+            "-u",
+            "-m",
+            "omi_hil_rl.training.isaac_rule_feedback",
+            "rl",
+            "--episodes",
+            "2",
+            "--run",
+            "/data/omi_runtime/runs/isaac_staged_retrain_20261123/study"
+          ],
+          "state": "exited",
+          "start_new_session": true,
+          "returncode": 0,
+          "pid": 215388,
+          "pgid": 215388,
+          "elapsed_seconds": 480.7902141520008
+        },
+        "resume_rl_process.json": {
+          "command": [
+            "/data/omi_runtime/envs/omi_sim_train/bin/python",
+            "-u",
+            "-m",
+            "omi_hil_rl.training.isaac_rule_feedback",
+            "rl",
+            "--episodes",
+            "3",
+            "--resume",
+            "--run",
+            "/data/omi_runtime/runs/isaac_staged_retrain_20261123/study"
+          ],
+          "state": "exited",
+          "start_new_session": true,
+          "returncode": 0,
+          "pid": 220752,
+          "pgid": 220752,
+          "elapsed_seconds": 347.40867164599877
+        },
+        "init_process.json": {
+          "command": [
+            "/data/omi_runtime/envs/omi_sim_train/bin/python",
+            "-u",
+            "-m",
+            "omi_hil_rl.training.isaac_rule_feedback",
+            "init",
+            "--socket",
+            "/data/omi_runtime/runs/isaac_staged_retrain_20261123/worker.sock",
+            "--transfer",
+            "/data/omi_runtime/runs/staged_contact_20261123/robot_transfer",
+            "--pretrained",
+            "/data/omi_runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/pretrained/serl_resnet10/backbone.pt",
+            "--max-steps",
+            "900",
+            "--preset",
+            "staged-retrain",
+            "--run",
+            "/data/omi_runtime/runs/isaac_staged_retrain_20261123/study"
+          ],
+          "state": "exited",
+          "start_new_session": true,
+          "returncode": 0,
+          "pid": 177241,
+          "pgid": 177241,
+          "elapsed_seconds": 2.276032765999844
+        },
+        "shutdown_process.json": {
+          "command": [
+            "/data/omi_runtime/envs/omi_sim_train/bin/python",
+            "-u",
+            "-c",
+            "from omi_hil_rl.training.isaac_client import IsaacClient; import sys; c=IsaacClient(sys.argv[1]); print(c.request('shutdown')[0],flush=True); c.close()",
+            "/data/omi_runtime/runs/isaac_staged_retrain_20261123/worker.sock"
+          ],
+          "state": "exited",
+          "start_new_session": true,
+          "returncode": 0,
+          "pid": 225440,
+          "pgid": 225440,
+          "elapsed_seconds": 0.11614706000000297
+        },
+        "evaluate_bc_process.json": {
+          "command": [
+            "/data/omi_runtime/envs/omi_sim_train/bin/python",
+            "-u",
+            "-m",
+            "omi_hil_rl.training.isaac_rule_feedback",
+            "evaluate",
+            "--kind",
+            "bc",
+            "--run",
+            "/data/omi_runtime/runs/isaac_staged_retrain_20261123/study"
+          ],
+          "state": "exited",
+          "start_new_session": true,
+          "returncode": 0,
+          "pid": 198246,
+          "pgid": 198246,
+          "elapsed_seconds": 795.8691864150005
+        },
+        "worker_process.json": {
+          "command": [
+            "/data/isaac-sim-5.1.0/python.sh",
+            "-u",
+            "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/isaac_rl_worker.py",
+            "--transfer",
+            "/data/omi_runtime/runs/staged_contact_20261123/robot_transfer",
+            "--output",
+            "/data/omi_runtime/runs/isaac_staged_retrain_20261123/worker",
+            "--socket",
+            "/data/omi_runtime/runs/isaac_staged_retrain_20261123/worker.sock",
+            "--max-steps",
+            "900",
+            "--teacher-min-step-mm",
+            ".05",
+            "--target-overtravel-mm",
+            ".1"
+          ],
+          "state": "exited",
+          "start_new_session": true,
+          "returncode": 0,
+          "pid": 176489,
+          "pgid": 176489,
+          "elapsed_seconds": 2771.155000798999
+        },
+        "collect_process.json": {
+          "command": [
+            "/data/omi_runtime/envs/omi_sim_train/bin/python",
+            "-u",
+            "-m",
+            "omi_hil_rl.training.isaac_rule_feedback",
+            "collect",
+            "--run",
+            "/data/omi_runtime/runs/isaac_staged_retrain_20261123/study"
+          ],
+          "state": "exited",
+          "start_new_session": true,
+          "returncode": 0,
+          "pid": 177294,
+          "pgid": 177294,
+          "elapsed_seconds": 945.2174819089996
+        },
+        "evaluate_rl_process.json": {
+          "command": [
+            "/data/omi_runtime/envs/omi_sim_train/bin/python",
+            "-u",
+            "-m",
+            "omi_hil_rl.training.isaac_rule_feedback",
+            "evaluate",
+            "--kind",
+            "rl",
+            "--run",
+            "/data/omi_runtime/runs/isaac_staged_retrain_20261123/study"
+          ],
+          "state": "exited",
+          "start_new_session": true,
+          "returncode": 0,
+          "pid": 223852,
+          "pgid": 223852,
+          "elapsed_seconds": 154.5749606749996
+        },
+        "bc_process.json": {
+          "command": [
+            "/data/omi_runtime/envs/omi_sim_train/bin/python",
+            "-u",
+            "-m",
+            "omi_hil_rl.training.isaac_rule_feedback",
+            "bc",
+            "--run",
+            "/data/omi_runtime/runs/isaac_staged_retrain_20261123/study"
+          ],
+          "state": "exited",
+          "start_new_session": true,
+          "returncode": 0,
+          "pid": 197782,
+          "pgid": 197782,
+          "elapsed_seconds": 20.746014475000266
+        }
+      }
+    },
+    "source_unchanged_during_training": true,
+    "full_pipeline_clean_shutdown": true,
+    "historical_143_cause_resolved": false,
+    "physical_accuracy_validated": false,
+    "evaluation_scope": "two fixed held-out initial joint perturbations; no claim of general insertion ability",
+    "causal_algorithm_improvement_claimed": false
+  },
+  "shutdown_audit": "/data/omi_runtime/runs/isaac_shutdown_audit_20261123/summary.json",
+  "artifacts_sha256": {
+    "summary.json": "16146c4e56ab67c3844e718a5347c4a4e820e12eccd8ddb6f405f0a659580dc1",
+    "pipeline_receipts.json": "2c8cfbe0450951d9ead9bed4dd595b045dc9d7f82d0bcb1451a609d4bcd121c3",
+    "tool_session_receipt.json": "16b0549351895b5b4048fe678756b50569f0fe7f0339b7ccd8efd7d68fb6cd43",
+    "behaviour_analysis.json": "9dae3a02eda97b2311f4f67e554debabdd04607df7ad9cd0a71c8b9415349204",
+    "protocol.json": "16bef08916eb58c912bb722cbd124540f694bd077fd38a879f3c732515bd98fc",
+    "learning_summary.png": "e884230c1c0fede5a73dd9593d3bd62d946eba83cc06f7f5e71e5aaa48cd072a",
+    "study/contract.json": "194327e60ca511adac2ba510cb1e2e0bb64c023313c62a8bae04ad9f409c2168",
+    "study/protocol.json": "2a0857b40d60165f0a4377226f1a466db7ffddbeaaeefde2c8d0ba9d880b1872",
+    "study/bc/actor.pt": "7538e791330c892645a3a5895832e2224d36a3272ec7b280ba7dd346554ec92a",
+    "study/rl/actor.pt": "b5e7e0b455c7105e035ebe544a1d08d66cca150018538caed6759fa007dd28e9",
+    "study/rl/learner.pt": "79131c0305c365c43788eb3086bc61d47f8338a2186ffb10ffd9678c9d549089",
+    "study/final_reload_audit.json": "1a45fa5d9f8a50808df3e04c77e8354555540957f627c8d8238313aa703f49cd"
+  }
+}

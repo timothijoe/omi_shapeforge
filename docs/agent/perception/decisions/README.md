@@ -1,5 +1,7 @@
 # 感知架构决定
 
+- [002：默认采用完整稀疏背景与关键面加密展示](002-layered-pointcloud-presentation.md)，状态 accepted。
+
 - [001：算法后端使用独立进程和环境](001-backend-processes.md)，状态 accepted。
 
 仅记录长期边界选择；普通参数和调试信息进入能力说明或阶段记录。

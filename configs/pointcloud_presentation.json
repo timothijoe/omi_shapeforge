@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "layered-points-v3-wrist-focus-only",
+  "adopted_date": "2026-11-25",
+  "documentation": "docs/agent/perception/evolution/pointcloud-presentation.md",
+  "default_point_style": "layered",
+  "default_palette": "component-grays",
+  "current_insertion_sampling": {
+    "ordinary_pitch_mm": 0.8,
+    "focus_pitch_mm": 0.2,
+    "scope": "current module/socket geometry; choose task-appropriate ROI and scale for other assets"
+  },
+  "display": {
+    "point_diameter_output_px": 1,
+    "same_point_diameter_for_all_layers": true,
+    "screen_thinning": false,
+    "point_dilation": false,
+    "hidden_focus_overlay": false,
+    "depth_tolerance_m": 1e-07,
+    "wrist_overlay": "focus-only"
+  },
+  "rgb": {
+    "module_ordinary": [
+      216,
+      221,
+      228
+    ],
+    "socket_upper_ordinary": [
+      176,
+      181,
+      188
+    ],
+    "support_ordinary": [
+      194,
+      205,
+      218
+    ],
+    "module_tip": [
+      255,
+      166,
+      68
+    ],
+    "socket_mouth": [
+      78,
+      240,
+      112
+    ]
+  },
+  "supersedes": "layered-points-v2-cool-silver",
+  "accepted_video_revision": "r10",
+  "default_module_tone": "cool-silver",
+  "requested_video_revision": "r11"
+}

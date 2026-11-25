@@ -1,5 +1,67 @@
 # 当前总览
 
+2026-11-25：[System1 与 System0 路径条件化插接讨论](design/system1-system0-path-conditioned-rl-discussion.md)已整理。当前倾向先验证路径条件化SAC直接六维动作，residual为备选对照；三维路径、horizon、异步消息及真机奖励均保留待验证项。本次未实施该架构或新增训练成绩。
+
+2026-11-25：[真实1920腕图追溯与r16外观候选](agent/simulation/evolution/wrist-photo-refinement-r16.md)：15单元287张原腕图哈希通过，确认完整原图与389ROI→128显示链；按原图域约束银壳正面，7个开发参考边缘平均约5.62→2.86 px，颜色由亮黄改为与真实橙色ROI接近。K/D及安装保持，r16仅候选，不替代已认可r15、碰撞或RL。
+
+2026-11-25：[r11腕部仅橙绿重点叠加](agent/perception/evolution/alignment-insertion-film.md)按用户追加要求制作：中间视图只画可见尖端／孔口点，其余恢复原腕图；右侧完整冷银灰点云及其他画面保持。新默认为`focus-only`，用户已确认显示规则并要求归档；[完整交接](chronicles/2026-11-25-pointcloud-video-handoff.md)已记录交付、验证和恢复，r10原片保留。
+
+2026-11-25：[r10冷银灰分层点云版已获用户认可](agent/perception/evolution/alignment-insertion-film.md)，登记为当前展示版本并采纳为后续模块普通点云默认色RGB(216,221,228)。普通稀疏／重点加密、同一点径和橙绿重点保持；正式视频与原试版字节一致，r9及旧片保留。此为展示认可，物理／网络边界不变。
+
+2026-11-25：[r9视频已被用户接受为可用版本，r10限定光模块普通点云配色候选](agent/perception/evolution/alignment-insertion-film.md)。比较三组低饱和中性色并制作冷银灰试版；源点、重点橙绿、其余部件和轨迹／镜头不变，旧片保留。制作阶段为候选；随后用户认可冷银灰r10并采纳为默认，见上条。物理／网络事实不变。
+
+2026-11-25：[分层点云展示方式获用户认可并设为多数后续展示的默认约定](agent/perception/evolution/pointcloud-presentation.md)：整体稀疏、重点加密，两层相同点径，普通面灰阶、指定橙／绿重点；兼容查看器和来源已留档。[r9插接视频](agent/perception/evolution/alignment-insertion-film.md)按此格式导出，18.07秒／1080p／3×，沿用r15固定夹持轨迹；旧影片／数据／训练合同保留，新影片待用户复审。
+
+2026-11-25：[r8插接点云中性灰阶](agent/perception/evolution/alignment-insertion-film.md)替代用户否定的r7配色：普通模块深灰、插座上部中灰、底座浅灰蓝，只有指定尖端橙／孔口绿保留鲜亮。沿用r15固定夹持回放、三视图及3×，仅改展示，历史片保留，r8待复审。
+
+2026-11-25：[r7插接点云部件分色](agent/perception/evolution/alignment-insertion-film.md)已按追加偏好导出：普通光模块暖灰橙、插座上部灰绿、底座原浅灰蓝，亮橙尖端与亮绿孔口不变。沿用r15固定夹持回放及三视图／3×，只改展示，历史影片保留；尚未获用户复审认可。
+
+2026-11-25：[WG-r15新版夹爪的Isaac插入视频及全组件版本表](agent/simulation/evolution/wva01-isaac-insertion.md)已交付，r10旧片留存。r15原网格／UV标志已接入，OM-r08、插座、URDF与相机核对为当前采用版本；新固定夹持回合586步通过，18.07秒／1080p／3×。GC-r01仅提供闭合参考，自由接触夹持移动未验收；无新网络或策略成绩。
+
+2026-11-24：用户已认可[简洁三视图r4展示](agent/perception/evolution/alignment-insertion-film.md)，原片与哈希保留；按其追加偏好交付r5，仅让模块普通点云比插座略深，橙色尖端／绿色孔口及排版节奏不变。偏好和认可范围已记录；18.07秒／1080p／3×，未运行网络或新物理试验。
+
+2026-11-24：[插接影片r4简洁版](agent/perception/evolution/alignment-insertion-film.md)已交付：仅模块尖端橙色、孔口绿色，其余点云浅灰；去掉辅助放大窗，改为三个等高主视图。18.07秒／1080p／标注3×回放，全部470状态保留，解码、画面与来源核查通过；仅改展示，未运行网络或物理新试验。
+
+2026-11-24：[橙绿点云与18.07秒插接展示版](agent/perception/evolution/alignment-insertion-film.md)已交付。模块橙色、插孔绿色，腕部空背景小窗改为局部放大；全部470状态按画面标明的3×连续回放，三视图同步。原轨迹中段约1.86mm/s，末段另减速；本次仅调整展示，物理控制及网络未改。
+
+2026-11-24：[未对准→对准→完整插入视频](agent/perception/evolution/alignment-insertion-film.md)已按参考图重做，51.5秒／1080p：实际18.62mm横向偏差和2.50°姿态偏差起步，在孔口外对准后再插入落座；三视图同步，浅灰完整表面、绿色重点，标题“几何位姿估计”。点云仍为仿真位姿参考，未运行网络或训练。
+
+2026-11-24：[完整插入三视图视频](agent/perception/evolution/insertion-gt-multiview.md)已交付：39.8秒／1080p，同一成功PhysX轨迹从未插入到落座，机器人第三人称、腕部叠加GT、重点着色三维点云同步显示。358个源状态无跳步，全片解码与来源核查通过；GT示意，未运行网络或新训练。
+
+2026-11-24：[点云估计展示视频](agent/perception/chronicles/2026-11-24-pointcloud-showcase-video.md)已交付，56秒／1080p／30fps，三维运镜与真实测试预测对照，保留最大误差；全片解码与来源核查通过。本次仅制作视频，未训练新细网格数据。
+
+2026-11-24当前确认：规则精度回归20／5子步均5/5，快速5子步最大终点横向误差约0.059 mm、角度0.0059°、深度误差＜0.001 mm；同一冻结RL网络五回合执行时间462.170→32.644秒，约14倍，但自主成功率新旧均0/5。速度、环境可插入性与策略能力分别记录，默认配置未改；按用户要求保存进展，本次不启动新实验。 [纪传体](agent/simulation/evolution/isaac-rule-precision.md) · [编年体](chronicles/2026-11-24-isaac-rule-precision.md)。
+
+2026-11-24：[快速配置规则精度回归](agent/simulation/evolution/isaac-rule-precision.md)完成。20／5子步各5例均成功；终点横向误差最大0.048／0.059 mm，角度最大0.0048／0.0059°，深度误差均小于0.001 mm。入口、稳定落座、位姿偏移及受阻恢复均核查；规则／判据未调参，物理诊断与带RGB正常轨迹一致。结论限于当前仿真场景，未重训BC／RL。
+
+2026-11-24后续：[真实RL策略5组新旧速度对照](agent/simulation/evolution/isaac-control-throughput.md)完成。同一冻结Actor，新旧各5回合：462.170→32.644秒，整体约14.16倍；按控制周期约13.50倍。两组均0/5成功、入口资格失败；无teacher或梯度更新，未连接真机。
+
+2026-11-24本窗口已按用户要求收口：[纪传体／控制吞吐总账](agent/simulation/evolution/isaac-control-throughput.md) · [编年体／学习与性能交接](chronicles/2026-11-24-isaac-performance-window-handoff.md)。建议快速配方为CPU＋原厂IK＋5物理子步＋双渲染子帧＋异步记录，约55 ms完整规则采集周期；最早基线约770 ms，约14倍，包含物理步长与算法变化。代码默认未切换，BC／RL未因提速新增训练成绩；本次仅整理文档。
+
+2026-11-24：[5子步与异步记录对照](agent/simulation/evolution/isaac-fast-collection.md)完成。CPU＋原厂IK完整周期约95→75 ms（20→5子步），异步记录后约55 ms，单渲染子帧组合约48 ms；5子步同步／异步均3/3规则通过，1776条异步转移图像完整性核查通过。单子帧仅正常案例，未验证BC／RL；新选项显式启用，默认不变。
+
+2026-11-24：[CPU完整控制周期核查](agent/simulation/evolution/isaac-step-profile.md)：当前规则采集周期约90.6 ms＝决策1.7＋step65.0＋记录23.6＋整理0.3 ms；记录中每步4次fsync共约16.5 ms，图像捕获每步触发4次Kit应用更新。此次只做测量，未改变生产行为；与此前step RPC口径分开。
+
+2026-11-24：[GPU物理兼容模式](agent/simulation/evolution/isaac-gpu-physics.md)已接入并验证。GPU正常与±1 mm受阻恢复3/3通过；原生GPU求解器统计确认启用，但当前单环境＋CPU回读下RPC约111 ms，同批CPU约65 ms，保持CPU默认。可用`--physics-device gpu`显式选择，新GPU执行合同单独登记。
+
+2026-11-24：[完整控制步排查与优化](agent/simulation/evolution/isaac-step-profile.md)完成。修复奖励重复测量、SAT小数组循环、腕图复制及无界面仍更新的默认预览；原厂IK＋20子步的RPC从约96 ms降到69～71 ms，三场景物理轨迹／奖励一致。真实双RGB与双渲染子帧保留；新渲染合同明确登记，旧配方可恢复。
+
+2026-11-24：[天机原厂IK已接入](agent/simulation/evolution/tianji-native-ik.md)。坐标／单位／TCP适配及逐次回代验收完成；离线500/500，实际PhysX正常与±1 mm受阻恢复3/3通过。worker与训练编排可显式选择原厂后端，新旧合同分开；尚未重训BC／RL或连接真机。
+
+2026-11-24：[天机SDK离线IK核查](agent/simulation/evolution/isaac-control-throughput.md)已完成。本地已有运动学库；500个小目标计算及FK回代通过，TCP增量IK中位约0.102 ms。该离线核查阶段尚未接入Isaac；随后完成的适配与模型一致性验证见上方新记录。始终未连接真机。
+
+2026-11-24：[50段多样化示范完成](agent/simulation/evolution/diverse-demonstrations.md)。40训练＋10验证，准备动作不作专家监督；BC闭环验证0/10、留出0/8；BC未达到预登记门槛，本轮未启动RL。有效完成阶段退出0，启动失败及接续记录保留；仍仅是当前仿真范围。
+
+2026-11-24：[控制吞吐与四档子步对照](agent/simulation/evolution/isaac-control-throughput.md)完成。原实现每动作500／20子步约734／222 ms；等价FK缓存后20子步约117 ms。新批量入口默认20，原50段研究仍保留500合同；原生异常和限定验证范围另记。
+
+
+
+2026-11-23：[runtime实体归拢已完成](chronicles/2026-11-23-runtime-relocation.md)。运行资源已迁入`/data/shapeforge/runtime/`，原`/data/omi_runtime`为兼容链接；此前[四批导入／交付资料](chronicles/2026-11-23-storage-layout.md)位于同级storage。当前布局统一见[本地资源契约](agent/interfaces/local-resources.md)。各自内容完整保留，未进行去重或改变资产版本及实验结论。
+
+2026-11-23：[收尾监督补强与新合同重训](agent/simulation/evolution/staged-retraining.md)完成。BC无接管0/2、最终RL无接管0/2，接管训练2/3；本轮原生阶段全部退出0。历史143未复现、来源未定，旧结果不重算。
+
+2026-11-23续开发：[在线接管恢复已接入](agent/simulation/evolution/online-insertion-recovery.md)。固定三例真实RPC验证通过：正常、±1 mm受阻退回／重对准／重插及交回；任务目标与奖励不随子目标改变。提议方为诊断脚本，未重训或新增学习策略成绩。 三例运行的外层会话143、原生退出回执缺失另记；独立生命周期检查正常，原因尚未诊断。
+
 2026-11-23：[规则插入与demo收尾](agent/simulation/evolution/rule-insertion-review.md)完成：预登记正常组8/8、偏移受阻后恢复4/4；实际录像已打开，用户反馈比之前好。固定WG-r10＋OM-r08；小范围规则结果，未重训BC／RL或验证真机。
 
 当前感知任务交接：[三变量采样、细网格数据与后续预训练](chronicles/2026-11-23-perception-grid-pretraining-handoff.md)。含已确认目标、数据入口、验证、历史模型区别、恢复和接续事项；不替代并行资产／控制任务交接。

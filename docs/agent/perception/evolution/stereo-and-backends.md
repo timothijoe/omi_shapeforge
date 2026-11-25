@@ -1,5 +1,7 @@
 # 双目与后端组件
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../../interfaces/local-resources.md)。
+
 ## 架构和入口
 
 `workspace.py` 读取 TOML，`workflows.py` 准备输入与后端命令，`runner.py` 管理独立进程和 v1 记录。标准输出与错误写 `run.log`，原 report 及数组位于 backend/；零退出码还需文件、哈希、内容与限定任务指标通过。检查器在后端环境运行，控制层仍只用标准库。

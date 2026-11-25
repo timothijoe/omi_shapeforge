@@ -1,5 +1,36 @@
 # 开发文档总目录
 
+- [2026-11-25 System1 与 System0 路径条件化插接讨论](design/system1-system0-path-conditioned-rl-discussion.md)：下次讨论入口；先验证路径条件化SAC直接动作，residual保留对照，区分仿真奖励与真机在线奖励。仅设计讨论。
+
+- [2026-11-25：真实腕图、1920原图域校核与r16候选](agent/simulation/evolution/wrist-photo-refinement-r16.md)：采集来源、裁剪／内参映射、银壳和橙色修订、同域对比及未完成的真实标定边界。
+
+- [2026-11-25：点云展示与r11插接视频完整交接](chronicles/2026-11-25-pointcloud-video-handoff.md)：腕部仅叠加橙绿重点、独立三维完整点云、冷银灰色表、已交付视频、验证及恢复命令。
+
+2026-11-25：[点云展示默认约定](agent/perception/evolution/pointcloud-presentation.md)已按用户认可登记，后续多数点云采用整体稀疏＋重点加密、相同点径、中性普通面与橙绿重点；兼容查看器、真实点数和恢复入口同页维护。
+
+2026-11-24：[快速配置规则精度回归](agent/simulation/evolution/isaac-rule-precision.md)完成。20／5子步各5例均成功；终点横向误差最大0.048／0.059 mm，角度最大0.0048／0.0059°，深度误差均小于0.001 mm。入口、稳定落座、位姿偏移及受阻恢复均核查；规则／判据未调参，物理诊断与带RGB正常轨迹一致。结论限于当前仿真场景，未重训BC／RL。
+
+2026-11-24本窗口已按用户要求收口：[纪传体／控制吞吐总账](agent/simulation/evolution/isaac-control-throughput.md) · [编年体／学习与性能交接](chronicles/2026-11-24-isaac-performance-window-handoff.md)。建议快速配方为CPU＋原厂IK＋5物理子步＋双渲染子帧＋异步记录，约55 ms完整规则采集周期；最早基线约770 ms，约14倍，包含物理步长与算法变化。代码默认未切换，BC／RL未因提速新增训练成绩；本次仅整理文档。
+
+2026-11-24：[5子步与异步记录对照](agent/simulation/evolution/isaac-fast-collection.md)完成。CPU＋原厂IK完整周期约95→75 ms（20→5子步），异步记录后约55 ms，单渲染子帧组合约48 ms；5子步同步／异步均3/3规则通过，1776条异步转移图像完整性核查通过。单子帧仅正常案例，未验证BC／RL；新选项显式启用，默认不变。
+
+2026-11-24：[GPU物理兼容模式](agent/simulation/evolution/isaac-gpu-physics.md)已接入并验证。GPU正常与±1 mm受阻恢复3/3通过；原生GPU求解器统计确认启用，但当前单环境＋CPU回读下RPC约111 ms，同批CPU约65 ms，保持CPU默认。可用`--physics-device gpu`显式选择，新GPU执行合同单独登记。
+
+2026-11-24：[完整控制步排查与优化](agent/simulation/evolution/isaac-step-profile.md)完成。修复奖励重复测量、SAT小数组循环、腕图复制及无界面仍更新的默认预览；原厂IK＋20子步的RPC从约96 ms降到69～71 ms，三场景物理轨迹／奖励一致。真实双RGB与双渲染子帧保留；新渲染合同明确登记，旧配方可恢复。
+
+2026-11-24：[天机原厂IK已接入](agent/simulation/evolution/tianji-native-ik.md)。坐标／单位／TCP适配及逐次回代验收完成；离线500/500，实际PhysX正常与±1 mm受阻恢复3/3通过。worker与训练编排可显式选择原厂后端，新旧合同分开；尚未重训BC／RL或连接真机。
+
+2026-11-24：[50段多样化示范完成](agent/simulation/evolution/diverse-demonstrations.md)。40训练＋10验证，准备动作不作专家监督；BC闭环验证0/10、留出0/8；BC未达到预登记门槛，本轮未启动RL。有效完成阶段退出0，启动失败及接续记录保留；仍仅是当前仿真范围。
+
+2026-11-24：[控制吞吐与四档子步对照](agent/simulation/evolution/isaac-control-throughput.md)完成。原实现每动作500／20子步约734／222 ms；等价FK缓存后20子步约117 ms。新批量入口默认20，原50段研究仍保留500合同；原生异常和限定验证范围另记。
+
+
+- [当前存储布局与恢复契约](agent/interfaces/local-resources.md)：runtime与storage实体均已统一在`/data/shapeforge`下；[runtime迁移记录](chronicles/2026-11-23-runtime-relocation.md) · [此前导入／交付迁移](chronicles/2026-11-23-storage-layout.md)。旧路径继续兼容。
+
+2026-11-23：[收尾监督补强与新合同重训](agent/simulation/evolution/staged-retraining.md)完成。BC无接管0/2、最终RL无接管0/2，接管训练2/3；本轮原生阶段全部退出0。历史143未复现、来源未定，旧结果不重算。
+
+2026-11-23续开发：[在线接管恢复已接入](agent/simulation/evolution/online-insertion-recovery.md)。固定三例真实RPC验证通过：正常、±1 mm受阻退回／重对准／重插及交回；任务目标与奖励不随子目标改变。提议方为诊断脚本，未重训或新增学习策略成绩。
+
 当前Isaac实验窗口交接：[插入、规则反馈RL与阶段收尾](chronicles/2026-11-23-isaac-rule-rl-window-handoff.md)。纪传体和编年体均已完成；本交接集中提供状态、证据与恢复入口。
 
 [规则插入阶段收尾：纪传体](agent/simulation/evolution/rule-insertion-review.md) · [编年体](chronicles/2026-11-23-rule-insertion-review.md)：正常8/8、受阻恢复4/4，实际demo已展示；限定规则测试，未新增学习策略成绩。

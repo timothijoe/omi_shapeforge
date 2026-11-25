@@ -1,5 +1,35 @@
 # 已有资产与可视化结果
 
+2026-11-25夹爪候选：[1920原图／r16原尺寸对比](/home/linux/Downloads/腕部原图1920_真实与r16候选_20261125.png) · [同一ROI／128处理：真实、r15、r16](/home/linux/Downloads/腕部同一裁剪链_真实_r15_r16_20261125.png) · [真实15单元腕图总览](/home/linux/Downloads/腕部相机_15单元真实图像总览_20261125.png)。银壳与橙色已独立修订，内外参未重标；[来源、量化与边界](agent/simulation/evolution/wrist-photo-refinement-r16.md)。r16未替换WVA-01/r15或RL。
+
+2026-11-25追加修订：[r11腕部仅橙绿重点视频](/home/linux/Downloads/机器人插接_WG-r15_腕部仅橙绿重点_r11_20261125.mp4) · [腕部前后对比](/home/linux/Downloads/腕部点云叠加_仅橙绿重点_前后对比_20261125.png)。中间恢复原始RGB，只叠加可见尖端／孔口，右侧完整冷银灰分层点云不变；18.07秒／1080p／3×。用户已确认显示规则并要求归档，r10原版保留；[完整交接](chronicles/2026-11-25-pointcloud-video-handoff.md)提供视频、验证与恢复入口。[来源和验证](agent/perception/evolution/alignment-insertion-film.md)。
+
+2026-11-25当前认可版：[r10冷银灰分层点云视频](/home/linux/Downloads/机器人插接_WG-r15_冷银灰点云_r10_20261125.mp4) · [封面](/home/linux/Downloads/机器人插接_WG-r15_冷银灰点云_封面_20261125.png)。用户确认满意并要求登记版本；模块普通面冷银灰、重点橙绿，18.07秒／1080p／3×。已采纳为后续新展示的默认配色；原试版与r9保留。[认可及版本记录](agent/perception/evolution/alignment-insertion-film.md)。
+
+2026-11-25配色候选：[模块普通点云同帧对比](/home/linux/Downloads/光模块普通点云_低饱和配色对比_20261125.png) · [A冷银灰完整试版](/home/linux/Downloads/机器人插接_WG-r15_冷银灰点云_试版_20261125.mp4)。仅模块普通点换为更明亮的低饱和银灰，橙绿及其他部件不变；[r9已被接受为可用版本，原片保留](agent/perception/evolution/alignment-insertion-film.md)。此为制作阶段对比；冷银灰r10随后获认可并采纳为默认，见上条。
+
+2026-11-25最新：[WG-r15分层点云／同一点径视频](/home/linux/Downloads/机器人插接_WG-r15_分层点云_同一点径_20261125.mp4) · [封面](/home/linux/Downloads/机器人插接_WG-r15_分层点云_封面_20261125.png)。采用用户认可的点云展示格式：普通0.8mm／重点0.2mm，普通面灰阶、尖端橙／孔口绿，两层均1输出像素，不再膨胀点斑；18.07秒／1080p／3×，完整470状态。[默认约定与兼容查看器](agent/perception/evolution/pointcloud-presentation.md) · [影片验证](agent/perception/evolution/alignment-insertion-film.md)。固定夹持回放未变，新影片待用户复审。
+
+2026-11-25最新：[WG-r15中性灰阶视频](/home/linux/Downloads/机器人插接_WG-r15_中性灰阶_20261125.mp4) · [封面](/home/linux/Downloads/机器人插接_WG-r15_中性灰阶_封面_20261125.png)。普通点云深／中／浅灰，指定尖端橙和孔口绿不变，取消普通面暖灰橙／灰绿；约18秒／1080p／3×。[记录](agent/perception/evolution/alignment-insertion-film.md)。r7已被用户否定，r8待复审；沿用固定夹持轨迹。
+
+2026-11-25最新：[WG-r15部件分色视频](/home/linux/Downloads/机器人插接_WG-r15_部件分色_20261125.mp4) · [封面](/home/linux/Downloads/机器人插接_WG-r15_部件分色_封面_20261125.png)。光模块暖灰橙、插座上部灰绿、底座原浅灰蓝，尖端橙／孔口绿不变；18.07秒／1080p／3×。[分区、来源与验证](agent/perception/evolution/alignment-insertion-film.md)。沿用r15固定夹持轨迹，旧片保留；本配色随后被用户否定，见r8。
+
+2026-11-25最新：[WG-r15新版夹爪三视图视频](/home/linux/Downloads/机器人插接_WG-r15新版夹爪_三视图_20261125.mp4) · [封面](/home/linux/Downloads/机器人插接_WG-r15新版夹爪_封面_20261125.png)。18.07秒／1080p／3×，原DAIMON纹理与GC闭合参考；画面标明固定夹持插入。[版本表与验证边界](agent/simulation/evolution/wva01-isaac-insertion.md)，自由接触夹持移动未验收。
+
+2026-11-24：[r5轻微深浅灰配色视频](/home/linux/Downloads/机器人插接_简洁三视图_灰度微调_20261124.mp4)。用户已认可r4简洁三视图，后续只让模块普通面略深于插座，橙绿重点保持；原版留存。[认可、偏好与验证记录](agent/perception/evolution/alignment-insertion-film.md)。
+
+2026-11-24最新：[仅尖端着色 · 简洁三视图插接视频](/home/linux/Downloads/机器人插接_简洁三视图_仅尖端着色_20261124.mp4)，约18秒／1080p／标注3×。普通表面浅灰、尖端橙色、孔口绿色，辅助放大窗已去掉。[制作与验证](agent/perception/evolution/alignment-insertion-film.md)。
+
+2026-11-24最新：[橙绿点云 · 3×连续插接视频](/home/linux/Downloads/机器人插接_橙绿点云_3倍速_1080p_20261124.mp4)，约18秒／1080p，保留全部未对准→对准→插入动作；腕部改为局部放大。[颜色、慢速原因与展示倍率记录](agent/perception/evolution/alignment-insertion-film.md)。底层物理速度未修改。
+
+2026-11-24最新：[未对准→对准→完整插入 · 几何位姿估计](/home/linux/Downloads/机器人插接_未对准到插入_几何位姿估计_1080p_20261124.mp4)，51.5秒／1080p；按用户截图显示绿色腕部投影、浅灰完整模块／插座点云。[制作与验证](agent/perception/evolution/alignment-insertion-film.md)。点云使用仿真位姿参考，未运行网络。
+
+2026-11-24：[机器人完整插入 · 三视图GT视频](/home/linux/Downloads/机器人完整插入_三视图_GT点云_1080p_20261124.mp4)，39.8秒／1080p，从未插入到落座，第三人称、腕部点云及重点着色三维点云同步。[来源与验证](agent/perception/evolution/insertion-gt-multiview.md)。此为用户澄清后的过程视频，上一版结果介绍片保留。
+
+2026-11-24：[点云估计展示成片](/home/linux/Downloads/点云估计_展示视频_1080p_20261124.mp4) · [封面](/home/linux/Downloads/点云估计_展示封面_20261124.png) · [制作与验证记录](agent/perception/chronicles/2026-11-24-pointcloud-showcase-video.md)。56秒，1080p／30fps；既有接触版留出预测可视化，未训练新网格数据。
+
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](agent/interfaces/local-resources.md)。
+
 版本名称与源文件映射见[光模块资产版本](asset-versions.md)；2×2 中的四个模块是同一模型的四个实例。
 
 核对日期：2026-11-20。本次找到 **2496 个可视化文件、78 个分组**，覆盖本机运行、便携包和恢复的旧机实验 results 目录。原始采集数据帧、第三方软件素材不纳入此展示目录。未去除重复图或失败试验，方便回溯。

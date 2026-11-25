@@ -1,0 +1,1311 @@
+{
+  "schema_version": 1,
+  "id": "isaac-step-profile-20261124",
+  "run_root": "/data/shapeforge/runtime/runs/isaac_step_profile_20261124",
+  "status": "optimizations_validated_with_rejected_startup_candidate_preserved",
+  "guide": "docs/agent/simulation/evolution/isaac-step-profile.md",
+  "chronicle": "docs/chronicles/2026-11-24-isaac-step-profile.md",
+  "summary": {
+    "scope": "Tianji IK / 20 physical substeps / pinned WG-r10 OM-r08 / same seeds and guards; serial Isaac instances; no BC RL retraining",
+    "timing_scope": "normal 91000, exclude first 10 steps; nested metrics are inclusive and must not be summed; worker total excludes profiler log writing, client RPC excludes recording; episode wall includes recording but not Isaac startup",
+    "variants": {
+      "baseline": {
+        "cases": [
+          {
+            "id": "normal",
+            "kind": "normal",
+            "seed": 91000,
+            "x_mm": 0.0,
+            "z_mm": 0.0,
+            "split": "diagnostic",
+            "success": true,
+            "steps": 388,
+            "reset_count": 1,
+            "supervised_from_step": 0,
+            "control_from_step": 0,
+            "expert_steps": 388,
+            "policy_steps": 0,
+            "setup_steps": 0,
+            "initialization_valid": true,
+            "final_depth_mm": 51.28131037421046,
+            "failure": null,
+            "recovery_attempts": 0,
+            "recovery_completed": 0,
+            "blocked": false,
+            "teacher_requests": 388,
+            "max_mean_force_N": 0.12058578421374562,
+            "max_substep_force_N": 0.5343198077753224,
+            "episode": "normal",
+            "wall_seconds": 47.22039593500085
+          }
+        ],
+        "normal_samples": 378,
+        "metrics": {
+          "ContactMonitor.callback": {
+            "mean_ms": 0.15664055301202953,
+            "mean_calls": 0.12433862433862433
+          },
+          "DirectWorld.render": {
+            "mean_ms": 40.8674431824818,
+            "mean_calls": 1
+          },
+          "DirectWorld.step": {
+            "mean_ms": 22.168949813142056,
+            "mean_calls": 20
+          },
+          "DirectWorld.sync": {
+            "mean_ms": 1.9620448174705007,
+            "mean_calls": 2
+          },
+          "RobotExperiment.measurements": {
+            "mean_ms": 14.193715209301676,
+            "mean_calls": 3
+          },
+          "RobotExperiment.qdict": {
+            "mean_ms": 0.05096536776926812,
+            "mean_calls": 1
+          },
+          "RobotExperiment.step": {
+            "mean_ms": 32.08032679897591,
+            "mean_calls": 1
+          },
+          "RobotExperiment.tcp": {
+            "mean_ms": 0.5360358886983709,
+            "mean_calls": 5
+          },
+          "StagedRecoveryTeacher.observe": {
+            "mean_ms": 0.006884888943873602,
+            "mean_calls": 1
+          },
+          "TensorArticulation.get_joint_positions": {
+            "mean_ms": 0.09302670880166626,
+            "mean_calls": 6
+          },
+          "TensorArticulation.set_joint_position_targets": {
+            "mean_ms": 0.8759760854041411,
+            "mean_calls": 20
+          },
+          "audit_write": {
+            "mean_ms": 0.26804580156557095,
+            "mean_calls": 1
+          },
+          "box_overlap": {
+            "mean_ms": 11.572624223296613,
+            "mean_calls": 24
+          },
+          "camera_get_data": {
+            "mean_ms": 2.856799158830197,
+            "mean_calls": 1
+          },
+          "capture": {
+            "mean_ms": 48.99545405545501,
+            "mean_calls": 1
+          },
+          "history_arrays": {
+            "mean_ms": 0.23799908447751367,
+            "mean_calls": 1
+          },
+          "image_resample": {
+            "mean_ms": 4.614651158787575,
+            "mean_calls": 1
+          },
+          "ipc_sendall": {
+            "mean_ms": 0.5827442882898222,
+            "mean_calls": 1
+          },
+          "ipc_serialize": {
+            "mean_ms": 1.7733781112251106,
+            "mean_calls": 1
+          },
+          "pad_transforms": {
+            "mean_ms": 0.15453352877302293,
+            "mean_calls": 20
+          },
+          "physics_fetch": {
+            "mean_ms": 19.59042167147836,
+            "mean_calls": 20
+          },
+          "physics_loop": {
+            "mean_ms": 24.726704378769714,
+            "mean_calls": 1
+          },
+          "physics_simulate": {
+            "mean_ms": 2.455995682260162,
+            "mean_calls": 20
+          },
+          "potential": {
+            "mean_ms": 9.973920016255718,
+            "mean_calls": 2
+          },
+          "usd_matrix": {
+            "mean_ms": 1.0660522250021578,
+            "mean_calls": 32
+          },
+          "worker_step_total": {
+            "mean_ms": 93.92955867484228,
+            "mean_calls": 1
+          }
+        },
+        "client_step_rpc_mean_ms": 96.194911320179,
+        "ik_mean_ms": 0.5186128838099576,
+        "receipt": [
+          {
+            "backend": "baseline",
+            "client": 0,
+            "shutdown": 0,
+            "worker": 0
+          }
+        ]
+      },
+      "threads0": {
+        "cases": [
+          {
+            "id": "normal",
+            "kind": "normal",
+            "seed": 91000,
+            "x_mm": 0.0,
+            "z_mm": 0.0,
+            "split": "diagnostic",
+            "success": true,
+            "steps": 388,
+            "reset_count": 1,
+            "supervised_from_step": 0,
+            "control_from_step": 0,
+            "expert_steps": 388,
+            "policy_steps": 0,
+            "setup_steps": 0,
+            "initialization_valid": true,
+            "final_depth_mm": 51.28131037421046,
+            "failure": null,
+            "recovery_attempts": 0,
+            "recovery_completed": 0,
+            "blocked": false,
+            "teacher_requests": 388,
+            "max_mean_force_N": 0.12058578421374562,
+            "max_substep_force_N": 0.5343198077753224,
+            "episode": "normal",
+            "wall_seconds": 45.254194670997094
+          }
+        ],
+        "normal_samples": 378,
+        "metrics": {
+          "ContactMonitor.callback": {
+            "mean_ms": 0.1599832116519951,
+            "mean_calls": 0.12433862433862433
+          },
+          "DirectWorld.render": {
+            "mean_ms": 40.20416620096993,
+            "mean_calls": 1
+          },
+          "DirectWorld.step": {
+            "mean_ms": 18.253934023190084,
+            "mean_calls": 20
+          },
+          "DirectWorld.sync": {
+            "mean_ms": 1.9394677482422493,
+            "mean_calls": 2
+          },
+          "RobotExperiment.measurements": {
+            "mean_ms": 14.246083891420211,
+            "mean_calls": 3
+          },
+          "RobotExperiment.qdict": {
+            "mean_ms": 0.05432229373442679,
+            "mean_calls": 1
+          },
+          "RobotExperiment.step": {
+            "mean_ms": 28.042967079460457,
+            "mean_calls": 1
+          },
+          "RobotExperiment.tcp": {
+            "mean_ms": 0.5293902992249329,
+            "mean_calls": 5
+          },
+          "StagedRecoveryTeacher.observe": {
+            "mean_ms": 0.0068272723871463095,
+            "mean_calls": 1
+          },
+          "TensorArticulation.get_joint_positions": {
+            "mean_ms": 0.0914014597285093,
+            "mean_calls": 6
+          },
+          "TensorArticulation.set_joint_position_targets": {
+            "mean_ms": 0.8170575529028028,
+            "mean_calls": 20
+          },
+          "audit_write": {
+            "mean_ms": 0.2706423097512766,
+            "mean_calls": 1
+          },
+          "box_overlap": {
+            "mean_ms": 11.696271491586538,
+            "mean_calls": 24
+          },
+          "camera_get_data": {
+            "mean_ms": 2.9145859312925184,
+            "mean_calls": 1
+          },
+          "capture": {
+            "mean_ms": 48.42647905548494,
+            "mean_calls": 1
+          },
+          "history_arrays": {
+            "mean_ms": 0.2437849816006655,
+            "mean_calls": 1
+          },
+          "image_resample": {
+            "mean_ms": 4.646068486547043,
+            "mean_calls": 1
+          },
+          "ipc_sendall": {
+            "mean_ms": 0.5363599125375336,
+            "mean_calls": 1
+          },
+          "ipc_serialize": {
+            "mean_ms": 1.8168130446086508,
+            "mean_calls": 1
+          },
+          "pad_transforms": {
+            "mean_ms": 0.1458981482731856,
+            "mean_calls": 20
+          },
+          "physics_fetch": {
+            "mean_ms": 12.214015872227263,
+            "mean_calls": 20
+          },
+          "physics_loop": {
+            "mean_ms": 20.691592447345283,
+            "mean_calls": 1
+          },
+          "physics_simulate": {
+            "mean_ms": 5.913416590196205,
+            "mean_calls": 20
+          },
+          "potential": {
+            "mean_ms": 10.039378714205071,
+            "mean_calls": 2
+          },
+          "usd_matrix": {
+            "mean_ms": 1.042175436720884,
+            "mean_calls": 32
+          },
+          "worker_step_total": {
+            "mean_ms": 89.3867979312076,
+            "mean_calls": 1
+          }
+        },
+        "client_step_rpc_mean_ms": 91.6433617567621,
+        "ik_mean_ms": 0.5350782274459205,
+        "receipt": [
+          {
+            "backend": "threads0",
+            "client": 0,
+            "shutdown": 0,
+            "worker": 0
+          }
+        ]
+      },
+      "render1": {
+        "cases": [
+          {
+            "id": "normal",
+            "kind": "normal",
+            "seed": 91000,
+            "x_mm": 0.0,
+            "z_mm": 0.0,
+            "split": "diagnostic",
+            "success": true,
+            "steps": 388,
+            "reset_count": 1,
+            "supervised_from_step": 0,
+            "control_from_step": 0,
+            "expert_steps": 388,
+            "policy_steps": 0,
+            "setup_steps": 0,
+            "initialization_valid": true,
+            "final_depth_mm": 51.28131037421046,
+            "failure": null,
+            "recovery_attempts": 0,
+            "recovery_completed": 0,
+            "blocked": false,
+            "teacher_requests": 388,
+            "max_mean_force_N": 0.12058578421374562,
+            "max_substep_force_N": 0.5343198077753224,
+            "episode": "normal",
+            "wall_seconds": 44.63338894199842
+          }
+        ],
+        "normal_samples": 378,
+        "metrics": {
+          "ContactMonitor.callback": {
+            "mean_ms": 0.16468619580057858,
+            "mean_calls": 0.12433862433862433
+          },
+          "DirectWorld.render": {
+            "mean_ms": 31.87039065621787,
+            "mean_calls": 1
+          },
+          "DirectWorld.step": {
+            "mean_ms": 22.520716290932675,
+            "mean_calls": 20
+          },
+          "DirectWorld.sync": {
+            "mean_ms": 1.9600113356275306,
+            "mean_calls": 2
+          },
+          "RobotExperiment.measurements": {
+            "mean_ms": 14.300777072204886,
+            "mean_calls": 3
+          },
+          "RobotExperiment.qdict": {
+            "mean_ms": 0.05245840759170562,
+            "mean_calls": 1
+          },
+          "RobotExperiment.step": {
+            "mean_ms": 32.532633722112415,
+            "mean_calls": 1
+          },
+          "RobotExperiment.tcp": {
+            "mean_ms": 0.533109153938885,
+            "mean_calls": 5
+          },
+          "StagedRecoveryTeacher.observe": {
+            "mean_ms": 0.007476532224611325,
+            "mean_calls": 1
+          },
+          "TensorArticulation.get_joint_positions": {
+            "mean_ms": 0.09171888542902981,
+            "mean_calls": 6
+          },
+          "TensorArticulation.set_joint_position_targets": {
+            "mean_ms": 0.9050161827838531,
+            "mean_calls": 20
+          },
+          "audit_write": {
+            "mean_ms": 0.2752938545926501,
+            "mean_calls": 1
+          },
+          "box_overlap": {
+            "mean_ms": 11.704037671291395,
+            "mean_calls": 24
+          },
+          "camera_get_data": {
+            "mean_ms": 2.925081473491715,
+            "mean_calls": 1
+          },
+          "capture": {
+            "mean_ms": 40.08863133871244,
+            "mean_calls": 1
+          },
+          "history_arrays": {
+            "mean_ms": 0.24649441003073844,
+            "mean_calls": 1
+          },
+          "image_resample": {
+            "mean_ms": 4.635062582079271,
+            "mean_calls": 1
+          },
+          "ipc_sendall": {
+            "mean_ms": 0.5523857219645473,
+            "mean_calls": 1
+          },
+          "ipc_serialize": {
+            "mean_ms": 1.7954253438917462,
+            "mean_calls": 1
+          },
+          "pad_transforms": {
+            "mean_ms": 0.1605794920083123,
+            "mean_calls": 20
+          },
+          "physics_fetch": {
+            "mean_ms": 19.999402479914437,
+            "mean_calls": 20
+          },
+          "physics_loop": {
+            "mean_ms": 25.116493833521087,
+            "mean_calls": 1
+          },
+          "physics_simulate": {
+            "mean_ms": 2.3950596870722065,
+            "mean_calls": 20
+          },
+          "potential": {
+            "mean_ms": 10.053621298986458,
+            "mean_calls": 2
+          },
+          "usd_matrix": {
+            "mean_ms": 1.057704927767171,
+            "mean_calls": 32
+          },
+          "worker_step_total": {
+            "mean_ms": 85.55658168533078,
+            "mean_calls": 1
+          }
+        },
+        "client_step_rpc_mean_ms": 87.8129296690637,
+        "ik_mean_ms": 0.5308724498261067,
+        "receipt": [
+          {
+            "backend": "render1",
+            "client": 0,
+            "shutdown": 0,
+            "worker": 0
+          }
+        ]
+      },
+      "fast": {
+        "cases": [
+          {
+            "id": "normal",
+            "kind": "normal",
+            "seed": 91000,
+            "x_mm": 0.0,
+            "z_mm": 0.0,
+            "split": "diagnostic",
+            "success": true,
+            "steps": 388,
+            "reset_count": 1,
+            "supervised_from_step": 0,
+            "control_from_step": 0,
+            "expert_steps": 388,
+            "policy_steps": 0,
+            "setup_steps": 0,
+            "initialization_valid": true,
+            "final_depth_mm": 51.28131037421046,
+            "failure": null,
+            "recovery_attempts": 0,
+            "recovery_completed": 0,
+            "blocked": false,
+            "teacher_requests": 388,
+            "max_mean_force_N": 0.12058578421374562,
+            "max_substep_force_N": 0.5343198077753224,
+            "episode": "normal",
+            "wall_seconds": 41.87327924899728
+          },
+          {
+            "id": "plus",
+            "kind": "recovery",
+            "seed": 91001,
+            "x_mm": 1.0,
+            "z_mm": 0.0,
+            "split": "diagnostic",
+            "success": true,
+            "steps": 573,
+            "reset_count": 1,
+            "supervised_from_step": 147,
+            "control_from_step": 147,
+            "expert_steps": 426,
+            "policy_steps": 0,
+            "setup_steps": 147,
+            "initialization_valid": true,
+            "final_depth_mm": 51.28119972744417,
+            "failure": null,
+            "recovery_attempts": 1,
+            "recovery_completed": 1,
+            "blocked": true,
+            "teacher_requests": 426,
+            "max_mean_force_N": 0.13063781496444463,
+            "max_substep_force_N": 0.2682465876205261,
+            "episode": "plus",
+            "wall_seconds": 61.62175065500196
+          },
+          {
+            "id": "minus",
+            "kind": "recovery",
+            "seed": 91002,
+            "x_mm": -1.0,
+            "z_mm": 0.0,
+            "split": "diagnostic",
+            "success": true,
+            "steps": 576,
+            "reset_count": 1,
+            "supervised_from_step": 150,
+            "control_from_step": 150,
+            "expert_steps": 426,
+            "policy_steps": 0,
+            "setup_steps": 150,
+            "initialization_valid": true,
+            "final_depth_mm": 51.28119252599884,
+            "failure": null,
+            "recovery_attempts": 1,
+            "recovery_completed": 1,
+            "blocked": true,
+            "teacher_requests": 426,
+            "max_mean_force_N": 0.11780471260408461,
+            "max_substep_force_N": 0.4676587064750526,
+            "episode": "minus",
+            "wall_seconds": 62.01640971800225
+          }
+        ],
+        "normal_samples": 378,
+        "metrics": {
+          "ContactMonitor.callback": {
+            "mean_ms": 0.1601069761722265,
+            "mean_calls": 0.12433862433862433
+          },
+          "DirectWorld.render": {
+            "mean_ms": 40.434601193020754,
+            "mean_calls": 1
+          },
+          "DirectWorld.step": {
+            "mean_ms": 22.609512732781084,
+            "mean_calls": 20
+          },
+          "DirectWorld.sync": {
+            "mean_ms": 1.9649245399002677,
+            "mean_calls": 2
+          },
+          "RobotExperiment.measurements": {
+            "mean_ms": 1.8603829364577202,
+            "mean_calls": 1
+          },
+          "RobotExperiment.qdict": {
+            "mean_ms": 0.058512502652808544,
+            "mean_calls": 1
+          },
+          "RobotExperiment.step": {
+            "mean_ms": 29.787163013236956,
+            "mean_calls": 1
+          },
+          "RobotExperiment.tcp": {
+            "mean_ms": 0.2518659205600637,
+            "mean_calls": 2
+          },
+          "StagedRecoveryTeacher.observe": {
+            "mean_ms": 0.0073427225711937775,
+            "mean_calls": 1
+          },
+          "TensorArticulation.get_joint_positions": {
+            "mean_ms": 0.08998593120224695,
+            "mean_calls": 6
+          },
+          "TensorArticulation.set_joint_position_targets": {
+            "mean_ms": 0.9014626947833994,
+            "mean_calls": 20
+          },
+          "audit_write": {
+            "mean_ms": 0.27358976707325033,
+            "mean_calls": 1
+          },
+          "box_overlap": {
+            "mean_ms": 0.8366456247694303,
+            "mean_calls": 8
+          },
+          "camera_get_data": {
+            "mean_ms": 0.9503772805228389,
+            "mean_calls": 1
+          },
+          "capture": {
+            "mean_ms": 47.09736657412905,
+            "mean_calls": 1
+          },
+          "history_arrays": {
+            "mean_ms": 0.24789242594297753,
+            "mean_calls": 1
+          },
+          "image_resample": {
+            "mean_ms": 5.035605976079645,
+            "mean_calls": 1
+          },
+          "ipc_sendall": {
+            "mean_ms": 0.6002258732218897,
+            "mean_calls": 1
+          },
+          "ipc_serialize": {
+            "mean_ms": 1.859128121631565,
+            "mean_calls": 1
+          },
+          "pad_transforms": {
+            "mean_ms": 0.152841549736747,
+            "mean_calls": 20
+          },
+          "physics_fetch": {
+            "mean_ms": 20.03868424949432,
+            "mean_calls": 20
+          },
+          "physics_loop": {
+            "mean_ms": 25.24264335192918,
+            "mean_calls": 1
+          },
+          "physics_simulate": {
+            "mean_ms": 2.4455221179378754,
+            "mean_calls": 20
+          },
+          "potential": {
+            "mean_ms": 0.032728931030582525,
+            "mean_calls": 2
+          },
+          "usd_matrix": {
+            "mean_ms": 0.43946093684151677,
+            "mean_calls": 11
+          },
+          "worker_step_total": {
+            "mean_ms": 79.85403008993315,
+            "mean_calls": 1
+          }
+        },
+        "client_step_rpc_mean_ms": 82.29937035724457,
+        "ik_mean_ms": 0.5808208043355663,
+        "receipt": [
+          {
+            "backend": "fast",
+            "client": 0,
+            "shutdown": 0,
+            "worker": 0
+          }
+        ]
+      },
+      "noviewport": {
+        "status": "startup_failed",
+        "receipt": [
+          {
+            "backend": "noviewport",
+            "error": "RuntimeError('startup failed')"
+          }
+        ]
+      },
+      "noviewport_late": {
+        "cases": [
+          {
+            "id": "normal",
+            "kind": "normal",
+            "seed": 91000,
+            "x_mm": 0.0,
+            "z_mm": 0.0,
+            "split": "diagnostic",
+            "success": true,
+            "steps": 388,
+            "reset_count": 1,
+            "supervised_from_step": 0,
+            "control_from_step": 0,
+            "expert_steps": 388,
+            "policy_steps": 0,
+            "setup_steps": 0,
+            "initialization_valid": true,
+            "final_depth_mm": 51.28131037421046,
+            "failure": null,
+            "recovery_attempts": 0,
+            "recovery_completed": 0,
+            "blocked": false,
+            "teacher_requests": 388,
+            "max_mean_force_N": 0.12058578421374562,
+            "max_substep_force_N": 0.5343198077753224,
+            "episode": "normal",
+            "wall_seconds": 41.1008735669966
+          }
+        ],
+        "normal_samples": 378,
+        "metrics": {
+          "ContactMonitor.callback": {
+            "mean_ms": 0.1616777143676435,
+            "mean_calls": 0.12433862433862433
+          },
+          "DirectWorld.render": {
+            "mean_ms": 26.226542404661554,
+            "mean_calls": 1
+          },
+          "DirectWorld.step": {
+            "mean_ms": 21.47673721455725,
+            "mean_calls": 20
+          },
+          "DirectWorld.sync": {
+            "mean_ms": 1.8411645395399463,
+            "mean_calls": 2
+          },
+          "RobotExperiment.measurements": {
+            "mean_ms": 14.241134518477665,
+            "mean_calls": 3
+          },
+          "RobotExperiment.qdict": {
+            "mean_ms": 0.05028672742247138,
+            "mean_calls": 1
+          },
+          "RobotExperiment.step": {
+            "mean_ms": 31.28115379371035,
+            "mean_calls": 1
+          },
+          "RobotExperiment.tcp": {
+            "mean_ms": 0.5359725180525818,
+            "mean_calls": 5
+          },
+          "StagedRecoveryTeacher.observe": {
+            "mean_ms": 0.007842164012362008,
+            "mean_calls": 1
+          },
+          "TensorArticulation.get_joint_positions": {
+            "mean_ms": 0.08671107930938156,
+            "mean_calls": 6
+          },
+          "TensorArticulation.set_joint_position_targets": {
+            "mean_ms": 0.8864291778187546,
+            "mean_calls": 20
+          },
+          "audit_write": {
+            "mean_ms": 0.2660448014260043,
+            "mean_calls": 1
+          },
+          "box_overlap": {
+            "mean_ms": 11.67258297866004,
+            "mean_calls": 24
+          },
+          "camera_get_data": {
+            "mean_ms": 2.913468978808923,
+            "mean_calls": 1
+          },
+          "capture": {
+            "mean_ms": 34.41836779656735,
+            "mean_calls": 1
+          },
+          "history_arrays": {
+            "mean_ms": 0.2451589735520193,
+            "mean_calls": 1
+          },
+          "image_resample": {
+            "mean_ms": 4.644201669136583,
+            "mean_calls": 1
+          },
+          "ipc_sendall": {
+            "mean_ms": 0.5646770502689785,
+            "mean_calls": 1
+          },
+          "ipc_serialize": {
+            "mean_ms": 1.788920113780978,
+            "mean_calls": 1
+          },
+          "pad_transforms": {
+            "mean_ms": 0.1506646369028314,
+            "mean_calls": 20
+          },
+          "physics_fetch": {
+            "mean_ms": 19.019099775288765,
+            "mean_calls": 20
+          },
+          "physics_loop": {
+            "mean_ms": 24.017923195984505,
+            "mean_calls": 1
+          },
+          "physics_simulate": {
+            "mean_ms": 2.3376776544965754,
+            "mean_calls": 20
+          },
+          "potential": {
+            "mean_ms": 9.999947028811905,
+            "mean_calls": 2
+          },
+          "usd_matrix": {
+            "mean_ms": 1.0630958840439142,
+            "mean_calls": 32
+          },
+          "worker_step_total": {
+            "mean_ms": 78.57697888352695,
+            "mean_calls": 1
+          }
+        },
+        "client_step_rpc_mean_ms": 80.79604548431003,
+        "ik_mean_ms": 0.5249334550826076,
+        "receipt": [
+          {
+            "backend": "noviewport_late",
+            "client": 0,
+            "shutdown": 0,
+            "worker": 0
+          }
+        ]
+      },
+      "final": {
+        "cases": [
+          {
+            "id": "normal",
+            "kind": "normal",
+            "seed": 91000,
+            "x_mm": 0.0,
+            "z_mm": 0.0,
+            "split": "diagnostic",
+            "success": true,
+            "steps": 388,
+            "reset_count": 1,
+            "supervised_from_step": 0,
+            "control_from_step": 0,
+            "expert_steps": 388,
+            "policy_steps": 0,
+            "setup_steps": 0,
+            "initialization_valid": true,
+            "final_depth_mm": 51.28131037421046,
+            "failure": null,
+            "recovery_attempts": 0,
+            "recovery_completed": 0,
+            "blocked": false,
+            "teacher_requests": 388,
+            "max_mean_force_N": 0.12058578421374562,
+            "max_substep_force_N": 0.5343198077753224,
+            "episode": "normal",
+            "wall_seconds": 36.42926199500653
+          },
+          {
+            "id": "plus",
+            "kind": "recovery",
+            "seed": 91001,
+            "x_mm": 1.0,
+            "z_mm": 0.0,
+            "split": "diagnostic",
+            "success": true,
+            "steps": 573,
+            "reset_count": 1,
+            "supervised_from_step": 147,
+            "control_from_step": 147,
+            "expert_steps": 426,
+            "policy_steps": 0,
+            "setup_steps": 147,
+            "initialization_valid": true,
+            "final_depth_mm": 51.28119972744417,
+            "failure": null,
+            "recovery_attempts": 1,
+            "recovery_completed": 1,
+            "blocked": true,
+            "teacher_requests": 426,
+            "max_mean_force_N": 0.13063781496444463,
+            "max_substep_force_N": 0.2682465876205261,
+            "episode": "plus",
+            "wall_seconds": 54.001316827001574
+          },
+          {
+            "id": "minus",
+            "kind": "recovery",
+            "seed": 91002,
+            "x_mm": -1.0,
+            "z_mm": 0.0,
+            "split": "diagnostic",
+            "success": true,
+            "steps": 576,
+            "reset_count": 1,
+            "supervised_from_step": 150,
+            "control_from_step": 150,
+            "expert_steps": 426,
+            "policy_steps": 0,
+            "setup_steps": 150,
+            "initialization_valid": true,
+            "final_depth_mm": 51.28119252599884,
+            "failure": null,
+            "recovery_attempts": 1,
+            "recovery_completed": 1,
+            "blocked": true,
+            "teacher_requests": 426,
+            "max_mean_force_N": 0.11780471260408461,
+            "max_substep_force_N": 0.4676587064750526,
+            "episode": "minus",
+            "wall_seconds": 54.288964086001215
+          }
+        ],
+        "normal_samples": 378,
+        "metrics": {
+          "ContactMonitor.callback": {
+            "mean_ms": 0.1594328623372512,
+            "mean_calls": 0.12433862433862433
+          },
+          "DirectWorld.render": {
+            "mean_ms": 26.859524619197977,
+            "mean_calls": 1
+          },
+          "DirectWorld.step": {
+            "mean_ms": 22.90931652673405,
+            "mean_calls": 20
+          },
+          "DirectWorld.sync": {
+            "mean_ms": 1.8109711877682626,
+            "mean_calls": 2
+          },
+          "RobotExperiment.measurements": {
+            "mean_ms": 1.8596846482150746,
+            "mean_calls": 1
+          },
+          "RobotExperiment.qdict": {
+            "mean_ms": 0.06111605044299732,
+            "mean_calls": 1
+          },
+          "RobotExperiment.step": {
+            "mean_ms": 30.020293026667325,
+            "mean_calls": 1
+          },
+          "RobotExperiment.tcp": {
+            "mean_ms": 0.24883910044168478,
+            "mean_calls": 2
+          },
+          "StagedRecoveryTeacher.observe": {
+            "mean_ms": 0.007683669152101699,
+            "mean_calls": 1
+          },
+          "TensorArticulation.get_joint_positions": {
+            "mean_ms": 0.08550180932158905,
+            "mean_calls": 6
+          },
+          "TensorArticulation.set_joint_position_targets": {
+            "mean_ms": 0.9172964941720397,
+            "mean_calls": 20
+          },
+          "audit_write": {
+            "mean_ms": 0.2668318677081963,
+            "mean_calls": 1
+          },
+          "box_overlap": {
+            "mean_ms": 0.8600410738841029,
+            "mean_calls": 8
+          },
+          "camera_get_data": {
+            "mean_ms": 0.9507577484501304,
+            "mean_calls": 1
+          },
+          "capture": {
+            "mean_ms": 33.47868960592976,
+            "mean_calls": 1
+          },
+          "history_arrays": {
+            "mean_ms": 0.24421862971389335,
+            "mean_calls": 1
+          },
+          "image_resample": {
+            "mean_ms": 5.018828820125212,
+            "mean_calls": 1
+          },
+          "ipc_sendall": {
+            "mean_ms": 0.5327206138370832,
+            "mean_calls": 1
+          },
+          "ipc_serialize": {
+            "mean_ms": 1.8823490926281983,
+            "mean_calls": 1
+          },
+          "pad_transforms": {
+            "mean_ms": 0.1673518317046627,
+            "mean_calls": 20
+          },
+          "physics_fetch": {
+            "mean_ms": 20.30422188420229,
+            "mean_calls": 20
+          },
+          "physics_loop": {
+            "mean_ms": 25.627387081811552,
+            "mean_calls": 1
+          },
+          "physics_simulate": {
+            "mean_ms": 2.4765480475878423,
+            "mean_calls": 20
+          },
+          "potential": {
+            "mean_ms": 0.032872793612855104,
+            "mean_calls": 2
+          },
+          "usd_matrix": {
+            "mean_ms": 0.4395144257166918,
+            "mean_calls": 11
+          },
+          "worker_step_total": {
+            "mean_ms": 66.41856511629716,
+            "mean_calls": 1
+          }
+        },
+        "client_step_rpc_mean_ms": 68.80987325885577,
+        "ik_mean_ms": 0.586757629438551,
+        "receipt": [
+          {
+            "backend": "final",
+            "client": 0,
+            "shutdown": 0,
+            "worker": 0
+          }
+        ]
+      }
+    }
+  },
+  "production_verification": {
+    "step_rpc_mean_ms": 70.68184867712839,
+    "ik_mean_ms": 0.5906463174570399,
+    "report": {
+      "cases": [
+        {
+          "id": "normal",
+          "kind": "normal",
+          "seed": 91000,
+          "x_mm": 0.0,
+          "z_mm": 0.0,
+          "split": "diagnostic",
+          "success": true,
+          "steps": 388,
+          "reset_count": 1,
+          "supervised_from_step": 0,
+          "control_from_step": 0,
+          "expert_steps": 388,
+          "policy_steps": 0,
+          "setup_steps": 0,
+          "initialization_valid": true,
+          "final_depth_mm": 51.28131037421046,
+          "failure": null,
+          "recovery_attempts": 0,
+          "recovery_completed": 0,
+          "blocked": false,
+          "teacher_requests": 388,
+          "max_mean_force_N": 0.12058578421374562,
+          "max_substep_force_N": 0.5343198077753224,
+          "episode": "normal",
+          "wall_seconds": 36.94150556800014
+        }
+      ]
+    },
+    "execution_render_runtime": {
+      "version": "headless-sensors-only-v1",
+      "rt_subframes": 2
+    },
+    "render_runtime": {
+      "rt_subframes": 2,
+      "unused_preview_viewport": {
+        "resolution": [
+          1280,
+          720
+        ],
+        "updates_enabled": false
+      }
+    },
+    "receipt": [
+      {
+        "backend": "production",
+        "client": 0,
+        "shutdown": 0,
+        "worker": 0
+      }
+    ]
+  },
+  "equivalence": {
+    "fast": {
+      "normal": {
+        "steps": 388,
+        "max_abs_errors": {
+          "joint_targets": 0.0,
+          "joint_positions": 0.0,
+          "tcp_position": 0.0,
+          "tcp_rotation": 0.0,
+          "insertion_depth_mm": 0.0,
+          "lateral_error_mm": 0.0,
+          "alignment_angle_rad": 0.0,
+          "reward": 0.0,
+          "control_box_overlap_mm": 0.0,
+          "step_peak_penetration_mm": 0.0
+        },
+        "all_termination_flags_equal": true
+      },
+      "plus": {
+        "steps": 573,
+        "max_abs_errors": {
+          "joint_targets": 0.0,
+          "joint_positions": 0.0,
+          "tcp_position": 0.0,
+          "tcp_rotation": 0.0,
+          "insertion_depth_mm": 0.0,
+          "lateral_error_mm": 0.0,
+          "alignment_angle_rad": 0.0,
+          "reward": 0.0,
+          "control_box_overlap_mm": 0.0,
+          "step_peak_penetration_mm": 0.0
+        },
+        "all_termination_flags_equal": true
+      },
+      "minus": {
+        "steps": 576,
+        "max_abs_errors": {
+          "joint_targets": 0.0,
+          "joint_positions": 0.0,
+          "tcp_position": 0.0,
+          "tcp_rotation": 0.0,
+          "insertion_depth_mm": 0.0,
+          "lateral_error_mm": 0.0,
+          "alignment_angle_rad": 0.0,
+          "reward": 0.0,
+          "control_box_overlap_mm": 0.0,
+          "step_peak_penetration_mm": 0.0
+        },
+        "all_termination_flags_equal": true
+      }
+    },
+    "final": {
+      "normal": {
+        "steps": 388,
+        "max_abs_errors": {
+          "joint_targets": 0.0,
+          "joint_positions": 0.0,
+          "tcp_position": 0.0,
+          "tcp_rotation": 0.0,
+          "insertion_depth_mm": 0.0,
+          "lateral_error_mm": 0.0,
+          "alignment_angle_rad": 0.0,
+          "reward": 0.0,
+          "control_box_overlap_mm": 0.0,
+          "step_peak_penetration_mm": 0.0
+        },
+        "all_termination_flags_equal": true
+      },
+      "plus": {
+        "steps": 573,
+        "max_abs_errors": {
+          "joint_targets": 0.0,
+          "joint_positions": 0.0,
+          "tcp_position": 0.0,
+          "tcp_rotation": 0.0,
+          "insertion_depth_mm": 0.0,
+          "lateral_error_mm": 0.0,
+          "alignment_angle_rad": 0.0,
+          "reward": 0.0,
+          "control_box_overlap_mm": 0.0,
+          "step_peak_penetration_mm": 0.0
+        },
+        "all_termination_flags_equal": true
+      },
+      "minus": {
+        "steps": 576,
+        "max_abs_errors": {
+          "joint_targets": 0.0,
+          "joint_positions": 0.0,
+          "tcp_position": 0.0,
+          "tcp_rotation": 0.0,
+          "insertion_depth_mm": 0.0,
+          "lateral_error_mm": 0.0,
+          "alignment_angle_rad": 0.0,
+          "reward": 0.0,
+          "control_box_overlap_mm": 0.0,
+          "step_peak_penetration_mm": 0.0
+        },
+        "all_termination_flags_equal": true
+      }
+    },
+    "production": {
+      "normal": {
+        "steps": 388,
+        "max_abs_errors": {
+          "joint_targets": 0.0,
+          "joint_positions": 0.0,
+          "tcp_position": 0.0,
+          "tcp_rotation": 0.0,
+          "insertion_depth_mm": 0.0,
+          "lateral_error_mm": 0.0,
+          "alignment_angle_rad": 0.0,
+          "reward": 0.0,
+          "control_box_overlap_mm": 0.0,
+          "step_peak_penetration_mm": 0.0
+        },
+        "all_termination_flags_equal": true
+      }
+    }
+  },
+  "current_source_sha256": {
+    "scripts/simulation/isaac_rl_worker.py": "b2b506e5559fbee48bb7e725e9678a5a453b278530c4d9a8ab395000220704bf",
+    "scripts/simulation/run_isaac_diverse_study.py": "0de918d2e0208e2cbf46f332c4809d07b2f3535d6c221d427ad0641160221f75",
+    "src/omi_shapeforge/sim/box_overlap.py": "04a91ab62ed598e1f39ec0ff25329176e17725c1b4d2fd448006834e51340d77",
+    "tests/test_box_overlap.py": "38c177b11da677178b2c04215209dde81c8ef37459f9963cd0b4e1721c7a0acf"
+  },
+  "artifacts_sha256": {
+    "summary.json": "df842527bce4796792801508eff80daa40afdb3dd5aa863bf396b297a0201d54",
+    "comparisons.json": "a473378c32a46d0ef6c7b2844b7d1daec374e2452f66a85618b0325250ba5f6d",
+    "equivalence.json": "0e25a0078dbf9bbcb703dca995a8d24576870d80dacc305efd709d0d1a934f06",
+    "production_verification.json": "ec037a65f37c06f1db38f1813302bc82b5da2a8b34478d024f073f60b6a6c10b",
+    "image_sampling_check.json": "ef85789b5d91e0e874486cd8a7d1f193a09865629c64f072dd1797c7805804ea",
+    "lightweight_tests.log": "4dcb34e9b2a6af764316eeef5d2824ee7f0695ddcb549f06da25ca18d85bb43e",
+    "geometry_tests.log": "771435e013dd787e5bfcc6073f227f3055aaf0c47c0217f9a7f5ac7dce670410",
+    "prepare.py": "65bd8bca1c59246b8a253963be6a04cca4431dbeb8795010b41f8dcdc339cca4",
+    "variant.py": "5be389bf6ee6a28cef467e8c551cf5d8490db6a9d41ba041129eff1b4344584c",
+    "summarize.py": "1f52462b458064cb50217af85f7dc564271e819a16461058788b20c94b75b8b4",
+    "compare.py": "44123cd9cf2695d5a23233aa7fd103aa215a55ff2e1fa9af6f5cfa367d184ea3",
+    "equivalence.py": "f7b57027285012c01a800d8f46b072b6b67500825fb396355b73605478f3bcf4",
+    "receipts.json": "b316f88f0b995a09b631ec6120d9b43167034550ea94701aa7d51d0b450085bc",
+    "baseline/worker_process.json": "1564e3149bcb73e15ec950bbdc6dff093f1fd5ba9d3f4d7ecc7e70cce8edb65b",
+    "baseline/client_process.json": "776500b0c29c6337801ad7380983894947614191a6badca743049bb773bff0b1",
+    "baseline/shutdown_process.json": "07ad67c0e58ede07566b569d6f3ae7536b8ad0d8cc8281901f3ab415dccc82bf",
+    "baseline/worker/execution.json": "8ea0c1c013659f3568de95a8a8f9f85756ca2c4b0f70cecba770c20d5f91b1d5",
+    "baseline/worker/worker_metadata.json": "d86450aab65fe2b5cfe699410e054fedacc15094f03f0f62471ddf0a90d24202",
+    "baseline/worker/profile.jsonl": "8d85d1599d7fc50359b051cdbcb05f3b061d7766ac4079881614f454db6cc443",
+    "baseline/client/report.json": "afb962d2555f3e57d427732c27e4722d6cc71164d2a55d65f3e91fb94d0a9249",
+    "baseline/client/timings.json": "6ee0cf9d7635daf71de881e09985b0aac2e662d7834b73de65a3b7b3e0733dfc",
+    "baseline/client/protocol.json": "b8d621ab4a34a2f7cdf237adc9b17ac6efb74aa16e401d005567384e4a23db21",
+    "baseline/client/cases/normal/trajectory.jsonl": "47c0925076681bbd04ccf40a3573e17dbb0bbfc831d861b806f87a1677c2638d",
+    "receipts_threads0.json": "a936cec1f0660cadc34300e517069d27eca43b7f9c2753c9ea97de46d59973ac",
+    "threads0/worker_process.json": "5b846f4ba645696c8c387b85287c4175b3a2e16401bf2c5f7184d2eac66f010d",
+    "threads0/client_process.json": "5f875835176e65550bd62c66014ebb1a85ecee2001e211dcb4c6c1832c519b77",
+    "threads0/shutdown_process.json": "85b4618c412c0073e6edf928eca5f6832a916b8f09d7f8c45038d86f92e3f140",
+    "threads0/worker/execution.json": "71f4422b91337826fbfc8fbcae9eae78e8f151be1fcdbf21892306ff80c20b2a",
+    "threads0/worker/worker_metadata.json": "d86450aab65fe2b5cfe699410e054fedacc15094f03f0f62471ddf0a90d24202",
+    "threads0/worker/profile.jsonl": "b131d19e2ededda853263e5b098b6f4d76e573c11e09b250de1f96a82cb2d980",
+    "threads0/client/report.json": "10732e4ee1ed2302a0c8ce22595a0456d9a953a47eb0544045a4e42a21b27459",
+    "threads0/client/timings.json": "8dc22fbed62b731c6b2beb81df8d078a3c5e084874b5dae08906bf27a2437303",
+    "threads0/client/protocol.json": "b8d621ab4a34a2f7cdf237adc9b17ac6efb74aa16e401d005567384e4a23db21",
+    "threads0/client/cases/normal/trajectory.jsonl": "c3e01041be71448a47c970229a6d3afc6dc6efb69a7ed3eff2e1c4b0cdd82d0d",
+    "receipts_render1.json": "58ee410d1c40aa28f56297e3a93d4704f1a2cf7fdcac6e6e223ebeaf2cd52758",
+    "render1/worker_process.json": "e4435982c39d84e6d5e94669a8d2524f1f7e77afb2c0dce65dee2bd2fbed8bd4",
+    "render1/client_process.json": "7b31e773743bfb2c7be941d0885bb3077b3ad86782ce1ca752a9468897285218",
+    "render1/shutdown_process.json": "b4954cf339796b2667ba7c0adc7abea5dec85468c7b2fd8e67b4022b78c9c5fb",
+    "render1/worker/execution.json": "b18e86557792f2bed1f429de645ae3d8bbccc46fc4d9b5b7012576d6dda1c59d",
+    "render1/worker/worker_metadata.json": "d86450aab65fe2b5cfe699410e054fedacc15094f03f0f62471ddf0a90d24202",
+    "render1/worker/profile.jsonl": "e6498cf4f8f7d3084447eda8f606b4501c53deb48a8b7ac6f4a383cdc9190512",
+    "render1/client/report.json": "53ef81488f157ae81e1354f0637f62b049dba88d0d58a3ad2cf4fa8936e92127",
+    "render1/client/timings.json": "f1b3dbf77980d28853c4afd8ef38ec5f2823b004dea3101b0e0dce5e8e4cbe54",
+    "render1/client/protocol.json": "b8d621ab4a34a2f7cdf237adc9b17ac6efb74aa16e401d005567384e4a23db21",
+    "render1/client/cases/normal/trajectory.jsonl": "687b63b7b43f505f785c674b8d233d2283ed1ab2a7aab679dbf5057e028b3327",
+    "receipts_fast.json": "53ca8f5be4fd15b4fc8a1263e4d6cb2c9528cffdde91bca18813b7c7727d2e68",
+    "fast/worker_process.json": "17d6d0d03f2127cc5d89dfb8da302f40206a2b84435197189d902df958060f2f",
+    "fast/client_process.json": "4ee823d8511edcec6736fa556bb94bcdd0a437aadd71c517849ada2706552312",
+    "fast/shutdown_process.json": "b95ff2259fba9db4d0918db6854d943819389cb464d3808b058547a82e1b5cb9",
+    "fast/worker/execution.json": "80916456671324c32135fcf4f4aadbe03df1b96643360b7042f54ad9dcf1a929",
+    "fast/worker/worker_metadata.json": "d86450aab65fe2b5cfe699410e054fedacc15094f03f0f62471ddf0a90d24202",
+    "fast/worker/profile.jsonl": "86dc515af85bf15750762adfd940149fb88110aed11a2c9c4c85db6bceac783d",
+    "fast/client/report.json": "0f9f4e1c934d7493163b329224cfdd1988650ed3d48ce7771e953335de5eb3fd",
+    "fast/client/timings.json": "5b1984155ae4ae35917328e0177dd7953455202d833e0b73c86dde9bd5d1b1c8",
+    "fast/client/protocol.json": "0a556ce0b94568d75f6adddcdb12b196b07b7e754d5857b58943b28cb643180f",
+    "fast/client/cases/normal/trajectory.jsonl": "19afa7c3aa8dab49c37ddc3ba0a71d3c14fe1c050123e0713f2fa3e5856281c1",
+    "fast/client/cases/minus/trajectory.jsonl": "eef1fb898fdaf89496d6e46d6510990319801c10f35c922d5c153749d7727bfb",
+    "fast/client/cases/plus/trajectory.jsonl": "b811f2f355ce3b247ab39432fa0f222d0f53bc3a06188002dfcae4a00a964511",
+    "receipts_noviewport.json": "a84bf42c41e4a68435335b28ed753df844d049804f116f76a72c5b660caf2123",
+    "noviewport/worker_process.json": "13d4df358e6cdd16f401709e6c19f1a7f246a118f99e4dfb4d7e40e087ccecbd",
+    "noviewport/worker/execution.json": "34c0cb3ab62172dfa991138e9f66422da34977815bb39adcc71e62eab0bfe2bb",
+    "receipts_noviewport_late.json": "e94e59d995760cad731b13151f72424fc909c69f13ec3231fb189c0409f7e1ed",
+    "noviewport_late/worker_process.json": "7d33a87efd9b9d4c1ddd610cc1fc85b88baebd62c4eaab93e6ec536694b6eb8c",
+    "noviewport_late/client_process.json": "3e1f1f0005b7bd561cf89f89a70fc8b78a2d5a36320923462461e583badb179c",
+    "noviewport_late/shutdown_process.json": "7f814e651cfba7406d8fbcb5922426ab7a8504754e958d8953302cca32ee1bd5",
+    "noviewport_late/worker/execution.json": "e0488bb4334118a1187656d852e9448571221d6d2d950cb424d91be8720ccdc0",
+    "noviewport_late/worker/worker_metadata.json": "d86450aab65fe2b5cfe699410e054fedacc15094f03f0f62471ddf0a90d24202",
+    "noviewport_late/worker/profile.jsonl": "195237d5bd6c660d655d6574e0f92c9456c5d4d8d438128200757464bdaca81f",
+    "noviewport_late/client/report.json": "961c0091cbd529b55350de9496ee71a56cd3be47164b6ac302c13014977c4348",
+    "noviewport_late/client/timings.json": "7cdd986a1e2dac2a67f9f1870409337a3b84f412fd79de68b29e142a9bf2c155",
+    "noviewport_late/client/protocol.json": "b8d621ab4a34a2f7cdf237adc9b17ac6efb74aa16e401d005567384e4a23db21",
+    "noviewport_late/client/cases/normal/trajectory.jsonl": "3471c22168649fec1c11fa4ffdecf09be4c339fae81dc10d6975fb58a17d9db1",
+    "receipts_final.json": "05163872d6fcb6d95723682b03c2ae7c4dcab2e14d0eaf98eed6811e1085a8cd",
+    "final/worker_process.json": "9d7564ad206df1dc170c53ccc96f36ace79e2913dd8181edc1a52bcfa69607ad",
+    "final/client_process.json": "e83f478e31cd1745c612b22bd615d6fb0b9f1676cbbf15f6e5c84f2947efe339",
+    "final/shutdown_process.json": "e25415f11e1f15a9395e4aae3ecf5f8e7b18e7aff4feb1dc28f22a1b483fa344",
+    "final/worker/execution.json": "002c8557ca5e70dfe4e4990caf8d37446c4e28dc4091644987f46014428a3694",
+    "final/worker/worker_metadata.json": "6e32ed0f4346cabab1133f48a8be3202a6d1bd157fa533aac375d0ea46d67db1",
+    "final/worker/profile.jsonl": "bacc45b40807a1992cbf8188859cfdb1b59e6b0368f3c89ce0dd016d6057458a",
+    "final/client/report.json": "b69d980030752834768fc033c04b04c7ef657a523099bd2450ff89a171e921ab",
+    "final/client/timings.json": "82808907169977a5497be36f4176488bd44a1d6ef0a8523ff94f3af25cf9ed59",
+    "final/client/protocol.json": "0a556ce0b94568d75f6adddcdb12b196b07b7e754d5857b58943b28cb643180f",
+    "final/client/cases/normal/trajectory.jsonl": "8c48e82fc2ffda485ebc248ec052df0dd5d3b1a20d08105687fbfcab5f3bf63d",
+    "final/client/cases/minus/trajectory.jsonl": "42378a23b592294d00e4edc46f283bcfb6b13edc4d182048ac0864dd09679eb1",
+    "final/client/cases/plus/trajectory.jsonl": "4162347526fdba1a2bb0677f263d957c6418c8d8122c628fc31ea93146848ec6",
+    "receipts_production.json": "c22834f9789e2b779d3882b5b6908eeccedfc82d8597ff1952ab13d7ebebcab6",
+    "production/worker_process.json": "dd309fff6f3a373dec56afbbb6daa4a57efad72726743ae327faf73ce67425a3",
+    "production/client_process.json": "735bd1284c0b139e8973b86901638dd664409a6ae41420564b3c2cd28d5a7d30",
+    "production/shutdown_process.json": "2c685c311cbe5799450859ffc509e5e0aa25b8e357e3bd7571221b5fd27623e3",
+    "production/worker/execution.json": "52fbb4d121a5bda32c7b608b92a1b1728a034b0605f4cfcf7d0e5e89f2a1b645",
+    "production/worker/worker_metadata.json": "364df5c875418f091d8f4d24699dac7cf3c348f1e42bf00d46ef57a03781b9c5",
+    "production/client/report.json": "2fda2672b93d044bbca315896c3ed1937e4ac2ea92b1770bf074705c74d80bc3",
+    "production/client/timings.json": "571998e13f34f59198d9282a5f56222b3402c97f75dcf7786378e0b9d2a536bf",
+    "production/client/protocol.json": "1746bbee4c99ad40bac79bf4fb5465cc01ab3682d84a97b10a8f9c69cf732cfc",
+    "production/client/cases/normal/trajectory.jsonl": "7427e98126b55e563e4f77ed9b8ca27f5dddda8fab02090586a2d3964e9d54e2",
+    "run_render1.py": "7c62e596646485f582fbf9091675b41b923d400a209bec8bf1b3dec32b6dd4fd",
+    "run_threads0.py": "70913bf1e63f7eb30eba8c4ab9a35fdb9c2d12f62206b626a591bfb04735e691",
+    "run_final.py": "d5fb9250a240bba98f2a2246eb1270036f2d36a5bd909f6409e894b6e854c163",
+    "run_noviewport_late.py": "08b6c199ca9ececd735b6fd12e68a13aa0aec74f2a1e2b0bf941252fd23f5ed5",
+    "run_production.py": "04fe229722c75fda525a0dd8cf726517dc024e5de101df22d692756c1c612f48",
+    "run.py": "3b72af1a74984688c484b4d9444aec2ee1654db2a9b8a3e32b108bab44c1ff4a",
+    "run_fast.py": "1e6dbce82ecd4a61981a6dcc5bd8329c0f29afb42a6da3e65fab347750209c78",
+    "run_noviewport.py": "11315c7d98de8da9ccb03778461fa727d4baeeda7e1e28f579457604e504bbed",
+    "client_final.py": "25ca86143512d6492237292d2934a412d42718c0c7bf59f45341444a89ed825a",
+    "client_fast.py": "64b95c845f32be27164225053fcdf2b5c48a0642a1a71d38cd74c2b9357812b6",
+    "client.py": "589cdb2d56bf02b2e030fe0fa7516ab87b256e5366de4ab1e75ab858f8a1afb3"
+  },
+  "scope": "diagnostic source snapshots retain instrumentation; final production entry separately verified; no training, no real robot; 20 substeps, two real camera products, two RTX subframes retained; 1-subframe and thread-count candidates not adopted"
+}

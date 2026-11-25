@@ -1,0 +1,586 @@
+{
+  "schema_version": 1,
+  "id": "isaac-fast5-20261124",
+  "status": "bounded_async_recording_and_explicit_fast_recipes_verified",
+  "run_root": "/data/shapeforge/runtime/runs/isaac_fast5_20261124",
+  "guide": "docs/agent/simulation/evolution/isaac-fast-collection.md",
+  "chronicle": "docs/chronicles/2026-11-24-isaac-fast-collection.md",
+  "validation": {
+    "scope": "single CPU PhysX environment, native IK, same scene/guards/seeds; changes are 20->5 physics substeps, sync->bounded background durable recording, and optional 2->1 RTX subframes",
+    "timing_scope": "normal seed91000; first 10 and terminal control excluded from cycle means; full episode wall includes final write drain. Async cases include extra foreground input-frame hash auditing; all cases keep real RGB",
+    "variants": {
+      "sync20": {
+        "cases": [
+          {
+            "id": "normal",
+            "kind": "normal",
+            "seed": 91000,
+            "x_mm": 0.0,
+            "z_mm": 0.0,
+            "split": "diagnostic",
+            "success": true,
+            "steps": 388,
+            "reset_count": 1,
+            "supervised_from_step": 0,
+            "control_from_step": 0,
+            "expert_steps": 388,
+            "policy_steps": 0,
+            "setup_steps": 0,
+            "initialization_valid": true,
+            "final_depth_mm": 51.28131037421046,
+            "failure": null,
+            "recovery_attempts": 0,
+            "recovery_completed": 0,
+            "blocked": false,
+            "teacher_requests": 388,
+            "max_mean_force_N": 0.12058578421374562,
+            "max_substep_force_N": 0.5343198077753224,
+            "episode": "normal",
+            "wall_seconds": 37.04921437500161
+          }
+        ],
+        "samples": 377,
+        "client_mean_ms": {
+          "cycle_ms": 95.16286231034768,
+          "step_rpc_ms": 68.64626623885594,
+          "teacher_rpc_ms": 2.0819993395568615,
+          "spool_append_ms": 24.09787469512483
+        },
+        "worker_mean_ms": {
+          "worker_step_total": 66.42809936598275,
+          "physics_loop": 26.106686737222088,
+          "capture": 32.72280827025615,
+          "DirectWorld.render": 26.0779961218694
+        },
+        "normal_episode_wall_seconds": 37.04921437500161
+      },
+      "sync5": {
+        "cases": [
+          {
+            "id": "normal",
+            "kind": "normal",
+            "seed": 91000,
+            "x_mm": 0.0,
+            "z_mm": 0.0,
+            "split": "diagnostic",
+            "success": true,
+            "steps": 358,
+            "reset_count": 1,
+            "supervised_from_step": 0,
+            "control_from_step": 0,
+            "expert_steps": 358,
+            "policy_steps": 0,
+            "setup_steps": 0,
+            "initialization_valid": true,
+            "final_depth_mm": 51.28110219556252,
+            "failure": null,
+            "recovery_attempts": 0,
+            "recovery_completed": 0,
+            "blocked": false,
+            "teacher_requests": 358,
+            "max_mean_force_N": 0.15082423699485142,
+            "max_substep_force_N": 0.2191804753238118,
+            "episode": "normal",
+            "wall_seconds": 27.100015087002248
+          },
+          {
+            "id": "plus",
+            "kind": "recovery",
+            "seed": 91001,
+            "x_mm": 1.0,
+            "z_mm": 0.0,
+            "split": "diagnostic",
+            "success": true,
+            "steps": 529,
+            "reset_count": 1,
+            "supervised_from_step": 136,
+            "control_from_step": 136,
+            "expert_steps": 393,
+            "policy_steps": 0,
+            "setup_steps": 136,
+            "initialization_valid": true,
+            "final_depth_mm": 51.28095454543471,
+            "failure": null,
+            "recovery_attempts": 1,
+            "recovery_completed": 1,
+            "blocked": true,
+            "teacher_requests": 393,
+            "max_mean_force_N": 0.14733656441011303,
+            "max_substep_force_N": 0.2170521998778001,
+            "episode": "plus",
+            "wall_seconds": 38.55532004900306
+          },
+          {
+            "id": "minus",
+            "kind": "recovery",
+            "seed": 91002,
+            "x_mm": -1.0,
+            "z_mm": 0.0,
+            "split": "diagnostic",
+            "success": true,
+            "steps": 531,
+            "reset_count": 1,
+            "supervised_from_step": 139,
+            "control_from_step": 139,
+            "expert_steps": 392,
+            "policy_steps": 0,
+            "setup_steps": 139,
+            "initialization_valid": true,
+            "final_depth_mm": 51.281018889065734,
+            "failure": null,
+            "recovery_attempts": 1,
+            "recovery_completed": 1,
+            "blocked": true,
+            "teacher_requests": 392,
+            "max_mean_force_N": 0.15596979104933403,
+            "max_substep_force_N": 0.2093143921229072,
+            "episode": "minus",
+            "wall_seconds": 39.32948883999779
+          }
+        ],
+        "samples": 347,
+        "client_mean_ms": {
+          "cycle_ms": 75.0937201556168,
+          "step_rpc_ms": 48.789644397826905,
+          "teacher_rpc_ms": 2.0901969308276818,
+          "spool_append_ms": 23.89249483291838
+        },
+        "worker_mean_ms": {
+          "worker_step_total": 46.63494054173718,
+          "physics_loop": 7.080568114908879,
+          "capture": 32.1885502188856,
+          "DirectWorld.render": 25.605636913179566
+        },
+        "normal_episode_wall_seconds": 27.100015087002248
+      },
+      "async5": {
+        "cases": [
+          {
+            "id": "normal",
+            "kind": "normal",
+            "seed": 91000,
+            "x_mm": 0.0,
+            "z_mm": 0.0,
+            "split": "diagnostic",
+            "success": true,
+            "steps": 358,
+            "reset_count": 1,
+            "supervised_from_step": 0,
+            "control_from_step": 0,
+            "expert_steps": 358,
+            "policy_steps": 0,
+            "setup_steps": 0,
+            "initialization_valid": true,
+            "final_depth_mm": 51.28110219556252,
+            "failure": null,
+            "recovery_attempts": 0,
+            "recovery_completed": 0,
+            "blocked": false,
+            "teacher_requests": 358,
+            "max_mean_force_N": 0.15082423699485142,
+            "max_substep_force_N": 0.2191804753238118,
+            "episode": "normal",
+            "recording": {
+              "mode": "async-durable-v1",
+              "capacity": 8,
+              "submitted": 358,
+              "max_pending": 5,
+              "backpressure_seconds": 0.0,
+              "finish_wait_seconds": 0.018584409001050517,
+              "written": 358,
+              "closed": true
+            },
+            "wall_seconds": 19.9328626570059
+          },
+          {
+            "id": "plus",
+            "kind": "recovery",
+            "seed": 91001,
+            "x_mm": 1.0,
+            "z_mm": 0.0,
+            "split": "diagnostic",
+            "success": true,
+            "steps": 529,
+            "reset_count": 1,
+            "supervised_from_step": 136,
+            "control_from_step": 136,
+            "expert_steps": 393,
+            "policy_steps": 0,
+            "setup_steps": 136,
+            "initialization_valid": true,
+            "final_depth_mm": 51.28095454543471,
+            "failure": null,
+            "recovery_attempts": 1,
+            "recovery_completed": 1,
+            "blocked": true,
+            "teacher_requests": 393,
+            "max_mean_force_N": 0.14733656441011303,
+            "max_substep_force_N": 0.2170521998778001,
+            "episode": "plus",
+            "recording": {
+              "mode": "async-durable-v1",
+              "capacity": 8,
+              "submitted": 529,
+              "max_pending": 3,
+              "backpressure_seconds": 0.0,
+              "finish_wait_seconds": 0.02403852999850642,
+              "written": 529,
+              "closed": true
+            },
+            "wall_seconds": 28.034619725993252
+          },
+          {
+            "id": "minus",
+            "kind": "recovery",
+            "seed": 91002,
+            "x_mm": -1.0,
+            "z_mm": 0.0,
+            "split": "diagnostic",
+            "success": true,
+            "steps": 531,
+            "reset_count": 1,
+            "supervised_from_step": 139,
+            "control_from_step": 139,
+            "expert_steps": 392,
+            "policy_steps": 0,
+            "setup_steps": 139,
+            "initialization_valid": true,
+            "final_depth_mm": 51.281018889065734,
+            "failure": null,
+            "recovery_attempts": 1,
+            "recovery_completed": 1,
+            "blocked": true,
+            "teacher_requests": 392,
+            "max_mean_force_N": 0.15596979104933403,
+            "max_substep_force_N": 0.2093143921229072,
+            "episode": "minus",
+            "recording": {
+              "mode": "async-durable-v1",
+              "capacity": 8,
+              "submitted": 531,
+              "max_pending": 2,
+              "backpressure_seconds": 0.0,
+              "finish_wait_seconds": 0.018097255000611767,
+              "written": 531,
+              "closed": true
+            },
+            "wall_seconds": 28.668277372002194
+          }
+        ],
+        "samples": 347,
+        "client_mean_ms": {
+          "cycle_ms": 55.21095848704523,
+          "step_rpc_ms": 49.6054840862648,
+          "teacher_rpc_ms": 2.004854291193865,
+          "record_enqueue_ms": 0.34521930820512603,
+          "input_hash_audit_ms": 2.750677469662714
+        },
+        "worker_mean_ms": {
+          "worker_step_total": 47.42084400599097,
+          "physics_loop": 7.177172752269356,
+          "capture": 32.681180734908835,
+          "DirectWorld.render": 26.000598916375132
+        },
+        "normal_episode_wall_seconds": 19.9328626570059
+      },
+      "async5_r1": {
+        "cases": [
+          {
+            "id": "normal",
+            "kind": "normal",
+            "seed": 91000,
+            "x_mm": 0.0,
+            "z_mm": 0.0,
+            "split": "diagnostic",
+            "success": true,
+            "steps": 358,
+            "reset_count": 1,
+            "supervised_from_step": 0,
+            "control_from_step": 0,
+            "expert_steps": 358,
+            "policy_steps": 0,
+            "setup_steps": 0,
+            "initialization_valid": true,
+            "final_depth_mm": 51.28110219556252,
+            "failure": null,
+            "recovery_attempts": 0,
+            "recovery_completed": 0,
+            "blocked": false,
+            "teacher_requests": 358,
+            "max_mean_force_N": 0.15082423699485142,
+            "max_substep_force_N": 0.2191804753238118,
+            "episode": "normal",
+            "recording": {
+              "mode": "async-durable-v1",
+              "capacity": 8,
+              "submitted": 358,
+              "max_pending": 2,
+              "backpressure_seconds": 0.0,
+              "finish_wait_seconds": 0.018395688995951787,
+              "written": 358,
+              "closed": true
+            },
+            "wall_seconds": 17.297352932997455
+          }
+        ],
+        "samples": 347,
+        "client_mean_ms": {
+          "cycle_ms": 47.846112619599516,
+          "step_rpc_ms": 42.363010642939194,
+          "teacher_rpc_ms": 1.9270933459196522,
+          "record_enqueue_ms": 0.34854808921747243,
+          "input_hash_audit_ms": 2.713931637012798
+        },
+        "worker_mean_ms": {},
+        "normal_episode_wall_seconds": 17.297352932997455
+      }
+    }
+  },
+  "integrity_audit": {
+    "async5": {
+      "verified_transition_count": 1418,
+      "verified_unique_frames": 1424,
+      "all_input_frame_hashes_preserved": true,
+      "trajectory_comparisons": {
+        "normal": {
+          "steps": 358,
+          "max_differences": {
+            "joint_targets": 0.0,
+            "joint_positions": 0.0,
+            "tcp_position": 0.0,
+            "tcp_rotation": 0.0,
+            "insertion_depth_mm": 0.0,
+            "lateral_error_mm": 0.0,
+            "alignment_angle_rad": 0.0,
+            "reward": 0.0,
+            "control_box_overlap_mm": 0.0
+          }
+        },
+        "plus": {
+          "steps": 529,
+          "max_differences": {
+            "joint_targets": 0.0,
+            "joint_positions": 0.0,
+            "tcp_position": 0.0,
+            "tcp_rotation": 0.0,
+            "insertion_depth_mm": 0.0,
+            "lateral_error_mm": 0.0,
+            "alignment_angle_rad": 0.0,
+            "reward": 0.0,
+            "control_box_overlap_mm": 0.0
+          }
+        },
+        "minus": {
+          "steps": 531,
+          "max_differences": {
+            "joint_targets": 0.0,
+            "joint_positions": 0.0,
+            "tcp_position": 0.0,
+            "tcp_rotation": 0.0,
+            "insertion_depth_mm": 0.0,
+            "lateral_error_mm": 0.0,
+            "alignment_angle_rad": 0.0,
+            "reward": 0.0,
+            "control_box_overlap_mm": 0.0
+          }
+        }
+      }
+    },
+    "async5_r1": {
+      "verified_transition_count": 358,
+      "verified_unique_frames": 360,
+      "all_input_frame_hashes_preserved": true,
+      "trajectory_comparisons": {
+        "normal": {
+          "steps": 358,
+          "max_differences": {
+            "joint_targets": 0.0,
+            "joint_positions": 0.0,
+            "tcp_position": 0.0,
+            "tcp_rotation": 0.0,
+            "insertion_depth_mm": 0.0,
+            "lateral_error_mm": 0.0,
+            "alignment_angle_rad": 0.0,
+            "reward": 0.0,
+            "control_box_overlap_mm": 0.0
+          }
+        }
+      }
+    },
+    "physics20_vs_5": {
+      "control_steps": [
+        388,
+        358
+      ],
+      "max_depth_difference_at_same_control_step_mm": 4.329467992611221,
+      "note": "different physical integration and reset settling duration; no exact-equivalence claim"
+    },
+    "render2_vs_1_image_differences": [
+      {
+        "step": 0,
+        "camera": "rgb",
+        "mean_abs": 10.237141927083334,
+        "max_abs": 77.0
+      },
+      {
+        "step": 0,
+        "camera": "wrist_rgb",
+        "mean_abs": 10.277058919270834,
+        "max_abs": 135.0
+      },
+      {
+        "step": 1,
+        "camera": "rgb",
+        "mean_abs": 1.8102823893229167,
+        "max_abs": 42.0
+      },
+      {
+        "step": 1,
+        "camera": "wrist_rgb",
+        "mean_abs": 3.041748046875,
+        "max_abs": 101.0
+      },
+      {
+        "step": 30,
+        "camera": "rgb",
+        "mean_abs": 0.56097412109375,
+        "max_abs": 10.0
+      },
+      {
+        "step": 30,
+        "camera": "wrist_rgb",
+        "mean_abs": 1.1742146809895833,
+        "max_abs": 33.0
+      },
+      {
+        "step": 100,
+        "camera": "rgb",
+        "mean_abs": 0.5709431966145834,
+        "max_abs": 14.0
+      },
+      {
+        "step": 100,
+        "camera": "wrist_rgb",
+        "mean_abs": 1.0050455729166667,
+        "max_abs": 31.0
+      },
+      {
+        "step": 200,
+        "camera": "rgb",
+        "mean_abs": 0.802490234375,
+        "max_abs": 19.0
+      },
+      {
+        "step": 200,
+        "camera": "wrist_rgb",
+        "mean_abs": 1.1617431640625,
+        "max_abs": 37.0
+      },
+      {
+        "step": 300,
+        "camera": "rgb",
+        "mean_abs": 0.5335489908854166,
+        "max_abs": 15.0
+      },
+      {
+        "step": 300,
+        "camera": "wrist_rgb",
+        "mean_abs": 1.0804239908854167,
+        "max_abs": 45.0
+      },
+      {
+        "step": 357,
+        "camera": "rgb",
+        "mean_abs": 0.49346923828125,
+        "max_abs": 11.0
+      },
+      {
+        "step": 357,
+        "camera": "wrist_rgb",
+        "mean_abs": 0.7257893880208334,
+        "max_abs": 23.0
+      }
+    ]
+  },
+  "current_source_sha256": {
+    "src/omi_shapeforge/sim/async_episode_spool.py": "841de285b56ed7270265951fa110c45f746257cd567c9e3a694be8f9f9e715b7",
+    "src/omi_shapeforge/sim/isaac_contact_runtime.py": "edb900e7fc2e0badd701a9fd9bab45490f433c67c59367a2c47a8bbf3210b472",
+    "scripts/simulation/isaac_rl_worker.py": "9ea10d1aa5526c1b28d8b90f9a690d43d54cee055cb4cdfa1b69aa03c0fba781",
+    "scripts/simulation/run_isaac_diverse_study.py": "355a69ae81ce945c9b16d0f4a927bf54909353e03bfd5af433835043343c65d2",
+    "tests/test_async_episode_spool.py": "21983de550b279a307a939afa67ad61a8e973aaec037e7548b687b9f7e46adeb",
+    "../omi_proj/src/omi_hil_rl/training/isaac_diverse_demonstrations.py": "cf2c6d0010d2fa34bb59b24edc8ec18862ed6eab475d20af8d27f694e0cd1911"
+  },
+  "artifacts_sha256": {
+    "summary.json": "e80eaaa960bc9f876dd941789e674cc59f45b5470c9f6b086816ba376813cd87",
+    "audit.json": "eb7e603998c1584358ac513edf5f7bcbad486d2b9e50541520770fd13649189f",
+    "receipts.json": "92ab4c75e4fefabce8621d454d4122347a9e2400b7fe51fb811ec89febbb8d07",
+    "receipts_async.json": "fa6ade072ed814bc192ff39072ae8f7ce3263c817da670e2fec2b0fc8735a0fd",
+    "lightweight_tests.log": "18b770bfb06e4411e244944cfaad330186650a1d214c887f24b2a0924abc7b46",
+    "async_tests.log": "4a72e6dbbacc656b140f8a03505fcd89906dbc7664aab0241553767d311a7f12",
+    "audit.py": "0a0244303147a8d2dc980ca4a3ce1d67c3c832eea4b68aabcc21a9bd7ca82875",
+    "summarize.py": "becacbf09186ddcea1eece43a9dcda4cf91d1745d874aa49445e88f361da5167",
+    "prepare_baselines.py": "c66832b410ef82cfa9909f905eb3b01077a8245bf6d44791649708cef23ccb27",
+    "run_baselines.py": "b9f741860c6418a66b934ee6c497f8fb94d670ec265bd3fb370408a7cb420c8e",
+    "run_async.py": "f06dfc216edf321b8978c462bd7b92363e7c59ab8213ee383238b38f85a33c55",
+    "client.py": "97d4b67312e958397762fc8daf7f95c706e0955b24232fe203a22936aa005eb8",
+    "client_async.py": "92e90a9a5e77a7f9898e5c2c3651b3dd894d74eaff8e33a8e3db2b06ff2b4caf",
+    "sync20/worker_process.json": "7a773803c0c8e547c5dac10bb724493fc49923a43aa563016afbaec384e3b224",
+    "sync20/client_process.json": "78fa1605aae886b2b22c71900d4526ad55d192e5eacf9ed9213757c40a412edc",
+    "sync20/shutdown_process.json": "e5deb137147d16629b986cc79142db8c328bc227c7dc5ede12eb6eb7c2261593",
+    "sync20/worker/execution.json": "a89deb06a16efa1ded31f593c14ed00d57f6846ae6edd506b440d668589f0c8c",
+    "sync20/worker/worker_metadata.json": "e7413a0f399186a0eca70b974e25e01d6e1991d5077f73604786eb6af111f6de",
+    "sync20/worker/profile.jsonl": "964cea3fcab6505e5fd19d6acbfd6f7825394ac1ce53dbaea7b45ee4375c0a1b",
+    "sync20/client/report.json": "6bbc092e6adececd287c47b91e31809efa7ad797deb3982f7cb9e0bdaac42bdc",
+    "sync20/client/timings.json": "3b9e4c1d1602e62ef7ac49d4f93e1c1b253a0b801519f76cc795cc616133546d",
+    "sync20/client/cycle_timings.json": "28cb54c79f6273eb12f007ebb85315a970778e159ba538ef17a94a4b73039744",
+    "sync20/client/protocol.json": "1746bbee4c99ad40bac79bf4fb5465cc01ab3682d84a97b10a8f9c69cf732cfc",
+    "sync20/client/cases/normal/trajectory.jsonl": "c8a5881a8dc5956dd4af947ef74facdddabdbc130d53c2b5ea0d51c72d02bcc4",
+    "sync5/worker_process.json": "edc03b8fd62c882efcabd295b1603b7e10ae22b66223eaff842d85211974c616",
+    "sync5/client_process.json": "88d890509b09d0cccbb1a18514c73220ca14cf32bea8041561f203955166ba96",
+    "sync5/shutdown_process.json": "a28cbaa7e4bcefb76d31b33bf01af8e331341dbc7c1ca8dcdf223ccecb757231",
+    "sync5/worker/execution.json": "77640a777d6fea74617e3b3808214ff7741334c6a29585423c96d638a994fdb2",
+    "sync5/worker/worker_metadata.json": "a4eb09e1e4cf97b78f04f0d9c8f445c6e2065769a01d5efb6cda11f9a31db0c5",
+    "sync5/worker/profile.jsonl": "81a4048533f8f707609e26d892183ec7e43fe0cb4d839b54fe80819d82c38bb7",
+    "sync5/client/report.json": "0904b178fc2d4b3768d36d183d6147fb5a92e20424c859410e0fc3529e7f526b",
+    "sync5/client/timings.json": "ac898b12bc2c564f990e8d61016e2155bae6b624b4b102b2d159c210c7415e09",
+    "sync5/client/cycle_timings.json": "0ca907859afe47c9898626daf220e21b06896b1a8078b33424d92a3560df7360",
+    "sync5/client/protocol.json": "665ab044e16ad65963a4dfa9daae0c8ba7fa842b532829ce5dbf28882e0dbe0e",
+    "sync5/client/cases/normal/trajectory.jsonl": "eb624a152be68fa4addf402a52e98169a783fa4b4f879801c233dc5fd32cb48b",
+    "sync5/client/cases/minus/trajectory.jsonl": "df95e6210ff8f4b337e3c80e2e2d2bd0e847b8cd99327274e71c4b7aacaa0783",
+    "sync5/client/cases/plus/trajectory.jsonl": "db216cf9a076274637829e59fa8ea02b9f498b6db19e9bc1ca5ff1207e2b38ca",
+    "async5/worker_process.json": "a4c4cfb39b6ff94df5204f4cd1d8455a0eec544fad8654a99cb71ec034732fc0",
+    "async5/client_process.json": "626a8fdb6427ef7766ecb653690a61614a1c65557bf91d4d0cc0c85d1a9ba52b",
+    "async5/shutdown_process.json": "c34ae9edea8d5ba557f60a6ded197460d5c108d199c64f0c3c52ecab5799fb77",
+    "async5/worker/execution.json": "c8d7777b1d1b3626429ef1f4964cfe24a8c737dd42713874d4fc19b5e06cdc0c",
+    "async5/worker/worker_metadata.json": "a4eb09e1e4cf97b78f04f0d9c8f445c6e2065769a01d5efb6cda11f9a31db0c5",
+    "async5/worker/profile.jsonl": "ce6829a79e7fe254ea744c514f7d4cf4f95fb9e4c0cbf0cf049d4f105c571c4f",
+    "async5/client/report.json": "a5e7b4b3e66af6e8ef8f5b2f5064fd203b55b1792218318cf9b6481a2f798011",
+    "async5/client/timings.json": "3c5c45fa5abc3bb914ed3e08aa57e6d7bb7ebace122615959fcc7699e6a50217",
+    "async5/client/cycle_timings.json": "447d0b07f39a703b7ed1d9c82a70ae58447569dce6f884495373568489136976",
+    "async5/client/protocol.json": "b148ac0e099a11efa08a1b2c5da0983753ff2c925f4c6ffa9589bf79d5edb6dd",
+    "async5/client/expected_observation_frames.json": "c9378d0d4e15672f080ae86bffbef68ba71c4848acf7465fdbeab630f95f42c6",
+    "async5/client/write_timings.json": "3d9495a67d934c60fbd0f9df60186fde77761ea81716764d9b4d0accd1810586",
+    "async5/client/cases/normal/trajectory.jsonl": "14a1752ecfe8a5df9df369f5b849b8ce36d59d7b66c843b919fdac19280d44b1",
+    "async5/client/cases/minus/trajectory.jsonl": "5b1c643550ea723f39cf08c69fd744204f22ed36a17a4ca8d84b0d5bb7bae557",
+    "async5/client/cases/plus/trajectory.jsonl": "9b004c447309ba6fb5f0b7a556fc7342fa68233cdbf1705df8e9e0670e588f97",
+    "async5_r1/worker_process.json": "1c69586e109b19b30f1a2302d7487b85e2d37c94806915f10acaab9e8fa5fe51",
+    "async5_r1/client_process.json": "81bcd9674e55f517304fbf79fd33c9504b4318788d03a4170bdb810d92374ac7",
+    "async5_r1/shutdown_process.json": "61fa0fb3641f80e2bea2d91c500ba618381996f35a0a6571868d5b4892eecada",
+    "async5_r1/worker/execution.json": "374a7779521da1a2e4c764ea1cff22602c13946c36b4abf26177eb9e88c2e86d",
+    "async5_r1/worker/worker_metadata.json": "edb664353c472a7273b91961c767e2837be4e3eafd4065a86a641dd691b6e7c8",
+    "async5_r1/client/report.json": "d4db53bcc87d0fa2348370cd587a2135f717274bb8856445874d7f91c9a6fba0",
+    "async5_r1/client/timings.json": "6524aae3b21141d3b765d004ca3b065088dd8c1c98dafa1abd3011290113f6df",
+    "async5_r1/client/cycle_timings.json": "ad2f6d303e377930d0421fec6a126b9a8425b6272428a30d93aed4ac4cdb483d",
+    "async5_r1/client/protocol.json": "c7275ff4455f28f00693a82b44daf0e3d0d4f1aab9246dba9a5a2e09e194a3b6",
+    "async5_r1/client/expected_observation_frames.json": "2fa347fada4ebeea8da356f68ef5f99331c9021e77777102a5723740f34bde91",
+    "async5_r1/client/write_timings.json": "737101d4ddd07a8b3986292af018ec6e2593ceea053efe13d59d55a0de56942f",
+    "async5_r1/client/cases/normal/trajectory.jsonl": "c8cca886b9ce07deffa6e4b8b2256e75d3264d10069e392bf5d5a630704c51c0",
+    "validated_source/isaac_contact_runtime.py": "edb900e7fc2e0badd701a9fd9bab45490f433c67c59367a2c47a8bbf3210b472",
+    "validated_source/test_async_episode_spool.py": "21983de550b279a307a939afa67ad61a8e973aaec037e7548b687b9f7e46adeb",
+    "validated_source/run_isaac_diverse_study.py": "355a69ae81ce945c9b16d0f4a927bf54909353e03bfd5af433835043343c65d2",
+    "validated_source/isaac_diverse_demonstrations.py": "cf2c6d0010d2fa34bb59b24edc8ec18862ed6eab475d20af8d27f694e0cd1911",
+    "validated_source/isaac_rl_worker.py": "9ea10d1aa5526c1b28d8b90f9a690d43d54cee055cb4cdfa1b69aa03c0fba781",
+    "validated_source/async_episode_spool.py": "841de285b56ed7270265951fa110c45f746257cd567c9e3a694be8f9f9e715b7"
+  },
+  "scope": "single CPU environment/native IK, fixed scene/rule guards; async durable writes with bounded queue and final drain; no frame dropping; 5 substeps changes integration, 1 RTX subframe changes images; no BC/RL validation or hardware; defaults preserved"
+}

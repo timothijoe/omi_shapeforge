@@ -1,0 +1,105 @@
+{
+  "schema": "alignment-insertion-film-v9",
+  "date": "2026-11-25",
+  "run_directory": "/data/shapeforge/runtime/runs/insertion_layered_points_20261125_r9",
+  "video": {
+    "path": "/data/shapeforge/runtime/runs/insertion_layered_points_20261125_r9/film/alignment_insertion_geometry_pose_1080p.mp4",
+    "duration_s": 18.066666666666666,
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "frames": 542,
+    "fps": 30,
+    "bytes": 6660212,
+    "sha256": "f33ebe248ba3cb941673185741675079afaf8b3d33a1af7ceb8c7b581008f0f6"
+  },
+  "delivery": {
+    "机器人插接_WG-r15_分层点云_同一点径_20261125.mp4": {
+      "path": "/home/linux/Downloads/机器人插接_WG-r15_分层点云_同一点径_20261125.mp4",
+      "bytes": 6660212,
+      "sha256": "f33ebe248ba3cb941673185741675079afaf8b3d33a1af7ceb8c7b581008f0f6"
+    },
+    "机器人插接_WG-r15_分层点云_封面_20261125.png": {
+      "path": "/home/linux/Downloads/机器人插接_WG-r15_分层点云_封面_20261125.png",
+      "bytes": 588530,
+      "sha256": "970974b119597617601f1023a216b6dcfef6992bcfe4e3b086ea9b2ae96c5951"
+    },
+    "机器人插接_WG-r15_分层点云_过程预览_20261125.jpg": {
+      "path": "/home/linux/Downloads/机器人插接_WG-r15_分层点云_过程预览_20261125.jpg",
+      "bytes": 561652,
+      "sha256": "2c17bdcd2dd84d6a75a2c49b5e6c2265586673b4d3826dd7046f5617f2d175e8"
+    },
+    "机器人插接_WG-r15_分层点云_点径对比_20261125.png": {
+      "path": "/home/linux/Downloads/机器人插接_WG-r15_分层点云_点径对比_20261125.png",
+      "bytes": 64485,
+      "sha256": "1a4ec972616017abbfe934156472cbd8302cb72c0320b7a9e0844047aafa393d"
+    }
+  },
+  "user_accepted_viewer": true,
+  "user_adopted_future_presentation_default": true,
+  "video_user_reviewed": true,
+  "user_quote": "很好，这个部分你先写一下docs，然后按照这个格式生成视频。后面我们大部分的点云打算都这么使用",
+  "policy": "configs/pointcloud_presentation.json",
+  "point_style": "layered",
+  "same_point_diameter_for_all_layers": true,
+  "point_diameter_output_px": 1,
+  "source_points_thinned": false,
+  "point_dilation": false,
+  "hidden_focus_overlay": false,
+  "source_point_counts": {
+    "module": {
+      "ordinary": 18923,
+      "focus": 23518,
+      "total": 42441
+    },
+    "socket": {
+      "ordinary": 167239,
+      "focus": 45069,
+      "total": 212308
+    }
+  },
+  "asset_identity": {
+    "tool": "WG-DAIMON-LOGO-r15",
+    "module": "OM-001/V4 r08",
+    "contract": "wva01-closed-reference-fixture-v1",
+    "integration_release": "SC-WVA01-ISAAC-FIXTURE-r01",
+    "grasp": "fixed module insertion fixture using GC-r01 settled reference pose; NOT free contact grasp"
+  },
+  "source_capture": "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_capture",
+  "source_templates": "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_templates",
+  "source_sha256": {
+    "/home/linux/omi_folder/omi_shapeforge/scripts/perception/render_alignment_film.py": "accad4fc1555022604b93963d38f5580921cf3b9e836877902f927606dae491a",
+    "/home/linux/omi_folder/omi_shapeforge/scripts/perception/render_insertion_multiview.py": "cbfc74efafe7761daedf9708c31d54d5384483d7d288b8ca00cb210d7872f3d4",
+    "/home/linux/omi_folder/omi_shapeforge/configs/pointcloud_presentation.json": "6c220f29362f22b2659774564242bc5817c7226823d3258bf9144fbad75778c2",
+    "/home/linux/omi_folder/omi_shapeforge/src/omi_shapeforge/sim/isaac_contact_kinematics.py": "7d0f15ae2ea39c47c3b7ec14b8f964190304617ebedeb743b88a0c406125b9cb",
+    "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_capture/capture_report.json": "b24f9a73d4ca70cf2965427baf6de177513e2d6880240a267060b40fbd3c18c4",
+    "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_templates/manifest.json": "128f46c1428a27d38c83c568698247a78a4a3252d26db03686bc31bb20bc7311",
+    "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_templates/module.npz": "b0deb4320e757b53f7805dc9ded9b9e8f1cdc2545e7e0d187d7b75fb01143b22",
+    "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_templates/socket.npz": "6fe1dbacdabe7ea276d286d0f20d7051d37fa75010301c5137b5f9defaca02b6",
+    "/home/linux/omi_folder/work/pointcloud-density-20261125/pointcloud-density.html": "1384a58fd5684b36780920d91004437f7b0b8269e3229ab507aa80fe089f365f",
+    "/home/linux/omi_folder/work/pointcloud-density-20261125/fixed.html": "33d4a91abf1db8d52b7928f3d1a517f59a7e7e90d9e9fea43413da10d3dc32c4",
+    "/home/linux/omi_folder/work/pointcloud-density-20261125/preview.html": "33d4a91abf1db8d52b7928f3d1a517f59a7e7e90d9e9fea43413da10d3dc32c4",
+    "/home/linux/omi_folder/work/pointcloud-density-20261125/provenance.json": "14c9097536f20c9693541b1205cf87981c6af132c525ef4c4fc5173e232a740a",
+    "/home/linux/omi_folder/work/pointcloud-density-20261125/browser-direct-canvas2d.json": "c6192d6854bde5f01d2238b77e28f7ebe0e17230f587bcf73ed34db624cfa873",
+    "/home/linux/omi_folder/work/pointcloud-density-20261125/static-no-script.png": "f49d114674d38482d1ca9f6ea98b40dd90489fd5bd87183774ed263bad826f89",
+    "/home/linux/omi_folder/work/pointcloud-density-20261125/check-direct-canvas2d.mjs": "32fa5951584f2babf778ba332742f282c31ea2ae0de7f641edcf1414bf942158",
+    "/home/linux/omi_folder/work/pointcloud-density-20261125/make_standalone.py": "578eb361bd792f652e38061e786b1b7198580f1faa6e6eadc35c49135b269c9f",
+    "/home/linux/omi_folder/work/pointcloud-density-20261125/v1-pointcloud-density.html": "0013340d8688ab38fad8f4d81d8aea533384d7919c8fa00645c19180ffe2935b",
+    "/home/linux/omi_folder/work/pointcloud-density-20261125/v1-preview.html": "66e187520afe7fa67b0a49743463c006e35f9f510dbb4e1c052e31c5158bd76c"
+  },
+  "playback_rate": 3,
+  "pointcloud_source": "simulation pose reference / ground-truth stand-in; NOT learned predictions",
+  "network_inference": false,
+  "new_physics_run": false,
+  "grasp_mode": "fixed fixture, unchanged from r6",
+  "free_contact_grasp_motion_passed": false,
+  "old_deliveries_preserved": true,
+  "quality_check": "/data/shapeforge/runtime/runs/insertion_layered_points_20261125_r9/quality_check.json",
+  "default_presentation_documentation": "docs/agent/perception/evolution/pointcloud-presentation.md",
+  "film_documentation": "docs/agent/perception/evolution/alignment-insertion-film.md",
+  "user_accepted_as_usable_version": true,
+  "review_status": "usable baseline; module ordinary-cloud color needs refinement",
+  "review_quote": "整体还算好看，但插入的时候好像不够惊艳……已经可以作为一个版本了",
+  "clarification_quote": "我是说，点云的那个画面不够惊艳。换句话，光模块的普通点云配色不够好看"
+}

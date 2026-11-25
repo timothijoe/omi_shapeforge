@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "id": "isaac-performance-handoff-20261124",
+  "recorded_date": "2026-11-24",
+  "status": "documented_at_user_requested_stopping_point",
+  "guide": "docs/agent/simulation/evolution/isaac-control-throughput.md",
+  "chronicle": "docs/chronicles/2026-11-24-isaac-performance-window-handoff.md",
+  "user_direction": "暂时先这样；记录当前进展到纪传体和编年体。Only document at this turn; no new experiment, training, default switch or hardware action.",
+  "recommended_explicit_recipe": {
+    "physics_device": "cpu",
+    "ik_backend": "tianji",
+    "physics_substeps": 5,
+    "physics_dt": 0.02,
+    "control_dt": 0.1,
+    "render_subframes": 2,
+    "async_recording": true,
+    "preview_viewport_updates": false
+  },
+  "actual_defaults": {
+    "bare_worker": {
+      "physics_device": "cpu",
+      "ik_backend": "dls",
+      "physics_substeps": 500,
+      "render_subframes": 2
+    },
+    "diverse_study": {
+      "physics_device": "cpu",
+      "ik_backend": "dls",
+      "physics_substeps": 20,
+      "render_subframes": 2,
+      "async_recording": false
+    }
+  },
+  "overall_comparison": {
+    "seed": 91000,
+    "old_stage_sum_mean_ms": 768.3639353548209,
+    "new_direct_cycle_mean_ms": 55.21095848704523,
+    "approx_cycle_speedup": 13.916873686138066,
+    "approx_cycle_time_reduction_percent": 92.81447814679777,
+    "old_episode_seconds": 305.8710510630008,
+    "new_episode_seconds": 19.9328626570059,
+    "old_control_steps": 397,
+    "new_control_steps": 358,
+    "episode_speedup": 15.345063894046088,
+    "whole_episode_per_control_ms": [
+      770.4560480176342,
+      55.678387310072345
+    ],
+    "boundary_note": "Old steady-state cycle reconstructed from teacher RPC + step RPC + spool append, excluding first 10 and terminal control; new cycle directly timed. Round to ~770 -> ~55 ms, ~14x. Episode wall includes recording/finish but excludes Isaac startup. Trajectory and action count changed; not an equal-fidelity code-only speedup."
+  },
+  "learning_state": {
+    "demonstrations": 50,
+    "training": 40,
+    "validation": 10,
+    "bc_validation_successes": 0,
+    "bc_validation_cases": 10,
+    "bc_test_successes": 0,
+    "bc_test_cases": 8,
+    "rl_executed_in_demo50_study": false,
+    "retrained_after_speed_optimizations": false
+  },
+  "source_manifests_sha256": {
+    "isaac_demo50_20261124.json": "cf42193cdb1b6550a3cef3c83fe78528dabf23da8b6eafae1717169ef7d4e82b",
+    "isaac_substeps_20261124.json": "a636c5d3efacf0dfec84ad4288b78156f1d9c668aaa9614ad1bd8ab686a4a3df",
+    "tianji_ik_audit_20261124.json": "a0084b543abb12c367bca7d265c3e57d1dcbee1cf477b8cb453581756168eb4a",
+    "tianji_ik_adapter_20261124.json": "98f5c492bcaabbc69038a0fabc5169dce1e1e45d59c583e3fadc72d210bc3c1d",
+    "isaac_step_profile_20261124.json": "a02cc29237b042756b2dcc97aa31ea7ad3d098ae7dd7739bb815805a5ef45ffc",
+    "isaac_gpu_physics_20261124.json": "7e8a985a05a605d25f66217c28db11386e835234e3a153752426e0c5af53b5c0",
+    "isaac_cpu_cycle_20261124.json": "04c3ef4c2a6d653985f16b8b1abe286f7b4536a44d31da4d9fc8e005fde6847c",
+    "isaac_fast5_20261124.json": "801c06f988ba6c393a031bedb1c9d7085261d5a8dc4a6cafecca51ca057ab2d4"
+  },
+  "evidence_sha256": {
+    "/data/shapeforge/runtime/runs/isaac_substeps_20261124/steps_500/client/client_timings.json": "9163e33f2050fe83ddb4882b60468e758a5853ded789e2d305487c0f9a585d59",
+    "/data/shapeforge/runtime/runs/isaac_substeps_20261124/steps_500/client/report.json": "d7e85c8d8d76fb94e17d7c8123b9a9db998dd65021c7ed75e3f11d576e36314a",
+    "/data/shapeforge/runtime/runs/isaac_fast5_20261124/summary.json": "e80eaaa960bc9f876dd941789e674cc59f45b5470c9f6b086816ba376813cd87",
+    "/data/shapeforge/runtime/runs/isaac_fast5_20261124/audit.json": "eb7e603998c1584358ac513edf5f7bcbad486d2b9e50541520770fd13649189f",
+    "/data/shapeforge/runtime/runs/isaac_demo50_20261124/summary.json": "8931525e1b38ff1efa1a1a99f2a9a71315dedd1f48998c9e2832ad9ac6a65ebe"
+  },
+  "limitations": [
+    "5 versus 500 substeps changes integration/contact sampling; limited three-scenario rule validation",
+    "1 RTX subframe changes images and lacks BC/RL validation",
+    "GPU host-readback single environment is slower; no GPU-resident/vectorized training completed",
+    "Async append acknowledges queueing; successful ready requires all durable writes; incomplete queued tail not crash-durable",
+    "No robot connection or real calibration certification",
+    "Previous failed attempts and original training contracts remain preserved"
+  ]
+}

@@ -1,5 +1,7 @@
 # 安装环境与填写路径
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../docs/agent/interfaces/local-resources.md)。
+
 适用：当前 Linux x86_64 工作区。主项目要求 Python 3.11 以上，已验证控制环境为 Python 3.11；GPU、Blender 和 Isaac 各用独立运行时。
 
 ## 1. 主环境

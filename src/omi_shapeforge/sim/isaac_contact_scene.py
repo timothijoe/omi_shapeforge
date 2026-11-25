@@ -35,7 +35,7 @@ def set_pose(prim,t):
     q=quaternion(t[:3,:3]);x.AddOrientOp().Set(Gf.Quatf(float(q[0]),Gf.Vec3f(*q[1:])))
 
 
-def build(stage, transfer, output, *, contact_offset=1e-5, locked=False, lateral_mm=0., yaw_deg=0.):
+def build(stage, transfer, output, *, contact_offset=1e-5, locked=False, lateral_mm=0., yaw_deg=0., movable_socket=False):
     directory=Path(transfer);packet=json.loads((directory/'transfer.json').read_text())
     if hashlib.sha256((directory/'meshes.npz').read_bytes()).hexdigest()!=packet['meshes_sha256']:
         raise ValueError('geometry packet hash mismatch')
@@ -60,14 +60,25 @@ def build(stage, transfer, output, *, contact_offset=1e-5, locked=False, lateral
         b=bs[i];prefix='/World/Robot/' if robot and (i<ids['sim_socket']) else '/World/'
         paths[i]=prefix+b['name']
         body=UsdGeom.Xform.Define(stage,paths[i]);set_pose(body.GetPrim(),rest[i])
-        dynamic=i in joint_bodies or (robot and b['name']=='ZJ_Robot_link')
+        socket_base=movable_socket and b['name']=='sim_socket'
+        free_body=b['name'] in packet.get('free_bodies',[])
+        dynamic=i in joint_bodies or (robot and b['name']=='ZJ_Robot_link') or socket_base or free_body
         if not dynamic:continue
-        UsdPhysics.RigidBodyAPI.Apply(body.GetPrim())
+        rigid=UsdPhysics.RigidBodyAPI.Apply(body.GetPrim())
+        if socket_base:rigid.CreateKinematicEnabledAttr(True)
         rb=PhysxSchema.PhysxRigidBodyAPI.Apply(body.GetPrim())
-        rb.CreateDisableGravityAttr(True)  # matches source gravcomp=1, including the held module
-        rb.CreateSolverPositionIterationCountAttr(32);rb.CreateSolverVelocityIterationCountAttr(4)
+        rb.CreateDisableGravityAttr(not free_body)  # free module uses gravity; robot retains source gravcomp
+        rb.CreateSolverPositionIterationCountAttr(128 if packet.get('free_bodies') else 32)
+        rb.CreateSolverVelocityIterationCountAttr(32 if packet.get('free_bodies') else 4)
         rb.CreateSleepThresholdAttr(0.0)
         rb.CreateStabilizationThresholdAttr(0.0)
+        if socket_base:
+            # Kinematic holder has infinite effective mass; positive authored
+            # placeholders avoid deriving inertia from the zero-mass static USD.
+            ma=UsdPhysics.MassAPI.Apply(body.GetPrim());ma.CreateMassAttr(1.)
+            ma.CreateDiagonalInertiaAttr(Gf.Vec3f(.001,.001,.001))
+            PhysxSchema.PhysxContactReportAPI.Apply(body.GetPrim()).CreateThresholdAttr(0.)
+            continue
         members=[n for n in range(1,len(bs)) if owners[n]==i]
         masses=np.array([bs[n]['mass'] for n in members]);total=float(sum(masses))
         centers=[];inertias=[]
@@ -115,6 +126,10 @@ def build(stage, transfer, output, *, contact_offset=1e-5, locked=False, lateral
             obj.CreatePointsAttr(Vt.Vec3fArray.FromNumpy((v*vertex_scale).astype(np.float32)))
             obj.CreateFaceVertexCountsAttr([3]*len(f));obj.CreateFaceVertexIndicesAttr(f.flatten().tolist())
             obj.CreateSubdivisionSchemeAttr('none');obj.CreateDoubleSidedAttr(True)
+            if f'uv{g["mesh"]}' in meshes:
+                uv=meshes[f'uv{g["mesh"]}'];indices=meshes[f'fuv{g["mesh"]}']
+                primvar=UsdGeom.PrimvarsAPI(obj).CreatePrimvar('st',Sdf.ValueTypeNames.TexCoord2fArray,UsdGeom.Tokens.faceVarying)
+                primvar.Set(Vt.Vec2fArray.FromNumpy(uv[indices].reshape(-1,2).astype(np.float32)))
         elif kind==2:
             obj=UsdGeom.Sphere.Define(stage,p);obj.CreateRadiusAttr(g['size'][0])
         elif kind==5:
@@ -127,7 +142,7 @@ def build(stage, transfer, output, *, contact_offset=1e-5, locked=False, lateral
             t[:3,3]-=t[:3,:3]@np.array([0.,0.,.01])
         else:raise ValueError(f'Unsupported geom type {kind}')
         set_pose(obj.GetPrim(),t)
-        if kind==7 and g['contact']:UsdGeom.Xformable(obj).AddScaleOp().Set(Gf.Vec3f(.001,.001,.001))
+        if kind==7 and g['contact'] and vertex_scale==1000.:UsdGeom.Xformable(obj).AddScaleOp().Set(Gf.Vec3f(.001,.001,.001))
         if kind==6:UsdGeom.Xformable(obj).AddScaleOp().Set(Gf.Vec3f(*g['size']))
         if kind==0:UsdGeom.Xformable(obj).AddScaleOp().Set(Gf.Vec3f(4,4,.02))
         if g['group']>=3 or g['rgba'][3]==0:obj.CreateVisibilityAttr('invisible')
@@ -141,6 +156,9 @@ def build(stage, transfer, output, *, contact_offset=1e-5, locked=False, lateral
                 cooking.CreateMinThicknessAttr(0.)
             collision=PhysxSchema.PhysxCollisionAPI.Apply(obj.GetPrim())
             collision.CreateContactOffsetAttr(g.get('contact_offset_m',contact_offset));collision.CreateRestOffsetAttr(0.)
+            if g.get('torsional_patch_radius_m') and not packet['manifest'].get('grasp_contract',{}).get('spin_contact_model'):
+                collision.CreateTorsionalPatchRadiusAttr(g['torsional_patch_radius_m'])
+                collision.CreateMinTorsionalPatchRadiusAttr(g['torsional_patch_radius_m'])
         geom_paths[g['name']]=p
     joint_paths={}
     for j in js:
@@ -149,7 +167,7 @@ def build(stage, transfer, output, *, contact_offset=1e-5, locked=False, lateral
         joint=(UsdPhysics.RevoluteJoint if hinge else UsdPhysics.PrismaticJoint).Define(stage,path)
         joint.CreateBody1Rel().SetTargets([Sdf.Path(paths[b])]);joint.CreateAxisAttr('X')
         frame=rest[b]@transform(j['position'],Rotation.align_vectors([j['axis']],[[1.,0,0]])[0].as_matrix())
-        dynamic_parent=parent in joint_bodies or (robot and bs[parent]['name']=='ZJ_Robot_link')
+        dynamic_parent=parent in joint_bodies or (robot and bs[parent]['name']=='ZJ_Robot_link') or (movable_socket and bs[parent]['name']=='sim_socket')
         if dynamic_parent:joint.CreateBody0Rel().SetTargets([Sdf.Path(paths[parent])])
         for side,t in [(0,np.linalg.inv(rest[parent])@frame if dynamic_parent else frame),(1,np.linalg.inv(rest[b])@frame)]:
             getattr(joint,f'CreateLocalPos{side}Attr')().Set(Gf.Vec3f(*t[:3,3]))
@@ -169,7 +187,9 @@ def build(stage, transfer, output, *, contact_offset=1e-5, locked=False, lateral
         q=quaternion(rest[base][:3,:3]);anchor.CreateLocalRot0Attr(Gf.Quatf(float(q[0]),Gf.Vec3f(*q[1:])))
         UsdPhysics.ArticulationRootAPI.Apply(anchor.GetPrim())
         aa=PhysxSchema.PhysxArticulationAPI.Apply(anchor.GetPrim())
-        aa.CreateEnabledSelfCollisionsAttr(False);aa.CreateSolverPositionIterationCountAttr(32);aa.CreateSolverVelocityIterationCountAttr(4)
+        aa.CreateEnabledSelfCollisionsAttr(False)
+        aa.CreateSolverPositionIterationCountAttr(128 if packet.get('free_bodies') else 32)
+        aa.CreateSolverVelocityIterationCountAttr(32 if packet.get('free_bodies') else 4)
         aa.CreateSleepThresholdAttr(0.)
         aa.CreateStabilizationThresholdAttr(0.)
     cameras={}
@@ -193,7 +213,7 @@ def build(stage, transfer, output, *, contact_offset=1e-5, locked=False, lateral
         collider_count=collider_count,contact_offset_m=contact_offset,rest_offset_m=0.,
         per_collider_contact_offsets_m={g['name']:g['contact_offset_m'] for g in packet['geoms'] if g['contact'] and 'contact_offset_m' in g},
         collision_vertex_scale=1000.,collision_prim_scale=.001,
-        locked_pads=locked,lateral_mm=lateral_mm,yaw_deg=yaw_deg,
+        locked_pads=locked,lateral_mm=lateral_mm,yaw_deg=yaw_deg,movable_socket=movable_socket,
         transfer=str(directory),transfer_sha256=hashlib.sha256((directory/'transfer.json').read_bytes()).hexdigest(),
         limitations=packet['limitations']+['PhysX convex cooking and drives require dynamic validation',
             'Mimic joints held independently; no physical grasp or robot self contact'])

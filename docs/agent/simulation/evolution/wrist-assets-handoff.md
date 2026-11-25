@@ -1,5 +1,7 @@
 # 腕部相机、夹爪与光模块：其他Agent接入说明
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../../interfaces/local-resources.md)。
+
 需要真正夹住时使用[GC-r01双胶垫接触修订](wrist-contact-closure.md)；WVA-01的固定参考`tool_to_module`不是通用夹持约束。新场景需初始化已夹紧关键帧或执行闭合并通过双侧接触门控。
 
 **当前已接受版本为[WVA-01「腕部实拍对齐版」](wrist-visual-wva01.md)**，使用[WVA-01固定清单](../../../../manifests/wrist_visual_wva01_20261122.json)。下方WG-r10的清单、路径和统计为历史接入快照；组件坐标合同可参考，r15须额外保留UV／纹理。

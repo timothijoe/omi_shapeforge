@@ -1,5 +1,7 @@
 # 源码与分支基线（ENG-001）
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../agent/interfaces/local-resources.md)。
+
 2026-11-20 完成首轮源码整理。版本和检查证据见 [source_baseline_20261120.json](../../manifests/source_baseline_20261120.json)。本页描述可恢复源码及现有环境复验，不代表全新机器上的依赖安装或原生扩展重新编译已通过。
 
 ## 已保存版本

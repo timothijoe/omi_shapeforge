@@ -1,5 +1,7 @@
 # 实测截面光模块独立修订
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../../interfaces/local-resources.md)。
+
 2026-11-21 按用户新测量创建 **OM-001/MEASURED-r01**，从V3另存派生，未覆盖V2、V3、插座或SIM-r03。目录：`/data/omi_runtime/assets/optical_module_measured/r01/`。资产登记见[清单](../../../../manifests/measured_module_20261121.json)，仍未替换训练场景默认资产。
 
 ## 尺寸与斜面

@@ -1,5 +1,7 @@
 # 统一开发方案与工作拆分
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../agent/interfaces/local-resources.md)。
+
 整理日期：2026-11-20。依据 [HANDOFF](../../HANDOFF.md)、[当前总览](../current.md)、[能力总表](../capabilities.md)及现有 CLI、调度器、仿真脚本和测试。
 
 本文是后续开发的建议基线。ENG-001～003 已完成，其余任务待实施；状态见第 7 节，不代表尚未开发的能力已经验收。最新能力事实仍由领域 `evolution/` 维护，本文只维护工作拆分、依赖和交付标准。

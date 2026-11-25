@@ -1,5 +1,29 @@
 # 感知阶段记录
 
+- [2026-11-25：腕部相机只叠加橙绿重点、保留原始RGB](2026-11-25-wrist-focus-overlay.md)
+
+- [2026-11-25：r9作为可用基线，光模块普通点云中性配色候选](2026-11-25-module-ordinary-palette.md)
+
+- [2026-11-25：分层点云查看器获认可、默认约定与同格式视频](2026-11-25-layered-pointcloud-presentation.md)
+
+- [2026-11-25：用户否定暖色普通面，插接点云改中性灰阶](2026-11-25-insertion-film-neutral-grays.md)
+
+- [2026-11-25：插接视频光模块、插座上部与底座分色](2026-11-25-insertion-film-component-palette.md)
+
+- [2026-11-24：用户认可简洁三视图，记录模块普通点云略深的灰度偏好](2026-11-24-insertion-film-user-acceptance.md)
+
+- [2026-11-24：插接影片仅尖端着色、去除放大窗与简洁三视图](2026-11-24-insertion-film-clean-layout.md)
+
+- [2026-11-24：插接影片橙绿配色、腕部局部放大及3倍播放](2026-11-24-insertion-film-color-and-pace.md)
+
+- [2026-11-24：未对准到插入、参考截图样式与“几何位姿估计”视频修订](2026-11-24-alignment-insertion-film.md)
+
+- [2026-11-24：连续插入三视图GT视频交付](2026-11-24-continuous-insertion-video.md)
+
+- [2026-11-24：点云估计展示视频，1080p／56秒与来源核查](2026-11-24-pointcloud-showcase-video.md)
+
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。历史阶段正文保留当时记录。目录映射与恢复要求见[当前资源契约](../../interfaces/local-resources.md)。
+
 - [2026-11-23：细网格感知数据采集、筛选、验证与归档](2026-11-23-grid-perception-data-v1.md)
 - [2026-11-23：模块三变量预览与用户确认](2026-11-23-three-variable-grasp-preview.md)
 - [2026-11-23：接触修正版腕部感知训练](2026-11-23-contact-wrist-training.md)

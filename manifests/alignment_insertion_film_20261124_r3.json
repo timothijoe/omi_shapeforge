@@ -1,0 +1,57 @@
+{
+  "schema": "alignment-insertion-film-v3",
+  "date": "2026-11-24",
+  "run_directory": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r3",
+  "video": {
+    "path": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r3/film/alignment_insertion_geometry_pose_1080p.mp4",
+    "duration_s": 18.066666666666666,
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "frames": 542,
+    "bytes": 3313208,
+    "sha256": "e7b89b1b298c84d144211d490acb16340023fccbd309bbfaf9192d61e042d87a"
+  },
+  "delivery": {
+    "机器人插接_橙绿点云_3倍速_1080p_20261124.mp4": {
+      "path": "/home/linux/Downloads/机器人插接_橙绿点云_3倍速_1080p_20261124.mp4",
+      "sha256": "e7b89b1b298c84d144211d490acb16340023fccbd309bbfaf9192d61e042d87a",
+      "bytes": 3313208
+    },
+    "机器人插接_橙绿点云_局部放大_封面_20261124.png": {
+      "path": "/home/linux/Downloads/机器人插接_橙绿点云_局部放大_封面_20261124.png",
+      "sha256": "4ee500cace606b71fbdc8f37d93b61a9f11eda91fef617c18f7737900d3f83f7",
+      "bytes": 642197
+    },
+    "机器人插接_橙绿点云_3倍速_过程预览_20261124.jpg": {
+      "path": "/home/linux/Downloads/机器人插接_橙绿点云_3倍速_过程预览_20261124.jpg",
+      "sha256": "d6ca9dde5c40bb9e232c7a82444c249995548233016b9829f7d5c44929308864",
+      "bytes": 634079
+    }
+  },
+  "source_capture": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r2/capture",
+  "source_templates": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r2/geometry_templates",
+  "source_playback_rate": 3,
+  "all_470_states_retained": true,
+  "colors": {
+    "module": "orange",
+    "socket_mouth": "green",
+    "ordinary_socket": "pale gray"
+  },
+  "wrist_macro_crop": [
+    375,
+    270,
+    625,
+    410
+  ],
+  "on_screen_title": "几何位姿估计",
+  "source_of_geometry": "simulation pose reference; no learned inference",
+  "network_inference": false,
+  "physics_controller_changed": false,
+  "speed_analysis": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r3/speed_analysis.json",
+  "quality_check": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r3/quality_check.json",
+  "source_provenance": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r3/source_provenance.json",
+  "documentation": "docs/agent/perception/evolution/alignment-insertion-film.md"
+}

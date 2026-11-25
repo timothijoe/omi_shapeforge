@@ -1,5 +1,11 @@
 # 操作教程
 
+- [分层点云查看、同一格式视频制作与旧版恢复](pointcloud_presentation.md)：普通稀疏／重点加密、同一点径、兼容查看器及统一色表。
+
+- [使用天机原厂IK](tianji_native_ik.md)：离线检查、Isaac worker与批量训练入口。
+
+- [当前存储布局、旧路径兼容和恢复规则](../docs/agent/interfaces/local-resources.md)：导入、交付和恢复检查分类；维护统一索引与跨机器恢复入口。
+
 - [感知细网格数据 v1：查看、主集使用、标注导出与恢复](grid_perception_data_v1.md)：8895窗口，主集与辅助数据分开，当前为孔口前静态仿真样本。
 - [接触版腕部表面训练的查看与恢复](contact_wrist_surface_learning.md)：既有8893训练结果，与细网格数据采集分开。
 

@@ -84,6 +84,18 @@ def apply_recipe(stage,packet,audit,transfer,recipe='refined'):
         shader.CreateInput('diffuseColor',Sdf.ValueTypeNames.Color3f).Set(Gf.Vec3f(*linear))
         shader.CreateInput('metallic',Sdf.ValueTypeNames.Float).Set(metal)
         shader.CreateInput('roughness',Sdf.ValueTypeNames.Float).Set(rough)
+        texture=overrides.get(name,{}).get('base_color_texture')
+        if texture:
+            if not prim.HasAttribute('primvars:st'):raise ValueError('textured gripper mesh has no UV coordinates')
+            tex=UsdShade.Shader.Define(stage,path+'/Texture');tex.CreateIdAttr('UsdUVTexture')
+            tex.CreateInput('file',Sdf.ValueTypeNames.Asset).Set(Sdf.AssetPath(texture))
+            tex.CreateInput('sourceColorSpace',Sdf.ValueTypeNames.Token).Set('sRGB')
+            reader=UsdShade.Shader.Define(stage,path+'/UV');reader.CreateIdAttr('UsdPrimvarReader_float2')
+            reader.CreateInput('varname',Sdf.ValueTypeNames.Token).Set('st')
+            reader.CreateOutput('result',Sdf.ValueTypeNames.Float2)
+            tex.CreateInput('st',Sdf.ValueTypeNames.Float2).ConnectToSource(reader.ConnectableAPI(),'result')
+            tex.CreateOutput('rgb',Sdf.ValueTypeNames.Float3)
+            shader.GetInput('diffuseColor').ConnectToSource(tex.ConnectableAPI(),'rgb')
         mat.CreateSurfaceOutput().ConnectToSource(shader.ConnectableAPI(),'surface')
         UsdShade.MaterialBindingAPI.Apply(prim).Bind(mat)  # universal visual binding; physics binding retained
         assignments.append(dict(geom=name,category=category,color_srgb=color.tolist(),metallic=metal,roughness=rough))

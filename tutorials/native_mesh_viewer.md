@@ -1,5 +1,7 @@
 # 原生桌面 mesh 查看器
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../docs/agent/interfaces/local-resources.md)。
+
 ## 插接座：Open3D 双视图对照
 
 用户要求改用 Blender 以外的工具查看插接座，现使用 Open3D 原生窗口。默认左侧为原始 TSDF、右侧为保留背面结构的 r01；两侧下拉框均可切换原 TSDF、人工清孔 SDF、r01 和未采用的 r02。实际 V3 与收紧孔宽 r03 的组合另见[插入查看教程](v3_socket_insertion.md)。

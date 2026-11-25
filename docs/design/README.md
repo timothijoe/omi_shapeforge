@@ -1,5 +1,7 @@
 # 设计文档索引
 
+- [System1 与 System0 路径条件化插接讨论](system1-system0-path-conditioned-rl-discussion.md)：2026-11-25讨论稿，记录两层分工、三维路径、直接动作与residual、异步接口及真机奖励；新架构待验证。
+
 - [Isaac Sim与MuJoCo同源插接实验方案](isaac-contact-experiment.md)
 
 - [机械臂插接仿真与 RL 开发计划](robot-rl-development-plan.md)：真实 URDF 主线、已实现小闭环、架构、难度与分阶段验收。

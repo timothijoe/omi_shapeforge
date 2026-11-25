@@ -1,5 +1,7 @@
 # 真实夹爪像素＋仿真模块／插槽：单帧预览
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../../interfaces/local-resources.md)。
+
 最新按用户反馈完成[r07无颗粒银灰材质预览](module-material-r06.md)及[真机／r07对比](/data/omi_runtime/runs/module_v4_plain_material_20261122/real_vs_r07_plain_comparison.png)。r06色调保留、额外颗粒去除；本页黑色接触面修正掩码、视角与灯光继续复用。本文的原图与黑色接触面修正图均保留，没有被材质候选覆盖。
 
 ## 当前状态：2026-11-22黑色接触面修正

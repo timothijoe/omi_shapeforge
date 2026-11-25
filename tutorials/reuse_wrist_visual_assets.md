@@ -1,5 +1,7 @@
 # 其他Agent复用腕部视觉资产
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../docs/agent/interfaces/local-resources.md)。
+
 当前已接受腕部视觉基线为[WVA-01「腕部实拍对齐版」](../docs/agent/simulation/evolution/wrist-visual-wva01.md)，读取[新清单](../manifests/wrist_visual_wva01_20261122.json)。下文保留WG-r10历史复现步骤；不要用下文旧路径替代WVA-01的r15资产。
 
 先读[接入合同与边界](../docs/agent/simulation/evolution/wrist-assets-handoff.md)。固定版本入口是[机器可读清单](../manifests/wrist_visual_asset_handoff_20261122.json)，其路径及哈希优先于历史页面里的“最新”。

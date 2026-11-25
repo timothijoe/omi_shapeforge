@@ -1,5 +1,11 @@
 # Blender 与外观资产管线
 
+2026-11-25：[r16独立外观候选](wrist-photo-refinement-r16.md)实际读取r15 Blender，修改两侧银壳顶点，保留三角连接、OBJ面UV及原PNG；47 OBJ按原字节复制。后侧根部包络与正面原图约束分开，材质按MuJoCo像素与Blender PBR分别核查。Blender重开对照、GLB包络和MuJoCo加载实际通过；不将7点开发帧拟合当成独立相机标定，也不改变RL合同。
+
+2026-11-25：[r15／WVA-01的Isaac固定夹持插入展示](wva01-isaac-insertion.md)保留两侧银壳原OBJ面UV，转为USD faceVarying `st`并绑定原PNG，实际RTX图像已确认标志。未重新Blender建模、未改源视觉mesh／纹理；外观接入不代表GC-r01完整接触移植通过。实验后段碰撞和软指摩擦候选另存，不纳入交付固定合同。
+
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../../interfaces/local-resources.md)。
+
 新增[PCG-01纯几何提取与便携导出记录](../../perception/evolution/pointcloud-geometry-pcg01.md)：直接保留原OBJ顶点／三角面，剥离外观字段，float32二进制PLY／NPZ另存；Blender仅用于无材质导入检查及灰色预览，没有重新建模、减面或覆盖源资产。
 
 2026-11-23：[入口受阻、内部顺滑候选](smooth-guide-contact.md)通过独立transfer生成解析碰撞代理，不修改Blender／视觉mesh。原生形状与凸包的接触对照保留；完整机械臂验收未通过，不能由外观保真或局部通行推定动力学有效。

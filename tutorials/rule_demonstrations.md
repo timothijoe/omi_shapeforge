@@ -1,5 +1,7 @@
 # 查看仿真与生成规则示范
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../docs/agent/interfaces/local-resources.md)。
+
 当前老师的任务是**对准并到达孔口前**；模型固定附着、接触关闭。规则和数据边界见[能力说明](../docs/agent/simulation/evolution/rule-demonstrations.md)。
 
 ## 看实际画面

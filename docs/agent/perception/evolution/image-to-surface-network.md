@@ -1,5 +1,7 @@
 # 图像到完整表面点云
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../../interfaces/local-resources.md)。
+
 后续已有[仿真监督训练版本](sim-wrist-surface-learning.md)：25轮、3600次更新和独立配置测试已完成，8892展示当前训练结果。下文记录保留的无权重原型阶段；8890仍是历史模板／原型页面。
 
 2026-11-22用户明确希望以图片为输入、完整物体表面点云为输出，表达网络对场景的估计。已实现已知模板约束的图像网络原型：[完整设计](../../../design/image-to-complete-surface.md) · [操作与复现](../../../../tutorials/image_to_complete_surface.md)。

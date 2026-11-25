@@ -1,5 +1,7 @@
 # 感知细网格数据 v1：有边界的分层枚举
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../../interfaces/local-resources.md)。
+
 用户希望为observation shaping准备充分、精细的感知预训练数据，并要求先明确界限，再细粒度采样与标注。本版按已确认的光模块三个变量实施；插座与模块关系分层覆盖。范围是本版工作范围，不是实物机械极限，也不是预测精度承诺。
 
 阅读入口：[阶段编年](../chronicles/2026-11-23-grid-perception-data-v1.md) · [操作与恢复](../../../../tutorials/grid_perception_data_v1.md) · [机器清单](../../../../manifests/grid_perception_data_20261123_v1.json)。

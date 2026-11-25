@@ -1,0 +1,111 @@
+{
+  "schema": "alignment-insertion-film-v7",
+  "date": "2026-11-25",
+  "run_directory": "/data/shapeforge/runtime/runs/insertion_component_palette_20261125_r7",
+  "video": {
+    "path": "/data/shapeforge/runtime/runs/insertion_component_palette_20261125_r7/film/alignment_insertion_geometry_pose_1080p.mp4",
+    "duration_s": 18.066666666666666,
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "frames": 542,
+    "fps": 30,
+    "sha256": "f796c18a21bc97b41fd21df5ac82f2b20a02adaacf9d1b0f1b6030135bab9148",
+    "bytes": 2718348
+  },
+  "delivery": {
+    "机器人插接_WG-r15_部件分色_20261125.mp4": {
+      "path": "/home/linux/Downloads/机器人插接_WG-r15_部件分色_20261125.mp4",
+      "sha256": "f796c18a21bc97b41fd21df5ac82f2b20a02adaacf9d1b0f1b6030135bab9148",
+      "bytes": 2718348
+    },
+    "机器人插接_WG-r15_部件分色_封面_20261125.png": {
+      "path": "/home/linux/Downloads/机器人插接_WG-r15_部件分色_封面_20261125.png",
+      "sha256": "fd5eea1f7e5732a7598333754061820aae17305e19c17f437485fbdcd6520526",
+      "bytes": 503431
+    },
+    "机器人插接_WG-r15_部件分色_过程预览_20261125.jpg": {
+      "path": "/home/linux/Downloads/机器人插接_WG-r15_部件分色_过程预览_20261125.jpg",
+      "sha256": "9b5631744965c8558c29cf478849bd5d2b39f36a371190c58e82a32cbf7068c6",
+      "bytes": 549065
+    },
+    "机器人插接_WG-r15_部件分色_前后对比_20261125.png": {
+      "path": "/home/linux/Downloads/机器人插接_WG-r15_部件分色_前后对比_20261125.png",
+      "sha256": "8935d00ce95df5839846663ae01799a46bc4993961a94443ef2fc750984a6934",
+      "bytes": 23242
+    }
+  },
+  "palette_rgb": {
+    "support": [
+      194,
+      205,
+      218
+    ],
+    "socket_upper": [
+      112,
+      158,
+      139
+    ],
+    "module_body": [
+      170,
+      139,
+      108
+    ],
+    "module_tip": [
+      255,
+      166,
+      68
+    ],
+    "socket_mouth": [
+      78,
+      240,
+      112
+    ]
+  },
+  "point_partition_counts": {
+    "module": {
+      "total": 42441,
+      "ordinary_support": 0,
+      "ordinary_socket_upper": 0,
+      "ordinary_module": 18923,
+      "focus": 23518
+    },
+    "socket": {
+      "total": 212308,
+      "ordinary_support": 103147,
+      "ordinary_socket_upper": 64092,
+      "ordinary_module": 0,
+      "focus": 45069
+    }
+  },
+  "asset_identity": {
+    "tool": "WG-DAIMON-LOGO-r15",
+    "module": "OM-001/V4 r08",
+    "contract": "wva01-closed-reference-fixture-v1",
+    "integration_release": "SC-WVA01-ISAAC-FIXTURE-r01",
+    "grasp": "fixed module insertion fixture using GC-r01 settled reference pose; NOT free contact grasp"
+  },
+  "source_capture": "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_capture",
+  "source_templates": "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_templates",
+  "pointcloud_source": "simulation pose reference / ground-truth stand-in; NOT learned predictions",
+  "network_inference": false,
+  "physics_controller_changed": false,
+  "grasp_mode": "fixed fixture, unchanged from r6",
+  "free_contact_grasp_motion_passed": false,
+  "playback_rate": 3,
+  "source_states": 470,
+  "user_reviewed": false,
+  "highlight_colors_unchanged": true,
+  "old_deliveries_preserved": true,
+  "source_sha256": {
+    "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_capture/capture_report.json": "b24f9a73d4ca70cf2965427baf6de177513e2d6880240a267060b40fbd3c18c4",
+    "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_templates/manifest.json": "128f46c1428a27d38c83c568698247a78a4a3252d26db03686bc31bb20bc7311",
+    "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_templates/module.npz": "b0deb4320e757b53f7805dc9ded9b9e8f1cdc2545e7e0d187d7b75fb01143b22",
+    "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_templates/socket.npz": "6fe1dbacdabe7ea276d286d0f20d7051d37fa75010301c5137b5f9defaca02b6",
+    "/home/linux/omi_folder/omi_shapeforge/scripts/perception/render_alignment_film.py": "7c5034e3df2effa678be6849969ba28d38f57968b59169c44f4eb23d35616b22",
+    "/home/linux/omi_folder/omi_shapeforge/scripts/perception/render_insertion_multiview.py": "cbfc74efafe7761daedf9708c31d54d5384483d7d288b8ca00cb210d7872f3d4"
+  },
+  "quality_check": "/data/shapeforge/runtime/runs/insertion_component_palette_20261125_r7/quality_check.json",
+  "documentation": "docs/agent/perception/evolution/alignment-insertion-film.md"
+}

@@ -1,5 +1,7 @@
 # 机械臂、夹爪与夹具资源状态
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../../interfaces/local-resources.md)。
+
 新增[Isaac Sim同源机器人插接实验](isaac-contact.md)，独立记录PhysX导入、IK/驱动、接触和RTX双相机，不替代本文历史MuJoCo阶段。
 
 ## 当前新增：视频参考相机／夹爪外观候选

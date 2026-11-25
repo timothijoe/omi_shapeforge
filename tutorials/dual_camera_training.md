@@ -1,5 +1,7 @@
 # 双相机仿真训练与续训
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../docs/agent/interfaces/local-resources.md)。
+
 需要示范时使用新增[规则老师教程](rule_demonstrations.md)：实际机械臂执行规则动作、生成独立 scripted 数据，先 BC 再与在线经验混合训练。下文保留原无示范入口。
 
 已接通：真实双臂 URDF＋V3／r04 → 两路 MuJoCo RGB → 十帧观测 → OMI 视觉 Actor → 仿真动作 → 单帧存储／经验池 → SAC 更新 → 新 Actor。当前任务为无接触预插入，state／tactile 补零。完整语义见[能力说明](../docs/agent/simulation/evolution/visual-training.md)。

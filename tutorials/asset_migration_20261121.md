@@ -1,8 +1,12 @@
 # ShapeForge 资产迁移与恢复
 
-本批迁移包保存当前机器上 Git 仓库之外的模型、场景、标定、特征数据、预训练权重及已完成训练状态。四个开发仓库的当前源码由用户另行提交和上传；本包不能代替这些源码提交。
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../docs/agent/interfaces/local-resources.md)。
 
-交付目录：`/data/omi_migration/shapeforge_assets_20261121T051808Z/`。该目录中的 `README.md` 是本教程的副本。压缩包采用 gzip，成员路径保留原机器布局，但没有开头的 `/`。它们可先解压到任意空目录检查。
+本批迁移包保存2026-11-21打包时机器上 Git 仓库之外的模型、场景、标定、特征数据、预训练权重及已完成训练状态。下文资产和训练范围属于该时点；后续工作不会自动进入旧包。四个开发仓库的当前源码由用户另行提交和上传；本包不能代替这些源码提交。
+
+当前交付目录：`/data/shapeforge/storage/exports/shapeforge_assets_2026-11-21/`。原`/data/omi_migration/shapeforge_assets_20261121T051808Z/`保留为兼容入口。包内`README.md`是打包时的教程快照，保持原字节；本页补充本机迁移后的实际位置。压缩包采用 gzip，成员路径保留原机器布局，但没有开头的 `/`。它们可先解压到任意空目录检查。
+
+已有恢复检查实体位于`/data/shapeforge/storage/restore_checks/shapeforge_assets_2026-11-21/`。旧恢复路径和脚本按相邻目录推导的`exports/shapeforge_assets_2026-11-21_restore_check`均有兼容链接。新验证使用新的输出目录，避免覆盖随包保留的原报告；完整规则见[当前存储契约](../docs/agent/interfaces/local-resources.md)。
 
 ## 文件组成
 
@@ -76,7 +80,7 @@ R/runs/contact_visual_training_20261121_final/
 
 ## 原始采集数据出处
 
-大规模原始数据不重复打包。下表原始压缩包均保存在旧机 `/data/nov_19_folder/`。
+大规模原始数据不重复打包。下表原始压缩包在本机的实际位置为`/data/shapeforge/storage/imports/reconstruction_2026-11-19/`，旧`/data/nov_19_folder/`仍是兼容入口。包内清单保留打包时的来源路径。
 
 | 数据 | 原始文件及恢复位置 |
 | --- | --- |

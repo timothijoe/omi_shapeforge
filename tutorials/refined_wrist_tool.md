@@ -1,5 +1,7 @@
 # 查看腕部相机、夹爪与光模块
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../docs/agent/interfaces/local-resources.md)。
+
 当前视觉组合为 **WG-r10工具＋OM-001/V4 r08光模块**。其他Agent复用请先读[接入说明](../docs/agent/simulation/evolution/wrist-assets-handoff.md)与[固定版本清单](../manifests/wrist_visual_asset_handoff_20261122.json)；校验、坐标与新目录重渲染按[复用教程](reuse_wrist_visual_assets.md)。
 
 ## 当前组合窗口

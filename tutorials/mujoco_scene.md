@@ -1,5 +1,7 @@
 # MuJoCo 离屏运行
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../docs/agent/interfaces/local-resources.md)。
+
 前提：独立 simulation 环境准备好，场景及相邻 `meshes/` 完整。推荐通过统一运行层调用：
 
 ```bash

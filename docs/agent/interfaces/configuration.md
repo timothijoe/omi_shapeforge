@@ -19,3 +19,9 @@
 `configs/local.toml` 被 Git 忽略，适合机器覆盖。没有已实现的 `OMI_RUNTIME_ROOT` 自动覆盖器；教程中的 `RUNTIME_ROOT` 只是操作者 shell 变量。改变 runtime_root 不会自动更新显式 environment、checkpoint 或 run_directory，迁移时应逐项填写。
 
 主调度器设置 HF／Torch 缓存、VIRTUAL_ENV、UTF-8 和后端路径，移除 PYTHONHOME 与旧 PYTHONPATH；BundleSDF 加入源码、mycuda 和 build 目录。它不复制环境或自动安装缺失库。Isaac 的更严格环境清理见[外部系统](external-systems.md)。
+
+## runtime实体迁移后的兼容前缀
+
+2026-11-23起，运行资源实际位于`/data/shapeforge/runtime`，`/data/omi_runtime`是指向该实体的兼容链接。默认workspace.toml中的environment、checkpoint、run_directory等值暂保留旧前缀，已通过迁移后的入口检查。两种写法指向同一份文件；旧前缀不是另一套数据，也不表示本次迁移遗漏了配置。
+
+新位置登记在资源清单中；历史报告、环境启动脚本和场景的绝对路径不批量改写。恢复另一台机器时需要一起恢复旧入口，或在独立副本中完整重定位各依赖，不能只修改runtime_root。见[当前资源契约](local-resources.md)和[runtime迁移记录](../../chronicles/2026-11-23-runtime-relocation.md)。

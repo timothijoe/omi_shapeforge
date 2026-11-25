@@ -1,0 +1,109 @@
+{
+  "version": "shapeforge-workspace-source-snapshot-v1",
+  "recorded_at": "2026-11-25T16:31:42.154697+08:00",
+  "discussion_date": "2026-11-25",
+  "branch": "snapshot/system1-system0-discussion-20261125",
+  "scope": "Checkpoint accumulated source and documentation in omi_shapeforge and omi_proj; preserve the System1/System0 discussion for continuation.",
+  "discussion": "docs/design/system1-system0-path-conditioned-rl-discussion.md",
+  "omi_shapeforge": {
+    "previous_branch": "feature/isaac-contact-insertion",
+    "parent_commit": "be685b069ea389367a9661aaa20fd5ff4b4c1f45",
+    "dev_ancestor": "66ff11720e5dc4327041d709b661dec73c83f605",
+    "snapshot_commit": "The commit containing this manifest."
+  },
+  "omi_proj": {
+    "previous_branch": "feature/shapeforge-vision-training",
+    "parent_commit": "963a7c29f8e39bff59ba4eb285693976b224961e",
+    "snapshot_commit": "82aa05e6646c79e2ce0d74bf9a98cc50de97014f",
+    "snapshot_changed_files": 55
+  },
+  "validation": [
+    {
+      "repository": "omi_shapeforge",
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "total": 92,
+      "passed": 29,
+      "skipped": 63,
+      "scope": "Lightweight orchestration environment; optional dependencies and scenes unavailable."
+    },
+    {
+      "repository": "omi_shapeforge",
+      "command": [
+        "/data/shapeforge/runtime/envs/omi_sim_train/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "environment": {
+        "PYTHONPATH": "/home/linux/omi_folder/omi_shapeforge/src:/home/linux/omi_folder/omi_proj/src"
+      },
+      "exit_code": 0,
+      "total": 92,
+      "passed": 64,
+      "skipped": 28,
+      "scope": "Available training dependencies; optional scene/SDK/backend checks remain skipped. Not an Isaac training run or real-robot acceptance."
+    },
+    {
+      "repository": "omi_proj",
+      "command": [
+        "/data/shapeforge/runtime/envs/omi_sim_train/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_contact_training.py",
+        "tests/test_shapeforge_training.py",
+        "tests/test_insertion_task.py",
+        "tests/test_isaac_rule_bridge.py",
+        "tests/test_scripted_demonstrations.py",
+        "tests/test_contact_intervention_study.py",
+        "tests/test_intervention_metrics.py",
+        "tests/test_isaac_intervention.py",
+        "tests/test_transition_replay.py",
+        "tests/test_protected_rl.py",
+        "tests/test_selective_encoder_rl.py"
+      ],
+      "environment": {
+        "PYTHONPATH": "/home/linux/omi_folder/omi_proj/src:/home/linux/omi_folder/omi_shapeforge/src"
+      },
+      "exit_code": 1,
+      "total": 74,
+      "passed": 71,
+      "skipped": 1,
+      "failed": 2,
+      "failures": [
+        {
+          "test": "tests/test_selective_encoder_rl.py::test_actual_bc_cuda_selective_update_and_checkpoint_restore[False]",
+          "reason": "Historical BC6148 fixture actor.pt exists but dataset.json is absent."
+        },
+        {
+          "test": "tests/test_selective_encoder_rl.py::test_actual_bc_cuda_selective_update_and_checkpoint_restore[True]",
+          "reason": "Historical BC6148 fixture actor.pt exists but dataset.json is absent."
+        }
+      ],
+      "missing_fixture": "omi_proj/local/rl_training/spacepilot_bc_20261017_213359_2000_4000/dataset.json",
+      "scope": "Targeted learning, replay, intervention and simulator bridge checks. Failures retained; no synthetic fixture substituted."
+    }
+  ],
+  "storage": {
+    "generated_assets_and_training_data": "External resources remain outside Git; see docs/agent/interfaces/local-resources.md and manifests/resources.json.",
+    "sibling_algorithm_repositories": "FoundationStereo and BundleSDF are not modified by this snapshot operation."
+  },
+  "operations": {
+    "new_policy_training": false,
+    "new_system1_system0_implementation": false,
+    "real_robot_execution": false,
+    "push_requested": false
+  }
+}

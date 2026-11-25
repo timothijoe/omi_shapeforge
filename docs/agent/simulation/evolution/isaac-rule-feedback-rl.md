@@ -1,5 +1,7 @@
 # Isaac规则反馈RL：当前资产的完整链路试验
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../../interfaces/local-resources.md)。
+
 后续用户澄清入口需要对准／退回重试，进入后内部顺滑；[新的接触候选调查](smooth-guide-contact.md)另存全部对照。该候选完整机器人验收未通过，未继续训练；下文原BC／RL成绩及合同保持不变。
 
 2026-11-22，用户确认本轮把规则接管作为反馈来源，要求实际跑起完整RL。算法/学习结果由[omi_proj训练记录](../../../../../omi_proj/docs/agent/training/evolution/isaac-rule-feedback.md)维护。本页记录Isaac环境、观测、动作和接入范围。

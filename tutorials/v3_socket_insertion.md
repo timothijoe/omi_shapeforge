@@ -1,5 +1,7 @@
 # 查看 V3 与插接座的插入关系
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../docs/agent/interfaces/local-resources.md)。
+
 使用 Open3D，不需要打开 Blender 界面：
 
 ```bash

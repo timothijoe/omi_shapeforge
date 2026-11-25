@@ -1,0 +1,1081 @@
+{
+  "schema_version": 1,
+  "id": "isaac-rule-precision-20261124",
+  "run_root": "/data/shapeforge/runtime/runs/isaac_rule_precision_20261124",
+  "status": "paired_rule_precision_checks_passed",
+  "guide": "docs/agent/simulation/evolution/isaac-rule-precision.md",
+  "chronicle": "docs/chronicles/2026-11-24-isaac-rule-precision.md",
+  "protocol": {
+    "version": "rule-precision-paired-v1",
+    "cases": [
+      {
+        "id": "normal",
+        "kind": "normal",
+        "seed": 91000,
+        "x_mm": 0.0,
+        "z_mm": 0.0,
+        "angle_deg": 0.0,
+        "rotation_axis": 0
+      },
+      {
+        "id": "pose_x_plus",
+        "kind": "alignment",
+        "seed": 93001,
+        "x_mm": 0.6,
+        "z_mm": 0.0,
+        "angle_deg": 0.5,
+        "rotation_axis": 0
+      },
+      {
+        "id": "pose_z_minus",
+        "kind": "alignment",
+        "seed": 93002,
+        "x_mm": 0.0,
+        "z_mm": -0.6,
+        "angle_deg": -0.5,
+        "rotation_axis": 2
+      },
+      {
+        "id": "recover_plus",
+        "kind": "recovery",
+        "seed": 93003,
+        "x_mm": 1.0,
+        "z_mm": 0.0,
+        "angle_deg": 0.0,
+        "rotation_axis": 0
+      },
+      {
+        "id": "recover_minus",
+        "kind": "recovery",
+        "seed": 93004,
+        "x_mm": -1.0,
+        "z_mm": 0.0,
+        "angle_deg": 0.0,
+        "rotation_axis": 0
+      }
+    ],
+    "physics_substeps": [
+      20,
+      5
+    ],
+    "control_dt": 0.1,
+    "max_steps": 900,
+    "teacher": "same existing qualified-entry recovery teacher; no controller or tolerance tuning",
+    "setup": "all offsets via ordinary actions at preinsert; perturbed rotation only during setup, fixed task goal remains nominal; angle target verified before handoff",
+    "setup_angle_tolerance_rad": 0.00025,
+    "rendered": false,
+    "not_training_data": true,
+    "existing_rendered_reference_runs": {
+      "dls500": "/data/shapeforge/runtime/runs/isaac_substeps_20261124/steps_500",
+      "native20": "/data/shapeforge/runtime/runs/tianji_ik_adapter_20261124/tianji",
+      "native5": "/data/shapeforge/runtime/runs/isaac_fast5_20261124/async5"
+    },
+    "teacher_and_assessment_sha256": {
+      "dls500": {
+        "contact_teacher.py": "0d4997f90d8640546e39b9b51d2e74766bc6b8e19a19b71f47ee68d4bedd0f4a",
+        "isaac_recovery.py": "28b98d09a5c6e406bbf7fcf6fb10f655bd857380a36ee933d62d8979794892d0",
+        "insertion_task.py": "1986131f8f72736e77fbd14a97b4479507fb237c17eaca37d3ac314f7c8efe38"
+      },
+      "native20": {
+        "contact_teacher.py": "0d4997f90d8640546e39b9b51d2e74766bc6b8e19a19b71f47ee68d4bedd0f4a",
+        "isaac_recovery.py": "28b98d09a5c6e406bbf7fcf6fb10f655bd857380a36ee933d62d8979794892d0",
+        "insertion_task.py": "1986131f8f72736e77fbd14a97b4479507fb237c17eaca37d3ac314f7c8efe38"
+      },
+      "native5": {
+        "contact_teacher.py": "0d4997f90d8640546e39b9b51d2e74766bc6b8e19a19b71f47ee68d4bedd0f4a",
+        "isaac_recovery.py": "28b98d09a5c6e406bbf7fcf6fb10f655bd857380a36ee933d62d8979794892d0",
+        "insertion_task.py": "1986131f8f72736e77fbd14a97b4479507fb237c17eaca37d3ac314f7c8efe38"
+      }
+    },
+    "comparison": "Terminal depth/lateral/rotation, entry qualification, interior error, point/box overlap, mean and peak contact signal separately. Physics-only normal91000 compared to rendered existing traces.",
+    "scope": "Simulation geometry precision and bounded rule success, not physical calibration, force accuracy, or learned policy validation"
+  },
+  "validation": {
+    "scope": "Simulation geometry precision and bounded rule success, not physical calibration, force accuracy, or learned policy validation",
+    "seated_depth_mm": 51.281694400000006,
+    "task_thresholds": {
+      "version": "entry-strict-interior-tolerant-v1",
+      "control_dt": 0.1,
+      "entry_start_mm": 1.0,
+      "entry_complete_mm": 5.0,
+      "entry_deadline_mm": 6.0,
+      "entry_lateral_mm": 0.15,
+      "entry_angle_rad": 0.003,
+      "entry_good_samples": 3,
+      "entry_point_limit_mm": 0.08,
+      "interior_point_limit_mm": 0.15,
+      "geometric_overlap_limit_mm": 0.1,
+      "entry_mean_force_N": 5.0,
+      "interior_mean_force_N": 20.0,
+      "catastrophic_mean_force_N": 50.0,
+      "entry_force_samples": 3,
+      "interior_force_samples": 5,
+      "stall_samples": 10,
+      "stall_progress_mm": 0.05,
+      "seat_depth_tolerance_mm": 0.1,
+      "seat_lateral_mm": 0.25,
+      "seat_angle_rad": 0.005,
+      "seat_motion_mm": 0.03,
+      "seat_samples": 3,
+      "force_signal_kind": "simulation_contact_impulse_norm_sum_mean"
+    },
+    "existing_same_seed_rendered_references": {
+      "dls500": {
+        "cases": [
+          {
+            "case": "normal",
+            "success": true,
+            "steps": 397,
+            "final_depth_mm": 51.28109971523194,
+            "final_depth_error_mm": 0.000594684768067566,
+            "final_lateral_mm": 0.05242880978232437,
+            "final_angle_deg": 0.004333890825756362,
+            "final_stable_samples": 3,
+            "final_shoulder_contact": true,
+            "entry_qualified": true,
+            "first_entry_qualified_step": 66,
+            "entry_window_good_sample_count": 24,
+            "entry_qualification_max_lateral_mm": 0.031368878823164505,
+            "entry_qualification_max_angle_deg": 0.004009069057787577,
+            "qualified_path_max_lateral_mm": 0.05242880978232437,
+            "qualified_path_max_angle_deg": 0.004333890825756362,
+            "last3_depth_range_mm": 0.00012865564475816882,
+            "max_reported_point_penetration_mm": 0.05122861693962477,
+            "max_control_box_overlap_mm": 0.03626015175211411,
+            "max_control_mean_contact_force_N": 0.11551933036188679,
+            "max_substep_peak_force_N": 13.470109589007222,
+            "min_pad_floor_gap_mm": 0.2604160580797569,
+            "recovery_completed": 0
+          },
+          {
+            "case": "plus",
+            "success": true,
+            "steps": 568,
+            "final_depth_mm": 51.281270177752354,
+            "final_depth_error_mm": 0.00042422224765203964,
+            "final_lateral_mm": 0.03738423845052748,
+            "final_angle_deg": 0.0030356016763834095,
+            "final_stable_samples": 3,
+            "final_shoulder_contact": true,
+            "entry_qualified": true,
+            "first_entry_qualified_step": 237,
+            "entry_window_good_sample_count": 23,
+            "entry_qualification_max_lateral_mm": 0.030971883467351143,
+            "entry_qualification_max_angle_deg": 0.003989677874581988,
+            "qualified_path_max_lateral_mm": 0.042572749154656545,
+            "qualified_path_max_angle_deg": 0.005047181561041019,
+            "last3_depth_range_mm": 0.00020184285550328696,
+            "max_reported_point_penetration_mm": 0.00042658712118281983,
+            "max_control_box_overlap_mm": 0.0,
+            "max_control_mean_contact_force_N": 0.11531744642923139,
+            "max_substep_peak_force_N": 8.048126619542074,
+            "min_pad_floor_gap_mm": 0.2604160580797569,
+            "recovery_completed": 1
+          },
+          {
+            "case": "minus",
+            "success": true,
+            "steps": 643,
+            "final_depth_mm": 51.2813720076775,
+            "final_depth_error_mm": 0.0003223923225093017,
+            "final_lateral_mm": 0.03345843801299682,
+            "final_angle_deg": 0.0029514022954212522,
+            "final_stable_samples": 3,
+            "final_shoulder_contact": true,
+            "entry_qualified": true,
+            "first_entry_qualified_step": 313,
+            "entry_window_good_sample_count": 23,
+            "entry_qualification_max_lateral_mm": 0.031243384600819993,
+            "entry_qualification_max_angle_deg": 0.004010241878645298,
+            "qualified_path_max_lateral_mm": 0.04299148661189295,
+            "qualified_path_max_angle_deg": 0.005091906356902159,
+            "last3_depth_range_mm": 0.0005177936182221288,
+            "max_reported_point_penetration_mm": 0.05603089084615931,
+            "max_control_box_overlap_mm": 0.05510725592051263,
+            "max_control_mean_contact_force_N": 0.25301143885769534,
+            "max_substep_peak_force_N": 7.089875412020824,
+            "min_pad_floor_gap_mm": 0.2604160580797569,
+            "recovery_completed": 1
+          }
+        ],
+        "aggregate": {
+          "cases": 3,
+          "successes": 3,
+          "max_final_lateral_mm": 0.05242880978232437,
+          "max_final_angle_deg": 0.004333890825756362,
+          "max_final_depth_error_mm": 0.000594684768067566,
+          "max_point_penetration_mm": 0.05603089084615931,
+          "max_box_overlap_mm": 0.05510725592051263,
+          "max_control_mean_contact_force_N": 0.25301143885769534,
+          "max_substep_peak_force_N": 13.470109589007222
+        }
+      },
+      "native20": {
+        "cases": [
+          {
+            "case": "normal",
+            "success": true,
+            "steps": 388,
+            "final_depth_mm": 51.28131037421046,
+            "final_depth_error_mm": 0.00038402578954332967,
+            "final_lateral_mm": 0.04756766346620099,
+            "final_angle_deg": 0.0048107307533588285,
+            "final_stable_samples": 3,
+            "final_shoulder_contact": true,
+            "entry_qualified": true,
+            "first_entry_qualified_step": 65,
+            "entry_window_good_sample_count": 24,
+            "entry_qualification_max_lateral_mm": 0.03657451316706572,
+            "entry_qualification_max_angle_deg": 0.004467454732929048,
+            "qualified_path_max_lateral_mm": 0.04756766346620099,
+            "qualified_path_max_angle_deg": 0.0048107307533588285,
+            "last3_depth_range_mm": 0.00018588338057412557,
+            "max_reported_point_penetration_mm": 0.0003073364496231079,
+            "max_control_box_overlap_mm": 0.00012744356422261793,
+            "max_control_mean_contact_force_N": 0.12058578421374562,
+            "max_substep_peak_force_N": 0.5343198077753224,
+            "min_pad_floor_gap_mm": 0.2604160580797569,
+            "recovery_completed": 0
+          },
+          {
+            "case": "plus",
+            "success": true,
+            "steps": 573,
+            "final_depth_mm": 51.28119972744417,
+            "final_depth_error_mm": 0.0004946725558383491,
+            "final_lateral_mm": 0.04336168422720807,
+            "final_angle_deg": 0.00440203439208776,
+            "final_stable_samples": 3,
+            "final_shoulder_contact": true,
+            "entry_qualified": true,
+            "first_entry_qualified_step": 247,
+            "entry_window_good_sample_count": 23,
+            "entry_qualification_max_lateral_mm": 0.03647613717172817,
+            "entry_qualification_max_angle_deg": 0.004478168419517428,
+            "qualified_path_max_lateral_mm": 0.051168257622247026,
+            "qualified_path_max_angle_deg": 0.0059296017153282615,
+            "last3_depth_range_mm": 0.0032646644995821816,
+            "max_reported_point_penetration_mm": 0.00034458935260772705,
+            "max_control_box_overlap_mm": 0.00020739856280982405,
+            "max_control_mean_contact_force_N": 0.13063781496444463,
+            "max_substep_peak_force_N": 0.2682465876205261,
+            "min_pad_floor_gap_mm": 0.2604160580797569,
+            "recovery_completed": 1
+          },
+          {
+            "case": "minus",
+            "success": true,
+            "steps": 576,
+            "final_depth_mm": 51.28119252599884,
+            "final_depth_error_mm": 0.0005018740011664136,
+            "final_lateral_mm": 0.047289376491909216,
+            "final_angle_deg": 0.004756273226097859,
+            "final_stable_samples": 3,
+            "final_shoulder_contact": true,
+            "entry_qualified": true,
+            "first_entry_qualified_step": 250,
+            "entry_window_good_sample_count": 23,
+            "entry_qualification_max_lateral_mm": 0.03655514528561749,
+            "entry_qualification_max_angle_deg": 0.0044645885393402845,
+            "qualified_path_max_lateral_mm": 0.051514411837770835,
+            "qualified_path_max_angle_deg": 0.005901982985293263,
+            "last3_depth_range_mm": 0.0003335071712413651,
+            "max_reported_point_penetration_mm": 0.00031851232051849365,
+            "max_control_box_overlap_mm": 0.00013214198645028485,
+            "max_control_mean_contact_force_N": 0.11780471260408461,
+            "max_substep_peak_force_N": 0.4676587064750526,
+            "min_pad_floor_gap_mm": 0.2604160580797569,
+            "recovery_completed": 1
+          }
+        ],
+        "aggregate": {
+          "cases": 3,
+          "successes": 3,
+          "max_final_lateral_mm": 0.04756766346620099,
+          "max_final_angle_deg": 0.0048107307533588285,
+          "max_final_depth_error_mm": 0.0005018740011664136,
+          "max_point_penetration_mm": 0.00034458935260772705,
+          "max_box_overlap_mm": 0.00020739856280982405,
+          "max_control_mean_contact_force_N": 0.13063781496444463,
+          "max_substep_peak_force_N": 0.5343198077753224
+        }
+      },
+      "native5": {
+        "cases": [
+          {
+            "case": "normal",
+            "success": true,
+            "steps": 358,
+            "final_depth_mm": 51.28110219556252,
+            "final_depth_error_mm": 0.0005922044374884194,
+            "final_lateral_mm": 0.0593901872693924,
+            "final_angle_deg": 0.005872481504220305,
+            "final_stable_samples": 3,
+            "final_shoulder_contact": true,
+            "entry_qualified": true,
+            "first_entry_qualified_step": 60,
+            "entry_window_good_sample_count": 21,
+            "entry_qualification_max_lateral_mm": 0.027409976540337146,
+            "entry_qualification_max_angle_deg": 0.0034230903720777824,
+            "qualified_path_max_lateral_mm": 0.0593901872693924,
+            "qualified_path_max_angle_deg": 0.005872481504220305,
+            "last3_depth_range_mm": 0.00023485967086855908,
+            "max_reported_point_penetration_mm": 0.0002682209014892578,
+            "max_control_box_overlap_mm": 0.0,
+            "max_control_mean_contact_force_N": 0.15082423699485142,
+            "max_substep_peak_force_N": 0.2191804753238118,
+            "min_pad_floor_gap_mm": 0.2604160580797569,
+            "recovery_completed": 0
+          },
+          {
+            "case": "plus",
+            "success": true,
+            "steps": 529,
+            "final_depth_mm": 51.28095454543471,
+            "final_depth_error_mm": 0.0007398545652961275,
+            "final_lateral_mm": 0.058715510695741026,
+            "final_angle_deg": 0.005785126197165256,
+            "final_stable_samples": 3,
+            "final_shoulder_contact": true,
+            "entry_qualified": true,
+            "first_entry_qualified_step": 229,
+            "entry_window_good_sample_count": 22,
+            "entry_qualification_max_lateral_mm": 0.027411976266651043,
+            "entry_qualification_max_angle_deg": 0.0034384140368082603,
+            "qualified_path_max_lateral_mm": 0.058715510695741026,
+            "qualified_path_max_angle_deg": 0.005785126197165256,
+            "last3_depth_range_mm": 0.0005635308871632105,
+            "max_reported_point_penetration_mm": 0.0016090344843178173,
+            "max_control_box_overlap_mm": 0.001611281375567264,
+            "max_control_mean_contact_force_N": 0.14733656441011303,
+            "max_substep_peak_force_N": 0.2170521998778001,
+            "min_pad_floor_gap_mm": 0.2604160580797569,
+            "recovery_completed": 1
+          },
+          {
+            "case": "minus",
+            "success": true,
+            "steps": 531,
+            "final_depth_mm": 51.281018889065734,
+            "final_depth_error_mm": 0.0006755109342719834,
+            "final_lateral_mm": 0.05090122122006036,
+            "final_angle_deg": 0.005099332593604742,
+            "final_stable_samples": 3,
+            "final_shoulder_contact": true,
+            "entry_qualified": true,
+            "first_entry_qualified_step": 232,
+            "entry_window_good_sample_count": 22,
+            "entry_qualification_max_lateral_mm": 0.027498004793168013,
+            "entry_qualification_max_angle_deg": 0.0034310291103697137,
+            "qualified_path_max_lateral_mm": 0.05090122122006036,
+            "qualified_path_max_angle_deg": 0.005099332593604742,
+            "last3_depth_range_mm": 0.0006288380607770705,
+            "max_reported_point_penetration_mm": 0.0009182840585708618,
+            "max_control_box_overlap_mm": 0.0002739387441885732,
+            "max_control_mean_contact_force_N": 0.15596979104933403,
+            "max_substep_peak_force_N": 0.2093143921229072,
+            "min_pad_floor_gap_mm": 0.2604160580797569,
+            "recovery_completed": 1
+          }
+        ],
+        "aggregate": {
+          "cases": 3,
+          "successes": 3,
+          "max_final_lateral_mm": 0.0593901872693924,
+          "max_final_angle_deg": 0.005872481504220305,
+          "max_final_depth_error_mm": 0.0007398545652961275,
+          "max_point_penetration_mm": 0.0016090344843178173,
+          "max_box_overlap_mm": 0.001611281375567264,
+          "max_control_mean_contact_force_N": 0.15596979104933403,
+          "max_substep_peak_force_N": 0.2191804753238118
+        }
+      }
+    },
+    "new_pose_recovery_tests": {
+      "steps_20": {
+        "cases": [
+          {
+            "success": true,
+            "steps": 388,
+            "final_depth_mm": 51.28131037421046,
+            "final_depth_error_mm": 0.00038402578954332967,
+            "final_lateral_mm": 0.04756766346620099,
+            "final_angle_deg": 0.0048107307533588285,
+            "final_stable_samples": 3,
+            "final_shoulder_contact": true,
+            "entry_qualified": true,
+            "first_entry_qualified_step": 65,
+            "entry_window_good_sample_count": 24,
+            "entry_qualification_max_lateral_mm": 0.03657451316706572,
+            "entry_qualification_max_angle_deg": 0.004467454732929048,
+            "qualified_path_max_lateral_mm": 0.04756766346620099,
+            "qualified_path_max_angle_deg": 0.0048107307533588285,
+            "last3_depth_range_mm": 0.00018588338057412557,
+            "max_reported_point_penetration_mm": 0.0003073364496231079,
+            "max_control_box_overlap_mm": 0.00012744356422261793,
+            "max_control_mean_contact_force_N": 0.12058578421374562,
+            "max_substep_peak_force_N": 0.5343198077753224,
+            "min_pad_floor_gap_mm": 0.2604160580797569,
+            "recovery_completed": 0,
+            "case": "normal",
+            "failure": null,
+            "setup_state": null,
+            "independent_fk": {
+              "fk_vs_usd_position_mm": 0.00023262305615632332,
+              "fk_vs_usd_rotation_rad": 6.641845050171439e-07
+            }
+          },
+          {
+            "success": true,
+            "steps": 404,
+            "final_depth_mm": 51.281340414663475,
+            "final_depth_error_mm": 0.0003539853365310819,
+            "final_lateral_mm": 0.046656808672883174,
+            "final_angle_deg": 0.004743293858295899,
+            "final_stable_samples": 3,
+            "final_shoulder_contact": true,
+            "entry_qualified": true,
+            "first_entry_qualified_step": 79,
+            "entry_window_good_sample_count": 23,
+            "entry_qualification_max_lateral_mm": 0.03652165327477499,
+            "entry_qualification_max_angle_deg": 0.0044773060753152474,
+            "qualified_path_max_lateral_mm": 0.046656808672883174,
+            "qualified_path_max_angle_deg": 0.004743293858295899,
+            "last3_depth_range_mm": 0.00010441600721122768,
+            "max_reported_point_penetration_mm": 0.00018998980522155762,
+            "max_control_box_overlap_mm": 0.00015214420308329313,
+            "max_control_mean_contact_force_N": 0.15502668950603143,
+            "max_substep_peak_force_N": 0.37040014867671095,
+            "min_pad_floor_gap_mm": 0.2604160580797569,
+            "recovery_completed": 0,
+            "case": "pose_x_plus",
+            "failure": null,
+            "setup_state": {
+              "step": 9,
+              "lateral_error_mm": 2.116517178826856,
+              "angle_from_nominal_deg": 0.48894813013720645,
+              "angle_error_to_setup_rad": 0.00020181628055933497,
+              "position_error_to_setup_mm": 0.003978418047886624,
+              "blocked": false
+            },
+            "independent_fk": {
+              "fk_vs_usd_position_mm": 0.00024065716958839004,
+              "fk_vs_usd_rotation_rad": 5.72112344075123e-07
+            }
+          },
+          {
+            "success": true,
+            "steps": 400,
+            "final_depth_mm": 51.2813090694892,
+            "final_depth_error_mm": 0.00038533051080946734,
+            "final_lateral_mm": 0.046829303941998635,
+            "final_angle_deg": 0.004755978995423555,
+            "final_stable_samples": 3,
+            "final_shoulder_contact": true,
+            "entry_qualified": true,
+            "first_entry_qualified_step": 78,
+            "entry_window_good_sample_count": 24,
+            "entry_qualification_max_lateral_mm": 0.03654328522775335,
+            "entry_qualification_max_angle_deg": 0.004478644335647345,
+            "qualified_path_max_lateral_mm": 0.046829303941998635,
+            "qualified_path_max_angle_deg": 0.004755978995423555,
+            "last3_depth_range_mm": 0.00030656080836166666,
+            "max_reported_point_penetration_mm": 0.00025704503059387207,
+            "max_control_box_overlap_mm": 0.0001274349697780175,
+            "max_control_mean_contact_force_N": 0.14819335987340804,
+            "max_substep_peak_force_N": 0.3726817201823023,
+            "min_pad_floor_gap_mm": 0.2604160580797569,
+            "recovery_completed": 0,
+            "case": "pose_z_minus",
+            "failure": null,
+            "setup_state": {
+              "step": 9,
+              "lateral_error_mm": 2.10586847361985,
+              "angle_from_nominal_deg": 0.4886164171888305,
+              "angle_error_to_setup_rad": 0.00021165024074571736,
+              "position_error_to_setup_mm": 0.041633248568227955,
+              "blocked": false
+            },
+            "independent_fk": {
+              "fk_vs_usd_position_mm": 0.00027537875508447195,
+              "fk_vs_usd_rotation_rad": 2.6727386988787395e-07
+            }
+          },
+          {
+            "success": true,
+            "steps": 575,
+            "final_depth_mm": 51.281405313860446,
+            "final_depth_error_mm": 0.00028908613955991314,
+            "final_lateral_mm": 0.04409842341789179,
+            "final_angle_deg": 0.004493923710607722,
+            "final_stable_samples": 3,
+            "final_shoulder_contact": true,
+            "entry_qualified": true,
+            "first_entry_qualified_step": 249,
+            "entry_window_good_sample_count": 23,
+            "entry_qualification_max_lateral_mm": 0.03653629318644931,
+            "entry_qualification_max_angle_deg": 0.004473702996573192,
+            "qualified_path_max_lateral_mm": 0.05144932034826238,
+            "qualified_path_max_angle_deg": 0.005921640755119132,
+            "last3_depth_range_mm": 0.0023527641059004623,
+            "max_reported_point_penetration_mm": 0.00029616057872772217,
+            "max_control_box_overlap_mm": 0.00018142069105331338,
+            "max_control_mean_contact_force_N": 0.13759948991658802,
+            "max_substep_peak_force_N": 0.2616589888930339,
+            "min_pad_floor_gap_mm": 0.2604160580797569,
+            "recovery_completed": 1,
+            "case": "recover_plus",
+            "failure": null,
+            "setup_state": {
+              "step": 149,
+              "lateral_error_mm": 1.0006610069479713,
+              "angle_from_nominal_deg": 0.0037883288357756072,
+              "angle_error_to_setup_rad": 6.61188113325279e-05,
+              "position_error_to_setup_mm": 3.000469113885304,
+              "blocked": true
+            },
+            "independent_fk": {
+              "fk_vs_usd_position_mm": 0.00012564532458330267,
+              "fk_vs_usd_rotation_rad": 2.584592141003689e-07
+            }
+          },
+          {
+            "success": true,
+            "steps": 575,
+            "final_depth_mm": 51.281339442833094,
+            "final_depth_error_mm": 0.00035495716691258394,
+            "final_lateral_mm": 0.0475705355939042,
+            "final_angle_deg": 0.004809229266757479,
+            "final_stable_samples": 3,
+            "final_shoulder_contact": true,
+            "entry_qualified": true,
+            "first_entry_qualified_step": 249,
+            "entry_window_good_sample_count": 23,
+            "entry_qualification_max_lateral_mm": 0.03661492686053679,
+            "entry_qualification_max_angle_deg": 0.004474325737859036,
+            "qualified_path_max_lateral_mm": 0.05126939795929528,
+            "qualified_path_max_angle_deg": 0.005897230811174497,
+            "last3_depth_range_mm": 0.0003061951815652719,
+            "max_reported_point_penetration_mm": 0.0003334134817123413,
+            "max_control_box_overlap_mm": 0.00030415203793043855,
+            "max_control_mean_contact_force_N": 0.13062787768959178,
+            "max_substep_peak_force_N": 0.7487208443535617,
+            "min_pad_floor_gap_mm": 0.2604160580797569,
+            "recovery_completed": 1,
+            "case": "recover_minus",
+            "failure": null,
+            "setup_state": {
+              "step": 149,
+              "lateral_error_mm": 0.9997374968464195,
+              "angle_from_nominal_deg": 0.003922268672323063,
+              "angle_error_to_setup_rad": 6.845650247986404e-05,
+              "position_error_to_setup_mm": 2.9998167659505506,
+              "blocked": true
+            },
+            "independent_fk": {
+              "fk_vs_usd_position_mm": 0.00015563688892782058,
+              "fk_vs_usd_rotation_rad": 6.86002996036456e-07
+            }
+          }
+        ],
+        "aggregate": {
+          "cases": 5,
+          "successes": 5,
+          "max_final_lateral_mm": 0.0475705355939042,
+          "max_final_angle_deg": 0.0048107307533588285,
+          "max_final_depth_error_mm": 0.00038533051080946734,
+          "max_point_penetration_mm": 0.0003334134817123413,
+          "max_box_overlap_mm": 0.00030415203793043855,
+          "max_control_mean_contact_force_N": 0.15502668950603143,
+          "max_substep_peak_force_N": 0.7487208443535617
+        }
+      },
+      "steps_5": {
+        "cases": [
+          {
+            "success": true,
+            "steps": 358,
+            "final_depth_mm": 51.28110219556252,
+            "final_depth_error_mm": 0.0005922044374884194,
+            "final_lateral_mm": 0.0593901872693924,
+            "final_angle_deg": 0.005872481504220305,
+            "final_stable_samples": 3,
+            "final_shoulder_contact": true,
+            "entry_qualified": true,
+            "first_entry_qualified_step": 60,
+            "entry_window_good_sample_count": 21,
+            "entry_qualification_max_lateral_mm": 0.027409976540337146,
+            "entry_qualification_max_angle_deg": 0.0034230903720777824,
+            "qualified_path_max_lateral_mm": 0.0593901872693924,
+            "qualified_path_max_angle_deg": 0.005872481504220305,
+            "last3_depth_range_mm": 0.00023485967086855908,
+            "max_reported_point_penetration_mm": 0.0002682209014892578,
+            "max_control_box_overlap_mm": 0.0,
+            "max_control_mean_contact_force_N": 0.15082423699485142,
+            "max_substep_peak_force_N": 0.2191804753238118,
+            "min_pad_floor_gap_mm": 0.2604160580797569,
+            "recovery_completed": 0,
+            "case": "normal",
+            "failure": null,
+            "setup_state": null,
+            "independent_fk": {
+              "fk_vs_usd_position_mm": 0.00031264008394245676,
+              "fk_vs_usd_rotation_rad": 4.896242573036173e-07
+            }
+          },
+          {
+            "success": true,
+            "steps": 371,
+            "final_depth_mm": 51.28119635994702,
+            "final_depth_error_mm": 0.0004980400529888129,
+            "final_lateral_mm": 0.056854669766173996,
+            "final_angle_deg": 0.005627129405686796,
+            "final_stable_samples": 3,
+            "final_shoulder_contact": true,
+            "entry_qualified": true,
+            "first_entry_qualified_step": 72,
+            "entry_window_good_sample_count": 22,
+            "entry_qualification_max_lateral_mm": 0.0274752663955393,
+            "entry_qualification_max_angle_deg": 0.003430935017676623,
+            "qualified_path_max_lateral_mm": 0.056854669766173996,
+            "qualified_path_max_angle_deg": 0.005627129405686796,
+            "last3_depth_range_mm": 0.00020657879278473956,
+            "max_reported_point_penetration_mm": 0.0001695007085800171,
+            "max_control_box_overlap_mm": 5.2096432841264306e-05,
+            "max_control_mean_contact_force_N": 0.1288648588577851,
+            "max_substep_peak_force_N": 0.21728396095865785,
+            "min_pad_floor_gap_mm": 0.2604160580797569,
+            "recovery_completed": 0,
+            "case": "pose_x_plus",
+            "failure": null,
+            "setup_state": {
+              "step": 8,
+              "lateral_error_mm": 2.1106472133109384,
+              "angle_from_nominal_deg": 0.48687853305358214,
+              "angle_error_to_setup_rad": 0.00024119155228360343,
+              "position_error_to_setup_mm": 0.0022429754152211113,
+              "blocked": false
+            },
+            "independent_fk": {
+              "fk_vs_usd_position_mm": 0.00024109459561329487,
+              "fk_vs_usd_rotation_rad": 4.3640176409958456e-07
+            }
+          },
+          {
+            "success": true,
+            "steps": 373,
+            "final_depth_mm": 51.28101860536226,
+            "final_depth_error_mm": 0.0006757946377433655,
+            "final_lateral_mm": 0.05402617445187967,
+            "final_angle_deg": 0.005370789165230108,
+            "final_stable_samples": 3,
+            "final_shoulder_contact": true,
+            "entry_qualified": true,
+            "first_entry_qualified_step": 73,
+            "entry_window_good_sample_count": 22,
+            "entry_qualification_max_lateral_mm": 0.027496887530323203,
+            "entry_qualification_max_angle_deg": 0.003421147839503371,
+            "qualified_path_max_lateral_mm": 0.05402617445187967,
+            "qualified_path_max_angle_deg": 0.005370789165230108,
+            "last3_depth_range_mm": 0.00038875751108236045,
+            "max_reported_point_penetration_mm": 0.0002123415470123291,
+            "max_control_box_overlap_mm": 0.0,
+            "max_control_mean_contact_force_N": 0.1192172822175061,
+            "max_substep_peak_force_N": 0.28658545962913784,
+            "min_pad_floor_gap_mm": 0.2604160580797569,
+            "recovery_completed": 0,
+            "case": "pose_z_minus",
+            "failure": null,
+            "setup_state": {
+              "step": 9,
+              "lateral_error_mm": 2.124730804165541,
+              "angle_from_nominal_deg": 0.4918978120056436,
+              "angle_error_to_setup_rad": 0.00016638369163141838,
+              "position_error_to_setup_mm": 0.026583763126383997,
+              "blocked": false
+            },
+            "independent_fk": {
+              "fk_vs_usd_position_mm": 0.00011721904739128505,
+              "fk_vs_usd_rotation_rad": 5.672170364041836e-07
+            }
+          },
+          {
+            "success": true,
+            "steps": 531,
+            "final_depth_mm": 51.28101343813348,
+            "final_depth_error_mm": 0.0006809618665286621,
+            "final_lateral_mm": 0.05855601407769585,
+            "final_angle_deg": 0.005770352298265348,
+            "final_stable_samples": 3,
+            "final_shoulder_contact": true,
+            "entry_qualified": true,
+            "first_entry_qualified_step": 231,
+            "entry_window_good_sample_count": 22,
+            "entry_qualification_max_lateral_mm": 0.02753024809669656,
+            "entry_qualification_max_angle_deg": 0.003428581092639348,
+            "qualified_path_max_lateral_mm": 0.05855601407769585,
+            "qualified_path_max_angle_deg": 0.005770352298265348,
+            "last3_depth_range_mm": 0.00036959883934173376,
+            "max_reported_point_penetration_mm": 0.000321140930736874,
+            "max_control_box_overlap_mm": 0.0003915165750420502,
+            "max_control_mean_contact_force_N": 0.14543302987706366,
+            "max_substep_peak_force_N": 0.20872366840194592,
+            "min_pad_floor_gap_mm": 0.2604160580797569,
+            "recovery_completed": 1,
+            "case": "recover_plus",
+            "failure": null,
+            "setup_state": {
+              "step": 138,
+              "lateral_error_mm": 1.0005050507022835,
+              "angle_from_nominal_deg": 0.004147844165399671,
+              "angle_error_to_setup_rad": 7.239353754586052e-05,
+              "position_error_to_setup_mm": 3.000286135901215,
+              "blocked": true
+            },
+            "independent_fk": {
+              "fk_vs_usd_position_mm": 0.0001589570025397836,
+              "fk_vs_usd_rotation_rad": 5.420908121241071e-07
+            }
+          },
+          {
+            "success": true,
+            "steps": 529,
+            "final_depth_mm": 51.281109251678664,
+            "final_depth_error_mm": 0.0005851483213419328,
+            "final_lateral_mm": 0.050622688891162185,
+            "final_angle_deg": 0.005066107937695325,
+            "final_stable_samples": 3,
+            "final_shoulder_contact": true,
+            "entry_qualified": true,
+            "first_entry_qualified_step": 230,
+            "entry_window_good_sample_count": 22,
+            "entry_qualification_max_lateral_mm": 0.027376498436506632,
+            "entry_qualification_max_angle_deg": 0.0034327236144775235,
+            "qualified_path_max_lateral_mm": 0.050622688891162185,
+            "qualified_path_max_angle_deg": 0.005066107937695325,
+            "last3_depth_range_mm": 0.0005085715981607564,
+            "max_reported_point_penetration_mm": 0.0002253800630569458,
+            "max_control_box_overlap_mm": 2.9620485869630286e-05,
+            "max_control_mean_contact_force_N": 0.1622878859944043,
+            "max_substep_peak_force_N": 0.22235198248381652,
+            "min_pad_floor_gap_mm": 0.2604160580797569,
+            "recovery_completed": 1,
+            "case": "recover_minus",
+            "failure": null,
+            "setup_state": {
+              "step": 137,
+              "lateral_error_mm": 1.0010465340251296,
+              "angle_from_nominal_deg": 0.004110899701751429,
+              "angle_error_to_setup_rad": 7.174873501481533e-05,
+              "position_error_to_setup_mm": 3.000199409102442,
+              "blocked": true
+            },
+            "independent_fk": {
+              "fk_vs_usd_position_mm": 0.0001087290133902511,
+              "fk_vs_usd_rotation_rad": 6.083981567035923e-07
+            }
+          }
+        ],
+        "aggregate": {
+          "cases": 5,
+          "successes": 5,
+          "max_final_lateral_mm": 0.0593901872693924,
+          "max_final_angle_deg": 0.005872481504220305,
+          "max_final_depth_error_mm": 0.0006809618665286621,
+          "max_point_penetration_mm": 0.000321140930736874,
+          "max_box_overlap_mm": 0.0003915165750420502,
+          "max_control_mean_contact_force_N": 0.1622878859944043,
+          "max_substep_peak_force_N": 0.28658545962913784
+        }
+      }
+    },
+    "rendered_vs_physics_only_bridge": {
+      "20": {
+        "rendered_steps": 388,
+        "physics_only_steps": 388,
+        "max_absolute_differences": {
+          "joint_targets": 0.0,
+          "joint_positions": 0.0,
+          "tcp_position": 0.0,
+          "tcp_rotation": 0.0,
+          "insertion_depth_mm": 0.0,
+          "lateral_error_mm": 0.0,
+          "alignment_angle_rad": 0.0,
+          "control_box_overlap_mm": 0.0,
+          "step_peak_penetration_mm": 0.0
+        }
+      },
+      "5": {
+        "rendered_steps": 358,
+        "physics_only_steps": 358,
+        "max_absolute_differences": {
+          "joint_targets": 0.0,
+          "joint_positions": 0.0,
+          "tcp_position": 0.0,
+          "tcp_rotation": 0.0,
+          "insertion_depth_mm": 0.0,
+          "lateral_error_mm": 0.0,
+          "alignment_angle_rad": 0.0,
+          "control_box_overlap_mm": 0.0,
+          "step_peak_penetration_mm": 0.0
+        }
+      }
+    },
+    "component_hashes": {
+      "dls500": {
+        "contact_teacher.py": "0d4997f90d8640546e39b9b51d2e74766bc6b8e19a19b71f47ee68d4bedd0f4a",
+        "isaac_recovery.py": "28b98d09a5c6e406bbf7fcf6fb10f655bd857380a36ee933d62d8979794892d0",
+        "insertion_task.py": "1986131f8f72736e77fbd14a97b4479507fb237c17eaca37d3ac314f7c8efe38"
+      },
+      "native20": {
+        "contact_teacher.py": "0d4997f90d8640546e39b9b51d2e74766bc6b8e19a19b71f47ee68d4bedd0f4a",
+        "isaac_recovery.py": "28b98d09a5c6e406bbf7fcf6fb10f655bd857380a36ee933d62d8979794892d0",
+        "insertion_task.py": "1986131f8f72736e77fbd14a97b4479507fb237c17eaca37d3ac314f7c8efe38"
+      },
+      "native5": {
+        "contact_teacher.py": "0d4997f90d8640546e39b9b51d2e74766bc6b8e19a19b71f47ee68d4bedd0f4a",
+        "isaac_recovery.py": "28b98d09a5c6e406bbf7fcf6fb10f655bd857380a36ee933d62d8979794892d0",
+        "insertion_task.py": "1986131f8f72736e77fbd14a97b4479507fb237c17eaca37d3ac314f7c8efe38"
+      }
+    },
+    "force_note": "control mean and substep peak are simulation contact-impulse proxies; different dt/contact sampling means a lower peak is not evidence of better physical accuracy"
+  },
+  "audit": {
+    "steps_20": [
+      {
+        "case": "normal",
+        "entry_samples_verified": true,
+        "seating_samples_verified": true,
+        "setup_state": null,
+        "independent_fk": {
+          "fk_vs_usd_position_mm": 0.00023262305615632332,
+          "fk_vs_usd_rotation_rad": 6.641845050171439e-07
+        }
+      },
+      {
+        "case": "pose_x_plus",
+        "entry_samples_verified": true,
+        "seating_samples_verified": true,
+        "setup_state": {
+          "step": 9,
+          "lateral_error_mm": 2.116517178826856,
+          "angle_from_nominal_deg": 0.48894813013720645,
+          "angle_error_to_setup_rad": 0.00020181628055933497,
+          "position_error_to_setup_mm": 0.003978418047886624,
+          "blocked": false
+        },
+        "independent_fk": {
+          "fk_vs_usd_position_mm": 0.00024065716958839004,
+          "fk_vs_usd_rotation_rad": 5.72112344075123e-07
+        }
+      },
+      {
+        "case": "pose_z_minus",
+        "entry_samples_verified": true,
+        "seating_samples_verified": true,
+        "setup_state": {
+          "step": 9,
+          "lateral_error_mm": 2.10586847361985,
+          "angle_from_nominal_deg": 0.4886164171888305,
+          "angle_error_to_setup_rad": 0.00021165024074571736,
+          "position_error_to_setup_mm": 0.041633248568227955,
+          "blocked": false
+        },
+        "independent_fk": {
+          "fk_vs_usd_position_mm": 0.00027537875508447195,
+          "fk_vs_usd_rotation_rad": 2.6727386988787395e-07
+        }
+      },
+      {
+        "case": "recover_plus",
+        "entry_samples_verified": true,
+        "seating_samples_verified": true,
+        "setup_state": {
+          "step": 149,
+          "lateral_error_mm": 1.0006610069479713,
+          "angle_from_nominal_deg": 0.0037883288357756072,
+          "angle_error_to_setup_rad": 6.61188113325279e-05,
+          "position_error_to_setup_mm": 3.000469113885304,
+          "blocked": true
+        },
+        "independent_fk": {
+          "fk_vs_usd_position_mm": 0.00012564532458330267,
+          "fk_vs_usd_rotation_rad": 2.584592141003689e-07
+        }
+      },
+      {
+        "case": "recover_minus",
+        "entry_samples_verified": true,
+        "seating_samples_verified": true,
+        "setup_state": {
+          "step": 149,
+          "lateral_error_mm": 0.9997374968464195,
+          "angle_from_nominal_deg": 0.003922268672323063,
+          "angle_error_to_setup_rad": 6.845650247986404e-05,
+          "position_error_to_setup_mm": 2.9998167659505506,
+          "blocked": true
+        },
+        "independent_fk": {
+          "fk_vs_usd_position_mm": 0.00015563688892782058,
+          "fk_vs_usd_rotation_rad": 6.86002996036456e-07
+        }
+      }
+    ],
+    "steps_5": [
+      {
+        "case": "normal",
+        "entry_samples_verified": true,
+        "seating_samples_verified": true,
+        "setup_state": null,
+        "independent_fk": {
+          "fk_vs_usd_position_mm": 0.00031264008394245676,
+          "fk_vs_usd_rotation_rad": 4.896242573036173e-07
+        }
+      },
+      {
+        "case": "pose_x_plus",
+        "entry_samples_verified": true,
+        "seating_samples_verified": true,
+        "setup_state": {
+          "step": 8,
+          "lateral_error_mm": 2.1106472133109384,
+          "angle_from_nominal_deg": 0.48687853305358214,
+          "angle_error_to_setup_rad": 0.00024119155228360343,
+          "position_error_to_setup_mm": 0.0022429754152211113,
+          "blocked": false
+        },
+        "independent_fk": {
+          "fk_vs_usd_position_mm": 0.00024109459561329487,
+          "fk_vs_usd_rotation_rad": 4.3640176409958456e-07
+        }
+      },
+      {
+        "case": "pose_z_minus",
+        "entry_samples_verified": true,
+        "seating_samples_verified": true,
+        "setup_state": {
+          "step": 9,
+          "lateral_error_mm": 2.124730804165541,
+          "angle_from_nominal_deg": 0.4918978120056436,
+          "angle_error_to_setup_rad": 0.00016638369163141838,
+          "position_error_to_setup_mm": 0.026583763126383997,
+          "blocked": false
+        },
+        "independent_fk": {
+          "fk_vs_usd_position_mm": 0.00011721904739128505,
+          "fk_vs_usd_rotation_rad": 5.672170364041836e-07
+        }
+      },
+      {
+        "case": "recover_plus",
+        "entry_samples_verified": true,
+        "seating_samples_verified": true,
+        "setup_state": {
+          "step": 138,
+          "lateral_error_mm": 1.0005050507022835,
+          "angle_from_nominal_deg": 0.004147844165399671,
+          "angle_error_to_setup_rad": 7.239353754586052e-05,
+          "position_error_to_setup_mm": 3.000286135901215,
+          "blocked": true
+        },
+        "independent_fk": {
+          "fk_vs_usd_position_mm": 0.0001589570025397836,
+          "fk_vs_usd_rotation_rad": 5.420908121241071e-07
+        }
+      },
+      {
+        "case": "recover_minus",
+        "entry_samples_verified": true,
+        "seating_samples_verified": true,
+        "setup_state": {
+          "step": 137,
+          "lateral_error_mm": 1.0010465340251296,
+          "angle_from_nominal_deg": 0.004110899701751429,
+          "angle_error_to_setup_rad": 7.174873501481533e-05,
+          "position_error_to_setup_mm": 3.000199409102442,
+          "blocked": true
+        },
+        "independent_fk": {
+          "fk_vs_usd_position_mm": 0.0001087290133902511,
+          "fk_vs_usd_rotation_rad": 6.083981567035923e-07
+        }
+      }
+    ]
+  },
+  "receipts": [
+    {
+      "substeps": 20,
+      "client": 0,
+      "shutdown": 0,
+      "worker": 0
+    },
+    {
+      "substeps": 5,
+      "client": 0,
+      "shutdown": 0,
+      "worker": 0
+    }
+  ],
+  "artifacts_sha256": {
+    "protocol.json": "c1a88d343bbb2cc6fe90a991aa0ba478d79cb7ce3b8f5f0cae880120cce18e01",
+    "summary.json": "24cdf2f436317cb35ceb49c45cf66cb14dc5d2d8718acd1c9a4d8b1837c5bc90",
+    "audit.json": "4e92b626b174b433295d4a1cfbf3f96b3a7ead04d6b2693efc1c076c7640666c",
+    "audit_correction.json": "6afd564ff175e86fe1ac5fc82828852fd19d939eed50c20d168dcf213b73d823",
+    "receipts.json": "dde4c23e958059886447ae39bd833399e0820dadd5be97e5f76ae492619e1329",
+    "prepare.py": "c8e493f3e8d307920eb9fc8d83fb75017b3a1ef864429f9af63710460970232f",
+    "client.py": "d309a24461e945dd2684870e74f6be1e537a84d331bd26aac91c153aa7bbdb81",
+    "run.py": "60d9472c4ce4f4c592fa023429a908ac7d6021ae45a924cda9425069e5e6d5d6",
+    "summarize.py": "46a9e05f11ed509733a226c2fc17cab77844b528837959da0fc79ae625d55482",
+    "audit.py": "3597775c90234be22882719e7abb89ab7e4fe15aa804ccecd723381a009e72a2",
+    "steps_20/worker_process.json": "af8839de77896e0e0f371f359301460f545a211a94acb9f44d6f2f84eb22b678",
+    "steps_20/client_process.json": "c0a22e63f98577a4635accd08b77b4e8760077070ea662bad4d9d10a8a7df67d",
+    "steps_20/shutdown_process.json": "ebffc05ccd6b4b042d52481341f45c098b8226f06cfd6a28ef6dc1a8eab68f29",
+    "steps_20/worker/execution.json": "14f5476f1d9d4637dc653c32e44dd8994da91d206ca7c3505facd96f3383f831",
+    "steps_20/worker/worker_metadata.json": "7bf18ff11367a65a2b921b80c1c6ecefcd65c69ae10cf0156d64df4206442671",
+    "steps_20/worker/kinematics_check.json": "2981c867ca781ded8aa719e45ae966ed03f049a873518aec173d5028df9106c2",
+    "steps_20/client/report.json": "ce64d3252bbaa4dda20491921d0848f97622e1cde23dc00422a4fd2d49517413",
+    "steps_20/worker.log": "1912c9920eef597f814f99fa1484b9a03a98351dec3f27b3dc95f75dea437155",
+    "steps_20/client.log": "eaa5bc779fa21f4970ac5d87fc86af52427ab526ab3b6db251caddef96027079",
+    "steps_20/client/cases/pose_x_plus/report.json": "4d01cbaef060217659ee332924aa1586e432f4f71315bc3e4aba12303f9795d8",
+    "steps_20/client/cases/pose_x_plus/trajectory.jsonl": "7f5d691692e618327a8d8f79f6bff4c3cfc4284d39141358133e042aa9cb2dad",
+    "steps_20/client/cases/recover_plus/report.json": "f3d8085d5dc2449311931d1a288af86ff11a84f05c42b429ed09ea923d3dab28",
+    "steps_20/client/cases/recover_plus/trajectory.jsonl": "0569369da988718ccf7a115b33ff596287743a56983de73c54711916d755791c",
+    "steps_20/client/cases/pose_z_minus/report.json": "c212690161e408ac6cd7165902c8627c1e846d9614e178692518ae453b5ecf04",
+    "steps_20/client/cases/pose_z_minus/trajectory.jsonl": "32ec8ba467cefd69aff8eea255c82d7092ee456cbad9aacf8ab37ae1394117ec",
+    "steps_20/client/cases/recover_minus/report.json": "458775d6913fe7c07710954b64c3b398580e56c08621ff34b39189a60e6b92a5",
+    "steps_20/client/cases/recover_minus/trajectory.jsonl": "8faa30c06e0295e84017a9ff50fb90f6a03cf14993eb8460a3f86876bed42aa8",
+    "steps_20/client/cases/normal/report.json": "4f70425ce82e0de7c9f4499bbfacff35ab59007924030ea0a74e119dcb1852c1",
+    "steps_20/client/cases/normal/trajectory.jsonl": "20d9f3b35df194b0b8aa9109cddeb6c66bd7766d8a02a264f1369bfb2d2006c8",
+    "steps_5/worker_process.json": "abb8b63df3a1fda2c90ea70c891ffaf2042c31254ef11482e42a3f34630a4888",
+    "steps_5/client_process.json": "8a1e4f05df1946925cb51d3c7edabe12ada02c45db6e7a47bdc54bee57b089e4",
+    "steps_5/shutdown_process.json": "becbb52798ae0a6cd89951aee236e6a9f6bfbfb30bb16f796c14b1bf082b002a",
+    "steps_5/worker/execution.json": "76e5430abb6ce37633acf9cb613ca8a1233f4e58f3cfb5a6244d78edd8d327fb",
+    "steps_5/worker/worker_metadata.json": "55f7b33ffb1f50635913ad0b6e4ebb8b353e9f03308421b1f0e654f397a0bfd0",
+    "steps_5/worker/kinematics_check.json": "2981c867ca781ded8aa719e45ae966ed03f049a873518aec173d5028df9106c2",
+    "steps_5/client/report.json": "0b4e71c66abc8754ef25669bc72b96896242af6f05d2e9956ffb242992a41e67",
+    "steps_5/worker.log": "9cc2eb80291f6b78c4779f282407ebb35f81eb1745fdc474e62cd161994efe07",
+    "steps_5/client.log": "97f5ae7f545c2b90a972375d8bf509acb7533ef519d3c7c6b56bc079d26192bd",
+    "steps_5/client/cases/pose_x_plus/report.json": "fb49308c4530e3c2d44b250e27afa553a85efad708bb7900b912868f6e4a9e36",
+    "steps_5/client/cases/pose_x_plus/trajectory.jsonl": "85fe65baf97ee94902532eec8177fe4febe50700963a1372ad7d7f484813385d",
+    "steps_5/client/cases/recover_plus/report.json": "e6949ce1b19e3ed1646a930ad68016308a88ab1f736d92c05372e91d38303b8e",
+    "steps_5/client/cases/recover_plus/trajectory.jsonl": "368da23f5975e6f0e585e8e3598b441aa48174e7e060e3e02b2fb9adab120c95",
+    "steps_5/client/cases/pose_z_minus/report.json": "53c7ccb5702ec34f169e4231159886deb339e6ec3091431061da0cad953dd84f",
+    "steps_5/client/cases/pose_z_minus/trajectory.jsonl": "a5f116c51a6189af69dedb6ddfbdff7dcef83b7806900dfb0dfeb02e8da814c7",
+    "steps_5/client/cases/recover_minus/report.json": "593eef8ae7fe5d9c066dce5f39870cd8a9fd19b212a8ef15f43fe007f6e12507",
+    "steps_5/client/cases/recover_minus/trajectory.jsonl": "77e38c63a16f61e88b200704a6ffd1771a66dd9f8d8cd452a3f001752c605b0e",
+    "steps_5/client/cases/normal/report.json": "f6caf524d56a4509dbb5f49bc6ab964f2e2438b0b84dd848cd12b5334ef06deb",
+    "steps_5/client/cases/normal/trajectory.jsonl": "3fe6c42c0f2c4076758766f5b2e109ac7171fea45b566e8f49468c2abef49e88"
+  },
+  "historical_trace_sha256": {
+    "/data/shapeforge/runtime/runs/isaac_substeps_20261124/steps_500/client/cases/normal/trajectory.jsonl": "a17e9a266743aa85624c83f1be85dc6ccb3070d185332ccb024a9315e4ecb0dc",
+    "/data/shapeforge/runtime/runs/isaac_substeps_20261124/steps_500/client/cases/plus/trajectory.jsonl": "1abdfbba25e1dab286d1fdc822e362c0941c5c39235874325d2484b56d24e8a1",
+    "/data/shapeforge/runtime/runs/isaac_substeps_20261124/steps_500/client/cases/minus/trajectory.jsonl": "8024b0d9be2150a043b744e0c084b0847144ca31b206e240f3b62898e839bf98",
+    "/data/shapeforge/runtime/runs/tianji_ik_adapter_20261124/tianji/client/cases/normal/trajectory.jsonl": "c8a59f3513f99b2d62895c691bd6215776e73145c83a3aa572a006b55156065f",
+    "/data/shapeforge/runtime/runs/tianji_ik_adapter_20261124/tianji/client/cases/plus/trajectory.jsonl": "c9adab950f743cda0e8906d6c72fcc213f2f6ed6dd547b514056a6412ec57363",
+    "/data/shapeforge/runtime/runs/tianji_ik_adapter_20261124/tianji/client/cases/minus/trajectory.jsonl": "d571527407f62a21196f74ff45de2b5cad193c9f6b75797a4cb4af4adada4e1b",
+    "/data/shapeforge/runtime/runs/isaac_fast5_20261124/async5/client/cases/normal/trajectory.jsonl": "14a1752ecfe8a5df9df369f5b849b8ce36d59d7b66c843b919fdac19280d44b1",
+    "/data/shapeforge/runtime/runs/isaac_fast5_20261124/async5/client/cases/plus/trajectory.jsonl": "9b004c447309ba6fb5f0b7a556fc7342fa68233cdbf1705df8e9e0670e588f97",
+    "/data/shapeforge/runtime/runs/isaac_fast5_20261124/async5/client/cases/minus/trajectory.jsonl": "5b1c643550ea723f39cf08c69fd744204f22ed36a17a4ca8d84b0d5bb7bae557"
+  },
+  "scope": "Five paired physics-only cases at 20/5 substeps, rendered normal trace bridge exact, same teacher/assessment source hashes; historical 500/20/5 three-case traces reused. No task or controller tuning, training, rendering-data claim, force-accuracy certification, or robot connection."
+}

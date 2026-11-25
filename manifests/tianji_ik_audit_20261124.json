@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "id": "tianji-ik-audit-20261124",
+  "run_root": "/data/shapeforge/runtime/runs/tianji_ik_audit_20261124",
+  "status": "offline_math_verified_not_simulation_alignment",
+  "guide": "docs/agent/simulation/evolution/isaac-control-throughput.md",
+  "validation": {
+    "sdk_root": "/data/shapeforge/runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/vendor/optical_module_pu/source/OpticalModule_PU/Arm_control",
+    "source_sha256": {
+      "/data/shapeforge/runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/vendor/optical_module_pu/source/OpticalModule_PU/Arm_control/fx_kine.py": "c6603de2f315dfc0fc85369be07165af7da0118e3cc4006ca94f8787c04087c5",
+      "/data/shapeforge/runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/vendor/optical_module_pu/source/OpticalModule_PU/Arm_control/fx_tcp_force.py": "945706e3687f6c70c2461c34b2d76befa2a7c6f3c4c6e59747b2f81f74420703",
+      "/data/shapeforge/runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/vendor/optical_module_pu/source/OpticalModule_PU/Arm_control/libKine.so": "f2aec6ebc1f41302fe0126284076211c044d6c7e1c2276dc919767254e0c597f",
+      "/data/shapeforge/runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/vendor/optical_module_pu/source/OpticalModule_PU/Arm_control/ccs_m6_40.MvKDCfg": "ce20b1a80974c3ed58cdac4973152625096c8ad93a779e5fd4108c26ce19bd52"
+    },
+    "model_type": 1017,
+    "arm": 0,
+    "samples": 500,
+    "warmup": 30,
+    "tool": "identity flange TCP",
+    "user_frame": "identity",
+    "timing_ms": {
+      "sdk_fk": {
+        "median": 0.017561000277055427,
+        "mean": 0.017982340141315944,
+        "p95": 0.021371997718233615,
+        "max": 0.02938199759228155
+      },
+      "native_ik": {
+        "median": 0.0039480000850744545,
+        "mean": 0.004037165970657952,
+        "p95": 0.004179004463367164,
+        "max": 0.013495999155566096
+      },
+      "python_ik_wrapper": {
+        "median": 0.034238502848893404,
+        "mean": 0.03508133596915286,
+        "p95": 0.04001499473815784,
+        "max": 0.06340799882309511
+      },
+      "tcp_delta_wrapper": {
+        "median": 0.1018545008264482,
+        "mean": 0.10378300597949419,
+        "p95": 0.1118400032282807,
+        "max": 0.15174999862210825
+      }
+    },
+    "max_fk_backcheck_position_error_mm": 7.574507589069806e-05,
+    "max_fk_backcheck_rotation_matrix_error": 1.176260932822526e-07,
+    "robot_control_module_imported": false,
+    "communication_library_loaded": false,
+    "scope": "local archived SDK calculation only; 500 small targets around a non-singular demo pose; no robot connection, no Isaac/SDK coordinate equivalence claim, no real control-loop latency certification"
+  },
+  "artifacts_sha256": {
+    "benchmark_sdk.py": "0b59f0ce993a4fcff0f47287dfad26b64ff095a5119a4089dd00736c47ce8c7b",
+    "summary.json": "c6a538817313de84a70bd612d7a0332c184c93a16f4f6572dea020df2bd22914",
+    "benchmark.log": "c68a248d867a1859d49a1161facc99e9628536df51e9d01e16822e13697e9bcd",
+    "network_trace.log": "a5aa40c0e77f6f15a8212f4593d32b56742f48e683cfa02697fdf15ef372c289"
+  }
+}

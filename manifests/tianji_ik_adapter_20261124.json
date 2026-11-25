@@ -1,0 +1,332 @@
+{
+  "schema_version": 1,
+  "id": "tianji-ik-adapter-20261124",
+  "status": "offline_and_physx_smoke_passed",
+  "run_root": "/data/shapeforge/runtime/runs/tianji_ik_adapter_20261124",
+  "guide": "docs/agent/simulation/evolution/tianji-native-ik.md",
+  "tutorial": "tutorials/tianji_native_ik.md",
+  "validation": {
+    "scope": "same pinned scene, 20 substeps, rendered RGB, identical rule/guards/seeds; new native solver trajectory, no BC/RL retraining or hardware",
+    "offline": {
+      "transfer": "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer/transfer.json",
+      "transfer_sha256": "cf3292f916737c191cdc7b4cc8dc07e9a0e0bb1eac2282e27a0bbb590da721cb",
+      "sdk_directory": "/data/shapeforge/runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/vendor/optical_module_pu/source/OpticalModule_PU/Arm_control",
+      "metadata": {
+        "version": "tianji-ccs-left-world-v1",
+        "arm": 0,
+        "model_type": 1017,
+        "joint_names": [
+          "Arm_L1_Joint",
+          "Arm_L2_Joint",
+          "Arm_L3_Joint",
+          "Arm_L4_Joint",
+          "Arm_L5_Joint",
+          "Arm_L6_Joint",
+          "Arm_L7_Joint"
+        ],
+        "joint_signs": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "joint_zero_offsets_rad": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "input_units": "world metres / joint radians",
+        "sdk_units": "base millimetres / joint degrees",
+        "world_from_base": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            -2.220446049250313e-16,
+            1.0000000000000002,
+            0.025999999999999995
+          ],
+          [
+            0.0,
+            -1.0000000000000002,
+            -2.220446049250313e-16,
+            1.121
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "flange_from_tcp": [
+          [
+            0.9999999999920002,
+            -4.000000000059512e-06,
+            7.999712004380655e-12,
+            -1.0547118733938987e-17
+          ],
+          [
+            4.000000000226045e-06,
+            0.9999999999840001,
+            -3.999999999948489e-06,
+            -1.1709654061874394e-33
+          ],
+          [
+            8.000156093146414e-12,
+            4.000000000115022e-06,
+            0.9999999999920002,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "source_sha256": {
+          "fx_kine.py": "c6603de2f315dfc0fc85369be07165af7da0118e3cc4006ca94f8787c04087c5",
+          "libKine.so": "f2aec6ebc1f41302fe0126284076211c044d6c7e1c2276dc919767254e0c597f",
+          "ccs_m6_40.MvKDCfg": "ce20b1a80974c3ed58cdac4973152625096c8ad93a779e5fd4108c26ce19bd52"
+        },
+        "position_tolerance_m": 1e-05,
+        "rotation_tolerance_rad": 0.0001,
+        "max_joint_step_rad": 0.1,
+        "singularity_policy": "reject any SDK singular flag",
+        "fallback": "none",
+        "mapping_validation": {
+          "samples": 66,
+          "max_position_error_m": 5.643241593900938e-06,
+          "max_rotation_error_rad": 2.572371741862243e-05
+        }
+      },
+      "samples": 500,
+      "successes": 500,
+      "failures": [],
+      "max_position_error_mm": 0.0031681124092792076,
+      "max_rotation_error_rad": 2.4360806951709542e-05,
+      "max_joint_step_rad": 0.007749918239341014,
+      "solve_ms": {
+        "mean": 0.23566119589668233,
+        "median": 0.23178650008048862,
+        "p95": 0.24959110014606267
+      },
+      "communication_library_loaded": false,
+      "scope": "offline world-delta targets near insertion pose; no collision or hardware validation"
+    },
+    "backends": {
+      "tianji": {
+        "cases": [
+          {
+            "id": "normal",
+            "kind": "normal",
+            "seed": 91000,
+            "x_mm": 0.0,
+            "z_mm": 0.0,
+            "split": "diagnostic",
+            "success": true,
+            "steps": 388,
+            "reset_count": 1,
+            "supervised_from_step": 0,
+            "control_from_step": 0,
+            "expert_steps": 388,
+            "policy_steps": 0,
+            "setup_steps": 0,
+            "initialization_valid": true,
+            "final_depth_mm": 51.28131037421046,
+            "failure": null,
+            "recovery_attempts": 0,
+            "recovery_completed": 0,
+            "blocked": false,
+            "teacher_requests": 388,
+            "max_mean_force_N": 0.12058578421374562,
+            "max_substep_force_N": 0.5343198077753224,
+            "episode": "normal",
+            "wall_seconds": 47.835696335998364
+          },
+          {
+            "id": "plus",
+            "kind": "recovery",
+            "seed": 91001,
+            "x_mm": 1.0,
+            "z_mm": 0.0,
+            "split": "diagnostic",
+            "success": true,
+            "steps": 573,
+            "reset_count": 1,
+            "supervised_from_step": 147,
+            "control_from_step": 147,
+            "expert_steps": 426,
+            "policy_steps": 0,
+            "setup_steps": 147,
+            "initialization_valid": true,
+            "final_depth_mm": 51.28119972744417,
+            "failure": null,
+            "recovery_attempts": 1,
+            "recovery_completed": 1,
+            "blocked": true,
+            "teacher_requests": 426,
+            "max_mean_force_N": 0.13063781496444463,
+            "max_substep_force_N": 0.2682465876205261,
+            "episode": "plus",
+            "wall_seconds": 69.14166151999962
+          },
+          {
+            "id": "minus",
+            "kind": "recovery",
+            "seed": 91002,
+            "x_mm": -1.0,
+            "z_mm": 0.0,
+            "split": "diagnostic",
+            "success": true,
+            "steps": 576,
+            "reset_count": 1,
+            "supervised_from_step": 150,
+            "control_from_step": 150,
+            "expert_steps": 426,
+            "policy_steps": 0,
+            "setup_steps": 150,
+            "initialization_valid": true,
+            "final_depth_mm": 51.28119252599884,
+            "failure": null,
+            "recovery_attempts": 1,
+            "recovery_completed": 1,
+            "blocked": true,
+            "teacher_requests": 426,
+            "max_mean_force_N": 0.11780471260408461,
+            "max_substep_force_N": 0.4676587064750526,
+            "episode": "minus",
+            "wall_seconds": 69.17325809600152
+          }
+        ],
+        "normal_steps_after_warmup": 378,
+        "normal_ik_solve_ms": {
+          "mean": 0.5497726113332199,
+          "median": 0.5377600027713925,
+          "min": 0.5122730071889237,
+          "max": 0.9801080013858154
+        },
+        "normal_step_rpc_ms": {
+          "mean": 96.96818911376155,
+          "median": 96.04649099856033,
+          "min": 85.70311099902028,
+          "max": 126.22534399997676
+        }
+      },
+      "dls": {
+        "cases": [
+          {
+            "id": "normal",
+            "kind": "normal",
+            "seed": 91000,
+            "x_mm": 0.0,
+            "z_mm": 0.0,
+            "split": "diagnostic",
+            "success": true,
+            "steps": 385,
+            "reset_count": 1,
+            "supervised_from_step": 0,
+            "control_from_step": 0,
+            "expert_steps": 385,
+            "policy_steps": 0,
+            "setup_steps": 0,
+            "initialization_valid": true,
+            "final_depth_mm": 51.281194691904,
+            "failure": null,
+            "recovery_attempts": 0,
+            "recovery_completed": 0,
+            "blocked": false,
+            "teacher_requests": 385,
+            "max_mean_force_N": 0.11136772292104603,
+            "max_substep_force_N": 0.4711056734597526,
+            "episode": "normal",
+            "wall_seconds": 57.13087517199892
+          }
+        ],
+        "normal_steps_after_warmup": 375,
+        "normal_ik_solve_ms": {
+          "mean": 27.10536269847459,
+          "median": 26.877067000896204,
+          "min": 26.593900998705067,
+          "max": 34.36164800223196
+        },
+        "normal_step_rpc_ms": {
+          "mean": 123.14219424000476,
+          "median": 122.07426600070903,
+          "min": 112.03895699873101,
+          "max": 154.43470700120088
+        }
+      }
+    },
+    "receipts": [
+      {
+        "backend": "tianji",
+        "client": 0,
+        "shutdown": 0,
+        "worker": 0
+      },
+      {
+        "backend": "dls",
+        "client": 0,
+        "shutdown": 0,
+        "worker": 0
+      }
+    ],
+    "speedups": {
+      "normal_ik": 49.30286110969231,
+      "normal_step_rpc": 1.2699236251131416,
+      "normal_episode_wall": 1.1943146969307428
+    },
+    "timing_scope": "normal seed 91000 only; discard first 10 controls for per-step means; RPC includes physics/render/measurements/communication but excludes client spool; episode wall includes recording but excludes Isaac startup"
+  },
+  "artifacts_sha256": {
+    "summary.json": "dc94bd0efb69eeddeea1a89fd7501b3e06078763b79bcfc7391cc878780cb2c0",
+    "offline/summary.json": "e952c3ec6e0dcb44d63120601edafd887de153d83662111280798d2dd9ce5f73",
+    "receipts.json": "ec592e9c633c88f633cf781e42ab4a0cdffe8ecd30430bd8c68c9ea03e88bd90",
+    "run.py": "1f979000a47e7b96c361c0a9d26ce3bd53731dbcfea8d04dfdd08ed4a8dc4a85",
+    "client.py": "589cdb2d56bf02b2e030fe0fa7516ab87b256e5366de4ab1e75ab858f8a1afb3",
+    "summarize.py": "623864659d0780e5680f3ecf344219143d77136da9fc024767e113d00effccf8",
+    "native_tests.log": "b309bf8c5c04a555a63ebbf3226824a5719c743e7b658e4dbb0f246315b4bebf",
+    "contract_tests.log": "dc9d85e9e544b4336b9a23b15f1ad817057321e534740affd7168d9d43464139",
+    "lightweight_tests.log": "73bf6de35e0807ee044514e522d3ee32d11044fa89bd1cd51e1817a0710970ed",
+    "tianji/worker_process.json": "c737ea76e77c2b3d4c788cedcd3500e5e22cd9cb31a2b14a8e94c04e8bd00f31",
+    "tianji/client_process.json": "4b9ad826edf40d366b61346ab1d67ccabcc96771ae4f8142246345c0efe74ed2",
+    "tianji/shutdown_process.json": "1a36f5ac2c257a7361f3e3df9057db2f01e9d444f76a3c0f6f079085dbf0e9ee",
+    "tianji/worker/execution.json": "a561479beffc7d2e8c89f3ee931152adf2f5c3ec72f48fbdb3a493b08cfe0bdc",
+    "tianji/worker/worker_metadata.json": "d86450aab65fe2b5cfe699410e054fedacc15094f03f0f62471ddf0a90d24202",
+    "tianji/client/report.json": "82b4e1bfc3364b3d12e44562dd839f7c750035c3794ce594bf9437f828ad36f6",
+    "tianji/client/timings.json": "fdd86a87159e76365532a661e5ab39e81ab8b1b58e45b122884c32b3cc17c2de",
+    "tianji/client/protocol.json": "0a556ce0b94568d75f6adddcdb12b196b07b7e754d5857b58943b28cb643180f",
+    "dls/worker_process.json": "dc5ded89b411196ba833ad9721e549feeae0f60e0660b253dc25aa37cf78631a",
+    "dls/client_process.json": "12a3afdd60eed7d346a808c9fcf4828c17689ced96fc07b638e8d2cd47658c1e",
+    "dls/shutdown_process.json": "ac3ad5066f84dfc0e42b95cb6d2da9bf9eb0a86e22308c071a2ee47fb280d506",
+    "dls/worker/execution.json": "14e570b39a8da62a78cf9ec22ff2241e2d4ae93a58f992057843be1748a8d615",
+    "dls/worker/worker_metadata.json": "da5e82b72b856bc859bf7b97c7b5a9582037e6c18f49d93e134cabae732f528d",
+    "dls/client/report.json": "e945d8b60a724eea74c63d5e71895e632718eae2d41b88a2083571f6718a40d3",
+    "dls/client/timings.json": "f6d0c490e54d909f1462d7229069add29c1190bd8b1697238957c254843813d5",
+    "dls/client/protocol.json": "44c1d88424299d2c423c90249f595f8469a8aa10d6065f102029b41ac8555507"
+  },
+  "current_source_sha256": {
+    "src/omi_shapeforge/sim/tianji_ik.py": "db3213892dde48a8b055f5ae50f35a2c85cb0a73b60ded828f8d0af017628636",
+    "src/omi_shapeforge/sim/isaac_contact_runtime.py": "64e8c7ab9790532038dc0b0a20d4a215b9298ac68ca8aeac6b5e6ba4369a5ca5",
+    "scripts/simulation/isaac_rl_worker.py": "7d32f03a21e717e0c765b04d6cd9fcce5c291cec90484ebaae4c4ca4caaa7cb2",
+    "scripts/simulation/run_isaac_diverse_study.py": "1dc41593f60f9c5d8c64c51baeffb7e9edeb31d628ff6deccf9acccdede937ba",
+    "scripts/simulation/audit_tianji_ik.py": "43a2a0bd57251cb4ff763906756ac45a165d1418ab8c855b2812c1e05710b3d0",
+    "tests/test_tianji_ik.py": "e9083e24a0e8616678695063be79ae032957a6c48601d902a40362fcf2f90672",
+    "tests/test_native_ik_contract.py": "0ef6c20b4ff5b8c23f342ccfb098846417f1db8fafecd4c6508486a0dca060de",
+    "../omi_proj/src/omi_hil_rl/training/isaac_client.py": "dcd8bf14ac6b582e8dff324f89651b17d13e78cb304e8d60c0db43430e170790"
+  },
+  "snapshot_note": "Actual worker code hashes are in worker/execution.json; final adapter moves global-slot invalidation before config load to cover initialization errors, native tests rerun; normal solve unchanged."
+}

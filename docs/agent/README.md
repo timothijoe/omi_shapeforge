@@ -1,5 +1,22 @@
 # Agent 知识库
 
+- [System1 与 System0 路径条件化插接讨论](../design/system1-system0-path-conditioned-rl-discussion.md)：2026-11-25设计接续，含已核对实现、异步坐标、路径条件与真机奖励边界；不代表新策略能力。
+
+- [2026-11-25：当前点云展示与r11插接视频交接](../chronicles/2026-11-25-pointcloud-video-handoff.md)，汇总腕部重点叠加、完整三维点云、配色、验证和复现。
+
+2026-11-24当前确认：规则精度回归20／5子步均5/5，快速5子步最大终点横向误差约0.059 mm、角度0.0059°、深度误差＜0.001 mm；同一冻结RL网络五回合执行时间462.170→32.644秒，约14倍，但自主成功率新旧均0/5。速度、环境可插入性与策略能力分别记录，默认配置未改；按用户要求保存进展，本次不启动新实验。 [纪传体](simulation/evolution/isaac-rule-precision.md) · [编年体](../chronicles/2026-11-24-isaac-rule-precision.md)。
+
+2026-11-24本窗口已按用户要求收口：[纪传体／控制吞吐总账](simulation/evolution/isaac-control-throughput.md) · [编年体／学习与性能交接](../chronicles/2026-11-24-isaac-performance-window-handoff.md)。建议快速配方为CPU＋原厂IK＋5物理子步＋双渲染子帧＋异步记录，约55 ms完整规则采集周期；最早基线约770 ms，约14倍，包含物理步长与算法变化。代码默认未切换，BC／RL未因提速新增训练成绩；本次仅整理文档。
+
+2026-11-24：[50段多样化示范完成](simulation/evolution/diverse-demonstrations.md)。40训练＋10验证，准备动作不作专家监督；BC闭环验证0/10、留出0/8；BC未达到预登记门槛，本轮未启动RL。有效完成阶段退出0，启动失败及接续记录保留；仍仅是当前仿真范围。
+
+
+资源定位先读[本地存储与恢复契约](interfaces/local-resources.md)。运行资源实体已位于`/data/shapeforge/runtime/`，导入与交付资料位于同级storage，旧runtime路径保留兼容。见[runtime迁移编年](../chronicles/2026-11-23-runtime-relocation.md)及[此前导入／交付迁移](../chronicles/2026-11-23-storage-layout.md)。
+
+2026-11-23：[收尾监督补强与新合同重训](simulation/evolution/staged-retraining.md)完成。BC无接管0/2、最终RL无接管0/2，接管训练2/3；本轮原生阶段全部退出0。历史143未复现、来源未定，旧结果不重算。
+
+2026-11-23续开发：[在线接管恢复已接入](simulation/evolution/online-insertion-recovery.md)。固定三例真实RPC验证通过：正常、±1 mm受阻退回／重对准／重插及交回；任务目标与奖励不随子目标改变。提议方为诊断脚本，未重训或新增学习策略成绩。
+
 [规则插入收尾／纪传体](simulation/evolution/rule-insertion-review.md) · [编年体](../chronicles/2026-11-23-rule-insertion-review.md)：正常8/8、受阻恢复4/4，保留demo、复现证据及实仿／学习缺项。
 
 感知细网格数据 v1： [纪传体／范围与能力](perception/evolution/grid-perception-data-v1.md) · [编年体／阶段经过](perception/chronicles/2026-11-23-grid-perception-data-v1.md) · [操作与恢复](../../tutorials/grid_perception_data_v1.md)。采样标注已完成，网络训练另行记录。

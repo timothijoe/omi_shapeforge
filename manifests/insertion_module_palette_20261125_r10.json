@@ -1,0 +1,118 @@
+{
+  "schema": "insertion-module-palette-v1",
+  "date": "2026-11-25",
+  "run_directory": "/data/shapeforge/runtime/runs/insertion_module_palette_20261125_r10",
+  "video": {
+    "path": "/data/shapeforge/runtime/runs/insertion_module_palette_20261125_r10/film/alignment_insertion_module_palette_1080p.mp4",
+    "sha256": "4bdd6bf8e6c6e1c8e8cce90dbe4369b166b346b797a6497c196de73fa36ddd7e",
+    "bytes": 6663951,
+    "frames": 542,
+    "fps": 30,
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "duration_s": 18.066666666666666
+  },
+  "delivery": {
+    "机器人插接_WG-r15_冷银灰点云_试版_20261125.mp4": {
+      "path": "/home/linux/Downloads/机器人插接_WG-r15_冷银灰点云_试版_20261125.mp4",
+      "sha256": "4bdd6bf8e6c6e1c8e8cce90dbe4369b166b346b797a6497c196de73fa36ddd7e",
+      "bytes": 6663951
+    },
+    "光模块普通点云_低饱和配色对比_20261125.png": {
+      "path": "/home/linux/Downloads/光模块普通点云_低饱和配色对比_20261125.png",
+      "sha256": "5d5cebc8c06757ce7c1984c71d736c96d11dbf74b181b26952e4d07c64f1aace",
+      "bytes": 155967
+    },
+    "机器人插接_WG-r15_冷银灰点云_封面_20261125.png": {
+      "path": "/home/linux/Downloads/机器人插接_WG-r15_冷银灰点云_封面_20261125.png",
+      "sha256": "20bbc5f32f4b5eba6a4a99a5c9563aa50428025bb94ce13ddb6f2b9d7528d7c8",
+      "bytes": 588243
+    },
+    "机器人插接_WG-r15_冷银灰点云_过程预览_20261125.jpg": {
+      "path": "/home/linux/Downloads/机器人插接_WG-r15_冷银灰点云_过程预览_20261125.jpg",
+      "sha256": "2c9dfd94e12667d1107ebeaecea00932afdffe66d77e31f392136f51dbfc66ac",
+      "bytes": 563181
+    },
+    "机器人插接_WG-r15_冷银灰点云_r10_20261125.mp4": {
+      "path": "/home/linux/Downloads/机器人插接_WG-r15_冷银灰点云_r10_20261125.mp4",
+      "sha256": "4bdd6bf8e6c6e1c8e8cce90dbe4369b166b346b797a6497c196de73fa36ddd7e",
+      "bytes": 6663951
+    }
+  },
+  "r9_accepted_as_usable_version": true,
+  "refinement_scope": "module ordinary point color only",
+  "camera_changed": false,
+  "timing_changed": false,
+  "point_sampling_changed": false,
+  "focus_colors_changed": false,
+  "variants": {
+    "cool-silver": {
+      "rgb": [
+        216,
+        221,
+        228
+      ],
+      "label": "A  冷银灰",
+      "note": "更明亮、偏冷的中性银灰"
+    },
+    "warm-titanium": {
+      "rgb": [
+        187,
+        181,
+        170
+      ],
+      "label": "B  暖钛灰",
+      "note": "微暖、低饱和，避开橙棕色"
+    },
+    "graphite": {
+      "rgb": [
+        119,
+        125,
+        133
+      ],
+      "label": "C  深石墨灰",
+      "note": "更深的中性灰，强调主体轮廓"
+    }
+  },
+  "selected_candidate": "cool-silver",
+  "candidate_user_reviewed": true,
+  "default_policy_color_changed": true,
+  "source_sha256": {
+    "/home/linux/omi_folder/omi_shapeforge/scripts/perception/render_module_palette_film.py": "8de853f890742b26fa29c23d29b81fbd2922c1824bb613901125bdb34865a95f",
+    "/home/linux/omi_folder/omi_shapeforge/scripts/perception/render_alignment_film.py": "accad4fc1555022604b93963d38f5580921cf3b9e836877902f927606dae491a",
+    "/home/linux/omi_folder/omi_shapeforge/scripts/perception/render_insertion_multiview.py": "cbfc74efafe7761daedf9708c31d54d5384483d7d288b8ca00cb210d7872f3d4",
+    "/home/linux/omi_folder/omi_shapeforge/configs/pointcloud_presentation.json": "6c220f29362f22b2659774564242bc5817c7226823d3258bf9144fbad75778c2",
+    "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_templates/module.npz": "b0deb4320e757b53f7805dc9ded9b9e8f1cdc2545e7e0d187d7b75fb01143b22",
+    "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_templates/socket.npz": "6fe1dbacdabe7ea276d286d0f20d7051d37fa75010301c5137b5f9defaca02b6",
+    "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_templates/manifest.json": "128f46c1428a27d38c83c568698247a78a4a3252d26db03686bc31bb20bc7311",
+    "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_capture/capture_report.json": "b24f9a73d4ca70cf2965427baf6de177513e2d6880240a267060b40fbd3c18c4"
+  },
+  "source_pointcloud": "original simulation geometry and reference poses; not network predictions",
+  "new_physics": false,
+  "asset_identity": {
+    "tool": "WG-DAIMON-LOGO-r15",
+    "module": "OM-001/V4 r08",
+    "contract": "wva01-closed-reference-fixture-v1",
+    "integration_release": "SC-WVA01-ISAAC-FIXTURE-r01",
+    "grasp": "fixed module insertion fixture using GC-r01 settled reference pose; NOT free contact grasp"
+  },
+  "grasp_mode": "fixed fixture unchanged from r9",
+  "quality_check": "/data/shapeforge/runtime/runs/insertion_module_palette_20261125_r10/quality_check.json",
+  "documentation": "docs/agent/perception/evolution/alignment-insertion-film.md",
+  "version_name": "r10 冷银灰分层点云版",
+  "status": "user-accepted",
+  "user_accepted": true,
+  "canonical_delivery": "/home/linux/Downloads/机器人插接_WG-r15_冷银灰点云_r10_20261125.mp4",
+  "acceptance": {
+    "date": "2026-11-25",
+    "user_quote": "可以的，你就把这个写成一个版本吧，我对这个还算满意",
+    "scope": "presentation/color version only",
+    "policy_id": "layered-points-v2-cool-silver",
+    "policy_sha256": "e55d2435d5ae262c6bdaa3800a173ea3b363fd8dd781e9dad24b412fa4b1cf88",
+    "video_bytes_unchanged": true,
+    "r9_and_trial_deliveries_preserved": true,
+    "historical_generation_sources": "source_sha256 retains the actual pre-adoption source/config hashes; source_snapshot preserves them"
+  }
+}

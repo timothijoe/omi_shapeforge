@@ -1,5 +1,7 @@
 # OMI ShapeForge 交接文档
 
+存储接续：运行资源实体已迁入`/data/shapeforge/runtime/`，原`/data/omi_runtime`为兼容链接；导入与交付资料位于同级storage。当前布局以[本地资源契约](docs/agent/interfaces/local-resources.md)为准，分别见[runtime迁移](docs/chronicles/2026-11-23-runtime-relocation.md)和[此前四批资料迁移](docs/chronicles/2026-11-23-storage-layout.md)。下方历史命令中的旧runtime前缀继续有效。
+
 当前Isaac插入／规则反馈RL窗口已收尾：[专项交接](docs/chronicles/2026-11-23-isaac-rule-rl-window-handoff.md)。含固定WG-r10＋OM-r08、旧BC／RL结果、新规则8/8与恢复4/4、视频恢复、源码快照、实仿缺项及接续注意事项；不替代并行感知／资产交接。
 
 当前感知任务交接：[三变量采样、细网格数据与后续预训练](docs/chronicles/2026-11-23-perception-grid-pretraining-handoff.md)。含已确认目标、数据入口、验证、历史模型区别、恢复和接续事项；不替代并行资产／控制任务交接。
@@ -94,7 +96,7 @@
 
 ## 4. 数据已经齐全恢复，不要再按“缺包”处理
 
-目前 00–05 加 OMI／portable／quick 共 9 个上传包均已解压，原包保留在 `/data/nov_19_folder`。以[最终解压索引](manifests/extracted_archives.json)为准，早期报告中的“未到达／未解压”仅代表当时状态。
+目前 00–05 加 OMI／portable／quick 共 9 个上传包均已解压，原包实际保留在 `/data/shapeforge/storage/imports/reconstruction_2026-11-19`；`/data/nov_19_folder`是兼容入口。[原解压索引](manifests/extracted_archives.json)保留当时路径和校验结论，当前位置映射见[存储登记](manifests/storage_layout_20261123.json)。早期报告中的“未到达／未解压”仅代表当时状态。
 
 ```text
 /data/omi_runtime/

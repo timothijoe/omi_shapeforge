@@ -1,5 +1,7 @@
 # 查看带相机与夹爪外观候选的仿真
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../docs/agent/interfaces/local-resources.md)。
+
 当前工具候选 **WG-DAIMON-VIS-r04**，接在SIM-r06实测插槽场景上。视频外形与光学安装位置为估计；工具接触抓取和真实鱼眼未标定。完整实现与范围见[能力记录](../docs/agent/simulation/evolution/wrist-camera-gripper.md)。
 
 ## 交互窗口

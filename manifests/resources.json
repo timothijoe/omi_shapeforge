@@ -12,19 +12,94 @@
       "configuration": "Sibling repository paths in workspace TOML"
     },
     "runtime": {
-      "default": "/data/omi_runtime",
-      "configuration": "storage.runtime_root; explicit dependent paths must also be updated"
+      "default": "/data/shapeforge/runtime",
+      "configuration": "Physical runtime root; workspace.toml and existing environments retain the legacy compatibility prefix. See runtime_relocation_20261123.json.",
+      "legacy_default": "/data/omi_runtime"
     },
     "migration": {
-      "default": "/data/nov_19_folder",
-      "configuration": "Manual archive input directory"
+      "default": "/data/shapeforge/storage/imports/reconstruction_2026-11-19",
+      "configuration": "Canonical imported archive directory; legacy_default remains a compatibility symlink. See storage_layout_20261123.json.",
+      "legacy_default": "/data/nov_19_folder"
     },
     "isaac51": {
       "default": "/data/isaac-sim-5.1.0",
       "configuration": "run_isaac.py --isaac-root"
+    },
+    "storage": {
+      "default": "/data/shapeforge/storage",
+      "configuration": "Canonical imports, exports and restore-check batches; descriptive metadata, not an automatic resolver."
+    },
+    "storage_index": {
+      "default": "/data/shapeforge",
+      "configuration": "Local catalog/navigation files; storage/ also contains canonical migrated payloads."
     }
   },
   "resources": [
+    {
+      "id": "wrist-photo-refinement-r16-20261125",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/assets/daimon/wrist_gripper_photo_r16",
+      "kind": "independent_unreviewed_wrist_photo_candidate",
+      "manifest": "manifests/wrist_photo_refinement_20261125_r16.json",
+      "restore": "docs/agent/simulation/evolution/wrist-photo-refinement-r16.md",
+      "results": "/data/shapeforge/runtime/runs/wrist_photo_refinement_20261125_r16"
+    },
+    {
+      "id": "wrist-focus-overlay-20261125-r11",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/insertion_wrist_focus_overlay_20261125_r11",
+      "kind": "wrist_rgb_focus_only_overlay_film",
+      "manifest": "manifests/insertion_wrist_focus_overlay_20261125_r11.json",
+      "restore": "tutorials/pointcloud_presentation.md",
+      "results": "/data/shapeforge/runtime/runs/insertion_wrist_focus_overlay_20261125_r11/quality_check.json",
+      "handoff": "docs/chronicles/2026-11-25-pointcloud-video-handoff.md"
+    },
+    {
+      "id": "module-ordinary-palette-20261125-r10",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/insertion_module_palette_20261125_r10",
+      "kind": "user_accepted_cool_silver_pointcloud_film_and_palette_comparison",
+      "status": "user-accepted",
+      "manifest": "manifests/insertion_module_palette_20261125_r10.json",
+      "restore": "docs/agent/perception/evolution/alignment-insertion-film.md",
+      "results": "/data/shapeforge/runtime/runs/insertion_module_palette_20261125_r10/quality_check.json"
+    },
+    {
+      "id": "layered-pointcloud-presentation-20261125-r9",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/insertion_layered_points_20261125_r9",
+      "kind": "user_adopted_layered_pointcloud_viewer_and_insertion_film",
+      "manifest": "manifests/alignment_insertion_film_20261125_r9.json",
+      "restore": "tutorials/pointcloud_presentation.md",
+      "results": "/data/shapeforge/runtime/runs/insertion_layered_points_20261125_r9/quality_check.json"
+    },
+    {
+      "id": "insertion-neutral-palette-20261125-r8",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/insertion_neutral_palette_20261125_r8",
+      "kind": "neutral_component_grays_insertion_video",
+      "manifest": "manifests/alignment_insertion_film_20261125_r8.json",
+      "restore": "docs/agent/perception/evolution/alignment-insertion-film.md",
+      "results": "/data/shapeforge/runtime/runs/insertion_neutral_palette_20261125_r8/quality_check.json"
+    },
+    {
+      "id": "insertion-component-palette-20261125-r7",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/insertion_component_palette_20261125_r7",
+      "kind": "component_palette_insertion_video",
+      "manifest": "manifests/alignment_insertion_film_20261125_r7.json",
+      "restore": "docs/agent/perception/evolution/alignment-insertion-film.md",
+      "results": "/data/shapeforge/runtime/runs/insertion_component_palette_20261125_r7/quality_check.json"
+    },
+    {
+      "id": "wva01-isaac-fixture-20261125",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6",
+      "kind": "wva01_visual_fixed_grasp_insertion_video_and_asset_audit",
+      "manifest": "manifests/wva01_isaac_insertion_20261125.json",
+      "restore": "docs/agent/simulation/evolution/wva01-isaac-insertion.md",
+      "results": "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/quality_check.json"
+    },
     {
       "id": "control-venv",
       "root": "project",
@@ -1046,15 +1121,18 @@
     },
     {
       "id": "nov22-capture-backup",
-      "root": "absolute",
-      "path": "/data/zt-think-d1-data/nov_22/session_backup_20261121_20261122_20261122_014108",
+      "root": "storage",
+      "path": "imports/capture_session_2026-11-22/session_backup_20261121_20261122_20261122_014108",
       "tracked": false,
       "purpose": "287 head/wrist four-image samples and two D435 tool modeling recordings; historical development backup",
       "source": "User supplied nov_22 folder and backup README",
       "restore": "Keep source bytes unchanged; map historical absolute paths at load time. Do not overwrite current r05/r07 assets with archived V2 snapshots.",
       "availability": "present",
       "validation": "1148 formal image hashes and PNG integrity verified locally; MCAP validation from archived QC only",
-      "manifest": "nov22_capture_intake.json"
+      "manifest": "nov22_capture_intake.json",
+      "legacy_paths": [
+        "/data/zt-think-d1-data/nov_22/session_backup_20261121_20261122_20261122_014108"
+      ]
     },
     {
       "id": "daimon-wrist-gripper-refined-r05",
@@ -1597,6 +1675,188 @@
       "manifest": "manifests/rule_insertion_review_20261123.json",
       "restore": "docs/agent/simulation/evolution/rule-insertion-review.md",
       "results": "/data/omi_runtime/runs/staged_rule_review_20261123/summary.json"
+    },
+    {
+      "id": "online-insertion-recovery-20261123",
+      "root": "runtime",
+      "path": "/data/omi_runtime/runs/online_recovery_20261123_v2",
+      "kind": "online_rule_recovery_rpc_validation",
+      "manifest": "manifests/online_insertion_recovery_20261123.json",
+      "restore": "docs/agent/simulation/evolution/online-insertion-recovery.md",
+      "results": "/data/omi_runtime/runs/online_recovery_20261123_v2/verified_summary.json"
+    },
+    {
+      "id": "isaac-staged-retrain-20261123",
+      "root": "runtime",
+      "path": "/data/omi_runtime/runs/isaac_staged_retrain_20261123",
+      "kind": "staged_bc_rule_feedback_rl",
+      "manifest": "manifests/isaac_staged_retrain_20261123.json",
+      "restore": "docs/agent/simulation/evolution/staged-retraining.md",
+      "results": "/data/omi_runtime/runs/isaac_staged_retrain_20261123/summary.json"
+    },
+    {
+      "id": "isaac-shutdown-audit-20261123",
+      "root": "runtime",
+      "path": "/data/omi_runtime/runs/isaac_shutdown_audit_20261123",
+      "kind": "process_shutdown_signal_audit",
+      "restore": "docs/agent/simulation/evolution/isaac-process-lifecycle.md",
+      "results": "/data/omi_runtime/runs/isaac_shutdown_audit_20261123/summary.json"
+    },
+    {
+      "id": "exec-idle-audit-20261123",
+      "root": "runtime",
+      "path": "/data/omi_runtime/runs/exec_idle_audit_20261123",
+      "kind": "execution_session_inactivity_control",
+      "restore": "docs/agent/simulation/evolution/isaac-process-lifecycle.md",
+      "results": "/data/omi_runtime/runs/exec_idle_audit_20261123/summary.json"
+    },
+    {
+      "id": "shapeforge-storage-index",
+      "root": "storage_index",
+      "path": "README.md",
+      "tracked": false,
+      "purpose": "Unified local navigation, resource catalog and storage rules",
+      "required_for": [
+        "resource_navigation",
+        "restore_planning"
+      ],
+      "source": "User-approved storage organization on 2026-11-23",
+      "restore": "Preserve the index metadata/configuration/generator separately and restore payload roots plus compatibility links; the index alone is not a full backup. Repository fallback: docs/agent/interfaces/local-resources.md and manifests/storage_layout_20261123.json.",
+      "availability": "present",
+      "manifest": "storage_layout_20261123.json"
+    },
+    {
+      "id": "shapeforge-assets-delivery-20261121",
+      "root": "storage",
+      "path": "exports/shapeforge_assets_2026-11-21",
+      "tracked": false,
+      "purpose": "Selected asset, model-weight and completed-training delivery archives from 2026-11-21",
+      "required_for": [
+        "selected_asset_delivery"
+      ],
+      "source": "Original shapeforge_assets_20261121T051808Z package, same inode tree after relocation",
+      "restore": "Keep package contents, selection and hash manifests intact. Its snapshot excludes later work and full raw capture databases. Preserve old-path and derived sibling restore-check links; new verification uses separate output.",
+      "availability": "present",
+      "legacy_paths": [
+        "/data/omi_migration/shapeforge_assets_20261121T051808Z"
+      ],
+      "manifest": "storage_layout_20261123.json"
+    },
+    {
+      "id": "shapeforge-assets-restore-check-20261121",
+      "root": "storage",
+      "path": "restore_checks/shapeforge_assets_2026-11-21",
+      "tracked": false,
+      "purpose": "Historical relocated scene and dependency copies used to verify the selected asset package",
+      "required_for": [
+        "historical_package_restore_check"
+      ],
+      "source": "Original shapeforge_assets_20261121T051808Z_restore_check directory",
+      "restore": "Preserve its relationship to the delivery batch and both compatibility links. It is a verification copy, not a second current asset baseline.",
+      "availability": "present",
+      "legacy_paths": [
+        "/data/omi_migration/shapeforge_assets_20261121T051808Z_restore_check",
+        "/data/shapeforge/storage/exports/shapeforge_assets_2026-11-21_restore_check"
+      ],
+      "manifest": "storage_layout_20261123.json"
+    },
+    {
+      "id": "isaac-substeps-20261124",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/isaac_substeps_20261124",
+      "kind": "physics_substep_performance_and_control_equivalence",
+      "manifest": "manifests/isaac_substeps_20261124.json",
+      "restore": "docs/agent/simulation/evolution/isaac-control-throughput.md",
+      "results": "/data/shapeforge/runtime/runs/isaac_substeps_20261124/summary.json"
+    },
+    {
+      "id": "isaac-demo50-20261124",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/isaac_demo50_20261124",
+      "kind": "diverse_masked_rule_demonstrations_bc_study",
+      "manifest": "manifests/isaac_demo50_20261124.json",
+      "restore": "docs/agent/simulation/evolution/diverse-demonstrations.md",
+      "results": "/data/shapeforge/runtime/runs/isaac_demo50_20261124/summary.json"
+    },
+    {
+      "id": "tianji-ik-audit-20261124",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/tianji_ik_audit_20261124",
+      "kind": "offline_vendor_kinematics_audit",
+      "manifest": "manifests/tianji_ik_audit_20261124.json",
+      "restore": "docs/agent/simulation/evolution/isaac-control-throughput.md",
+      "results": "/data/shapeforge/runtime/runs/tianji_ik_audit_20261124/summary.json"
+    },
+    {
+      "id": "tianji-ik-adapter-20261124",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/tianji_ik_adapter_20261124",
+      "kind": "native_sdk_ik_adapter_and_physx_validation",
+      "manifest": "manifests/tianji_ik_adapter_20261124.json",
+      "restore": "docs/agent/simulation/evolution/tianji-native-ik.md",
+      "results": "/data/shapeforge/runtime/runs/tianji_ik_adapter_20261124/summary.json"
+    },
+    {
+      "id": "isaac-step-profile-20261124",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/isaac_step_profile_20261124",
+      "kind": "control_step_profile_and_equivalent_compute_optimization",
+      "manifest": "manifests/isaac_step_profile_20261124.json",
+      "restore": "docs/agent/simulation/evolution/isaac-step-profile.md",
+      "results": "/data/shapeforge/runtime/runs/isaac_step_profile_20261124/summary.json"
+    },
+    {
+      "id": "isaac-gpu-physics-20261124",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/isaac_gpu_physics_20261124",
+      "kind": "gpu_physx_compatibility_and_cpu_comparison",
+      "manifest": "manifests/isaac_gpu_physics_20261124.json",
+      "restore": "docs/agent/simulation/evolution/isaac-gpu-physics.md",
+      "results": "/data/shapeforge/runtime/runs/isaac_gpu_physics_20261124/summary.json"
+    },
+    {
+      "id": "isaac-cpu-cycle-20261124",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/isaac_cpu_cycle_20261124",
+      "kind": "cpu_full_control_cycle_profile",
+      "manifest": "manifests/isaac_cpu_cycle_20261124.json",
+      "restore": "docs/agent/simulation/evolution/isaac-step-profile.md",
+      "results": "/data/shapeforge/runtime/runs/isaac_cpu_cycle_20261124/summary.json"
+    },
+    {
+      "id": "isaac-fast5-20261124",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/isaac_fast5_20261124",
+      "kind": "five_substep_async_recording_and_render_subframe_study",
+      "manifest": "manifests/isaac_fast5_20261124.json",
+      "restore": "docs/agent/simulation/evolution/isaac-fast-collection.md",
+      "results": "/data/shapeforge/runtime/runs/isaac_fast5_20261124/summary.json"
+    },
+    {
+      "id": "isaac-performance-handoff-20261124",
+      "root": "project",
+      "path": "docs/chronicles/2026-11-24-isaac-performance-window-handoff.md",
+      "kind": "documented_simulation_performance_handoff",
+      "manifest": "manifests/isaac_performance_handoff_20261124.json",
+      "restore": "docs/agent/simulation/evolution/isaac-control-throughput.md"
+    },
+    {
+      "id": "isaac-rl-policy5-20261124",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/isaac_rl_policy5_20261124",
+      "kind": "paired_frozen_rl_policy_speed_evaluation",
+      "manifest": "manifests/isaac_rl_policy5_20261124.json",
+      "restore": "docs/agent/simulation/evolution/isaac-control-throughput.md",
+      "results": "/data/shapeforge/runtime/runs/isaac_rl_policy5_20261124/summary.json"
+    },
+    {
+      "id": "isaac-rule-precision-20261124",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/isaac_rule_precision_20261124",
+      "kind": "paired_rule_insertion_precision_validation",
+      "manifest": "manifests/isaac_rule_precision_20261124.json",
+      "restore": "docs/agent/simulation/evolution/isaac-rule-precision.md",
+      "results": "/data/shapeforge/runtime/runs/isaac_rule_precision_20261124/summary.json"
     }
   ],
   "integrity_note": "Latest transfer_validation.json records full 01 archive and per-file verification plus all OMI checksum/source entries. Other expected hashes retain their earlier evidence; availability is a dated snapshot.",
@@ -1631,5 +1891,9 @@
   "latest_wrist_logo_candidate": "wrist_logo_20261122.json",
   "current_accepted_wrist_visual_release": "wrist_visual_wva01_20261122.json",
   "latest_wrist_contact_candidate": "wrist_contact_closure_20261122.json",
-  "latest_pointcloud_geometry_export": "pointcloud_geometry_pcg01_20261123.json"
+  "latest_pointcloud_geometry_export": "pointcloud_geometry_pcg01_20261123.json",
+  "latest_storage_layout": "storage_layout_20261123.json",
+  "storage_paths_updated_date": "2026-11-23",
+  "latest_runtime_relocation": "runtime_relocation_20261123.json",
+  "runtime_paths_updated_date": "2026-11-23"
 }

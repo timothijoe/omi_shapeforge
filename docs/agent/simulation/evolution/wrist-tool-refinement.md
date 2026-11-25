@@ -1,5 +1,7 @@
 # 腕部相机与夹爪：WG-r05双目参考精修版
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../../interfaces/local-resources.md)。
+
 最新工具为[WG-r07照片轮廓修正版](wrist-tool-photo-profile.md)：双峰黄色衬垫、中央凹口与收窄指臂，侧视复核衬垫厚度27→12 mm；49件检查通过，基体／相机保持r06不变，旧资产保留。
 
 ## 最新材质修订：WG-r06黄色衬垫

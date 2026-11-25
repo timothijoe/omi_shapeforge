@@ -1,5 +1,24 @@
 # 仿真阶段记录
 
+- [2026-11-25：真实腕图追溯、1920原图域校核与r16候选](2026-11-25-wrist-photo-refinement.md)
+
+- [2026-11-25：r15新版夹爪Isaac插入视频、UV标志和全组件版本核对](2026-11-25-wva01-isaac-insertion.md)
+- [2026-11-24：旧视频r10身份复核与新版接入过程](2026-11-24-video-asset-version-audit.md)
+
+- [2026-11-24：快速5子步规则插入精度核查](../../../chronicles/2026-11-24-isaac-rule-precision.md)
+
+- [2026-11-24：Isaac学习与控制吞吐窗口收尾](../../../chronicles/2026-11-24-isaac-performance-window-handoff.md)：全链路优化、55 ms建议配方、默认值与接续限制。
+
+- [2026-11-24：5子步、后台记录与渲染子帧对照](../../../chronicles/2026-11-24-isaac-fast-collection.md)
+
+- [2026-11-24：GPU物理兼容模式与单环境CPU／GPU对照](../../../chronicles/2026-11-24-isaac-gpu-physics.md)
+
+- [2026-11-24：完整控制步排查、默认预览与重复计算优化](../../../chronicles/2026-11-24-isaac-step-profile.md)
+
+- [2026-11-24：天机原厂IK适配与PhysX闭环验证](../../../chronicles/2026-11-24-tianji-native-ik.md)
+
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。历史阶段正文保留当时记录。目录映射与恢复要求见[当前资源契约](../../interfaces/local-resources.md)。
+
 - [2026-11-23本窗口交接：Isaac插入与规则反馈RL](../../../chronicles/2026-11-23-isaac-rule-rl-window-handoff.md)
 
 - [2026-11-23：规则插入成功率、demo展示与收尾](../../../chronicles/2026-11-23-rule-insertion-review.md)

@@ -1,5 +1,7 @@
 # 接触版腕部表面学习：操作与恢复
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../docs/agent/interfaces/local-resources.md)。
+
 运行根：`/data/omi_runtime/runs/contact_wrist_surface_20261123_r01/`。能力与局限见[接触版训练记录](../docs/agent/perception/evolution/contact-wrist-surface-learning.md)。
 
 结果窗口：`http://127.0.0.1:8893`。默认方案一，顶部可切换方案二；“逐帧查看点云”可旋转和缩放，“查看最大误差帧”直接跳到test_0002／第5张图。

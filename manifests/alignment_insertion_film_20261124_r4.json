@@ -1,0 +1,55 @@
+{
+  "schema": "alignment-insertion-film-v4",
+  "date": "2026-11-24",
+  "run_directory": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r4",
+  "video": {
+    "path": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r4/film/alignment_insertion_geometry_pose_1080p.mp4",
+    "duration_s": 18.066666666666666,
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "frames": 542,
+    "bytes": 2578072,
+    "sha256": "f9103dcbe2688f5bbaa9eda1a35189fcef7f39939acb913b362dd3cfb053e408"
+  },
+  "delivery": {
+    "机器人插接_简洁三视图_仅尖端着色_20261124.mp4": {
+      "path": "/home/linux/Downloads/机器人插接_简洁三视图_仅尖端着色_20261124.mp4",
+      "sha256": "f9103dcbe2688f5bbaa9eda1a35189fcef7f39939acb913b362dd3cfb053e408",
+      "bytes": 2578072
+    },
+    "机器人插接_简洁三视图_封面_20261124.png": {
+      "path": "/home/linux/Downloads/机器人插接_简洁三视图_封面_20261124.png",
+      "sha256": "12b7072604afad0347fd0da10e921658c6d98cc24626654af7992f7abb0dd4e8",
+      "bytes": 497354
+    },
+    "机器人插接_简洁三视图_过程预览_20261124.jpg": {
+      "path": "/home/linux/Downloads/机器人插接_简洁三视图_过程预览_20261124.jpg",
+      "sha256": "ad633a82c93b91a9de8185c96fb8694f3e01cd160b94aa32022ad68cd7e5de3f",
+      "bytes": 549591
+    }
+  },
+  "source_capture": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r2/capture",
+  "source_templates": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r2/geometry_templates",
+  "playback_rate": 3,
+  "source_states": 470,
+  "source_states_preserved": true,
+  "layout": "three equal primary-view cards; no auxiliary or macro panels",
+  "macro_windows": 0,
+  "ordinary_module_colored": false,
+  "colors": {
+    "module_tip_only": "orange",
+    "socket_mouth": "green",
+    "all_ordinary_surfaces": "pale gray"
+  },
+  "colored_points_require_level_1": true,
+  "on_screen_title": "几何位姿估计",
+  "network_inference": false,
+  "physics_controller_changed": false,
+  "quality_check": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r4/quality_check.json",
+  "representation_audit": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r4/representation_audit.json",
+  "provenance": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r4/source_provenance.json",
+  "documentation": "docs/agent/perception/evolution/alignment-insertion-film.md"
+}

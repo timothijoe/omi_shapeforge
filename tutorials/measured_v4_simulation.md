@@ -1,5 +1,7 @@
 # V4与18.8 × 8.8 mm插槽仿真
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../docs/agent/interfaces/local-resources.md)。
+
 本轮通过的独立仿真候选是 **SIM-OM001-OS001-r06**，源模块为V4-r05「双窗尾槽版」。插槽净开口18.8 × 8.8 mm；正对孔口的窄边距离按6.9 mm建模，测量外缘／方向口径仍待进一步确认。完整结果和边界见[能力记录](../docs/agent/simulation/evolution/measured-v4-simulation.md)。
 
 ## 查看结果

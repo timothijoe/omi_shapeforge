@@ -1,5 +1,7 @@
 # Isaac Sim 同源SIM-r06插接实验
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../../interfaces/local-resources.md)。
+
 后续[接触与图像复核](isaac-contact-visual-review.md)已有gentle候选：三初态及半步长的10 Hz采样门控通过，seed7峰值降至3.04 N；瞬时峰值及收尾异常仍保留。下文是第一版基线记录，不覆盖旧失败和21.3 N结果。
 
 2026-11-22。用户授权实施与当前MuJoCo对应的Isaac实验。第一版沿用已验证的SIM-r06和完整厂商URDF求值结果，未混入WG-r08或模块r07材质。实验方案见[设计](../../../design/isaac-contact-experiment.md)，命令见[教程](../../../../tutorials/isaac_contact_insertion.md)。

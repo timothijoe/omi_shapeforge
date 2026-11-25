@@ -1,5 +1,7 @@
 # WG-r08：镜头安装与模块夹持位置的投影对齐候选
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../../interfaces/local-resources.md)。
+
 新增[WG-r09多视角点云约束候选](wrist-pointcloud-refinement.md)：r08已完整冻结保留；11视角点云支持修改8件局部mesh，镜头和夹持变换不变，黑臂轮廓改善明显，黄色与相机残差仍保留。
 
 后续[整块轮廓诊断](wrist-contour-diagnosis.md)确认：约3 px只适用于选定边缘；靠腕部黑臂每侧仍偏内约49～54 px，黄色外缘约18～28 px。优先查局部mesh／装配并联合复核相机，未将诊断探测相机作为新资产。

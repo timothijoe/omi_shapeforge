@@ -26,6 +26,7 @@ OMI 的光模块感知、资产化与仿真开发主项目，Python 包名为 `o
 | Agent 接续开发 | [知识库入口](docs/agent/README.md) |
 | 架构与维护规则 | [设计索引](docs/design/README.md) |
 | 数据、权重、环境和机器人资产 | [资源清单说明](manifests/README.md) |
+| 本机存储布局与迁移兼容 | [本地资源与恢复契约](docs/agent/interfaces/local-resources.md) · [2026-11-23迁移记录](docs/chronicles/2026-11-23-storage-layout.md) |
 
 ## 开发与分支
 
@@ -37,7 +38,7 @@ OMI 的光模块感知、资产化与仿真开发主项目，Python 包名为 `o
 .venv/bin/python -m unittest discover -s tests -v
 ```
 
-大资源放在配置的外部根目录，本机为 `/data/omi_runtime`。原始输入与历史结果保留，新实验使用新输出目录。
+运行资源实体位于`/data/shapeforge/runtime`，原`/data/omi_runtime`为兼容链接；现有配置与命令可继续使用旧前缀。导入与交付资料另放`/data/shapeforge/storage`，见[runtime迁移记录](docs/chronicles/2026-11-23-runtime-relocation.md)。原始输入与历史结果保留，新实验使用新输出目录。
 
 ## 许可证
 

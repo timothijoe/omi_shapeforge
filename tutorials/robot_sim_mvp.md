@@ -1,5 +1,7 @@
 # 机械臂 URDF 仿真原型
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../docs/agent/interfaces/local-resources.md)。
+
 目前主线使用完整机械臂 URDF。它已包含双臂与夹爪，提供一个无接触的小幅 TCP 到达任务；**尚非机器人插入任务**。完整架构、里程碑和难度见[开发计划](../docs/design/robot-rl-development-plan.md)。
 
 已生成场景：`/data/omi_runtime/runs/robot_urdf_mvp_20261120T090059Z/scene/scene.xml`。

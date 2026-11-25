@@ -1,5 +1,7 @@
 # Isaac Sim 同源插接实验
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../docs/agent/interfaces/local-resources.md)。
+
 新增[接触力与图像改进结果](../docs/agent/simulation/evolution/isaac-contact-visual-review.md)。下面的gentle/refined均为独立候选，旧baseline仍可复现。
 
 ## 新候选：临近台阶减速与清晰图像

@@ -1,5 +1,11 @@
 # Mesh开发记录：建模、修订、导出与几何验证
 
+2026-11-25：[r16实拍／原图域外观候选](agent/simulation/evolution/wrist-photo-refinement-r16.md)从r15 Blender独立修订两侧银壳，补齐后侧包络并按1920原图约束正面轮廓，保留47个其他OBJ与原UV／标志；衬垫按真实橙色像素调整。Blender重开、闭合／正体积和GLB包络核查通过；未替换已认可WVA-01、碰撞或RL，相机仍非新标定。
+
+2026-11-25：[WVA-01／r15的Isaac插入展示及全组件核查](agent/simulation/evolution/wva01-isaac-insertion.md)直接复用49件原OBJ和两侧UV／PNG，未新建或修改Blender视觉资产；选定固定夹持版保留模块／插座可见几何和原插入碰撞合同。独立自由夹持候选曾裁剪原分解碰撞几何的后段，属碰撞表示实验，移动未通过、未用于成片；视觉接入和接触验收分开记录。
+
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](agent/interfaces/local-resources.md)。
+
 PCG-01已补全[开发纪传体](agent/perception/evolution/pointcloud-geometry-pcg01.md)和[阶段编年体](agent/perception/chronicles/2026-11-23-pointcloud-geometry.md)：记录来源部件、排除范围、无颜色导出、原顶点／三角面一致性、文件与数组内存、可视化及可复制交付。
 
 2026-11-23新增[PCG-01点云匹配纯几何版](agent/perception/evolution/pointcloud-geometry-pcg01.md)：无颜色／纹理，模块主体＋插口上部，源尺寸不变；已在Downloads交付可直接复制的文件夹与ZIP。

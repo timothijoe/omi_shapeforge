@@ -1,0 +1,293 @@
+{
+  "schema": "wva01-isaac-fixed-fixture-r01",
+  "date": "2026-11-25",
+  "work_started": "2026-11-24",
+  "run_directory": "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6",
+  "integration_release": "SC-WVA01-ISAAC-FIXTURE-r01",
+  "video": {
+    "path": "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/film/alignment_insertion_geometry_pose_1080p.mp4",
+    "duration_s": 18.066666666666666,
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "fps": 30,
+    "frames": 542,
+    "bytes": 2569757,
+    "sha256": "3262895fb67dd4a4ea2335e5b017b5d1ad43a8492af4efaf890f953cc244e348"
+  },
+  "delivery": {
+    "机器人插接_WG-r15新版夹爪_三视图_20261125.mp4": {
+      "path": "/home/linux/Downloads/机器人插接_WG-r15新版夹爪_三视图_20261125.mp4",
+      "sha256": "3262895fb67dd4a4ea2335e5b017b5d1ad43a8492af4efaf890f953cc244e348",
+      "bytes": 2569757
+    },
+    "机器人插接_WG-r15新版夹爪_封面_20261125.png": {
+      "path": "/home/linux/Downloads/机器人插接_WG-r15新版夹爪_封面_20261125.png",
+      "sha256": "1232e3a5931b22b5b8be66524a60dcd0ab5733189d7dc2d6066ee5abc84fa450",
+      "bytes": 494980
+    },
+    "机器人插接_WG-r15新版夹爪_过程预览_20261125.jpg": {
+      "path": "/home/linux/Downloads/机器人插接_WG-r15新版夹爪_过程预览_20261125.jpg",
+      "sha256": "bd919eb02289ef0252d2a771463823b219b8e27b49f5225edbb96d69e13e5d41",
+      "bytes": 558545
+    }
+  },
+  "old_video_actual_asset_record": {
+    "previous_video_revision": "r5 (r2-r5 share old r10 transfer)",
+    "previous_video": {
+      "path": "/data/shapeforge/runtime/runs/alignment_insertion_film_20261124_r5/film/alignment_insertion_geometry_pose_1080p.mp4",
+      "duration_s": 18.066666666666666,
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "fps": 30,
+      "frames": 542,
+      "bytes": 2546707,
+      "sha256": "3ac367a983693b7c4d0ae6a78362c41455ca13888f74e860c3dbee9411eaaf9b"
+    },
+    "actual_transfer": "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer",
+    "actual_tool": "WG-DAIMON-OBS-r10",
+    "actual_module": "OM-001/V4 r08",
+    "current_accepted_visual_tool": "WG-DAIMON-LOGO-r15",
+    "current_visual_release": "WVA-01",
+    "scope": "record actual asset identity; previous acceptance concerned video presentation, not latest-asset adoption",
+    "previous_transfer_sha256": "cf3292f916737c191cdc7b4cc8dc07e9a0e0bb1eac2282e27a0bbb590da721cb",
+    "old_video_sha256_verified": true
+  },
+  "new_assets": {
+    "tool": "WG-DAIMON-LOGO-r15",
+    "visual_release": "WVA-01",
+    "module": "OM-001/V4 r08",
+    "socket": "SIM-r06/M1888 geometry plus staged/smooth-guide insertion contract",
+    "camera": "same r15 extrinsics and fisheye K/D, verified equal",
+    "robot": "current URDF hash matches frozen source",
+    "textures": "two original r15 DAIMON textures and UVs"
+  },
+  "grasp_mode": "fixed insertion fixture, GC-r01 settled closed pose reference only",
+  "free_contact_grasp_motion_passed": false,
+  "experimental_free_grasp_diagnostics_retained": true,
+  "selected_transfer": "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_transfer",
+  "physics_case": "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_physics/case",
+  "capture": "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_capture",
+  "templates": "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_templates",
+  "asset_audit": {
+    "previous_transfer": "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer",
+    "previous_gripper": "WG-DAIMON-OBS-r10",
+    "new_gripper": "WG-DAIMON-LOGO-r15",
+    "gripper_parts": 49,
+    "textures": [
+      {
+        "geom": "wrist_tool_021",
+        "texture": "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/textures/logo_left_base.png",
+        "sha256": "ed51d6b5f6ffa5f831f3d35feaa0ea49455ca525980a3334c2f87fa6b630a70c",
+        "uv_faces": 52
+      },
+      {
+        "geom": "wrist_tool_032",
+        "texture": "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/textures/logo_right_base.png",
+        "sha256": "dd9c957711d634f3e69c451ccc0e8b65d960aa3b16073ac1317907fac33b34ec",
+        "uv_faces": 52
+      }
+    ],
+    "module": "OM-001/V4 r08: already current, visual geometry preserved",
+    "socket": "SIM-r06 visual + latest staged/smooth-guide collision contract: preserved",
+    "camera": "r15 camera extrinsics and K/D equal previous values; preserved",
+    "robot_urdf_current_file_exists": true,
+    "robot_urdf_matches_current": true,
+    "grasp_updated": "GC-r01 gravity_hold reference pose; fixed insertion fixture, not free grasp",
+    "source_inputs_sha256": {
+      "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer/transfer.json": "cf3292f916737c191cdc7b4cc8dc07e9a0e0bb1eac2282e27a0bbb590da721cb",
+      "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer/meshes.npz": "deacdc6cf90ed4752c96e54ed005fa09bc1f14a987216e465db034786efe6eb3",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/asset_manifest.json": "c9b243954c7d9bcb511e91534793eaac206fcc3b4405d40580b0082e2eee070f",
+      "/data/omi_runtime/assets/daimon/wrist_grasp_contact_r01/asset_manifest.json": "e696b28323fb0b96ededfa881f3ba92e24e5a1f7bf2d7940827c54516bef2cd3",
+      "/data/omi_runtime/assets/daimon/wrist_grasp_contact_r01/contact_scene.xml": "ccc533aec07f50b7dda5f232a3275c329c65c3199eeb4f6d40cb4926b86b0dd7",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/000.obj": "6d3693fe442d60c83761d6daaff827c90df27bcc1747a19ae39f5e819502ebe8",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/001.obj": "85e334c779f6dd5a148d0dc8b41bf494158aee6365af05d1c2527090a6ec70f8",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/002.obj": "e401dc1d30e50a120333cf6db0d37a1a2ebdf3e37acdece83ba752156a80d255",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/003.obj": "96f3e9c3551e5915d541aa1d4fb96cf959ef1310639971b3dcd6b8668a74bae1",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/004.obj": "a5d01698e9e5e2482c63463a6c9c4a1bed2fa9ba3eb5380271146b340098c922",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/005.obj": "691f984d702b6d6424cb23b67498b612d7b3edf349695c80dadda5d32b32caeb",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/006.obj": "e6bd42ffc6ba9e4f408c28f3badcc6bb1635b7e16b75f0ec1adabaceeb4e85a0",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/007.obj": "1cfc92f9ded1ba7bd30fa887723a1eeb53922cf35d3276d9c10dfe9c6acffac1",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/008.obj": "e837cacb9a2361a97a400292b8ea767bb959d5753e459d9f3d6909662da6f392",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/009.obj": "500a0693dd91e6986222c8b1613129c73c35a431cbff834decdfc30fcd7acb6b",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/010.obj": "f95f8a0d2f6349e4e951ee5cf6adec5a8ff58bd7d7c9d0048cfd689b00251a50",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/011.obj": "abf6df894b66608f9f4ee7b5ca43562d3c28ee69d7fe9c50d274547f7928af05",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/012.obj": "d9341304ef1929633e4ae9b09476a78470ec6f6313963e76328afec79dbcc8b6",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/013.obj": "3b5443cdc0edc2b0e82b90b546e151d11dbd510967d911ca69ce9e1383326fce",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/014.obj": "331e1292cabe9e838ec29a5e859d6569b48ec8c9ddfadf6af302fb073e0c8acb",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/015.obj": "ef97e31baad697dbb4713f11d28a41797a96698a64850073b249f0635d0132b9",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/016.obj": "2776b7932ea25b7275c753c97fa82e7f7fc609179b93bed62aa5571b083b4213",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/017.obj": "f2e0c4a2b58dee950673562175b6e8b5f89f2eafd5490e5ee4b86c43403eff0c",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/018.obj": "fd260eb237bd63d5b543cdb2f67b7694b09121b7cf1f911b848f61c731e08eba",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/019.obj": "6e0c48d22da178019736bb08404abbce659150ffd777ab5dbf93882164cd7150",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/020.obj": "fc3442cb2ced1e39ea7599de6f66157a2dc04111b1abf68241f97e3cf300631d",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/021.obj": "f234b3dfa733a745753ecfcde27b69daad998af7a2a56671e622b75339fa15a1",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/textures/logo_left_base.png": "ed51d6b5f6ffa5f831f3d35feaa0ea49455ca525980a3334c2f87fa6b630a70c",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/022.obj": "4ba68171b5ce8b0887b36f02089cf42c6d8a15ebf661cd2da982fe2bb91db4d8",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/023.obj": "dd22b95f166b09fbb9c5e1aaca47cc0c05f2544c4513170b0924a909af4e6730",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/024.obj": "10d9e1680e2ef10a6f42ae42a497dcf17e4019f17db370fb1f956f9aa373c318",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/025.obj": "5290906747b6b222ac84c1efca5d25c806ac5c04e8003d91406b876b3c31c7fe",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/026.obj": "4c79d83103736793c81c964bdce59473fff202f5ab470710ed1ddb96fc80b014",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/027.obj": "2c88f79a9e90e4d3e07e836cf356acaeb4925af0e491436536d3b5c740e304fb",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/028.obj": "d5c1747a0fd338418ceec3ee25397d7258d909005323cf95dc1faa1aa74c7bbd",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/029.obj": "67de14881e3eb8aa273d1c5546fdb6a32dd1c0da7374afb2779f4b8b57590c53",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/030.obj": "825ada9c387897cac791beee32cf74b535ffe16c138569a5fb52e295c40d58ec",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/031.obj": "7392d49e4943da087b397a3fc4fe00b2a2dc80d8ee046e08459457450e75d29a",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/032.obj": "ff87c6e4856cd2617da4c5fe74c416743f33c434ebe60c564511a53059e647ca",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/textures/logo_right_base.png": "dd9c957711d634f3e69c451ccc0e8b65d960aa3b16073ac1317907fac33b34ec",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/033.obj": "9a104896e2eea5491fea7f764f0a37cbe4d463520e864e6d6218c239883c4e76",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/034.obj": "10f5cfe2cf47c8d0494df27b011e794367018866b6340d5631b88fc7c97b2d1c",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/035.obj": "4fb7705d741a2fb8e9d1f36c103710cfa33afd214712e6e924c8d2dc25a137d4",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/036.obj": "e2e79d5c136fc037867d053736a86df82fede9f32902a381726ac1a01965cd79",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/037.obj": "c95eb522d0a9715854a4c1a29e5f98242a205689d7e32f0708e62e16a02cd094",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/038.obj": "429ed4cf53bbf67744be88aea9a750814572bd633e7a2e5f2be7d83bc5505be7",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/039.obj": "0213c0b10fb63449d4813588d97689c816716ba259c15ad139bc6cf69735204c",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/040.obj": "806a893a03697392cac13ebd4b3393a1be734ee6f7a3cab94864ed98863e0174",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/041.obj": "42c2ec25984f1c3164f60ef321c1dc7b51ce3a7e072a3070dd1598125ee04f96",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/042.obj": "b8bf603fc82ff63fc045ea70f192223ceb256c90247333eb7eccb4c776d5436c",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/043.obj": "82016b3468752c7a4a3c412a4571049e4b59b81f62f883c5606ac6955bd46e51",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/044.obj": "d558dfc344f24e64c10115050ad5cf91ac90a0e5a05cc195e6b890fe57956352",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/045.obj": "748ef841d1864180d6fa08ff0c12fca700fb88d2fa36deb7814253765cc330f7",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/046.obj": "15d7c7162e8360dd1eb7f8aab2e7f3ff5ee3bb325b35ac3930aa8db10cf1e80d",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/047.obj": "e41042b37a9523e2ad316538b59864ef4a3fc15892a7bad72563b7c774b229a4",
+      "/data/omi_runtime/assets/daimon/wrist_gripper_logo_r15/meshes/048.obj": "57229e7bf543455ac3222de9b7a9a69c12da66754234f91f417987b91f3ca5ca"
+    },
+    "original_sources_unchanged": true,
+    "collision_task_thresholds_changed": false,
+    "fixed_module_attachment_removed": false,
+    "rear_grasp_collision_geometry": [
+      {
+        "name": "sim_module_grasp_rear_000",
+        "source_geom": "sim_module_002_collision_000",
+        "rear_cut_y_m": 0.017,
+        "distance_to_closed_pad_m": 0.00016767512541690098,
+        "source_geometry_modified": false
+      },
+      {
+        "name": "sim_module_grasp_rear_001",
+        "source_geom": "sim_module_006_collision_001",
+        "rear_cut_y_m": 0.017,
+        "distance_to_closed_pad_m": 7.349544111901583e-05,
+        "source_geometry_modified": false
+      },
+      {
+        "name": "sim_module_grasp_rear_002",
+        "source_geom": "sim_module_006_collision_003",
+        "rear_cut_y_m": 0.017,
+        "distance_to_closed_pad_m": -1.4104533707246525e-06,
+        "source_geometry_modified": false
+      },
+      {
+        "name": "sim_module_grasp_rear_003",
+        "source_geom": "sim_module_006_collision_004",
+        "rear_cut_y_m": 0.017,
+        "distance_to_closed_pad_m": 2.450836335887375e-05,
+        "source_geometry_modified": false
+      },
+      {
+        "name": "sim_module_grasp_rear_004",
+        "source_geom": "sim_module_006_collision_005",
+        "rear_cut_y_m": 0.017,
+        "distance_to_closed_pad_m": -2.6315390949692677e-06,
+        "source_geometry_modified": false
+      },
+      {
+        "name": "sim_module_grasp_rear_005",
+        "source_geom": "sim_module_006_collision_013",
+        "rear_cut_y_m": 0.017,
+        "distance_to_closed_pad_m": 1.6311087107895592e-06,
+        "source_geometry_modified": false
+      },
+      {
+        "name": "sim_module_grasp_rear_006",
+        "source_geom": "sim_module_006_collision_055",
+        "rear_cut_y_m": 0.017,
+        "distance_to_closed_pad_m": 0.00013782404791988956,
+        "source_geometry_modified": false
+      },
+      {
+        "name": "sim_module_grasp_rear_007",
+        "source_geom": "sim_module_009_collision_010",
+        "rear_cut_y_m": 0.017,
+        "distance_to_closed_pad_m": 0.00016825152097969128,
+        "source_geometry_modified": false
+      },
+      {
+        "name": "sim_module_grasp_rear_008",
+        "source_geom": "sim_module_013_collision_002",
+        "rear_cut_y_m": 0.017,
+        "distance_to_closed_pad_m": 0.0001646367579737232,
+        "source_geometry_modified": false
+      },
+      {
+        "name": "sim_module_grasp_rear_009",
+        "source_geom": "sim_module_013_collision_005",
+        "rear_cut_y_m": 0.017,
+        "distance_to_closed_pad_m": 0.00019934238543153207,
+        "source_geometry_modified": false
+      }
+    ],
+    "matching_geometry": "PCG-01 is separate matching geometry, not a replacement visual/physics release",
+    "nominal_tool_to_module": {
+      "position_m": [
+        -0.006973985721764974,
+        -0.0005707171324761352,
+        0.23771389077443544
+      ],
+      "rotation": [
+        [
+          0.015039003623567155,
+          0.01872916998946723,
+          0.9997114816593432
+        ],
+        [
+          -0.9997913286246805,
+          0.01410570061551109,
+          0.014775940479177883
+        ],
+        [
+          -0.013824889761186846,
+          -0.9997250859119492,
+          0.018937397430476455
+        ]
+      ]
+    },
+    "initial_ik_error": [
+      -1.7275070263167436e-13,
+      2.1999069232947477e-13,
+      3.473887844052115e-13,
+      1.1206820575619006e-12,
+      1.1416177295723485e-13,
+      6.979166457028864e-13
+    ],
+    "selected_contract": "wva01-closed-reference-fixture-v1",
+    "integration_release": "SC-WVA01-ISAAC-FIXTURE-r01",
+    "free_grasp_motion_validation": false,
+    "experimental_free_grasp_source": "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/transfer_r10",
+    "source_visual_meshes_unchanged": true
+  },
+  "quality_check": "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/quality_check.json",
+  "fixture_validation": "/data/shapeforge/runtime/runs/insertion_asset_upgrade_20261124_r6/fixture_validation.json",
+  "documentation": "docs/agent/simulation/evolution/wva01-isaac-insertion.md",
+  "network_inference": false,
+  "training": false,
+  "original_assets_unchanged": true,
+  "source_code_sha256": {
+    "scripts/simulation/prepare_updated_insertion_assets.py": "4199ba8f7095c818cffe057c3a1e1b6e9c368e3be9ac3f96ddd19253dcb901ad",
+    "scripts/simulation/derive_wva01_visual_fixture.py": "3e800713ea449ae00466b1e98a0df9d4d90ef38ef28a5efa05f5513ed4a2eb8e",
+    "scripts/simulation/record_alignment_insertion.py": "f41bb067ea611ee01465d898f70f405cc90e2a02b9ccc5ba3aeb97962eac9766",
+    "scripts/simulation/capture_insertion_multiview.py": "677b0218c6afc25826bb1405dc2cdaf320b73cfcf8a9ce6d21c62ca6e9244c5c",
+    "scripts/simulation/isaac_rl_worker.py": "6c015428731511effd25bbf4781dfc125e8d74f09ecb8859b89bd19b8f10808d",
+    "scripts/perception/render_alignment_film.py": "4712bd2065a6e465217ea6616c99ed33e93d27751e8ceef7aa3f6ee1bb04a17c",
+    "scripts/perception/render_insertion_multiview.py": "cbfc74efafe7761daedf9708c31d54d5384483d7d288b8ca00cb210d7872f3d4",
+    "src/omi_shapeforge/sim/isaac_contact_scene.py": "13e32fe5dd3de131a6c0f0e771d243af5890f6ba019daa9ba8e6c10c3b8ea927",
+    "src/omi_shapeforge/sim/isaac_appearance.py": "1e478e1c0cbb2dad53bedcb1720960201b1331034d1f608cae2b0904d761b21f",
+    "src/omi_shapeforge/sim/isaac_contact_runtime.py": "fcbb43d3a499de080eafdf750405882c4acd5fa5e0c213c0fe817d9f8125fa22",
+    "src/omi_shapeforge/sim/isaac_free_grasp.py": "0e991f28843566e1d9bead45f29f846ac8ef1c6ae0132722808dbd2c67ae35b7",
+    "src/omi_shapeforge/sim/isaac_contact_kinematics.py": "7d0f15ae2ea39c47c3b7ec14b8f964190304617ebedeb743b88a0c406125b9cb",
+    "src/omi_shapeforge/sim/contact_teacher.py": "35339750a2fa21d947e8154e61d23989de0e907cbe569f9a39936ec21f5941b4"
+  }
+}

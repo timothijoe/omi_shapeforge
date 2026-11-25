@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "id": "isaac-cpu-cycle-20261124",
+  "run_root": "/data/shapeforge/runtime/runs/isaac_cpu_cycle_20261124",
+  "status": "cpu_full_cycle_profile_complete_no_production_changes",
+  "guide": "docs/agent/simulation/evolution/isaac-step-profile.md",
+  "chronicle": "docs/chronicles/2026-11-24-isaac-step-profile.md",
+  "validation": {
+    "scope": "CPU PhysX, 20 substeps, native IK, normal seed91000, rendered two cameras, rule demonstration collection; includes foreground recording; no BC inference",
+    "samples": 326,
+    "excluded_steps": "first 10; cProfile 51-100 and adjacent 101; last cycle omitted because no next teacher call",
+    "client_mean": {
+      "cycle_ms": 90.61307005523176,
+      "teacher_rpc_ms": 1.7418525216260359,
+      "step_rpc_ms": 64.975708708494,
+      "spool_append_ms": 23.574593610574308,
+      "fsync_ms": 16.498851263958123,
+      "fsync_calls": 4,
+      "other_ms": 0.32091521453742544
+    },
+    "worker_metrics": {
+      "ContactMonitor.callback": {
+        "seconds": 0.10153923003432237,
+        "process_cpu_seconds": 0.3012704631900817,
+        "main_thread_cpu_seconds": 0.10169480368100466,
+        "calls": 0.08282208588957055
+      },
+      "DirectWorld.render": {
+        "seconds": 25.346632411111926,
+        "process_cpu_seconds": 117.01381446932422,
+        "main_thread_cpu_seconds": 24.27174091104311,
+        "calls": 1
+      },
+      "DirectWorld.step": {
+        "seconds": 21.73770457413155,
+        "process_cpu_seconds": 111.24810599693184,
+        "main_thread_cpu_seconds": 14.707720785276848,
+        "calls": 20
+      },
+      "DirectWorld.sync": {
+        "seconds": 1.7458048032327451,
+        "process_cpu_seconds": 7.33390920552173,
+        "main_thread_cpu_seconds": 1.7552465460121418,
+        "calls": 2
+      },
+      "RobotExperiment.measurements": {
+        "seconds": 1.650410969239914,
+        "process_cpu_seconds": 6.736511819019101,
+        "main_thread_cpu_seconds": 1.6458652883434826,
+        "calls": 1
+      },
+      "RobotExperiment.qdict": {
+        "seconds": 0.058400432433343086,
+        "process_cpu_seconds": 0.23746251840584395,
+        "main_thread_cpu_seconds": 0.057794628834210576,
+        "calls": 1
+      },
+      "RobotExperiment.step": {
+        "seconds": 28.41156359209873,
+        "process_cpu_seconds": 140.57527642331328,
+        "main_thread_cpu_seconds": 21.36855238957029,
+        "calls": 1
+      },
+      "RobotExperiment.tcp": {
+        "seconds": 0.25291973919135613,
+        "process_cpu_seconds": 1.0427033220860933,
+        "main_thread_cpu_seconds": 0.2535375981594562,
+        "calls": 2
+      },
+      "StagedRecoveryTeacher.observe": {
+        "seconds": 0.008512690429078654,
+        "process_cpu_seconds": 0.03420271779132591,
+        "main_thread_cpu_seconds": 0.008386009202370258,
+        "calls": 1
+      },
+      "TensorArticulation.get_joint_positions": {
+        "seconds": 0.08887860432900688,
+        "process_cpu_seconds": 0.35401817791292767,
+        "main_thread_cpu_seconds": 0.08471366564379884,
+        "calls": 6
+      },
+      "TensorArticulation.set_joint_position_targets": {
+        "seconds": 0.8262896581016912,
+        "process_cpu_seconds": 3.33911248772592,
+        "main_thread_cpu_seconds": 0.8186086779140677,
+        "calls": 20
+      },
+      "audit_write": {
+        "seconds": 0.2438105582356013,
+        "process_cpu_seconds": 1.0113734539886794,
+        "main_thread_cpu_seconds": 0.24516010429440738,
+        "calls": 1
+      },
+      "box_overlap": {
+        "seconds": 0.6792299718654249,
+        "process_cpu_seconds": 2.800368549080064,
+        "main_thread_cpu_seconds": 0.6826141073623656,
+        "calls": 8
+      },
+      "camera_get_data": {
+        "seconds": 0.8152615183612983,
+        "process_cpu_seconds": 3.3749900460121407,
+        "main_thread_cpu_seconds": 0.8185837883435594,
+        "calls": 1
+      },
+      "capture": {
+        "seconds": 31.69025013490135,
+        "process_cpu_seconds": 143.11088741717725,
+        "main_thread_cpu_seconds": 30.59165052760756,
+        "calls": 1
+      },
+      "history_arrays": {
+        "seconds": 0.22408657962512768,
+        "process_cpu_seconds": 0.9362435122687954,
+        "main_thread_cpu_seconds": 0.22725065950910572,
+        "calls": 1
+      },
+      "image_resample": {
+        "seconds": 4.907880684186239,
+        "process_cpu_seconds": 20.227767012270007,
+        "main_thread_cpu_seconds": 4.90654629141117,
+        "calls": 1
+      },
+      "ipc_sendall": {
+        "seconds": 0.5403658803175646,
+        "process_cpu_seconds": 2.077261153374104,
+        "main_thread_cpu_seconds": 0.3983627423312542,
+        "calls": 1
+      },
+      "ipc_serialize": {
+        "seconds": 1.6783790889778532,
+        "process_cpu_seconds": 6.922805521471993,
+        "main_thread_cpu_seconds": 1.6829890368097686,
+        "calls": 1
+      },
+      "pad_transforms": {
+        "seconds": 0.19058135280634156,
+        "process_cpu_seconds": 1.3032570153358465,
+        "main_thread_cpu_seconds": 0.18917384662535866,
+        "calls": 20
+      },
+      "physics_fetch": {
+        "seconds": 18.93260867422928,
+        "process_cpu_seconds": 96.20003563497428,
+        "main_thread_cpu_seconds": 12.032298898773,
+        "calls": 20
+      },
+      "physics_loop": {
+        "seconds": 24.390525196177563,
+        "process_cpu_seconds": 124.13255933742316,
+        "main_thread_cpu_seconds": 17.356386113496836,
+        "calls": 1
+      },
+      "physics_simulate": {
+        "seconds": 2.3094291072603075,
+        "process_cpu_seconds": 12.572815978528745,
+        "main_thread_cpu_seconds": 2.338325604294583,
+        "calls": 20
+      },
+      "potential": {
+        "seconds": 0.03221201866813735,
+        "process_cpu_seconds": 0.13146359202499178,
+        "main_thread_cpu_seconds": 0.03199834969318513,
+        "calls": 2
+      },
+      "usd_matrix": {
+        "seconds": 0.4407469110625533,
+        "process_cpu_seconds": 1.8084313681010447,
+        "main_thread_cpu_seconds": 0.44670064417157185,
+        "calls": 11
+      },
+      "worker_step_total": {
+        "seconds": 62.85138307965969,
+        "process_cpu_seconds": 294.8350438742333,
+        "main_thread_cpu_seconds": 54.55954908282221,
+        "calls": 1
+      }
+    },
+    "worker_metric_units": "time fields in ms; process CPU is summed across worker threads; nested metrics inclusive; CPU time includes possible spinning, not a pure useful-compute measure",
+    "kit_update_profile": {
+      "steps": 50,
+      "calls": [
+        {
+          "function": "('~', 0, '<built-in method omni.kit.app._app.update>')",
+          "calls": 200,
+          "self_seconds": 1.126656416,
+          "inclusive_seconds": 1.295197999,
+          "callers": {
+            "('/data/isaac-sim-5.1.0/extscache/omni.replicator.core-1.12.27+107.3.3.lx64.r.cp311/omni/replicator/core/scripts/orchestrator.py', 1502, 'step')": [
+              200,
+              200,
+              1.126656416,
+              1.295197999
+            ]
+          }
+        }
+      ]
+    },
+    "runtime_settings": {
+      "/app/runLoops/main/rateLimitEnabled": false,
+      "/app/renderer/sleepMsOnFocus": 0,
+      "/app/renderer/sleepMsOutOfFocus": 0,
+      "/app/asyncRendering": false,
+      "/app/gatherRenderResults": true,
+      "/persistent/physics/numThreads": 8
+    },
+    "report": {
+      "cases": [
+        {
+          "id": "normal",
+          "kind": "normal",
+          "seed": 91000,
+          "x_mm": 0.0,
+          "z_mm": 0.0,
+          "split": "diagnostic",
+          "success": true,
+          "steps": 388,
+          "reset_count": 1,
+          "supervised_from_step": 0,
+          "control_from_step": 0,
+          "expert_steps": 388,
+          "policy_steps": 0,
+          "setup_steps": 0,
+          "initialization_valid": true,
+          "final_depth_mm": 51.28131037421046,
+          "failure": null,
+          "recovery_attempts": 0,
+          "recovery_completed": 0,
+          "blocked": false,
+          "teacher_requests": 388,
+          "max_mean_force_N": 0.12058578421374562,
+          "max_substep_force_N": 0.5343198077753224,
+          "episode": "normal",
+          "wall_seconds": 35.90107356900262
+        }
+      ]
+    },
+    "receipts": [
+      {
+        "backend": "baseline",
+        "client": 0,
+        "shutdown": 0,
+        "worker": 0
+      }
+    ]
+  },
+  "artifacts_sha256": {
+    "summary.json": "a9610df9f346ad923dd77acb91fdc7cf80425b865957f12ebe377a7784effd8e",
+    "environment.json": "f22aa7aa09969d4d54efdf2106bfb77b13d14a3719194965983326d4771a73e4",
+    "profile_top.txt": "9f7b08d88a32270be16b3bd3e9412238eb18d4a0bb21cb749c9405bc70c12502",
+    "receipts.json": "b316f88f0b995a09b631ec6120d9b43167034550ea94701aa7d51d0b450085bc",
+    "prepare_cycle.py": "88aac8a5382bb1f407742a2771e7e2ec629a5d9ce0bc649b5bbbf5923c524c0b",
+    "prepare.py": "822c622087707a5256b51ffedb6c3931d1fe45f3f52862c7b4f746217f513f38",
+    "run.py": "3b72af1a74984688c484b4d9444aec2ee1654db2a9b8a3e32b108bab44c1ff4a",
+    "client.py": "290ae6370fe9efeb477023cb2b2456421a43aa57db058bfc64864cd5582c2db7",
+    "summarize.py": "adb017ab6b17c8d99fb05ec54ae07d7d09abe9b9088e2ff9aaf8f7483f2087cc",
+    "baseline/worker_process.json": "634481e5260ff3d293631680bd726f8462e9bbcbb79a1aa24afaca68506a646b",
+    "baseline/client_process.json": "98d11c84f453fa45a422f1cb0323d39cf6e9cf94d2b5ad6fa13f6145477f39f8",
+    "baseline/shutdown_process.json": "9e3f9878f69b9b9cdf0d73113737d78260ff89dca17777846e142a38e1080f75",
+    "baseline/worker/execution.json": "93b46c59f863bd1c7547be0f335397e709fb1a2d51febc2009e25b3f32eccda2",
+    "baseline/worker/worker_metadata.json": "e7413a0f399186a0eca70b974e25e01d6e1991d5077f73604786eb6af111f6de",
+    "baseline/worker/profile.jsonl": "66a3562a414bbb2a666ad53b2c962f308cd19727a7775147884540e344fdab13",
+    "baseline/worker/control_51_100.pstats": "0c739be8685c978d59284e009b71990afc1c5d81b2a5a66de4b582e81bee2d3a",
+    "baseline/worker/timing_settings.json": "fa4133a48a0409f78eaba9aac7d43377c17e54250694410ac007d16bf4387c42",
+    "baseline/client/cycle_timings.json": "63ec45f266c92a4bcd019ef75f23157d449c584c2c993db59d56abb7937c2890",
+    "baseline/client/timings.json": "f823fcdb496d0b0fe5a49fa29fae8e33e88c80511b6681172ef033ff0b00bd7b",
+    "baseline/client/report.json": "902232a7bfa108d64302676aabe896b6f3fbdd46bdc577c80147358da9074bf4",
+    "baseline/client/protocol.json": "1746bbee4c99ad40bac79bf4fb5465cc01ab3682d84a97b10a8f9c69cf732cfc",
+    "baseline/client/cases/normal/trajectory.jsonl": "54210f821fc4d80794e2c9589824f0e9905cf4be8534287c36b086667b7060a8"
+  },
+  "scope": "CPU PhysX, 20 substeps, native IK, actual RGB, rule collection including foreground record; excludes BC inference; cProfile interval excluded from wall-time summary; no production code or task changes"
+}

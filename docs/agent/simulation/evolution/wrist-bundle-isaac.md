@@ -1,5 +1,7 @@
 # WG-r10＋OM-r08：固定版本接入Isaac
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../../interfaces/local-resources.md)。
+
 后续已在右臂停放版完成[Isaac规则反馈RL链路运行](isaac-rule-feedback-rl.md)，其数据/更新和0/2自主评估独立记录，不改本页早期装配验证范围。
 
 后续按用户要求已创建[右臂水平停放副本](right-arm-park-and-hil.md)，腕部视野已检查；本页原场景保留。

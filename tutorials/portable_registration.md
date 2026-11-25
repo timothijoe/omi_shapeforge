@@ -1,5 +1,7 @@
 # CPU 复跑光模块已确认区域配准
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../docs/agent/interfaces/local-resources.md)。
+
 前提：已解压 portable 包；Python 中有 NumPy 1.26.4、SciPy 1.17.1、Open3D 0.19.0。该任务不需要 CUDA、ROS、相机或 Blender。
 
 以下变量按实际资源目录填写，当前本机可用值为：

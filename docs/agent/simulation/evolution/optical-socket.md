@@ -1,5 +1,7 @@
 # 光模块插接座
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../../interfaces/local-resources.md)。
+
 用户将带孔白色框架、金属内槽及 PCB 的装配体命名为“光模块插接座”，简称“插接座”；大型白色下部件称“插接座支架”。本地资产号 OS-001，独立于光模块 OM-001/V3。目录见 [socket_assets.json](../../../../manifests/socket_assets.json)。
 
 ## 当前采用结构与孔宽候选

@@ -1,5 +1,11 @@
 # 光模块资产版本：V4-r05暂定外观基线，历史资产保留
 
+2026-11-25新增独立夹爪候选：[WG-DAIMON-PHOTO-r16](agent/simulation/evolution/wrist-photo-refinement-r16.md)，两侧银壳与橙色材质修订，1920原图／同ROI链核对。r16未自动替代WVA-01／r15，不改变OM-r08、碰撞或训练默认；源版本和试验均保留。[登记](../manifests/wrist_photo_refinement_20261125_r16.json)。
+
+2026-11-25新增组合 [SC-WVA01-ISAAC-FIXTURE-r01](agent/simulation/evolution/wva01-isaac-insertion.md)：WG-r15／OM-r08／当前插座，原UV标志与GC-r01闭合参考，明确固定夹持插入。它是独立Isaac接入身份，不重命名夹爪r16、不改WVA-01清单，不把自由夹持候选记为已验收；单独V4-r05基线身份保留。
+
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](agent/interfaces/local-resources.md)。
+
 PCG-01的身份与WVA-01／GC-r01区别、完整文件清单及大小已归档至[版本纪传体](agent/perception/evolution/pointcloud-geometry-pcg01.md)；它是无颜色匹配几何包，不是新的完整仿真或训练版本。
 
 2026-11-23新增[PCG-01点云匹配纯几何版](agent/perception/evolution/pointcloud-geometry-pcg01.md)：无颜色／纹理，模块主体＋插口上部，源尺寸不变；已在Downloads交付可直接复制的文件夹与ZIP。

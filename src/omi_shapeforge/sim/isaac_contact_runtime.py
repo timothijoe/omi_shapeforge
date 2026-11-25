@@ -3,7 +3,9 @@
 No MuJoCo import or simulation is used here. USD/PhysX supply actual state.
 """
 from collections import deque
+from copy import deepcopy
 import json
+import time
 from pathlib import Path
 import numpy as np
 from scipy.spatial.transform import Rotation
@@ -15,8 +17,10 @@ from .isaac_contact_kinematics import Kinematics, local_pose, transform
 
 class DirectWorld:
     """Explicit attach/simulate/fetch path, independent of Kit timeline warm-up."""
-    def __init__(self,stage,app,dt):
+    def __init__(self,stage,app,dt,*,render_subframes=2):
         self.stage,self.app,self.dt=stage,app,dt;self.time=0.
+        if type(render_subframes) is not int or render_subframes not in (1,2):raise ValueError('render subframes must be 1 or 2')
+        self.render_subframes=render_subframes
         self.sim=omni.physx.get_physx_simulation_interface()
         self.physx=omni.physx.get_physx_interface()
     def reset(self):
@@ -30,6 +34,10 @@ class DirectWorld:
         self.tensor=omni.physics.tensors.create_simulation_view('numpy')
         self.tensor.set_subspace_roots('/')
     def step(self,render=False):
+        if hasattr(self,'before_step'):
+            self.tensor.clear_forces()
+            self.sync()
+            self.before_step()
         self.sim.simulate(self.dt,self.time);self.sim.fetch_results()
         self.time+=self.dt
         if render:self.render()
@@ -37,7 +45,7 @@ class DirectWorld:
     def render(self):
         self.sync()
         import omni.replicator.core as rep
-        rep.orchestrator.step(delta_time=0.,rt_subframes=2,pause_timeline=True)
+        rep.orchestrator.step(delta_time=0.,rt_subframes=self.render_subframes,pause_timeline=True)
 
 
 class TensorArticulation:
@@ -62,18 +70,44 @@ class ContactMonitor:
     def clear(self):
         self.peak=0.;self.peak_force=0.;self.shoulder=False;self.pairs=set();self.last=dict(force_N=0.,shoulder=False)
         self.module_impulse=0.;self.sample_count=0;self.module_contact=False
+        self.grasp_impulse={'left':0.,'right':0.}
+        self.last_grasp_force_N={'left':0.,'right':0.}
+        self.previous_grasp_force_N={'left':0.,'right':0.}
+        if not hasattr(self,'active_grasp_pairs'):self.active_grasp_pairs={'left':set(),'right':set()}
+        self.last_grasp_contact={side:bool(pairs) for side,pairs in self.active_grasp_pairs.items()}
+        self.previous_grasp_contact=self.last_grasp_contact.copy()
+        if not hasattr(self,'grasp_contact_points'):self.grasp_contact_points={}
     def start_substep(self):
+        self.previous_grasp_force_N=self.last_grasp_force_N.copy()
+        self.last_grasp_force_N={'left':0.,'right':0.}
+        self.previous_grasp_contact=self.last_grasp_contact.copy()
+        self.last_grasp_contact={side:bool(pairs) for side,pairs in self.active_grasp_pairs.items()}
         self.last=dict(force_N=0.,shoulder=False);self.sample_count+=1
     def callback(self,headers,data):
         force=0.;shoulder=False
         for h in headers:
             names=[str(PhysicsSchemaTools.intToSdfPath(h.collider0)),str(PhysicsSchemaTools.intToSdfPath(h.collider1))]
+            grasp_side=next((side for side in ('left','right') if any(f'grasp_pad_{side}_collision' in n for n in names)),None)
+            if grasp_side is not None and any('sim_module' in n for n in names):
+                from omni.physx.bindings._physx import ContactEventType
+                pair=tuple(sorted(names))
+                if h.type==ContactEventType.CONTACT_LOST:self.active_grasp_pairs[grasp_side].discard(pair)
+                elif h.type in (ContactEventType.CONTACT_FOUND,ContactEventType.CONTACT_PERSIST):
+                    self.active_grasp_pairs[grasp_side].add(pair)
+                self.last_grasp_contact[grasp_side]=bool(self.active_grasp_pairs[grasp_side])
             if not h.num_contact_data:continue
             self.pairs.add(tuple(names))
             for c in data[h.contact_data_offset:h.contact_data_offset+h.num_contact_data]:
                 self.peak=max(self.peak,-float(c.separation)*1000)
                 if any('sim_module' in n for n in names):
-                    impulse=float(np.linalg.norm(c.impulse));force+=impulse/self.dt
+                    impulse=float(np.linalg.norm(c.impulse))
+                    side=next((side for side in ('left','right') if any(f'grasp_pad_{side}_collision' in n for n in names)),None)
+                    if side is not None:
+                        self.grasp_impulse[side]+=impulse
+                        self.last_grasp_force_N[side]+=impulse/self.dt
+                        if hasattr(c,'position'):self.grasp_contact_points[side]=np.asarray(c.position,dtype=float).copy()
+                        continue  # grip normal load is not insertion resistance
+                    force+=impulse/self.dt
                     self.module_impulse+=impulse;self.module_contact=True
             shoulder |= all(any(part in n for n in names) for part in self.shoulder_pair)
         self.shoulder|=shoulder
@@ -87,10 +121,16 @@ def matrix(stage,path):
 
 class RobotExperiment:
     task_id='isaac-contact-insertion-v1'
-    def __init__(self,world,packet,audit,output,dt,cameras=None):
+    def __init__(self,world,packet,audit,output,dt,cameras=None,*,ik_backend='dls',tianji_sdk=None,tianji_config=None,socket_pose_range=None):
         self.world=world;self.stage=world.stage;self.packet=packet;self.audit=audit
         self.output=Path(output);self.dt=dt;self.cameras=cameras or {}
         self.manifest=packet['manifest'];self.kin=Kinematics(packet)
+        self.native_ik=None
+        if ik_backend=='tianji':
+            if tianji_sdk is None:raise ValueError('tianji SDK directory required')
+            from .tianji_ik import TianjiIK
+            self.native_ik=TianjiIK(packet,tianji_sdk,tianji_config)
+        elif ik_backend!='dls':raise ValueError(f'unknown IK backend: {ik_backend}')
         self.robot=TensorArticulation(world)
         self.names=self.robot.dof_names;self.arm=[self.names.index(f'Arm_L{i}_Joint') for i in range(1,8)]
         self.joints={j['name']:j for j in packet['joints']}
@@ -98,6 +138,13 @@ class RobotExperiment:
         self.monitor=ContactMonitor(dt,self.manifest.get('contact_shoulder_pair'));self.history=deque(maxlen=10)
         self.pads=world.tensor.create_rigid_body_view('/World/compliant_pad_*')
         self.pad_initial=self.pads.get_transforms().copy()
+        self.socket_pose_range=socket_pose_range
+        self._nominal_manifest=deepcopy(self.manifest)
+        self._nominal_pad_initial=self.pad_initial.copy()
+        if socket_pose_range:world.tensor.initialize_kinematic_bodies()
+        self.socket_body=world.tensor.create_rigid_body_view(audit['body_paths']['sim_socket']) if socket_pose_range else None
+        self._socket_initial=self.socket_body.get_transforms().copy() if self.socket_body else None
+        self._socket_world_change=np.eye(4)
         self.phase='insert';self._finished=False;self._stable=0;self._steps=0
         self.max_steps=350
         self.goal_pos=np.array(self.manifest['goal_tcp_position']);self.goal_rot=np.array(self.manifest['goal_tcp_rotation'])
@@ -109,10 +156,32 @@ class RobotExperiment:
                 raise ValueError('assessment period must match the 100ms control interval')
             self.task_id='isaac-entry-strict-interior-tolerant-v2'
             ids={b['name']:b['id'] for b in self.packet['bodies']}
-            self.task_boxes={name:[g for g in self.packet['geoms'] if g['contact'] and g['body']==ids[name]] for name in ('sim_module','sim_socket')}
+            self.task_boxes={name:[g for g in self.packet['geoms'] if g['contact'] and g['body']==ids[name]
+                                  and g.get('collision_role')!='grasp_rear'] for name in ('sim_module','sim_socket')}
             if not all(self.task_boxes.values()) or not all(g['kind']==6 for shapes in self.task_boxes.values() for g in shapes):
                 raise ValueError('staged candidate geometry audit requires native boxes')
-    def reset(self,seed):
+    def reset(self,seed,socket_pose=None):
+        if self.socket_pose_range:
+            from .socket_pose import relocate_socket_manifest
+            pose=self.socket_pose_range.resolve(seed,socket_pose)
+            self.manifest,self._socket_world_change=relocate_socket_manifest(self._nominal_manifest,pose)
+            delta=self._socket_world_change
+            def moved(poses):
+                result=poses.copy();result[:,:3]=(delta[:3,:3]@poses[:,:3].T).T+delta[:3,3]
+                result[:,3:]=Rotation.from_matrix(delta[:3,:3]@Rotation.from_quat(poses[:,3:]).as_matrix()).as_quat()
+                return result
+            socket_target=moved(self._socket_initial)
+            # PhysX's USD kinematic driver re-applies the authored pose during
+            # simulate(). Update that source as well as the tensor buffers.
+            from .isaac_contact_scene import set_pose
+            desired=self.manifest['socket_to_world']
+            set_pose(self.stage.GetPrimAtPath(self.audit['body_paths']['sim_socket']),
+                     transform(desired['position_m'],np.asarray(desired['rotation'])))
+            self.socket_body.set_transforms(socket_target,np.array([0],np.uint32))
+            self.socket_body.set_kinematic_targets(socket_target,np.array([0],np.uint32))
+            self.pad_initial=moved(self._nominal_pad_initial)
+        elif socket_pose is not None:
+            raise ValueError('socket pose override requires a movable-socket execution contract')
         self.phase='insert';self._finished=False;self._stable=0;self._steps=0
         if self.contact_assessment:self.contact_assessment.reset()
         self.goal_pos=np.array(self.manifest['goal_tcp_position']);self.goal_rot=np.array(self.manifest['goal_tcp_rotation'])
@@ -138,7 +207,32 @@ class RobotExperiment:
         (self.output/'kinematics_check.json').write_text(json.dumps(audit,indent=2)+'\n')
         if audit['position_error_m']>1e-5 or audit['rotation_error_rad']>1e-4:
             raise RuntimeError(f'Imported kinematics mismatch: {audit}')
+        if self.socket_pose_range:
+            actual=matrix(self.stage,self.audit['frame_paths']['sim_socket'])
+            expected=self.manifest['socket_to_world']
+            native=self.socket_body.get_transforms()[0]
+            native_position_error=float(np.linalg.norm(native[:3]-expected['position_m']))
+            native_rotation_error=float(Rotation.from_matrix(Rotation.from_quat(native[3:]).as_matrix()@np.asarray(expected['rotation']).T).magnitude())
+            if np.linalg.norm(actual[:3,3]-expected['position_m'])>1e-5 or Rotation.from_matrix(actual[:3,:3]@np.asarray(expected['rotation']).T).magnitude()>1e-4 or native_position_error>1e-5 or native_rotation_error>1e-4:
+                detail=dict(expected=expected,usd=actual.tolist(),native=native.tolist())
+                (self.output/'socket_pose_mismatch.json').write_text(json.dumps(detail,indent=2)+'\n')
+                raise RuntimeError(f'socket collision frame does not match requested episode pose: {detail}')
+            audit['socket_pose']=self.manifest['episode_socket_pose']
+            audit['socket_world_position']=actual[:3,3].tolist()
+            audit['socket_native_position_error_m']=native_position_error
+            audit['socket_native_rotation_error_rad']=native_rotation_error
+            audit['pad_position_error_m']=float(np.linalg.norm(self.pads.get_transforms()[:,:3]-self.pad_initial[:,:3],axis=1).max())
+            if audit['pad_position_error_m']>1e-5:raise RuntimeError('socket pad world transforms did not follow the assembly')
+            audit['pad_travel_mm']=self.measurements()['pad_travel_mm']
+            if max(abs(v) for v in audit['pad_travel_mm'])>.01:raise RuntimeError('socket pad anchors did not move consistently')
+            (self.output/'kinematics_check.json').write_text(json.dumps(audit,indent=2)+'\n')
         return audit
+
+    def pad_rest_frame(self,body,joint):
+        change=self._socket_world_change
+        origin=change[:3,:3]@np.asarray(body['world_position'])+change[:3,3]
+        axis=change[:3,:3]@np.asarray(body['world_rotation'])@joint['axis']
+        return origin,axis
     def qdict(self):
         q={j['name']:self.packet['initial_qpos'][j['qpos_index']] for j in self.packet['joints']}
         q.update(zip(self.names,self.robot.get_joint_positions()[0]))
@@ -160,7 +254,7 @@ class RobotExperiment:
         for j in self.packet['joints']:
             if not j['name'].startswith('pad_'):continue
             b=self.packet['bodies'][j['body']];t=matrix(self.stage,self.audit['body_paths'][b['name']])
-            axis=np.asarray(b['world_rotation'])@j['axis'];travels.append(float((t[:3,3]-b['world_position'])@axis*1000))
+            origin,axis=self.pad_rest_frame(b,j);travels.append(float((t[:3,3]-origin)@axis*1000))
         extra={}
         if self.contact_assessment:
             from .box_overlap import box_overlap_mm
@@ -185,8 +279,10 @@ class RobotExperiment:
         if a.shape!=(6,) or not np.isfinite(a).all() or np.any(abs(a)>1):raise ValueError('normalized finite 6D action required')
         t=self.tcp();target=t[:3,3]+a[:3]*self.scale[:3]
         rot=Rotation.from_rotvec(a[3:]*self.scale[3:]).as_matrix()@t[:3,:3]
-        q=self.qdict()
-        for _ in range(12):
+        q=self.qdict();ik_started=time.perf_counter()
+        if self.native_ik:
+            q=self.native_ik.solve(q,transform(target,rot))
+        for _ in range(0 if self.native_ik else 12):
             now=self.kin.tcp(q);err=np.r_[target-now[:3,3],self.rotation_error(now[:3,:3],rot)*.1]
             cols=[]
             for name in [f'Arm_L{i}_Joint' for i in range(1,8)]:
@@ -195,6 +291,7 @@ class RobotExperiment:
             J=np.asarray(cols).T;update=J.T@np.linalg.solve(J@J.T+np.eye(6)*1e-5,err)
             for name,delta in zip([f'Arm_L{i}_Joint' for i in range(1,8)],update):
                 q[name]=float(np.clip(q[name]+np.clip(delta,-.03,.03),*self.joints[name]['limits']))
+        ik_elapsed=time.perf_counter()-ik_started
         targets=self._held_joint_targets.copy()
         for index in self.arm:targets[0,index]=q[self.names[index]]
         interpolate=self.manifest.get('joint_target_interpolation')=='linear'
@@ -204,8 +301,8 @@ class RobotExperiment:
         pads=[j for j in self.packet['joints'] if j['name'].startswith('pad_')]
         pad_by_path={self.audit['body_paths'][self.packet['bodies'][j['body']]['name']]:j for j in pads}
         ordered=[pad_by_path[path] for path in self.pads.prim_paths]
-        axes=np.array([np.asarray(self.packet['bodies'][j['body']]['world_rotation'])@j['axis'] for j in ordered])
-        origins=np.array([self.packet['bodies'][j['body']]['world_position'] for j in ordered])
+        rest=[self.pad_rest_frame(self.packet['bodies'][j['body']],j) for j in ordered]
+        origins=np.array([x[0] for x in rest]);axes=np.array([x[1] for x in rest])
         gaps=np.array([self.manifest['pad_rest_static_gap_mm'][int(j['name'].rsplit('_',1)[1])] for j in ordered])
         substeps=round(.1/self.dt)
         for substep in range(substeps):
@@ -235,6 +332,7 @@ class RobotExperiment:
             failed=m['step_peak_penetration_mm']>.05 or m['step_min_floor_gap_mm']<.025 or not np.isfinite(self.robot.get_joint_positions()).all()
             m.update(is_success=self._stable>=3 and not failed,failed=bool(failed))
         m.update(phase=self.phase,step=self._steps,stable_samples=self._stable,joint_targets=targets[0].tolist())
+        m['ik_solve_ms']=ik_elapsed*1000
         m['joint_velocities']=self.robot.view.get_dof_velocities()[0].tolist()
         self._finished=bool(m['is_success'] or failed or self._steps>=self.max_steps)
         return m

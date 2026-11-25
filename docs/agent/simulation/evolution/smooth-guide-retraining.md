@@ -1,5 +1,7 @@
 # 顺滑通道候选：Isaac BC／规则反馈RL重训
 
+> 本机迁移提示（2026-11-24）：运行资源实体已迁至 `/data/shapeforge/runtime`；本文中的 `/data/omi_runtime` 是保留的兼容入口，指向同一份内容。目录映射与恢复要求见[当前资源契约](../../interfaces/local-resources.md)。
+
 用户补充要求的[规则干预与OMI HIL对齐清单](../../../../../omi_proj/docs/agent/training/evolution/isaac-hil-alignment.md)已核对并记录；当前规则仍缺少主动后退重插状态机，不能把基础格式一致理解为真机语义已经全部对齐。
 
 ## 最终结果

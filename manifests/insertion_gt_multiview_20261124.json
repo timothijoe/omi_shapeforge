@@ -1,0 +1,48 @@
+{
+  "schema": "continuous-insertion-gt-multiview-v1",
+  "date": "2026-11-24",
+  "run_directory": "/data/shapeforge/runtime/runs/insertion_multiview_20261124_v1",
+  "video": {
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "duration_s": 39.8,
+    "fps": 30,
+    "source_control_fps": 10,
+    "frames": 1194,
+    "codec": "h264",
+    "bytes": 7370607,
+    "sha256": "5812f4e8ce9a30e8fabe411550d1f0d3c66c262d176699b94b077dd702ff3c47"
+  },
+  "delivery": {
+    "机器人完整插入_三视图_GT点云_1080p_20261124.mp4": {
+      "path": "/home/linux/Downloads/机器人完整插入_三视图_GT点云_1080p_20261124.mp4",
+      "sha256": "5812f4e8ce9a30e8fabe411550d1f0d3c66c262d176699b94b077dd702ff3c47",
+      "bytes": 7370607
+    },
+    "机器人完整插入_三视图_封面_20261124.png": {
+      "path": "/home/linux/Downloads/机器人完整插入_三视图_封面_20261124.png",
+      "sha256": "291537eeab36563ca2f74b8bc8e08ab7b72ca3da4573c53f77a985e0d8ee2cd9",
+      "bytes": 612692
+    },
+    "机器人完整插入_三视图_分镜_20261124.jpg": {
+      "path": "/home/linux/Downloads/机器人完整插入_三视图_分镜_20261124.jpg",
+      "sha256": "d42a9695c3ed7321becc78d0f36a4ce45a0ed88bdb6c454983fcf2872f80934b",
+      "bytes": 549135
+    }
+  },
+  "source_case": "/data/shapeforge/runtime/runs/isaac_fast5_20261124/async5/client/cases/normal",
+  "source_control_samples": 358,
+  "all_source_states_included": true,
+  "new_physics_trial": false,
+  "network_inference": false,
+  "pointcloud": "GT visual demonstration with current transferred mesh geometry",
+  "validation": "/data/shapeforge/runtime/runs/insertion_multiview_20261124_v1/quality_check.json",
+  "frame_mapping": "/data/shapeforge/runtime/runs/insertion_multiview_20261124_v1/film/film_manifest.json",
+  "source_code_sha256": {
+    "scripts/simulation/capture_insertion_multiview.py": "edec7361021d8041a73e8c43f2020b29962c52238d3e93cbc60a45ba4a0b89f7",
+    "scripts/perception/render_insertion_multiview.py": "cbfc74efafe7761daedf9708c31d54d5384483d7d288b8ca00cb210d7872f3d4"
+  },
+  "documentation": "docs/agent/perception/evolution/insertion-gt-multiview.md"
+}
