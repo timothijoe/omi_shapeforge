@@ -1,0 +1,12 @@
+{
+  "id": "r16-current-preservation-20261125T163321+0800",
+  "backup_directory": "/data/shapeforge/storage/exports/wrist_r16_preserved_20261125T163321+0800",
+  "snapshot_manifest": "/data/shapeforge/storage/exports/wrist_r16_preserved_20261125T163321+0800/snapshot_manifest.json",
+  "archive": "/data/shapeforge/storage/exports/wrist_r16_preserved_20261125T163321+0800/r16_preserved_snapshot.zip",
+  "archive_sha256": "323d3156f42e4814897c6563d14078b5266b2c12a4d030abe4a7e61ebfe4a2f1",
+  "file_count": 231,
+  "snapshot_bytes": 140093556,
+  "verified": true,
+  "asset_geometry_or_color_modified": false,
+  "external_unchanged_dependencies": "Original287 real frames and r15/module/socket sources remain in storage/runtime; reference frame and input photos copied here. Re-rendering requires restoring those external assets or using the archived scene/model paths."
+}
