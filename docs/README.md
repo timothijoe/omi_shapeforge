@@ -1,5 +1,7 @@
 # 开发文档总目录
 
+- [System1训练与二维／三维路径展示](agent/simulation/evolution/system1-path-visualization.md)：60轮训练、独立1074帧评估、8点短段和12秒视频；含动作空间与老师来源讨论。
+
 - [System1 与 System0 独立插接原型](agent/simulation/evolution/hierarchical-insertion.md)：GT／噪声／学习型参考、直接动作SAC及腕部六维力，含分开调试和组合入口；当前为链路验证。
 
 - [2026-11-25 System1 与 System0 路径条件化插接讨论](design/system1-system0-path-conditioned-rl-discussion.md)：下次讨论入口；先验证路径条件化SAC直接动作，residual保留对照，区分仿真奖励与真机在线奖励。仅设计讨论。

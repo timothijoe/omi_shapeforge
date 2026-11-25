@@ -1,5 +1,7 @@
 # 当前总览
 
+2026-11-25：[System1训练与路径可视化](agent/simulation/evolution/system1-path-visualization.md)完成。60轮按验证选择第47轮，独立3回合1074帧位姿平移均值0.228 mm、最大2.207 mm；交付腕图叠加与三维8点短段视频。当前为同资产小扰动，网络预测位姿、几何程序解码路径，未验证新插接成功率。
+
 2026-11-25：[System1 与 System0 独立插接原型](agent/simulation/evolution/hierarchical-insertion.md)新增GT／噪声／学习型参考、独立SAC和虚拟腕部六维力。旧RL默认入口保留；规则采集3/3通过，短预算训练及组合评估用于链路验证，尚未建立可靠自主插接能力。
 
 2026-11-25：[System1 与 System0 路径条件化插接讨论](design/system1-system0-path-conditioned-rl-discussion.md)已整理。当前倾向先验证路径条件化SAC直接六维动作，residual为备选对照；三维路径、horizon、异步消息及真机奖励均保留待验证项。本次未实施该架构或新增训练成绩。

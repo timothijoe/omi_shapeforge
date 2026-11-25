@@ -1,5 +1,7 @@
 # 跨领域阶段与交接记录
 
+- [2026-11-25 System1路径训练与展示](2026-11-25-system1-path-visualization.md)。
+
 - [2026-11-25 System1 与 System0 独立开发](2026-11-25-hierarchical-insertion.md)：实现、腕力修订和模块验证。
 
 - [2026-11-25：点云展示与r11视频交接](2026-11-25-pointcloud-video-handoff.md)：腕部仅橙绿重点、独立完整点云、冷银灰色表、视频与验证恢复入口。
