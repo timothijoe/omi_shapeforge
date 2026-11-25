@@ -4,7 +4,11 @@
 
 [实现](../../../../scripts/perception/render_system1_paths.py) · [验证清单](../../../../manifests/system1_path_visualization_20261125.json) · [独立系统背景](hierarchical-insertion.md)
 
+完整接续入口：[2026-11-25 System1与System0当前交接](../../../chronicles/2026-11-25-system1-system0-handoff.md)。优先扩充System1不同接近位置的覆盖；60轮权重尚未与System0重新闭环评估。
+
 同日后续完成[九个实际机器人起点检查](../../../../manifests/system1_nine_positions_20261125.json)：固定插座，孔口前约8 mm，左右／上下各−3、0、+3 mm；普通IK／PhysX动作到位后读取实际双RGB，由冻结第47轮模型生成路径。九例准备位姿误差均小于0.035 mm，未执行预测路径。位姿预测误差约2.02～7.43 mm，说明原正常路径附近的训练覆盖不足，不能把此前小扰动测试均值当作该范围泛化精度。
+
+九位置的位姿误差均值为4.41218 mm。此为不同初始位置下的冻结模型诊断，不能与原1074帧同域均值合并，也不代表已完成接触控制测试。
 
 产物位于 `/data/shapeforge/runtime/runs/hier_s1_nine_20261125/`：`nine_positions.png`逐位置腕图／三维对比，`paths_3d.png`将九个起点放到同一插座坐标系，`samples.npz`和逐例JSON保留图像、预测与实际准备轨迹。脚本：[probe_system1_positions.py](../../../../scripts/perception/probe_system1_positions.py)。橙色预测未被替换为绿色GT，所有失败偏差保留；本阶段没有针对九个测试位置追加训练。
 

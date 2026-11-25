@@ -1,5 +1,7 @@
 # Agent 知识库
 
+- [System1 与 System0 最新交接](../chronicles/2026-11-25-system1-system0-handoff.md)：当前先扩充System1接近位置覆盖；区分旧System0冒烟、新60轮视觉模型和九位置诊断。
+
 - [System1 与 System0 独立插接原型](simulation/evolution/hierarchical-insertion.md)：当前实现与验证边界，旧RL默认保留。
 
 - [System1 与 System0 路径条件化插接讨论](../design/system1-system0-path-conditioned-rl-discussion.md)：2026-11-25设计接续，含已核对实现、异步坐标、路径条件与真机奖励边界；不代表新策略能力。

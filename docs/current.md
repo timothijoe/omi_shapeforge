@@ -1,5 +1,7 @@
 # 当前总览
 
+2026-11-25：[System1／System0当前进展已汇总交接](chronicles/2026-11-25-system1-system0-handoff.md)。原型已分开训练／评估，System0倒退与腕力接口具备；新System1同域位姿误差均值0.228 mm，九位置均值4.412 mm／最大7.430 mm，泛化不足。下一步优先扩充System1接近范围；本次只归档，不新增训练。
+
 2026-11-25：[System1训练与路径可视化](agent/simulation/evolution/system1-path-visualization.md)完成。60轮按验证选择第47轮，独立3回合1074帧位姿平移均值0.228 mm、最大2.207 mm；交付腕图叠加与三维8点短段视频。当前为同资产小扰动，网络预测位姿、几何程序解码路径，未验证新插接成功率。
 
 2026-11-25：[System1 与 System0 独立插接原型](agent/simulation/evolution/hierarchical-insertion.md)新增GT／噪声／学习型参考、独立SAC和虚拟腕部六维力。旧RL默认入口保留；规则采集3/3通过，短预算训练及组合评估用于链路验证，尚未建立可靠自主插接能力。

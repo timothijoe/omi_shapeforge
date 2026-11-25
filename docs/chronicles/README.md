@@ -1,5 +1,7 @@
 # 跨领域阶段与交接记录
 
+- [2026-11-25 System1与System0当前进展交接](2026-11-25-system1-system0-handoff.md)：主接续入口，汇总分工、模型、图像／视频、九位置结果和下一步。
+
 - [2026-11-25 System1路径训练与展示](2026-11-25-system1-path-visualization.md)。
 
 - [2026-11-25 System1 与 System0 独立开发](2026-11-25-hierarchical-insertion.md)：实现、腕力修订和模块验证。

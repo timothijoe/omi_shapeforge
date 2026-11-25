@@ -1,5 +1,7 @@
 # 开发文档总目录
 
+- [System1 与 System0 当前进展完整交接](chronicles/2026-11-25-system1-system0-handoff.md)：最新分工、实现、训练与失败、视频／九位置图、源码与运行资源、下次讨论入口。
+
 - [System1训练与二维／三维路径展示](agent/simulation/evolution/system1-path-visualization.md)：60轮训练、独立1074帧评估、8点短段和12秒视频；含动作空间与老师来源讨论。
 
 - [System1 与 System0 独立插接原型](agent/simulation/evolution/hierarchical-insertion.md)：GT／噪声／学习型参考、直接动作SAC及腕部六维力，含分开调试和组合入口；当前为链路验证。

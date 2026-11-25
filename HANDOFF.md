@@ -1,5 +1,7 @@
 # OMI ShapeForge 交接文档
 
+当前System1／System0主线：[2026-11-25完整交接](docs/chronicles/2026-11-25-system1-system0-handoff.md)。含最新分工、直接动作与腕力、60轮System1训练、九位置泛化不足、可视化和下一步；当前先处理System1接近位置覆盖。
+
 存储接续：运行资源实体已迁入`/data/shapeforge/runtime/`，原`/data/omi_runtime`为兼容链接；导入与交付资料位于同级storage。当前布局以[本地资源契约](docs/agent/interfaces/local-resources.md)为准，分别见[runtime迁移](docs/chronicles/2026-11-23-runtime-relocation.md)和[此前四批资料迁移](docs/chronicles/2026-11-23-storage-layout.md)。下方历史命令中的旧runtime前缀继续有效。
 
 当前Isaac插入／规则反馈RL窗口已收尾：[专项交接](docs/chronicles/2026-11-23-isaac-rule-rl-window-handoff.md)。含固定WG-r10＋OM-r08、旧BC／RL结果、新规则8/8与恢复4/4、视频恢复、源码快照、实仿缺项及接续注意事项；不替代并行感知／资产交接。
