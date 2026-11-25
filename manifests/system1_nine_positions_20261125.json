@@ -1,0 +1,281 @@
+{
+  "date": "2026-11-25",
+  "run_root": "/data/shapeforge/runtime/runs/hier_s1_nine_20261125",
+  "status": "nine_physical_start_poses_and_frozen_system1_predictions_verified",
+  "report": {
+    "cases": [
+      {
+        "id": 0,
+        "seed": 130000,
+        "requested_lateral_mm": -3.0,
+        "requested_vertical_mm": 3.0,
+        "target_tcp_m": [
+          0.3663339819142364,
+          0.20356406961151577,
+          0.811123398886461
+        ],
+        "actual_tcp_m": [
+          0.3663337159904863,
+          0.2035854524267704,
+          0.8111174429489061
+        ],
+        "setup_position_error_mm": 0.022198393991741117,
+        "actual_depth_mm": -8.000398238687088,
+        "translation_error_mm": 4.716202557269953,
+        "rotation_error_deg": 0.030993003011047605,
+        "preview_tip_error_mm": 1.9348666058010473,
+        "teacher_requests": 0,
+        "prediction_executed": false
+      },
+      {
+        "id": 1,
+        "seed": 130001,
+        "requested_lateral_mm": 0.0,
+        "requested_vertical_mm": 3.0,
+        "target_tcp_m": [
+          0.3663339819142364,
+          0.20656406961151577,
+          0.811123398886461
+        ],
+        "actual_tcp_m": [
+          0.36635653383210237,
+          0.2065613618879617,
+          0.8110994666366229
+        ],
+        "setup_position_error_mm": 0.032995050365057434,
+        "actual_depth_mm": -7.977566114525809,
+        "translation_error_mm": 5.133637329801847,
+        "rotation_error_deg": 0.008863351429953554,
+        "preview_tip_error_mm": 1.7425701120583246,
+        "teacher_requests": 0,
+        "prediction_executed": false
+      },
+      {
+        "id": 2,
+        "seed": 130002,
+        "requested_lateral_mm": 3.0,
+        "requested_vertical_mm": 3.0,
+        "target_tcp_m": [
+          0.3663339819142364,
+          0.20956406961151577,
+          0.811123398886461
+        ],
+        "actual_tcp_m": [
+          0.3663482732292273,
+          0.20955006834789436,
+          0.8111024579697858
+        ],
+        "setup_position_error_mm": 0.028962027870408844,
+        "actual_depth_mm": -7.985746494794414,
+        "translation_error_mm": 7.429746632919437,
+        "rotation_error_deg": 0.00987414741907796,
+        "preview_tip_error_mm": 2.09727179535258,
+        "teacher_requests": 0,
+        "prediction_executed": false
+      },
+      {
+        "id": 3,
+        "seed": 130003,
+        "requested_lateral_mm": -3.0,
+        "requested_vertical_mm": 0.0,
+        "target_tcp_m": [
+          0.3663339819142364,
+          0.20356406961151577,
+          0.808123398886461
+        ],
+        "actual_tcp_m": [
+          0.36633838832398635,
+          0.2035808931739898,
+          0.8081097361213485
+        ],
+        "setup_position_error_mm": 0.02211605416257191,
+        "actual_depth_mm": -7.995832620534713,
+        "translation_error_mm": 3.139941081810413,
+        "rotation_error_deg": 0.033606919210451565,
+        "preview_tip_error_mm": 1.6369868516144652,
+        "teacher_requests": 0,
+        "prediction_executed": false
+      },
+      {
+        "id": 4,
+        "seed": 130004,
+        "requested_lateral_mm": 0.0,
+        "requested_vertical_mm": 0.0,
+        "target_tcp_m": [
+          0.3663339819142364,
+          0.20656406961151577,
+          0.808123398886461
+        ],
+        "actual_tcp_m": [
+          0.3663589173816213,
+          0.20656160598047432,
+          0.8080992475637166
+        ],
+        "setup_position_error_mm": 0.03480134195565756,
+        "actual_depth_mm": -7.9752598781339366,
+        "translation_error_mm": 2.0228217591292137,
+        "rotation_error_deg": 0.013175007426308944,
+        "preview_tip_error_mm": 1.1629640448849323,
+        "teacher_requests": 0,
+        "prediction_executed": false
+      },
+      {
+        "id": 5,
+        "seed": 130005,
+        "requested_lateral_mm": 3.0,
+        "requested_vertical_mm": 0.0,
+        "target_tcp_m": [
+          0.3663339819142364,
+          0.20956406961151577,
+          0.808123398886461
+        ],
+        "actual_tcp_m": [
+          0.36633872043699656,
+          0.20954847898003456,
+          0.8081102575961906
+        ],
+        "setup_position_error_mm": 0.020933583016360044,
+        "actual_depth_mm": -7.995267633387417,
+        "translation_error_mm": 4.944250154428646,
+        "rotation_error_deg": 0.013494566244310162,
+        "preview_tip_error_mm": 1.739077338285704,
+        "teacher_requests": 0,
+        "prediction_executed": false
+      },
+      {
+        "id": 6,
+        "seed": 130006,
+        "requested_lateral_mm": -3.0,
+        "requested_vertical_mm": -3.0,
+        "target_tcp_m": [
+          0.3663339819142364,
+          0.20356406961151577,
+          0.805123398886461
+        ],
+        "actual_tcp_m": [
+          0.3663179656801681,
+          0.20356288190213326,
+          0.8051510708368923
+        ],
+        "setup_position_error_mm": 0.031994800327226625,
+        "actual_depth_mm": -8.01634554952371,
+        "translation_error_mm": 4.194463653961705,
+        "rotation_error_deg": 0.0399919599747457,
+        "preview_tip_error_mm": 1.9409519824322508,
+        "teacher_requests": 0,
+        "prediction_executed": false
+      },
+      {
+        "id": 7,
+        "seed": 130007,
+        "requested_lateral_mm": 0.0,
+        "requested_vertical_mm": -3.0,
+        "target_tcp_m": [
+          0.3663339819142364,
+          0.20656406961151577,
+          0.805123398886461
+        ],
+        "actual_tcp_m": [
+          0.36632066578610784,
+          0.20656340077881416,
+          0.8051332564413962
+        ],
+        "setup_position_error_mm": 0.016581254319844838,
+        "actual_depth_mm": -8.013595447690825,
+        "translation_error_mm": 3.1360777827318564,
+        "rotation_error_deg": 0.02301359481013522,
+        "preview_tip_error_mm": 1.6200461043446899,
+        "teacher_requests": 0,
+        "prediction_executed": false
+      },
+      {
+        "id": 8,
+        "seed": 130008,
+        "requested_lateral_mm": 3.0,
+        "requested_vertical_mm": -3.0,
+        "target_tcp_m": [
+          0.3663339819142364,
+          0.20956406961151577,
+          0.805123398886461
+        ],
+        "actual_tcp_m": [
+          0.3663225325004101,
+          0.20956347138960527,
+          0.8051445891818751
+        ],
+        "setup_position_error_mm": 0.02409306053947398,
+        "actual_depth_mm": -8.01174475066403,
+        "translation_error_mm": 4.992458265851156,
+        "rotation_error_deg": 0.012629601818106014,
+        "preview_tip_error_mm": 2.0708590769128263,
+        "teacher_requests": 0,
+        "prediction_executed": false
+      }
+    ],
+    "checkpoint": "/data/shapeforge/runtime/runs/hier_s1_visual_20261125_train60/system1.pt",
+    "checkpoint_sha256": "5493a113c9b1c1a5088606363b934e72464b85e252cabfc292a020cb69496f17",
+    "mean_translation_error_mm": 4.412177690878248,
+    "max_translation_error_mm": 7.429746632919437,
+    "scope": "nine physically reached pre-entry test poses; frozen visual model; no predicted-path execution or insertion success claim"
+  },
+  "process_result": {
+    "complete": true,
+    "error": null,
+    "worker": {
+      "command": [
+        "/data/isaac-sim-5.1.0/python.sh",
+        "-u",
+        "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/isaac_rl_worker.py",
+        "--transfer",
+        "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer",
+        "--output",
+        "/data/shapeforge/runtime/runs/hier_s1_nine_20261125/worker",
+        "--socket",
+        "/data/shapeforge/runtime/runs/hier_s1_nine_20261125/worker.sock",
+        "--max-steps",
+        "200",
+        "--physics-substeps",
+        "5",
+        "--ik-backend",
+        "tianji",
+        "--tianji-sdk",
+        "/data/shapeforge/runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/vendor/optical_module_pu/source/OpticalModule_PU/Arm_control",
+        "--teacher-min-step-mm",
+        ".05",
+        "--target-overtravel-mm",
+        ".1"
+      ],
+      "state": "exited",
+      "start_new_session": true,
+      "returncode": 0,
+      "pid": 1261819,
+      "pgid": 1261819,
+      "elapsed_seconds": 43.88352043299528
+    }
+  },
+  "scope": "position-generalization probe, no predicted trajectory execution or insertion evaluation",
+  "physical_setup_error_max_mm": 0.03480134195565756,
+  "artifacts": {
+    "paths_3d.png": {
+      "sha256": "02ad623d470933eebbd92c5835e08fb17f3f41c57adc1fb9f83ba65eb945eedf",
+      "bytes": 235434
+    },
+    "render_system1_paths.py": {
+      "sha256": "23119950ef87cad911d99ad7b990efaead7fe1e2895b964a02b47a16c1599f2d",
+      "bytes": 12430
+    },
+    "nine_positions.png": {
+      "sha256": "f9bf9cb485ee9fcfcbe7ac0ab5175fa6d6542a97fa30a432cff830821012deaa",
+      "bytes": 663713
+    },
+    "probe_system1_positions.py": {
+      "sha256": "3be52b040347209a6408c2f3823338a07cb22a7161252073eff398ccf9cbec27",
+      "bytes": 10670
+    },
+    "samples.npz": {
+      "sha256": "0f51a75a83e23541a64fa06d99b5e866e8456f2a0111ae00185ff92b813f164d",
+      "bytes": 408179
+    }
+  },
+  "recommendation": "System1 sends geometric pose path plus nominal speed and limits; System0 chooses actual timing and retreat using feedback."
+}
