@@ -1,0 +1,172 @@
+{
+  "date": "2026-11-26",
+  "status": "frozen_policy_initial_pose_evaluation_and_four_videos_complete",
+  "output_root": "/data/shapeforge/runtime/runs/s0_initial_pose_20261126",
+  "video_root": "/data/shapeforge/runtime/runs/s0_initial_pose_videos_20261126",
+  "delivery": "/home/linux/Downloads/Tilted_Starts_Demos_20261126/Tilted_Starts_4_Demos.mp4",
+  "results": {
+    "path": {
+      "successes": 10,
+      "cases": 10,
+      "model_sha256": "41d1fe329ba737ba1451403ca95b8ce7aac9853362f91d3be23f1869be0625f0"
+    },
+    "goal": {
+      "successes": 4,
+      "cases": 10,
+      "model_sha256": "090578637709ba7a3c98bb5c27de2480f2afbf09e607da3cdf35550f6815feeb"
+    }
+  },
+  "groups": {
+    "controls": {
+      "path": {
+        "successes": 2,
+        "cases": 2
+      },
+      "goal": {
+        "successes": 2,
+        "cases": 2
+      }
+    },
+    "lateral_only": {
+      "path": {
+        "successes": 2,
+        "cases": 2
+      },
+      "goal": {
+        "successes": 2,
+        "cases": 2
+      }
+    },
+    "orientation_or_combined": {
+      "path": {
+        "successes": 6,
+        "cases": 6
+      },
+      "goal": {
+        "successes": 0,
+        "cases": 6
+      }
+    }
+  },
+  "scope": "one frozen paired training seed, one reset seed per condition, fixed slot, ideal GT and rigid grasp; not a statistical robustness guarantee",
+  "initialization": "gripper-center offsets and yaw-pitch; explicit reset; no teacher preparation; task fixed",
+  "tests": {
+    "related_passed": 28,
+    "lightweight_passed": 29,
+    "lightweight_skipped": 69
+  },
+  "artifacts": {
+    "/data/shapeforge/runtime/runs/s0_initial_pose_20261126/protocol.json": {
+      "bytes": 4043,
+      "sha256": "db9d14ef58bb1a4bb8751a8473b6dba724eaf0ab9bfc58642b02f43621e8051b"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_20261126/cases.json": {
+      "bytes": 2785,
+      "sha256": "9e929668bde8a9c8c14e8be69e21895f8743abf0b47203f2e6c12699ac101143"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_20261126/summary.json": {
+      "bytes": 49549,
+      "sha256": "53525219e318976c61ab5d6f34059395729ecaccf679e07bcc0c7f966eb1a6dc"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_20261126/offline_ik_audit.json": {
+      "bytes": 6540,
+      "sha256": "b7232766255674b92298a26c6d46dda64f6abdf4438b36f86c55fd6a1e67d20f"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_20261126/result.json": {
+      "bytes": 3182,
+      "sha256": "83a071019f0bb2985fc70f85ef09745492973eccd98c3e4cae675c8743512032"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_20261126/additional_source_hashes.json": {
+      "bytes": 458,
+      "sha256": "1e0c8699d98b8f67f523ebbe262debb92c43ba9e6c87a7e2a64ae17a71d7f3a0"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_20261126/tests_v2.log": {
+      "bytes": 99,
+      "sha256": "a6968971d3a9019c5bfbd31e0fa8922c0aaa18617cd7307ed35664ea915b1ebf"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_20261126/lightweight_tests_final.log": {
+      "bytes": 17778,
+      "sha256": "c3c630876af9ca3e5539a31e11f2db5502e41d0d8661357030c208f32500eaf5"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_videos_20261126/playlist.json": {
+      "bytes": 1168,
+      "sha256": "4900c38e9094bb357e892b7b05dbfa10f7fdea3026962d61145fdb85c82af135"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_videos_20261126/source_integrity.json": {
+      "bytes": 2031,
+      "sha256": "18d153e2a1a4d72a95866e1686ebf8a218c16f9b65c765ff99c6a4b1605037ff"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_videos_20261126/delivery_manifest.json": {
+      "bytes": 67482,
+      "sha256": "3b5a830e116c92f876fc8857a92f09c2c41eddabd685ee6c4948eecad1e85020"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_videos_20261126/Tilted_Starts_4_Demos.mp4": {
+      "bytes": 7709171,
+      "sha256": "01f7a236b938e3ab5ecc65395b3f23f285beaf9e1f078211bf7db669e32f577b"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_20261126/path/experiment/evaluation.json": {
+      "bytes": 60306,
+      "sha256": "23c8377e9f6134c50d73d36ac4bc35c14598b5bf0f3e77e45b13e531efdfdf4c"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_20261126/path/worker/reset_audit.jsonl": {
+      "bytes": 42824,
+      "sha256": "0e9a77b8f4afed2d275c9eb9b15b02510581fb59001c5da91d284f04dc07ec5c"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_20261126/path/worker/execution.json": {
+      "bytes": 2650,
+      "sha256": "39950ef1119d0b8a9ff08353127a968a3fbb2a6f69793901a8bd45a8e03e9ed6"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_20261126/path/result.json": {
+      "bytes": 3223,
+      "sha256": "80d6961dac126b51922d10d9a35cd30ea067342f25b54f7ce2743864960bb209"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_20261126/goal/experiment/evaluation.json": {
+      "bytes": 61949,
+      "sha256": "0decc9726fd743b6c11bbaddffc2193e3cd0f463979431c8298a079ba9774371"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_20261126/goal/worker/reset_audit.jsonl": {
+      "bytes": 42824,
+      "sha256": "0e9a77b8f4afed2d275c9eb9b15b02510581fb59001c5da91d284f04dc07ec5c"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_20261126/goal/worker/execution.json": {
+      "bytes": 2650,
+      "sha256": "2c419c6ac1aae3918332a839913f1f09d0fbce907e6dc6b9fdff54032e9bd27a"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_20261126/goal/result.json": {
+      "bytes": 3228,
+      "sha256": "bc32630985c194e52ab2d4bf660dc5b43986fd899a6b34533d5ddcd7b558fd04"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_videos_20261126/01_lateral/video_manifest.json": {
+      "bytes": 29395,
+      "sha256": "3407650ea2ef310b12d4d1363bdff51430da2a7b6dfee4468dd7e3d19d4f9857"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_videos_20261126/01_lateral/system1_vs_system0.mp4": {
+      "bytes": 2203988,
+      "sha256": "976627e9f0c34c12e8cfb157fc55ccf36d9b387a8b6ce3c9f745e54c5a02ee2c"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_videos_20261126/02_pitch/video_manifest.json": {
+      "bytes": 28321,
+      "sha256": "a57ec47b33074d6dab74db56bb119b7a1d2529dbf02095afec2ba821aeea5d32"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_videos_20261126/02_pitch/system1_vs_system0.mp4": {
+      "bytes": 1674871,
+      "sha256": "f12bae0fea38e7099809c0d70276aa30eb3de29630de1f9a3ebfc0b632577de0"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_videos_20261126/03_yaw/video_manifest.json": {
+      "bytes": 30778,
+      "sha256": "f81231941be9d7ab39470a228498a378877d2ea33cd313b1fd6e410996b0955e"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_videos_20261126/03_yaw/system1_vs_system0.mp4": {
+      "bytes": 2215496,
+      "sha256": "26d87a54d61d7b0dd7bd98c9102455507a7ec9375ed6fe253c809acf52d6ad74"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_videos_20261126/04_combined/video_manifest.json": {
+      "bytes": 28244,
+      "sha256": "a0e96a68a1049b6ef1a831c6d0d1da3d476a11c9c5c5980693e22ccd6c279e4a"
+    },
+    "/data/shapeforge/runtime/runs/s0_initial_pose_videos_20261126/04_combined/system1_vs_system0.mp4": {
+      "bytes": 1616210,
+      "sha256": "8b6605f1f12fcf29c9fb7fd8c36741c4c5a048cbe88a538eaad1e3734319f868"
+    }
+  }
+}

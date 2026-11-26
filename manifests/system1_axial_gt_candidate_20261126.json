@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-26",
+  "status": "candidate_axial_rule_generated_discrete_checks_passed",
+  "output_root": "/data/shapeforge/runtime/runs/hier_s1_gt_axial_20261126_v2",
+  "source": "/data/shapeforge/runtime/runs/hier_s1_gt_pose_assets_20261126_v1",
+  "metrics": [
+    {
+      "old_last_tip_segment_angle_deg": 68.67694746161096,
+      "new_last_tip_segment_angle_deg": 0.0,
+      "axial_segment_max_angle_deg": 0.0,
+      "axial_segment_lateral_max_mm": 4.7801934847054885e-14,
+      "staging_tip_gap_mm": 24.999999999999982,
+      "end_tip_gap_mm": 4.999999999999968,
+      "alignment_complete_before_straight_deg": 2.35910387883028e-15
+    },
+    {
+      "old_last_tip_segment_angle_deg": 59.083229336217414,
+      "new_last_tip_segment_angle_deg": 0.0,
+      "axial_segment_max_angle_deg": 0.0,
+      "axial_segment_lateral_max_mm": 4.7801934847054885e-14,
+      "staging_tip_gap_mm": 24.999999999999982,
+      "end_tip_gap_mm": 4.999999999999968,
+      "alignment_complete_before_straight_deg": 6.7860886819883894e-15
+    },
+    {
+      "old_last_tip_segment_angle_deg": 44.52861010463609,
+      "new_last_tip_segment_angle_deg": 0.0,
+      "axial_segment_max_angle_deg": 0.0,
+      "axial_segment_lateral_max_mm": 4.7801934847054885e-14,
+      "staging_tip_gap_mm": 24.99999999999993,
+      "end_tip_gap_mm": 4.999999999999968,
+      "alignment_complete_before_straight_deg": 2.678850840738129e-15
+    }
+  ],
+  "ik_waypoints": 255,
+  "geometry": {
+    "cases": [
+      {
+        "id": 0,
+        "sample_count": 85,
+        "collision_samples": [],
+        "minimum_module_surface_gap_to_mouth_plane_mm": 4.999999207990676,
+        "max_tcp_sample_step_mm": 1.9517187103765867
+      },
+      {
+        "id": 1,
+        "sample_count": 85,
+        "collision_samples": [],
+        "minimum_module_surface_gap_to_mouth_plane_mm": 4.999999207990676,
+        "max_tcp_sample_step_mm": 2.130176809370299
+      },
+      {
+        "id": 2,
+        "sample_count": 85,
+        "collision_samples": [],
+        "minimum_module_surface_gap_to_mouth_plane_mm": 4.999999207990676,
+        "max_tcp_sample_step_mm": 1.9900460832590179
+      }
+    ],
+    "all_sampled_visual_mesh_pairs_clear": true,
+    "scope": "discrete gripper/module visual meshes against socket assembly only; no continuous sweep, robot self-collision, full environment or dynamics verification"
+  },
+  "runtime_integrated": false,
+  "training": false,
+  "physical_execution": false,
+  "artifacts": {
+    "case_02_corrected.png": {
+      "bytes": 1466535,
+      "sha256": "e9590911c98c7a31104d10723fe4d167eb8fb15d3772e1b463b8002e0c0a4eda"
+    },
+    "case_01_corrected.png": {
+      "bytes": 1456820,
+      "sha256": "6d80177ff854d37f6d16f0ba79ae0218ec7d5dcff5d35dbd13f29bd404d10308"
+    },
+    "case_00_corrected.png": {
+      "bytes": 1466532,
+      "sha256": "33703e0503cb8eb822a107d2b76837165a2c438f6e8b8af35587b6900a4de431"
+    },
+    "corrected_poses.png": {
+      "bytes": 959618,
+      "sha256": "6797e9f3212722f0b2a6bbde7a06a69d16724e47c8b8c9959ec211c6f7de268b"
+    },
+    "gt_endpoint.blend": {
+      "bytes": 7086900,
+      "sha256": "afb995eea52bfb5e359d7f57281045e4cc9fe77c62debcbf1ad9d6f3be9a1837"
+    },
+    "axial_reference.json": {
+      "bytes": 262448,
+      "sha256": "4aceaee40d0628c80688ecfaf8214c05d91f4263ebe551b3b40b59625713f81e"
+    },
+    "geometry_audit.json": {
+      "bytes": 860,
+      "sha256": "061e690f8041c409a10399b7c12edf2d13c78fd3fbecc3ffd5b5e8e94c5103b4"
+    },
+    "explanation.json": {
+      "bytes": 21153,
+      "sha256": "b943b63814a1feb0d751b292008cbf9fda8f95a648bb6bb9c8076b4113c9bff0"
+    },
+    "build_axial_system1_gt.py": {
+      "bytes": 10863,
+      "sha256": "485e5f308097b072d4cd9798ff7044c8f8fcbe1ac5ccd5ca10d47b7fd65df495"
+    },
+    "audit_axial_reference_geometry.py": {
+      "bytes": 2420,
+      "sha256": "ffd5cb965ac43da03a7a98d0e9e3b28b7ed541e101de9bfe588a60d2db25c7d4"
+    },
+    "explain_system1_gt_blender.py": {
+      "bytes": 2406,
+      "sha256": "3d4557b3c0398b1ac982c5f62292bd92bfcc3ff40f5d589cae19ed919d7174f4"
+    },
+    "render_system1_orientation.py": {
+      "bytes": 14634,
+      "sha256": "5cf80f0203983d6772927a87e97eb33a298b88477cdaadbbf1c4191146222b27"
+    },
+    "render_system1_far.py": {
+      "bytes": 9455,
+      "sha256": "784800dac4ae2d521deb2c62257da6c7d60d3bfe9c911a7c4e84ee8938df8237"
+    },
+    "render_system1_assets.py": {
+      "bytes": 10933,
+      "sha256": "e89d789ad0cf4950ede60043ded68a26b1d992529877a064a6861c4f1ec6eeb4"
+    },
+    "render_system1_paths.py": {
+      "bytes": 12430,
+      "sha256": "23119950ef87cad911d99ad7b990efaead7fe1e2895b964a02b47a16c1599f2d"
+    }
+  }
+}

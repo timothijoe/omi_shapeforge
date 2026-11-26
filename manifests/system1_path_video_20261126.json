@@ -1,0 +1,135 @@
+{
+  "date": "2026-11-26",
+  "status": "completed_autonomous_policy_recording_replay",
+  "output_root": "/data/shapeforge/runtime/runs/s1_path_video_20261126",
+  "delivery": "/home/linux/Downloads/System1_vs_System0_20261126.mp4",
+  "duration_seconds": 29.6,
+  "scope": "first preregistered paired test case, no teacher; recorded PhysX joint-state visual replay",
+  "source_selection": {
+    "scope": "first preregistered test target; both autonomous policies; visual replay, not a new physics trial",
+    "training_seed": 340000,
+    "evaluation_seed": 330000,
+    "modes": {
+      "path": {
+        "evaluation": {
+          "seed": 330000,
+          "success": true,
+          "steps": 341,
+          "reward": 1.6236677846875598,
+          "attempted_steps": 341,
+          "control_rejection": null,
+          "backward_motion_steps": 8,
+          "failure": null,
+          "teacher_requests": 0,
+          "socket_pose": {
+            "dx_mm": -2.5,
+            "dy_mm": -2.5,
+            "yaw_deg": 0.0
+          },
+          "final_depth_mm": 51.27923403832053,
+          "lateral_error_mm": 0.09284938281415941,
+          "alignment_angle_deg": 0.015757421810229055,
+          "max_contact_mean_N": 0.14851375482976542
+        },
+        "worker": "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/test_path_340000/worker",
+        "states": "/data/shapeforge/runtime/runs/s1_path_video_20261126/path_states.json",
+        "states_sha256": "b1cde7faff9ca033c72cb082a00bd6eafca8fa27a29a9f9bfb6b5057557c7215",
+        "model": "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/rl_path_340000/experiment/system0.zip",
+        "model_sha256": "c152bc8497d3204bf4c094187e997d1c328cdd2d41f07a9e689204d11bb038d1",
+        "source_evaluation": "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/test_path_340000/experiment/evaluation.json"
+      },
+      "goal": {
+        "evaluation": {
+          "seed": 330000,
+          "success": false,
+          "steps": 766,
+          "reward": 6.2068464432168104,
+          "attempted_steps": 767,
+          "control_rejection": {
+            "seed": 330000,
+            "attempted_step": 767,
+            "policy_action": [
+              -1.0,
+              -1.0,
+              -1.0,
+              1.0,
+              -1.0,
+              0.915215253829956
+            ],
+            "error": "IKError: SDK IK rejected: ok=True, unreachable=False, joint_limit=True, singular=[False, False, False, False, False, False, False]",
+            "action_accepted": false
+          },
+          "backward_motion_steps": 438,
+          "failure": "ik_action_rejected",
+          "teacher_requests": 0,
+          "socket_pose": {
+            "dx_mm": -2.5,
+            "dy_mm": -2.5,
+            "yaw_deg": 0.0
+          },
+          "final_depth_mm": -194.853064511346,
+          "lateral_error_mm": 235.1338450215292,
+          "alignment_angle_deg": 136.56174855136865,
+          "max_contact_mean_N": 0.0
+        },
+        "worker": "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/test_goal_340000/worker",
+        "states": "/data/shapeforge/runtime/runs/s1_path_video_20261126/goal_states.json",
+        "states_sha256": "e535f56f6798a1f467a0f61fd5fe9a13ebce1657326429b30728e619cf21abc7",
+        "model": "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/rl_goal_340000/experiment/system0.zip",
+        "model_sha256": "f34a34a6e2957626fb949504123bc382aa02c76cc73e5f7b44cc8131e71fd7b4",
+        "source_evaluation": "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/test_goal_340000/experiment/evaluation.json"
+      }
+    },
+    "transfer": "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer"
+  },
+  "capture_checks": {
+    "path": {
+      "max_tcp_error_m": 4.2708056236091334e-07,
+      "max_rotation_matrix_error": 7.772602769375719e-07,
+      "source_steps": 341
+    },
+    "goal": {
+      "max_tcp_error_m": 4.889823301362007e-07,
+      "max_rotation_matrix_error": 7.630032757277583e-07,
+      "source_steps": 766
+    }
+  },
+  "tests": {
+    "passed": 29,
+    "skipped": 66
+  },
+  "artifacts": {
+    "/data/shapeforge/runtime/runs/s1_path_video_20261126/system1_vs_system0.mp4": {
+      "bytes": 3536505,
+      "sha256": "31184e591bfd2a2cf185fb3764b540bb046309c6309339e0a2388541c200753e"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_video_20261126/preview.jpg": {
+      "bytes": 386878,
+      "sha256": "c261164d91b35b3ead9df87bf7fce60db253b05d0cc57a4e1f2588a547efc158"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_video_20261126/selection.json": {
+      "bytes": 3163,
+      "sha256": "51be1cd54cac7a26a0732b32a82fad2be3379ca38a3469cc792880ddf35d9f6e"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_video_20261126/capture/capture_report.json": {
+      "bytes": 7480,
+      "sha256": "5dc134d168b31ef40dff6525756884fb71ddb9fc1c008efae77052f041ae49e6"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_video_20261126/video_manifest.json": {
+      "bytes": 12185,
+      "sha256": "a7fe0fd10c7da551e98138cf889051fe2965a616d33d7970b55acafed49c5859"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_video_20261126/source_hashes.json": {
+      "bytes": 946,
+      "sha256": "06457447e7c717fd61adf6e178afa9525edece6f526ad8508a8daf1dc04c90d2"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_video_20261126/path_states.json": {
+      "bytes": 1099174,
+      "sha256": "b1cde7faff9ca033c72cb082a00bd6eafca8fa27a29a9f9bfb6b5057557c7215"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_video_20261126/goal_states.json": {
+      "bytes": 2403091,
+      "sha256": "e535f56f6798a1f467a0f61fd5fe9a13ebce1657326429b30728e619cf21abc7"
+    }
+  }
+}

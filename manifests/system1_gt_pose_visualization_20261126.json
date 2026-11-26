@@ -1,0 +1,946 @@
+{
+  "date": "2026-11-26",
+  "status": "moved_rotated_starts_and_gt_only_views_complete",
+  "probe_root": "/data/shapeforge/runtime/runs/hier_s1_gt_pose_20261126_v1",
+  "output_root": "/data/shapeforge/runtime/runs/hier_s1_gt_pose_visual_20261126_v1",
+  "cases": [
+    {
+      "id": 0,
+      "seed": 150000,
+      "name": "left_high_tilt",
+      "requested_lateral_mm": -20.0,
+      "requested_vertical_mm": 12.0,
+      "requested_distance_mm": 50.0,
+      "requested_rotation_vector_deg": [
+        12.0,
+        8.0,
+        -15.0
+      ],
+      "target_tcp_m": [
+        0.34033490214830614,
+        0.26054421647659637,
+        0.8707736922536884
+      ],
+      "actual_tcp_m": [
+        0.34035822668299215,
+        0.2605319336651971,
+        0.8707561494895002
+      ],
+      "actual_tcp_rotation": [
+        [
+          0.20651132616199405,
+          -0.2475425305029578,
+          0.9466127866023187
+        ],
+        [
+          0.12568268055718146,
+          -0.9527414505146233,
+          -0.2765639027046978
+        ],
+        [
+          0.9703385677044772,
+          0.17608641078596657,
+          -0.16564009164975724
+        ]
+      ],
+      "setup_position_error_mm": 0.03166464826191993,
+      "setup_rotation_error_deg": 0.0058903296322022685,
+      "actual_tip_socket_mm": [
+        -20.318654863542964,
+        51.82370606364378,
+        12.306022108217137
+      ],
+      "actual_depth_mm": -49.97372042822927,
+      "actual_angular_offset_deg": 20.80622397094402,
+      "translation_error_mm": 60.97409050567094,
+      "rotation_error_deg": 20.824787952348796,
+      "preview_tip_error_mm": 1.8818208063815487,
+      "teacher_requests": 0,
+      "prediction_executed": false,
+      "preparation_steps": 754
+    },
+    {
+      "id": 1,
+      "seed": 150001,
+      "name": "right_low_roll",
+      "requested_lateral_mm": 20.0,
+      "requested_vertical_mm": -12.0,
+      "requested_distance_mm": 70.0,
+      "requested_rotation_vector_deg": [
+        -10.0,
+        -12.0,
+        18.0
+      ],
+      "target_tcp_m": [
+        0.3209264444635936,
+        0.14762220298291553,
+        0.741205164615445
+      ],
+      "actual_tcp_m": [
+        0.32089362362823737,
+        0.147619965867466,
+        0.7411880141252043
+      ],
+      "actual_tcp_rotation": [
+        [
+          -0.15948779638695207,
+          0.313274648180369,
+          0.9361744696428657
+        ],
+        [
+          -0.22574910470309584,
+          -0.9347586912124856,
+          0.2743419962901639
+        ],
+        [
+          0.9610416143588086,
+          -0.16758634792305657,
+          0.2198040751679261
+        ]
+      ],
+      "setup_position_error_mm": 0.03709920800379694,
+      "setup_rotation_error_deg": 0.008285018589732556,
+      "actual_tip_socket_mm": [
+        19.686745463340564,
+        71.87483350512235,
+        -11.739763636161845
+      ],
+      "actual_depth_mm": -70.02483049790335,
+      "actual_angular_offset_deg": 23.83136876856013,
+      "translation_error_mm": 79.22576690742075,
+      "rotation_error_deg": 23.779783627662294,
+      "preview_tip_error_mm": 1.3755849787758558,
+      "teacher_requests": 0,
+      "prediction_executed": false,
+      "preparation_steps": 865
+    },
+    {
+      "id": 2,
+      "seed": 150002,
+      "name": "left_low_opposite_tilt",
+      "requested_lateral_mm": -15.0,
+      "requested_vertical_mm": -15.0,
+      "requested_distance_mm": 90.0,
+      "requested_rotation_vector_deg": [
+        15.0,
+        -10.0,
+        8.0
+      ],
+      "target_tcp_m": [
+        0.29662778080458496,
+        0.1476832324345127,
+        0.860032719980406
+      ],
+      "actual_tcp_m": [
+        0.29661378935569455,
+        0.14765715287130382,
+        0.8600397417553773
+      ],
+      "actual_tcp_rotation": [
+        [
+          0.24809847812238447,
+          0.10865390499753955,
+          0.962622186572771
+        ],
+        [
+          -0.14514061697927882,
+          -0.9783046951786702,
+          0.14783140631896818
+        ],
+        [
+          0.9578002643851333,
+          -0.17639232500354204,
+          -0.2269458112052607
+        ]
+      ],
+      "setup_position_error_mm": 0.03041725797910696,
+      "setup_rotation_error_deg": 0.005915073486418827,
+      "actual_tip_socket_mm": [
+        -15.353720481165691,
+        91.86060588041417,
+        -14.697168213507721
+      ],
+      "actual_depth_mm": -90.01063659981035,
+      "actual_angular_offset_deg": 19.720541278033018,
+      "translation_error_mm": 90.8390234634451,
+      "rotation_error_deg": 19.809182680466538,
+      "preview_tip_error_mm": 1.0926432657652765,
+      "teacher_requests": 0,
+      "prediction_executed": false,
+      "preparation_steps": 936
+    }
+  ],
+  "physics_receipt": {
+    "complete": true,
+    "error": null,
+    "worker": {
+      "command": [
+        "/data/isaac-sim-5.1.0/python.sh",
+        "-u",
+        "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/isaac_rl_worker.py",
+        "--transfer",
+        "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer",
+        "--output",
+        "/data/shapeforge/runtime/runs/hier_s1_gt_pose_20261126_v1/worker",
+        "--socket",
+        "/data/shapeforge/runtime/runs/hier_s1_gt_pose_20261126_v1/worker.sock",
+        "--max-steps",
+        "1900",
+        "--physics-substeps",
+        "5",
+        "--ik-backend",
+        "tianji",
+        "--tianji-sdk",
+        "/data/shapeforge/runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/vendor/optical_module_pu/source/OpticalModule_PU/Arm_control",
+        "--teacher-min-step-mm",
+        ".05",
+        "--target-overtravel-mm",
+        ".1"
+      ],
+      "state": "exited",
+      "start_new_session": true,
+      "returncode": 0,
+      "pid": 1649399,
+      "pgid": 1649399,
+      "elapsed_seconds": 159.9904353969905
+    }
+  },
+  "waypoint_audit": {
+    "cases": [
+      {
+        "id": 0,
+        "waypoints": [
+          {
+            "index": 0,
+            "valid": true,
+            "fk_position_error_mm": 0.0036566582264854885,
+            "fk_angle_error_deg": 0.0013900589545216072
+          },
+          {
+            "index": 1,
+            "valid": true,
+            "fk_position_error_mm": 0.003620734939835401,
+            "fk_angle_error_deg": 0.001389465669316508
+          },
+          {
+            "index": 2,
+            "valid": true,
+            "fk_position_error_mm": 0.003566427825411935,
+            "fk_angle_error_deg": 0.0013859289255489158
+          },
+          {
+            "index": 3,
+            "valid": true,
+            "fk_position_error_mm": 0.003481108615591592,
+            "fk_angle_error_deg": 0.001379680018918425
+          },
+          {
+            "index": 4,
+            "valid": true,
+            "fk_position_error_mm": 0.003638632971137694,
+            "fk_angle_error_deg": 0.0014024491991728686
+          },
+          {
+            "index": 5,
+            "valid": true,
+            "fk_position_error_mm": 0.0035644195564927426,
+            "fk_angle_error_deg": 0.0013969991751505155
+          },
+          {
+            "index": 6,
+            "valid": true,
+            "fk_position_error_mm": 0.0035268149434422723,
+            "fk_angle_error_deg": 0.0013965471463625598
+          },
+          {
+            "index": 7,
+            "valid": true,
+            "fk_position_error_mm": 0.0034828062373822174,
+            "fk_angle_error_deg": 0.0013967245764791275
+          },
+          {
+            "index": 8,
+            "valid": true,
+            "fk_position_error_mm": 0.003443126583148297,
+            "fk_angle_error_deg": 0.0013951231775225358
+          },
+          {
+            "index": 9,
+            "valid": true,
+            "fk_position_error_mm": 0.0034071783193541797,
+            "fk_angle_error_deg": 0.0013957456279016696
+          },
+          {
+            "index": 10,
+            "valid": true,
+            "fk_position_error_mm": 0.003375664987891827,
+            "fk_angle_error_deg": 0.0013973361468901284
+          },
+          {
+            "index": 11,
+            "valid": true,
+            "fk_position_error_mm": 0.003337325939970546,
+            "fk_angle_error_deg": 0.001396442175998759
+          },
+          {
+            "index": 12,
+            "valid": true,
+            "fk_position_error_mm": 0.0033061673450450186,
+            "fk_angle_error_deg": 0.00139715430491826
+          },
+          {
+            "index": 13,
+            "valid": true,
+            "fk_position_error_mm": 0.0032718243975163883,
+            "fk_angle_error_deg": 0.0013984155936797658
+          },
+          {
+            "index": 14,
+            "valid": true,
+            "fk_position_error_mm": 0.0032387475847047206,
+            "fk_angle_error_deg": 0.0013975255162078735
+          },
+          {
+            "index": 15,
+            "valid": true,
+            "fk_position_error_mm": 0.003194042505194131,
+            "fk_angle_error_deg": 0.0013954446494658696
+          },
+          {
+            "index": 16,
+            "valid": true,
+            "fk_position_error_mm": 0.003161166046899687,
+            "fk_angle_error_deg": 0.0013946614784384201
+          },
+          {
+            "index": 17,
+            "valid": true,
+            "fk_position_error_mm": 0.003126801630633825,
+            "fk_angle_error_deg": 0.001394265049149216
+          },
+          {
+            "index": 18,
+            "valid": true,
+            "fk_position_error_mm": 0.0030928703352136487,
+            "fk_angle_error_deg": 0.0013935508213598232
+          },
+          {
+            "index": 19,
+            "valid": true,
+            "fk_position_error_mm": 0.0030618577337850556,
+            "fk_angle_error_deg": 0.0013928109333438475
+          },
+          {
+            "index": 20,
+            "valid": true,
+            "fk_position_error_mm": 0.0030311521149986856,
+            "fk_angle_error_deg": 0.0013923608498816046
+          },
+          {
+            "index": 21,
+            "valid": true,
+            "fk_position_error_mm": 0.0030027483400290374,
+            "fk_angle_error_deg": 0.0013916380624533799
+          },
+          {
+            "index": 22,
+            "valid": true,
+            "fk_position_error_mm": 0.0029733379118688287,
+            "fk_angle_error_deg": 0.001390201458789461
+          },
+          {
+            "index": 23,
+            "valid": true,
+            "fk_position_error_mm": 0.002948791859559391,
+            "fk_angle_error_deg": 0.0013896408532093724
+          },
+          {
+            "index": 24,
+            "valid": true,
+            "fk_position_error_mm": 0.0029252507210984105,
+            "fk_angle_error_deg": 0.0013885942582333732
+          },
+          {
+            "index": 25,
+            "valid": true,
+            "fk_position_error_mm": 0.002903496484651314,
+            "fk_angle_error_deg": 0.0013875322451494716
+          },
+          {
+            "index": 26,
+            "valid": true,
+            "fk_position_error_mm": 0.002885672987129678,
+            "fk_angle_error_deg": 0.0013869960202204906
+          },
+          {
+            "index": 27,
+            "valid": true,
+            "fk_position_error_mm": 0.0028719845802392054,
+            "fk_angle_error_deg": 0.001386507272317417
+          },
+          {
+            "index": 28,
+            "valid": true,
+            "fk_position_error_mm": 0.0028577013519552625,
+            "fk_angle_error_deg": 0.0013859745544858753
+          },
+          {
+            "index": 29,
+            "valid": true,
+            "fk_position_error_mm": 0.0028488411608639627,
+            "fk_angle_error_deg": 0.0013854103375251581
+          },
+          {
+            "index": 30,
+            "valid": true,
+            "fk_position_error_mm": 0.0028427463929594932,
+            "fk_angle_error_deg": 0.0013858223286749812
+          },
+          {
+            "index": 31,
+            "valid": true,
+            "fk_position_error_mm": 0.0028405572616654272,
+            "fk_angle_error_deg": 0.00138566315560789
+          },
+          {
+            "index": 32,
+            "valid": true,
+            "fk_position_error_mm": 0.002843887452582042,
+            "fk_angle_error_deg": 0.0013862942526218663
+          }
+        ],
+        "all_33_reachable": true,
+        "rule_endpoint_position_error_mm": 1.688305753616065e-13,
+        "rule_endpoint_rotation_error_deg": 1.6388587298484862e-14
+      },
+      {
+        "id": 1,
+        "waypoints": [
+          {
+            "index": 0,
+            "valid": true,
+            "fk_position_error_mm": 0.003160122665585012,
+            "fk_angle_error_deg": 0.0012594261898917676
+          },
+          {
+            "index": 1,
+            "valid": true,
+            "fk_position_error_mm": 0.0031500902907518995,
+            "fk_angle_error_deg": 0.0012611360256866507
+          },
+          {
+            "index": 2,
+            "valid": true,
+            "fk_position_error_mm": 0.0031411108629921594,
+            "fk_angle_error_deg": 0.001263588573320613
+          },
+          {
+            "index": 3,
+            "valid": true,
+            "fk_position_error_mm": 0.0031378294895860553,
+            "fk_angle_error_deg": 0.0012659786991417628
+          },
+          {
+            "index": 4,
+            "valid": true,
+            "fk_position_error_mm": 0.003131060222033572,
+            "fk_angle_error_deg": 0.001268939579152883
+          },
+          {
+            "index": 5,
+            "valid": true,
+            "fk_position_error_mm": 0.003128019557253755,
+            "fk_angle_error_deg": 0.0012723561477643304
+          },
+          {
+            "index": 6,
+            "valid": true,
+            "fk_position_error_mm": 0.0031254126885208147,
+            "fk_angle_error_deg": 0.0012763739530470854
+          },
+          {
+            "index": 7,
+            "valid": true,
+            "fk_position_error_mm": 0.0031277486357680893,
+            "fk_angle_error_deg": 0.0012798209130045848
+          },
+          {
+            "index": 8,
+            "valid": true,
+            "fk_position_error_mm": 0.0031210997876757796,
+            "fk_angle_error_deg": 0.0012840029641034217
+          },
+          {
+            "index": 9,
+            "valid": true,
+            "fk_position_error_mm": 0.0031204817930095227,
+            "fk_angle_error_deg": 0.0012886236892935765
+          },
+          {
+            "index": 10,
+            "valid": true,
+            "fk_position_error_mm": 0.003136899284511265,
+            "fk_angle_error_deg": 0.0012935996608496102
+          },
+          {
+            "index": 11,
+            "valid": true,
+            "fk_position_error_mm": 0.003125975973453262,
+            "fk_angle_error_deg": 0.001298039747238261
+          },
+          {
+            "index": 12,
+            "valid": true,
+            "fk_position_error_mm": 0.003125712841796356,
+            "fk_angle_error_deg": 0.0013038514213371802
+          },
+          {
+            "index": 13,
+            "valid": true,
+            "fk_position_error_mm": 0.0031424444075840202,
+            "fk_angle_error_deg": 0.0013090758047482305
+          },
+          {
+            "index": 14,
+            "valid": true,
+            "fk_position_error_mm": 0.0031661280352203247,
+            "fk_angle_error_deg": 0.0013152045413275509
+          },
+          {
+            "index": 15,
+            "valid": true,
+            "fk_position_error_mm": 0.0031807673148045753,
+            "fk_angle_error_deg": 0.001321251744935975
+          },
+          {
+            "index": 16,
+            "valid": true,
+            "fk_position_error_mm": 0.003195054332225909,
+            "fk_angle_error_deg": 0.0013247567949878952
+          },
+          {
+            "index": 17,
+            "valid": true,
+            "fk_position_error_mm": 0.0031793549758900846,
+            "fk_angle_error_deg": 0.0013351872721572226
+          },
+          {
+            "index": 18,
+            "valid": true,
+            "fk_position_error_mm": 0.0031584698584450057,
+            "fk_angle_error_deg": 0.001345871577727004
+          },
+          {
+            "index": 19,
+            "valid": true,
+            "fk_position_error_mm": 0.0032304454535652598,
+            "fk_angle_error_deg": 0.001335638739080622
+          },
+          {
+            "index": 20,
+            "valid": true,
+            "fk_position_error_mm": 0.003263058751339041,
+            "fk_angle_error_deg": 0.0013343156268850209
+          },
+          {
+            "index": 21,
+            "valid": true,
+            "fk_position_error_mm": 0.0032295520536024013,
+            "fk_angle_error_deg": 0.0013483258906004736
+          },
+          {
+            "index": 22,
+            "valid": true,
+            "fk_position_error_mm": 0.003239198266858985,
+            "fk_angle_error_deg": 0.0013515529208485374
+          },
+          {
+            "index": 23,
+            "valid": true,
+            "fk_position_error_mm": 0.003243081084942475,
+            "fk_angle_error_deg": 0.0013566456435994917
+          },
+          {
+            "index": 24,
+            "valid": true,
+            "fk_position_error_mm": 0.003243314433679784,
+            "fk_angle_error_deg": 0.0013617803766507346
+          },
+          {
+            "index": 25,
+            "valid": true,
+            "fk_position_error_mm": 0.0032481734896904167,
+            "fk_angle_error_deg": 0.0013649313008769052
+          },
+          {
+            "index": 26,
+            "valid": true,
+            "fk_position_error_mm": 0.003249746568196324,
+            "fk_angle_error_deg": 0.001368299342266897
+          },
+          {
+            "index": 27,
+            "valid": true,
+            "fk_position_error_mm": 0.0032516228684400677,
+            "fk_angle_error_deg": 0.0013713392387736838
+          },
+          {
+            "index": 28,
+            "valid": true,
+            "fk_position_error_mm": 0.0032464548901221637,
+            "fk_angle_error_deg": 0.0013744501166187482
+          },
+          {
+            "index": 29,
+            "valid": true,
+            "fk_position_error_mm": 0.003233367888326224,
+            "fk_angle_error_deg": 0.0013782445258207834
+          },
+          {
+            "index": 30,
+            "valid": true,
+            "fk_position_error_mm": 0.003225934325856016,
+            "fk_angle_error_deg": 0.001380245136848925
+          },
+          {
+            "index": 31,
+            "valid": true,
+            "fk_position_error_mm": 0.00321622121338438,
+            "fk_angle_error_deg": 0.0013812642575418486
+          },
+          {
+            "index": 32,
+            "valid": true,
+            "fk_position_error_mm": 0.003202116222161712,
+            "fk_angle_error_deg": 0.0013826296058353756
+          }
+        ],
+        "all_33_reachable": true,
+        "rule_endpoint_position_error_mm": 1.2719202621569003e-13,
+        "rule_endpoint_rotation_error_deg": 2.0341339856785035e-14
+      },
+      {
+        "id": 2,
+        "waypoints": [
+          {
+            "index": 0,
+            "valid": true,
+            "fk_position_error_mm": 0.00238640579908324,
+            "fk_angle_error_deg": 0.001379852932255753
+          },
+          {
+            "index": 1,
+            "valid": true,
+            "fk_position_error_mm": 0.002395666091062564,
+            "fk_angle_error_deg": 0.0013812193601076966
+          },
+          {
+            "index": 2,
+            "valid": true,
+            "fk_position_error_mm": 0.0024138879394893713,
+            "fk_angle_error_deg": 0.0013822505235063344
+          },
+          {
+            "index": 3,
+            "valid": true,
+            "fk_position_error_mm": 0.002396665551633151,
+            "fk_angle_error_deg": 0.0013815601731911582
+          },
+          {
+            "index": 4,
+            "valid": true,
+            "fk_position_error_mm": 0.0024158095760328318,
+            "fk_angle_error_deg": 0.0013826015929498884
+          },
+          {
+            "index": 5,
+            "valid": true,
+            "fk_position_error_mm": 0.00240342395846899,
+            "fk_angle_error_deg": 0.0013818937099883037
+          },
+          {
+            "index": 6,
+            "valid": true,
+            "fk_position_error_mm": 0.0024431025003245105,
+            "fk_angle_error_deg": 0.0013823399241450676
+          },
+          {
+            "index": 7,
+            "valid": true,
+            "fk_position_error_mm": 0.002440256574765742,
+            "fk_angle_error_deg": 0.0013809383756360567
+          },
+          {
+            "index": 8,
+            "valid": true,
+            "fk_position_error_mm": 0.0025214140370008833,
+            "fk_angle_error_deg": 0.001382795662982869
+          },
+          {
+            "index": 9,
+            "valid": true,
+            "fk_position_error_mm": 0.002564781643999245,
+            "fk_angle_error_deg": 0.0013831042908428865
+          },
+          {
+            "index": 10,
+            "valid": true,
+            "fk_position_error_mm": 0.0025343768115342435,
+            "fk_angle_error_deg": 0.0013805937595888285
+          },
+          {
+            "index": 11,
+            "valid": true,
+            "fk_position_error_mm": 0.0025631881043291877,
+            "fk_angle_error_deg": 0.0013797840621566622
+          },
+          {
+            "index": 12,
+            "valid": true,
+            "fk_position_error_mm": 0.0026140380573798747,
+            "fk_angle_error_deg": 0.0013803019672241539
+          },
+          {
+            "index": 13,
+            "valid": true,
+            "fk_position_error_mm": 0.0026367658067311525,
+            "fk_angle_error_deg": 0.0013797288139498077
+          },
+          {
+            "index": 14,
+            "valid": true,
+            "fk_position_error_mm": 0.0026391038689872323,
+            "fk_angle_error_deg": 0.0013776961681564851
+          },
+          {
+            "index": 15,
+            "valid": true,
+            "fk_position_error_mm": 0.0027394347427611614,
+            "fk_angle_error_deg": 0.0013799426407289847
+          },
+          {
+            "index": 16,
+            "valid": true,
+            "fk_position_error_mm": 0.002690157533768653,
+            "fk_angle_error_deg": 0.001376481465421805
+          },
+          {
+            "index": 17,
+            "valid": true,
+            "fk_position_error_mm": 0.002768473060187336,
+            "fk_angle_error_deg": 0.0013780578895559626
+          },
+          {
+            "index": 18,
+            "valid": true,
+            "fk_position_error_mm": 0.0027588339271134026,
+            "fk_angle_error_deg": 0.0013760481455336183
+          },
+          {
+            "index": 19,
+            "valid": true,
+            "fk_position_error_mm": 0.0027658602697386435,
+            "fk_angle_error_deg": 0.0013747815665944771
+          },
+          {
+            "index": 20,
+            "valid": true,
+            "fk_position_error_mm": 0.002788681666627222,
+            "fk_angle_error_deg": 0.0013749609864742436
+          },
+          {
+            "index": 21,
+            "valid": true,
+            "fk_position_error_mm": 0.0028322005217341685,
+            "fk_angle_error_deg": 0.0013753967507751208
+          },
+          {
+            "index": 22,
+            "valid": true,
+            "fk_position_error_mm": 0.0028305491053885446,
+            "fk_angle_error_deg": 0.0013738920142952382
+          },
+          {
+            "index": 23,
+            "valid": true,
+            "fk_position_error_mm": 0.0028756909640652094,
+            "fk_angle_error_deg": 0.001375465934823407
+          },
+          {
+            "index": 24,
+            "valid": true,
+            "fk_position_error_mm": 0.002870254177215913,
+            "fk_angle_error_deg": 0.0013746474889763426
+          },
+          {
+            "index": 25,
+            "valid": true,
+            "fk_position_error_mm": 0.002899509297367771,
+            "fk_angle_error_deg": 0.0013757610210864161
+          },
+          {
+            "index": 26,
+            "valid": true,
+            "fk_position_error_mm": 0.0028818985180598523,
+            "fk_angle_error_deg": 0.0013752426603769073
+          },
+          {
+            "index": 27,
+            "valid": true,
+            "fk_position_error_mm": 0.0029119415990385045,
+            "fk_angle_error_deg": 0.0013767328784440207
+          },
+          {
+            "index": 28,
+            "valid": true,
+            "fk_position_error_mm": 0.0028982867253099006,
+            "fk_angle_error_deg": 0.0013758488932138144
+          },
+          {
+            "index": 29,
+            "valid": true,
+            "fk_position_error_mm": 0.0029191170587897215,
+            "fk_angle_error_deg": 0.0013782504768757484
+          },
+          {
+            "index": 30,
+            "valid": true,
+            "fk_position_error_mm": 0.002909793531577674,
+            "fk_angle_error_deg": 0.0013778152082149693
+          },
+          {
+            "index": 31,
+            "valid": true,
+            "fk_position_error_mm": 0.002926758719247476,
+            "fk_angle_error_deg": 0.0013804091830136817
+          },
+          {
+            "index": 32,
+            "valid": true,
+            "fk_position_error_mm": 0.0029073195146123447,
+            "fk_angle_error_deg": 0.0013802165616647651
+          }
+        ],
+        "all_33_reachable": true,
+        "rule_endpoint_position_error_mm": 6.206335383118183e-14,
+        "rule_endpoint_rotation_error_deg": 1.64604627956874e-14
+      }
+    ],
+    "all_passed": true,
+    "scope": "discrete IK with joint limits, continuity and FK backcheck; no collision sweep or dynamic path execution"
+  },
+  "projection_audit": {
+    "cases": 3,
+    "coordinate_frames": 15,
+    "source_hashes_unchanged": {
+      "/data/shapeforge/runtime/runs/hier_s1_gt_pose_assets_20261126_v1/scene_packet.json": true,
+      "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer/transfer.json": true,
+      "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer/meshes.npz": true,
+      "/data/shapeforge/runtime/runs/hier_s1_gt_pose_20261126_v1/samples.npz": true
+    },
+    "production_reference_max_origin_error_mm": 6.177268237940317e-06,
+    "production_reference_max_rotation_matrix_error": 2.0481172199188213e-08,
+    "axis_direction_max_error": 2.3037127760972e-15,
+    "opencv_fisheye_max_display_pixel_difference": 2.8421709430404007e-13,
+    "gripper_frame_independent_of_module_pose": true,
+    "scope": "orientation rendering checks; no new training or policy execution"
+  },
+  "tests": {
+    "total": 95,
+    "passed": 29,
+    "skipped": 66
+  },
+  "path_executed": false,
+  "continuous_collision_validated": false,
+  "training": false,
+  "artifacts": {
+    "/data/shapeforge/runtime/runs/hier_s1_gt_pose_visual_20261126_v1/case_01_gt_orientation.png": {
+      "bytes": 1427744,
+      "sha256": "ab52fdb7494648551f44dcf6a90eea054864c18e945b85322838be6eb5471d89"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_gt_pose_visual_20261126_v1/case_02_gt_orientation.png": {
+      "bytes": 1426990,
+      "sha256": "0373dc67266e58e7cc41b84dba12c2004300a52491e7612ee100af17d0dc7936"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_gt_pose_visual_20261126_v1/case_00_gt_orientation.png": {
+      "bytes": 1436251,
+      "sha256": "89a7db4867c0c7853d0513fbfa95671977884f47a108a5696585b218f0814669"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_gt_pose_visual_20261126_v1/case_00_orientation.blend": {
+      "bytes": 7279305,
+      "sha256": "41a64ffeb3eccc7900c5765d382013aa63e46525fa98930029823bb21d6348cf"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_gt_pose_visual_20261126_v1/case_02_orientation.blend": {
+      "bytes": 7279305,
+      "sha256": "4ef825fe37641606d57fec7ba38b642b07dbfa6bc4d0bbe1e8b086b8f66e4d59"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_gt_pose_visual_20261126_v1/case_01_orientation.blend": {
+      "bytes": 7279305,
+      "sha256": "1b6107ff39ae80f51c649c1627f0e8d34d903f7d55496ca015f2a4249059bd51"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_gt_pose_visual_20261126_v1/three_gt_starts.jpg": {
+      "bytes": 402909,
+      "sha256": "4e1644589cc0a8f04df82e835b9002e5cc031632e3c6277c6a318da478292e3d"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_gt_pose_visual_20261126_v1/orientation.json": {
+      "bytes": 324290,
+      "sha256": "b4d224fbe6ba8cb15016ccc7460bcee3b8b344adcab438949381cd53df7fb245"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_gt_pose_visual_20261126_v1/validation.json": {
+      "bytes": 848,
+      "sha256": "21283195779ce959e0d1406aec5dbe5d6b853ef01ea2571feb6dc1852449c760"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_gt_pose_20261126_v1/gt_waypoint_audit.json": {
+      "bytes": 18536,
+      "sha256": "2867642e11b19ce07805e50920e3ce1ecb3e104fdd5d55e3c7dc15cd4aa5b88a"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_gt_pose_20261126_v1/requested_cases.json": {
+      "bytes": 545,
+      "sha256": "16bba56bfab4b9342852fe71174c365c0f1b91df88e14586228219d496febc8f"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_gt_pose_20261126_v1/result.json": {
+      "bytes": 1035,
+      "sha256": "d6705e86ec4f1846ae89cb6c9351ef9e4c0cd283e0973bb2c4c941b0613a8a54"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_gt_pose_20261126_v1/report.json": {
+      "bytes": 4803,
+      "sha256": "a12f7b1c5f2872a137a7f4c0c9ab8ebabc38077d698a6dac672d23044127ade5"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_gt_pose_visual_20261126_v1/probe_system1_far.py": {
+      "bytes": 8831,
+      "sha256": "959e80a87479897a5f7a46bbbbd03cdf2e231583a60b9731c50c2bb501ed87fe"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_gt_pose_visual_20261126_v1/render_system1_far.py": {
+      "bytes": 9455,
+      "sha256": "784800dac4ae2d521deb2c62257da6c7d60d3bfe9c911a7c4e84ee8938df8237"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_gt_pose_visual_20261126_v1/render_system1_far_blender.py": {
+      "bytes": 3595,
+      "sha256": "6627cf9d4a0f655a09f9c00a721f8afc33d51fe7f3084701efe52f3139661eb8"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_gt_pose_visual_20261126_v1/render_system1_orientation.py": {
+      "bytes": 14634,
+      "sha256": "5cf80f0203983d6772927a87e97eb33a298b88477cdaadbbf1c4191146222b27"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_gt_pose_visual_20261126_v1/render_system1_orientation_blender.py": {
+      "bytes": 2435,
+      "sha256": "c461226b81ba9c26b7d37d6d23d93733890e36cde827c2ab25d5084b46086f20"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_gt_pose_visual_20261126_v1/audit_system1_orientation.py": {
+      "bytes": 6681,
+      "sha256": "42e1d0fd73da6c4b26f61128a01c48206bc698ae66f81656204738b62c429657"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_gt_pose_visual_20261126_v1/audit_system1_gt_waypoints.py": {
+      "bytes": 2461,
+      "sha256": "5eda7b0b74fb25e49d35af8e121a889acc0edc5dfee01d0700b74f877c77f2df"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_gt_pose_visual_20261126_v1/render_system1_assets.py": {
+      "bytes": 10933,
+      "sha256": "e89d789ad0cf4950ede60043ded68a26b1d992529877a064a6861c4f1ec6eeb4"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_gt_pose_visual_20261126_v1/render_system1_paths.py": {
+      "bytes": 12430,
+      "sha256": "23119950ef87cad911d99ad7b990efaead7fe1e2895b964a02b47a16c1599f2d"
+    }
+  }
+}

@@ -1,0 +1,404 @@
+{
+  "date": "2026-11-26",
+  "status": "online_rule_intervention_validated_autonomous_insertion_not_passed",
+  "pilot_root": "/data/shapeforge/runtime/runs/hier_s0_pilot_20261126",
+  "summary": {
+    "protocol": "/data/shapeforge/runtime/runs/hier_s0_pilot_20261126/protocol.json",
+    "demonstrations": {
+      "episodes": 6,
+      "successes": 6,
+      "train_transitions": 1823,
+      "validation_transitions": 373
+    },
+    "training": {
+      "environment_steps": 6000,
+      "completed_episodes": 28,
+      "assisted_successes": 5,
+      "autonomous_training_successes": 0,
+      "unfinished_episodes": [
+        {
+          "seed": 200020,
+          "steps": 150,
+          "stats": {
+            "policy_steps": 17,
+            "intervention_steps": 133,
+            "demonstration_steps": 0,
+            "takeover_events": 10,
+            "handoff_events": 9
+          }
+        },
+        {
+          "seed": 201014,
+          "steps": 406,
+          "stats": {
+            "policy_steps": 98,
+            "intervention_steps": 308,
+            "demonstration_steps": 0,
+            "takeover_events": 31,
+            "handoff_events": 30
+          }
+        }
+      ],
+      "counts": {
+        "policy_steps": 949,
+        "intervention_steps": 5051,
+        "takeover_events": 423,
+        "handoff_events": 418
+      },
+      "intervention_fraction": 0.8418333333333333,
+      "failures": {
+        "large_contact_point_penetration": 7,
+        "geometric_overlap": 16
+      }
+    },
+    "replay_validation": {
+      "transitions": 6000,
+      "all_actions_and_proposals_match_trace": true,
+      "history_uses_executed_action": true,
+      "reward_terminal_timeout_and_wrench_verified": true,
+      "replay": {
+        "total": 6000,
+        "scripted_intervention": 5051,
+        "policy": 949,
+        "human": 0
+      },
+      "num_timesteps": 6000,
+      "sac_updates": 5936,
+      "correction_updates": 5936,
+      "previous_num_timesteps": 2000,
+      "actor_parameter_max_change": 0.27801230549812317,
+      "previous_replay_retained": true
+    },
+    "evaluation": {
+      "episodes": 5,
+      "successes": 0,
+      "teacher_requests": 0,
+      "accepted_actions": 2469,
+      "rejected_actions": 5,
+      "failures": {
+        "ik_action_rejected": 5
+      },
+      "cases": [
+        {
+          "seed": 220000,
+          "success": false,
+          "steps": 489,
+          "reward": 0.8167771468634369,
+          "attempted_steps": 490,
+          "control_rejection": {
+            "seed": 220000,
+            "attempted_step": 490,
+            "policy_action": [
+              0.6452027559280396,
+              0.08919870853424072,
+              0.4932020902633667,
+              0.013370037078857422,
+              -0.08607876300811768,
+              0.03994345664978027
+            ],
+            "error": "IKError: SDK IK rejected: ok=True, unreachable=False, joint_limit=True, singular=[False, False, False, False, False, False, False]",
+            "action_accepted": false
+          },
+          "backward_motion_steps": 193,
+          "failure": "ik_action_rejected",
+          "teacher_requests": 0,
+          "socket_pose": {
+            "dx_mm": -0.9236338975036209,
+            "dy_mm": -1.4361932372299804,
+            "yaw_deg": 0.0
+          },
+          "final_depth_mm": -0.029221026336037736,
+          "lateral_error_mm": 2.112081746452704,
+          "alignment_angle_deg": 0.40754058469247256,
+          "max_contact_mean_N": 1.357219833186051
+        },
+        {
+          "seed": 220001,
+          "success": false,
+          "steps": 474,
+          "reward": 0.7711646224728843,
+          "attempted_steps": 475,
+          "control_rejection": {
+            "seed": 220001,
+            "attempted_step": 475,
+            "policy_action": [
+              0.6553710699081421,
+              0.10582232475280762,
+              0.4824705123901367,
+              0.018586158752441406,
+              -0.07981008291244507,
+              0.04554247856140137
+            ],
+            "error": "IKError: SDK IK rejected: ok=True, unreachable=False, joint_limit=True, singular=[False, False, False, False, False, False, False]",
+            "action_accepted": false
+          },
+          "backward_motion_steps": 201,
+          "failure": "ik_action_rejected",
+          "teacher_requests": 0,
+          "socket_pose": {
+            "dx_mm": -2.8443622400477917,
+            "dy_mm": -1.6963089926777395,
+            "yaw_deg": 0.0
+          },
+          "final_depth_mm": -0.03014659122686525,
+          "lateral_error_mm": 2.1133077652693997,
+          "alignment_angle_deg": 0.40961411714548646,
+          "max_contact_mean_N": 1.2653763050310347
+        },
+        {
+          "seed": 220002,
+          "success": false,
+          "steps": 503,
+          "reward": 0.8647089867912109,
+          "attempted_steps": 504,
+          "control_rejection": {
+            "seed": 220002,
+            "attempted_step": 504,
+            "policy_action": [
+              0.6569046974182129,
+              0.09722411632537842,
+              0.4855833053588867,
+              0.01521003246307373,
+              -0.08731281757354736,
+              0.036162614822387695
+            ],
+            "error": "IKError: SDK IK rejected: ok=True, unreachable=False, joint_limit=True, singular=[False, False, False, False, False, False, False]",
+            "action_accepted": false
+          },
+          "backward_motion_steps": 196,
+          "failure": "ik_action_rejected",
+          "teacher_requests": 0,
+          "socket_pose": {
+            "dx_mm": 1.2951225313270873,
+            "dy_mm": -0.2942748516727529,
+            "yaw_deg": 0.0
+          },
+          "final_depth_mm": -0.009566785600327865,
+          "lateral_error_mm": 2.108958098035867,
+          "alignment_angle_deg": 0.4079923499558947,
+          "max_contact_mean_N": 1.4182553852559343
+        },
+        {
+          "seed": 220003,
+          "success": false,
+          "steps": 507,
+          "reward": 0.8655307566869064,
+          "attempted_steps": 508,
+          "control_rejection": {
+            "seed": 220003,
+            "attempted_step": 508,
+            "policy_action": [
+              0.6653854846954346,
+              0.10803508758544922,
+              0.480731725692749,
+              0.010436773300170898,
+              -0.10265707969665527,
+              0.021903395652770996
+            ],
+            "error": "IKError: SDK IK rejected: ok=True, unreachable=False, joint_limit=True, singular=[False, False, False, False, False, False, False]",
+            "action_accepted": false
+          },
+          "backward_motion_steps": 202,
+          "failure": "ik_action_rejected",
+          "teacher_requests": 0,
+          "socket_pose": {
+            "dx_mm": 1.0387138735291712,
+            "dy_mm": 1.7153899428487822,
+            "yaw_deg": 0.0
+          },
+          "final_depth_mm": -0.030516310852349404,
+          "lateral_error_mm": 2.140338946694326,
+          "alignment_angle_deg": 0.41362791756747236,
+          "max_contact_mean_N": 1.1161098855326534
+        },
+        {
+          "seed": 220004,
+          "success": false,
+          "steps": 496,
+          "reward": 0.82856187612511,
+          "attempted_steps": 497,
+          "control_rejection": {
+            "seed": 220004,
+            "attempted_step": 497,
+            "policy_action": [
+              0.6612673997879028,
+              0.1190117597579956,
+              0.4780198335647583,
+              0.007391452789306641,
+              -0.10250347852706909,
+              0.016405820846557617
+            ],
+            "error": "IKError: SDK IK rejected: ok=True, unreachable=False, joint_limit=True, singular=[False, False, False, False, False, False, False]",
+            "action_accepted": false
+          },
+          "backward_motion_steps": 213,
+          "failure": "ik_action_rejected",
+          "teacher_requests": 0,
+          "socket_pose": {
+            "dx_mm": -0.7419788721702121,
+            "dy_mm": 2.087260256130925,
+            "yaw_deg": 0.0
+          },
+          "final_depth_mm": -0.0305084567135101,
+          "lateral_error_mm": 2.132076590374228,
+          "alignment_angle_deg": 0.4115214396072984,
+          "max_contact_mean_N": 1.9555980722162014
+        }
+      ],
+      "model_hash_unchanged": true,
+      "seeds_disjoint": true
+    },
+    "all_completed_phases_exited_zero": true,
+    "retained_failed_runs": [
+      "/data/shapeforge/runtime/runs/hier_s0_intervene_20261126_smoke",
+      "/data/shapeforge/runtime/runs/hier_s0_pilot_20261126/eval",
+      "/data/shapeforge/runtime/runs/hier_s0_pilot_20261126/eval_v2"
+    ],
+    "scope": "online scripted intervention implemented; learned autonomous insertion did not pass this bounded pilot"
+  },
+  "recovery_interface": {
+    "cases": [
+      {
+        "id": 0,
+        "offset_mm": 1.0,
+        "passed": true,
+        "steps": 529,
+        "success": true,
+        "failure": null,
+        "blocked_step": 137,
+        "handback": true,
+        "stages": [
+          "align_outside",
+          "idle",
+          "reinsert",
+          "retreat"
+        ],
+        "recovery_completed": 1,
+        "intervention_stats": {
+          "policy_steps": 436,
+          "intervention_steps": 93,
+          "demonstration_steps": 0,
+          "takeover_events": 1,
+          "handoff_events": 1
+        },
+        "teacher_requests": 93,
+        "proposal_source": "synthetic_probe_not_learned_policy"
+      },
+      {
+        "id": 1,
+        "offset_mm": -1.0,
+        "passed": true,
+        "steps": 528,
+        "success": true,
+        "failure": null,
+        "blocked_step": 136,
+        "handback": true,
+        "stages": [
+          "align_outside",
+          "idle",
+          "reinsert",
+          "retreat"
+        ],
+        "recovery_completed": 1,
+        "intervention_stats": {
+          "policy_steps": 435,
+          "intervention_steps": 93,
+          "demonstration_steps": 0,
+          "takeover_events": 1,
+          "handoff_events": 1
+        },
+        "teacher_requests": 93,
+        "proposal_source": "synthetic_probe_not_learned_policy"
+      }
+    ],
+    "all_passed": true,
+    "replay": {
+      "total": 784,
+      "scripted_intervention": 186,
+      "policy": 598,
+      "human": 0
+    },
+    "recovery_delay_steps": 0,
+    "scope": "actual hierarchical recovery interface test using synthetic proposals; not training or learned-policy evaluation"
+  },
+  "tests": {
+    "related": 39,
+    "final_intervention_subset": 8,
+    "shapeforge_lightweight": {
+      "passed": 29,
+      "skipped": 66,
+      "total": 95
+    }
+  },
+  "source_revisions": {
+    "/home/linux/omi_folder/omi_shapeforge": "3c5a88b5740b9f8a9653f3d164d868bd0ae1c2fc",
+    "/home/linux/omi_folder/omi_proj": "4adde8ce8dc2dc334c5955bdb2415e2732de26eb"
+  },
+  "source_worktree_modified": true,
+  "sources_sha256": {
+    "/home/linux/omi_folder/omi_proj/src/omi_hil_rl/training/hierarchical_insertion/cli.py": "c15e0756f0e53427d2c46f81e3308d216c0ec8b4bb3c3cea2424fcc932e507b0",
+    "/home/linux/omi_folder/omi_proj/src/omi_hil_rl/training/hierarchical_insertion/environment.py": "78e1dfba5329ad42869ff1da910382f6fd0262f2e8960719c9163f92533e2272",
+    "/home/linux/omi_folder/omi_proj/src/omi_hil_rl/training/hierarchical_insertion/intervention.py": "ef4b5af9e0be5fed4e4ba723a9c02454ad2cef6c3762ba14137bfd0875679945",
+    "/home/linux/omi_folder/omi_proj/tests/test_hierarchical_intervention.py": "9439e423f0df30b2f050a370646e4602a3688a8831e5069119d992568a8106cc",
+    "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/run_hierarchical_insertion.py": "7b4f95401e43ad8ee7c9d5af6807b00b4df4d483af064dec06bc62a295c3c24e",
+    "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/probe_hierarchical_intervention.py": "ae7b1e4ea61c13bf7f33db4be7af6e7122fc98038877ae0f27d29c07b33c15fe",
+    "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/audit_hierarchical_intervention_run.py": "f8e5b52ea6bb87446c694a3088a3b070f33fa396add7951093d02a94e22b98b7"
+  },
+  "artifacts": {
+    "/data/shapeforge/runtime/runs/hier_s0_pilot_20261126/summary.json": {
+      "bytes": 8088,
+      "sha256": "ceb7f2a7a4fccae5522951662beed2963a0acce4a48ecf8acfef04f5b0169e00"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_pilot_20261126/protocol.json": {
+      "bytes": 1273,
+      "sha256": "dd0a4450ed7aa507199e1f2ab44e7ca8333b6c56dc69e26c5247bfd2b50ddf60"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_pilot_20261126/heldout_targets.json": {
+      "bytes": 708,
+      "sha256": "f6e208175e090bc0e145ae214b64333d6467552ca1cd12b83d811504e28284c3"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_pilot_20261126/collect/experiment/dataset.json": {
+      "bytes": 14846,
+      "sha256": "f6e5f85d9677e3e480c3e57aea5454873e1265b70dccc5c40368acb4c0d3b008"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_pilot_20261126/train/experiment/system0.zip": {
+      "bytes": 6178661,
+      "sha256": "47109affc4728baf08ab4502b0121309cdf545b29a0120f5e202e9aa27f7a897"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_pilot_20261126/resume/experiment/system0.zip": {
+      "bytes": 6179292,
+      "sha256": "553fa9718c2adb7eb70a3ceddecf2c72165f0a634d48f60f00af26cbd68f8014"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_pilot_20261126/resume/experiment/replay.pkl": {
+      "bytes": 45864981,
+      "sha256": "6f60c480d04e3dadfaf4996b88548aa827bbc7c207e9ade7025f24eddac772bf"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_pilot_20261126/resume/experiment/system0.json": {
+      "bytes": 8297,
+      "sha256": "4fcd3b3ed2d8b66dd5bb88b6368d14a3934cb7b0e0f17b3abbba98f825d82bbd"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_pilot_20261126/resume/experiment/replay_validation.json": {
+      "bytes": 478,
+      "sha256": "315d2779f35cd6c3e812ab4393778f39e5993eb47dc9321f467c5f28b3b2d7bb"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_pilot_20261126/eval_v3/experiment/evaluation.json": {
+      "bytes": 19637,
+      "sha256": "c8126e47816ecdbe52aae1eac4dbefbcdb0fae081bd058437a86cdb0ecf08971"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_pilot_20261126/eval_v3/experiment/rejected_actions.jsonl": {
+      "bytes": 1770,
+      "sha256": "ca56a64e921dee8c85b6b51f8b67cc06a3f6ad252c85338f1603512e5b237b05"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_recovery_20261126_v2/report.json": {
+      "bytes": 1532,
+      "sha256": "26faa55f3e37700b23ed636067a7015b1abfbcc832b838557cb7b4e476ad9e84"
+    }
+  },
+  "limitations": [
+    "scripted rule, not human intervention",
+    "fixed module attachment and ideal compensated simulated wrench",
+    "world-XY socket translations within +/-3mm only",
+    "runtime TCP reference/actions retained; axial GT candidate and gripper-center control contract not integrated",
+    "5/28 assisted training successes do not imply learned control; independent evaluation 0/5"
+  ]
+}

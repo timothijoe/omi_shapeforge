@@ -1,4 +1,10 @@
 # 仿真能力索引
+- [随机插口与远初态重训（纪传体）](system0-randomized-retraining.md)：当前数据、四模型训练成果、最终权重与能力限制；RL已完成，留出测试暂停。
+
+- [System0初始偏移与倾斜鲁棒性](system0-initial-pose-robustness.md)：夹爪中心±2 mm、俯仰／偏航±2°，冻结模型真实测试与四段视频。
+
+- [System0在线规则干预](hierarchical-intervention.md)：真实恢复接口、执行动作replay、续训与独立评估；初轮自主插接尚未通过。
+
 
 - [System1训练与路径可视化](system1-path-visualization.md)：预测位姿经规则解码，独立测试和最差帧展示。
 

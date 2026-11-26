@@ -1,5 +1,45 @@
 # 当前总览
 
+2026-11-26：System0随机化重训已完成，四模型各20000条有效交互已校验；最终留出测试按用户要求暂停。[纪传体／当前成果](agent/simulation/evolution/system0-randomized-retraining.md) · [编年体／执行恢复](agent/simulation/chronicles/2026-11-26-system0-randomized-retraining.md) · [重启操作交接](chronicles/2026-11-26-system0-rl-reboot-handoff.md)。 <!-- s0-rand-train-20261126 -->
+
+2026-11-26：[更大初态与校正过程](agent/simulation/evolution/system0-large-offset-correction.md)：40 mm远起点、横移±10 mm、俯仰／偏航±5°及组合；同一冻结模型对无接管路径8/8、无路径0/8。实际偏差曲线、四段完整对照与单例全程说明版已生成。
+
+2026-11-26：[初态再后退2～3 cm](chronicles/2026-11-26-system0-far-start.md)：总间隙改为30／40 mm，保留俯仰与组合偏差；同模型无接管路径6/6、无路径2/6，真实间距已核验，同相机对照图、30／40 mm腕图原速视频及116.9秒合集均已交付。
+
+2026-11-26：[清晰腕图视角](chronicles/2026-11-26-system0-wrist-view.md)已交付：俯仰+2°原记录，高清腕部局部＋完整鱼眼图＋外部近景，44.3秒原速；相机安装关系和投影核验通过，不新增策略成绩。
+
+2026-11-26：[初始偏移／姿态误差测试](agent/simulation/evolution/system0-initial-pose-robustness.md)完成，冻结同一较强种子对、同目标、无接管：路径10/10、无路径4/10；六个姿态／组合条件为6/6对0/6，纯横移均通过。四段含第0步的视频及73.8秒合集已交付。
+
+2026-11-26：[System1／System0五组demo](chronicles/2026-11-26-system1-path-video.md#补充五组demo)已交付：三组双成功、一组入口失败、同目标另一训练种子差异；90秒合集与单段文件均可播放，来源及位姿审核通过。
+
+2026-11-26：[自主插入对照视频](chronicles/2026-11-26-system1-path-video.md)已生成。固定测试首例、同一目标、两组无接管；路径341步成功，无路径第767次提议被IK拒绝。29.6秒双视图回放，不代表两种子的最终总体统计。
+
+2026-11-26：[System1路径增益配对实验](agent/simulation/evolution/system1-path-ablation.md)完成：新增33条示范、四模型各BC20000及12000步交互。无接管24目标测试，两个种子路径24/24、24/24，无路径0/24、20/24，汇总差+58.33个百分点。仅当前配方与GT位置变化；初始化和接管经验差异明显，不代表纯System0能力上限。
+
+2026-11-26：[纯BC增加训练更新](agent/simulation/evolution/hierarchical-intervention.md)按用户要求从1000增至10000，同数据／配置下同五目标无接管结果0/5→3/5，teacher均0；两个较大负Y目标仍失败。保存10个中间检查点，未新增RL或训练数据，尚不能视为可靠泛化通过。
+
+2026-11-26：[System0随机范围与数据覆盖核查](agent/simulation/evolution/hierarchical-intervention.md)发现5条BC训练目标均在Y正侧，负侧仅有验证样本；在线RL则覆盖了双侧。冻结模型改为原位单例仍失败，但这不是固定目标重训对照，不能排除训练随机化影响。当前应先固定目标验收BC，再分层扩展位置。
+
+2026-11-26：[System0同目标失败诊断](agent/simulation/evolution/hierarchical-intervention.md)补齐对照：纯规则5/5、重建BC-only 0/5、原BC＋RL 0/5。BC未学稳“先对准后推进”，RL在相同示范状态上动作误差进一步增大；不能只靠增加RL步数解释或解决。当前优先补BC闭环门槛，旧模型与结果保持。
+
+2026-11-26：[System0在线规则干预](agent/simulation/evolution/hierarchical-intervention.md)已接入，真实恢复接口2/2通过，完成6条示范及6000步多目标训练／续训。完整训练回合辅助5/28，6000条经验逐条核对通过；最终无接管留出评估0/5，teacher均0，停在入口附近后各有一次IK拒绝。干预链路正常，策略自主插接和位置泛化尚未达标。
+
+2026-11-26：[GT参考下的插口位置切换](agent/simulation/evolution/hierarchical-insertion.md)已按用户收窄范围验证：同一插口模型，原位及世界X／Y各±3 mm，朝向不变，机器人起点一致。位置和目标同步、源网格保持；本次为五位置演示，尚未启动新的System0训练。
+
+2026-11-26：[System1 GT末段方向修正候选](agent/simulation/evolution/system1-path-visualization.md)响应用户“线没有瞄准入口”的反馈。旧规则末段偏孔轴约69／59／45°；新候选在孔口前25mm完成对准，最后20mm沿轴直线接近。255个采样位姿IK及可视网格相交检查通过；未做连续碰撞／物理执行，未替换运行时或训练。
+
+2026-11-26：[System1移动／旋转后的GT展示](agent/simulation/evolution/system1-path-visualization.md)新增50／70／90 mm三组起点，组合旋转约20～24°，实际仿真到位后生成GT专用3D／2D图。99个GT采样位姿通过离线IK／回代；未沿GT执行或做连续避障验证，未重训。
+
+2026-11-25续：[System1展示原点改为夹爪中心](agent/simulation/evolution/system1-path-visualization.md)，响应用户关于模块滑移的修正。原点由两侧接触垫几何确定，固定在夹爪上，保留X向前、Z向上；原点构建不依赖模块位姿，26组三轴／投影核对通过。仅改展示，现有固定夹持模型尚未实现滑移补偿。
+
+2026-11-25续：[System1展示坐标系](agent/simulation/evolution/system1-path-visualization.md)按用户要求改为光模块主壳体中心、红X向前／绿Y向左／蓝Z朝模块上方。位置曲线同步跟踪中心，底层TCP参考和原模型不变；26组坐标／投影核对通过，新旧图与Blender场景分别保留。
+
+2026-11-25续：[System1沿途姿态三轴](agent/simulation/evolution/system1-path-visualization.md)按用户要求每隔8个原始参考点显示模块局部XYZ箭头，同步投影到二维腕图。预测／GT分别展示，三例共26组坐标系、6张对照和3份Blender场景；与生产参考位姿及独立鱼眼投影核对通过，原预测和路径不变。
+
+2026-11-25续：[System1远距离未对准诊断](agent/simulation/evolution/system1-path-visualization.md)完成40／65／90 mm三组起点，含15～25 mm横向和10.8～17.5°角度偏差。普通IK／PhysX实际到位，冻结模型的解码接近终点偏差38.4／40.9／57.0 mm，仍不可靠。新增宽视角3D资产、二维渐变曲线投影和等比例空间图；未重训或执行预测路径，展示尚待复审。
+
+2026-11-25续：[System1实体资产路径对照](agent/simulation/evolution/system1-path-visualization.md)新增9例Blender全景／孔口近景／腕图投影及可旋转三维场景。复用冻结预测与原网格，坐标和独立鱼眼投影检查通过；尚待展示复审，未新增训练或插接成绩。
+
 2026-11-25：[System1／System0当前进展已汇总交接](chronicles/2026-11-25-system1-system0-handoff.md)。原型已分开训练／评估，System0倒退与腕力接口具备；新System1同域位姿误差均值0.228 mm，九位置均值4.412 mm／最大7.430 mm，泛化不足。下一步优先扩充System1接近范围；本次只归档，不新增训练。
 
 2026-11-25：[System1训练与路径可视化](agent/simulation/evolution/system1-path-visualization.md)完成。60轮按验证选择第47轮，独立3回合1074帧位姿平移均值0.228 mm、最大2.207 mm；交付腕图叠加与三维8点短段视频。当前为同资产小扰动，网络预测位姿、几何程序解码路径，未验证新插接成功率。

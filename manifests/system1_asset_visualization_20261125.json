@@ -1,0 +1,122 @@
+{
+  "date": "2026-11-25",
+  "status": "nine_asset_views_and_camera_projections_generated_pending_user_review",
+  "output_root": "/data/shapeforge/runtime/runs/hier_s1_assets_20261125_v1",
+  "training_or_execution": false,
+  "validation": {
+    "cases": 9,
+    "source_hashes_unchanged": {
+      "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer/transfer.json": true,
+      "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer/meshes.npz": true,
+      "/data/shapeforge/runtime/runs/hier_s1_nine_20261125/samples.npz": true,
+      "/data/shapeforge/runtime/runs/hier_s1_nine_20261125/report.json": true
+    },
+    "opencv_fisheye_max_display_pixel_difference": 3.979039320256561e-13,
+    "asset_camera_max_pixel_difference": 8.647068972502699e-05,
+    "reconstructed_tcp_max_error_mm": 1.594436429147036e-13,
+    "predicted_short_paths_match_frozen_archive": true,
+    "scope": "source integrity and coordinate/projection validation; no new training or execution"
+  },
+  "artifacts": {
+    "case_00_comparison.png": {
+      "bytes": 1574030,
+      "sha256": "ecd9146d39e2d5193fabc9162f49b0e579bbd5abd7b70428b53c36f19b15a80b"
+    },
+    "case_04_comparison.png": {
+      "bytes": 1570571,
+      "sha256": "905820c0311360da1c38daa350b969eb3760ec368c181b84d65df46334976459"
+    },
+    "case_01_comparison.png": {
+      "bytes": 1572824,
+      "sha256": "12f33af3b7d369bbf451ea63531dcdd72490b4767608b563d55c7576eea19768"
+    },
+    "case_02_comparison.png": {
+      "bytes": 1570175,
+      "sha256": "ea30afefce1e272d9746173181fc55afa0ec3cf2c7e07b2b1dc16d0c0043cfba"
+    },
+    "case_06_comparison.png": {
+      "bytes": 1568268,
+      "sha256": "51d1b665330bfa0297b3b2a4c459915c52d8c5422b03e58c43ec0bdd3de0fcf7"
+    },
+    "case_07_comparison.png": {
+      "bytes": 1562343,
+      "sha256": "81d114624d3c696a7cc863a435258ec7390cfc553cd3bc1260865ebf25fc957a"
+    },
+    "case_05_comparison.png": {
+      "bytes": 1565564,
+      "sha256": "4e47841b160f6ac291948fb9f7bbbdb5885866844d6d99d2aa55532242a8a13e"
+    },
+    "case_08_comparison.png": {
+      "bytes": 1561301,
+      "sha256": "287e79e3c8453dbc2188d7fbf3f60b408957fae1d3d41e9c41a15653a0217914"
+    },
+    "case_03_comparison.png": {
+      "bytes": 1573290,
+      "sha256": "6cb4be93ee4698f49d2a83230570b802e1abc2c32cb892657edfe59bc10610f8"
+    },
+    "case_02.blend": {
+      "bytes": 7117716,
+      "sha256": "6e303e0c2a580489199aedc93d5d3b94c071d20fc01d7cfede416ac75200e524"
+    },
+    "case_04.blend": {
+      "bytes": 7118904,
+      "sha256": "0eb32c9fd2b469a5f19999942a7bd68c08d2d4354b7b74d8ec0208adc100efd2"
+    },
+    "case_01.blend": {
+      "bytes": 7117716,
+      "sha256": "b1eb66fe74719acd16413e1be36b443427d3d2c8dccb088e07ddecd9bb7e6881"
+    },
+    "case_00.blend": {
+      "bytes": 7118904,
+      "sha256": "366529f1966a32f9ce842a3c120a83cda0ab303c602684a2ffb41a103158d32c"
+    },
+    "case_03.blend": {
+      "bytes": 7118904,
+      "sha256": "63006c5e4da368e33e1771144802401269825e2505c94b66ecfe1810c436f1c1"
+    },
+    "case_06.blend": {
+      "bytes": 7118904,
+      "sha256": "6394316b5be7cb12d81fe293c1cc3a6381d97138e99c922baca06b0a73c62a30"
+    },
+    "case_07.blend": {
+      "bytes": 7118904,
+      "sha256": "1bd250808d35bd4a22789d853b0385f38060b26bc1e513cca1a57534b66b764e"
+    },
+    "case_05.blend": {
+      "bytes": 7117716,
+      "sha256": "34db4f8fa22b97826e4cd809b965e23dcc863aa1a8595b8b95d314e64bb685b4"
+    },
+    "case_08.blend": {
+      "bytes": 7118904,
+      "sha256": "48e04849106249950157e233009c010af47020ea35885ec81ed95fbd1f960182"
+    },
+    "all_cases.jpg": {
+      "bytes": 1217004,
+      "sha256": "9e6d21b4dc76ba471ac84a35c9fd5edca12e7e061a4d45bdc6d12ba4847e4a0c"
+    },
+    "scene_packet.json": {
+      "bytes": 365089,
+      "sha256": "5f59f35be685b54bbf57ebdd16b676ab84c673a1e3c6139909df5c84d5eae7e0"
+    },
+    "validation.json": {
+      "bytes": 740,
+      "sha256": "1cac137cc99d32eac732f144925b0b41b08836b40181a1d112f1d488403eb697"
+    },
+    "render_system1_assets.py": {
+      "bytes": 10933,
+      "sha256": "e89d789ad0cf4950ede60043ded68a26b1d992529877a064a6861c4f1ec6eeb4"
+    },
+    "render_system1_assets_blender.py": {
+      "bytes": 5303,
+      "sha256": "908268c90a3806ad8a6088e1ddcc9fd2fb4ea07cf45f53fd7846b8d6e01b0488"
+    },
+    "audit_system1_assets.py": {
+      "bytes": 3935,
+      "sha256": "54b03efa0492a2c683534d7f240ab91782001da33a487b04894685be6da72f70"
+    },
+    "render_system1_paths.py": {
+      "bytes": 12430,
+      "sha256": "23119950ef87cad911d99ad7b990efaead7fe1e2895b964a02b47a16c1599f2d"
+    }
+  }
+}

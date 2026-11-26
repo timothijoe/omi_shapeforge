@@ -1,0 +1,166 @@
+{
+  "date": "2026-11-26",
+  "status": "farther_initial_gap_evaluation_and_two_wrist_videos_complete",
+  "output_root": "/data/shapeforge/runtime/runs/s0_far_start_20261126",
+  "video_root": "/data/shapeforge/runtime/runs/s0_far_wrist_videos_20261126",
+  "delivery": "/home/linux/Downloads/Farther_Starts_Demos_20261126/Farther_Starts_30_40mm.mp4",
+  "comparison": "/home/linux/Downloads/Farther_Starts_Demos_20261126/initial_gap_comparison.jpg",
+  "results": {
+    "path": {
+      "successes": 6,
+      "cases": 6,
+      "model_sha256": "41d1fe329ba737ba1451403ca95b8ce7aac9853362f91d3be23f1869be0625f0"
+    },
+    "goal": {
+      "successes": 2,
+      "cases": 6,
+      "model_sha256": "090578637709ba7a3c98bb5c27de2480f2afbf09e607da3cdf35550f6815feeb"
+    }
+  },
+  "scope": "one frozen paired model, six single-run initial conditions; actual gap increased by 20/30 mm; not retraining",
+  "requested_additional_gap_mm": [
+    20,
+    30
+  ],
+  "nominal_total_gap_mm": [
+    30,
+    40
+  ],
+  "all_initial_poses_matched": true,
+  "all_teacher_requests_zero": true,
+  "tests": {
+    "related_passed": 29,
+    "lightweight_passed": 29,
+    "lightweight_skipped": 70
+  },
+  "artifacts": {
+    "/data/shapeforge/runtime/runs/s0_far_start_20261126/protocol.json": {
+      "bytes": 3179,
+      "sha256": "4b6ff00fcdc1d1acda32a3ddc882f19b35ba069d7c4fa9a3de1d2d82cacf73d1"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_start_20261126/cases.json": {
+      "bytes": 1758,
+      "sha256": "fc62a73e1e573bfea254a9b2dc6d0f36929275766a2ee550165008d2d951a2b8"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_start_20261126/summary.json": {
+      "bytes": 4828,
+      "sha256": "0ee7474303ca33f293936edec8eec6d7aade7f92e5d8eaefed1a5b230f1c25f1"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_start_20261126/offline_ik_audit.json": {
+      "bytes": 5139,
+      "sha256": "8e9ddc2b3730eb57eadbc695a4501439dd23dd91e643a41f42f9954880f067e9"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_start_20261126/initialization_adjustment.json": {
+      "bytes": 314,
+      "sha256": "fedf231758b6c1ae098a35e94481d7d001762bf9f820cb3ee1d5b91b60022df0"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_start_20261126/result.json": {
+      "bytes": 3168,
+      "sha256": "084e87e163c83f167df2f3e5a4f47a7199411eb89c1b1a4b3a22e0122b55e451"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_start_20261126/tests.log": {
+      "bytes": 99,
+      "sha256": "a5e1a313556ff81ce5973e10fc3e871315ecb3cb5aa38190d34bb32cf10a210b"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_start_20261126/lightweight_tests_final.log": {
+      "bytes": 17983,
+      "sha256": "239967104457b5493eb12229368f7b4238a9cd3feac5669a6cc1490e74c5cf6a"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_wrist_videos_20261126/delivery_manifest.json": {
+      "bytes": 2232,
+      "sha256": "36bd446a252045a27b061622bb1e774166c6fe6686e9b96c7379641ab296cf51"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_wrist_videos_20261126/source_integrity.json": {
+      "bytes": 1282,
+      "sha256": "f8736f728d20b0512984300e3d7fa34ce019ae2f4e9eac70c40c432dac081f87"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_wrist_videos_20261126/source_hashes.json": {
+      "bytes": 1106,
+      "sha256": "d105fdea3d41e86ead1a4358a8bf50fa19d39bdb43c9bb0a5963d89d22de29d5"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_wrist_videos_20261126/initial_gap_comparison.jpg": {
+      "bytes": 429122,
+      "sha256": "efa541a78f2ea1a5bb11dcedb459440b3d0efa364617b1a7f42b46d87e37a40c"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_wrist_videos_20261126/initial_gap_comparison.json": {
+      "bytes": 1834,
+      "sha256": "ecbdf7ddea0232ab3563f0405899ddfc563e88a1f7b58f6a994e857a21d0acf8"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_wrist_videos_20261126/Farther_Starts_30_40mm.mp4": {
+      "bytes": 7981076,
+      "sha256": "0b14d2b4e0db104df4a954a3a1e18bc90d2faed6269c2a33ed23f390e40b2d84"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_start_20261126/path/experiment/evaluation.json": {
+      "bytes": 47112,
+      "sha256": "04803e557a46c20c9f67c535d7bf1f75fe5860db2e92738a6d042fa25f9266df"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_start_20261126/path/worker/reset_audit.jsonl": {
+      "bytes": 28346,
+      "sha256": "5032091431ecbce1b972689c373e4e19a98f495531d7cec3fbd23945ef27efe3"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_start_20261126/path/worker/execution.json": {
+      "bytes": 2644,
+      "sha256": "026b2d5e38f125238d6aa0ac41f7a9cdbfeccf3c4ded5777efb2cd76a45bbcba"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_start_20261126/path/result.json": {
+      "bytes": 3204,
+      "sha256": "d902ee5140910bdd8fd2080cb1caa927e55439a69eb9d4bfd81b3677df382c93"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_start_20261126/goal/experiment/evaluation.json": {
+      "bytes": 47298,
+      "sha256": "1be9d96aa10a6d8a3f3133f995ef038182ca12db800c4d00b44c73e3d08bc646"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_start_20261126/goal/worker/reset_audit.jsonl": {
+      "bytes": 28346,
+      "sha256": "5032091431ecbce1b972689c373e4e19a98f495531d7cec3fbd23945ef27efe3"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_start_20261126/goal/worker/execution.json": {
+      "bytes": 2644,
+      "sha256": "905a27d1c566137bf6af53965cde605988247ac630f79a564e923be4bb5518c6"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_start_20261126/goal/result.json": {
+      "bytes": 3209,
+      "sha256": "ecdb72864265bf58c0eec2340a20ea34e27b2efba478c5d117feaad58c246070"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_wrist_videos_20261126/gap_30mm/selection.json": {
+      "bytes": 12723,
+      "sha256": "555106d207289580707e52846751c9ebef0297050c813d22954f38c7900ca306"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_wrist_videos_20261126/gap_30mm/video_manifest.json": {
+      "bytes": 40999,
+      "sha256": "9b67189a7714c00c876c8c61b059780cd06083e013661c4bbb75386b680c0ca9"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_wrist_videos_20261126/gap_30mm/delivery_manifest.json": {
+      "bytes": 808,
+      "sha256": "794684161ae286a9d5523595d6f34b5a57311bf9521650ad543a9e82e0ca1b84"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_wrist_videos_20261126/gap_30mm/capture/capture_report.json": {
+      "bytes": 24170,
+      "sha256": "7ec568a82f8946cbc679f86b96816e673a726a4dc6a86c02dc3090644e64e634"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_wrist_videos_20261126/gap_30mm/system1_vs_system0.mp4": {
+      "bytes": 3781036,
+      "sha256": "2553f74bc41703e5bffc6938450157bb7adff6faad28442ac5167ac9331e3a64"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_wrist_videos_20261126/gap_40mm/selection.json": {
+      "bytes": 12724,
+      "sha256": "2a77540774d1ec8971f569ea3c7ffa25e1afa7c406661407e9ab6eb1f1f89dc3"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_wrist_videos_20261126/gap_40mm/video_manifest.json": {
+      "bytes": 42576,
+      "sha256": "bdaca8c1cc39de3655e06f1faa3e40b16a7eb01cbdf134ed457f1470276e5f4b"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_wrist_videos_20261126/gap_40mm/delivery_manifest.json": {
+      "bytes": 808,
+      "sha256": "c05efb830ac3f89c98efb6442fe337028d631352f8a8bb450c3b981e3fcc7687"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_wrist_videos_20261126/gap_40mm/capture/capture_report.json": {
+      "bytes": 25536,
+      "sha256": "e58e865bd070b8aed6e765f31f2ced46cefec1fc5326594b35a4a228abc6cb4e"
+    },
+    "/data/shapeforge/runtime/runs/s0_far_wrist_videos_20261126/gap_40mm/system1_vs_system0.mp4": {
+      "bytes": 4199954,
+      "sha256": "d82005b2d688b3efd8d4af1785514f334a9e501ae2c4beab54f9a8aa9f35e87b"
+    }
+  }
+}

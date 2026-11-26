@@ -1,0 +1,300 @@
+{
+  "date": "2026-11-25",
+  "status": "three_distant_misaligned_probes_complete_visual_review_pending",
+  "probe_root": "/data/shapeforge/runtime/runs/hier_s1_far_20261125_v1",
+  "output_root": "/data/shapeforge/runtime/runs/hier_s1_far_visual_20261125_v2",
+  "model_report": {
+    "cases": [
+      {
+        "id": 0,
+        "seed": 140000,
+        "requested_lateral_mm": -15.0,
+        "requested_vertical_mm": 10.0,
+        "requested_distance_mm": 40.0,
+        "requested_rotation_vector_deg": [
+          6.0,
+          0.0,
+          -9.0
+        ],
+        "target_tcp_m": [
+          0.33963594782320894,
+          0.2341296922272989,
+          0.8465004806303165
+        ],
+        "actual_tcp_m": [
+          0.3396627384414945,
+          0.23412340024345238,
+          0.8465249532220478
+        ],
+        "actual_tcp_rotation": [
+          [
+            0.08595928883150146,
+            -0.16370261747751585,
+            0.9827575762590657
+          ],
+          [
+            0.00610698638299525,
+            -0.9863035124170786,
+            -0.1648274434402613
+          ],
+          [
+            0.9962799332421088,
+            0.020170136954039117,
+            -0.08378221884358832
+          ]
+        ],
+        "setup_position_error_mm": 0.03682708289964436,
+        "setup_rotation_error_deg": 0.005946906755880783,
+        "actual_tip_socket_mm": [
+          -15.307299459414915,
+          41.82035870346018,
+          10.350935353641121
+        ],
+        "actual_depth_mm": -39.970364195003256,
+        "actual_angular_offset_deg": 10.813694533287183,
+        "translation_error_mm": 38.74530550960559,
+        "rotation_error_deg": 10.845808814678023,
+        "preview_tip_error_mm": 1.6227638205418886,
+        "teacher_requests": 0,
+        "prediction_executed": false,
+        "preparation_steps": 568
+      },
+      {
+        "id": 1,
+        "seed": 140001,
+        "requested_lateral_mm": 20.0,
+        "requested_vertical_mm": 15.0,
+        "requested_distance_mm": 65.0,
+        "requested_rotation_vector_deg": [
+          -8.0,
+          0.0,
+          12.0
+        ],
+        "target_tcp_m": [
+          0.31732834872987403,
+          0.16996133437147326,
+          0.785388242059766
+        ],
+        "actual_tcp_m": [
+          0.3173480290590916,
+          0.1699612350316356,
+          0.7854185121105015
+        ],
+        "actual_tcp_rotation": [
+          [
+            -0.16005539003571298,
+            0.19711188863505064,
+            0.967227571711663
+          ],
+          [
+            -0.007705284010730685,
+            -0.9800795222464711,
+            0.19845593634719988
+          ],
+          [
+            0.9870779608110142,
+            0.024311179153906178,
+            0.1583858132829985
+          ]
+        ],
+        "setup_position_error_mm": 0.03610541784893725,
+        "setup_rotation_error_deg": 0.006595585100548183,
+        "actual_tip_socket_mm": [
+          19.708602177784293,
+          66.83578861987539,
+          15.35746923975649
+        ],
+        "actual_depth_mm": -64.98578157192892,
+        "actual_angular_offset_deg": 14.427024513177635,
+        "translation_error_mm": 79.19564838075104,
+        "rotation_error_deg": 14.337754970363699,
+        "preview_tip_error_mm": 0.6308323010457736,
+        "teacher_requests": 0,
+        "prediction_executed": false,
+        "preparation_steps": 694
+      },
+      {
+        "id": 2,
+        "seed": 140002,
+        "requested_lateral_mm": -25.0,
+        "requested_vertical_mm": -12.0,
+        "requested_distance_mm": 90.0,
+        "requested_rotation_vector_deg": [
+          9.0,
+          0.0,
+          -15.0
+        ],
+        "target_tcp_m": [
+          0.29766473948032474,
+          0.2517913379115754,
+          0.8382597598664968
+        ],
+        "actual_tcp_m": [
+          0.29766583945840813,
+          0.25176367265881766,
+          0.838245655800839
+        ],
+        "actual_tcp_rotation": [
+          [
+            0.13836233843919793,
+            -0.26437580799859756,
+            0.9544429241430447
+          ],
+          [
+            -0.004395829081952226,
+            -0.9638666644390883,
+            -0.26634888749485824
+          ],
+          [
+            0.9903719200322267,
+            0.03265708695145611,
+            -0.13452499650074695
+          ]
+        ],
+        "setup_position_error_mm": 0.031072509232639087,
+        "setup_rotation_error_deg": 0.009938648412456242,
+        "actual_tip_socket_mm": [
+          -25.296231891489967,
+          91.84365517155813,
+          -11.7342666181484
+        ],
+        "actual_depth_mm": -89.99366251353952,
+        "actual_angular_offset_deg": 17.48923010045448,
+        "translation_error_mm": 96.29293425023745,
+        "rotation_error_deg": 17.505267657310565,
+        "preview_tip_error_mm": 0.7401080597291153,
+        "teacher_requests": 0,
+        "prediction_executed": false,
+        "preparation_steps": 876
+      }
+    ],
+    "checkpoint": "/data/shapeforge/runtime/runs/hier_s1_visual_20261125_train60/system1.pt",
+    "checkpoint_sha256": "5493a113c9b1c1a5088606363b934e72464b85e252cabfc292a020cb69496f17",
+    "mean_translation_error_mm": 71.4112960468647,
+    "max_translation_error_mm": 96.29293425023745,
+    "scope": "distant misaligned frozen-model probes; predictions not executed"
+  },
+  "execution": {
+    "complete": true,
+    "error": null,
+    "worker": {
+      "command": [
+        "/data/isaac-sim-5.1.0/python.sh",
+        "-u",
+        "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/isaac_rl_worker.py",
+        "--transfer",
+        "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer",
+        "--output",
+        "/data/shapeforge/runtime/runs/hier_s1_far_20261125_v1/worker",
+        "--socket",
+        "/data/shapeforge/runtime/runs/hier_s1_far_20261125_v1/worker.sock",
+        "--max-steps",
+        "1900",
+        "--physics-substeps",
+        "5",
+        "--ik-backend",
+        "tianji",
+        "--tianji-sdk",
+        "/data/shapeforge/runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/vendor/optical_module_pu/source/OpticalModule_PU/Arm_control",
+        "--teacher-min-step-mm",
+        ".05",
+        "--target-overtravel-mm",
+        ".1"
+      ],
+      "state": "exited",
+      "start_new_session": true,
+      "returncode": 0,
+      "pid": 1540930,
+      "pgid": 1540930,
+      "elapsed_seconds": 130.043693856991
+    }
+  },
+  "validation": {
+    "cases": 3,
+    "source_hashes_unchanged": {
+      "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer/transfer.json": true,
+      "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer/meshes.npz": true,
+      "/data/shapeforge/runtime/runs/hier_s1_far_20261125_v1/samples.npz": true,
+      "/data/shapeforge/runtime/runs/hier_s1_far_20261125_v1/report.json": true
+    },
+    "opencv_fisheye_max_display_pixel_difference": 5.934627159212227e-13,
+    "asset_camera_max_pixel_difference": 0.00013209659435548893,
+    "reconstructed_tcp_max_error_mm": 1.2412670766236365e-13,
+    "predicted_short_paths_match_frozen_archive": true,
+    "scope": "source integrity and coordinate/projection validation; no new training or execution"
+  },
+  "tests": {
+    "total": 95,
+    "passed": 29,
+    "skipped": 66
+  },
+  "predictions_executed": false,
+  "training_performed": false,
+  "checkpoint_unchanged": true,
+  "artifacts": {
+    "/data/shapeforge/runtime/runs/hier_s1_far_visual_20261125_v2/case_02_wide_comparison.png": {
+      "bytes": 1381330,
+      "sha256": "88473a89265d0ee2bb4a3cd99f63c20852f48dac03ec74c0d0ab5baa8ff54a18"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_far_visual_20261125_v2/case_01_wide_comparison.png": {
+      "bytes": 1397865,
+      "sha256": "a49601e1458c4b342f4b50b7513d09859ae9562b6283cc7ffb1212c806922700"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_far_visual_20261125_v2/case_00_wide_comparison.png": {
+      "bytes": 1401880,
+      "sha256": "782366fb8a39f06de9960858d1f5eea76a3d79639c9ae7a4143d152d93596712"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_far_visual_20261125_v2/case_02_wide.blend": {
+      "bytes": 7132376,
+      "sha256": "59128884912579088e933210b8102e21bfd0d36268b02096cbcabec1f2db085e"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_far_visual_20261125_v2/case_01_wide.blend": {
+      "bytes": 7132376,
+      "sha256": "ed88e400cb501586a5a7d8ed16c8fa0ff349822f9e9e4f7f227936aa12aede46"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_far_visual_20261125_v2/case_00_wide.blend": {
+      "bytes": 7132376,
+      "sha256": "41aad074cdd23abf2c1d4821aa6651a6716e8626ef8944ad16c3974c62639ba9"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_far_visual_20261125_v2/paths_space.png": {
+      "bytes": 280027,
+      "sha256": "1df3bb2298dc87cef359b8cce46aeea4dde71e53e9bb4adf3beaeb9be3b980e2"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_far_visual_20261125_v2/far_starts.jpg": {
+      "bytes": 409601,
+      "sha256": "f3e84b8c986349260514dcb9cf8f1966762a6d607040e1f2c6e437df284b3247"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_far_visual_20261125_v2/validation.json": {
+      "bytes": 746,
+      "sha256": "fe2bfda00b259e3091cc130229ae6fb26797f13ffca28f47618653d4b26d7f2e"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_far_visual_20261125_v2/scene_packet.json": {
+      "bytes": 548669,
+      "sha256": "12ff0eab3f545f256baf4ef71111afb4eccf2178133dc34f81a4e018f0831019"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_far_visual_20261125_v2/probe_system1_far.py": {
+      "bytes": 8480,
+      "sha256": "e8cc747bf2f7d929f21439503710781fcd88b4236403a0adb2ef5dbecf6c0834"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_far_visual_20261125_v2/render_system1_far.py": {
+      "bytes": 9304,
+      "sha256": "a0ce2581a9938878d206f39f64a29f0e3d7e2b900b902ddb89be60770aa29f2e"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_far_visual_20261125_v2/render_system1_far_blender.py": {
+      "bytes": 3595,
+      "sha256": "6627cf9d4a0f655a09f9c00a721f8afc33d51fe7f3084701efe52f3139661eb8"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_far_visual_20261125_v2/render_system1_assets.py": {
+      "bytes": 10933,
+      "sha256": "e89d789ad0cf4950ede60043ded68a26b1d992529877a064a6861c4f1ec6eeb4"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_far_visual_20261125_v2/render_system1_paths.py": {
+      "bytes": 12430,
+      "sha256": "23119950ef87cad911d99ad7b990efaead7fe1e2895b964a02b47a16c1599f2d"
+    },
+    "/data/shapeforge/runtime/runs/hier_s1_far_visual_20261125_v2/audit_system1_assets.py": {
+      "bytes": 4896,
+      "sha256": "708453084e2ff97731858fdf649bf4e6f2d463f2b7c98a115e6d267be8bf9257"
+    }
+  }
+}

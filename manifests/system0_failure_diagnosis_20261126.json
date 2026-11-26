@@ -1,0 +1,1626 @@
+{
+  "date": "2026-11-26",
+  "status": "same_target_rule_bc_rl_comparison_completed",
+  "output_root": "/data/shapeforge/runtime/runs/hier_s0_diagnosis_20261126",
+  "summary": {
+    "scope": "same-target diagnostic comparison; no new blind test or RL training",
+    "models": {
+      "rule": {
+        "cases": [
+          {
+            "seed": 220000,
+            "success": true,
+            "steps": 360,
+            "reward": 1.638273275491174,
+            "failure": null,
+            "teacher_requests": 360,
+            "socket_pose": {
+              "dx_mm": -0.9236338975036209,
+              "dy_mm": -1.4361932372299804,
+              "yaw_deg": 0.0
+            },
+            "final_depth_mm": 51.28098745621205,
+            "lateral_error_mm": 0.055174207093924274,
+            "alignment_angle_deg": 0.005501847888059469
+          },
+          {
+            "seed": 220001,
+            "success": true,
+            "steps": 349,
+            "reward": 1.602627590831382,
+            "failure": null,
+            "teacher_requests": 349,
+            "socket_pose": {
+              "dx_mm": -2.8443622400477917,
+              "dy_mm": -1.6963089926777395,
+              "yaw_deg": 0.0
+            },
+            "final_depth_mm": 51.28106958076121,
+            "lateral_error_mm": 0.06055145349341767,
+            "alignment_angle_deg": 0.005942951820203116
+          },
+          {
+            "seed": 220002,
+            "success": true,
+            "steps": 368,
+            "reward": 1.6765955442256026,
+            "failure": null,
+            "teacher_requests": 368,
+            "socket_pose": {
+              "dx_mm": 1.2951225313270873,
+              "dy_mm": -0.2942748516727529,
+              "yaw_deg": 0.0
+            },
+            "final_depth_mm": 51.28116361148672,
+            "lateral_error_mm": 0.054895421797134865,
+            "alignment_angle_deg": 0.005433647676691422
+          },
+          {
+            "seed": 220003,
+            "success": true,
+            "steps": 371,
+            "reward": 1.674074815449492,
+            "failure": null,
+            "teacher_requests": 371,
+            "socket_pose": {
+              "dx_mm": 1.0387138735291712,
+              "dy_mm": 1.7153899428487822,
+              "yaw_deg": 0.0
+            },
+            "final_depth_mm": 51.280878903320186,
+            "lateral_error_mm": 0.06156435892408217,
+            "alignment_angle_deg": 0.006045689980700762
+          },
+          {
+            "seed": 220004,
+            "success": true,
+            "steps": 363,
+            "reward": 1.6454682486792938,
+            "failure": null,
+            "teacher_requests": 363,
+            "socket_pose": {
+              "dx_mm": -0.7419788721702121,
+              "dy_mm": 2.087260256130925,
+              "yaw_deg": 0.0
+            },
+            "final_depth_mm": 51.281121831776765,
+            "lateral_error_mm": 0.05999740633966908,
+            "alignment_angle_deg": 0.0059237951718709506
+          }
+        ],
+        "successes": 5,
+        "config": {
+          "schema": {
+            "version": "omi-hierarchical-insertion-v1",
+            "reference_points": 32,
+            "history_slots": 4,
+            "observations": "TCP-relative path / 1cm, rotation / 0.1rad; goal, progress, plan age, validity; motion/action/contact history",
+            "action": "unchanged normalized world-TCP translation and rotation-vector delta; full direct action, retreat allowed",
+            "proprioception": "simulated TCP feedback",
+            "contact": "wrist-wrench",
+            "contact_semantics": "ideal compensated virtual wrist Fx,Fy,Fz / 10N; Tx,Ty,Tz / 1Nm; validity; no tactile",
+            "transfer_sha256": "cf3292f916737c191cdc7b4cc8dc07e9a0e0bb1eac2282e27a0bbb590da721cb",
+            "execution_config": {
+              "max_steps": 900,
+              "physics_dt": 0.02,
+              "control_dt": 0.1,
+              "teacher_min_step_mm": 0.05,
+              "target_overtravel_mm": 0.1,
+              "joint_target_interpolation": "linear",
+              "global_contact_offset_m": 1e-07,
+              "per_collider_contact_offsets_m": {
+                "sim_module_smooth_shoulder": 5e-06
+              },
+              "force_stop_N": null,
+              "penetration_stop_mm": null,
+              "solver": "PGS",
+              "insertion_assessment": {
+                "version": "entry-strict-interior-tolerant-v1",
+                "control_dt": 0.1,
+                "entry_start_mm": 1.0,
+                "entry_complete_mm": 5.0,
+                "entry_deadline_mm": 6.0,
+                "entry_lateral_mm": 0.15,
+                "entry_angle_rad": 0.003,
+                "entry_good_samples": 3,
+                "entry_point_limit_mm": 0.08,
+                "interior_point_limit_mm": 0.15,
+                "geometric_overlap_limit_mm": 0.1,
+                "entry_mean_force_N": 5.0,
+                "interior_mean_force_N": 20.0,
+                "catastrophic_mean_force_N": 50.0,
+                "entry_force_samples": 3,
+                "interior_force_samples": 5,
+                "stall_samples": 10,
+                "stall_progress_mm": 0.05,
+                "seat_depth_tolerance_mm": 0.1,
+                "seat_lateral_mm": 0.25,
+                "seat_angle_rad": 0.005,
+                "seat_motion_mm": 0.03,
+                "seat_samples": 3,
+                "force_signal_kind": "simulation_contact_impulse_norm_sum_mean"
+              },
+              "wrist_wrench": {
+                "version": "ideal-compensated-module-external-contact-interval-mean-v1",
+                "origin_offset_tcp_m": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "axes": "TCP",
+                "units": [
+                  "N",
+                  "N",
+                  "N",
+                  "Nm",
+                  "Nm",
+                  "Nm"
+                ],
+                "interval_s": 0.1,
+                "sign": "external environment wrench on held module; transferred to virtual sensor origin",
+                "scope": "fixed module external contacts only; no gravity/inertia/electronics; not calibrated hardware wrench"
+              },
+              "ik_backend": {
+                "version": "tianji-ccs-left-world-v1",
+                "arm": 0,
+                "model_type": 1017,
+                "joint_names": [
+                  "Arm_L1_Joint",
+                  "Arm_L2_Joint",
+                  "Arm_L3_Joint",
+                  "Arm_L4_Joint",
+                  "Arm_L5_Joint",
+                  "Arm_L6_Joint",
+                  "Arm_L7_Joint"
+                ],
+                "joint_signs": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "joint_zero_offsets_rad": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "input_units": "world metres / joint radians",
+                "sdk_units": "base millimetres / joint degrees",
+                "world_from_base": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    -2.220446049250313e-16,
+                    1.0000000000000002,
+                    0.025999999999999995
+                  ],
+                  [
+                    0.0,
+                    -1.0000000000000002,
+                    -2.220446049250313e-16,
+                    1.121
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "flange_from_tcp": [
+                  [
+                    0.9999999999920002,
+                    -4.000000000059512e-06,
+                    7.999712004380655e-12,
+                    -1.0547118733938987e-17
+                  ],
+                  [
+                    4.000000000226045e-06,
+                    0.9999999999840001,
+                    -3.999999999948489e-06,
+                    -1.1709654061874394e-33
+                  ],
+                  [
+                    8.000156093146414e-12,
+                    4.000000000115022e-06,
+                    0.9999999999920002,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "source_sha256": {
+                  "fx_kine.py": "c6603de2f315dfc0fc85369be07165af7da0118e3cc4006ca94f8787c04087c5",
+                  "libKine.so": "f2aec6ebc1f41302fe0126284076211c044d6c7e1c2276dc919767254e0c597f",
+                  "ccs_m6_40.MvKDCfg": "ce20b1a80974c3ed58cdac4973152625096c8ad93a779e5fd4108c26ce19bd52"
+                },
+                "position_tolerance_m": 1e-05,
+                "rotation_tolerance_rad": 0.0001,
+                "max_joint_step_rad": 0.1,
+                "singularity_policy": "reject any SDK singular flag",
+                "fallback": "none",
+                "mapping_validation": {
+                  "samples": 66,
+                  "max_position_error_m": 5.643241593900938e-06,
+                  "max_rotation_error_rad": 2.572371741862243e-05
+                }
+              },
+              "socket_pose_randomization": {
+                "version": "planar-socket-assembly-v1",
+                "translation_mm": 3.0,
+                "yaw_deg": 0.0,
+                "plane": "world XY, fixed world Z",
+                "rotation": "world Z yaw about nominal socket origin",
+                "distribution": "uniform per-axis at reset",
+                "robot_initialization": "original joint reset and jitter; not co-transformed",
+                "policy_pose_input": false
+              },
+              "render_runtime": {
+                "version": "headless-sensors-only-v1",
+                "rt_subframes": 2
+              },
+              "recovery_controller": {
+                "version": "retreat-align-reenter-v1",
+                "max_attempts": 2,
+                "phase_max_steps": 450,
+                "waypoint_tolerance_mm": 0.08,
+                "strict_entry": true
+              },
+              "entry_guidance": {
+                "version": "qualified-entry-hold-v1",
+                "lateral_takeover_mm": 0.1,
+                "angle_takeover_rad": 0.0015,
+                "handback_requires_entry": true
+              }
+            },
+            "reward": "unchanged worker task truth; never recomputed from noisy reference"
+          },
+          "reference": {
+            "mode": "gt",
+            "points": 32,
+            "spacing_mm": 0.5,
+            "update_steps": 5,
+            "delay_steps": 0,
+            "translation_noise_mm": 0.0,
+            "rotation_noise_deg": 0.0,
+            "episode_bias_mm": 0.0,
+            "episode_bias_deg": 0.0
+          },
+          "system1_checkpoint_sha256": null
+        },
+        "scope": "privileged pure-rule baseline; no learned policy, no training dataset produced"
+      },
+      "bc_only": {
+        "cases": [
+          {
+            "seed": 220000,
+            "success": false,
+            "steps": 89,
+            "reward": -0.306565924098405,
+            "attempted_steps": 89,
+            "control_rejection": null,
+            "backward_motion_steps": 24,
+            "failure": "entrance_not_qualified",
+            "teacher_requests": 0,
+            "socket_pose": {
+              "dx_mm": -0.9236338975036209,
+              "dy_mm": -1.4361932372299804,
+              "yaw_deg": 0.0
+            },
+            "final_depth_mm": 6.043177678833391,
+            "lateral_error_mm": 9.482622307076545,
+            "alignment_angle_deg": 1.737293658074668,
+            "max_contact_mean_N": 1.8646264607955827
+          },
+          {
+            "seed": 220001,
+            "success": false,
+            "steps": 79,
+            "reward": -0.34336162179907137,
+            "attempted_steps": 79,
+            "control_rejection": null,
+            "backward_motion_steps": 29,
+            "failure": "entrance_not_qualified",
+            "teacher_requests": 0,
+            "socket_pose": {
+              "dx_mm": -2.8443622400477917,
+              "dy_mm": -1.6963089926777395,
+              "yaw_deg": 0.0
+            },
+            "final_depth_mm": 6.075852634716462,
+            "lateral_error_mm": 9.461410102141743,
+            "alignment_angle_deg": 1.7642825012487537,
+            "max_contact_mean_N": 1.7632570888958887
+          },
+          {
+            "seed": 220002,
+            "success": false,
+            "steps": 900,
+            "reward": 0.1811032784146029,
+            "attempted_steps": 900,
+            "control_rejection": null,
+            "backward_motion_steps": 369,
+            "failure": "timeout",
+            "teacher_requests": 0,
+            "socket_pose": {
+              "dx_mm": 1.2951225313270873,
+              "dy_mm": -0.2942748516727529,
+              "yaw_deg": 0.0
+            },
+            "final_depth_mm": 51.12332953705378,
+            "lateral_error_mm": 0.16185773414813504,
+            "alignment_angle_deg": 0.9150858924329396,
+            "max_contact_mean_N": 4.910216092830538
+          },
+          {
+            "seed": 220003,
+            "success": false,
+            "steps": 83,
+            "reward": -0.2960107220542326,
+            "attempted_steps": 83,
+            "control_rejection": null,
+            "backward_motion_steps": 8,
+            "failure": "entrance_not_qualified",
+            "teacher_requests": 0,
+            "socket_pose": {
+              "dx_mm": 1.0387138735291712,
+              "dy_mm": 1.7153899428487822,
+              "yaw_deg": 0.0
+            },
+            "final_depth_mm": 6.093244088741605,
+            "lateral_error_mm": 0.26213218471458477,
+            "alignment_angle_deg": 0.06878431061361959,
+            "max_contact_mean_N": 1.100985053200948
+          },
+          {
+            "seed": 220004,
+            "success": false,
+            "steps": 78,
+            "reward": -0.32288629288235926,
+            "attempted_steps": 78,
+            "control_rejection": null,
+            "backward_motion_steps": 13,
+            "failure": "entrance_not_qualified",
+            "teacher_requests": 0,
+            "socket_pose": {
+              "dx_mm": -0.7419788721702121,
+              "dy_mm": 2.087260256130925,
+              "yaw_deg": 0.0
+            },
+            "final_depth_mm": 6.051639078590281,
+            "lateral_error_mm": 0.28812015132766583,
+            "alignment_angle_deg": 0.06287232370655206,
+            "max_contact_mean_N": 0.0
+          }
+        ],
+        "successes": 0,
+        "config": {
+          "schema": {
+            "version": "omi-hierarchical-insertion-v1",
+            "reference_points": 32,
+            "history_slots": 4,
+            "observations": "TCP-relative path / 1cm, rotation / 0.1rad; goal, progress, plan age, validity; motion/action/contact history",
+            "action": "unchanged normalized world-TCP translation and rotation-vector delta; full direct action, retreat allowed",
+            "proprioception": "simulated TCP feedback",
+            "contact": "wrist-wrench",
+            "contact_semantics": "ideal compensated virtual wrist Fx,Fy,Fz / 10N; Tx,Ty,Tz / 1Nm; validity; no tactile",
+            "transfer_sha256": "cf3292f916737c191cdc7b4cc8dc07e9a0e0bb1eac2282e27a0bbb590da721cb",
+            "execution_config": {
+              "max_steps": 900,
+              "physics_dt": 0.02,
+              "control_dt": 0.1,
+              "teacher_min_step_mm": 0.05,
+              "target_overtravel_mm": 0.1,
+              "joint_target_interpolation": "linear",
+              "global_contact_offset_m": 1e-07,
+              "per_collider_contact_offsets_m": {
+                "sim_module_smooth_shoulder": 5e-06
+              },
+              "force_stop_N": null,
+              "penetration_stop_mm": null,
+              "solver": "PGS",
+              "insertion_assessment": {
+                "version": "entry-strict-interior-tolerant-v1",
+                "control_dt": 0.1,
+                "entry_start_mm": 1.0,
+                "entry_complete_mm": 5.0,
+                "entry_deadline_mm": 6.0,
+                "entry_lateral_mm": 0.15,
+                "entry_angle_rad": 0.003,
+                "entry_good_samples": 3,
+                "entry_point_limit_mm": 0.08,
+                "interior_point_limit_mm": 0.15,
+                "geometric_overlap_limit_mm": 0.1,
+                "entry_mean_force_N": 5.0,
+                "interior_mean_force_N": 20.0,
+                "catastrophic_mean_force_N": 50.0,
+                "entry_force_samples": 3,
+                "interior_force_samples": 5,
+                "stall_samples": 10,
+                "stall_progress_mm": 0.05,
+                "seat_depth_tolerance_mm": 0.1,
+                "seat_lateral_mm": 0.25,
+                "seat_angle_rad": 0.005,
+                "seat_motion_mm": 0.03,
+                "seat_samples": 3,
+                "force_signal_kind": "simulation_contact_impulse_norm_sum_mean"
+              },
+              "wrist_wrench": {
+                "version": "ideal-compensated-module-external-contact-interval-mean-v1",
+                "origin_offset_tcp_m": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "axes": "TCP",
+                "units": [
+                  "N",
+                  "N",
+                  "N",
+                  "Nm",
+                  "Nm",
+                  "Nm"
+                ],
+                "interval_s": 0.1,
+                "sign": "external environment wrench on held module; transferred to virtual sensor origin",
+                "scope": "fixed module external contacts only; no gravity/inertia/electronics; not calibrated hardware wrench"
+              },
+              "ik_backend": {
+                "version": "tianji-ccs-left-world-v1",
+                "arm": 0,
+                "model_type": 1017,
+                "joint_names": [
+                  "Arm_L1_Joint",
+                  "Arm_L2_Joint",
+                  "Arm_L3_Joint",
+                  "Arm_L4_Joint",
+                  "Arm_L5_Joint",
+                  "Arm_L6_Joint",
+                  "Arm_L7_Joint"
+                ],
+                "joint_signs": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "joint_zero_offsets_rad": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "input_units": "world metres / joint radians",
+                "sdk_units": "base millimetres / joint degrees",
+                "world_from_base": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    -2.220446049250313e-16,
+                    1.0000000000000002,
+                    0.025999999999999995
+                  ],
+                  [
+                    0.0,
+                    -1.0000000000000002,
+                    -2.220446049250313e-16,
+                    1.121
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "flange_from_tcp": [
+                  [
+                    0.9999999999920002,
+                    -4.000000000059512e-06,
+                    7.999712004380655e-12,
+                    -1.0547118733938987e-17
+                  ],
+                  [
+                    4.000000000226045e-06,
+                    0.9999999999840001,
+                    -3.999999999948489e-06,
+                    -1.1709654061874394e-33
+                  ],
+                  [
+                    8.000156093146414e-12,
+                    4.000000000115022e-06,
+                    0.9999999999920002,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "source_sha256": {
+                  "fx_kine.py": "c6603de2f315dfc0fc85369be07165af7da0118e3cc4006ca94f8787c04087c5",
+                  "libKine.so": "f2aec6ebc1f41302fe0126284076211c044d6c7e1c2276dc919767254e0c597f",
+                  "ccs_m6_40.MvKDCfg": "ce20b1a80974c3ed58cdac4973152625096c8ad93a779e5fd4108c26ce19bd52"
+                },
+                "position_tolerance_m": 1e-05,
+                "rotation_tolerance_rad": 0.0001,
+                "max_joint_step_rad": 0.1,
+                "singularity_policy": "reject any SDK singular flag",
+                "fallback": "none",
+                "mapping_validation": {
+                  "samples": 66,
+                  "max_position_error_m": 5.643241593900938e-06,
+                  "max_rotation_error_rad": 2.572371741862243e-05
+                }
+              },
+              "socket_pose_randomization": {
+                "version": "planar-socket-assembly-v1",
+                "translation_mm": 3.0,
+                "yaw_deg": 0.0,
+                "plane": "world XY, fixed world Z",
+                "rotation": "world Z yaw about nominal socket origin",
+                "distribution": "uniform per-axis at reset",
+                "robot_initialization": "original joint reset and jitter; not co-transformed",
+                "policy_pose_input": false
+              },
+              "render_runtime": {
+                "version": "headless-sensors-only-v1",
+                "rt_subframes": 2
+              },
+              "recovery_controller": {
+                "version": "retreat-align-reenter-v1",
+                "max_attempts": 2,
+                "phase_max_steps": 450,
+                "waypoint_tolerance_mm": 0.08,
+                "strict_entry": true
+              },
+              "entry_guidance": {
+                "version": "qualified-entry-hold-v1",
+                "lateral_takeover_mm": 0.1,
+                "angle_takeover_rad": 0.0015,
+                "handback_requires_entry": true
+              }
+            },
+            "reward": "unchanged worker task truth; never recomputed from noisy reference"
+          },
+          "reference": {
+            "mode": "gt",
+            "points": 32,
+            "spacing_mm": 0.5,
+            "update_steps": 5,
+            "delay_steps": 0,
+            "translation_noise_mm": 0.0,
+            "rotation_noise_deg": 0.0,
+            "episode_bias_mm": 0.0,
+            "episode_bias_deg": 0.0
+          },
+          "system1_checkpoint_sha256": null
+        },
+        "source_model_sha256": "82407877ee532349c2003f8b5afd46ba73fb3c4acb365579dfe5b93f80ba6daf",
+        "training_config": {
+          "schema": {
+            "version": "omi-hierarchical-insertion-v1",
+            "reference_points": 32,
+            "history_slots": 4,
+            "observations": "TCP-relative path / 1cm, rotation / 0.1rad; goal, progress, plan age, validity; motion/action/contact history",
+            "action": "unchanged normalized world-TCP translation and rotation-vector delta; full direct action, retreat allowed",
+            "proprioception": "simulated TCP feedback",
+            "contact": "wrist-wrench",
+            "contact_semantics": "ideal compensated virtual wrist Fx,Fy,Fz / 10N; Tx,Ty,Tz / 1Nm; validity; no tactile",
+            "transfer_sha256": "cf3292f916737c191cdc7b4cc8dc07e9a0e0bb1eac2282e27a0bbb590da721cb",
+            "execution_config": {
+              "max_steps": 900,
+              "physics_dt": 0.02,
+              "control_dt": 0.1,
+              "teacher_min_step_mm": 0.05,
+              "target_overtravel_mm": 0.1,
+              "joint_target_interpolation": "linear",
+              "global_contact_offset_m": 1e-07,
+              "per_collider_contact_offsets_m": {
+                "sim_module_smooth_shoulder": 5e-06
+              },
+              "force_stop_N": null,
+              "penetration_stop_mm": null,
+              "solver": "PGS",
+              "insertion_assessment": {
+                "version": "entry-strict-interior-tolerant-v1",
+                "control_dt": 0.1,
+                "entry_start_mm": 1.0,
+                "entry_complete_mm": 5.0,
+                "entry_deadline_mm": 6.0,
+                "entry_lateral_mm": 0.15,
+                "entry_angle_rad": 0.003,
+                "entry_good_samples": 3,
+                "entry_point_limit_mm": 0.08,
+                "interior_point_limit_mm": 0.15,
+                "geometric_overlap_limit_mm": 0.1,
+                "entry_mean_force_N": 5.0,
+                "interior_mean_force_N": 20.0,
+                "catastrophic_mean_force_N": 50.0,
+                "entry_force_samples": 3,
+                "interior_force_samples": 5,
+                "stall_samples": 10,
+                "stall_progress_mm": 0.05,
+                "seat_depth_tolerance_mm": 0.1,
+                "seat_lateral_mm": 0.25,
+                "seat_angle_rad": 0.005,
+                "seat_motion_mm": 0.03,
+                "seat_samples": 3,
+                "force_signal_kind": "simulation_contact_impulse_norm_sum_mean"
+              },
+              "wrist_wrench": {
+                "version": "ideal-compensated-module-external-contact-interval-mean-v1",
+                "origin_offset_tcp_m": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "axes": "TCP",
+                "units": [
+                  "N",
+                  "N",
+                  "N",
+                  "Nm",
+                  "Nm",
+                  "Nm"
+                ],
+                "interval_s": 0.1,
+                "sign": "external environment wrench on held module; transferred to virtual sensor origin",
+                "scope": "fixed module external contacts only; no gravity/inertia/electronics; not calibrated hardware wrench"
+              },
+              "ik_backend": {
+                "version": "tianji-ccs-left-world-v1",
+                "arm": 0,
+                "model_type": 1017,
+                "joint_names": [
+                  "Arm_L1_Joint",
+                  "Arm_L2_Joint",
+                  "Arm_L3_Joint",
+                  "Arm_L4_Joint",
+                  "Arm_L5_Joint",
+                  "Arm_L6_Joint",
+                  "Arm_L7_Joint"
+                ],
+                "joint_signs": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "joint_zero_offsets_rad": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "input_units": "world metres / joint radians",
+                "sdk_units": "base millimetres / joint degrees",
+                "world_from_base": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    -2.220446049250313e-16,
+                    1.0000000000000002,
+                    0.025999999999999995
+                  ],
+                  [
+                    0.0,
+                    -1.0000000000000002,
+                    -2.220446049250313e-16,
+                    1.121
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "flange_from_tcp": [
+                  [
+                    0.9999999999920002,
+                    -4.000000000059512e-06,
+                    7.999712004380655e-12,
+                    -1.0547118733938987e-17
+                  ],
+                  [
+                    4.000000000226045e-06,
+                    0.9999999999840001,
+                    -3.999999999948489e-06,
+                    -1.1709654061874394e-33
+                  ],
+                  [
+                    8.000156093146414e-12,
+                    4.000000000115022e-06,
+                    0.9999999999920002,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "source_sha256": {
+                  "fx_kine.py": "c6603de2f315dfc0fc85369be07165af7da0118e3cc4006ca94f8787c04087c5",
+                  "libKine.so": "f2aec6ebc1f41302fe0126284076211c044d6c7e1c2276dc919767254e0c597f",
+                  "ccs_m6_40.MvKDCfg": "ce20b1a80974c3ed58cdac4973152625096c8ad93a779e5fd4108c26ce19bd52"
+                },
+                "position_tolerance_m": 1e-05,
+                "rotation_tolerance_rad": 0.0001,
+                "max_joint_step_rad": 0.1,
+                "singularity_policy": "reject any SDK singular flag",
+                "fallback": "none",
+                "mapping_validation": {
+                  "samples": 66,
+                  "max_position_error_m": 5.643241593900938e-06,
+                  "max_rotation_error_rad": 2.572371741862243e-05
+                }
+              },
+              "socket_pose_randomization": {
+                "version": "planar-socket-assembly-v1",
+                "translation_mm": 3.0,
+                "yaw_deg": 0.0,
+                "plane": "world XY, fixed world Z",
+                "rotation": "world Z yaw about nominal socket origin",
+                "distribution": "uniform per-axis at reset",
+                "robot_initialization": "original joint reset and jitter; not co-transformed",
+                "policy_pose_input": false
+              },
+              "render_runtime": {
+                "version": "headless-sensors-only-v1",
+                "rt_subframes": 2
+              },
+              "recovery_controller": {
+                "version": "retreat-align-reenter-v1",
+                "max_attempts": 2,
+                "phase_max_steps": 450,
+                "waypoint_tolerance_mm": 0.08,
+                "strict_entry": true
+              },
+              "entry_guidance": {
+                "version": "qualified-entry-hold-v1",
+                "lateral_takeover_mm": 0.1,
+                "angle_takeover_rad": 0.0015,
+                "handback_requires_entry": true
+              }
+            },
+            "reward": "unchanged worker task truth; never recomputed from noisy reference"
+          },
+          "reference": {
+            "mode": "gt",
+            "points": 32,
+            "spacing_mm": 0.5,
+            "update_steps": 5,
+            "delay_steps": 0,
+            "translation_noise_mm": 0.0,
+            "rotation_noise_deg": 0.0,
+            "episode_bias_mm": 0.0,
+            "episode_bias_deg": 0.0
+          },
+          "system1_checkpoint_sha256": null,
+          "intervention": {
+            "version": "hierarchical-scripted-takeover-v1",
+            "mode": "scripted",
+            "gate": "isaac_intervention.Gate",
+            "source": "privileged rule; not human",
+            "initial_alignment": true,
+            "hold_through_recovery": true,
+            "evaluation": "policy only"
+          }
+        },
+        "scope": "held-out policy-only simulation"
+      },
+      "bc_plus_rl": {
+        "cases": [
+          {
+            "seed": 220000,
+            "success": false,
+            "steps": 489,
+            "reward": 0.8167771468634369,
+            "attempted_steps": 490,
+            "control_rejection": {
+              "seed": 220000,
+              "attempted_step": 490,
+              "policy_action": [
+                0.6452027559280396,
+                0.08919870853424072,
+                0.4932020902633667,
+                0.013370037078857422,
+                -0.08607876300811768,
+                0.03994345664978027
+              ],
+              "error": "IKError: SDK IK rejected: ok=True, unreachable=False, joint_limit=True, singular=[False, False, False, False, False, False, False]",
+              "action_accepted": false
+            },
+            "backward_motion_steps": 193,
+            "failure": "ik_action_rejected",
+            "teacher_requests": 0,
+            "socket_pose": {
+              "dx_mm": -0.9236338975036209,
+              "dy_mm": -1.4361932372299804,
+              "yaw_deg": 0.0
+            },
+            "final_depth_mm": -0.029221026336037736,
+            "lateral_error_mm": 2.112081746452704,
+            "alignment_angle_deg": 0.40754058469247256,
+            "max_contact_mean_N": 1.357219833186051
+          },
+          {
+            "seed": 220001,
+            "success": false,
+            "steps": 474,
+            "reward": 0.7711646224728843,
+            "attempted_steps": 475,
+            "control_rejection": {
+              "seed": 220001,
+              "attempted_step": 475,
+              "policy_action": [
+                0.6553710699081421,
+                0.10582232475280762,
+                0.4824705123901367,
+                0.018586158752441406,
+                -0.07981008291244507,
+                0.04554247856140137
+              ],
+              "error": "IKError: SDK IK rejected: ok=True, unreachable=False, joint_limit=True, singular=[False, False, False, False, False, False, False]",
+              "action_accepted": false
+            },
+            "backward_motion_steps": 201,
+            "failure": "ik_action_rejected",
+            "teacher_requests": 0,
+            "socket_pose": {
+              "dx_mm": -2.8443622400477917,
+              "dy_mm": -1.6963089926777395,
+              "yaw_deg": 0.0
+            },
+            "final_depth_mm": -0.03014659122686525,
+            "lateral_error_mm": 2.1133077652693997,
+            "alignment_angle_deg": 0.40961411714548646,
+            "max_contact_mean_N": 1.2653763050310347
+          },
+          {
+            "seed": 220002,
+            "success": false,
+            "steps": 503,
+            "reward": 0.8647089867912109,
+            "attempted_steps": 504,
+            "control_rejection": {
+              "seed": 220002,
+              "attempted_step": 504,
+              "policy_action": [
+                0.6569046974182129,
+                0.09722411632537842,
+                0.4855833053588867,
+                0.01521003246307373,
+                -0.08731281757354736,
+                0.036162614822387695
+              ],
+              "error": "IKError: SDK IK rejected: ok=True, unreachable=False, joint_limit=True, singular=[False, False, False, False, False, False, False]",
+              "action_accepted": false
+            },
+            "backward_motion_steps": 196,
+            "failure": "ik_action_rejected",
+            "teacher_requests": 0,
+            "socket_pose": {
+              "dx_mm": 1.2951225313270873,
+              "dy_mm": -0.2942748516727529,
+              "yaw_deg": 0.0
+            },
+            "final_depth_mm": -0.009566785600327865,
+            "lateral_error_mm": 2.108958098035867,
+            "alignment_angle_deg": 0.4079923499558947,
+            "max_contact_mean_N": 1.4182553852559343
+          },
+          {
+            "seed": 220003,
+            "success": false,
+            "steps": 507,
+            "reward": 0.8655307566869064,
+            "attempted_steps": 508,
+            "control_rejection": {
+              "seed": 220003,
+              "attempted_step": 508,
+              "policy_action": [
+                0.6653854846954346,
+                0.10803508758544922,
+                0.480731725692749,
+                0.010436773300170898,
+                -0.10265707969665527,
+                0.021903395652770996
+              ],
+              "error": "IKError: SDK IK rejected: ok=True, unreachable=False, joint_limit=True, singular=[False, False, False, False, False, False, False]",
+              "action_accepted": false
+            },
+            "backward_motion_steps": 202,
+            "failure": "ik_action_rejected",
+            "teacher_requests": 0,
+            "socket_pose": {
+              "dx_mm": 1.0387138735291712,
+              "dy_mm": 1.7153899428487822,
+              "yaw_deg": 0.0
+            },
+            "final_depth_mm": -0.030516310852349404,
+            "lateral_error_mm": 2.140338946694326,
+            "alignment_angle_deg": 0.41362791756747236,
+            "max_contact_mean_N": 1.1161098855326534
+          },
+          {
+            "seed": 220004,
+            "success": false,
+            "steps": 496,
+            "reward": 0.82856187612511,
+            "attempted_steps": 497,
+            "control_rejection": {
+              "seed": 220004,
+              "attempted_step": 497,
+              "policy_action": [
+                0.6612673997879028,
+                0.1190117597579956,
+                0.4780198335647583,
+                0.007391452789306641,
+                -0.10250347852706909,
+                0.016405820846557617
+              ],
+              "error": "IKError: SDK IK rejected: ok=True, unreachable=False, joint_limit=True, singular=[False, False, False, False, False, False, False]",
+              "action_accepted": false
+            },
+            "backward_motion_steps": 213,
+            "failure": "ik_action_rejected",
+            "teacher_requests": 0,
+            "socket_pose": {
+              "dx_mm": -0.7419788721702121,
+              "dy_mm": 2.087260256130925,
+              "yaw_deg": 0.0
+            },
+            "final_depth_mm": -0.0305084567135101,
+            "lateral_error_mm": 2.132076590374228,
+            "alignment_angle_deg": 0.4115214396072984,
+            "max_contact_mean_N": 1.9555980722162014
+          }
+        ],
+        "successes": 0,
+        "config": {
+          "schema": {
+            "version": "omi-hierarchical-insertion-v1",
+            "reference_points": 32,
+            "history_slots": 4,
+            "observations": "TCP-relative path / 1cm, rotation / 0.1rad; goal, progress, plan age, validity; motion/action/contact history",
+            "action": "unchanged normalized world-TCP translation and rotation-vector delta; full direct action, retreat allowed",
+            "proprioception": "simulated TCP feedback",
+            "contact": "wrist-wrench",
+            "contact_semantics": "ideal compensated virtual wrist Fx,Fy,Fz / 10N; Tx,Ty,Tz / 1Nm; validity; no tactile",
+            "transfer_sha256": "cf3292f916737c191cdc7b4cc8dc07e9a0e0bb1eac2282e27a0bbb590da721cb",
+            "execution_config": {
+              "max_steps": 900,
+              "physics_dt": 0.02,
+              "control_dt": 0.1,
+              "teacher_min_step_mm": 0.05,
+              "target_overtravel_mm": 0.1,
+              "joint_target_interpolation": "linear",
+              "global_contact_offset_m": 1e-07,
+              "per_collider_contact_offsets_m": {
+                "sim_module_smooth_shoulder": 5e-06
+              },
+              "force_stop_N": null,
+              "penetration_stop_mm": null,
+              "solver": "PGS",
+              "insertion_assessment": {
+                "version": "entry-strict-interior-tolerant-v1",
+                "control_dt": 0.1,
+                "entry_start_mm": 1.0,
+                "entry_complete_mm": 5.0,
+                "entry_deadline_mm": 6.0,
+                "entry_lateral_mm": 0.15,
+                "entry_angle_rad": 0.003,
+                "entry_good_samples": 3,
+                "entry_point_limit_mm": 0.08,
+                "interior_point_limit_mm": 0.15,
+                "geometric_overlap_limit_mm": 0.1,
+                "entry_mean_force_N": 5.0,
+                "interior_mean_force_N": 20.0,
+                "catastrophic_mean_force_N": 50.0,
+                "entry_force_samples": 3,
+                "interior_force_samples": 5,
+                "stall_samples": 10,
+                "stall_progress_mm": 0.05,
+                "seat_depth_tolerance_mm": 0.1,
+                "seat_lateral_mm": 0.25,
+                "seat_angle_rad": 0.005,
+                "seat_motion_mm": 0.03,
+                "seat_samples": 3,
+                "force_signal_kind": "simulation_contact_impulse_norm_sum_mean"
+              },
+              "wrist_wrench": {
+                "version": "ideal-compensated-module-external-contact-interval-mean-v1",
+                "origin_offset_tcp_m": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "axes": "TCP",
+                "units": [
+                  "N",
+                  "N",
+                  "N",
+                  "Nm",
+                  "Nm",
+                  "Nm"
+                ],
+                "interval_s": 0.1,
+                "sign": "external environment wrench on held module; transferred to virtual sensor origin",
+                "scope": "fixed module external contacts only; no gravity/inertia/electronics; not calibrated hardware wrench"
+              },
+              "ik_backend": {
+                "version": "tianji-ccs-left-world-v1",
+                "arm": 0,
+                "model_type": 1017,
+                "joint_names": [
+                  "Arm_L1_Joint",
+                  "Arm_L2_Joint",
+                  "Arm_L3_Joint",
+                  "Arm_L4_Joint",
+                  "Arm_L5_Joint",
+                  "Arm_L6_Joint",
+                  "Arm_L7_Joint"
+                ],
+                "joint_signs": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "joint_zero_offsets_rad": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "input_units": "world metres / joint radians",
+                "sdk_units": "base millimetres / joint degrees",
+                "world_from_base": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    -2.220446049250313e-16,
+                    1.0000000000000002,
+                    0.025999999999999995
+                  ],
+                  [
+                    0.0,
+                    -1.0000000000000002,
+                    -2.220446049250313e-16,
+                    1.121
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "flange_from_tcp": [
+                  [
+                    0.9999999999920002,
+                    -4.000000000059512e-06,
+                    7.999712004380655e-12,
+                    -1.0547118733938987e-17
+                  ],
+                  [
+                    4.000000000226045e-06,
+                    0.9999999999840001,
+                    -3.999999999948489e-06,
+                    -1.1709654061874394e-33
+                  ],
+                  [
+                    8.000156093146414e-12,
+                    4.000000000115022e-06,
+                    0.9999999999920002,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "source_sha256": {
+                  "fx_kine.py": "c6603de2f315dfc0fc85369be07165af7da0118e3cc4006ca94f8787c04087c5",
+                  "libKine.so": "f2aec6ebc1f41302fe0126284076211c044d6c7e1c2276dc919767254e0c597f",
+                  "ccs_m6_40.MvKDCfg": "ce20b1a80974c3ed58cdac4973152625096c8ad93a779e5fd4108c26ce19bd52"
+                },
+                "position_tolerance_m": 1e-05,
+                "rotation_tolerance_rad": 0.0001,
+                "max_joint_step_rad": 0.1,
+                "singularity_policy": "reject any SDK singular flag",
+                "fallback": "none",
+                "mapping_validation": {
+                  "samples": 66,
+                  "max_position_error_m": 5.643241593900938e-06,
+                  "max_rotation_error_rad": 2.572371741862243e-05
+                }
+              },
+              "socket_pose_randomization": {
+                "version": "planar-socket-assembly-v1",
+                "translation_mm": 3.0,
+                "yaw_deg": 0.0,
+                "plane": "world XY, fixed world Z",
+                "rotation": "world Z yaw about nominal socket origin",
+                "distribution": "uniform per-axis at reset",
+                "robot_initialization": "original joint reset and jitter; not co-transformed",
+                "policy_pose_input": false
+              },
+              "render_runtime": {
+                "version": "headless-sensors-only-v1",
+                "rt_subframes": 2
+              },
+              "recovery_controller": {
+                "version": "retreat-align-reenter-v1",
+                "max_attempts": 2,
+                "phase_max_steps": 450,
+                "waypoint_tolerance_mm": 0.08,
+                "strict_entry": true
+              },
+              "entry_guidance": {
+                "version": "qualified-entry-hold-v1",
+                "lateral_takeover_mm": 0.1,
+                "angle_takeover_rad": 0.0015,
+                "handback_requires_entry": true
+              }
+            },
+            "reward": "unchanged worker task truth; never recomputed from noisy reference"
+          },
+          "reference": {
+            "mode": "gt",
+            "points": 32,
+            "spacing_mm": 0.5,
+            "update_steps": 5,
+            "delay_steps": 0,
+            "translation_noise_mm": 0.0,
+            "rotation_noise_deg": 0.0,
+            "episode_bias_mm": 0.0,
+            "episode_bias_deg": 0.0
+          },
+          "system1_checkpoint_sha256": null
+        },
+        "source_model_sha256": "553fa9718c2adb7eb70a3ceddecf2c72165f0a634d48f60f00af26cbd68f8014",
+        "training_config": {
+          "schema": {
+            "version": "omi-hierarchical-insertion-v1",
+            "reference_points": 32,
+            "history_slots": 4,
+            "observations": "TCP-relative path / 1cm, rotation / 0.1rad; goal, progress, plan age, validity; motion/action/contact history",
+            "action": "unchanged normalized world-TCP translation and rotation-vector delta; full direct action, retreat allowed",
+            "proprioception": "simulated TCP feedback",
+            "contact": "wrist-wrench",
+            "contact_semantics": "ideal compensated virtual wrist Fx,Fy,Fz / 10N; Tx,Ty,Tz / 1Nm; validity; no tactile",
+            "transfer_sha256": "cf3292f916737c191cdc7b4cc8dc07e9a0e0bb1eac2282e27a0bbb590da721cb",
+            "execution_config": {
+              "max_steps": 900,
+              "physics_dt": 0.02,
+              "control_dt": 0.1,
+              "teacher_min_step_mm": 0.05,
+              "target_overtravel_mm": 0.1,
+              "joint_target_interpolation": "linear",
+              "global_contact_offset_m": 1e-07,
+              "per_collider_contact_offsets_m": {
+                "sim_module_smooth_shoulder": 5e-06
+              },
+              "force_stop_N": null,
+              "penetration_stop_mm": null,
+              "solver": "PGS",
+              "insertion_assessment": {
+                "version": "entry-strict-interior-tolerant-v1",
+                "control_dt": 0.1,
+                "entry_start_mm": 1.0,
+                "entry_complete_mm": 5.0,
+                "entry_deadline_mm": 6.0,
+                "entry_lateral_mm": 0.15,
+                "entry_angle_rad": 0.003,
+                "entry_good_samples": 3,
+                "entry_point_limit_mm": 0.08,
+                "interior_point_limit_mm": 0.15,
+                "geometric_overlap_limit_mm": 0.1,
+                "entry_mean_force_N": 5.0,
+                "interior_mean_force_N": 20.0,
+                "catastrophic_mean_force_N": 50.0,
+                "entry_force_samples": 3,
+                "interior_force_samples": 5,
+                "stall_samples": 10,
+                "stall_progress_mm": 0.05,
+                "seat_depth_tolerance_mm": 0.1,
+                "seat_lateral_mm": 0.25,
+                "seat_angle_rad": 0.005,
+                "seat_motion_mm": 0.03,
+                "seat_samples": 3,
+                "force_signal_kind": "simulation_contact_impulse_norm_sum_mean"
+              },
+              "wrist_wrench": {
+                "version": "ideal-compensated-module-external-contact-interval-mean-v1",
+                "origin_offset_tcp_m": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "axes": "TCP",
+                "units": [
+                  "N",
+                  "N",
+                  "N",
+                  "Nm",
+                  "Nm",
+                  "Nm"
+                ],
+                "interval_s": 0.1,
+                "sign": "external environment wrench on held module; transferred to virtual sensor origin",
+                "scope": "fixed module external contacts only; no gravity/inertia/electronics; not calibrated hardware wrench"
+              },
+              "ik_backend": {
+                "version": "tianji-ccs-left-world-v1",
+                "arm": 0,
+                "model_type": 1017,
+                "joint_names": [
+                  "Arm_L1_Joint",
+                  "Arm_L2_Joint",
+                  "Arm_L3_Joint",
+                  "Arm_L4_Joint",
+                  "Arm_L5_Joint",
+                  "Arm_L6_Joint",
+                  "Arm_L7_Joint"
+                ],
+                "joint_signs": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "joint_zero_offsets_rad": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "input_units": "world metres / joint radians",
+                "sdk_units": "base millimetres / joint degrees",
+                "world_from_base": [
+                  [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    -2.220446049250313e-16,
+                    1.0000000000000002,
+                    0.025999999999999995
+                  ],
+                  [
+                    0.0,
+                    -1.0000000000000002,
+                    -2.220446049250313e-16,
+                    1.121
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "flange_from_tcp": [
+                  [
+                    0.9999999999920002,
+                    -4.000000000059512e-06,
+                    7.999712004380655e-12,
+                    -1.0547118733938987e-17
+                  ],
+                  [
+                    4.000000000226045e-06,
+                    0.9999999999840001,
+                    -3.999999999948489e-06,
+                    -1.1709654061874394e-33
+                  ],
+                  [
+                    8.000156093146414e-12,
+                    4.000000000115022e-06,
+                    0.9999999999920002,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                ],
+                "source_sha256": {
+                  "fx_kine.py": "c6603de2f315dfc0fc85369be07165af7da0118e3cc4006ca94f8787c04087c5",
+                  "libKine.so": "f2aec6ebc1f41302fe0126284076211c044d6c7e1c2276dc919767254e0c597f",
+                  "ccs_m6_40.MvKDCfg": "ce20b1a80974c3ed58cdac4973152625096c8ad93a779e5fd4108c26ce19bd52"
+                },
+                "position_tolerance_m": 1e-05,
+                "rotation_tolerance_rad": 0.0001,
+                "max_joint_step_rad": 0.1,
+                "singularity_policy": "reject any SDK singular flag",
+                "fallback": "none",
+                "mapping_validation": {
+                  "samples": 66,
+                  "max_position_error_m": 5.643241593900938e-06,
+                  "max_rotation_error_rad": 2.572371741862243e-05
+                }
+              },
+              "socket_pose_randomization": {
+                "version": "planar-socket-assembly-v1",
+                "translation_mm": 3.0,
+                "yaw_deg": 0.0,
+                "plane": "world XY, fixed world Z",
+                "rotation": "world Z yaw about nominal socket origin",
+                "distribution": "uniform per-axis at reset",
+                "robot_initialization": "original joint reset and jitter; not co-transformed",
+                "policy_pose_input": false
+              },
+              "render_runtime": {
+                "version": "headless-sensors-only-v1",
+                "rt_subframes": 2
+              },
+              "recovery_controller": {
+                "version": "retreat-align-reenter-v1",
+                "max_attempts": 2,
+                "phase_max_steps": 450,
+                "waypoint_tolerance_mm": 0.08,
+                "strict_entry": true
+              },
+              "entry_guidance": {
+                "version": "qualified-entry-hold-v1",
+                "lateral_takeover_mm": 0.1,
+                "angle_takeover_rad": 0.0015,
+                "handback_requires_entry": true
+              }
+            },
+            "reward": "unchanged worker task truth; never recomputed from noisy reference"
+          },
+          "reference": {
+            "mode": "gt",
+            "points": 32,
+            "spacing_mm": 0.5,
+            "update_steps": 5,
+            "delay_steps": 0,
+            "translation_noise_mm": 0.0,
+            "rotation_noise_deg": 0.0,
+            "episode_bias_mm": 0.0,
+            "episode_bias_deg": 0.0
+          },
+          "system1_checkpoint_sha256": null,
+          "intervention": {
+            "version": "hierarchical-scripted-takeover-v1",
+            "mode": "scripted",
+            "gate": "isaac_intervention.Gate",
+            "source": "privileged rule; not human",
+            "initial_alignment": true,
+            "hold_through_recovery": true,
+            "evaluation": "policy only"
+          }
+        },
+        "scope": "held-out policy-only simulation"
+      }
+    },
+    "offline_action_comparison": {
+      "bc_logged_loss_sequence_matches_original": true,
+      "models": {
+        "bc": {
+          "train": {
+            "samples": 1823,
+            "mse": 0.0002677884476725012,
+            "rmse_by_axis": [
+              0.03476099669933319,
+              0.0162609051913023,
+              0.010168374516069889,
+              0.002969447523355484,
+              0.003909572958946228,
+              0.002547495299950242
+            ],
+            "mean_std": [
+              0.029999999329447746,
+              0.029999999329447746,
+              0.029999999329447746,
+              0.029999999329447746,
+              0.030000001192092896,
+              0.030000001192092896
+            ]
+          },
+          "val": {
+            "samples": 373,
+            "mse": 0.0015691312728449702,
+            "rmse_by_axis": [
+              0.08838485181331635,
+              0.03749346733093262,
+              0.011243212036788464,
+              0.003266194136813283,
+              0.006413004361093044,
+              0.004352424293756485
+            ],
+            "mean_std": [
+              0.029999999329447746,
+              0.029999999329447746,
+              0.029999999329447746,
+              0.029999999329447746,
+              0.029999999329447746,
+              0.029999999329447746
+            ]
+          }
+        },
+        "bc_plus_rl": {
+          "train": {
+            "samples": 1823,
+            "mse": 0.007846708409488201,
+            "rmse_by_axis": [
+              0.0993288978934288,
+              0.05962827056646347,
+              0.035504262894392014,
+              0.1419057846069336,
+              0.07384845614433289,
+              0.08250502496957779
+            ],
+            "mean_std": [
+              0.7890673279762268,
+              0.23700034618377686,
+              0.331419438123703,
+              0.17292356491088867,
+              0.10658753663301468,
+              0.10480901598930359
+            ]
+          },
+          "val": {
+            "samples": 373,
+            "mse": 0.007678053341805935,
+            "rmse_by_axis": [
+              0.09762591123580933,
+              0.05916249752044678,
+              0.03546157851815224,
+              0.1412183940410614,
+              0.07201379537582397,
+              0.08155455440282822
+            ],
+            "mean_std": [
+              0.7832509875297546,
+              0.23225505650043488,
+              0.3272276520729065,
+              0.16903847455978394,
+              0.10590282082557678,
+              0.10376448184251785
+            ]
+          }
+        }
+      }
+    },
+    "training_failure_action_sources": {
+      "policy": 23
+    },
+    "bc_validation_mse_ratio_rl_over_bc": 4.893187379972972,
+    "invariants": {
+      "same_target_positions": true,
+      "bc_and_rl_teacher_queries_zero": true,
+      "frozen_rl_model_unchanged": true,
+      "bc_online_rl_steps": 0
+    },
+    "conclusions": [
+      "pure rule controller can solve all five targets",
+      "reconstructed BC was not a qualified autonomous baseline",
+      "RL policy also fails and departs further from teacher actions on the same observations",
+      "all 23 training hard failures were judged on policy-controlled steps; state-triggered intervention cannot undo an already terminal step"
+    ]
+  },
+  "tests": {
+    "related": 40,
+    "lightweight_passed": 29,
+    "lightweight_skipped": 66
+  },
+  "artifacts": {
+    "/data/shapeforge/runtime/runs/hier_s0_diagnosis_20261126/summary.json": {
+      "bytes": 55220,
+      "sha256": "ab3d605f27a290c5b5febf760d13d51ec513bafff306070f4372f08f2d980062"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_diagnosis_20261126/protocol.json": {
+      "bytes": 817,
+      "sha256": "8c8dfb438fe7c54e2870f2b2d161e7772d29609c134fd7ec63a8831c8bf8a0b1"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_diagnosis_20261126/offline_comparison.json": {
+      "bytes": 2233,
+      "sha256": "9a71f707d5022f74acf25d218ae4476a30e2dbd1061f9fa23454024f5918dfef"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_diagnosis_20261126/bc_only/system0.zip": {
+      "bytes": 3921246,
+      "sha256": "82407877ee532349c2003f8b5afd46ba73fb3c4acb365579dfe5b93f80ba6daf"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_diagnosis_20261126/bc_only/system0.json": {
+      "bytes": 7928,
+      "sha256": "ae1cd68c94540a4d4fc619ba9cb7b7e14a033d61a4e1fb4fd7044c9bd5073bdc"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_diagnosis_20261126/bc_only/bc_validation.json": {
+      "bytes": 730,
+      "sha256": "9f6fc3b1ef71d0e775c59d288555653c3159a5fc4ad9ab3ba7021f8454fa4321"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_diagnosis_20261126/bc_only/reconstruction.json": {
+      "bytes": 641,
+      "sha256": "59408fc34b074d88ac732a6f4ba34f6e01f052192710e741e26ec3c911e76e01"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_diagnosis_20261126/bc_reconstruction.log": {
+      "bytes": 386,
+      "sha256": "0e13b47d32eb5a5150bf1295c53b10cd4f9781911d561ef7f42a6d48318ff53b"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_diagnosis_20261126/rule/experiment/rule_evaluation.json": {
+      "bytes": 9232,
+      "sha256": "eadfd3662c8cae511edb6c6f78bc1282e761ba109b81cb0293e3dadd9b8bf117"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_diagnosis_20261126/bc_eval/experiment/evaluation.json": {
+      "bytes": 17271,
+      "sha256": "0f27263d67e312a59a7b542a61b1a3f5b23f45a09dd0626172337c7ca72b2039"
+    }
+  },
+  "sources_sha256": {
+    "/home/linux/omi_folder/omi_proj/src/omi_hil_rl/training/hierarchical_insertion/cli.py": "3241168ee9534da0864778fcdcc32260a06aa59a26b78c66fb49cf9c6ca3dd9a",
+    "/home/linux/omi_folder/omi_proj/tests/test_hierarchical_intervention.py": "c1025268da65f48890f69dc9adc73fcf746b4a8d425606cff835ad666ba593f5",
+    "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/run_hierarchical_insertion.py": "0ee163103abc62cd93e697ab442a2102322f7ab837086fa7b2a751530a5de87e",
+    "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/reconstruct_hierarchical_bc.py": "d6260500cac3a24902f46d666ce25e18e5bbeeca47401ec7965359976b2a2d18"
+  }
+}

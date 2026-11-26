@@ -1,5 +1,29 @@
 # 跨领域阶段与交接记录
 
+- [2026-11-26：System1／System0完整会话交接](2026-11-26-system1-system0-session-handoff.md)：本窗口目标、训练成果、异常恢复、可视化与下一步接续。
+
+- [2026-11-26：System0随机化重训完整编年](../agent/simulation/chronicles/2026-11-26-system0-randomized-retraining.md)：领域编年体主记录；操作命令另见[重启交接](2026-11-26-system0-rl-reboot-handoff.md)。
+
+- [2026-11-26：System0 RL完成与重启交接](2026-11-26-system0-rl-reboot-handoff.md)：异常修复、四模型落盘、测试延后及可执行恢复步骤。
+
+
+- [2026-11-26：随机插口与远初态重新采集／BC／RL](2026-11-26-system0-randomized-retraining.md)：新数据、冻结协议、边界验证与长任务恢复。
+
+- [2026-11-26：大幅初态偏差及校正展示](2026-11-26-system0-large-offset-correction.md)：八条件真实执行、偏差曲线、完整对照与单例说明。
+
+- [2026-11-26：初始前后间距再增加2～3 cm](2026-11-26-system0-far-start.md)：30／40 mm真实初态、冻结模型与同相机展示。
+
+- [2026-11-26：清晰腕部相机视角](2026-11-26-system0-wrist-view.md)：固定安装和鱼眼投影、高清局部及同步外部近景。
+
+- [2026-11-26：初始偏移、俯仰与朝向误差测试](2026-11-26-system0-initial-pose.md)：真实reset、严格位姿审核、冻结模型结果与视频。
+
+- [2026-11-26：System1路径增益配对实验完成](2026-11-26-system1-path-ablation.md)：完整两种子结果、训练来源和对照边界。
+
+- [2026-11-26：System1路径／无路径自主插入视频](2026-11-26-system1-path-video.md)：实际执行记录、同目标、双视图同步及回放核对。
+
+- [2026-11-26：System0在线规则干预接入与训练](2026-11-26-system0-online-intervention.md)：实现、失败修复、恢复探针、6000步训练和无接管0/5结果。
+
+
 - [2026-11-25 System1与System0当前进展交接](2026-11-25-system1-system0-handoff.md)：主接续入口，汇总分工、模型、图像／视频、九位置结果和下一步。
 
 - [2026-11-25 System1路径训练与展示](2026-11-25-system1-path-visualization.md)。

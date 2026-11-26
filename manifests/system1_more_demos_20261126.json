@@ -1,0 +1,173 @@
+{
+  "date": "2026-11-26",
+  "status": "five_demo_videos_delivered",
+  "output_root": "/data/shapeforge/runtime/runs/s1_more_demos_20261126",
+  "delivery": "/home/linux/Downloads/System1_System0_Demos_20261126/System1_System0_5_Demos.mp4",
+  "duration_seconds": 89.8,
+  "scope": "selected examples from existing evaluation; no new rollouts or success-rate estimate",
+  "cases": [
+    {
+      "name": "01_same_target_both_succeed",
+      "training_seed": 341000,
+      "evaluation_index": 0,
+      "results": {
+        "path": true,
+        "goal": true
+      },
+      "duration_seconds": 14.8,
+      "delivery": "/home/linux/Downloads/System1_System0_Demos_20261126/01_same_target_both_succeed.mp4"
+    },
+    {
+      "name": "02_center_both_succeed",
+      "training_seed": 341000,
+      "evaluation_index": 15,
+      "results": {
+        "path": true,
+        "goal": true
+      },
+      "duration_seconds": 15.0,
+      "delivery": "/home/linux/Downloads/System1_System0_Demos_20261126/02_center_both_succeed.mp4"
+    },
+    {
+      "name": "03_positive_both_succeed",
+      "training_seed": 341000,
+      "evaluation_index": 23,
+      "results": {
+        "path": true,
+        "goal": true
+      },
+      "duration_seconds": 15.7,
+      "delivery": "/home/linux/Downloads/System1_System0_Demos_20261126/03_positive_both_succeed.mp4"
+    },
+    {
+      "name": "04_entry_failure",
+      "training_seed": 341000,
+      "evaluation_index": 5,
+      "results": {
+        "path": true,
+        "goal": false
+      },
+      "duration_seconds": 14.8,
+      "delivery": "/home/linux/Downloads/System1_System0_Demos_20261126/04_entry_failure.mp4"
+    },
+    {
+      "name": "05_other_seed_same_positive",
+      "training_seed": 340000,
+      "evaluation_index": 23,
+      "results": {
+        "path": true,
+        "goal": false
+      },
+      "duration_seconds": 29.5,
+      "delivery": "/home/linux/Downloads/System1_System0_Demos_20261126/05_other_seed_same_positive.mp4"
+    }
+  ],
+  "all_source_artifacts_unchanged": true,
+  "all_video_decodes_passed": true,
+  "artifacts": {
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/delivery_manifest.json": {
+      "bytes": 33517,
+      "sha256": "e0db97ec90e2e0b53ab44772295e09b19c1e0f2c11b6b0771b8feb010d360b3e"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/playlist.json": {
+      "bytes": 1603,
+      "sha256": "e8706ff2992cbcb243d230baff1eeb412859004f765b9928ee04e65c290910d5"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/source_integrity.json": {
+      "bytes": 3412,
+      "sha256": "8ff6a753c175d30ba87735fdb79491162a01e2e7eda2adfdc7eb85cf0b0f9dd5"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/interruption.json": {
+      "bytes": 308,
+      "sha256": "746132a74294568c54f0a83448c98039a230d262101175f5051306288babc5ff"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/continuation_result.json": {
+      "bytes": 39,
+      "sha256": "e8a90be8eef76311da0e0f0fe01b0cbb11a12140321f8f36c4f53f511a761a92"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/System1_System0_5_Demos.mp4": {
+      "bytes": 11108120,
+      "sha256": "72d28d97331a25f9e6a31ec0e15656db5260fdc4a51bfeb81ca4669505e9abaf"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/01_same_target_both_succeed/selection.json": {
+      "bytes": 2892,
+      "sha256": "f777bfef1f079a919c40be9067664b5cd67ae56c6e1515eaee21d2f28e021aa7"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/01_same_target_both_succeed/capture/capture_report.json": {
+      "bytes": 5024,
+      "sha256": "2ac4c0b3a6a7770a51017a6077c28f21fcc9c84ecfc9f6a6c61b5e7869272b33"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/01_same_target_both_succeed/video_manifest.json": {
+      "bytes": 9164,
+      "sha256": "0ba67f6ee65ddb638460bc3a4bafbf58b1ad5bdad6af9a122bea57e52d7e4ffb"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/01_same_target_both_succeed/system1_vs_system0.mp4": {
+      "bytes": 2007972,
+      "sha256": "b2287ea39ee616a0f6a3f914b0dd9ea12e19652d2200ba12a91e09071d9048e9"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/02_center_both_succeed/selection.json": {
+      "bytes": 2870,
+      "sha256": "9b940aca7b979641c97d9c4721cc74f8b66c5e63e0b005e0a044220e82eb2fc6"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/02_center_both_succeed/capture/capture_report.json": {
+      "bytes": 5082,
+      "sha256": "6023ba090627ebd3af77b4d79a4492c37f9bc43c33c0646583bd768e4f1324b4"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/02_center_both_succeed/video_manifest.json": {
+      "bytes": 9199,
+      "sha256": "8bcb9a9c29e2e235c2fb746fef260f532e0ccf472f2feb1fed1d1e032314204c"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/02_center_both_succeed/system1_vs_system0.mp4": {
+      "bytes": 2059923,
+      "sha256": "bd9f4f75b27b3c5082aea01ee310144d6bb1b457e0f18d61c292b80e2330f505"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/03_positive_both_succeed/selection.json": {
+      "bytes": 2878,
+      "sha256": "6a3767824bddc889ac92e7e97ef2b7483647da0a59a209b9ac2787ac0dc80030"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/03_positive_both_succeed/capture/capture_report.json": {
+      "bytes": 5254,
+      "sha256": "3c8dab43c4598f38b6f09363981c4e968df9dfa5bdea5119d3854c4cf349ea46"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/03_positive_both_succeed/video_manifest.json": {
+      "bytes": 9407,
+      "sha256": "ab8a7083aad72022112e451e0d679713e753987fad90b09109286223f8a980d4"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/03_positive_both_succeed/system1_vs_system0.mp4": {
+      "bytes": 2134911,
+      "sha256": "feca012d8e80157ab7925ff59ed14460e86ddc02722b2040cb66da05401b8547"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/04_entry_failure/selection.json": {
+      "bytes": 2872,
+      "sha256": "24410f909f2aafe68e7d845ca172a2a1cc1365f6279c4418c5cad782244ff3dd"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/04_entry_failure/capture/capture_report.json": {
+      "bytes": 3919,
+      "sha256": "e03f0febcfe5fb47c2b1b3bc560db46424341565426e053fa6e851994bcfab8f"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/04_entry_failure/video_manifest.json": {
+      "bytes": 7856,
+      "sha256": "c5f03bdf489ebe91a28f410b4f83bb2ac1cfeb2e23658080bcc0ef772a5444b0"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/04_entry_failure/system1_vs_system0.mp4": {
+      "bytes": 1350558,
+      "sha256": "7751f2bf0b5a7070054c5d1019daa1bf79aab8fae1cbf649e065bb7c509d73a2"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/05_other_seed_same_positive/selection.json": {
+      "bytes": 3299,
+      "sha256": "c934661dea8de7beded841478eb83569811327af09f94298e3512eed45d8bc86"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/05_other_seed_same_positive/capture/capture_report.json": {
+      "bytes": 7582,
+      "sha256": "2aa54c70585c28aa6c295110b33bc17edca2bda886eef0fc4bfb0be832d478ad"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/05_other_seed_same_positive/video_manifest.json": {
+      "bytes": 12517,
+      "sha256": "f1b5d1cce76a78190d228596dea188e7122705012d49b9a2e053759ad00f91b1"
+    },
+    "/data/shapeforge/runtime/runs/s1_more_demos_20261126/05_other_seed_same_positive/system1_vs_system0.mp4": {
+      "bytes": 3556725,
+      "sha256": "9c0fd30554183c8f58307fe5e7054c3430a63cd2929c0e3fc7e409ac769d2b6d"
+    }
+  }
+}

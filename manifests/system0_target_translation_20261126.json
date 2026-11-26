@@ -1,0 +1,296 @@
+{
+  "date": "2026-11-26",
+  "status": "five_translated_socket_targets_verified_no_new_training",
+  "output_root": "/data/shapeforge/runtime/runs/s0_target_translation_20261126_v1",
+  "report": {
+    "cases": [
+      {
+        "id": 0,
+        "seed": 160000,
+        "requested": {
+          "dx_mm": 0,
+          "dy_mm": 0,
+          "yaw_deg": 0.0
+        },
+        "actual_world_delta_mm": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "robot_tcp_delta_mm": 0.0,
+        "robot_tcp_rotation_matrix_delta": 0.0,
+        "socket_position_m": [
+          0.6490108367488053,
+          0.205374489946,
+          0.8056909429031601
+        ],
+        "socket_rotation": [
+          [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "goal_position_m": [
+          0.4256456763142364,
+          0.20656406961151577,
+          0.808123398886461
+        ],
+        "native_position_error_mm": 4.453158141557076e-06,
+        "native_rotation_error_rad": 0.0
+      },
+      {
+        "id": 1,
+        "seed": 160000,
+        "requested": {
+          "dx_mm": 3.0,
+          "dy_mm": 0,
+          "yaw_deg": 0.0
+        },
+        "actual_world_delta_mm": [
+          3.0000000000000027,
+          0.0,
+          0.0
+        ],
+        "robot_tcp_delta_mm": 0.0,
+        "robot_tcp_rotation_matrix_delta": 0.0,
+        "socket_position_m": [
+          0.6520108367488053,
+          0.205374489946,
+          0.8056909429031601
+        ],
+        "socket_rotation": [
+          [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "goal_position_m": [
+          0.4286456763142364,
+          0.20656406961151577,
+          0.808123398886461
+        ],
+        "native_position_error_mm": 2.1767948356756474e-05,
+        "native_rotation_error_rad": 0.0
+      },
+      {
+        "id": 2,
+        "seed": 160000,
+        "requested": {
+          "dx_mm": -3.0,
+          "dy_mm": 0,
+          "yaw_deg": 0.0
+        },
+        "actual_world_delta_mm": [
+          -3.0000000000000027,
+          0.0,
+          0.0
+        ],
+        "robot_tcp_delta_mm": 0.0,
+        "robot_tcp_rotation_matrix_delta": 0.0,
+        "socket_position_m": [
+          0.6460108367488053,
+          0.205374489946,
+          0.8056909429031601
+        ],
+        "socket_rotation": [
+          [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "goal_position_m": [
+          0.4226456763142364,
+          0.20656406961151577,
+          0.808123398886461
+        ],
+        "native_position_error_mm": 2.1123648602871448e-05,
+        "native_rotation_error_rad": 0.0
+      },
+      {
+        "id": 3,
+        "seed": 160000,
+        "requested": {
+          "dx_mm": 0,
+          "dy_mm": 3.0,
+          "yaw_deg": 0.0
+        },
+        "actual_world_delta_mm": [
+          0.0,
+          3.0000000000000027,
+          0.0
+        ],
+        "robot_tcp_delta_mm": 0.0,
+        "robot_tcp_rotation_matrix_delta": 0.0,
+        "socket_position_m": [
+          0.6490108367488053,
+          0.208374489946,
+          0.8056909429031601
+        ],
+        "socket_rotation": [
+          [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "goal_position_m": [
+          0.4256456763142364,
+          0.20956406961151577,
+          0.808123398886461
+        ],
+        "native_position_error_mm": 4.762828173905339e-06,
+        "native_rotation_error_rad": 0.0
+      },
+      {
+        "id": 4,
+        "seed": 160000,
+        "requested": {
+          "dx_mm": 0,
+          "dy_mm": -3.0,
+          "yaw_deg": 0.0
+        },
+        "actual_world_delta_mm": [
+          0.0,
+          -3.0000000000000027,
+          0.0
+        ],
+        "robot_tcp_delta_mm": 0.0,
+        "robot_tcp_rotation_matrix_delta": 0.0,
+        "socket_position_m": [
+          0.6490108367488053,
+          0.202374489946,
+          0.8056909429031601
+        ],
+        "socket_rotation": [
+          [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "goal_position_m": [
+          0.4256456763142364,
+          0.20356406961151577,
+          0.808123398886461
+        ],
+        "native_position_error_mm": 2.264546762549741e-06,
+        "native_rotation_error_rad": 0.0
+      }
+    ],
+    "max_robot_tcp_delta_mm": 0.0,
+    "source_transfer": "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer",
+    "translation_only": true,
+    "geometry_changed": false,
+    "training": false,
+    "recommended_runtime_options": {
+      "system1": "gt",
+      "socket_range_mm": 3.0,
+      "socket_yaw_deg": 0
+    }
+  },
+  "receipt": {
+    "complete": true,
+    "error": null,
+    "worker": {
+      "command": [
+        "/data/isaac-sim-5.1.0/python.sh",
+        "-u",
+        "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/isaac_rl_worker.py",
+        "--transfer",
+        "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer",
+        "--output",
+        "/data/shapeforge/runtime/runs/s0_target_translation_20261126_v1/worker",
+        "--socket",
+        "/data/shapeforge/runtime/runs/s0_target_translation_20261126_v1/worker.sock",
+        "--max-steps",
+        "10",
+        "--physics-substeps",
+        "5",
+        "--ik-backend",
+        "tianji",
+        "--tianji-sdk",
+        "/data/shapeforge/runtime/baselines/omi_transfer_20261120_004618/omi_proj/local/vendor/optical_module_pu/source/OpticalModule_PU/Arm_control",
+        "--socket-pose-range-mm",
+        "3.0",
+        "--socket-yaw-range-deg",
+        "0"
+      ],
+      "state": "exited",
+      "start_new_session": true,
+      "returncode": 0,
+      "pid": 2024850,
+      "pgid": 2024850,
+      "elapsed_seconds": 26.970619886007626
+    },
+    "source_hashes": {
+      "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer/transfer.json": "cf3292f916737c191cdc7b4cc8dc07e9a0e0bb1eac2282e27a0bbb590da721cb",
+      "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer/meshes.npz": "deacdc6cf90ed4752c96e54ed005fa09bc1f14a987216e465db034786efe6eb3"
+    }
+  },
+  "tests": {
+    "lightweight_total": 95,
+    "passed": 29,
+    "skipped": 66,
+    "socket_numeric_passed": 3
+  },
+  "artifacts": {
+    "socket_translation.png": "ea6deea64b4a350076c607e040624cf6eeb709d20a55bc40186411228c991612",
+    "observations.npz": "0405886f2658c4d35b3aa58c38a12112e71f320a86c38504760d5e126b1ad341",
+    "report.json": "edabfaf7159700e4e09bfdc6f8f298c13e366a538ffdca4b1529e96dd027816f",
+    "result.json": "33f29bcb54bd032b1da1254090bdb6fee4ad18ae6d632a9a7a355e5946fa78d1",
+    "preview_socket_translation.py": "1b41cfd7207e76d871a46ee914acee16f4543ab05be07190401ca91394debd7f"
+  }
+}

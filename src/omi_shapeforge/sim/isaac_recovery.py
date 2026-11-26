@@ -68,7 +68,20 @@ class StagedRecoveryTeacher:
         """Advance only after a real control step, never from repeated queries."""
         if executed_action is not None:
             self.teacher.previous = np.asarray(executed_action).copy()
-        if not self.active or measurement.get('failed') or measurement.get('is_success'):
+        if measurement.get('failed') or measurement.get('is_success'):
+            return
+        missed_entry = (self.config.strict_entry and not measurement.get('entry_qualified') and
+                        measurement['insertion_depth_mm'] >= env.contact_assessment.config.entry_complete_mm)
+        # A completed recovery can hand control back to the policy. If another
+        # blockage then exhausts the budget while idle, terminate THIS real
+        # transition. Waiting until the next teacher query would raise outside
+        # env.step(), aborting the whole trainer without a terminal replay row.
+        if (self.stage == 'idle' and self.attempts >= self.config.max_attempts and
+                (measurement.get('recovery_required') or missed_entry)):
+            self.failure = 'recovery_attempt_budget'
+            self._transition('failed')
+            return
+        if not self.active:
             return
         self.phase_steps += 1
         position = env.tcp()[:3, 3]

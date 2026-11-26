@@ -37,7 +37,37 @@ train-s0 --demos /data/shapeforge/runtime/runs/hier_NEW_collect/experiment \
   --bc-steps 1000 --steps 10000 --learning-starts 100 --seed 122000
 ```
 
-此处BC1000步和SAC10000环境步是可调整实验预算，不是收敛承诺。System0是独立SB3 SAC，默认两层256维MLP；不加载旧OMI Actor。新路径／运动／腕力特征全部可训练。输出是原worker归一化世界系六维增量；原IK、物理与任务奖励仍执行。训练rollout无teacher接管。
+此处BC1000步和SAC10000环境步是可调整实验预算，不是收敛承诺。System0是独立SB3 SAC，默认两层256维MLP；不加载旧OMI Actor。新路径／运动／腕力特征全部可训练。输出是原worker归一化世界系六维增量；原IK、物理与任务奖励仍执行。旧默认 `--intervention none` 不接管；2026-11-26新增显式 `--intervention scripted` 在线规则接管，见下节。
+
+## 在线规则干预训练
+
+应先保存并独立检查BC策略：`train-s0 --steps 0 --bc-steps 1000 --demos <数据集> ...`只做模仿更新，不调用环境reset／step或SAC更新，保存模型和空replay，并输出训练／验证动作误差。必须提供成功训练和验证回合，不能把离线误差直接解释为闭环成功。之后用独立`evaluate`关闭接管检查。
+
+增加BC更新时，可用 `--bc-steps 10000 --bc-checkpoint-steps 1000` 保存每1000更新的模型、空replay和完整训练／验证动作误差；`bc_history.json`记录曲线。该检查间隔默认0，不改变旧训练。纯BC无需启动物理时，可使用 `reconstruct_hierarchical_bc.py` 从已保存的训练config构造拒绝reset／step的空间环境；同样支持这两个参数。注意更新次数不等于示范数量或完整数据epoch。
+
+相同目标的纯规则对照使用launcher子命令 `evaluate-rule --system1 gt --episodes N --seed S ...`。它全程请求规则老师，输出`rule_evaluation.json`，不生成训练dataset，也不标记为学习策略成绩。规则基线与策略评估须保持worker／参考配置一致。
+
+单独检查评估目标变化时，使用 `evaluate --fixed-socket-pose 0 0 0`（世界dx毫米、dy毫米、yaw度）。它在注册的worker范围内显式指定每回合目标，保留训练物理schema；报告同时保存请求覆盖项和实际socket pose。此选项只允许评估，不能把“冻结模型测固定目标”称为“固定目标训练”。
+
+`train-s0`可加入以下选项（放在launcher的`--`之后）：
+
+```bash
+--system1 gt --points 32 --spacing-mm .5 --intervention scripted \
+  --intervention-fraction .5 --intervention-bc-weight 1 \
+  --initial-policy-std .03 --entropy-coef auto_0.01 --target-entropy -12
+```
+
+前三个干预参数控制接管模式、规则专用采样份额以及规则动作纠正损失。其余份额从全部在线数据采样，因此实际规则样本比例可能高于配置份额。最后三个是可选的探索参数，本轮小试用于限制初始随机动作；不是已经验证的最优参数。接管使用现有`Gate`与worker的分阶段恢复，持有控制直至满足交回条件。规则读取特权误差／阶段信息，但这些字段不会新增到actor观测中。动作来源始终是`scripted_intervention`，不称真人干预。
+
+经验池保存实际执行动作、策略原提议、规则来源标志、种子和步号；运动历史也使用执行后的动作。SAC通过已有ExecutedAction桥接写入replay，额外规则纠正只采样实际发生的接管转移。`trace.jsonl`保留原因、恢复阶段、接管／交回统计。`training_report.json`分列辅助成功、自主成功、未结束回合和规则占比。
+
+`--checkpoint-steps 1000`默认每1000步保存中间模型和replay；设0可关闭。续训必须使用相同的参考／物理／接管与探索参数，设`--bc-steps 0`且不重复传`--demos`。中间检查点在经验写入之后、下一次梯度更新之前保存。旧无接管检查点不能直接改用接管配置续训；另开训练版本。
+
+独立`evaluate`只能使用`--intervention none`（默认），传scripted会在参数检查时拒绝。辅助训练成功不计入无接管评估成功率。当前接入保持原TCP相对参考和世界TCP动作定义；夹爪中心展示、轴向GT候选不自动改变此运行时合同。
+
+无接管评估遇到原厂IK拒绝时，报告`ik_action_rejected`，在`rejected_actions.jsonl`保存未执行的提议，继续下一个预登记种子；不向经验池补假转移。未知异常仍终止进程。评估结果和进程回执分别检查。
+
+审计带续训的经验池：使用学习环境运行 `scripts/simulation/audit_hierarchical_intervention_run.py --experiment <最终experiment> --parent-trace <前一段trace.jsonl> --previous-model <前一段system0.zip>`，逐条核对动作、来源、终止、腕力及旧经验保留。这里仅加载本项目自己生成且信任的检查点与pickle。
 
 `system0.zip`、`replay.pkl`、`system0.json`成套保存。使用 `train-s0 --model <旧目录>/system0.zip --bc-steps 0 --steps <新增步数>`在新目录续训；要求参考配置和物理合同一致，恢复replay与优化器。仅加载自己生成且信任的SB3/replay文件，不能加载来源未知的pickle。新观测不能直接混用旧经验池。
 

@@ -1,0 +1,169 @@
+{
+  "date": "2026-11-26",
+  "status": "bc_10000_updates_completed_same_five_targets_3_of_5",
+  "output_root": "/data/shapeforge/runtime/runs/hier_s0_bc10000_20261126",
+  "summary": {
+    "scope": "BC update-count comparison on same five diagnostic targets; no online RL or new data",
+    "bc_updates_before": 1000,
+    "bc_updates_after": 10000,
+    "first_1000_actor_exact_match": true,
+    "before_successes": 0,
+    "after_successes": 3,
+    "evaluation_cases": 5,
+    "teacher_requests": 0,
+    "train_action_mse_before": 0.0002677885058801621,
+    "train_action_mse_after": 5.2166637033224106e-05,
+    "val_action_mse_before": 0.0015691311564296484,
+    "val_action_mse_after": 0.001872972003184259,
+    "evaluation": [
+      {
+        "seed": 220000,
+        "success": false,
+        "steps": 158,
+        "reward": -0.19567593931171984,
+        "attempted_steps": 158,
+        "control_rejection": null,
+        "backward_motion_steps": 62,
+        "failure": "entrance_not_qualified",
+        "teacher_requests": 0,
+        "socket_pose": {
+          "dx_mm": -0.9236338975036209,
+          "dy_mm": -1.4361932372299804,
+          "yaw_deg": 0.0
+        },
+        "final_depth_mm": 6.023677556289758,
+        "lateral_error_mm": 9.522301567747096,
+        "alignment_angle_deg": 2.03864864595266,
+        "max_contact_mean_N": 2.10517319653183
+      },
+      {
+        "seed": 220001,
+        "success": false,
+        "steps": 147,
+        "reward": -0.2341147370106304,
+        "attempted_steps": 147,
+        "control_rejection": null,
+        "backward_motion_steps": 61,
+        "failure": "entrance_not_qualified",
+        "teacher_requests": 0,
+        "socket_pose": {
+          "dx_mm": -2.8443622400477917,
+          "dy_mm": -1.6963089926777395,
+          "yaw_deg": 0.0
+        },
+        "final_depth_mm": 6.030157947652391,
+        "lateral_error_mm": 9.522365384915522,
+        "alignment_angle_deg": 2.0282746536394094,
+        "max_contact_mean_N": 1.7457569764917136
+      },
+      {
+        "seed": 220002,
+        "success": true,
+        "steps": 364,
+        "reward": 1.671094005389623,
+        "attempted_steps": 364,
+        "control_rejection": null,
+        "backward_motion_steps": 2,
+        "failure": null,
+        "teacher_requests": 0,
+        "socket_pose": {
+          "dx_mm": 1.2951225313270873,
+          "dy_mm": -0.2942748516727529,
+          "yaw_deg": 0.0
+        },
+        "final_depth_mm": 51.280925542965974,
+        "lateral_error_mm": 0.0483202776628491,
+        "alignment_angle_deg": 0.010336657218046422,
+        "max_contact_mean_N": 0.16709973184333765
+      },
+      {
+        "seed": 220003,
+        "success": true,
+        "steps": 376,
+        "reward": 1.6859575487684588,
+        "attempted_steps": 376,
+        "control_rejection": null,
+        "backward_motion_steps": 7,
+        "failure": null,
+        "teacher_requests": 0,
+        "socket_pose": {
+          "dx_mm": 1.0387138735291712,
+          "dy_mm": 1.7153899428487822,
+          "yaw_deg": 0.0
+        },
+        "final_depth_mm": 51.28078547082129,
+        "lateral_error_mm": 0.05259253508891191,
+        "alignment_angle_deg": 0.011235065621002403,
+        "max_contact_mean_N": 0.14463501516729696
+      },
+      {
+        "seed": 220004,
+        "success": true,
+        "steps": 368,
+        "reward": 1.6550850882515702,
+        "attempted_steps": 368,
+        "control_rejection": null,
+        "backward_motion_steps": 14,
+        "failure": null,
+        "teacher_requests": 0,
+        "socket_pose": {
+          "dx_mm": -0.7419788721702121,
+          "dy_mm": 2.087260256130925,
+          "yaw_deg": 0.0
+        },
+        "final_depth_mm": 51.280882388738625,
+        "lateral_error_mm": 0.045336750740429706,
+        "alignment_angle_deg": 0.0102262285589295,
+        "max_contact_mean_N": 0.15872617421855625
+      }
+    ],
+    "checkpoint_count": 10,
+    "model_hash_unchanged_by_evaluation": true,
+    "data_caveat": "same five positive-Y BC training targets; no negative-Y initial-target demonstrations; validation is one episode",
+    "conclusion": "longer BC improved these closed-loop cases; it did not establish reliable generalization"
+  },
+  "tests": {
+    "related_passed": 40,
+    "lightweight_passed": 29,
+    "lightweight_skipped": 66
+  },
+  "artifacts": {
+    "/data/shapeforge/runtime/runs/hier_s0_bc10000_20261126/protocol.json": {
+      "bytes": 878,
+      "sha256": "b931b1630160f339c99c5542b160f4c37dffe5991cc6955f29abf364555b3b72"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_bc10000_20261126/summary.json": {
+      "bytes": 3779,
+      "sha256": "969b2f0c9f679850328c3824d5e0a05f56e65ed7e971b03647c788e68011812a"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_bc10000_20261126/prefix_validation.json": {
+      "bytes": 145,
+      "sha256": "b410e37aba8ccb118a223b9484e799d7904e1b656357e58a54332c0cd47a8d02"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_bc10000_20261126/train/system0.zip": {
+      "bytes": 3921275,
+      "sha256": "aaccc6695c3159346f24ecf57a436dee19480b765fc32fff9ad240915935d0b7"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_bc10000_20261126/train/system0.json": {
+      "bytes": 7929,
+      "sha256": "6541725892e88bf834d9f9d47c0ab9f54412634c7109cf4c2f42b64cda816ab7"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_bc10000_20261126/train/bc_history.json": {
+      "bytes": 6449,
+      "sha256": "c8473adfeaf475fc58938a82ffb3f0355611a9fafc8cb634ae6861eb6e568bfe"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_bc10000_20261126/train/bc_validation.json": {
+      "bytes": 732,
+      "sha256": "fd7dbbb9fda8232e877e8d7f319d6fbbf6aa0d96d9056ed1bc1abd006c31434c"
+    },
+    "/data/shapeforge/runtime/runs/hier_s0_bc10000_20261126/eval/experiment/evaluation.json": {
+      "bytes": 17283,
+      "sha256": "44a37aecbb7d15511b83dc1a41758dc8d3f4e2954c140e3ac30f933364885c09"
+    }
+  },
+  "sources_sha256": {
+    "/home/linux/omi_folder/omi_proj/src/omi_hil_rl/training/hierarchical_insertion/cli.py": "d6ade48b750956f35c29fea28ddddc564efbd7dd5923ffe4956393cb3facbdd3",
+    "/home/linux/omi_folder/omi_proj/tests/test_hierarchical_intervention.py": "9ba0544ff57b6ef13c2cedb3effbdc273e53652eebd7c3ca8375ba0e94e2d0f4",
+    "/home/linux/omi_folder/omi_shapeforge/scripts/simulation/reconstruct_hierarchical_bc.py": "aa5c0994bb131d724d4f61cebc5f81dcb818d0800b3a195c7fc1b82a828fbe58"
+  }
+}

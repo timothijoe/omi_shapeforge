@@ -1,5 +1,15 @@
 # System1 与 System0 独立插接原型
 
+2026-11-26新增：[System0在线规则干预](hierarchical-intervention.md)。接管／交回、执行动作replay、规则来源、续训和无接管评估隔离已接入；实际受阻恢复接口2/2通过。已完成多目标6000步有限训练，完整训练回合辅助5/28；独立评估单列，不能把该数字作为自主成功率。
+
+## 2026-11-26：暂用GT参考，只改变插口位置
+
+用户提出暂时让System1使用仿真真值，只训练System0检验不同target的泛化，并进一步明确先不改变插口本身，只改位置。当前限定同一插口模型／尺寸／材质／朝向，位置在世界XY平面变化；不是替换孔型、扩大到六维姿态或动态移动目标。
+
+已用 `preview_socket_translation.py` 验证原位置、X±3 mm、Y±3 mm五个目标。同一个初始化种子160000，五次机器人TCP位置和旋转逐值一致；插口USD／PhysX位置和接触垫跟随检查通过，最终目标平移与插口平移一致，源传递包／网格哈希保持。实际双RGB与孔口中心叠加保存在 `/data/shapeforge/runtime/runs/s0_target_translation_20261126_v1/`，worker原生退出0。轻量95项29通过／66跳过，插口位姿数值测试3项通过。
+
+本次完成位置切换与演示，没有新System0训练或插接执行。后续沿用GT模式，现有launcher的位置范围选项为 `--socket-range-mm 3 --socket-yaw-deg 0`；尚不能据此宣称策略泛化。训练预算、参考接口接入与独立目标测试仍需后续落实。[位置对照](/data/shapeforge/runtime/runs/s0_target_translation_20261126_v1/socket_translation.png) · [证据](../../../../manifests/system0_target_translation_20261126.json)
+
 2026-11-25，按用户要求新增独立实验链路：System1支持真值、位姿偏差／抖动／延迟以及可训练视觉估计；System0接收路径与实际运动反馈，直接输出六维增量，自行决定推进和倒退。随后按用户补充，第一版使用虚拟腕部六维力／力矩，不使用双指触觉。
 
 [运行教程](../../../../tutorials/hierarchical_insertion.md) · [讨论背景](../../../design/system1-system0-path-conditioned-rl-discussion.md) · [验证清单](../../../../manifests/hierarchical_insertion_20261125.json)
@@ -25,7 +35,7 @@ System1提供平滑旋转的入口接近参考及轴向路径。默认每5个控
 
 System0输入为：TCP坐标系下的路径预览、最终几何目标、可回退的投影进度、参考年龄和有效位，以及最近4步的实际位移／旋转、上一完整动作和腕力／力矩／有效位。它没有额外的真实孔位、入口资格、恢复提示或GT接触阶段输入。GT／噪声模式可使用仿真位姿生成System1参考；learned模式只向预测器传图像与测量TCP，标签不进策略。
 
-奖励与成功判据继续使用仿真真值，与噪声路径独立。模型评估禁止teacher查询，记录实际后退步数；System1不切换退回状态。规则老师只在显式采集示范时使用，来源标为scripted。
+奖励与成功判据继续使用仿真真值，与噪声路径独立。模型评估禁止teacher查询，记录实际后退步数；System1不切换退回状态。旧默认无接管训练保持；2026-11-26新增显式`--intervention scripted`，可以在在线SAC训练中调用规则老师并交回策略，详见后续记录和教程。来源标为scripted，不能与真人干预混淆。
 
 ## 腕部传感器假设
 

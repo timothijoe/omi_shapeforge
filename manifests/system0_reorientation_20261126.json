@@ -1,0 +1,171 @@
+{
+  "date": "2026-11-26",
+  "status": "larger_initial_pose_evaluation_and_clarified_single_demo_delivered",
+  "output_root": "/data/shapeforge/runtime/runs/s0_reorientation_20261126",
+  "video_root": "/data/shapeforge/runtime/runs/s0_reorientation_videos_20261126",
+  "clarification_video": {
+    "path": "/home/linux/Downloads/Reorientation_Demos_20261126/Single_Offset_To_Insertion_v2.mp4",
+    "duration_seconds": 68.0,
+    "layout": "one episode; external view left and wrist view right",
+    "full_decode_passed": true,
+    "version": 2,
+    "superseded": "Single_Offset_To_Insertion.mp4 stage label switched at qualified-entry rather than geometric crossing"
+  },
+  "focus_scope": "same path-conditioned frozen actor; opposite initial states; not the path/goal comparison",
+  "results": {
+    "path": {
+      "successes": 8,
+      "cases": 8,
+      "model_sha256": "41d1fe329ba737ba1451403ca95b8ce7aac9853362f91d3be23f1869be0625f0"
+    },
+    "goal": {
+      "successes": 0,
+      "cases": 8,
+      "model_sha256": "090578637709ba7a3c98bb5c27de2480f2afbf09e607da3cdf35550f6815feeb"
+    }
+  },
+  "caveat": "one frozen model pair, one reset per explicit condition; signed correction diagnostics do not replace insertion success",
+  "tests": {
+    "related_passed": 31,
+    "lightweight_passed": 29,
+    "lightweight_skipped": 72
+  },
+  "artifacts": {
+    "/data/shapeforge/runtime/runs/s0_reorientation_20261126/protocol.json": {
+      "bytes": 3879,
+      "sha256": "9601726066e7935462439b4c452c1560550f1dc954990e71d96cbc73f0e517cc"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_20261126/cases.json": {
+      "bytes": 2341,
+      "sha256": "5f2409ac97d2c40ca99d0794400dcb0062ee7b969e9915dc8754730443bd6bfb"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_20261126/summary.json": {
+      "bytes": 18859,
+      "sha256": "61d6c0ccc8478fdca9bc780a312f67d04e4d0ed5952358eb995ccf56a3d002f9"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_20261126/offline_ik_audit.json": {
+      "bytes": 6528,
+      "sha256": "36d01bdf35e63aa2c2f9f84c7a00dd836128dd0c5f34d50f0d1e03a00ed7ef0a"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_20261126/metrics_tests.log": {
+      "bytes": 99,
+      "sha256": "42f7f20dccbc9f135d9d03d5ae233e433b2e024368cdce5e430804818386848e"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_20261126/lightweight_tests_final.log": {
+      "bytes": 18358,
+      "sha256": "d4627d92db3cc362e20ced896225ddfd70e796f8384e5d31817fb1bc8751954f"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_20261126/result.json": {
+      "bytes": 3183,
+      "sha256": "2dbbdba4482fb92d29017d12f3ab2bdc0d913ecb495226a8ca3be4744472e6d8"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_videos_20261126/delivery_manifest.json": {
+      "bytes": 3116,
+      "sha256": "a3b570dc05cc5548c00b0d87914d5921015bb156c52fb965d4e0c706ffeeb8b8"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_videos_20261126/focus_manifest.json": {
+      "bytes": 2733,
+      "sha256": "efc89168031b020d764045fe4b7ad1dfe75c002073211717d5df225290601fac"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_videos_20261126/source_hashes.json": {
+      "bytes": 1431,
+      "sha256": "419936fc8d941789e23c050a52c253f6f322c51231fb2db39196192b095039e1"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_videos_20261126/source_integrity.json": {
+      "bytes": 1306,
+      "sha256": "38227cf2cad933d301d5b7dd7122ecdb83f88edb4278bace6f300949dcaafa46"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_videos_20261126/Reorientation_First15s.mp4": {
+      "bytes": 2234084,
+      "sha256": "14a59ce70ef162c99bd9e043c93ca1ddab595e08b386c887ace199cffbe040ce"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_videos_20261126/Full_Reorientation_Comparisons.mp4": {
+      "bytes": 21995030,
+      "sha256": "09d268e424db2e0f6304e025ed49e98a30a25d69c6ec304a347a9b0432172197"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_videos_20261126/correction_first15s.png": {
+      "bytes": 160035,
+      "sha256": "2c751eb86cf9f9db4efc27f4742441eb123cb5e2be4c3c4509dbdd9d11df25f3"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_videos_20261126/Single_Offset_To_Insertion_v2.mp4": {
+      "bytes": 7563235,
+      "sha256": "3614107b145982270c82d73a443a97ce4b23e295da37f65836d47849deff8d2c"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_videos_20261126/Single_Offset_To_Insertion_v2.json": {
+      "bytes": 821,
+      "sha256": "f6552b1c6fe3a8f0c7cf2cd6f81da3d69c9e03d8110f9c07cd1bfc183833a76a"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_20261126/path/experiment/evaluation.json": {
+      "bytes": 57140,
+      "sha256": "c6da538ca19923f8f5640d14af96176f21cac81e8ff5aab7a5f29db6ad7177df"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_20261126/path/worker/reset_audit.jsonl": {
+      "bytes": 37688,
+      "sha256": "73f439031f30926fbd7bc6786e36b2b494b9de30b0cce837b8b3c1a95cb5dc1e"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_20261126/path/worker/execution.json": {
+      "bytes": 2652,
+      "sha256": "5ddcbbebfb5188c3c1fb550f27355f1d527f9ef1b2e1b024c4ee38fb7143e237"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_20261126/goal/experiment/evaluation.json": {
+      "bytes": 59248,
+      "sha256": "5f28b0e00d12c6608d36d74424aabfd85b8b04cca6bfe854a9f1d63513bb65d6"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_20261126/goal/worker/reset_audit.jsonl": {
+      "bytes": 37688,
+      "sha256": "73f439031f30926fbd7bc6786e36b2b494b9de30b0cce837b8b3c1a95cb5dc1e"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_20261126/goal/worker/execution.json": {
+      "bytes": 2652,
+      "sha256": "585e14d4082ea113394c75aa68fbd89e0b64081f354806b0778b8015060769d2"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_videos_20261126/01_combined_plus/selection.json": {
+      "bytes": 13392,
+      "sha256": "ce143ee48b0e9766abcbc0a77b50e4f19d30af817d1082eeb1fa49c77031df65"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_videos_20261126/01_combined_plus/correction_metrics.json": {
+      "bytes": 417671,
+      "sha256": "bd830b75f1b666760e7834f63e826963369acc65d4fdf6ac6c2901e5ac42b6bd"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_videos_20261126/01_combined_plus/video_manifest.json": {
+      "bytes": 40205,
+      "sha256": "0141eaaa99b125d09cc3e312fd1f75a4e6d982b58fb79615b33c14752a071f9e"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_videos_20261126/02_combined_minus/selection.json": {
+      "bytes": 13412,
+      "sha256": "11999d872d418a96aef1f05c1df958ccbc126a027095a8fc4dd212c9432bc131"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_videos_20261126/02_combined_minus/correction_metrics.json": {
+      "bytes": 404972,
+      "sha256": "328cb1bb9b1f946951ecff35ac728e903ec8c2a0d7fe89241fbc3979c5ac6f58"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_videos_20261126/02_combined_minus/video_manifest.json": {
+      "bytes": 39961,
+      "sha256": "9845e5e1105b48119f8d9f8834ee83fa262c5de3064d1d8d9e824d524a38d491"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_videos_20261126/03_lateral/selection.json": {
+      "bytes": 12835,
+      "sha256": "3e888126879153b211adb2926e071aa60732c75aede251e370fea1c7dbc8c4fe"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_videos_20261126/03_lateral/correction_metrics.json": {
+      "bytes": 304186,
+      "sha256": "4bcc7d5abf2aa5918af7971d353549338416469862d01d6b55212ee590fcffe4"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_videos_20261126/03_lateral/video_manifest.json": {
+      "bytes": 33591,
+      "sha256": "baafe67868bc4fb8c480d3e9b29ecdb0dfa155fab92706fc13798391484c197d"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_videos_20261126/04_yaw/selection.json": {
+      "bytes": 13304,
+      "sha256": "19f3d895a6b5708d86edfd7c75092b66eb289c924e48d74a066b21c234d340b2"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_videos_20261126/04_yaw/correction_metrics.json": {
+      "bytes": 415178,
+      "sha256": "8c9595041582813eb0f8f833ac532f4b23b01acf54793e20d28e8959ec88ba1c"
+    },
+    "/data/shapeforge/runtime/runs/s0_reorientation_videos_20261126/04_yaw/video_manifest.json": {
+      "bytes": 36951,
+      "sha256": "c344393cc4e1f9bf93b8efaefd8bc21d99b1e655d899c65b2d575d3976145a01"
+    }
+  }
+}

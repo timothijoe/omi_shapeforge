@@ -1,0 +1,168 @@
+{
+  "date": "2026-11-25",
+  "status": "gripper_center_frame_and_module_pose_independence_validated",
+  "output_root": "/data/shapeforge/runtime/runs/hier_s1_gripper_frame_20261125_v1",
+  "frame_name": "gripper-center-forward",
+  "tcp_from_display": [
+    [
+      0.0,
+      0.0,
+      1.0,
+      3.382710778154774e-17
+    ],
+    [
+      0.0,
+      -1.0,
+      0.0,
+      -2.42861286636753e-17
+    ],
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.19849999994119272
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "geometry": {
+    "parts": [
+      "wrist_tool_022",
+      "wrist_tool_033"
+    ],
+    "bounds_tcp_m": [
+      [
+        [
+          -0.008999999612569766,
+          -0.01319999993457742,
+          0.1864999979742396
+        ],
+        [
+          0.008999999612569864,
+          -0.009200000210248893,
+          0.21050000190814616
+        ]
+      ],
+      [
+        [
+          -0.008999999612569797,
+          0.009200000210248844,
+          0.18649999797423925
+        ],
+        [
+          0.008999999612569833,
+          0.01319999993457737,
+          0.2105000019081458
+        ]
+      ]
+    ],
+    "pad_centers_tcp_m": [
+      [
+        4.9439619065339e-17,
+        -0.011200000072413157,
+        0.19849999994119288
+      ],
+      [
+        1.8214596497756474e-17,
+        0.011200000072413108,
+        0.19849999994119252
+      ]
+    ],
+    "origin_definition": "midpoint of the two contact-pad bounding-box centers at nominal fixed jaw opening",
+    "module_pose_dependency": false,
+    "physical_tcp_calibration": false
+  },
+  "validation": {
+    "cases": 3,
+    "coordinate_frames": 26,
+    "source_hashes_unchanged": {
+      "/data/shapeforge/runtime/runs/hier_s1_far_visual_20261125_v2/scene_packet.json": true,
+      "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer/transfer.json": true,
+      "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer/meshes.npz": true,
+      "/data/shapeforge/runtime/runs/hier_s1_far_20261125_v1/samples.npz": true
+    },
+    "production_reference_max_origin_error_mm": 7.2797726376731895e-06,
+    "production_reference_max_rotation_matrix_error": 1.3068578733066438e-08,
+    "axis_direction_max_error": 2.4424906541753444e-15,
+    "opencv_fisheye_max_display_pixel_difference": 4.0194366942304643e-13,
+    "gripper_frame_independent_of_module_pose": true,
+    "scope": "orientation rendering checks; no new training or policy execution"
+  },
+  "training": false,
+  "prediction_execution": false,
+  "physical_slip_validation": false,
+  "artifacts": {
+    "case_01_gt_orientation.png": {
+      "bytes": 1425482,
+      "sha256": "39007092643a81a3340a650981a476bd599042a513199a6c3b6d7f5ce8c8075d"
+    },
+    "case_02_gt_orientation.png": {
+      "bytes": 1412069,
+      "sha256": "f6536d9784f164ecde8edfc8c9ebb1efb52fe822a2434526c7315998cd803b0a"
+    },
+    "case_02_pred_orientation.png": {
+      "bytes": 1413226,
+      "sha256": "8dd34fb08838cf8f4810b0d9cf88a432ee8da66b01cf39f82c234be03291986d"
+    },
+    "case_00_pred_orientation.png": {
+      "bytes": 1422326,
+      "sha256": "c93aa652871bc6045a62b57abcd4e09b5f322796f417f8b6528aad6344d9ffa9"
+    },
+    "case_00_gt_orientation.png": {
+      "bytes": 1429400,
+      "sha256": "e21873d947e655043e16db693eb07a4919ba64d096b5e0703eb6bb208aab6bf3"
+    },
+    "case_01_pred_orientation.png": {
+      "bytes": 1425876,
+      "sha256": "3c4f6d74c6bde4ce2914e3e0fa07439232cb664e4d1cbf0cfc7ec8489e98ae98"
+    },
+    "case_00_orientation.blend": {
+      "bytes": 7331218,
+      "sha256": "f31c10b04fa57b210553143500641fa307e73fc657af3213ccd00a8bdfa86aaa"
+    },
+    "case_02_orientation.blend": {
+      "bytes": 7482070,
+      "sha256": "1f6206491c4fcf2d7fbce8db61625e35fd9628742e1f39592115545e1f19b034"
+    },
+    "case_01_orientation.blend": {
+      "bytes": 7482070,
+      "sha256": "2a006bd84b0cab8c7fc36821a886c6b9152b4ef407bb23e9c9a6e2528bc9e074"
+    },
+    "orientation.json": {
+      "bytes": 629807,
+      "sha256": "3f3ac9d2bdb29d0ab421f7908f0fec342ff6452739cf37c0f90620ca0931ee28"
+    },
+    "validation.json": {
+      "bytes": 844,
+      "sha256": "51da4285a69ea08fa50c703ff37cf1253e7fde6d7d45ecddd7e34cd3c726bc89"
+    },
+    "render_system1_orientation.py": {
+      "bytes": 14018,
+      "sha256": "615d8eaddc269a9347d75daaf5b74907d71f22446ba0d20397e08c8313bb350b"
+    },
+    "render_system1_orientation_blender.py": {
+      "bytes": 2238,
+      "sha256": "81dd8df9b676ceee4b4d0cde584107d2d41d320bc0d90ec41736e5e68084fceb"
+    },
+    "audit_system1_orientation.py": {
+      "bytes": 6631,
+      "sha256": "5b43f87bbf40d17b8ffd20e2d4da08af41700528382a1cc87aee8a8901ed4b55"
+    },
+    "render_system1_far.py": {
+      "bytes": 9304,
+      "sha256": "a0ce2581a9938878d206f39f64a29f0e3d7e2b900b902ddb89be60770aa29f2e"
+    },
+    "render_system1_assets.py": {
+      "bytes": 10933,
+      "sha256": "e89d789ad0cf4950ede60043ded68a26b1d992529877a064a6861c4f1ec6eeb4"
+    },
+    "render_system1_paths.py": {
+      "bytes": 12430,
+      "sha256": "23119950ef87cad911d99ad7b990efaead7fe1e2895b964a02b47a16c1599f2d"
+    }
+  }
+}

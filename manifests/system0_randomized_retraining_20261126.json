@@ -1,0 +1,401 @@
+{
+  "date": "2026-11-26",
+  "status": "rl_complete_heldout_evaluation_deferred",
+  "output_root": "/data/shapeforge/runtime/runs/s0_rand_train_20261126",
+  "frozen_source_root": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/code",
+  "protocol": {
+    "purpose": "new demonstrations, fresh BC, then scripted-intervention SAC with randomized socket position and far misaligned starts",
+    "model_seeds": [
+      430000,
+      431000
+    ],
+    "conditions": [
+      "path",
+      "goal-only"
+    ],
+    "system1": "GT pose and existing rule-decoded 32-point path; not a learned visual estimator",
+    "data": {
+      "train_episodes": 96,
+      "val_episodes": 24,
+      "pilot_episodes": 8,
+      "formal_sampling": "independent stratification per dimension (Latin hypercube)",
+      "pilot_in_training": false,
+      "quality_gate": "all planned demonstrations must succeed; failed trajectories preserved, no silent filtering or retry until success"
+    },
+    "distribution": {
+      "version": "socket-and-relative-gripper-v1",
+      "salt": 20261126,
+      "socket_pose": {
+        "dx_mm": [
+          -5.0,
+          5.0
+        ],
+        "dy_mm": [
+          -5.0,
+          5.0
+        ],
+        "yaw_deg": [
+          0.0,
+          0.0
+        ]
+      },
+      "initial_pose": {
+        "gap_mm": [
+          30.0,
+          40.0
+        ],
+        "lateral_mm": [
+          -10.0,
+          10.0
+        ],
+        "vertical_mm": [
+          -2.0,
+          2.0
+        ],
+        "pitch_deg": [
+          -5.0,
+          5.0
+        ],
+        "yaw_deg": [
+          -5.0,
+          5.0
+        ]
+      }
+    },
+    "initialization_scope": "initial gripper pose is defined relative to current socket; relative offset/angles sampled independently of socket displacement; robot is not held at one fixed world start",
+    "physics": {
+      "max_steps": 900,
+      "physics_substeps": 5,
+      "ik": "tianji",
+      "socket_range_mm": 5.0,
+      "socket_yaw_deg": 0.0,
+      "wrist_wrench": true,
+      "asset_contract": "frozen legacy-r10 fixed grasp"
+    },
+    "bc": {
+      "updates_per_model": 30000,
+      "checkpoints_every": 5000,
+      "sampling": "phase-balanced",
+      "batch_size": 32,
+      "learning_rate": 0.0003,
+      "initialization": "fresh actor/critics; no old policy weights"
+    },
+    "online": {
+      "steps_per_model": 20000,
+      "total_steps": 80000,
+      "checkpoint_interval": 5000,
+      "replay_capacity": 20000,
+      "batch_size": 32,
+      "learning_starts": 0,
+      "actor_learning_rate": 1e-05,
+      "critic_learning_rate": 0.0003,
+      "initial_policy_std": 0.02,
+      "max_policy_std": 0.03,
+      "entropy_coef": "auto_0.001",
+      "target_entropy": -18.0,
+      "intervention_bc_weight": 10.0,
+      "intervention_fraction": 0.5,
+      "distribution": "episode-seeded independent uniform draws"
+    },
+    "evaluation": {
+      "validation_cases_per_model": 24,
+      "heldout_cases_per_model": 24,
+      "test_stages": [
+        "BC",
+        "final RL"
+      ],
+      "teacher_requests_required": 0,
+      "primary_model": "fixed final RL budget; no test checkpoint selection"
+    },
+    "constraints": [
+      "target translation is world XY only; fixed Z and socket orientation",
+      "same data, initial actor and BC sample order for each path/goal pair",
+      "same total interaction budget; policy-owned steps may differ",
+      "fixed module attachment and ideal GT/wrench; no real robot or visual noise"
+    ]
+  },
+  "preflight": {
+    "native_ik_passed": 240,
+    "pilot_successes": 8,
+    "pilot_cases": 8,
+    "bc_smoke_updates": 20,
+    "sac_smoke_updates": 64,
+    "smoke_replay_verified": true
+  },
+  "tests": {
+    "related_passed": 34,
+    "lightweight_passed": 29,
+    "lightweight_skipped": 72
+  },
+  "artifacts": {
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/protocol.json": {
+      "bytes": 3020,
+      "sha256": "d32848bca392b6882f29d216f93afa039d4886b22375d201d91204e38f1cc567"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/reset_distribution.json": {
+      "bytes": 490,
+      "sha256": "9c8802653aa9efbf132a4f213f77e0f8ca2f3bca95fb93730fa993e3241cc954"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/input_hashes.json": {
+      "bytes": 986,
+      "sha256": "424228ba9d923be8c7788a1bb9e7d725d2afcef53ccaac8e76ddcf2f4d48999b"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/split_audit.json": {
+      "bytes": 779,
+      "sha256": "6dd8e621ef732f652462635f53910acc7fc46dab2c3d3125a7a09224e1a29e1d"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/source_freeze.json": {
+      "bytes": 36811,
+      "sha256": "727186aa48a050620253953fbb934e714b3ae064a81bc2f48177342ef9ad0073"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/offline_ik_preflight.json": {
+      "bytes": 31150,
+      "sha256": "c36638f8098876a2e46d47d51910eeb8fb2d16689a38b71269f897f64b690074"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/pilot_collect_audit.json": {
+      "bytes": 298,
+      "sha256": "0da76fc0e7c66a4b835e1ff6ea250527cad1b5693ac8cbebd7a099014833d631"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/pilot_result.json": {
+      "bytes": 2840,
+      "sha256": "388ca1c774f10f48bfe15851575df5530f5b39979a1cdec3640bdaa207d214fa"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/smoke_reset_audit.json": {
+      "bytes": 427,
+      "sha256": "d187a55fa56c96de8c6afef4a54d78b0c36bb60f378c053e3790e200c5316cd1"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/smoke_rl/experiment/replay_validation.json": {
+      "bytes": 463,
+      "sha256": "558b91ea5396fd81f1416677b7b162ea060455829c7b6d9fb97e1da6d4a9ca6c"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/study_supervisor.json": {
+      "bytes": 179,
+      "sha256": "8776fddbaed98137bc6a8b9bef9fa7e72665adc12d12c7d270d6a7cd053710bc"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/environment_versions.json": {
+      "bytes": 154,
+      "sha256": "5b8c66592de29dbdc6ce37ad1fc624b213e80b866fc08a9cb38b523f11341dd9"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/supervision_sources.json": {
+      "bytes": 190,
+      "sha256": "825a3380f06ef88d3adca1f56cd1455e99a74c073bb512ab4d7fceeac9dbc8a9"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/status_snapshot.json": {
+      "bytes": 1846,
+      "sha256": "df140f3c7ceabdd39daa25876707ac05f8193dc428b2a7f4a39eaaa21d4e8398"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/training_routes.json": {
+      "bytes": 1905,
+      "sha256": "14a7657383f1610329ce6fd88ee2dfa01f222a729b3dcaa89fd1a6b0278736d7"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/execution_policy.json": {
+      "bytes": 357,
+      "sha256": "2c91cdc87f1a853aa148118ee1ff21aa31bc6f40b968fbf930f6f372e059d9ef"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/reboot_handoff/training_complete.json": {
+      "bytes": 14872,
+      "sha256": "64ee0d3648e9cbd47620d813387cfb6d2d9cebc832f6887f434cf8fc5868d584"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/reboot_handoff/resume_source_freeze.json": {
+      "bytes": 36904,
+      "sha256": "11c2821f0a58ffa46c2f4f0c68060e1751d9dda627640241d18d8ec685c6f1ce"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/reboot_handoff/training_only_result.json": {
+      "bytes": 431,
+      "sha256": "16935625ad540667ed4a1dea07afc77187532b8e50ec14ef7687df20a3ea731f"
+    },
+    "/home/linux/omi_folder/omi_shapeforge/docs/agent/simulation/evolution/system0-randomized-retraining.md": {
+      "bytes": 7797,
+      "sha256": "1afc1f8df778e132cb4343bb31e28ac1c9f4a1239694d053b43b347500742eb0"
+    },
+    "/home/linux/omi_folder/omi_shapeforge/docs/agent/simulation/chronicles/2026-11-26-system0-randomized-retraining.md": {
+      "bytes": 5544,
+      "sha256": "4a5a97001322020a242d964f18f24b4d25ff6826db0edab6baf9d6b7aa9c2d3f"
+    },
+    "/home/linux/omi_folder/omi_shapeforge/docs/chronicles/2026-11-26-system0-rl-reboot-handoff.md": {
+      "bytes": 9221,
+      "sha256": "24ad250d00625a6e8114001a4cf7219ac7ff08c64d7f1121f4798f2068f3623b"
+    },
+    "/home/linux/omi_folder/omi_shapeforge/docs/chronicles/2026-11-26-system1-system0-session-handoff.md": {
+      "bytes": 12495,
+      "sha256": "a738b14b8466d6383ef4ba742cb828a388434df6a6d4461ef4d881ca39c35eab"
+    }
+  },
+  "final_results_pending": true,
+  "training_complete": true,
+  "evaluation_deferred_by_user": true,
+  "training_completion": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/reboot_handoff/training_complete.json",
+  "handoff": "docs/chronicles/2026-11-26-system0-rl-reboot-handoff.md",
+  "final_model_records": [
+    {
+      "mode": "path",
+      "initialization_seed": 430000,
+      "bc_model": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/bc_path_430000/system0.zip",
+      "rl_model": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/rl_path_430000/experiment/system0.zip",
+      "training_dir": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/rl_path_430000",
+      "effective_interactions": 20000,
+      "sac_updates": 20000,
+      "counts": {
+        "policy": 7991,
+        "scripted_intervention": 12009
+      },
+      "rule_fraction": 0.60045,
+      "training_failures": {},
+      "resumed": false,
+      "resume_episode_seed": null,
+      "bc_model_sha256": "755f06f6ee2b43d7cdd6499c6eab16d7db15cf04c9b6d892ba2ecd11dec98225",
+      "rl_model_sha256": "22959c900bf8e42f0a914e536ad954dba83771d5410aaa75e8f695d72fa1f04a",
+      "replay_sha256": "47a727cb118e74aa33bbcb553a5b1cfda4dcde48caf5d2e506f9ac39d9ed2473"
+    },
+    {
+      "mode": "goal",
+      "initialization_seed": 430000,
+      "bc_model": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/bc_goal_430000/system0.zip",
+      "rl_model": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/rl_goal_430000/experiment/system0.zip",
+      "training_dir": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/rl_goal_430000",
+      "effective_interactions": 20000,
+      "sac_updates": 20000,
+      "counts": {
+        "policy": 6847,
+        "scripted_intervention": 13153
+      },
+      "rule_fraction": 0.65765,
+      "training_failures": {
+        "timeout": 1
+      },
+      "resumed": false,
+      "resume_episode_seed": null,
+      "bc_model_sha256": "80618d2b6b940e4af370a123901aafa047c41a29a18a1fd72ce6f7ab7f2d2267",
+      "rl_model_sha256": "ab198c75dae30e07d077f5df95fb13651fff353e908d6db9fb8680d2f511403f",
+      "replay_sha256": "a1af59e8307ee12b48e599a72d4290cefbbea821486e7fc42efa4e306c86e411"
+    },
+    {
+      "mode": "path",
+      "initialization_seed": 431000,
+      "bc_model": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/bc_path_431000/system0.zip",
+      "rl_model": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/resume_path_431000/experiment/system0.zip",
+      "training_dir": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/resume_path_431000",
+      "effective_interactions": 20000,
+      "sac_updates": 19999,
+      "counts": {
+        "policy": 7439,
+        "scripted_intervention": 12561
+      },
+      "rule_fraction": 0.62805,
+      "training_failures": {},
+      "resumed": true,
+      "resume_episode_seed": 432000,
+      "bc_model_sha256": "1ba64ed8bacf853eef4d0646c0ae2eadb15d4758bbff6672d1628cd23df93bab",
+      "rl_model_sha256": "f7816318c06a78f74b9f03679e09975363cd2cc0fa617d18d7b573e6616b6a58",
+      "replay_sha256": "096a0081824a54ed0e02209dc96e21784ba25eda217b8be290d67d84b3fc652e"
+    },
+    {
+      "mode": "goal",
+      "initialization_seed": 431000,
+      "bc_model": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/bc_goal_431000/system0.zip",
+      "rl_model": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/resume_goal_431000/experiment/system0.zip",
+      "training_dir": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/resume_goal_431000",
+      "effective_interactions": 20000,
+      "sac_updates": 19999,
+      "counts": {
+        "policy": 2134,
+        "scripted_intervention": 17866
+      },
+      "rule_fraction": 0.8933,
+      "training_failures": {
+        "geometric_overlap": 13,
+        "large_contact_point_penetration": 15
+      },
+      "resumed": true,
+      "resume_episode_seed": 432000,
+      "bc_model_sha256": "8db556028da31e6cc0da368d102501888f2c5933d79448e8f7fecfda4a4336f9",
+      "rl_model_sha256": "80f7d4591eb3fe2ab132caabe6243c15fb236742fed6015a143e5f875721ac64",
+      "replay_sha256": "cdab1d01958ff750af03d146a0d18816ec2f6e173807618ef47d437bac3e6ab5"
+    }
+  ],
+  "progress_snapshot_before_interruption": {
+    "checked_at": "2026-11-26T19:07:38+08:00",
+    "collection": {
+      "episodes": 120,
+      "successes": 120,
+      "failures": [],
+      "all_hashes_and_actual_initial_poses_verified": true,
+      "splits": {
+        "train": {
+          "episodes": 96,
+          "successes": 96,
+          "steps": 55784
+        },
+        "val": {
+          "episodes": 24,
+          "successes": 24,
+          "steps": 14046
+        }
+      }
+    },
+    "bc_updates_each": 30000,
+    "bc_validation": {
+      "path_430000": {
+        "successes": 0,
+        "cases": 24,
+        "teacher_requests": 0
+      },
+      "path_431000": {
+        "successes": 2,
+        "cases": 24,
+        "teacher_requests": 0
+      },
+      "goal_430000": {
+        "successes": 0,
+        "cases": 24,
+        "teacher_requests": 0
+      },
+      "goal_431000": {
+        "successes": 0,
+        "cases": 24,
+        "teacher_requests": 0
+      }
+    },
+    "rl": {
+      "path_430000": {
+        "steps": 20000,
+        "complete": true,
+        "counts": {
+          "policy_steps": 7991,
+          "intervention_steps": 12009,
+          "takeover_events": 272,
+          "handoff_events": 260
+        }
+      },
+      "path_431000": {
+        "steps": 4300,
+        "complete": false,
+        "latest_progress": "S0_PROGRESS 4300 {'policy_steps': 1714, 'intervention_steps': 2586, 'takeover_events': 58, 'handoff_events': 56}"
+      },
+      "goal_430000": {
+        "steps": 20000,
+        "complete": true,
+        "counts": {
+          "policy_steps": 6847,
+          "intervention_steps": 13153,
+          "takeover_events": 433,
+          "handoff_events": 423
+        }
+      },
+      "goal_431000": {
+        "steps": 4000,
+        "complete": false,
+        "latest_progress": "S0_PROGRESS 4000 {'policy_steps': 1276, 'intervention_steps': 2724, 'takeover_events': 106, 'handoff_events': 102}"
+      }
+    },
+    "rl_total_steps": 48300,
+    "rl_planned_steps": 80000,
+    "final_heldout_tests_started": false
+  },
+  "documentation": {
+    "evolution": "docs/agent/simulation/evolution/system0-randomized-retraining.md",
+    "chronicle": "docs/agent/simulation/chronicles/2026-11-26-system0-randomized-retraining.md",
+    "handoff": "docs/chronicles/2026-11-26-system0-rl-reboot-handoff.md",
+    "session_handoff": "docs/chronicles/2026-11-26-system1-system0-session-handoff.md"
+  }
+}

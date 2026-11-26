@@ -55,6 +55,7 @@ def main():
     p.add_argument('--render-subframes',type=int,choices=[1,2],default=2,help='RTX subframes per observation; 1 changes image convergence and execution contract')
     p.add_argument('--socket-pose-range-mm',type=float,default=0.,help='Per-axis XY socket reset range; enables movable kinematic socket assembly')
     p.add_argument('--socket-yaw-range-deg',type=float,default=0.,help='Socket reset yaw range about world Z')
+    p.add_argument('--initial-pose-reset',action='store_true',help='Opt-in explicit fixed-grasp evaluation start poses; task and policy schema unchanged')
     p.add_argument('--teacher-min-step-mm',type=float,default=.01)
     p.add_argument('--target-overtravel-mm',type=float,default=.03)
     p.add_argument('--entry-guidance',action='store_true',help='Hold strict entry and recover missed qualification; new execution contract')
@@ -63,6 +64,8 @@ def main():
     p.add_argument('--asset-contract',choices=['legacy-r10','wva01-gc01-free-grasp-v1','wva01-closed-reference-fixture-v1'],default='legacy-r10')
     a=p.parse_args()
     if a.ik_backend=='tianji' and a.tianji_sdk is None:p.error('--tianji-sdk required for native IK')
+    if a.initial_pose_reset and (a.ik_backend!='tianji' or a.asset_contract!='legacy-r10'):
+        p.error('initial pose reset currently requires native IK and legacy fixed-grasp assets')
     if a.ik_backend=='dls' and (a.tianji_sdk is not None or a.tianji_config is not None):p.error('SDK options require --ik-backend tianji')
     if a.asset_contract=='wva01-gc01-free-grasp-v1' and a.solver!='TGS':p.error('free-grasp torsional friction requires explicit --solver TGS')
     try:a.physics_dt=resolve_physics_dt(a.physics_dt,a.physics_substeps)
@@ -76,6 +79,8 @@ def main():
     for f in [Path(__file__),common_root/'omi_hil_rl/hil/insertion_task.py',*[repo/'src/omi_shapeforge/sim'/n for n in ['isaac_contact_scene.py','isaac_contact_runtime.py','isaac_free_grasp.py','isaac_contact_kinematics.py','tianji_ik.py','socket_pose.py','isaac_appearance.py','isaac_contact_approach.py','contact_teacher.py','isaac_recovery.py','wrist_fisheye.py','isaac_ipc.py','box_overlap.py']]]:shutil.copy2(f,snapshot/f.name)
     if a.wrist_wrench:
         shutil.copy2(repo/'src/omi_shapeforge/sim/wrist_wrench.py',snapshot/'wrist_wrench.py')
+    if a.initial_pose_reset:
+        shutil.copy2(repo/'src/omi_shapeforge/sim/initial_pose.py',snapshot/'initial_pose.py')
     (a.output/'execution.json').write_text(json.dumps(dict(arguments={k:str(v) if isinstance(v,Path) else v for k,v in vars(a).items()},
         sources_sha256={f.name:hashlib.sha256(f.read_bytes()).hexdigest() for f in snapshot.iterdir()}),indent=2)+'\n')
     import omi_hil_rl.hil
@@ -134,6 +139,10 @@ def main():
             Experiment=FreeGraspExperiment
         env=Experiment(world,packet,audit,a.output,a.physics_dt,ik_backend=a.ik_backend,
             tianji_sdk=a.tianji_sdk,tianji_config=a.tianji_config,socket_pose_range=pose_range);env.max_steps=a.max_steps
+        if a.initial_pose_reset:
+            from omi_shapeforge.sim.initial_pose import gripper_center_from_mesh
+            with np.load(a.transfer/'meshes.npz',allow_pickle=False) as meshes:
+                env.tcp_from_gripper=gripper_center_from_mesh(packet,meshes)
         wrench_contract=None
         if a.wrist_wrench:
             from omi_shapeforge.sim.wrist_wrench import attach_wrist_wrench
@@ -237,6 +246,9 @@ def main():
         if a.entry_guidance:
             meta['execution_config']['entry_guidance']=dict(version='qualified-entry-hold-v1',
                 lateral_takeover_mm=.10,angle_takeover_rad=.0015,handback_requires_entry=True)
+        if a.initial_pose_reset:
+            meta['reset_capabilities']={'initial_pose':'gripper-centered-gap-offset-yaw-pitch-v1',
+                'scope':'explicit reset-distribution shift; runtime task, reward, observations and actions unchanged'}
         (a.output/'worker_metadata.json').write_text(json.dumps(meta,indent=2)+'\n')
         if a.socket.exists():raise FileExistsError(a.socket)
         server=socket.socket(socket.AF_UNIX,socket.SOCK_STREAM);server.bind(str(a.socket));bound_socket=True;os.chmod(a.socket,0o600);server.listen(1)
@@ -253,7 +265,11 @@ def main():
                         if command=='hello':send(connection,dict(ok=True,metadata=meta));continue
                         if command=='shutdown':send(connection,dict(ok=True));shutdown=True;break
                         if command=='reset':
-                            episode+=1;step=0;teacher_requests=0;history.clear();teacher.reset();env.reset(int(request['seed']),request.get('socket_pose'))
+                            requested_initial=request.get('initial_pose')
+                            if requested_initial is not None and not a.initial_pose_reset:
+                                raise ValueError('initial pose reset not enabled')
+                            episode+=1;step=0;teacher_requests=0;history.clear();teacher.reset()
+                            reset_audit=env.reset(int(request['seed']),request.get('socket_pose'),initial_pose=requested_initial) if requested_initial is not None else env.reset(int(request['seed']),request.get('socket_pose'))
                             if recovery:recovery.reset()
                             axis=-np.asarray(env.manifest['socket_to_world']['rotation'])[:,1]
                             env.goal_pos=np.asarray(env.manifest['seated_tcp_position'])+axis*(a.target_overtravel_mm/1000)
@@ -266,6 +282,10 @@ def main():
                                 state['socket_pose']=env.manifest['episode_socket_pose']
                                 state['socket_to_world']=env.manifest['socket_to_world']
                                 state['preinsert_tcp_position']=env.manifest['preinsert_tcp_position']
+                            state['initial_pose']=reset_audit.get('initial_pose')
+                            state['joint_positions']=env.robot.get_joint_positions()[0].tolist()
+                            with (a.output/'reset_audit.jsonl').open('a') as stream:
+                                stream.write(json.dumps(dict(seed=int(request['seed']),**state))+'\n')
                             last_measurement=state
                             send(connection,dict(ok=True,info=state),obs);continue
                         if command=='grasp':

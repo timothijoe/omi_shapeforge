@@ -1,0 +1,164 @@
+{
+  "date": "2026-11-26",
+  "status": "training_complete_evaluation_deferred",
+  "run": "/data/shapeforge/runtime/runs/s0_rand_train_20261126",
+  "models": [
+    {
+      "mode": "path",
+      "initialization_seed": 430000,
+      "bc_model": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/bc_path_430000/system0.zip",
+      "rl_model": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/rl_path_430000/experiment/system0.zip",
+      "training_dir": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/rl_path_430000",
+      "effective_interactions": 20000,
+      "sac_updates": 20000,
+      "counts": {
+        "policy": 7991,
+        "scripted_intervention": 12009
+      },
+      "rule_fraction": 0.60045,
+      "training_failures": {},
+      "resumed": false,
+      "resume_episode_seed": null,
+      "bc_model_sha256": "755f06f6ee2b43d7cdd6499c6eab16d7db15cf04c9b6d892ba2ecd11dec98225",
+      "rl_model_sha256": "22959c900bf8e42f0a914e536ad954dba83771d5410aaa75e8f695d72fa1f04a",
+      "replay_sha256": "47a727cb118e74aa33bbcb553a5b1cfda4dcde48caf5d2e506f9ac39d9ed2473"
+    },
+    {
+      "mode": "goal",
+      "initialization_seed": 430000,
+      "bc_model": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/bc_goal_430000/system0.zip",
+      "rl_model": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/rl_goal_430000/experiment/system0.zip",
+      "training_dir": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/rl_goal_430000",
+      "effective_interactions": 20000,
+      "sac_updates": 20000,
+      "counts": {
+        "policy": 6847,
+        "scripted_intervention": 13153
+      },
+      "rule_fraction": 0.65765,
+      "training_failures": {
+        "timeout": 1
+      },
+      "resumed": false,
+      "resume_episode_seed": null,
+      "bc_model_sha256": "80618d2b6b940e4af370a123901aafa047c41a29a18a1fd72ce6f7ab7f2d2267",
+      "rl_model_sha256": "ab198c75dae30e07d077f5df95fb13651fff353e908d6db9fb8680d2f511403f",
+      "replay_sha256": "a1af59e8307ee12b48e599a72d4290cefbbea821486e7fc42efa4e306c86e411"
+    },
+    {
+      "mode": "path",
+      "initialization_seed": 431000,
+      "bc_model": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/bc_path_431000/system0.zip",
+      "rl_model": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/resume_path_431000/experiment/system0.zip",
+      "training_dir": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/resume_path_431000",
+      "effective_interactions": 20000,
+      "sac_updates": 19999,
+      "counts": {
+        "policy": 7439,
+        "scripted_intervention": 12561
+      },
+      "rule_fraction": 0.62805,
+      "training_failures": {},
+      "resumed": true,
+      "resume_episode_seed": 432000,
+      "bc_model_sha256": "1ba64ed8bacf853eef4d0646c0ae2eadb15d4758bbff6672d1628cd23df93bab",
+      "rl_model_sha256": "f7816318c06a78f74b9f03679e09975363cd2cc0fa617d18d7b573e6616b6a58",
+      "replay_sha256": "096a0081824a54ed0e02209dc96e21784ba25eda217b8be290d67d84b3fc652e"
+    },
+    {
+      "mode": "goal",
+      "initialization_seed": 431000,
+      "bc_model": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/bc_goal_431000/system0.zip",
+      "rl_model": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/resume_goal_431000/experiment/system0.zip",
+      "training_dir": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/resume_goal_431000",
+      "effective_interactions": 20000,
+      "sac_updates": 19999,
+      "counts": {
+        "policy": 2134,
+        "scripted_intervention": 17866
+      },
+      "rule_fraction": 0.8933,
+      "training_failures": {
+        "geometric_overlap": 13,
+        "large_contact_point_penetration": 15
+      },
+      "resumed": true,
+      "resume_episode_seed": 432000,
+      "bc_model_sha256": "8db556028da31e6cc0da368d102501888f2c5933d79448e8f7fecfda4a4336f9",
+      "rl_model_sha256": "80f7d4591eb3fe2ab132caabe6243c15fb236742fed6015a143e5f875721ac64",
+      "replay_sha256": "cdab1d01958ff750af03d146a0d18816ec2f6e173807618ef47d437bac3e6ab5"
+    }
+  ],
+  "total_effective_interactions": 80000,
+  "total_sac_updates": 79998,
+  "heldout_tests_started": false,
+  "handoff_document": "/home/linux/omi_folder/omi_shapeforge/docs/chronicles/2026-11-26-system0-rl-reboot-handoff.md",
+  "artifacts": {
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/training_routes.json": {
+      "bytes": 1905,
+      "sha256": "14a7657383f1610329ce6fd88ee2dfa01f222a729b3dcaa89fd1a6b0278736d7"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/execution_policy.json": {
+      "bytes": 357,
+      "sha256": "2c91cdc87f1a853aa148118ee1ff21aa31bc6f40b968fbf930f6f372e059d9ef"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/reboot_handoff/training_complete.json": {
+      "bytes": 14872,
+      "sha256": "64ee0d3648e9cbd47620d813387cfb6d2d9cebc832f6887f434cf8fc5868d584"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/reboot_handoff/training_only_result.json": {
+      "bytes": 431,
+      "sha256": "16935625ad540667ed4a1dea07afc77187532b8e50ec14ef7687df20a3ea731f"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/reboot_handoff/resume_source_freeze.json": {
+      "bytes": 36904,
+      "sha256": "11c2821f0a58ffa46c2f4f0c68060e1751d9dda627640241d18d8ec685c6f1ce"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/reboot_handoff/failure_regression.json": {
+      "bytes": 796,
+      "sha256": "4615c48ada8b263c9a561a9b28f7ccfc81ce9bf359b05c629c1c5adf97a7e257"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/reboot_handoff/model_integrity.json": {
+      "bytes": 606,
+      "sha256": "da5f0ec88e167e5ba5203bcef26d88707978a2b8fcf75985438e84381c533e3a"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/reboot_handoff/evaluate_after_reboot.py": {
+      "bytes": 8003,
+      "sha256": "6ab174e2ea439c0a848751cb1aa251bb48e685314b6195106f105fb23cbb7817"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/reboot_handoff/evaluation_entry.json": {
+      "bytes": 309,
+      "sha256": "46902a15376e4e187f4691941231e4d8f5825f5a205fce223123772e8de931db"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/reboot_handoff/regression_tests.log": {
+      "bytes": 99,
+      "sha256": "fdbe2dc7829eebd9df38a4eb1d9fbf6442edc7036325e4789a6b980d43147f22"
+    },
+    "/data/shapeforge/runtime/runs/s0_rand_train_20261126/reboot_handoff/lightweight_tests.log": {
+      "bytes": 18996,
+      "sha256": "84240d2c2b506757616e9ece959c6de2c237193da07773091a8374abd4724aa2"
+    },
+    "/home/linux/omi_folder/omi_shapeforge/docs/chronicles/2026-11-26-system0-rl-reboot-handoff.md": {
+      "bytes": 9221,
+      "sha256": "24ad250d00625a6e8114001a4cf7219ac7ff08c64d7f1121f4798f2068f3623b"
+    },
+    "/home/linux/omi_folder/omi_shapeforge/docs/agent/simulation/evolution/system0-randomized-retraining.md": {
+      "bytes": 7797,
+      "sha256": "1afc1f8df778e132cb4343bb31e28ac1c9f4a1239694d053b43b347500742eb0"
+    },
+    "/home/linux/omi_folder/omi_shapeforge/docs/agent/simulation/chronicles/2026-11-26-system0-randomized-retraining.md": {
+      "bytes": 5544,
+      "sha256": "4a5a97001322020a242d964f18f24b4d25ff6826db0edab6baf9d6b7aa9c2d3f"
+    },
+    "/home/linux/omi_folder/omi_shapeforge/docs/chronicles/2026-11-26-system1-system0-session-handoff.md": {
+      "bytes": 12495,
+      "sha256": "a738b14b8466d6383ef4ba742cb828a388434df6a6d4461ef4d881ca39c35eab"
+    }
+  },
+  "documentation": {
+    "evolution": "docs/agent/simulation/evolution/system0-randomized-retraining.md",
+    "chronicle": "docs/agent/simulation/chronicles/2026-11-26-system0-randomized-retraining.md",
+    "handoff": "docs/chronicles/2026-11-26-system0-rl-reboot-handoff.md",
+    "session_handoff": "docs/chronicles/2026-11-26-system1-system0-session-handoff.md"
+  }
+}

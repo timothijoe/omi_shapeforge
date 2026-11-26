@@ -1,5 +1,17 @@
 # 开发文档总目录
 
+- **System1／System0下一次接手入口**：[会话交接文档](chronicles/2026-11-26-system1-system0-session-handoff.md)。训练已完成、最终测试暂停；含用户约定、旧新模型区别、最终权重、恢复命令及展示说明。
+
+- [2026-11-26：System0 RL训练完成与重启交接](chronicles/2026-11-26-system0-rl-reboot-handoff.md)：四份最终模型／经验池已校验，测试暂停；含异常恢复、预检和重启后独立评估命令。
+
+- [随机插口与远初态重训：纪传体](agent/simulation/evolution/system0-randomized-retraining.md) · [2026-11-26编年体](agent/simulation/chronicles/2026-11-26-system0-randomized-retraining.md)：120条示范、四模型BC／RL完成，最终测试暂停；故障恢复和计数口径已登记。
+
+- [2026-11-26：System0初始偏移与倾斜鲁棒性](agent/simulation/evolution/system0-initial-pose-robustness.md)：同初态无接管，路径10/10、无路径4/10；四段含第0步的视频已交付。
+
+- [2026-11-26：System1路径增益配对实验](agent/simulation/evolution/system1-path-ablation.md)：无接管路径48/48、无路径20/48，逐种子结果和训练来源已核验。
+
+- [2026-11-26：System0在线规则干预与首轮训练](agent/simulation/evolution/hierarchical-intervention.md)：接管／恢复／交回、实际动作replay和续训已验证；6000步训练辅助5/28，独立无接管0/5，策略尚未达标。
+
 - [System1 与 System0 当前进展完整交接](chronicles/2026-11-25-system1-system0-handoff.md)：最新分工、实现、训练与失败、视频／九位置图、源码与运行资源、下次讨论入口。
 
 - [System1训练与二维／三维路径展示](agent/simulation/evolution/system1-path-visualization.md)：60轮训练、独立1074帧评估、8点短段和12秒视频；含动作空间与老师来源讨论。

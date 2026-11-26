@@ -1,5 +1,9 @@
 # Agent 知识库
 
+- **System1／System0会话交接**：[接手文档](../chronicles/2026-11-26-system1-system0-session-handoff.md)。先核对当前状态与测试暂停指令，勿把旧模型演示当成本轮新模型成绩。
+
+- **System0随机化重训已完成，最终测试暂停**：[纪传体](simulation/evolution/system0-randomized-retraining.md) · [编年体](simulation/chronicles/2026-11-26-system0-randomized-retraining.md) · [重启操作交接](../chronicles/2026-11-26-system0-rl-reboot-handoff.md)。
+
 - [System1 与 System0 最新交接](../chronicles/2026-11-25-system1-system0-handoff.md)：当前先扩充System1接近位置覆盖；区分旧System0冒烟、新60轮视觉模型和九位置诊断。
 
 - [System1 与 System0 独立插接原型](simulation/evolution/hierarchical-insertion.md)：当前实现与验证边界，旧RL默认保留。

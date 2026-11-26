@@ -1,0 +1,166 @@
+{
+  "date": "2026-11-26",
+  "status": "complete_two_seed_paired_gt_path_study",
+  "output_root": "/data/shapeforge/runtime/runs/s1_path_ablation_20261126",
+  "pooled": {
+    "path": {
+      "successes": 48,
+      "trials": 48
+    },
+    "goal": {
+      "successes": 20,
+      "trials": 48
+    }
+  },
+  "paired_results": [
+    {
+      "training_seed": 340000,
+      "path_successes": 24,
+      "goal_successes": 0,
+      "cases": 24,
+      "difference_percentage_points": 100.0,
+      "path_only_wins": 24,
+      "goal_only_wins": 0,
+      "both_success": 0,
+      "both_fail": 0,
+      "mean_step_difference_on_common_successes": null
+    },
+    {
+      "training_seed": 341000,
+      "path_successes": 24,
+      "goal_successes": 20,
+      "cases": 24,
+      "difference_percentage_points": 16.666666666666664,
+      "path_only_wins": 4,
+      "goal_only_wins": 0,
+      "both_success": 20,
+      "both_fail": 0,
+      "mean_step_difference_on_common_successes": 4.4
+    }
+  ],
+  "difference_percentage_points": 58.333333333333336,
+  "scope": "incremental GT waypoint-preview value over shared goal/progress/history; not removal of all target information or visual System1 comparison",
+  "caveat": "two seeds; same total budget, not equal policy-executed steps or separately optimized baselines; fixed orientation",
+  "artifacts": {
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/protocol.json": {
+      "bytes": 2155,
+      "sha256": "d0a1dc1300a56aaa802e608627cf0aeec28e87d03d43be2f703e954746c3bc62"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/collection_audit.json": {
+      "bytes": 253,
+      "sha256": "8f0828b2710f50cff1c2e135f01493d8fd7793b22ac784dfa0dee0ce39217f3e"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/pairing_audit.json": {
+      "bytes": 195,
+      "sha256": "6aef82cdfb45e386ff0359ffff4f54ac778903761f7579fd8669c22d836e0425"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/summary.json": {
+      "bytes": 100532,
+      "sha256": "eb674b6d280c827b46ffc6b43e8134f1f776b68162a336214186f9aa6844d257"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/comparison.png": {
+      "bytes": 215588,
+      "sha256": "1702654f5c2bd1b472c013682cbcab70ae82fb9c3ea3c859994b4e5e24687237"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/routes.json": {
+      "bytes": 1925,
+      "sha256": "898ceac3c19c76acf26121bb31a0a0d069edbda9bbf1498bc1ac65272455006e"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/continuation_protocol.json": {
+      "bytes": 2300,
+      "sha256": "fb9ccada02f5948ef833feb579f1c1df06bf69be2d597997763b75f695d4791e"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/continuation_result.json": {
+      "bytes": 10521,
+      "sha256": "c8181214ff7d17831babb8f11009189a8926f30b3d2c8035bdf5dc17f4885f15"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/pipeline_result.json": {
+      "bytes": 20249,
+      "sha256": "5129bba88a338f919d0a9d4d9d5342814745e984f087a46ee17c30493fdcb072"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/video_training_lineage_audit.json": {
+      "bytes": 1149,
+      "sha256": "de8908f9ac01a746d0ce5c4562f1b73b664a1f48d085d8ddee21c4175affe7c4"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/rl_path_340000/experiment/system0.zip": {
+      "bytes": 6178970,
+      "sha256": "c152bc8497d3204bf4c094187e997d1c328cdd2d41f07a9e689204d11bb038d1"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/rl_path_340000/experiment/system0.json": {
+      "bytes": 11251,
+      "sha256": "fb94f54e2a88e1e0ba3b851c0927c4d9ac3457ee22033c40f58990c81e282eaf"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/rl_path_340000/experiment/training_report.json": {
+      "bytes": 18752,
+      "sha256": "e71434dc87782068231ebc4849ad221b2df5ed84e2c93de4e51fc44e583bb06e"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/rl_path_340000/experiment/replay_validation.json": {
+      "bytes": 361,
+      "sha256": "e800fb79f76e1aaee55de242e803a0c8c69d234df440476a386bf3e31349b143"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/test_path_340000/experiment/evaluation.json": {
+      "bytes": 30048,
+      "sha256": "3126272c0e29a3b37d4b8a7dc0aaa9f1779b920fb59e8b118cc3ca2e2706ac12"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/rl_goal_340000/experiment/system0.zip": {
+      "bytes": 6180260,
+      "sha256": "f34a34a6e2957626fb949504123bc382aa02c76cc73e5f7b44cc8131e71fd7b4"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/rl_goal_340000/experiment/system0.json": {
+      "bytes": 11499,
+      "sha256": "0dcd21983a53b68f5bc5b3b9d3081d9706e4d5cde05980b82dbb3037a723b7ff"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/rl_goal_340000/experiment/training_report.json": {
+      "bytes": 28283,
+      "sha256": "74d938f64d4b033c2cc7a4cca7b4033e555f6803f05e3c24699d2de2bd0fa8c6"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/rl_goal_340000/experiment/replay_validation.json": {
+      "bytes": 361,
+      "sha256": "8392edf474d0a1bc460786c5ac66f82b8a6a994137a39c78b41729c81fb1c7c7"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/test_goal_340000/experiment/evaluation.json": {
+      "bytes": 39527,
+      "sha256": "16d0e520743fcc1431cacb99ed365c0ad2185dc60145cc6e4d44e8c545770534"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/rl_path_341000_resume/experiment/system0.zip": {
+      "bytes": 6180109,
+      "sha256": "41d1fe329ba737ba1451403ca95b8ce7aac9853362f91d3be23f1869be0625f0"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/rl_path_341000_resume/experiment/system0.json": {
+      "bytes": 11275,
+      "sha256": "dd7632d3a82c08ead9b0eddb7fd41b7bfc456c9130750ce2942481bc44b857cc"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/rl_path_341000_resume/experiment/training_report.json": {
+      "bytes": 14911,
+      "sha256": "31cda07dbecc5eae605cab46355c7df016dc275432fc139dbdc37320416d3b34"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/rl_path_341000_resume/experiment/replay_validation.json": {
+      "bytes": 484,
+      "sha256": "e430b11d748d5af15349b0be0eecf8924fb80398cdb7e712ff56cd461e84ecf3"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/test_path_341000/experiment/evaluation.json": {
+      "bytes": 30062,
+      "sha256": "6ea8c78a426432a8559bf0f6f854753d7dff1ffb4df14097fe791f9436cfdb17"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/rl_goal_341000_resume/experiment/system0.zip": {
+      "bytes": 6179619,
+      "sha256": "090578637709ba7a3c98bb5c27de2480f2afbf09e607da3cdf35550f6815feeb"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/rl_goal_341000_resume/experiment/system0.json": {
+      "bytes": 11307,
+      "sha256": "42b4cf1524db79fd52d76bf7261ee680eb155ca655ce54b9c59a44da2bc9c0f0"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/rl_goal_341000_resume/experiment/training_report.json": {
+      "bytes": 13873,
+      "sha256": "af39604b19395210a8133876dfbe084fe9fcba94d1cbdd21155aea9028342dbe"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/rl_goal_341000_resume/experiment/replay_validation.json": {
+      "bytes": 484,
+      "sha256": "117150424f7b71f59375a771d21ad4a58624375a4ca7d9cd41de1055031908f6"
+    },
+    "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/test_goal_341000/experiment/evaluation.json": {
+      "bytes": 30138,
+      "sha256": "e4f268cc9c97d3de69ce85552669415d50e8268b657fd73de8dafce67a68015b"
+    }
+  }
+}

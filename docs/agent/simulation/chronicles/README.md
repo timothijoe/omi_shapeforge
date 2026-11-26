@@ -1,5 +1,8 @@
 # 仿真阶段记录
 
+- [2026-11-26：随机插口重训、异常恢复与重启交接（编年体）](2026-11-26-system0-randomized-retraining.md)：按时间记录采集、BC、RL、中断、补齐训练和暂停测试；[当前纪传体](../evolution/system0-randomized-retraining.md)。
+
+
 - [2026-11-25：真实腕图追溯、1920原图域校核与r16候选](2026-11-25-wrist-photo-refinement.md)
 
 - [2026-11-25：r15新版夹爪Isaac插入视频、UV标志和全组件版本核对](2026-11-25-wva01-isaac-insertion.md)

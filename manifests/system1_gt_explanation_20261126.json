@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-26",
+  "output_root": "/data/shapeforge/runtime/runs/hier_s1_gt_explained_20261126_v1",
+  "scope": "three static reference-pose reconstructions; not execution",
+  "case": 1,
+  "tip_gaps_mm": [
+    70.02483350512242,
+    33.20072444210589,
+    4.999999999999911
+  ],
+  "center_gaps_mm": [
+    140.43658095151312,
+    106.82520592251629,
+    79.3749265370487
+  ],
+  "artifacts": {
+    "explanation.json": "61df35693d139a89831ab9b2ed9f712bc1d5f5e0b5f0cc329d388f7de53151a9",
+    "gt_explained.png": "13d30cb2fb9198cdca9ff42647ed81941aa0f31bf795b41b29264b7332d4fa41",
+    "gt_endpoint.blend": "93e3f1ed70088b6f79cca009c96a40eea3a189f53bd13b044d26372ccd9f7894"
+  }
+}

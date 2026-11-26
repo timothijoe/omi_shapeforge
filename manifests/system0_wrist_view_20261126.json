@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-26",
+  "status": "clear_wrist_view_delivered",
+  "output_root": "/data/shapeforge/runtime/runs/s0_wrist_view_20261126",
+  "delivery": "/home/linux/Downloads/Wrist_View_Demo_20261126/Wrist_View_Pitch_Demo.mp4",
+  "validation": {
+    "complete": true,
+    "delivery": "/home/linux/Downloads/Wrist_View_Demo_20261126/Wrist_View_Pitch_Demo.mp4",
+    "duration_seconds": 44.3,
+    "video_sha256": "275af5d287e09a31244ce5179d59366fca0522c5a990504c43abe712d9ec8751",
+    "wrist_frames_verified": 497,
+    "original_camera_attachment_verified": true,
+    "original_fisheye_projection_verified": true,
+    "fixed_crop_verified": true,
+    "policy_states_and_weights_unchanged": true,
+    "full_video_decode_passed": true,
+    "max_camera_attachment_matrix_error": 3.3306690738754696e-16,
+    "max_camera_world_position_error_mm": 0.0004654337319056639,
+    "max_camera_world_rotation_matrix_error": 9.536709319572789e-07,
+    "scope": "wrist-view re-render of existing simulation states; no new trial or camera relocation; not original actor input pixels"
+  },
+  "scope": "same frozen simulation trajectory; new visualization only; original wrist extrinsics and fisheye mapping",
+  "tests": {
+    "passed": 29,
+    "skipped": 69
+  },
+  "artifacts": {
+    "/data/shapeforge/runtime/runs/s0_wrist_view_20261126/selection.json": {
+      "bytes": 12139,
+      "sha256": "94aa1540d093c4174b8b1c1abaa073cb240f09880ac6187e26a0697a44a5d0dc"
+    },
+    "/data/shapeforge/runtime/runs/s0_wrist_view_20261126/capture/capture_report.json": {
+      "bytes": 19877,
+      "sha256": "0336a2b36025b4c3c86f4d749ecfc77a115fab82cf2a2e73fcea2d624b3b675f"
+    },
+    "/data/shapeforge/runtime/runs/s0_wrist_view_20261126/video_manifest.json": {
+      "bytes": 35518,
+      "sha256": "7c50f2cc08f959dbce3d37ce0869fee0b2d31be831d60ce84322bf642e51d80f"
+    },
+    "/data/shapeforge/runtime/runs/s0_wrist_view_20261126/delivery_manifest.json": {
+      "bytes": 795,
+      "sha256": "6ec1aa3d5564f5c4368890fc078e2dca072f251b5dbfd3548737b45d9853ae27"
+    },
+    "/data/shapeforge/runtime/runs/s0_wrist_view_20261126/source_hashes.json": {
+      "bytes": 1254,
+      "sha256": "33c9b41c63c56fce2cdd86a4a925ef43b4e9178bf095a14b683c5bced0d5d4db"
+    },
+    "/data/shapeforge/runtime/runs/s0_wrist_view_20261126/render_revision.json": {
+      "bytes": 244,
+      "sha256": "b022891da1df25987755657dc25c0405fc6c5a03c3affa8d1233d4ef2daa568e"
+    },
+    "/data/shapeforge/runtime/runs/s0_wrist_view_20261126/system1_vs_system0.mp4": {
+      "bytes": 3151861,
+      "sha256": "275af5d287e09a31244ce5179d59366fca0522c5a990504c43abe712d9ec8751"
+    },
+    "/data/shapeforge/runtime/runs/s0_wrist_view_20261126/preview.jpg": {
+      "bytes": 355675,
+      "sha256": "9fc22b211dd7a814c73c46df0d4ae9f4c18786df68ff68289fe134333da9ce15"
+    },
+    "/data/shapeforge/runtime/runs/s0_wrist_view_20261126/path_states.json": {
+      "bytes": 1250119,
+      "sha256": "9ce06165bb98c2ffc0a533e355081032621f0aa664df7d489394d29b76bc8fc2"
+    },
+    "/data/shapeforge/runtime/runs/s0_wrist_view_20261126/goal_states.json": {
+      "bytes": 361431,
+      "sha256": "a8eac118a387a809b39be862d29ffe3c6921e9059cad50beff27817297422750"
+    },
+    "/data/shapeforge/runtime/runs/s0_wrist_view_20261126/result.json": {
+      "bytes": 39,
+      "sha256": "e8a90be8eef76311da0e0f0fe01b0cbb11a12140321f8f36c4f53f511a761a92"
+    }
+  }
+}

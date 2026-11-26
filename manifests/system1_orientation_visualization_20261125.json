@@ -1,0 +1,92 @@
+{
+  "date": "2026-11-25",
+  "status": "orientation_glyphs_validated_pending_visual_review",
+  "output_root": "/data/shapeforge/runtime/runs/hier_s1_orientation_20261125_v1",
+  "training": false,
+  "prediction_execution": false,
+  "validation": {
+    "cases": 3,
+    "coordinate_frames": 26,
+    "source_hashes_unchanged": {
+      "/data/shapeforge/runtime/runs/hier_s1_far_visual_20261125_v2/scene_packet.json": true,
+      "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer/transfer.json": true,
+      "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer/meshes.npz": true,
+      "/data/shapeforge/runtime/runs/hier_s1_far_20261125_v1/samples.npz": true
+    },
+    "production_reference_max_origin_error_mm": 7.647771129215302e-06,
+    "production_reference_max_rotation_matrix_error": 1.3076749912077634e-08,
+    "axis_direction_max_error": 1.1657341758564144e-15,
+    "opencv_fisheye_max_display_pixel_difference": 5.684341886080801e-13,
+    "scope": "orientation rendering checks; no new training or policy execution"
+  },
+  "artifacts": {
+    "case_01_gt_orientation.png": {
+      "bytes": 1431505,
+      "sha256": "c18ebd7b800edc8dac2ceb867ebe5ce0411da6a30d6a4e5752a9c3c15fdb94cf"
+    },
+    "case_02_gt_orientation.png": {
+      "bytes": 1415688,
+      "sha256": "909ac8b1ba15b88c3dc4fa9d8f315171e4074c53377054ea0b1bc55f1fa5afe3"
+    },
+    "case_02_pred_orientation.png": {
+      "bytes": 1419082,
+      "sha256": "f4ee22bda6108d587d9bdf40b70fe9bdaf4ffa26d25c755df7b66d120d77bbaf"
+    },
+    "case_00_pred_orientation.png": {
+      "bytes": 1429509,
+      "sha256": "a0f06a3ba8e9b0aa2c4379a7a38b21b3240c549ac0a3faf9335447c751c9866a"
+    },
+    "case_00_gt_orientation.png": {
+      "bytes": 1436195,
+      "sha256": "2ecfee15cbee067e394576a8053e93567b32aea02d6ece58b5139b0179dc42d2"
+    },
+    "case_01_pred_orientation.png": {
+      "bytes": 1434195,
+      "sha256": "f98fded7b9485ebbf4b611fb18f7ec0df4cb4f66244ef90e2d26c9abe2d1b21a"
+    },
+    "case_00_orientation.blend": {
+      "bytes": 7331218,
+      "sha256": "07b37cfa681b08abb4df4044c463c78127c62c08458b1f9989644d85aac2805f"
+    },
+    "case_02_orientation.blend": {
+      "bytes": 7482070,
+      "sha256": "98dd816134572f037d5959ac53d3db84a5e3bd5bb2930902faaa7605281006f3"
+    },
+    "case_01_orientation.blend": {
+      "bytes": 7482070,
+      "sha256": "89d598f2b9cbe13270af4032c947f633419d598f2e99a201fa21325957a601ba"
+    },
+    "orientation.json": {
+      "bytes": 66268,
+      "sha256": "ce94c155668074bcd071bf27dd11f1ea8978a865e4bbe7bc226ed227ac1e91f2"
+    },
+    "validation.json": {
+      "bytes": 790,
+      "sha256": "32fd40d66e65719147e6fd286feb03ed657de20996eb17bc1fa46acaf5dc4df7"
+    },
+    "render_system1_orientation.py": {
+      "bytes": 9560,
+      "sha256": "8ebecca2d47c5b236ccc792b44a727ce6c85c959026dff74f14b764fc29c9ee6"
+    },
+    "render_system1_orientation_blender.py": {
+      "bytes": 1833,
+      "sha256": "e68b2bc78b53b3eedd822403e5c560c1b318836eb3cda3f25f24bb8b36b4d382"
+    },
+    "audit_system1_orientation.py": {
+      "bytes": 4424,
+      "sha256": "c6f44475391c3635328d12529058aad05883cc8698dd3bff522dcb66de865405"
+    },
+    "render_system1_far.py": {
+      "bytes": 9304,
+      "sha256": "a0ce2581a9938878d206f39f64a29f0e3d7e2b900b902ddb89be60770aa29f2e"
+    },
+    "render_system1_assets.py": {
+      "bytes": 10933,
+      "sha256": "e89d789ad0cf4950ede60043ded68a26b1d992529877a064a6861c4f1ec6eeb4"
+    },
+    "render_system1_paths.py": {
+      "bytes": 12430,
+      "sha256": "23119950ef87cad911d99ad7b990efaead7fe1e2895b964a02b47a16c1599f2d"
+    }
+  }
+}

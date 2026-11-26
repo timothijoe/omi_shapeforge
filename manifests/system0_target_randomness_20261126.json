@@ -1,0 +1,139 @@
+{
+  "date": "2026-11-26",
+  "status": "paired_fixed_target_diagnostic_completed_no_retraining",
+  "output_root": "/data/shapeforge/runtime/runs/hier_s0_fixed_target_20261126",
+  "summary": {
+    "scope": "single paired frozen-policy nominal-target evaluation; no fixed-target retraining",
+    "results": {
+      "bc": {
+        "seed": 220000,
+        "success": false,
+        "steps": 66,
+        "reward": -0.335619849063437,
+        "attempted_steps": 66,
+        "control_rejection": null,
+        "backward_motion_steps": 0,
+        "failure": "entrance_not_qualified",
+        "teacher_requests": 0,
+        "socket_pose": {
+          "dx_mm": 0.0,
+          "dy_mm": 0.0,
+          "yaw_deg": 0.0
+        },
+        "final_depth_mm": 6.1105038143770365,
+        "lateral_error_mm": 0.22834135159980667,
+        "alignment_angle_deg": 0.04537971873937677,
+        "max_contact_mean_N": 0.0
+      },
+      "rl": {
+        "seed": 220000,
+        "success": false,
+        "steps": 491,
+        "reward": 0.8290722397664115,
+        "attempted_steps": 492,
+        "control_rejection": {
+          "seed": 220000,
+          "attempted_step": 492,
+          "policy_action": [
+            0.6727181673049927,
+            0.1159743070602417,
+            0.46801912784576416,
+            0.008002638816833496,
+            -0.10675543546676636,
+            0.01428210735321045
+          ],
+          "error": "IKError: SDK IK rejected: ok=True, unreachable=False, joint_limit=True, singular=[False, False, False, False, False, False, False]",
+          "action_accepted": false
+        },
+        "backward_motion_steps": 219,
+        "failure": "ik_action_rejected",
+        "teacher_requests": 0,
+        "socket_pose": {
+          "dx_mm": 0.0,
+          "dy_mm": 0.0,
+          "yaw_deg": 0.0
+        },
+        "final_depth_mm": -0.030396788721157142,
+        "lateral_error_mm": 2.1268646133062017,
+        "alignment_angle_deg": 0.4114258206772439,
+        "max_contact_mean_N": 1.6240203392025971
+      }
+    },
+    "invariants": {
+      "actual_socket_pose_fixed": true,
+      "initial_joint_positions_equal": true,
+      "teacher_queries_zero": true,
+      "models_unchanged": true
+    },
+    "bc_data_coverage": [
+      {
+        "seed": 200000,
+        "split": "train",
+        "socket_pose": {
+          "dx_mm": 0.32468324053506104,
+          "dy_mm": 1.1920057296197148,
+          "yaw_deg": 0.0
+        }
+      },
+      {
+        "seed": 200001,
+        "split": "train",
+        "socket_pose": {
+          "dx_mm": 1.4122276174645432,
+          "dy_mm": 2.0795368415907483,
+          "yaw_deg": 0.0
+        }
+      },
+      {
+        "seed": 200002,
+        "split": "train",
+        "socket_pose": {
+          "dx_mm": 0.7359264113462056,
+          "dy_mm": 2.1599932670915605,
+          "yaw_deg": 0.0
+        }
+      },
+      {
+        "seed": 200003,
+        "split": "train",
+        "socket_pose": {
+          "dx_mm": -2.3685149825327567,
+          "dy_mm": 1.3453695326563704,
+          "yaw_deg": 0.0
+        }
+      },
+      {
+        "seed": 200004,
+        "split": "train",
+        "socket_pose": {
+          "dx_mm": -1.2646427282597503,
+          "dy_mm": 0.4833231227221897,
+          "yaw_deg": 0.0
+        }
+      },
+      {
+        "seed": 200005,
+        "split": "val",
+        "socket_pose": {
+          "dx_mm": 2.4591865915156124,
+          "dy_mm": -0.44253448487341407,
+          "yaw_deg": 0.0
+        }
+      }
+    ],
+    "bc_training_y_min_mm": 0.4833231227221897,
+    "bc_training_y_max_mm": 2.1599932670915605,
+    "bc_training_positive_y_count": 5,
+    "bc_training_negative_y_count": 0,
+    "interpretation": "evaluation randomness alone does not explain all failures; training-randomization effect is not isolated without fixed-target retraining; BC coverage was one-sided"
+  },
+  "tests": {
+    "hierarchical_targeted_passed": 20
+  },
+  "artifacts": {
+    "/data/shapeforge/runtime/runs/hier_s0_fixed_target_20261126/summary.json": "a6da1881c2483e40bab4c8cd2ac30a1e3ad11c9066057993c49848a83196a25e",
+    "/data/shapeforge/runtime/runs/hier_s0_fixed_target_20261126/protocol.json": "0d822a926878aeb440911009ca8d027dc3ddb443c02e3df67f829fdd8652bb42",
+    "/data/shapeforge/runtime/runs/hier_s0_fixed_target_20261126/bc/experiment/evaluation.json": "b2766d44c6aa17c81741be910b7fe5eee9416075813e603cb7b6374b0dbe162f",
+    "/data/shapeforge/runtime/runs/hier_s0_fixed_target_20261126/rl/experiment/evaluation.json": "2269675c3bc36eb07d748d6cf5bb3b9dd555709d87e57e483edbc7d945b5ea7c"
+  }
+}

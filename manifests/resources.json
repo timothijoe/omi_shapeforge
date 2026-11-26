@@ -1857,6 +1857,170 @@
       "manifest": "manifests/isaac_rule_precision_20261124.json",
       "restore": "docs/agent/simulation/evolution/isaac-rule-precision.md",
       "results": "/data/shapeforge/runtime/runs/isaac_rule_precision_20261124/summary.json"
+    },
+    {
+      "id": "hierarchical-intervention-20261126",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/hier_s0_pilot_20261126",
+      "kind": "gt_path_conditioned_sac_with_scripted_intervention",
+      "manifest": "manifests/hierarchical_intervention_20261126.json",
+      "restore": "tutorials/hierarchical_insertion.md",
+      "results": "/data/shapeforge/runtime/runs/hier_s0_pilot_20261126/summary.json",
+      "validation_scope": "intervention and data chain verified; autonomous evaluation 0/5"
+    },
+    {
+      "id": "system0-failure-diagnosis-20261126",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/hier_s0_diagnosis_20261126",
+      "kind": "same_target_rule_bc_rl_diagnostic_comparison",
+      "manifest": "manifests/system0_failure_diagnosis_20261126.json",
+      "restore": "tutorials/hierarchical_insertion.md",
+      "results": "/data/shapeforge/runtime/runs/hier_s0_diagnosis_20261126/summary.json"
+    },
+    {
+      "id": "system0-fixed-target-diagnostic-20261126",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/hier_s0_fixed_target_20261126",
+      "kind": "frozen_policy_target_randomness_diagnostic",
+      "manifest": "manifests/system0_target_randomness_20261126.json",
+      "restore": "tutorials/hierarchical_insertion.md",
+      "results": "/data/shapeforge/runtime/runs/hier_s0_fixed_target_20261126/summary.json"
+    },
+    {
+      "id": "system0-bc10000-20261126",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/hier_s0_bc10000_20261126",
+      "kind": "extended_bc_only_training_and_diagnostic_evaluation",
+      "manifest": "manifests/system0_bc10000_20261126.json",
+      "restore": "tutorials/hierarchical_insertion.md",
+      "results": "/data/shapeforge/runtime/runs/hier_s0_bc10000_20261126/summary.json"
+    },
+    {
+      "id": "system1-path-video-20261126",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/s1_path_video_20261126",
+      "kind": "autonomous_policy_paired_video_replay",
+      "manifest": "manifests/system1_path_video_20261126.json",
+      "restore": "docs/chronicles/2026-11-26-system1-path-video.md",
+      "results": "/data/shapeforge/runtime/runs/s1_path_video_20261126/video_manifest.json",
+      "checked_date": "2026-11-26"
+    },
+    {
+      "id": "system1-path-ablation-20261126",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/s1_path_ablation_20261126",
+      "kind": "paired_gt_path_system0_training_evaluation",
+      "manifest": "manifests/system1_path_ablation_20261126.json",
+      "restore": "docs/chronicles/2026-11-26-system1-path-ablation.md",
+      "results": "/data/shapeforge/runtime/runs/s1_path_ablation_20261126/summary.json",
+      "checked_date": "2026-11-26"
+    },
+    {
+      "id": "system1-more-demos-20261126",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/s1_more_demos_20261126",
+      "kind": "five_autonomous_policy_comparison_videos",
+      "manifest": "manifests/system1_more_demos_20261126.json",
+      "restore": "docs/chronicles/2026-11-26-system1-path-video.md",
+      "results": "/data/shapeforge/runtime/runs/s1_more_demos_20261126/delivery_manifest.json",
+      "checked_date": "2026-11-26"
+    },
+    {
+      "id": "system0-initial-pose-20261126",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/s0_initial_pose_20261126",
+      "kind": "frozen_policy_initial_gripper_pose_evaluation",
+      "manifest": "manifests/system0_initial_pose_20261126.json",
+      "restore": "docs/agent/simulation/evolution/system0-initial-pose-robustness.md",
+      "results": "/data/shapeforge/runtime/runs/s0_initial_pose_20261126/summary.json",
+      "checked_date": "2026-11-26"
+    },
+    {
+      "id": "system0-initial-pose-videos-20261126",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/s0_initial_pose_videos_20261126",
+      "kind": "four_initial_pose_policy_replay_videos",
+      "manifest": "manifests/system0_initial_pose_20261126.json",
+      "restore": "docs/agent/simulation/evolution/system0-initial-pose-robustness.md",
+      "results": "/data/shapeforge/runtime/runs/s0_initial_pose_videos_20261126/delivery_manifest.json",
+      "checked_date": "2026-11-26"
+    },
+    {
+      "id": "system0-wrist-view-20261126",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/s0_wrist_view_20261126",
+      "kind": "clear_wrist_policy_visual_replay",
+      "manifest": "manifests/system0_wrist_view_20261126.json",
+      "restore": "docs/chronicles/2026-11-26-system0-wrist-view.md",
+      "results": "/data/shapeforge/runtime/runs/s0_wrist_view_20261126/delivery_manifest.json",
+      "checked_date": "2026-11-26"
+    },
+    {
+      "id": "system0-far-start-20261126",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/s0_far_start_20261126",
+      "kind": "farther_initial_pose_frozen_policy_evaluation",
+      "manifest": "manifests/system0_far_start_20261126.json",
+      "restore": "docs/chronicles/2026-11-26-system0-far-start.md",
+      "results": "/data/shapeforge/runtime/runs/s0_far_start_20261126/summary.json",
+      "checked_date": "2026-11-26"
+    },
+    {
+      "id": "system0-far-wrist-videos-20261126",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/s0_far_wrist_videos_20261126",
+      "kind": "farther_start_wrist_replay_videos",
+      "manifest": "manifests/system0_far_start_20261126.json",
+      "restore": "docs/chronicles/2026-11-26-system0-far-start.md",
+      "results": "/data/shapeforge/runtime/runs/s0_far_wrist_videos_20261126/delivery_manifest.json",
+      "checked_date": "2026-11-26"
+    },
+    {
+      "id": "system0-reorientation-20261126",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/s0_reorientation_20261126",
+      "kind": "larger_initial_pose_frozen_policy_correction",
+      "manifest": "manifests/system0_reorientation_20261126.json",
+      "restore": "docs/agent/simulation/evolution/system0-large-offset-correction.md",
+      "results": "/data/shapeforge/runtime/runs/s0_reorientation_20261126/summary.json",
+      "checked_date": "2026-11-26"
+    },
+    {
+      "id": "system0-reorientation-videos-20261126",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/s0_reorientation_videos_20261126",
+      "kind": "actual_pose_correction_demonstrations_and_single_episode_explanation",
+      "manifest": "manifests/system0_reorientation_20261126.json",
+      "restore": "docs/agent/simulation/evolution/system0-large-offset-correction.md",
+      "results": "/data/shapeforge/runtime/runs/s0_reorientation_videos_20261126/delivery_manifest.json",
+      "checked_date": "2026-11-26"
+    },
+    {
+      "id": "system0-randomized-retraining-20261126",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/s0_rand_train_20261126",
+      "kind": "randomized_target_and_initial_pose_fresh_bc_assisted_rl_study",
+      "manifest": "manifests/system0_randomized_retraining_20261126.json",
+      "restore": "docs/chronicles/2026-11-26-system0-rl-reboot-handoff.md",
+      "results": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/reboot_handoff/training_complete.json",
+      "checked_date": "2026-11-26",
+      "validation_scope": "RL checkpoint/replay completion only; final heldout evaluation deferred",
+      "capability_document": "docs/agent/simulation/evolution/system0-randomized-retraining.md",
+      "chronicle_document": "docs/agent/simulation/chronicles/2026-11-26-system0-randomized-retraining.md",
+      "session_handoff_document": "docs/chronicles/2026-11-26-system1-system0-session-handoff.md"
+    },
+    {
+      "id": "system0-rl-reboot-handoff-20261126",
+      "root": "runtime",
+      "path": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/reboot_handoff",
+      "kind": "verified_training_checkpoints_and_deferred_evaluation_handoff",
+      "manifest": "manifests/system0_rl_reboot_handoff_20261126.json",
+      "restore": "docs/chronicles/2026-11-26-system0-rl-reboot-handoff.md",
+      "results": "/data/shapeforge/runtime/runs/s0_rand_train_20261126/reboot_handoff/training_complete.json",
+      "checked_date": "2026-11-26",
+      "capability_document": "docs/agent/simulation/evolution/system0-randomized-retraining.md",
+      "chronicle_document": "docs/agent/simulation/chronicles/2026-11-26-system0-randomized-retraining.md",
+      "session_handoff_document": "docs/chronicles/2026-11-26-system1-system0-session-handoff.md"
     }
   ],
   "integrity_note": "Latest transfer_validation.json records full 01 archive and per-file verification plus all OMI checksum/source entries. Other expected hashes retain their earlier evidence; availability is a dated snapshot.",
@@ -1895,5 +2059,8 @@
   "latest_storage_layout": "storage_layout_20261123.json",
   "storage_paths_updated_date": "2026-11-23",
   "latest_runtime_relocation": "runtime_relocation_20261123.json",
-  "runtime_paths_updated_date": "2026-11-23"
+  "runtime_paths_updated_date": "2026-11-23",
+  "latest_hierarchical_intervention": "manifests/hierarchical_intervention_20261126.json",
+  "latest_system0_failure_diagnosis": "manifests/system0_failure_diagnosis_20261126.json",
+  "latest_system0_bc_training": "manifests/system0_bc10000_20261126.json"
 }

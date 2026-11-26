@@ -1,0 +1,5 @@
+[
+  {"name": "left_high_tilt", "distance_mm": 50.0, "lateral_mm": -20.0, "vertical_mm": 12.0, "rotation_deg": [12.0, 8.0, -15.0]},
+  {"name": "right_low_roll", "distance_mm": 70.0, "lateral_mm": 20.0, "vertical_mm": -12.0, "rotation_deg": [-10.0, -12.0, 18.0]},
+  {"name": "left_low_opposite_tilt", "distance_mm": 90.0, "lateral_mm": -15.0, "vertical_mm": -15.0, "rotation_deg": [15.0, -10.0, 8.0]}
+]

@@ -160,7 +160,7 @@ class RobotExperiment:
                                   and g.get('collision_role')!='grasp_rear'] for name in ('sim_module','sim_socket')}
             if not all(self.task_boxes.values()) or not all(g['kind']==6 for shapes in self.task_boxes.values() for g in shapes):
                 raise ValueError('staged candidate geometry audit requires native boxes')
-    def reset(self,seed,socket_pose=None):
+    def reset(self,seed,socket_pose=None,initial_pose=None):
         if self.socket_pose_range:
             from .socket_pose import relocate_socket_manifest
             pose=self.socket_pose_range.resolve(seed,socket_pose)
@@ -187,6 +187,17 @@ class RobotExperiment:
         self.goal_pos=np.array(self.manifest['goal_tcp_position']);self.goal_rot=np.array(self.manifest['goal_tcp_rotation'])
         q=np.array([[self.packet['initial_qpos'][self.joints[n]['qpos_index']] for n in self.names]],np.float32)
         q[0,self.arm]+=np.random.default_rng(seed).uniform(-.0005,.0005,7)
+        initial_audit=None
+        if initial_pose is not None:
+            if self.native_ik is None or self.packet.get('free_bodies'):
+                raise ValueError('explicit initial pose requires native IK and fixed module attachment')
+            from .initial_pose import initial_tcp_target,solve_reset_ik
+            target,initial_audit=initial_tcp_target(self.manifest,self.tcp_from_gripper,initial_pose)
+            qmap={j['name']:self.packet['initial_qpos'][j['qpos_index']] for j in self.packet['joints']}
+            qmap.update(zip(self.names,q[0]))
+            solved,ik_audit=solve_reset_ik(self.native_ik,self.kin,qmap,target)
+            initial_audit['initialization_solver']=ik_audit
+            for index in self.arm:q[0,index]=solved[self.names[index]]
         self.robot.set_joint_positions(q);self.robot.set_joint_velocities(np.zeros_like(q));self.robot.set_joint_position_targets(q)
         self._held_joint_targets=q.copy()
         pad_ids=np.arange(self.pads.count,dtype=np.uint32)
@@ -225,6 +236,21 @@ class RobotExperiment:
             if audit['pad_position_error_m']>1e-5:raise RuntimeError('socket pad world transforms did not follow the assembly')
             audit['pad_travel_mm']=self.measurements()['pad_travel_mm']
             if max(abs(v) for v in audit['pad_travel_mm'])>.01:raise RuntimeError('socket pad anchors did not move consistently')
+            (self.output/'kinematics_check.json').write_text(json.dumps(audit,indent=2)+'\n')
+        if initial_audit is not None:
+            measured=self.tcp();measurement=self.measurements()
+            initial_audit.update(actual_tcp=measured.tolist(),actual_gripper=(measured@self.tcp_from_gripper).tolist(),
+                position_error_mm=float(np.linalg.norm(measured[:3,3]-target[:3,3])*1000),
+                rotation_error_deg=float(np.rad2deg(Rotation.from_matrix(measured[:3,:3]@target[:3,:3].T).magnitude())),
+                actual_tip_gap_mm=-measurement['insertion_depth_mm'],
+                actual_lateral_error_mm=measurement['lateral_error_mm'],
+                actual_alignment_angle_deg=float(np.rad2deg(measurement['alignment_angle_rad'])),
+                initial_box_overlap_mm=measurement.get('control_box_overlap_mm',0.))
+            if initial_audit['position_error_mm']>.1 or initial_audit['rotation_error_deg']>.05:
+                raise RuntimeError('initial pose was not physically realized: '+str(initial_audit))
+            if initial_audit['actual_tip_gap_mm']<2 or initial_audit['initial_box_overlap_mm']>1e-6:
+                raise RuntimeError('initial pose intersects insertion geometry: '+str(initial_audit))
+            audit['initial_pose']=initial_audit
             (self.output/'kinematics_check.json').write_text(json.dumps(audit,indent=2)+'\n')
         return audit
 

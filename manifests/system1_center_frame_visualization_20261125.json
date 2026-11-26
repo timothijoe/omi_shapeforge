@@ -1,0 +1,140 @@
+{
+  "date": "2026-11-25",
+  "status": "body_center_forward_frame_generated_and_validated",
+  "output_root": "/data/shapeforge/runtime/runs/hier_s1_orientation_center_20261125_v1",
+  "frame_name": "body-center-forward",
+  "module_from_display": [
+    [
+      0.0,
+      1.0,
+      0.0,
+      -1.8992606966306003e-11
+    ],
+    [
+      -1.0,
+      0.0,
+      0.0,
+      4.754100238479886e-10
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      1.121853044488974e-11
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "center_geometry": {
+    "parts": [
+      "sim_module_000_visual",
+      "sim_module_001_visual",
+      "sim_module_002_visual",
+      "sim_module_013_visual"
+    ],
+    "bounds_native_m": [
+      [
+        -0.00873544944269348,
+        -0.035093170492009204,
+        -0.004100000027169951
+      ],
+      [
+        0.008735449404708266,
+        0.03509317144282925,
+        0.0041000000496070116
+      ]
+    ],
+    "origin_definition": "midpoint of lower shell, left/right walls and upper shell bounds; not mass center"
+  },
+  "validation": {
+    "cases": 3,
+    "coordinate_frames": 26,
+    "source_hashes_unchanged": {
+      "/data/shapeforge/runtime/runs/hier_s1_far_visual_20261125_v2/scene_packet.json": true,
+      "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer/transfer.json": true,
+      "/data/shapeforge/runtime/runs/staged_contact_20261123/robot_transfer/meshes.npz": true,
+      "/data/shapeforge/runtime/runs/hier_s1_far_20261125_v1/samples.npz": true
+    },
+    "production_reference_max_origin_error_mm": 7.441395799454989e-06,
+    "production_reference_max_rotation_matrix_error": 1.3076749912077634e-08,
+    "axis_direction_max_error": 1.1934897514720433e-15,
+    "opencv_fisheye_max_display_pixel_difference": 3.2155493553843715e-13,
+    "scope": "orientation rendering checks; no new training or policy execution"
+  },
+  "training": false,
+  "prediction_execution": false,
+  "artifacts": {
+    "case_01_gt_orientation.png": {
+      "bytes": 1425302,
+      "sha256": "8aba224f049afdc275dac344be3208ea8dcc7760c067f2c139f3c71cad2df136"
+    },
+    "case_02_gt_orientation.png": {
+      "bytes": 1409271,
+      "sha256": "ecb314404ced3b7947dc9eafde853e6cf9d2bc5cb229ed0d134d00c523cc8ee5"
+    },
+    "case_02_pred_orientation.png": {
+      "bytes": 1410470,
+      "sha256": "7bac4f7834b704403a983ce341c11fcb54ea8cd8da06083cd218b272476dd61d"
+    },
+    "case_00_pred_orientation.png": {
+      "bytes": 1421088,
+      "sha256": "28b06992f15366aa6dd68168cf6f8bd4f9c8d504d80f3ce244dc2eb78aa76ea6"
+    },
+    "case_00_gt_orientation.png": {
+      "bytes": 1430166,
+      "sha256": "caf81638a6e89b33975f33651be5adfbd1175db5a2d9b78574379476049a6e5c"
+    },
+    "case_01_pred_orientation.png": {
+      "bytes": 1425382,
+      "sha256": "ac43a522867fce3007e145ae4688e2e10e8f847508dfb1086c350d4439e11160"
+    },
+    "case_00_orientation.blend": {
+      "bytes": 7331218,
+      "sha256": "423c4e35e314040ab684665d51f3fc8fe6cace01295bb5a02169937402698095"
+    },
+    "case_02_orientation.blend": {
+      "bytes": 7482070,
+      "sha256": "b9bf8a277b99c14e280d11c2e032ef526859f4a17a7d65beb9d096c64eaceebd"
+    },
+    "case_01_orientation.blend": {
+      "bytes": 7482070,
+      "sha256": "61b74e4ca351efe17e61f54af6a1a6bb8b97b323d9821eb927e0a181db4f072e"
+    },
+    "orientation.json": {
+      "bytes": 628320,
+      "sha256": "26730611e00b34d9b56be034eca05e78a1a9233035faa27d3808a6c7c90fd837"
+    },
+    "validation.json": {
+      "bytes": 791,
+      "sha256": "d4e95fa9e84999cd6be3941f6ae009005e949e196687c3972cf8397ee0214088"
+    },
+    "render_system1_orientation.py": {
+      "bytes": 12036,
+      "sha256": "68a57b4f2cd79c7da85b76a98295a3aa0b5df65e8004037beae79232196395c3"
+    },
+    "render_system1_orientation_blender.py": {
+      "bytes": 2238,
+      "sha256": "81dd8df9b676ceee4b4d0cde584107d2d41d320bc0d90ec41736e5e68084fceb"
+    },
+    "audit_system1_orientation.py": {
+      "bytes": 5120,
+      "sha256": "e93295f23e9e63af3c8ff5ad8bab0745f39b46aa0c98e3877f47120be8207d9e"
+    },
+    "render_system1_far.py": {
+      "bytes": 9304,
+      "sha256": "a0ce2581a9938878d206f39f64a29f0e3d7e2b900b902ddb89be60770aa29f2e"
+    },
+    "render_system1_assets.py": {
+      "bytes": 10933,
+      "sha256": "e89d789ad0cf4950ede60043ded68a26b1d992529877a064a6861c4f1ec6eeb4"
+    },
+    "render_system1_paths.py": {
+      "bytes": 12430,
+      "sha256": "23119950ef87cad911d99ad7b990efaead7fe1e2895b964a02b47a16c1599f2d"
+    }
+  }
+}

@@ -91,6 +91,29 @@ class RecoveryTests(unittest.TestCase):
         self.assertEqual(teacher.attempts, 0)
         self.assertIsNone(teacher.failure)
 
+    def test_new_blockage_after_two_completed_recoveries_fails_on_real_step(self):
+        env=FakeEnv();teacher=StagedRecoveryTeacher(RecoveryConfig(strict_entry=True))
+        teacher.attempts=teacher.completed=2;teacher.stage='idle'
+        before=env.pose.copy();goal=env.goal_pos.copy()
+        teacher.observe(env,measurement(insertion_depth_mm=5.832,entry_qualified=True,recovery_required=True),
+                        executed_action=[.1,0,0,0,0,0])
+        self.assertEqual(teacher.failure,'recovery_attempt_budget')
+        self.assertEqual(teacher.stage,'failed');self.assertEqual(teacher.attempts,2)
+        np.testing.assert_array_equal(env.pose,before);np.testing.assert_array_equal(env.goal_pos,goal)
+
+    def test_exhausted_budget_does_not_fail_idle_without_a_new_recovery_need(self):
+        env=FakeEnv();teacher=StagedRecoveryTeacher(RecoveryConfig(strict_entry=True));teacher.attempts=2
+        teacher.observe(env,measurement(insertion_depth_mm=10.,entry_qualified=True,recovery_required=False))
+        self.assertIsNone(teacher.failure);self.assertEqual(teacher.stage,'idle')
+        teacher.observe(env,measurement(insertion_depth_mm=6.,entry_qualified=False,recovery_required=False))
+        self.assertEqual(teacher.failure,'recovery_attempt_budget')
+
+    def test_success_or_existing_failure_is_not_overridden_by_exhausted_budget(self):
+        for field in ('is_success','failed'):
+            teacher=StagedRecoveryTeacher(RecoveryConfig(strict_entry=True));teacher.attempts=2
+            teacher.observe(FakeEnv(),measurement(**{field:True}))
+            self.assertIsNone(teacher.failure)
+
     def test_failed_measurement_cannot_be_rescued(self):
         env = FakeEnv(); teacher = StagedRecoveryTeacher()
         with self.assertRaises(RuntimeError):teacher.act(env, measurement(failed=True), minimum_mm=.05)
